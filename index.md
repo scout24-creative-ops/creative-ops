@@ -9,7 +9,8 @@ Dieses Repository ist die zentrale, projektübergreifende Wissensbasis für Domi
 - [Dominiks Rolle und Arbeitsfokus](profile/dominik-role.md)
 
 ## Projektkontext
-- Siehe [projects/README.md](projects/README.md)
+- [Contentful-MVP Marketing](projects/contentful-mvp-marketing/overview.md)
+- Weitere Projekte: [projects/README.md](projects/README.md)
 
 ## Arbeitsdokumentation
 - Wochenjournal: `work-journal/<jahr>/<kalenderwoche>.md`
