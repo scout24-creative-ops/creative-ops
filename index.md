@@ -6,7 +6,7 @@ Dieses Repository ist die zentrale, projektübergreifende Wissensbasis für Domi
 - [GitHub-Setup](setup/github-setup.md)
 - [Do-not-touch-Regeln](setup/do-not-touch-rules.md)
 - [Organigramm](organization/org-chart.md)
-- [Stakeholder](organization/stakeholders.md)
+- [Dominiks Rolle und Arbeitsfokus](profile/dominik-role.md)
 
 ## Projektkontext
 - Siehe [projects/README.md](projects/README.md)
