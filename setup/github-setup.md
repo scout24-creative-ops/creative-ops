@@ -1,11 +1,24 @@
-# GitHub-Setup
+# GitHub and Workspace Setup
 
-Stand: 14.07.2026
+_Last reviewed: 2026-07-20_
 
-## Aktiver Arbeitsort
-Neue und aktive Arbeit findet grundsätzlich in der Organisation `scout24-creative-ops` statt.
+## Workspace
 
-Wichtige aktive Repositories:
+- Workspace: `/Users/dboehme/Projects/GPT Agents`
+- Legacy archive: `/Users/dboehme/Projects/GPT Agents/_Archiv/legacy-github-repos/`
+- This workspace contains independent project repositories. `work-context` provides cross-project context; project repositories remain the source of truth for their code, configuration, deployments, and implementation state.
+
+## GitHub Organizations and Accounts
+
+- New and active work generally belongs in `scout24-creative-ops`.
+- `DominikBoehme` is not an active work location.
+- `DominikBoehme/ai-marketing-creative-hub` remains as a redirect and is not actively developed.
+- `is24-lp-creator` and `s24-creative-ops` contain documented legacy or publish-related areas described below.
+
+## Repository Overview
+
+### Active repositories in `scout24-creative-ops`
+
 - `creative-hub`
 - `lp-builder`
 - `design-system`
@@ -18,25 +31,61 @@ Wichtige aktive Repositories:
 - `acquise-report`
 - `work-context`
 
-## Persönlicher Account
-`DominikBoehme` ist kein aktiver Arbeitsort mehr.
+### Productive assignments
 
-`DominikBoehme/ai-marketing-creative-hub` bleibt nur als Redirect bestehen.
+- Productive LP Builder: `scout24-creative-ops/lp-builder`
+- Test project: `scout24-creative-ops/lp-builder-agent`
+- Design system source: `scout24-creative-ops/design-system`
+- Current email automation: `scout24-creative-ops/email-automation`
 
-## Legacy-Bereiche
-- `is24-lp-creator/lp-creator`: Legacy-Runtime für bestehende AEM-Landingpages
-- `s24-creative-ops/design-library`: aktuelles Live-Publish-Ziel der Design Library
+### Collaboration references
 
-## Produktive Zuordnung
-- Produktiver LP Builder: `scout24-creative-ops/lp-builder`
-- Testprojekt: `scout24-creative-ops/lp-builder-agent`
-- Design-System-Quelle: `scout24-creative-ops/design-system`
-- Aktuelle E-Mail-Automation: `scout24-creative-ops/email-automation`
+- Peter contributes to `creative-hub`.
+- Ciaran contributes to `lp-builder` and `design-system`.
 
-## Zusammenarbeit
-- Peter: Mitarbeit am `creative-hub`
-- Ciaran: Mitarbeit an `lp-builder` und `design-system`
+## Repository Status Categories
 
-## Lokaler Workspace
-- Workspace: `/Users/dboehme/Projects/GPT Agents`
-- Legacy-Archiv: `/Users/dboehme/Projects/GPT Agents/_Archiv/legacy-github-repos/`
+- **Active:** the `scout24-creative-ops` repositories listed above are documented as the active work location.
+- **Legacy runtime:** `is24-lp-creator/lp-creator` serves existing AEM landing pages.
+- **Publish target:** `s24-creative-ops/design-library` remains the current live publish target for the Design Library.
+- **Redirect:** `DominikBoehme/ai-marketing-creative-hub` remains as a redirect only.
+
+## Sources of Truth
+
+- Use this repository for personal, organizational, and cross-project context.
+- Verify technical facts in the relevant project repository.
+- Do not derive repository status, permissions, or implementation details solely from a repository name.
+
+## Working Rules
+
+- Changes to this work context require Dominik's explicit approval.
+- Do not create hidden auto-commits or auto-pushes.
+- Keep active, legacy, archive, publish, and redirect roles distinct when describing repositories.
+
+## Protected and Do-Not-Touch Areas
+
+### Legacy runtime
+
+Do not delete, make private, rename, or disable GitHub Pages for `is24-lp-creator/lp-creator`. Existing AEM pages may still load its CSS and JavaScript paths.
+
+### New runtime
+
+New landing pages use `https://scout24-creative-ops.github.io/lp-builder/runtime/...`. Do not move, delete, or rename files under `lp-builder/runtime/**` without deliberate review.
+
+### Creative Hub and Design Library
+
+Keep `DominikBoehme/ai-marketing-creative-hub` as a redirect. Keep the live Design Library in `s24-creative-ops/design-library` until a separate migration is planned.
+
+## Authentication and Local Tooling
+
+Authentication state, permissions, and credential values are not documented in this repository. Do not add tokens, secrets, passwords, private keys, or credential values here.
+
+## Known Limitations
+
+- Repository access rights and visibility must be verified through the applicable GitHub tooling; they are not asserted here.
+- Historical and legacy repository references may be required by existing pages or runtime paths.
+- The documented repository roles should not replace a direct technical check in the relevant repository.
+
+## Update Guidance
+
+Update this file when confirmed workspace, organization, repository-role, source-of-truth, or protection-rule information changes. Keep facts dated where practical and do not record unverified access claims.

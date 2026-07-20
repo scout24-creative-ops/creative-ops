@@ -1,14 +1,14 @@
 # Work Context
 
-Work Context is Dominik Böhme's versioned knowledge base for personal and cross-project working context. It helps people and new AI-assisted sessions understand the relevant background without replacing project documentation.
+Work Context is Dominik Böhme's versioned knowledge base for Creative Operations. It helps people and new AI-assisted sessions understand the relevant background without replacing project documentation.
 
 ## What This Repository Contains
 
-- Profile, role, and working focus
-- Relevant organization and stakeholders
-- Project context and cross-project decisions
-- GitHub setup and runtime protection rules
-- Work journal entries and weekly-summary guidance
+- Profile, role, strategy, and working style
+- Relevant organization, teams, and stakeholders
+- GitHub, workspace, repository, and protection context
+- Current Creative Operations priorities, projects, decisions, risks, and follow-ups
+- Concise weekly summaries
 
 ## How to Start
 
@@ -23,13 +23,11 @@ This repository provides context. The relevant project repositories remain the t
 ```text
 profile/        Role and working focus
 organization/   Relevant organization and stakeholders
-projects/       Project summaries and status files
-decisions/      Durable cross-project decisions
-setup/          GitHub setup and protection rules
-work-journal/   Chronological work notes
+setup/          GitHub, workspace, and protection context
+context/        Current Creative Operations summary
 summaries/      Condensed weekly reports
 ```
 
 ## Updating the Context
 
-Keep durable facts in the appropriate context files, ongoing work in `work-journal/`, and condensed reports in `summaries/weekly/`. Record decisions in the relevant decision files. Keep changes traceable and dated where practical.
+Keep role and strategy information in `profile/`, organization information in `organization/`, and GitHub or protection information in `setup/`. Keep projects, priorities, decisions, risks, and follow-ups in `context/creative-operations-summary.md`; use `summaries/weekly/` for concise week-specific reporting. Keep changes traceable and dated where practical.
