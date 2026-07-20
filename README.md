@@ -1,81 +1,57 @@
-# Work Context Agent Guide
+# Work Context
 
-## Purpose
+Work Context is Dominik Böhme's versioned knowledge base for Creative Operations. It gives agents and new AI-assisted sessions the relevant background without replacing technical project documentation.
 
-This repository is Dominik Böhme's maintained working context for Creative Operations. Agents should turn new information stated in natural language into targeted context updates without requiring Dominik to choose files or understand the repository structure.
+Dominik should be able to provide new information in natural language. The agent is responsible for deciding which context files need to be read and updated.
 
-This repository is not the technical source of truth for code, configuration, deployments, or implementation details. Verify those facts in the relevant project repository when needed.
+## Repository Areas
 
-## Reading Strategy
+```text
+profile/        Role, responsibilities, strategy, and working focus
+organization/   Teams, stakeholders, reporting lines, and organizational context
+setup/          GitHub, workspace, repositories, and technical working boundaries
+projects/       Maintained context for each active project
+summaries/      Historical weekly reports
+```
 
-1. Read [index.md](index.md) first.
-2. Identify the smallest relevant set of files.
-3. Load role context only for questions about Dominik's responsibilities, strategy, or working style.
-4. Load organization context only for teams, stakeholders, reporting lines, or organizational changes.
-5. Load setup context only for GitHub, repositories, workspace, access, or protection rules.
-6. Load only the relevant project files for project-specific questions or updates.
-7. Load weekly summaries only for a requested reporting period or historical evidence.
+## How It Works
 
-Do not read the entire repository by default.
+1. Start with [index.md](index.md).
+2. Identify the relevant context area or project.
+3. Read only the required files.
+4. Update durable information in the matching context file.
+5. Add reportable developments to the relevant weekly summary when needed.
 
-## Information Routing
+Dominik does not need to know the target path or repository structure when sharing an update.
 
-When Dominik provides new information, classify and route it automatically:
+## Information Model
 
-- Role, responsibility, strategic mandate, or recurring advisory work: `profile/dominik-role.md`
-- Teams, stakeholders, reporting lines, reorganizations, or ownership changes: `organization/org-chart.md`
-- GitHub, workspace, repository, access, or technical working rules: `setup/github-setup.md`
-- Project progress, decisions, support commitments, stakeholders, risks, blockers, or next steps: the matching file in `projects/`
-- A reportable development for a specific week: additionally the matching file in `summaries/weekly/`
+### Profile
 
-One update may affect multiple files. Dominik does not need to name the destination.
+`profile/dominik-role.md` describes Dominik's lasting role, responsibilities, strategic focus, and working principles.
 
-## Project Rules
+### Organization
 
-- Project files contain the latest recorded durable context and relevant dated history.
-- Update an existing project file whenever the information fits its purpose.
-- Do not create a project for every workshop, consultation, experiment, or small activity.
-- Create a new project file only when there is a distinct goal, ongoing status, or clear responsibility that cannot reasonably fit an existing project.
-- Keep concrete use cases separate from their platform project when they have their own stakeholders, delivery status, or outcome.
-- Historical next steps are not automatically current open tasks.
+`organization/org-chart.md` contains relevant teams, stakeholders, reporting lines, and organizational changes.
 
-## Weekly Summary Rules
+### Setup
 
-- Weekly summaries are historical reports, not the current source of truth.
-- Add only meaningful developments, decisions, outcomes, blockers, or next steps from the relevant week.
-- Durable information should also update the relevant profile, organization, setup, or project file.
-- Do not reconstruct old weekly summaries unless explicitly requested.
+`setup/github-setup.md` contains GitHub, repository, workspace, access, and protection context.
 
-## Source of Truth and Freshness
+### Projects
 
-- `work-context` is the source of truth for Dominik's maintained role, organization, and cross-project context.
-- Technical project repositories are the source of truth for code and implementation state.
-- Treat dates as evidence of freshness.
-- Mark uncertain, conflicting, or potentially stale information explicitly.
-- Do not convert historical summaries into current facts without confirmation.
-- Do not invent decisions, owners, deadlines, outcomes, or project status.
+Each active project has one file under `projects/`. These files contain the latest durable understanding of the project's purpose, status, stakeholders, decisions, risks, and next steps.
 
-## Privacy and Sensitivity
+### Weekly Summaries
 
-- This repository contains internal and potentially confidential working information.
-- Never add secrets, tokens, credentials, private keys, customer data, or lasting personal assessments of colleagues.
-- Do not use internal context in external communication without review.
+`summaries/weekly/` contains historical reports for individual weeks. Weekly summaries explain what happened at a point in time; they are not automatically the current project status.
 
-## Editing and Git Behaviour
+## Important Boundary
 
-- Preserve established facts unless newer evidence replaces them.
-- Prefer targeted edits over broad rewrites.
-- Keep file names and structure stable unless a structural change is explicitly requested.
-- Do not modify other repositories unless explicitly asked.
-- Before a write, summarize the intended change when approval has not already been given.
-- Do not merge, commit, or push unless Dominik has explicitly authorized that action.
+This repository is the source of truth for personal, organizational, and cross-project context. The relevant technical project repositories remain the source of truth for code, configuration, deployments, and implementation details.
 
-## Response Behaviour
+Some information is internal or confidential and must be handled accordingly. Never store credentials, secrets, customer data, or lasting personal assessments of colleagues.
 
-After an update, report briefly:
+## Agent Rules
 
-- what was understood;
-- which files were changed;
-- what remains uncertain or needs confirmation.
-
-Do not require Dominik to manage the repository structure.
+Detailed reading, classification, updating, privacy, and Git rules are defined in [AGENTS.md](AGENTS.md).

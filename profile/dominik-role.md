@@ -1,23 +1,66 @@
-# Work Context
+# Dominik Böhme – Rolle und Arbeitsfokus
 
-Work Context is Dominik Böhme's versioned knowledge base for Creative Operations. Its purpose is to let agents read and update only the context relevant to a task, while Dominik can provide new information in natural language without managing files himself.
+## Rolle
+Dominik arbeitet als **Creative Operations & Digital Transformation Lead** im Marketing.
 
-## Contents
+Sein Schwerpunkt liegt darauf, Marketing- und Creative-Prozesse einfacher, skalierbarer und AI-gestützt weiterzuentwickeln.
 
-- `profile/` — role, responsibilities, strategy, and working focus
-- `organization/` — teams, stakeholders, reporting lines, and organizational changes
-- `setup/` — GitHub, workspace, repository, and protection context
-- `projects/` — latest recorded durable context for active projects
-- `summaries/weekly/` — historical weekly reports
+## Hauptaufgaben
+- Creative Operations weiterentwickeln
+- Marketing AI Enablement vorantreiben
+- Builder, Agents und Automationen aufbauen
+- wiederkehrende Prozesse standardisieren
+- Self-Service und Wiederverwendbarkeit stärken
+- teamübergreifende Schnittstellen verbinden
+- aus Einzelproblemen skalierbare Systeme machen
 
-## How Agents Should Work
+## Arbeitsprinzip
+Dominiks größter Wert liegt nicht in dauerhafter Einzelumsetzung, sondern in:
 
-Read [index.md](index.md) first and follow [AGENTS.md](AGENTS.md). Load only the smallest relevant set of files. Route new information automatically to the appropriate profile, organization, setup, project, and, when reportable, weekly-summary files.
+- Standards
+- Libraries
+- Workflows
+- Buildern
+- Automationen
+- wiederverwendbaren Systemen
 
-Dominik should not need to select target files or maintain the structure manually.
+Ziel ist, Abhängigkeiten zu reduzieren und Teams eigenständiger zu machen.
 
-## Important Boundary
+## Relevante Schnittstellen
+- Creative Studio
+- Marketing
+- AI Solutions & Data
+- SEO
+- UX
+- Plattform- und Produktbereiche
 
-This repository provides working context. Relevant project repositories remain the technical source of truth for code, configuration, deployments, and current implementation details.
+## Strategische Ziele
+- AI im Marketing sichtbar und sinnvoll einsetzen
+- Prozesse vereinfachen
+- Qualität und Geschwindigkeit erhöhen
+- skalierbare Marketing-Infrastruktur schaffen
+- Teams befähigen
+- bereichsübergreifende Zusammenarbeit stärken
 
-Information here may be internal or confidential. Never store secrets, credentials, customer data, or lasting personal assessments of colleagues.
+## Erwartung des Vorgesetzten
+Jorin Verges ist Dominiks direkter Vorgesetzter.
+
+Wichtig für die Zusammenarbeit:
+- sichtbare Ergebnisse
+- klarer Fokus auf die eigene Unit
+- relevanter Company Impact
+- Kolleg:innen einbinden
+- Wissen teilen
+- Arbeit transparent machen
+- Projekte verständlich und überzeugend vermitteln
+
+## Rollenverständnis
+Dominik ist nicht der dauerhafte „Agent-Bauer für alle Teams“.
+
+Seine Rolle ist:
+- Orientierung geben
+- priorisieren
+- Standards schaffen
+- Teams enablen
+- strategische Themen mit hohem Hebel unterstützen
+- nachhaltige Lösungen statt Einzellösungen fördern
