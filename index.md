@@ -1,4 +1,4 @@
-# Work Context Index
+# Creative Ops Index
 
 ## Start Here
 
@@ -6,9 +6,9 @@ Read this file first, then load only the context relevant to the task. Agent beh
 
 ## Core Context
 
-- [Role and working focus](profile/dominik-role.md) — Dominik's role, responsibilities, strategic focus, and working principles.
-- [Relevant organization](organization/org-chart.md) — teams, stakeholders, reporting lines, and organizational context.
-- [GitHub and workspace setup](setup/github-setup.md) — repositories, access, workspace, and technical working boundaries.
+- [Role and working focus](profile/dominik-role.md)
+- [Relevant organization](organization/org-chart.md)
+- [GitHub and workspace setup](github-setup/github-context.md)
 
 ## Active Projects
 
@@ -23,15 +23,14 @@ Read this file first, then load only the context relevant to the task. Agent beh
 - [GIF Automation](projects/gif-automation.md)
 - [Chart Agent](projects/chart-agent.md)
 
-## Weekly Summaries
+## Weekly Documentation
 
-- [Weekly-summary guidance](summaries/weekly/README.md)
-- Weekly files use the format `summaries/weekly/YYYY-Www.md`.
+- [Documentation guidance](documentation/README.md)
+- Weekly files use the format `documentation/YYYY-Www.md`.
 
-## How to Use This Repository
+## Information Model
 
-- For a question about one project, read only that project file plus any clearly relevant core context.
-- For organizational changes, start with `organization/org-chart.md`.
-- For role or strategy questions, start with `profile/dominik-role.md`.
-- For a week-specific recap, read the matching weekly summary and relevant project files.
-- Consider dates and freshness. Do not replace missing context with assumptions.
+- `documentation/` records every work-relevant update for the current week.
+- `projects/` contains only durable project knowledge.
+- `profile/`, `organization/`, and `github-setup/` contain durable context for their respective areas.
+- The short summary for Jorin is generated in chat from the current weekly documentation and is not stored here.

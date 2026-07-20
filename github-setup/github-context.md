@@ -1,4 +1,4 @@
-# GitHub and Workspace Setup
+# GitHub and Workspace Context
 
 _Last reviewed: 2026-07-20_
 
@@ -6,7 +6,7 @@ _Last reviewed: 2026-07-20_
 
 - Workspace: `/Users/dboehme/Projects/GPT Agents`
 - Legacy archive: `/Users/dboehme/Projects/GPT Agents/_Archiv/legacy-github-repos/`
-- This workspace contains independent project repositories. `work-context` provides cross-project context; project repositories remain the source of truth for their code, configuration, deployments, and implementation state.
+- This workspace contains independent project repositories. `creative-ops` provides cross-project documentation; project repositories remain the source of truth for their code, configuration, deployments, and implementation state.
 
 ## GitHub Organizations and Accounts
 
@@ -29,7 +29,7 @@ _Last reviewed: 2026-07-20_
 - `contentful-marketing`
 - `marius-schewe`
 - `acquise-report`
-- `work-context`
+- `creative-ops`
 
 ### Productive assignments
 
@@ -52,13 +52,13 @@ _Last reviewed: 2026-07-20_
 
 ## Sources of Truth
 
-- Use this repository for personal, organizational, and cross-project context.
+- Use this repository for personal, organizational, weekly, and cross-project context.
 - Verify technical facts in the relevant project repository.
 - Do not derive repository status, permissions, or implementation details solely from a repository name.
 
 ## Working Rules
 
-- Changes to this work context require Dominik's explicit approval.
+- Changes to this documentation require Dominik's explicit approval.
 - Do not create hidden auto-commits or auto-pushes.
 - Keep active, legacy, archive, publish, and redirect roles distinct when describing repositories.
 
