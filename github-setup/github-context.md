@@ -21,6 +21,7 @@ _Last reviewed: 2026-07-20_
 
 - `creative-hub`
 - `lp-builder`
+- `lp-builder-agent`
 - `design-system`
 - `email-builder`
 - `email-builder-agent`
@@ -42,6 +43,7 @@ _Last reviewed: 2026-07-20_
 
 - Peter contributes to `creative-hub`.
 - Ciaran contributes to `lp-builder` and `design-system`.
+- Mitch's `is24-email-modules` repository is an external productive collaboration repository for deployed email modules and the related AWS and Iterable integration.
 
 ## Repository Status Categories
 
@@ -49,6 +51,7 @@ _Last reviewed: 2026-07-20_
 - **Legacy runtime:** `is24-lp-creator/lp-creator` serves existing AEM landing pages.
 - **Publish target:** `s24-creative-ops/design-library` remains the current live publish target for the Design Library.
 - **Redirect:** `DominikBoehme/ai-marketing-creative-hub` remains as a redirect only.
+- **External productive collaboration:** Mitch's `is24-email-modules` repository is a productive platform outside Dominik's own active repository group and must be treated as read-only unless a safe operating process is explicitly agreed.
 
 ## Sources of Truth
 
@@ -60,7 +63,7 @@ _Last reviewed: 2026-07-20_
 
 - Changes to this documentation require Dominik's explicit approval.
 - Do not create hidden auto-commits or auto-pushes.
-- Keep active, legacy, archive, publish, and redirect roles distinct when describing repositories.
+- Keep active, legacy, archive, publish, redirect, and external productive collaboration roles distinct when describing repositories.
 
 ## Protected and Do-Not-Touch Areas
 
@@ -75,6 +78,10 @@ New landing pages use `https://scout24-creative-ops.github.io/lp-builder/runtime
 ### Creative Hub and Design Library
 
 Keep `DominikBoehme/ai-marketing-creative-hub` as a redirect. Keep the live Design Library in `s24-creative-ops/design-library` until a separate migration is planned.
+
+### Productive email module platform
+
+Mitch's `is24-email-modules` repository may be inspected for context, but Dominik must not change files, modules, manifests, branches, commits, pushes, activations, workflows, or repository settings until the setup and safe operating process have been reviewed and explicitly aligned with the responsible owners. Relevant pushes can trigger tests, AWS SAM deployment, and module seeding, so any write must be treated as an operational deployment action.
 
 ## Authentication and Local Tooling
 
