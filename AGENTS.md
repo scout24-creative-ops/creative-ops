@@ -40,6 +40,19 @@ The weekly documentation may include:
 
 The weekly file is source material, not a polished management summary. A later skill creates the short summary for Jorin in the chat. That short summary is not stored in this repository.
 
+## Bootstrap and Migration Exception
+
+During the initial repository setup, cleanup, migration, or retrospective consolidation of historical information, do not create or update the current weekly documentation merely because the information is being discussed now.
+
+In this mode:
+
+- classify historical or already completed information directly into the relevant durable-context files;
+- preserve the original timing when it is known;
+- do not assign older project information to the current calendar week;
+- use the weekly documentation only after the operating workflow has been activated for ongoing work.
+
+Once the repository and its skill are in normal operation, the Primary Documentation Rule applies again to every new work-relevant update.
+
 ## Durable Context Check
 
 After adding an update to the weekly documentation, decide whether it also changes durable context.
@@ -92,6 +105,8 @@ When Dominik provides new information:
 8. Preserve dates for historical statements.
 9. Mark missing or conflicting information explicitly instead of guessing.
 10. Summarize which files changed and why.
+
+During bootstrap or migration work, replace steps 1–3 with the Bootstrap and Migration Exception above.
 
 ## Project File Rules
 
