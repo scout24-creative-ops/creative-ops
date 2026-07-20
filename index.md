@@ -1,20 +1,30 @@
 # Work Context Index
 
-## Start Here
-
-New sessions should read this file first and then load only the context relevant to the task. Working rules for Codex and similar agents are in [AGENTS.md](AGENTS.md).
+Read this file first, then load only the files relevant to the task.
 
 ## Core Context
 
 - [Role and working focus](profile/dominik-role.md)
-- [Relevant organization](organization/org-chart.md)
+- [Organization and stakeholders](organization/org-chart.md)
 - [GitHub and workspace setup](setup/github-setup.md)
-- [Creative Operations summary](context/creative-operations-summary.md)
+
+## Active Projects
+
+- [Landing Page Builder](projects/landing-page-builder.md)
+- [E-Mail Builder](projects/email-builder.md)
+- [HeyImmo Automated HomeOwner Mail](projects/heyimmo-homeowner-mail.md)
+- [LOFT Automation](projects/loft-automation.md)
+- [Contentful Marketing MVP](projects/contentful-marketing-mvp.md)
+- [Design Library](projects/design-library.md)
+- [AI Hub and Agent Library](projects/ai-hub.md)
+- [Marketing AI Survey](projects/marketing-ai-survey.md)
+- [GIF Automation](projects/gif-automation.md)
+- [Chart Agent](projects/chart-agent.md)
 
 ## Weekly Summaries
 
 - [Weekly-summary guidance](summaries/weekly/README.md)
 
-## Information Status
+## Freshness
 
-Information can have different freshness levels. Consider dates and verify status questions in the relevant project repository where appropriate. The Creative Operations summary consolidates documented projects, decisions, historical work records, risks, and follow-ups. Do not replace missing context with assumptions.
+Project files contain the latest recorded durable context. Weekly summaries are historical reports and must not be treated as current status without confirmation. Technical facts must be verified in the relevant project repository.
