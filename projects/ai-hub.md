@@ -2,24 +2,32 @@
 
 ## Purpose
 
-Make Creative Studio agents easy to discover, understand and access through a curated central overview.
+Provide a central, curated overview of AI agents and, over time, lighthouse projects that are relevant across Marketing.
 
 ## Current Status
 
-A first AI Agent Library and later an AI Hub or Agent Shelf were documented as usable and under continued refinement. The latest historical status focused on simplifying descriptions, removing or repositioning unclear entries, and moving publication to a central Scout24 GitHub setup. Current scope and ownership need confirmation.
+The Creative Hub is live at https://scout24-creative-ops.github.io/creative-hub/.
+
+It currently presents agents built by Creative Studio that are relevant for multiple Marketing teams, including solutions such as the Landing Page Builder and Image Generator. The agents are presented clearly and accessibly, but the hub is still primarily an agent overview rather than a broader, active Marketing AI platform.
+
+Jorin responded positively to the hub and said that it should be developed further.
 
 ## Dominik's Role
 
-Dominik initiated the first library, advised on hub structure and curation, coordinated steering topics, and supported the central publication path.
+Dominik helps shape the strategic direction and curation of the hub. He proposed developing it beyond a static overview of Creative Studio agents by adding more visible activity, relevant lighthouse projects and agents from other Marketing teams or departments.
+
+Dominik aligned this direction with Eve, who confirmed that the hub should be developed in this way.
 
 ## Key Stakeholders
 
+- Eve-Sabrina Vogelein
+- Jorin Verges
 - Peter
 - Henrik
 - Alex
 - Allan
 - Creative Studio agent owners
-- Potential Marketing teams publishing agents
+- Owners of relevant agents and AI projects from other Marketing teams or departments
 
 ## Important Developments
 
@@ -27,26 +35,35 @@ Dominik initiated the first library, advised on hub structure and curation, coor
 - June 2026: Created a first AI Agent Library showing Creative Studio-owned agents.
 - June 2026: Supported Peter's AI Hub implementation and prepared central publication via the Scout24 GitHub account.
 - July 2026: Coordinated curation tasks around descriptions, categorization, removals and the Chart Agent entry.
+- July 2026: Confirmed that the Creative Hub is live and currently focuses on Creative Studio agents with relevance across Marketing.
+- July 2026: Jorin positively evaluated the hub and supported further development.
+- July 2026: Dominik proposed expanding the hub with lighthouse projects and relevant agents from other teams or departments; Eve confirmed this direction.
 
 ## Decisions
 
-- The hub should prioritize understandable and relevant agents rather than simply list everything.
+- The hub should prioritize understandable and relevant solutions rather than simply list everything.
 - Agent descriptions and categories should make use cases and access clear.
-- Central publication and ownership should support reliable discovery.
+- The hub should evolve beyond a static Creative Studio agent directory.
+- Future content should include relevant lighthouse projects and selected agents from other Marketing teams or departments.
 
 ## Risks and Open Questions
 
-- Current location, publishing status and audience are not confirmed.
-- It is unclear whether agents from other Marketing teams are now included.
-- Governance for adding, reviewing and removing agents needs confirmation.
+- Long-term ownership and maintenance responsibilities are not yet fully documented.
+- Criteria for adding, reviewing, prioritizing and removing agents or projects still need to be defined.
+- It remains open how frequently the hub should be updated and how new activity should be made visible.
+- The long-term boundary between a Marketing-focused hub and a broader company-wide overview is not yet defined.
 
 ## Next Steps
 
-Confirm the current hub location, scope, ownership and outstanding curation or publishing tasks.
+- Add relevant lighthouse projects.
+- Identify and include relevant agents from other Marketing teams or departments.
+- Define selection and quality criteria for future entries.
+- Develop a regular curation and update process so the hub feels active and current.
+- Explore how agents, projects and concrete use cases can be presented together clearly.
 
 ## Last Confirmed
 
-Historical source material through July 2026; current status needs confirmation.
+July 2026.
 
 ## Related Context
 
