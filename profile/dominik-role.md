@@ -41,6 +41,9 @@ Ziel ist, Abhängigkeiten zu reduzieren und Teams eigenständiger zu machen.
 - skalierbare Marketing-Infrastruktur schaffen
 - Teams befähigen
 - bereichsübergreifende Zusammenarbeit stärken
+- E-Mail- und Campaign-Automation als wiederverwendbaren Blueprint für weitere Marketingbereiche entwickeln
+- Erkenntnisse aus HeyImmo und LOFT auf neue Use Cases übertragen, zum Beispiel Content, Newsletter und B2B Marketing
+- Builder und Module langfristig von reinen Self-Service-Werkzeugen zu wiederverwendbaren Generierungs- und Automationsbausteinen weiterentwickeln
 
 ## Erwartung des Vorgesetzten
 Jorin Verges ist Dominiks direkter Vorgesetzter.
@@ -64,3 +67,5 @@ Seine Rolle ist:
 - Teams enablen
 - strategische Themen mit hohem Hebel unterstützen
 - nachhaltige Lösungen statt Einzellösungen fördern
+
+Dominiks Beitrag zu Automationsprojekten soll möglichst über den einzelnen Use Case hinausgehen. Technische MVPs wie HeyImmo und LOFT sollen wiederverwendbare Muster, Module und Entscheidungsgrundlagen für weitere Teams schaffen.
