@@ -2,54 +2,90 @@
 
 ## Purpose
 
-Enable Marketing teams to create and publish landing pages faster and more independently through a controlled, reusable module system.
+Enable Marketing teams to create landing pages faster and more independently through a controlled, reusable module system.
 
 ## Current Status
 
-The Landing Page Builder is an established self-service workflow and has been developed from a Custom GPT into an agent-based setup. The latest confirmed material shows continued use, module expansion, team onboarding, and a connection to the planned Contentful marketing workflow. The exact current operational status after July 2026 still needs confirmation.
+The production Landing Page Builder is currently a Custom GPT, not an agent. It is actively and frequently used by several Marketing teams, including B2B, Seeker and Homeowner.
+
+Users open the GPT, describe the landing-page topic and select the modules they want to use from the Design Library. The GPT generates the page code from those approved modules. The result is not yet connected to a CMS and has no integrated preview; users currently need to place the generated code manually into an empty AEM page to see the complete design result.
+
+The product remains strategically important, but active development has slowed down in recent months. A new transition strategy is still needed.
+
+## Product Versions and Boundaries
+
+### Production Custom GPT
+
+- The original and currently used Landing Page Builder.
+- Contains the broader, production-relevant module set.
+- Used by multiple Marketing teams.
+- Has no CMS integration or integrated preview.
+- Remains the current operational standard.
+
+### Landing Page Builder Agent Prototype
+
+- A separate, highly reduced prototype in Dominik's local workspace.
+- Built to test the agent setup and to support a larger presentation where agent examples were requested.
+- Contains only a small subset of modules.
+- Includes a preview capability that the production GPT does not have.
+- Is not a production replacement and is not identical to the future Contentful solution.
+
+### Future Contentful Agent
+
+- The intended future replacement for the production Custom GPT.
+- Will be built as an agent and designed around the Contentful integration.
+- Belongs primarily to the Contentful Marketing MVP project.
+- Must remain clearly separated from the existing prototype until the target architecture and Contentful output format are defined.
 
 ## Dominik's Role
 
-Dominik initiated and developed the builder approach, shaped the module and governance model, supported team onboarding, coordinated technical integrations, and positioned the builder as the central controlled creation workflow for Marketing landing pages.
+Dominik initiated and developed the Landing Page Builder, shaped the module and governance model, onboarded the Marketing teams, and retains product, strategy, prioritization and quality responsibility.
 
-## Key Stakeholders
+He has gradually transferred more operational implementation work to Ciaran while continuing to direct and review the work.
 
-- Marketing teams using the builder
-- Ciaran for operational module implementation and system adjustments
-- UX, including the module approval process
+## Ciaran's Role
+
+Ciaran works as a freelancer and implements new modules and system changes based on Linear tickets from Dominik. He works independently on the implementation, while Dominik retains product direction and control.
+
+## Key Stakeholders and Users
+
+- B2B Marketing
+- Seeker Product Marketing
+- Homeowner Product Marketing
+- Other Marketing teams using the builder
+- Ciaran for module implementation and system adjustments
+- UX for module approval and design governance
 - SEO for page-generation guardrails
-- Paid, Seeker, Homeowner, Professional and B2B teams as users or use-case owners
-- Core Team in connection with the Contentful MVP
+- Contentful and Core Team stakeholders for the future target setup
 
-## Important Developments
+## Confirmed Direction and Decisions
 
-- February 2026: Published the LP Creator as a Custom GPT and added requested carousel modules.
-- February to March 2026: Added assistant guidance, configurable hero modules, mobile-specific image handling, pricing cards and additional production modules.
-- March 2026: Supported the Paid team with onboarding and independent page publication.
-- March to April 2026: Developed form integration for Professional and B2B use cases, including a Salesforce-connected form independent of AEM and later an iframe-based implementation.
-- March 2026: Established an official UX approval process for existing and future modules.
-- April to May 2026: Introduced the Design Library as the single source of truth for builder modules, tokens and patterns.
-- May 2026: Completed a user survey and collected module requests to assess satisfaction, open needs and priorities.
-- June 2026: Converted the builder from a Custom GPT into an agent and presented it at the Leadership Summit.
-- July 2026: The documented Contentful MVP direction kept the LP Builder as the central tool for creation, iteration and export.
-
-## Decisions
-
-- Keep page creation and iteration inside the builder rather than allowing uncontrolled manual HTML changes.
-- Use reusable modules, standards and an approval process to improve quality and scalability.
-- Transfer more operational module work to Ciaran while Dominik retains strategic and system responsibility.
-- Use the builder as the intended creation layer for the Contentful marketing MVP.
+- The existing Custom GPT remains the current production tool until a viable replacement is ready.
+- Reusable approved modules and the Design Library remain the basis of the creation workflow.
+- Operational module work can be handled by Ciaran, while Dominik retains strategic and product responsibility.
+- The reduced agent prototype should be treated as a testcase, not as the current product or the final Contentful agent.
+- The future Contentful agent should eventually replace the Custom GPT, but only after the target architecture and integration approach are defined.
 
 ## Risks and Open Questions
 
-- The current list of active users, modules and supported publication paths needs confirmation.
-- The final Contentful handover and later editing workflow remain unconfirmed.
-- Historical survey findings and module requests have not yet been consolidated into a current roadmap.
+- A transition strategy from the productive Custom GPT to the future Contentful agent is not yet defined.
+- It is unclear how much further investment should go into the current GPT before the replacement is ready.
+- Existing users, modules and working practices must be preserved or migrated without disrupting the current strong usage.
+- The future handling of preview, CMS transfer and later editing depends on the Contentful MVP decisions.
+- Historical user-survey findings and module requests have not yet been consolidated into a current roadmap.
 
 ## Next Steps
 
-Current next steps need confirmation. Historically documented follow-ups included improving module prioritization, strengthening SEO and form workflows, expanding self-service adoption and defining the Contentful handover.
+1. Define a transition strategy covering stabilization of the current GPT, the prototype's role and the future Contentful agent.
+2. Keep the current Custom GPT operational for existing Marketing users.
+3. Continue necessary module and maintenance work through Ciaran and Linear tickets.
+4. Wait for the Contentful target format before making larger architectural changes.
+5. Later define how users, modules and workflows move from the GPT to the Contentful-connected agent.
 
 ## Last Confirmed
 
-Historical source material through July 2026; current status needs confirmation.
+Current status clarified by Dominik in July 2026.
+
+## Related Context
+
+See [Contentful Marketing MVP](contentful-marketing-mvp.md) and [Design Library and Builder Library](design-library.md).
