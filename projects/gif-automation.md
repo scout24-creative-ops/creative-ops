@@ -1,43 +1,61 @@
-# GIF Automation
+# GIF Animation Testing
 
 ## Purpose
 
-Reduce the production effort for email GIF animations while focusing on animation formats that create measurable value.
+Create a practical testing and production strategy for animated GIF heroes in Marketing emails. The project should identify how much animation is actually needed, reduce repeated one-off production work, and turn successful motion patterns into reusable variants.
 
 ## Current Status
 
-The project was initiated in June 2026. The documented approach was to test which animation levels have impact, build an After Effects library, and later move the repeatable setup into an agent-supported workflow. No later confirmed project status is available.
+The project is active. The first test results are available, but they are not yet significant enough to support a reliable conclusion. Additional tests are therefore being prepared.
+
+The current test strategy focuses on animation intensity while keeping the content as consistent as possible. Headline, preheadline, CTA, badge or störer, and the core message should remain nearly identical across variants. Only the amount of motion changes.
 
 ## Dominik's Role
 
-Dominik initiated the approach with Nadja and Marisa and connected the testing, template and future automation steps.
+Dominik initiated and structures the testing approach with Marisa and Nadja. He connects the business need for variety with a scalable production model, defines the phased direction, and supports the transition from testing to a reusable motion library and potentially an AI-supported workflow.
 
 ## Key Stakeholders
 
-- Nadja
-- Marisa
-- Seeker and email-marketing stakeholders
+- Marisa, representing the need for campaign variety and coordinating new test tickets
+- Nadja, producing the animation variants for testing
+- Seeker and email-marketing stakeholders using the resulting formats
 
-## Important Developments
+## Confirmed Direction and Decisions
 
-- May 2026: Initiated a more strategic approach to recurring GIF requests.
-- June 2026: Defined the direction as impact testing first, template library second and agent-supported automation later.
+- The first question is not which creative concept performs best, but how much animation is enough.
+- Phase 1 tests four motion-intensity levels with nearly identical content:
+  - static;
+  - minimal motion;
+  - moderate motion;
+  - story motion, with the same elements appearing sequentially.
+- Content or angle testing should not be mixed with motion-intensity testing in the first round.
+- Marisa's need for visual variety is valid, but it should be addressed through systematic variants based on tested winners rather than completely new high-effort concepts for every email.
+- Nadja's production workload should be protected through reusable patterns and clearly defined intensity levels.
+- Phase 2 is to build a small reusable motion library based on the best-performing direction.
+- A later stage may standardize planning, production, documentation, or reuse through an AI- or agent-supported workflow.
 
-## Decisions
+## Recent Developments
 
-- Do not automate every animation request before understanding which formats create value.
-- Use test results to define reusable animation levels and templates.
+- Initial test results were received, but they are not yet significant enough.
+- A follow-up meeting with Marisa and Nadja confirmed that further testing is required.
+- Marisa created new tickets so Nadja can prepare the next animation variants.
+- Marisa is considering whether she wants to build an AI-supported solution for planning, documenting, and managing future test results.
 
 ## Risks and Open Questions
 
-- No confirmed test results are recorded.
-- The After Effects library and agent implementation status are unknown.
-- Current ownership and priority need confirmation.
+- Additional test volume is required before a reliable winning intensity level can be identified.
+- It is not yet decided when the project can move from testing into the reusable motion-library phase.
+- The scope and ownership of a possible AI-supported test-management solution are still open.
+- The final stakeholder-ready format for presenting the testing approach may still need refinement.
 
 ## Next Steps
 
-Confirm whether testing took place, whether a reusable library exists, and whether the project is still active.
+1. Nadja creates the next animation variants from Marisa's tickets.
+2. The team runs further tests using content-consistent variants with different motion intensities.
+3. Results are documented and evaluated before selecting a preferred intensity direction.
+4. The winning direction is translated into a small reusable motion library.
+5. Marisa evaluates whether an AI-supported solution for test planning and documentation is worthwhile.
 
 ## Last Confirmed
 
-June 2026 historical summary; current status needs confirmation.
+Latest project handover and follow-up meeting with Marisa and Nadja, July 2026.
