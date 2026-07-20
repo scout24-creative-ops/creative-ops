@@ -18,9 +18,9 @@ Read this file first, then load only the context relevant to the task. Agent beh
 - [LOFT automation](projects/loft-automation.md)
 - [Contentful Marketing MVP](projects/contentful-marketing-mvp.md)
 - [Design Library and Builder Library](projects/design-library.md)
-- [AI Hub and Agent Library](projects/ai-hub.md)
-- [Marketing AI Survey](projects/marketing-ai-survey.md)
-- [GIF Automation](projects/gif-automation.md)
+- [Creative Hub](projects/ai-hub.md)
+- [AI Team-Check](projects/marketing-ai-survey.md)
+- [GIF Animation](projects/gif-automation.md)
 - [Chart Agent](projects/chart-agent.md)
 
 ## Weekly Documentation
