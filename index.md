@@ -9,6 +9,7 @@ Read this file first, then load only the context relevant to the task. Agent beh
 - [Role and working focus](profile/dominik-role.md)
 - [Relevant organization](organization/org-chart.md)
 - [GitHub and workspace setup](github-setup/github-context.md)
+- [Communication standards](profile/communication/README.md)
 
 ## Active Projects
 
