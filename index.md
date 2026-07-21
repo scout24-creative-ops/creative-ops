@@ -23,6 +23,7 @@ Read this file first, then load only the context relevant to the task. Agent beh
 - [AI Team-Check](projects/marketing-ai-survey.md)
 - [GIF Animation](projects/gif-automation.md)
 - [Chart Agent](projects/chart-agent.md)
+- [Brand Agent – Tone of Voice](projects/brand-agent.md)
 
 ## Weekly Documentation
 
