@@ -23,7 +23,11 @@ Further conversations planned for this week:
 
 The interviews show significant differences in AI usage and maturity across Marketing. Some colleagues use ChatGPT and self-built agents as a regular part of their work, while others mainly use AI for individual tasks such as writing, research, summaries or variations. Connected end-to-end workflows remain uncommon.
 
-The findings are intended to be consolidated into a visual dashboard that communicates the overall Marketing picture without team-based or person-based evaluation.
+The findings are being consolidated into a visual management presentation in the form of an HTML landing page. The presentation is intentionally reduced, avoids team- or person-based evaluation, and translates the qualitative findings into a clear narrative rather than a technical dashboard.
+
+The current narrative is structured around current status, positive evidence, reasons for limited shared impact, required conditions, concrete next steps, strategic focus topics and a final target picture. The working direction for the opening is a neutral Team-Check hero followed by a large dark status card showing three condensed dimensions: breadth of use, depth of use and existing specialized solutions that are not yet sufficiently connected.
+
+The presentation is still work in progress. The latest local HTML draft remains the implementation source and has not yet been finalized or added as technical project code to this context repository.
 
 Following alignment with Jorin on 2026-07-21, the next strategic step is to design a binding, multi-week AI enablement and working format for the unit. The shared objective is to raise practical AI maturity from approximately 4 to 7 before concentrating mainly on a small number of advanced lighthouse projects.
 
@@ -137,12 +141,15 @@ Exact weekday, session length, total number of sessions, speakers, group composi
 - July 2026: Completed five conversations and scheduled two additional interviews for the current week.
 - 2026-07-21: Jorin agreed with Dominik's diagnosis and supported a binding unit-wide AI enablement format.
 - 2026-07-21: Jorin confirmed Dominik as the appropriate fachlicher Lead for the topic through expertise, enablement and influence without operational people-management responsibility.
+- 2026-07-21: Dominik developed an initial HTML landing-page presentation for the Team-Check results. The presentation uses the official unit name `Marketing & Communications`, keeps agents as supporting evidence rather than the main story and remains unfinished.
 
 ## Decisions
 
 - Base future enablement and AI priorities on observed needs rather than assumptions.
 - Do not evaluate or rank individual teams or colleagues.
 - Present the findings as a concise visual management dashboard.
+- Use qualitative visualizations without unsupported numerical precision.
+- Keep agents and individual solutions as evidence of activity, not as the core narrative.
 - Focus Dominik's support on overview, enablement, reusable standards and high-impact projects rather than becoming the permanent agent builder for all teams.
 - Treat visibility and reuse of existing solutions as a major improvement area.
 - Prioritize broad practical enablement before focusing mainly on advanced lighthouse projects.
@@ -154,7 +161,8 @@ Exact weekday, session length, total number of sessions, speakers, group composi
 ## Risks and Open Questions
 
 - The remaining interviews may add or change the current patterns.
-- The final dashboard structure has not yet been completed.
+- The final presentation structure and visual design are not yet completed.
+- The latest HTML implementation currently exists only as a local working draft and is not yet maintained as technical project code in a dedicated repository.
 - The long-term process for keeping the Marketing AI overview current is not yet defined.
 - Exact schedule, duration, contributors and working-group setup for the enablement format are not yet final.
 - Success criteria for measuring progress from approximately 4 to 7 still need to be defined.
@@ -164,7 +172,8 @@ Exact weekday, session length, total number of sessions, speakers, group composi
 
 - Complete the planned conversations with Andreas Böhm and Mohamed Sharia Rahim.
 - Consolidate the interview findings into a small number of cross-team themes.
-- Build the visual dashboard without person- or team-based scoring.
+- Finalize the visual results presentation without person- or team-based scoring.
+- Decide whether the final HTML presentation should receive a dedicated technical home once its structure is stable.
 - Develop the concept for the binding AI enablement and working series during Jorin's vacation.
 - Define objective, phases, practical working model, handling of uncertainty, group setup, expected outputs and consolidation process.
 - Align the concept with Jorin after his return.
