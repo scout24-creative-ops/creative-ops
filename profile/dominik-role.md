@@ -57,6 +57,10 @@ Wichtig für die Zusammenarbeit:
 - Arbeit transparent machen
 - Projekte verständlich und überzeugend vermitteln
 
+Im Juli 2026 bestätigte Jorin Dominik ausdrücklich als geeigneten fachlichen Lead für die AI-Entwicklung der Unit. Von Dominik wird erwartet, ein verbindliches Enablement-Format zu konzipieren, Orientierung zu schaffen, Wissen weiterzugeben, Menschen und vorhandene Kompetenzen zu verbinden und aus dezentralen Experimenten später wenige strategisch relevante, teamübergreifende Initiativen zu entwickeln.
+
+Jorin versteht dies als Leadership durch Expertise, Enablement und Einfluss ohne operative Personalverantwortung. Jorin schafft dafür die organisatorische Legitimation und geschützte Zeit; Dominik übernimmt die fachliche Konzeption und Führung.
+
 ## Rollenverständnis
 Dominik ist nicht der dauerhafte „Agent-Bauer für alle Teams“.
 
@@ -67,5 +71,8 @@ Seine Rolle ist:
 - Teams enablen
 - strategische Themen mit hohem Hebel unterstützen
 - nachhaltige Lösungen statt Einzellösungen fördern
+- AI-Transformation innerhalb der Unit fachlich führen
+- praktische Lern- und Arbeitsformate entwickeln
+- aus Einzelideen gemeinsame Prioritäten und skalierbare Lösungen ableiten
 
 Dominiks Beitrag zu Automationsprojekten soll möglichst über den einzelnen Use Case hinausgehen. Technische MVPs wie HeyImmo und LOFT sollen wiederverwendbare Muster, Module und Entscheidungsgrundlagen für weitere Teams schaffen.
