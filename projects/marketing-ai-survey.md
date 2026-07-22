@@ -173,7 +173,7 @@ Exact weekday, session length, total number of sessions, speakers, group composi
 - Exact schedule, duration, contributors and working-group setup for the enablement format are not yet final.
 - Success criteria for measuring progress from approximately 4 to 7 still need to be defined.
 - It remains to be decided which outputs will become concrete lighthouse initiatives after the enablement phase.
-- The content-agent and Linear-reporting opportunities are still discovery topics; scope, ownership, data access and technical feasibility are not yet confirmed.
+- The content-agent and Linear-reporting opportunities are still early discovery topics; current status, ownership, support needs and technical feasibility are not yet confirmed.
 
 ## Next Steps
 
@@ -187,8 +187,9 @@ Exact weekday, session length, total number of sessions, speakers, group composi
 - Jorin introduces the format to the team leads and reserves protected time through a calendar series.
 - Plan the joint kick-off, internal contributors and first working sessions.
 - After the enablement phase, select a small number of larger cross-team initiatives.
-- Speak with Yvonne and Steffi to understand the current content-agent work, reduce the scope to a realistic MVP and agree the first useful function.
-- Assess the Linear reporting use case as a discovery task: clarify the current sources, manual effort, desired output, potential owner and whether an AI-supported MVP is feasible.
+- Wait for Andreas to speak with Yvonne and Steffi and announce Dominik's offer to support them.
+- Ask Andreas for a status update no later than the following week. If no contact has happened yet, invite Yvonne and Steffi, probably separately, to short discovery kick-offs.
+- Use the first conversations only to understand the current status, previous work, open questions, support needs and relevant reporting context. Do not define an MVP or implementation scope yet.
 
 ## Last Confirmed
 
