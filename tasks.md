@@ -2,6 +2,20 @@
 
 ## Open
 
+- [ ] Set up the Public publishing repository and workflow
+  - Area: AI-supported work organization system
+  - Status: Open
+  - Next step: Initialize or connect the local `Public` folder as `scout24-creative-ops/public`, add the repository instructions and publishing structure, then configure and verify GitHub Pages.
+  - Context: Original files should remain in their project repositories. Public copies should use stable destination paths and metadata linking back to the source repository and source path.
+  - Source: Dominik confirmed implementation on 2026-07-22
+
+- [ ] Retire the legacy shared folder safely
+  - Area: AI-supported work organization system
+  - Status: Open
+  - Next step: Search the workspace for references to `shared`, migrate any still-needed files or links to `Public`, verify dependencies and public URLs, and delete `shared` only after the checks pass.
+  - Context: Codex should remove the old folder without breaking existing references or publishing paths.
+  - Source: Dominik confirmed implementation on 2026-07-22
+
 - [ ] Develop the concept for the binding AI enablement and working series
   - Area: AI Team-Check
   - Status: Open
