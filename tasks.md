@@ -37,6 +37,13 @@
   - Context: The current MVP hypothesis is still a proposal. Marie owns implementation; Dominik provides structure, prioritization and quality guidance.
   - Source: Project alignment on 2026-07-21
 
+- [ ] Re-establish the recurring alignment setup with Allan and Lars
+  - Area: Stakeholder alignment
+  - Status: Open
+  - Next step: Align with Allan and Lars on whether future check-ins should be separate or joint and agree a useful cadence before creating new recurring calendar series.
+  - Context: The recurring meetings appear to have been cancelled entirely when they were paused for Dominik's vacation. The previous rhythm is uncertain; likely every two weeks for 45 minutes with Allan and monthly with Lars.
+  - Source: Dominik confirmed the task on 2026-07-22
+
 ## Waiting
 
 - [ ] Align the AI enablement concept with Jorin
