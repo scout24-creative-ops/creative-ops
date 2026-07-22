@@ -44,6 +44,13 @@
   - Context: The recurring meetings appear to have been cancelled entirely when they were paused for Dominik's vacation. The previous rhythm is uncertain; likely every two weeks for 45 minutes with Allan and monthly with Lars.
   - Source: Dominik confirmed the task on 2026-07-22
 
+- [ ] Check in with Mukhammadjon on the Contentful implementation progress
+  - Area: Contentful Marketing MVP
+  - Status: Open
+  - Next step: Send Mukhammadjon a Slack message during KW31 asking how far the Contentful work has progressed, whether anything is blocked and whether support or clarification is needed.
+  - Context: Bea expects Mukhammadjon to start working on the Landing Page Builder integration for Contentful in KW31. Dominik wants to maintain visible follow-up and make sure the implementation is actively progressing before the first possible end-to-end tests after 2026-08-10.
+  - Source: Bea's Slack update and Dominik's confirmation on 2026-07-22
+
 ## Waiting
 
 - [ ] Align the AI enablement concept with Jorin
