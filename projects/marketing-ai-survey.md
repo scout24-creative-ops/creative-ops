@@ -15,10 +15,10 @@ The Marketing AI Landscape Check is in progress. Dominik has completed conversat
 - Lennart Dannenberg
 - Alexander Penkin
 - Franziska Stober
-
-Further conversations planned for this week:
-
 - Andreas Böhm
+
+One further conversation remains planned:
+
 - Mohamed Sharia Rahim (Shari)
 
 The interviews show significant differences in AI usage and maturity across Marketing. Some colleagues use ChatGPT and self-built agents as a regular part of their work, while others mainly use AI for individual tasks such as writing, research, summaries or variations. Connected end-to-end workflows remain uncommon.
@@ -85,6 +85,8 @@ Jorin provides leadership backing, organizational legitimacy and protected time.
 - Missing criteria for deciding whether an agent is worth the required build and maintenance effort.
 - AI activity runs beside daily business instead of having protected working time.
 - Some colleagues experience uncertainty or fear about how AI may change their roles.
+- Large ideas often become broad platform concepts before a stable first MVP exists.
+- Disconnected systems can leave significant manual follow-up work even when individual steps are automated.
 
 ### Enablement Needs
 
@@ -95,6 +97,7 @@ Jorin provides leadership backing, organizational legitimacy and protected time.
 - Not every team should be expected to build its own agents; support should combine self-service, sparring and focused strategic project support.
 - The unit needs a shared learning experience that combines orientation, experimentation and concrete work.
 - The transformation should take uncertainty seriously while maintaining a clear expectation that everyone actively engages with AI.
+- Teams need support defining rules, success criteria and ownership so that agents become reliable rather than remain one-off experiments.
 
 ### Opportunities and Potential Lighthouse Themes
 
@@ -105,6 +108,8 @@ Jorin provides leadership backing, organizational legitimacy and protected time.
 - Easier self-service access to company and market data.
 - Personalized marketing and communication based on business events, customer data and AI-generated content.
 - Reusable presentation, PDF, event and asset-generation support.
+- Content-marketing support that knows products, existing content and production history and can generate coordinated UGC briefs, newsletter ideas and content-page input.
+- Automated reporting that combines Linear, spreadsheets and other operational sources into recurring summaries of assets, webinars, events and team output.
 
 ## Agreed Enablement Model
 
@@ -138,7 +143,8 @@ Exact weekday, session length, total number of sessions, speakers, group composi
 - July 2026: Confirmed that the output should be an anonymized overall picture rather than a team ranking.
 - July 2026: Identified recurring barriers around time, knowledge, orientation and visibility of existing tools.
 - July 2026: Identified several potential shared solutions and lighthouse projects, including PR Intelligence, Tone of Voice, brand checks, data access and personalized automation.
-- July 2026: Completed five conversations and scheduled two additional interviews for the current week.
+- July 2026: Completed the conversation with Andreas Böhm; only the interview with Shari remains open.
+- July 2026: Andreas' interview reinforced the need to reduce broad content-agent concepts to small MVPs and highlighted overlapping initiatives, process dependencies and manual reporting as relevant cross-team issues.
 - 2026-07-21: Jorin agreed with Dominik's diagnosis and supported a binding unit-wide AI enablement format.
 - 2026-07-21: Jorin confirmed Dominik as the appropriate fachlicher Lead for the topic through expertise, enablement and influence without operational people-management responsibility.
 - 2026-07-21: Dominik developed an initial HTML landing-page presentation for the Team-Check results. The presentation uses the official unit name `Marketing & Communications`, keeps agents as supporting evidence rather than the main story and remains unfinished.
@@ -160,17 +166,18 @@ Exact weekday, session length, total number of sessions, speakers, group composi
 
 ## Risks and Open Questions
 
-- The remaining interviews may add or change the current patterns.
+- The remaining interview may add or change the current patterns.
 - The final presentation structure and visual design are not yet completed.
 - The latest HTML implementation currently exists only as a local working draft and is not yet maintained as technical project code in a dedicated repository.
 - The long-term process for keeping the Marketing AI overview current is not yet defined.
 - Exact schedule, duration, contributors and working-group setup for the enablement format are not yet final.
 - Success criteria for measuring progress from approximately 4 to 7 still need to be defined.
 - It remains to be decided which outputs will become concrete lighthouse initiatives after the enablement phase.
+- The content-agent and Linear-reporting opportunities are still discovery topics; scope, ownership, data access and technical feasibility are not yet confirmed.
 
 ## Next Steps
 
-- Complete the planned conversations with Andreas Böhm and Mohamed Sharia Rahim.
+- Complete the planned conversation with Mohamed Sharia Rahim.
 - Consolidate the interview findings into a small number of cross-team themes.
 - Finalize the visual results presentation without person- or team-based scoring.
 - Decide whether the final HTML presentation should receive a dedicated technical home once its structure is stable.
@@ -180,7 +187,9 @@ Exact weekday, session length, total number of sessions, speakers, group composi
 - Jorin introduces the format to the team leads and reserves protected time through a calendar series.
 - Plan the joint kick-off, internal contributors and first working sessions.
 - After the enablement phase, select a small number of larger cross-team initiatives.
+- Speak with Yvonne and Steffi to understand the current content-agent work, reduce the scope to a realistic MVP and agree the first useful function.
+- Assess the Linear reporting use case as a discovery task: clarify the current sources, manual effort, desired output, potential owner and whether an AI-supported MVP is feasible.
 
 ## Last Confirmed
 
-2026-07-21.
+2026-07-22.
