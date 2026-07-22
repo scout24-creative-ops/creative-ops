@@ -82,6 +82,11 @@
   - Status: Suggestion
   - Reason: A regular review and update rhythm would help the hub remain active and current without shifting ongoing operational ownership to Dominik.
 
+- [ ] Follow up with Eve and Peter on the Creative Hub wireframe
+  - Area: Creative Hub
+  - Status: Suggestion
+  - Reason: The concept and published wireframe have been shared. If no response comes, Dominik should follow up next week and propose a short brainstorming session to agree the smallest useful first version.
+
 - [ ] Turn the Agent Process Guide into a reusable standard after practical use
   - Area: AI Enablement
   - Status: Suggestion
