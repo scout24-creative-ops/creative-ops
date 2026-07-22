@@ -1,6 +1,6 @@
 # Relevanter Organisationskontext – vollständig
 
-Stand: 14.07.2026
+Stand: 22.07.2026
 
 Diese Datei ist die maßgebliche Version für Dominiks relevante Organisations- und Zusammenarbeitsstruktur.
 
@@ -22,6 +22,15 @@ Alle direkten Reports sind für Dominiks Arbeit relevant:
 - Dominik Böhme — Creative Operations & Digital Transformation Lead
 - Franziska Stober — Senior Event & Project Manager
 - Marie-Luis Fischbach — Lead Marketing Manager
+
+### PR & Corporate Communications unter Lennart Dannenberg
+Bestätigtes Team:
+
+- Arne Hartwig — PR & Communications Manager
+- Hannah Miller — Working Student
+- Johanna Fitschen — PR & Communications Manager
+- Theresa Lewandowski — Senior Manager Corporate Communications
+- Viktoria Götte — Senior Manager Corporate Communications
 
 ## Bereich unter Ali Izhar Ahmed
 
