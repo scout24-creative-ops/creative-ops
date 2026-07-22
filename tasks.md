@@ -2,20 +2,6 @@
 
 ## Open
 
-- [ ] Set up the Public publishing repository and workflow
-  - Area: AI-supported work organization system
-  - Status: Open
-  - Next step: Initialize or connect the local `Public` folder as `scout24-creative-ops/public`, add the repository instructions and publishing structure, then configure and verify GitHub Pages.
-  - Context: Original files should remain in their project repositories. Public copies should use stable destination paths and metadata linking back to the source repository and source path.
-  - Source: Dominik confirmed implementation on 2026-07-22
-
-- [ ] Retire the legacy shared folder safely
-  - Area: AI-supported work organization system
-  - Status: Open
-  - Next step: Search the workspace for references to `shared`, migrate any still-needed files or links to `Public`, verify dependencies and public URLs, and delete `shared` only after the checks pass.
-  - Context: Codex should remove the old folder without breaking existing references or publishing paths.
-  - Source: Dominik confirmed implementation on 2026-07-22
-
 - [ ] Develop the concept for the binding AI enablement and working series
   - Area: AI Team-Check
   - Status: Open
@@ -74,6 +60,11 @@
 
 ## Suggestions
 
+- [ ] Remove the checked legacy `Shared` folder
+  - Area: AI-supported work organization system
+  - Status: Suggestion
+  - Reason: The folder was checked and contains no relevant files or active references. Removing it would simplify the workspace, but it is not required for the Public publishing workflow.
+
 - [ ] Define selection and quality criteria for Creative Hub entries
   - Area: Creative Hub
   - Status: Suggestion
@@ -90,6 +81,11 @@
   - Reason: The guide already covers kick-off, MVP definition, build support, testing and handover. Improving it from real project experience could create a reusable working standard for future agent initiatives.
 
 ## Completed
+
+- [x] Set up the Public publishing repository and workflow
+  - Area: AI-supported work organization system
+  - Completed: 2026-07-22
+  - Outcome: `scout24-creative-ops/public`, the project-based publication structure, metadata and hash checks, GitHub Pages and the first Creative Hub publication were configured, tested and made live.
 
 - [x] Complete the AI Team-Check interview with Andreas Böhm
   - Area: AI Team-Check
