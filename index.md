@@ -6,6 +6,7 @@ Read this file first, then load only the context relevant to the task. Agent beh
 
 ## Core Context
 
+- [Central tasks](tasks.md)
 - [Role and working focus](profile/dominik-role.md)
 - [Relevant organization](organization/org-chart.md)
 - [GitHub and workspace setup](github-setup/github-context.md)
@@ -32,6 +33,7 @@ Read this file first, then load only the context relevant to the task. Agent beh
 
 ## Information Model
 
+- `tasks.md` contains confirmed tasks, waiting items, derived suggestions and completed work.
 - `documentation/` records every work-relevant update for the current week.
 - `projects/` contains only durable project knowledge.
 - `profile/`, `organization/`, and `github-setup/` contain durable context for their respective areas.
