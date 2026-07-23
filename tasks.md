@@ -2,12 +2,12 @@
 
 ## Open
 
-- [ ] Develop the concept for the binding AI enablement and working series
-  - Area: AI Team-Check
-  - Status: Open
-  - Next step: Draft the objective, phases, practical working model, handling of uncertainty, group setup, expected outputs and consolidation process for alignment after Jorin's return.
-  - Context: Jorin and Dominik agreed on a multi-week format with leadership backing and protected working time. Dominik is responsible for the concept and content leadership.
-  - Source: Alignment with Jorin on 2026-07-21
+- [ ] Develop the concept for the binding AI enablement series
+  - Area: AI Enablement
+  - Status: Partially complete
+  - Next step: Complete the decision-ready concept, including the final session rhythm, participant setup, slide templates, update-agent MVP and consolidation approach for alignment after Jorin's return.
+  - Context: A first series architecture has been developed with a kick-off, one shared agent-MVP session, pre-alignment of initiatives, an official project presentation, recurring topic and update sessions, and later consolidation. The visual one-page overview is being refined.
+  - Source: Alignment with Jorin on 2026-07-21 and concept work on 2026-07-23
 
 - [ ] Complete the remaining AI Team-Check interview with Mohamed Sharia Rahim
   - Area: AI Team-Check
@@ -20,7 +20,7 @@
   - Area: AI Team-Check
   - Status: Open
   - Next step: Reduce the interview findings to a small number of recurring barriers, enablement needs and strategic opportunity themes.
-  - Context: The consolidated themes are needed for the management view and the enablement concept.
+  - Context: The consolidated themes are needed for the management view and provide input to the separate AI Enablement project.
   - Source: Project next steps confirmed on 2026-07-22
 
 - [ ] Finalize the visual AI Team-Check results presentation
@@ -53,11 +53,11 @@
 
 ## Waiting
 
-- [ ] Align the AI enablement concept with Jorin
-  - Area: AI Team-Check
+- [ ] Align the AI Enablement concept with Jorin
+  - Area: AI Enablement
   - Status: Waiting for another person or decision
   - Waiting for: Jorin's return and concept alignment
-  - Dominik's next step: Prepare a decision-ready first concept during Jorin's vacation.
+  - Dominik's next step: Complete the decision-ready concept and visual overview during Jorin's vacation.
 
 - [ ] Follow up on the introductions to Yvonne and Steffi
   - Area: AI Team-Check
