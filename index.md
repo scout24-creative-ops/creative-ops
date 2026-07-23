@@ -22,6 +22,7 @@ Read this file first, then load only the context relevant to the task. Agent beh
 - [Design Library and Builder Library](projects/design-library.md)
 - [Creative Hub](projects/ai-hub.md)
 - [AI Team-Check](projects/marketing-ai-survey.md)
+- [AI Enablement](projects/ai-enablement.md)
 - [GIF Animation](projects/gif-automation.md)
 - [Chart Agent](projects/chart-agent.md)
 - [Brand Agent – Tone of Voice](projects/brand-agent.md)
