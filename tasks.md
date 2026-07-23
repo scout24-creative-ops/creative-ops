@@ -96,8 +96,8 @@
 
 - [x] Set up the Public publishing repository and workflow
   - Area: AI-supported work organization system
-  - Completed: 2026-07-22
-  - Outcome: `scout24-creative-ops/public`, the project-based publication structure, metadata and hash checks, GitHub Pages and the first Creative Hub publication were configured, tested and made live.
+  - Completed: 2026-07-23
+  - Outcome: `scout24-creative-ops/public`, the project-based publication structure, metadata and hash checks, GitHub Pages and workspace-wide Codex routing were configured and tested. An explicit publish command from a source project now starts the Public workflow, reports the expected direct link and requests separate approval before commit and push.
 
 - [x] Complete the AI Team-Check interview with Andreas Böhm
   - Area: AI Team-Check
