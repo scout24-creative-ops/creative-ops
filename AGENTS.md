@@ -124,6 +124,21 @@ Project files should stay compact and useful for future tasks. Prefer these sect
 
 Do not fill empty sections with invented details. Historical next steps must not be presented as current unless reconfirmed.
 
+## Weekly Summary Format
+
+When creating a weekly summary for colleagues:
+
+1. Write the complete summary in English.
+2. Start with `Dominik` on its own line.
+3. Use the headings `This week’s progress` and `Next steps`.
+4. Use one bullet per project or workstream. Do not split one project across several bullets.
+5. Start each bullet with one relevant emoji, followed by the official project name in bold, an en dash, and a compact description.
+6. Include all relevant workstreams rather than forcing the recap into a fixed number of projects.
+7. Keep `Next steps` very short and limit the section to a maximum of five bullets.
+8. If more than five next steps are materially important, select the five most relevant and add a brief note that another important next step was omitted from the compact list.
+9. Exclude internal work-organization, repository-setup, or publishing-infrastructure topics from colleague-facing summaries unless Dominik explicitly asks to include them.
+10. Treat Dominik's Slack post from 2026-07-23 as the current formatting reference: compact, factual, easy to scan, and ready to paste into Slack.
+
 ## Privacy and Safety
 
 - This repository contains internal and potentially confidential working information.
