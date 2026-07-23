@@ -2,13 +2,15 @@
 
 ## Purpose
 
-Understand the current state of AI use across Marketing and Communications, identify successful practices, recurring barriers and larger opportunities, and translate the findings into practical priorities for enablement, shared solutions and lighthouse projects.
+Understand the current state of AI use across Marketing and Communications, identify successful practices, recurring barriers and larger opportunities, and translate the findings into practical priorities.
 
 The initiative is not intended to rank teams or individuals. Its purpose is to create an anonymized overall picture of where Marketing currently stands and where focused support could create the most value.
 
+The AI Team-Check is the diagnostic and evidence-gathering initiative. The practical follow-up is maintained separately in the [AI Enablement](ai-enablement.md) project.
+
 ## Current Status
 
-The Marketing AI Landscape Check is in progress. Dominik has completed conversations with:
+Dominik has completed conversations with:
 
 - Juliane Bischoff
 - Christoph Pape
@@ -29,25 +31,22 @@ The current narrative is structured around current status, positive evidence, re
 
 The presentation is still work in progress. The latest local HTML draft remains the implementation source and has not yet been finalized or added as technical project code to this context repository.
 
-Following alignment with Jorin on 2026-07-21, the next strategic step is to design a binding, multi-week AI enablement and working format for the unit. The shared objective is to raise practical AI maturity from approximately 4 to 7 before concentrating mainly on a small number of advanced lighthouse projects.
+Following alignment with Jorin on 2026-07-21, the findings became the rationale and input for the separate AI Enablement project. The Team-Check itself remains focused on completing and communicating the diagnosis.
 
 ## Dominik's Role
 
 Dominik initiated and conducts the Landscape Check in response to Jorin's expectation that he create more overview and influence around AI development in Marketing and Communications.
 
-His role is to:
+His role in this project is to:
 
 - understand the actual status and needs across teams
 - identify recurring barriers and opportunities
 - make existing solutions more visible
 - distinguish small individual use cases from larger strategic opportunities
-- translate findings into enablement priorities, shared standards and potential lighthouse projects
-- provide an overall management view rather than act as a permanent builder for every individual team request
-- design and lead the new unit-wide AI enablement format
-- connect people, existing expertise and reusable solutions
-- guide the transition from decentralized experimentation to a few shared strategic initiatives
+- translate findings into a concise management view and useful input for AI Enablement
+- avoid acting as a permanent builder for every individual team request
 
-Jorin provides leadership backing, organizational legitimacy and protected time. Dominik leads the concept, content, enablement and practical development of the format.
+The design and leadership of the recurring enablement format are maintained in the separate AI Enablement project.
 
 ## Key Stakeholders
 
@@ -111,32 +110,6 @@ Jorin provides leadership backing, organizational legitimacy and protected time.
 - Content-marketing support that knows products, existing content and production history and can generate coordinated UGC briefs, newsletter ideas and content-page input.
 - Automated reporting that combines Linear, spreadsheets and other operational sources into recurring summaries of assets, webinars, events and team output.
 
-## Agreed Enablement Model
-
-Jorin and Dominik agreed on a two-stage model:
-
-1. **Broad practical enablement:** Employees gain hands-on experience, identify concrete problems, learn from existing solutions and build initial small agents or workflows where useful.
-2. **Consolidation and strategic focus:** Results are reviewed, duplicate or unnecessary agents are removed, reusable ideas are combined and a small number of larger cross-team projects are selected.
-
-The format should be a binding, recurring learning and working series over several weeks. It should include:
-
-- a joint kick-off led by Jorin and Dominik
-- strategic framing and commitment from Jorin
-- content leadership and facilitation from Dominik
-- practical demonstrations by experienced internal users
-- protected working time rather than presentation-only sessions
-- mixed cross-team groups where useful
-- work on concrete problems and use cases
-- review and consolidation of outputs at the end
-
-Possible preparation questions for participants:
-
-- Which agents or AI solutions do I already use?
-- Which agent or AI support would I want for my own work?
-- Which useful agent idea do I have for another team or department?
-
-Exact weekday, session length, total number of sessions, speakers, group composition and final lighthouse projects remain open until the concept is aligned after Jorin's return.
-
 ## Important Developments
 
 - July 2026: Started structured conversations across Marketing and Communications.
@@ -146,8 +119,9 @@ Exact weekday, session length, total number of sessions, speakers, group composi
 - July 2026: Completed the conversation with Andreas Böhm; only the interview with Shari remains open.
 - July 2026: Andreas' interview reinforced the need to reduce broad content-agent concepts to small MVPs and highlighted overlapping initiatives, process dependencies and manual reporting as relevant cross-team issues.
 - 2026-07-21: Jorin agreed with Dominik's diagnosis and supported a binding unit-wide AI enablement format.
-- 2026-07-21: Jorin confirmed Dominik as the appropriate fachlicher Lead for the topic through expertise, enablement and influence without operational people-management responsibility.
+- 2026-07-21: Jorin confirmed Dominik as the appropriate fachlicher Lead for the broader AI development topic through expertise, enablement and influence without operational people-management responsibility.
 - 2026-07-21: Dominik developed an initial HTML landing-page presentation for the Team-Check results. The presentation uses the official unit name `Marketing & Communications`, keeps agents as supporting evidence rather than the main story and remains unfinished.
+- 2026-07-23: AI Enablement was separated into its own project. The Team-Check remains the diagnostic source and management view.
 
 ## Decisions
 
@@ -158,11 +132,7 @@ Exact weekday, session length, total number of sessions, speakers, group composi
 - Keep agents and individual solutions as evidence of activity, not as the core narrative.
 - Focus Dominik's support on overview, enablement, reusable standards and high-impact projects rather than becoming the permanent agent builder for all teams.
 - Treat visibility and reuse of existing solutions as a major improvement area.
-- Prioritize broad practical enablement before focusing mainly on advanced lighthouse projects.
-- Use a binding format with protected time and leadership backing.
-- Combine learning and experimentation with later consolidation and strategic prioritization.
-- Jorin introduces and legitimizes the format through the team leads and calendar series.
-- Dominik develops the concept during Jorin's vacation and leads the content of the program.
+- Maintain the practical AI Enablement series as a separate project while keeping the Team-Check as its evidence base.
 
 ## Risks and Open Questions
 
@@ -170,9 +140,7 @@ Exact weekday, session length, total number of sessions, speakers, group composi
 - The final presentation structure and visual design are not yet completed.
 - The latest HTML implementation currently exists only as a local working draft and is not yet maintained as technical project code in a dedicated repository.
 - The long-term process for keeping the Marketing AI overview current is not yet defined.
-- Exact schedule, duration, contributors and working-group setup for the enablement format are not yet final.
-- Success criteria for measuring progress from approximately 4 to 7 still need to be defined.
-- It remains to be decided which outputs will become concrete lighthouse initiatives after the enablement phase.
+- Success criteria for measuring progress from approximately 4 to 7 still need to be defined across the broader AI development effort.
 - The content-agent and Linear-reporting opportunities are still early discovery topics; current status, ownership, support needs and technical feasibility are not yet confirmed.
 
 ## Next Steps
@@ -181,16 +149,11 @@ Exact weekday, session length, total number of sessions, speakers, group composi
 - Consolidate the interview findings into a small number of cross-team themes.
 - Finalize the visual results presentation without person- or team-based scoring.
 - Decide whether the final HTML presentation should receive a dedicated technical home once its structure is stable.
-- Develop the concept for the binding AI enablement and working series during Jorin's vacation.
-- Define objective, phases, practical working model, handling of uncertainty, group setup, expected outputs and consolidation process.
-- Align the concept with Jorin after his return.
-- Jorin introduces the format to the team leads and reserves protected time through a calendar series.
-- Plan the joint kick-off, internal contributors and first working sessions.
-- After the enablement phase, select a small number of larger cross-team initiatives.
+- Provide the final findings as input to the AI Enablement project and later strategic prioritization.
 - Wait for Andreas to speak with Yvonne and Steffi and announce Dominik's offer to support them.
 - Ask Andreas for a status update no later than the following week. If no contact has happened yet, invite Yvonne and Steffi, probably separately, to short discovery kick-offs.
 - Use the first conversations only to understand the current status, previous work, open questions, support needs and relevant reporting context. Do not define an MVP or implementation scope yet.
 
 ## Last Confirmed
 
-2026-07-22.
+2026-07-23.
