@@ -1,6 +1,6 @@
 # GitHub and Workspace Context
 
-_Last reviewed: 2026-07-22_
+_Last reviewed: 2026-07-23_
 
 ## Workspace
 
@@ -10,6 +10,8 @@ _Last reviewed: 2026-07-22_
 - Creative Ops context repository: `/Users/dboehme/Projects/Creative Ops/creative-ops`
 - The former workspace path `/Users/dboehme/Projects/GPT Agents` is obsolete.
 - `creative-ops` provides cross-project documentation; project repositories remain the source of truth for their code, configuration, deployments, and implementation state.
+- A workspace-level Codex rule at `/Users/dboehme/Projects/AGENTS.md` routes explicit publication requests from direct project folders to the Public publishing workflow.
+- The workspace-level rule may be local-only unless separately versioned; its repository status must be checked directly and must not be assumed from this documentation.
 
 ## GitHub Organizations and Accounts
 
@@ -41,11 +43,12 @@ _Last reviewed: 2026-07-22_
 - Local workspace folder: `/Users/dboehme/Projects/Public`
 - Repository: `scout24-creative-ops/public`
 - GitHub Pages base URL: `https://scout24-creative-ops.github.io/public/`
-- Status on 2026-07-22: repository, project-based publishing workflow and GitHub Pages are configured, tested and live.
+- Status on 2026-07-23: repository, project-based publishing workflow, workspace-wide Codex routing and GitHub Pages are configured, tested and working.
 - Purpose: publish reviewed files through stable public web URLs while keeping original working files in their project repositories.
 - Public content is organized by the direct workspace project folder: `Public/<Project name>/<slug>/`.
 - The original working file remains the source of truth. `Public` contains only the reviewed publishing copy plus manifest and metadata linking back to the source.
 - The first verified publication is the Creative Hub wireframe at `Creative Hub/creative-hub-wireframe-index-design/`.
+- The workspace-wide flow was successfully tested from the `AI Enablement` source project with `AI-Enablement-Serie.html`.
 - The older top-level `Shared` folder was checked and contained no relevant files or references. Deletion remains optional and requires an explicit action.
 
 ### Productive assignments
@@ -74,6 +77,8 @@ _Last reviewed: 2026-07-22_
 
 - Create and edit original files in the relevant project repository or project folder.
 - Publish only through an explicit publish or republish action; do not automatically mirror files after edits or commits.
+- The normal instruction is: `Veröffentliche diese Datei.`
+- From any direct project folder below `/Users/dboehme/Projects`, Codex should load the workspace rule and then the detailed rules in `/Users/dboehme/Projects/Public/AGENTS.md`.
 - Determine the direct project folder below `/Users/dboehme/Projects` and use its exact name as the first-level Public folder.
 - Publish to `Public/<Project name>/<stable slug>/`. If the project folder already exists, add the new publication there.
 - Copy the approved artifact into `Public` while leaving the original unchanged.
@@ -83,7 +88,8 @@ _Last reviewed: 2026-07-22_
 - Keep source-project commits and Public repository commits separate.
 - For a new publication, confirm the proposed destination. For a clear republish to an existing destination, no second destination confirmation is needed.
 - Before publishing, confirm that the content is suitable for unrestricted public access and contains no confidential information, customer data, credentials or internal-only context.
-- The normal instruction is: `Veröffentliche diese Datei.`
+- After a successful local publish, Codex reports the source, Public target, publication status, Public repository link, expected GitHub Pages URL and whether commit and push are still pending.
+- Codex then asks for explicit approval before commit and push. After approval, it verifies repository, remote, branch and publication files, commits only the relevant publication changes, pushes to `main`, verifies the Pages URL and returns the working direct link.
 
 ## Sources of Truth
 
@@ -127,6 +133,7 @@ Authentication state, permissions, and credential values are not documented in t
 - Historical and legacy repository references may be required by existing pages or runtime paths.
 - The documented repository roles should not replace a direct technical check in the relevant repository.
 - GitHub Pages deployments can briefly lag behind a push; verify the deployed URL after publishing.
+- A local workspace-level `AGENTS.md` is not automatically backed up by GitHub unless it is explicitly placed under version control.
 
 ## Update Guidance
 
