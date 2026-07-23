@@ -40,6 +40,18 @@ The weekly documentation may include:
 
 The weekly file is source material, not a polished management summary. A later skill creates the short summary for Jorin in the chat. That short summary is not stored in this repository.
 
+## Summary Checkpoints
+
+Each weekly file must show which information has already been included in a completed summary and which information remains relevant for the next summary.
+
+- Keep a `Summary status` section with the date of the last completed summary.
+- Keep an `Updates since last summary` section for all work-relevant developments added after that checkpoint.
+- Advance the checkpoint only after Dominik confirms that the generated summary is the completed version. A draft does not change the checkpoint.
+- `Erstelle ein Update seit der letzten Zusammenfassung.` uses only the entries under `Updates since last summary`.
+- `Erstelle die vollständige Zusammenfassung für diese Woche.` may use the full weekly documentation, including information that was already summarized.
+- When a new calendar week begins, create the new weekly file with no completed-summary checkpoint and an empty `Updates since last summary` section.
+- The checkpoint affects summary selection only. Continue to update durable project, profile, organization, GitHub and task context normally.
+
 ## Bootstrap and Migration Exception
 
 During the initial repository setup, cleanup, migration, or retrospective consolidation of historical information, do not create or update the current weekly documentation merely because the information is being discussed now.
@@ -97,7 +109,7 @@ When Dominik provides new information:
 
 1. Identify the current calendar week.
 2. Read or create the matching file in `documentation/`.
-3. Record the work-relevant update there.
+3. Record the work-relevant update in `Updates since last summary` when a checkpoint exists.
 4. Identify affected context areas and projects.
 5. Read only the relevant durable-context files.
 6. Update them only when the information has lasting relevance.
@@ -138,6 +150,8 @@ When creating a weekly summary for colleagues:
 8. If more than five next steps are materially important, select the five most relevant and add a brief note that another important next step was omitted from the compact list.
 9. Exclude internal work-organization, repository-setup, or publishing-infrastructure topics from colleague-facing summaries unless Dominik explicitly asks to include them.
 10. Treat Dominik's Slack post from 2026-07-23 as the current formatting reference: compact, factual, easy to scan, and ready to paste into Slack.
+11. For a delta summary, use only `Updates since last summary`. For a full weekly summary, use the entire weekly file.
+12. After Dominik confirms the summary as complete, update the weekly summary checkpoint before treating later entries as input for the next summary.
 
 ## Privacy and Safety
 
