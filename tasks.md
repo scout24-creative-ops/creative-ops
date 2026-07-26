@@ -37,6 +37,13 @@
   - Context: The current MVP hypothesis is still a proposal. Marie owns implementation; Dominik provides structure, prioritization and quality guidance.
   - Source: Project alignment on 2026-07-21
 
+- [ ] Prepare and facilitate the next PR Intelligence Hub working session
+  - Area: PR Intelligence Hub
+  - Status: Open
+  - Next step: Prepare the session so the team can confirm the MVP, distribute roles and responsibilities, agree the working model and output channel, and prepare the first small test run.
+  - Context: The kick-off, concept and roadmap have been completed and the small-step MVP direction was positively received. The next session should turn the shared understanding into a concrete operating setup.
+  - Source: Project handover confirmed on 2026-07-26
+
 - [ ] Re-establish the recurring alignment setup with Allan and Lars
   - Area: Stakeholder alignment
   - Status: Open
