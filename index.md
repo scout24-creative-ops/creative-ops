@@ -26,6 +26,7 @@ Read this file first, then load only the context relevant to the task. Agent beh
 - [GIF Animation](projects/gif-automation.md)
 - [Chart Agent](projects/chart-agent.md)
 - [Brand Agent – Tone of Voice](projects/brand-agent.md)
+- [PR Intelligence Hub](projects/pr-intelligence-hub.md)
 
 ## Weekly Documentation
 
