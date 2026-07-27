@@ -9,26 +9,19 @@
   - Context: A first series architecture has been developed with a kick-off, one shared agent-MVP session, pre-alignment of initiatives, an official project presentation, recurring topic and update sessions, and later consolidation. The visual one-page overview is being refined.
   - Source: Alignment with Jorin on 2026-07-21 and concept work on 2026-07-23
 
-- [ ] Complete the remaining AI Team-Check interview with Mohamed Sharia Rahim
-  - Area: AI Team-Check
-  - Status: Open
-  - Next step: Conduct the planned conversation with Mohamed Sharia Rahim and capture any findings that materially change the current patterns.
-  - Context: This is the final planned interview before the interview phase can be consolidated.
-  - Source: Current status confirmed on 2026-07-22
-
 - [ ] Consolidate the AI Team-Check findings into cross-team themes
   - Area: AI Team-Check
   - Status: Open
-  - Next step: Reduce the interview findings to a small number of recurring barriers, enablement needs and strategic opportunity themes.
-  - Context: The consolidated themes are needed for the management view and provide input to the separate AI Enablement project.
-  - Source: Project next steps confirmed on 2026-07-22
+  - Next step: Reduce the completed interview findings to a small number of recurring barriers, enablement needs and strategic opportunity themes, including use-case selection and reliability.
+  - Context: The interview phase is complete. The consolidated themes are needed for the management view and provide input to the separate AI Enablement project.
+  - Source: Final interview completed with Sophie on 2026-07-27
 
 - [ ] Finalize the visual AI Team-Check results presentation
   - Area: AI Team-Check
   - Status: Partially complete
   - Next step: Complete the current HTML management view without person- or team-based scoring and without unsupported numerical precision.
-  - Context: An initial landing-page presentation exists, but the structure and visual implementation are not yet final.
-  - Source: Work in progress confirmed on 2026-07-21
+  - Context: An initial landing-page presentation exists, but the structure and visual implementation are not yet final. The completed interview findings now need to be incorporated.
+  - Source: Interview phase completed on 2026-07-27
 
 - [ ] Define and confirm the Brand Agent MVP
   - Area: Brand Agent – Tone of Voice
@@ -66,6 +59,13 @@
   - Waiting for: Jorin's return and concept alignment
   - Dominik's next step: Complete the decision-ready concept and visual overview during Jorin's vacation.
 
+- [ ] Clarify Coupa AI support and review the existing PO agent
+  - Area: AI Team-Check
+  - Status: Waiting for another person or decision
+  - Waiting for: Jana Homfeldt's response about the responsible Coupa contact and existing or planned AI support
+  - Dominik's next step: After the Coupa clarification, speak with Franziska Stober about her Outlook-based PO-status agent and assess whether its learnings are reusable.
+  - Context: Sophie identified Coupa as a major administrative pain point for the Event Team. Central ownership and existing plans should be understood before any solution work is started.
+
 ## Suggestions
 
 - [ ] Offer a discovery conversation to Yvonne about the Content Marketing Agent
@@ -99,6 +99,11 @@
   - Reason: The guide already covers kick-off, MVP definition, build support, testing and handover. Improving it from real project experience could create a reusable working standard for future agent initiatives.
 
 ## Completed
+
+- [x] Complete the final AI Team-Check interview
+  - Area: AI Team-Check
+  - Completed: 2026-07-27
+  - Outcome: Sophie represented the Event Team because Mohamed Sharia Rahim did not have time. The interview completed the planned interview phase and added findings on use-case selection, reliability, Coupa administration and Franziska Stober's Outlook-based PO agent.
 
 - [x] Follow up with Eve and Peter on the Creative Hub wireframe
   - Area: Creative Hub
