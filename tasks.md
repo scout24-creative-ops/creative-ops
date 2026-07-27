@@ -12,9 +12,9 @@
 - [ ] Complete the final Social Media interview for the AI Team-Check
   - Area: AI Team-Check
   - Status: Open
-  - Next step: Invite either a suitable person from the small Social Media team or the full team to one shared interview.
-  - Context: Sophie represented the Event Team when Shari did not have time, but she did not cover Social Media. There is no immediate urgency because Jorin returns from vacation in approximately two weeks; the conversation should be completed before the subsequent alignment.
-  - Source: Scope clarification on 2026-07-27
+  - Next step: Conduct the scheduled shared interview on Wednesday with Caroline von Cramm, Celina Mathiske, Jason Diaz Campos and Lena Mickel.
+  - Context: Sophie represented the Event Team when Shari did not have time, but she did not cover Social Media. The four Social Media colleagues have been invited, and Shari has been informed that a separate interview is no longer required. There is no immediate urgency because Jorin returns from vacation in approximately two weeks.
+  - Source: Interview scheduled on 2026-07-27
 
 - [ ] Consolidate the AI Team-Check findings into cross-team themes
   - Area: AI Team-Check
