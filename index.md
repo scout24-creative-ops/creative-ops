@@ -27,6 +27,8 @@ Read this file first, then load only the context relevant to the task. Agent beh
 - [Chart Agent](projects/chart-agent.md)
 - [Brand Agent – Tone of Voice](projects/brand-agent.md)
 - [PR Intelligence Hub](projects/pr-intelligence-hub.md)
+- [Content Marketing Agent](projects/content-marketing-agent.md)
+- [Newsletter Automation](projects/newsletter-automation.md)
 
 ## Weekly Documentation
 
