@@ -18,10 +18,9 @@ Dominik has completed conversations with:
 - Alexander Penkin
 - Franziska Stober
 - Andreas Böhm
+- Sophie, representing the Event Team in place of Mohamed Sharia Rahim
 
-One further conversation remains planned:
-
-- Mohamed Sharia Rahim (Shari)
+The planned interview phase is complete. Mohamed Sharia Rahim did not have time to participate, and Sophie provided the final operational perspective for the Event Team.
 
 The interviews show significant differences in AI usage and maturity across Marketing. Some colleagues use ChatGPT and self-built agents as a regular part of their work, while others mainly use AI for individual tasks such as writing, research, summaries or variations. Connected end-to-end workflows remain uncommon.
 
@@ -58,6 +57,7 @@ The design and leadership of the recurring enablement format are maintained in t
 - Franziska Stober
 - Andreas Böhm
 - Mohamed Sharia Rahim
+- Sophie and the Event Team
 - Marketing and Communications teams
 - Creative Studio and owners of reusable AI solutions
 - Team leads of the unit
@@ -73,6 +73,7 @@ The design and leadership of the recurring enablement format are maintained in t
 - Resistance to AI is not the primary issue; many colleagues are curious and open to using it.
 - Larger connected workflows and agent-to-agent processes are still rare.
 - The practical maturity of the unit is currently assessed at approximately 4 out of 10.
+- The Event Team uses AI more actively than initially expected, especially for ideation, concepts, administrative support and visualizing event ideas.
 
 ### Recurring Barriers
 
@@ -86,6 +87,8 @@ The design and leadership of the recurring enablement format are maintained in t
 - Some colleagues experience uncertainty or fear about how AI may change their roles.
 - Large ideas often become broad platform concepts before a stable first MVP exists.
 - Disconnected systems can leave significant manual follow-up work even when individual steps are automated.
+- Incorrect facts, dates or location information quickly reduce trust, especially in operational event work.
+- Some AI attempts create more effort or a worse overview than existing manual tools, showing that not every process should be automated.
 
 ### Enablement Needs
 
@@ -97,6 +100,7 @@ The design and leadership of the recurring enablement format are maintained in t
 - The unit needs a shared learning experience that combines orientation, experimentation and concrete work.
 - The transformation should take uncertainty seriously while maintaining a clear expectation that everyone actively engages with AI.
 - Teams need support defining rules, success criteria and ownership so that agents become reliable rather than remain one-off experiments.
+- Teams also need practical criteria for deciding when AI is the right solution and when a simpler existing process is better.
 
 ### Opportunities and Potential Lighthouse Themes
 
@@ -109,6 +113,8 @@ The design and leadership of the recurring enablement format are maintained in t
 - Reusable presentation, PDF, event and asset-generation support.
 - Content-marketing support that knows products, existing content and production history and can generate coordinated UGC briefs, newsletter ideas and content-page input.
 - Automated reporting that combines Linear, spreadsheets and other operational sources into recurring summaries of assets, webinars, events and team output.
+- Administrative event support around Coupa, supplier setup, approvals, POs and invoices, provided ownership and existing central plans are clarified first.
+- Reuse of Franziska Stober's Outlook-based PO-status agent as a possible example for teams with many cooperation and procurement workflows.
 
 ## Important Developments
 
@@ -116,12 +122,14 @@ The design and leadership of the recurring enablement format are maintained in t
 - July 2026: Confirmed that the output should be an anonymized overall picture rather than a team ranking.
 - July 2026: Identified recurring barriers around time, knowledge, orientation and visibility of existing tools.
 - July 2026: Identified several potential shared solutions and lighthouse projects, including PR Intelligence, Tone of Voice, brand checks, data access and personalized automation.
-- July 2026: Completed the conversation with Andreas Böhm; only the interview with Shari remains open.
-- July 2026: Andreas' interview reinforced the need to reduce broad content-agent concepts to small MVPs and highlighted overlapping initiatives, process dependencies and manual reporting as relevant cross-team issues.
+- July 2026: Completed the conversation with Andreas Böhm, reinforcing the need to reduce broad content-agent concepts to small MVPs and highlighting overlapping initiatives, process dependencies and manual reporting.
 - 2026-07-21: Jorin agreed with Dominik's diagnosis and supported a binding unit-wide AI enablement format.
 - 2026-07-21: Jorin confirmed Dominik as the appropriate fachlicher Lead for the broader AI development topic through expertise, enablement and influence without operational people-management responsibility.
 - 2026-07-21: Dominik developed an initial HTML landing-page presentation for the Team-Check results. The presentation uses the official unit name `Marketing & Communications`, keeps agents as supporting evidence rather than the main story and remains unfinished.
 - 2026-07-23: AI Enablement was separated into its own project. The Team-Check remains the diagnostic source and management view.
+- 2026-07-27: Sophie completed the final interview in representation of Shari and provided the Event Team perspective. The planned interview phase is complete.
+- 2026-07-27: Sophie highlighted that Coupa creates substantial administrative effort and that several AI experiments in event work remain too unreliable or less useful than existing manual approaches.
+- 2026-07-27: Dominik contacted Jana Homfeldt to identify the responsible Coupa contact and understand existing or planned AI support before initiating further work.
 
 ## Decisions
 
@@ -133,27 +141,30 @@ The design and leadership of the recurring enablement format are maintained in t
 - Focus Dominik's support on overview, enablement, reusable standards and high-impact projects rather than becoming the permanent agent builder for all teams.
 - Treat visibility and reuse of existing solutions as a major improvement area.
 - Maintain the practical AI Enablement series as a separate project while keeping the Team-Check as its evidence base.
+- Treat use-case selection and the conscious decision not to automate as part of AI maturity.
+- Clarify central ownership and existing plans before treating Coupa as a new solution project.
 
 ## Risks and Open Questions
 
-- The remaining interview may add or change the current patterns.
 - The final presentation structure and visual design are not yet completed.
 - The latest HTML implementation currently exists only as a local working draft and is not yet maintained as technical project code in a dedicated repository.
 - The long-term process for keeping the Marketing AI overview current is not yet defined.
 - Success criteria for measuring progress from approximately 4 to 7 still need to be defined across the broader AI development effort.
 - The content-agent and Linear-reporting opportunities are still early discovery topics; current status, ownership, support needs and technical feasibility are not yet confirmed.
+- It is not yet clear what Coupa-related automation or AI support already exists, is planned or is centrally owned.
 
 ## Next Steps
 
-- Complete the planned conversation with Mohamed Sharia Rahim.
-- Consolidate the interview findings into a small number of cross-team themes.
+- Consolidate the completed interview findings into a small number of cross-team themes.
 - Finalize the visual results presentation without person- or team-based scoring.
 - Decide whether the final HTML presentation should receive a dedicated technical home once its structure is stable.
 - Provide the final findings as input to the AI Enablement project and later strategic prioritization.
 - Wait for Andreas to speak with Yvonne and Steffi and announce Dominik's offer to support them.
 - Ask Andreas for a status update no later than the following week. If no contact has happened yet, invite Yvonne and Steffi, probably separately, to short discovery kick-offs.
 - Use the first conversations only to understand the current status, previous work, open questions, support needs and relevant reporting context. Do not define an MVP or implementation scope yet.
+- Wait for Jana Homfeldt's response about the responsible Coupa contact and existing or planned AI support.
+- After the Coupa clarification, speak with Franziska Stober about her existing Outlook- and PO-related agent and assess whether its learnings are reusable.
 
 ## Last Confirmed
 
-2026-07-23.
+2026-07-27.
