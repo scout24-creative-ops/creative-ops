@@ -5,9 +5,9 @@
 - [ ] Develop the concept for the binding AI enablement series
   - Area: AI Enablement
   - Status: Partially complete
-  - Next step: Complete the decision-ready concept, including the final session rhythm, participant setup, slide templates, update-agent MVP and consolidation approach for alignment after Jorin's return.
-  - Context: A first series architecture has been developed with a kick-off, one shared agent-MVP session, pre-alignment of initiatives, an official project presentation, recurring topic and update sessions, and later consolidation. The visual one-page overview is being refined.
-  - Source: Alignment with Jorin on 2026-07-21 and concept work on 2026-07-23
+  - Next step: Revise the HTML one-pager and complete the decision-ready concept, including the final cadence, participant setup, slide templates and protected working time, for alignment after Jorin's return.
+  - Context: The concept now uses two initial 45-minute sessions followed by a recurring series. The second session combines use-case and MVP guidance with the presentation of already prepared projects. A shared live agent build and a fixed final session are no longer planned; testing, decisions and continuation are handled through the regular updates. The visual one-pager is being simplified into three process-based accordion items.
+  - Source: Alignment with Jorin on 2026-07-21 and concept refinement on 2026-07-27
 
 - [ ] Complete the final Social Media interview for the AI Team-Check
   - Area: AI Team-Check
@@ -64,7 +64,7 @@
   - Area: AI Enablement
   - Status: Waiting for another person or decision
   - Waiting for: Jorin's return and concept alignment
-  - Dominik's next step: Complete the decision-ready concept and visual overview during Jorin's vacation.
+  - Dominik's next step: Complete the revised three-part concept and visual overview during Jorin's vacation.
 
 - [ ] Clarify Coupa AI support and review the existing PO agent
   - Area: AI Team-Check
