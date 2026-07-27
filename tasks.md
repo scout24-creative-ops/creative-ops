@@ -9,19 +9,26 @@
   - Context: A first series architecture has been developed with a kick-off, one shared agent-MVP session, pre-alignment of initiatives, an official project presentation, recurring topic and update sessions, and later consolidation. The visual one-page overview is being refined.
   - Source: Alignment with Jorin on 2026-07-21 and concept work on 2026-07-23
 
+- [ ] Complete the final Social Media interview for the AI Team-Check
+  - Area: AI Team-Check
+  - Status: Open
+  - Next step: Invite either a suitable person from the small Social Media team or the full team to one shared interview.
+  - Context: Sophie represented the Event Team when Shari did not have time, but she did not cover Social Media. There is no immediate urgency because Jorin returns from vacation in approximately two weeks; the conversation should be completed before the subsequent alignment.
+  - Source: Scope clarification on 2026-07-27
+
 - [ ] Consolidate the AI Team-Check findings into cross-team themes
   - Area: AI Team-Check
   - Status: Open
-  - Next step: Reduce the completed interview findings to a small number of recurring barriers, enablement needs and strategic opportunity themes, including use-case selection and reliability.
-  - Context: The interview phase is complete. The consolidated themes are needed for the management view and provide input to the separate AI Enablement project.
-  - Source: Final interview completed with Sophie on 2026-07-27
+  - Next step: After the Social Media interview, reduce the complete findings to a small number of recurring barriers, enablement needs and strategic opportunity themes, including use-case selection and reliability.
+  - Context: The Event Team findings have been incorporated, but the Social Media perspective is still missing. The consolidated themes are needed for the management view and provide input to the separate AI Enablement project.
+  - Source: Scope clarification on 2026-07-27
 
 - [ ] Finalize the visual AI Team-Check results presentation
   - Area: AI Team-Check
   - Status: Partially complete
-  - Next step: Complete the current HTML management view without person- or team-based scoring and without unsupported numerical precision.
-  - Context: An initial landing-page presentation exists, but the structure and visual implementation are not yet final. The completed interview findings now need to be incorporated.
-  - Source: Interview phase completed on 2026-07-27
+  - Next step: Complete the current HTML management view after incorporating the Social Media interview, without person- or team-based scoring and without unsupported numerical precision.
+  - Context: An initial landing-page presentation exists, but the structure and visual implementation are not yet final.
+  - Source: Work in progress and scope clarification on 2026-07-27
 
 - [ ] Define and confirm the Brand Agent MVP
   - Area: Brand Agent – Tone of Voice
@@ -100,10 +107,10 @@
 
 ## Completed
 
-- [x] Complete the final AI Team-Check interview
+- [x] Complete the Event Team interview with Sophie
   - Area: AI Team-Check
   - Completed: 2026-07-27
-  - Outcome: Sophie represented the Event Team because Mohamed Sharia Rahim did not have time. The interview completed the planned interview phase and added findings on use-case selection, reliability, Coupa administration and Franziska Stober's Outlook-based PO agent.
+  - Outcome: Sophie represented the Event Team because Mohamed Sharia Rahim did not have time. The interview added findings on use-case selection, reliability, Coupa administration and Franziska Stober's Outlook-based PO agent. Social Media remains open as a separate final interview.
 
 - [x] Follow up with Eve and Peter on the Creative Hub wireframe
   - Area: Creative Hub
