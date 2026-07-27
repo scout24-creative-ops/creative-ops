@@ -24,7 +24,7 @@ One final area remains open:
 
 - Social Media
 
-Mohamed Sharia Rahim did not have time to participate. Sophie provided the Event Team perspective but did not represent Social Media. Dominik therefore plans one additional interview with either a suitable person from the small Social Media team or the full team.
+Mohamed Sharia Rahim did not have time to participate. Sophie provided the Event Team perspective but did not represent Social Media. Dominik has therefore invited Caroline von Cramm, Celina Mathiske, Jason Diaz Campos and Lena Mickel to one shared Social Media interview on Wednesday of the current week. Shari has been informed that no separate interview with him is required.
 
 There is no immediate time pressure because Jorin is expected to return from vacation in approximately two weeks. The Team-Check should be completed before the subsequent alignment and final consolidation.
 
@@ -64,7 +64,10 @@ The design and leadership of the recurring enablement format are maintained in t
 - Andreas Böhm
 - Mohamed Sharia Rahim
 - Sophie and the Event Team
-- Social Media team
+- Caroline von Cramm
+- Celina Mathiske
+- Jason Diaz Campos
+- Lena Mickel
 - Marketing and Communications teams
 - Creative Studio and owners of reusable AI solutions
 - Team leads of the unit
@@ -136,6 +139,7 @@ The design and leadership of the recurring enablement format are maintained in t
 - 2026-07-23: AI Enablement was separated into its own project. The Team-Check remains the diagnostic source and management view.
 - 2026-07-27: Sophie completed an interview in representation of Shari and provided the Event Team perspective.
 - 2026-07-27: It was clarified that Sophie did not represent Social Media. One final Social Media interview remains open.
+- 2026-07-27: Caroline von Cramm, Celina Mathiske, Jason Diaz Campos and Lena Mickel were invited to a shared Social Media interview on Wednesday; Shari was informed that no separate appointment is needed.
 - 2026-07-27: Sophie highlighted that Coupa creates substantial administrative effort and that several AI experiments in event work remain too unreliable or less useful than existing manual approaches.
 - 2026-07-27: Dominik contacted Jana Homfeldt to identify the responsible Coupa contact and understand existing or planned AI support before initiating further work.
 
@@ -164,8 +168,7 @@ The design and leadership of the recurring enablement format are maintained in t
 
 ## Next Steps
 
-- Invite either a suitable representative from the small Social Media team or the full team to one final AI Team-Check interview.
-- Complete the Social Media interview before Jorin's return and the subsequent alignment; there is no immediate urgency.
+- Conduct the scheduled Social Media interview with Caroline von Cramm, Celina Mathiske, Jason Diaz Campos and Lena Mickel on Wednesday.
 - Consolidate the interview findings into a small number of cross-team themes after the Social Media perspective is included.
 - Finalize the visual results presentation without person- or team-based scoring.
 - Decide whether the final HTML presentation should receive a dedicated technical home once its structure is stable.
