@@ -66,13 +66,17 @@
   - Waiting for: Jorin's return and concept alignment
   - Dominik's next step: Complete the decision-ready concept and visual overview during Jorin's vacation.
 
-- [ ] Follow up on the introductions to Yvonne and Steffi
-  - Area: AI Team-Check
-  - Status: Waiting for another person or decision
-  - Waiting for: Andreas to speak with Yvonne and Steffi and announce Dominik's support offer
-  - Dominik's next step: Ask Andreas for a status update no later than the following week; if no contact has happened, invite Yvonne and Steffi to short discovery kick-offs.
-
 ## Suggestions
+
+- [ ] Offer a discovery conversation to Yvonne about the Content Marketing Agent
+  - Area: Content Marketing Agent
+  - Status: Suggestion
+  - Reason: Andreas described the existing initiative during the AI Team-Check interview. Dominik proactively offered support, but this is not a formal assignment. A short discovery conversation would clarify status, ownership, MVP scope and whether support is useful.
+
+- [ ] Offer a discovery conversation to Steffi about Newsletter Automation
+  - Area: Newsletter Automation
+  - Status: Suggestion
+  - Reason: Andreas described the existing newsletter and content automation work during the AI Team-Check interview. Dominik proactively offered support, but this is not a formal assignment. A short discovery conversation would clarify current work, pain points, ownership and the smallest useful next step.
 
 - [ ] Remove the checked legacy `Shared` folder
   - Area: AI-supported work organization system
