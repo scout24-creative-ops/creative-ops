@@ -20,7 +20,13 @@ Dominik has completed conversations with:
 - Andreas Böhm
 - Sophie, representing the Event Team in place of Mohamed Sharia Rahim
 
-The planned interview phase is complete. Mohamed Sharia Rahim did not have time to participate, and Sophie provided the final operational perspective for the Event Team.
+One final area remains open:
+
+- Social Media
+
+Mohamed Sharia Rahim did not have time to participate. Sophie provided the Event Team perspective but did not represent Social Media. Dominik therefore plans one additional interview with either a suitable person from the small Social Media team or the full team.
+
+There is no immediate time pressure because Jorin is expected to return from vacation in approximately two weeks. The Team-Check should be completed before the subsequent alignment and final consolidation.
 
 The interviews show significant differences in AI usage and maturity across Marketing. Some colleagues use ChatGPT and self-built agents as a regular part of their work, while others mainly use AI for individual tasks such as writing, research, summaries or variations. Connected end-to-end workflows remain uncommon.
 
@@ -58,6 +64,7 @@ The design and leadership of the recurring enablement format are maintained in t
 - Andreas Böhm
 - Mohamed Sharia Rahim
 - Sophie and the Event Team
+- Social Media team
 - Marketing and Communications teams
 - Creative Studio and owners of reusable AI solutions
 - Team leads of the unit
@@ -127,7 +134,8 @@ The design and leadership of the recurring enablement format are maintained in t
 - 2026-07-21: Jorin confirmed Dominik as the appropriate fachlicher Lead for the broader AI development topic through expertise, enablement and influence without operational people-management responsibility.
 - 2026-07-21: Dominik developed an initial HTML landing-page presentation for the Team-Check results. The presentation uses the official unit name `Marketing & Communications`, keeps agents as supporting evidence rather than the main story and remains unfinished.
 - 2026-07-23: AI Enablement was separated into its own project. The Team-Check remains the diagnostic source and management view.
-- 2026-07-27: Sophie completed the final interview in representation of Shari and provided the Event Team perspective. The planned interview phase is complete.
+- 2026-07-27: Sophie completed an interview in representation of Shari and provided the Event Team perspective.
+- 2026-07-27: It was clarified that Sophie did not represent Social Media. One final Social Media interview remains open.
 - 2026-07-27: Sophie highlighted that Coupa creates substantial administrative effort and that several AI experiments in event work remain too unreliable or less useful than existing manual approaches.
 - 2026-07-27: Dominik contacted Jana Homfeldt to identify the responsible Coupa contact and understand existing or planned AI support before initiating further work.
 
@@ -146,6 +154,7 @@ The design and leadership of the recurring enablement format are maintained in t
 
 ## Risks and Open Questions
 
+- The Social Media interview may add or change the current patterns.
 - The final presentation structure and visual design are not yet completed.
 - The latest HTML implementation currently exists only as a local working draft and is not yet maintained as technical project code in a dedicated repository.
 - The long-term process for keeping the Marketing AI overview current is not yet defined.
@@ -155,7 +164,9 @@ The design and leadership of the recurring enablement format are maintained in t
 
 ## Next Steps
 
-- Consolidate the completed interview findings into a small number of cross-team themes.
+- Invite either a suitable representative from the small Social Media team or the full team to one final AI Team-Check interview.
+- Complete the Social Media interview before Jorin's return and the subsequent alignment; there is no immediate urgency.
+- Consolidate the interview findings into a small number of cross-team themes after the Social Media perspective is included.
 - Finalize the visual results presentation without person- or team-based scoring.
 - Decide whether the final HTML presentation should receive a dedicated technical home once its structure is stable.
 - Provide the final findings as input to the AI Enablement project and later strategic prioritization.
