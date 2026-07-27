@@ -91,12 +91,7 @@
 - [ ] Develop a lightweight recurring curation process for the Creative Hub
   - Area: Creative Hub
   - Status: Suggestion
-  - Reason: A regular review and update rhythm would help the hub remain active and current without shifting ongoing operational ownership to Dominik.
-
-- [ ] Follow up with Eve and Peter on the Creative Hub wireframe
-  - Area: Creative Hub
-  - Status: Suggestion
-  - Reason: The concept and published wireframe have been shared. If no response comes, Dominik should follow up next week and propose a short brainstorming session to agree the smallest useful first version.
+  - Reason: A regular review and update rhythm would help the hub remain active and current. Dominik has developed an initial concept for a weekly agent that scans selected Slack channels and proposes possible content topics, but the operating model is not yet agreed.
 
 - [ ] Turn the Agent Process Guide into a reusable standard after practical use
   - Area: AI Enablement
@@ -104,6 +99,11 @@
   - Reason: The guide already covers kick-off, MVP definition, build support, testing and handover. Improving it from real project experience could create a reusable working standard for future agent initiatives.
 
 ## Completed
+
+- [x] Follow up with Eve and Peter on the Creative Hub wireframe
+  - Area: Creative Hub
+  - Completed: 2026-07-27
+  - Outcome: Dominik created a collaborative whiteboard with the wireframe, possible content areas and the Slack-content-agent idea, invited Eve and Peter and moved the topic into joint exploration and alignment.
 
 - [x] Set up the Public publishing repository and workflow
   - Area: AI-supported work organization system
