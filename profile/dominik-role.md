@@ -26,6 +26,8 @@ Dominiks größter Wert liegt nicht in dauerhafter Einzelumsetzung, sondern in:
 
 Ziel ist, Abhängigkeiten zu reduzieren und Teams eigenständiger zu machen.
 
+Eine zusätzliche Querschnittsstärke ist die Fähigkeit, komplexe, überladene oder unstrukturierte Inhalte und Abläufe in einfache, reduzierte und verständliche Lösungen zu übersetzen. Dieses Prinzip gilt nicht nur für Tools, Prozesse und Automationen, sondern auch für Konzepte, Landingpages und Mailings. Operative Designarbeit ist nicht mehr Dominiks Hauptschwerpunkt, bleibt aber eine relevante Stärke, besonders wenn Informationshierarchie, Nutzerführung, Verständlichkeit und klare Handlungslogik verbessert werden müssen.
+
 ## Relevante Schnittstellen
 - Creative Studio
 - Marketing
