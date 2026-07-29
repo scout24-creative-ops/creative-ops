@@ -60,6 +60,13 @@
 
 ## Waiting
 
+- [ ] Continue the Plus FOMO email after presentation feedback
+  - Area: E-Mail Automation – Plus FOMO
+  - Status: Waiting for feedback
+  - Waiting for: Feedback from the 2026-07-30 project presentation
+  - Dominik's next step: Review confirmed feedback, update both email concepts and the implemented first variant where needed, validate the DIMS3 image resizing with real listings and then prepare a controlled test of Mitch's AWS/GitHub module process.
+  - Context: Dominik reviewed Alisa's two initial designs, aligned feedback with her, redesigned both concepts and implemented the first responsive Outlook-aware reference mail with Codex. The mail is currently ready for presentation feedback; the second concept should reuse the established structure.
+
 - [ ] Align the AI Enablement concept with Jorin
   - Area: AI Enablement
   - Status: Waiting for another person or decision
