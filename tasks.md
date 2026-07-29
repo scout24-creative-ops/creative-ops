@@ -58,6 +58,13 @@
   - Context: Bea expects Mukhammadjon to start working on the Landing Page Builder integration for Contentful in KW31. Dominik wants to maintain visible follow-up and make sure the implementation is actively progressing before the first possible end-to-end tests after 2026-08-10.
   - Source: Bea's Slack update and Dominik's confirmation on 2026-07-22
 
+- [ ] Build reusable client-stable email standards for Codex
+  - Area: E-Mail Automation
+  - Status: Open
+  - Next step: Review the confirmed Plus FOMO and HeyImmo rendering learnings and turn them into a first repository standard with concise `AGENTS.md` rules, detailed email-client guidelines, reusable tested components and a small automated HTML-check script.
+  - Context: Codex should not rely on chat memory for recurring email issues. The durable setup should capture approved patterns for Make It Better typography, explicit paragraph spacing, mobile-first fluid tables, Outlook/VML buttons and voucher pills, hosted rendering assets, DIMS3 image handling, footer reuse and required full-mail/module/stress tests. Reusable components should include at least the fluid shell, primary VML CTA, voucher pill, responsive property image and approved footer. Automated checks should detect common regressions such as missing font setup, default paragraph margins, mismatched HTML/VML links, local image paths, unsafe fixed widths and malformed conditional comments. Only solutions confirmed through real rendering tests should become approved global patterns.
+  - Source: Plus FOMO implementation learnings and Dominik's confirmation on 2026-07-29
+
 ## Waiting
 
 - [ ] Continue the Plus FOMO email after presentation feedback
