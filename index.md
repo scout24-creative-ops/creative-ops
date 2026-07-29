@@ -17,6 +17,7 @@ Read this file first, then load only the context relevant to the task. Agent beh
 - [Landing Page Builder](projects/landing-page-builder.md)
 - [E-Mail Builder](projects/email-builder.md)
 - [HeyImmo automated HomeOwner mail](projects/heyimmo-homeowner-mail.md)
+- [E-Mail Automation – Plus FOMO](projects/email-automation-plus-fomo.md)
 - [LOFT automation](projects/loft-automation.md)
 - [Contentful Marketing MVP](projects/contentful-marketing-mvp.md)
 - [Design Library and Builder Library](projects/design-library.md)
