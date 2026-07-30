@@ -4,10 +4,10 @@
 
 - [ ] Develop the Creative Hub agent-curation strategy
   - Area: Creative Hub
-  - Status: Open
-  - Next step: Define how relevant agents are identified, how Dominik is notified about new or changed agents, how owners are contacted, what information is required and how an entry moves through review to Hub publication.
-  - Context: The Hub should expand beyond Creative Studio agents without becoming an unfiltered directory. The process needs to be lightweight, repeatable and connected to the respective agent owners.
-  - Source: Alignment with Eve and Peter on 2026-07-30
+  - Status: Partially complete
+  - Next step: Finalize the source list and Hub-suitability requirement profile, formalize the direct in-agent prompt, define the owner review and approval step, and test the complete process with ScoutData or another relevant agent.
+  - Context: A recurring four-stage model is defined: find agents, assess Hub fit, translate approved information into Hub formats and share the new Hub entry. Initial sources are relevant Slack channels, `Meet my Agent`, Team AI Operations and team meetings, with candidates converging at Dominik. A Skill cannot inspect a foreign agent from outside, so the practical MVP is a tested prompt executed directly in the source agent. It generates a compact agent description, relevance assessment, connected-tool information and initial Slider, Agent Card and Slack content. Owner validation remains required before publication.
+  - Source: Agent-curation concept and prompt tests on 2026-07-30
 
 - [ ] Create the Creative Hub content roadmap
   - Area: Creative Hub
@@ -124,11 +124,6 @@
   - Area: AI-supported work organization system
   - Status: Suggestion
   - Reason: The folder was checked and contains no relevant files or active references. Removing it would simplify the workspace, but it is not required for the Public publishing workflow.
-
-- [ ] Define selection and quality criteria for Creative Hub entries
-  - Area: Creative Hub
-  - Status: Suggestion
-  - Reason: The hub should grow beyond a static directory, but criteria for adding, reviewing, prioritizing and removing entries are still missing. This is strategic curation work; operational maintenance remains with Peter.
 
 - [ ] Turn the Agent Process Guide into a reusable standard after practical use
   - Area: AI Enablement
