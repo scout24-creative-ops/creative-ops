@@ -88,6 +88,13 @@
 
 ## Waiting
 
+- [ ] Complete LP Builder and Design Library review with Ciaran
+  - Area: Landing Page Builder / Design Library
+  - Status: Waiting for review
+  - Waiting for: Ciaran's review of LP Builder PR #3 and Design System PR #2
+  - Dominik's next step: Send Ciaran the short explanation and both draft PR links, collect his feedback, and merge or adjust the changes only after review.
+  - Context: The productive LP Builder GPT has already been updated and tested successfully. The Design Library was made self-contained and the new publication preparation no longer commits or pushes automatically. Neither draft PR has been merged.
+
 - [ ] Continue the Plus FOMO email after presentation feedback
   - Area: E-Mail Automation – Plus FOMO
   - Status: Waiting for feedback
