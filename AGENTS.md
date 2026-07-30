@@ -14,6 +14,17 @@ Technical project repositories remain the source of truth for code, configuratio
 4. Do not read every project file by default.
 5. Read the current weekly documentation whenever new work information is being recorded or a weekly recap is requested.
 
+## Artifact Readiness Reminder
+
+Whenever Dominik asks to create, implement, visualize, or prompt the creation of a presentation, landing page, HTML page, slide deck, infographic, diagram, or similar communication artifact, briefly assess whether the audience, objective, core message, content, and structure are sufficiently clear.
+
+- If important conceptual questions are still open, give one concise reminder that further clarification in chat may save time and avoid unnecessary design or implementation loops.
+- Treat this as guidance, not a gate. Do not refuse or block the requested implementation.
+- If Dominik confirms that he still wants to proceed, continue immediately without repeating the warning or pushing back further.
+- Do not interrupt when the concept is already sufficiently stable.
+- When Dominik explicitly asks for a quick sketch, exploratory draft, or working version, proceed directly and make clear that the result is exploratory rather than final.
+- Trigger this check from the intent of the request, not from specific wording. It also applies to requests such as creating a Codex prompt that will build the artifact.
+
 ## Context Routing
 
 - Role, long-term responsibilities, working focus, or strategic mandate: [profile/dominik-role.md](profile/dominik-role.md)
