@@ -2,6 +2,27 @@
 
 ## Open
 
+- [ ] Develop the Creative Hub agent-curation strategy
+  - Area: Creative Hub
+  - Status: Open
+  - Next step: Define how relevant agents are identified, how Dominik is notified about new or changed agents, how owners are contacted, what information is required and how an entry moves through review to Hub publication.
+  - Context: The Hub should expand beyond Creative Studio agents without becoming an unfiltered directory. The process needs to be lightweight, repeatable and connected to the respective agent owners.
+  - Source: Alignment with Eve and Peter on 2026-07-30
+
+- [ ] Create the Creative Hub content roadmap
+  - Area: Creative Hub
+  - Status: Open
+  - Next step: Sequence the first expansion steps, starting with the slider and then agents, libraries and knowledge content, and define when recurring source integrations such as selected Slack channels should be introduced.
+  - Context: Dominik, Eve and Peter agreed to increase relevance quickly without creating disproportionate technical or editorial effort. The first focus areas are agents, news and knowledge, and reusable libraries.
+  - Source: Alignment with Eve and Peter on 2026-07-30
+
+- [ ] Consolidate the Creative Hub communication structure
+  - Area: Creative Hub
+  - Status: Open
+  - Next step: Define how the Hub, existing Slack channels, Frontify and the planned AI Enablement series should work together, including the primary destination for durable content and the role of each communication format.
+  - Context: Hub-related information is currently distributed across several channels and initiatives. A coherent structure should reduce fragmentation and support Eve's communication and targeted rollout planning.
+  - Source: Alignment with Eve and Peter on 2026-07-30
+
 - [ ] Develop the concept for the binding AI enablement series
   - Area: AI Enablement
   - Status: Partially complete
@@ -108,11 +129,6 @@
   - Area: Creative Hub
   - Status: Suggestion
   - Reason: The hub should grow beyond a static directory, but criteria for adding, reviewing, prioritizing and removing entries are still missing. This is strategic curation work; operational maintenance remains with Peter.
-
-- [ ] Develop a lightweight recurring curation process for the Creative Hub
-  - Area: Creative Hub
-  - Status: Suggestion
-  - Reason: A regular review and update rhythm would help the hub remain active and current. Dominik has developed an initial concept for a weekly agent that scans selected Slack channels and proposes possible content topics, but the operating model is not yet agreed.
 
 - [ ] Turn the Agent Process Guide into a reusable standard after practical use
   - Area: AI Enablement
