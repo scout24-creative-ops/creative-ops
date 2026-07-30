@@ -20,6 +20,10 @@ A first working direction has now been agreed: increase relevance quickly withou
 
 The agent-curation work has now been translated into a compact recurring operating model and a three-slide presentation for the next alignment. The model covers discovery, assessment, Hub transformation and communication rather than treating each new agent as a standalone publication task.
 
+The content roadmap has also been developed further as a strategic sequence rather than a fixed calendar plan. The current working sequence is to create the technical Hub prerequisites first, test them through the first recurring agent integrations, transfer the first reusable libraries, introduce automated Slack-based news sourcing once the agent flow is stable, and add Knowledge later because of its higher editorial and maintenance burden. Some activities will run in parallel rather than strictly one after another.
+
+The communication architecture remains exploratory. The current working idea is that `#creative_studio` and `#creative-ops-marketing` remain equal but focus on different subject areas, while the Creative Hub is the shared durable platform. This is not yet a final decision.
+
 ## Dominik's Role
 
 Dominik helps shape the strategic direction and curation of the hub. He proposed developing it beyond a static overview of Creative Studio agents by adding more visible activity, relevant lighthouse projects, selected agents from other Marketing teams or departments and reusable knowledge content.
@@ -29,6 +33,8 @@ Dominik aligned this direction with Eve, who confirmed that the hub should be de
 Dominik's contribution is concept, structure, curation and visibility. He owns the content roadmap, the agent-curation approach and the strategy for bringing the Hub, Slack channels, Frontify and the planned enablement series into a more coherent communication structure. Operational implementation and ongoing maintenance should remain with Peter and the respective content or agent owners.
 
 For the agent-curation process, relevant Hub candidates should converge with Dominik in his Creative Ops lead role so he can apply a consistent relevance and quality check before operational publication.
+
+In the 2026-07-30 working meeting with Eve and Peter, Dominik significantly shaped the strategic direction by shifting the discussion from speed and announcement frequency toward relevance, maintainability and a clear sequence of useful Hub additions. He proposed prioritizing agents and libraries before more editorially intensive News and Knowledge formats, defined the three follow-up assignments and structured the initial division between strategy, implementation and communication.
 
 ## Key Stakeholders
 
@@ -64,6 +70,10 @@ For the agent-curation process, relevant Hub candidates should converge with Dom
 - July 2026: Developed and tested a direct in-agent prompt as the practical MVP. The prompt generates a compact self-description, relevance assessment, known connected tools or connectors and first drafts for the Hub slider, Agent Card and Slack post.
 - July 2026: Refined the prompt so it excludes uploaded files, internal knowledge and integrated model capabilities from the external-tools field and returns `unknown` or `none` instead of inventing information.
 - July 2026: Tests with Illustration Studio and Imagery Builder produced sufficiently strong outputs for the planned presentation and demonstrated the intended end-to-end outcome.
+- July 2026: Held a working meeting with Eve and Peter. Dominik drove the strategic framing toward relevance over speed, proposed agents and libraries as the first high-value areas and structured the next work into agent curation, content roadmap and communication architecture.
+- July 2026: Developed a working roadmap sequence with parallel work: Peter prepares the slider, detail-page template and library category while Dominik starts the recurring agent process; the first two or three agents then test the new Hub components; libraries and automated Slack-based news sourcing follow as separate workstreams; Knowledge remains the later stage.
+- July 2026: Explored a simplified communication model in which `#creative_studio` and `#creative-ops-marketing` remain equal but cover different themes and connect to the shared Creative Hub. This model is exploratory and not yet agreed.
+- July 2026: Dominik clarified that team-specific agent support should ideally happen in meetings, with direct Slack follow-ups and threads where useful, rather than through many new project channels.
 
 ## Decisions
 
@@ -82,6 +92,8 @@ For the agent-curation process, relevant Hub candidates should converge with Dom
 - A foreign agent cannot currently be inspected automatically through an externally selected Skill; the first practical extraction step should therefore use a prompt executed directly inside the relevant agent.
 - The prompt-generated Hub texts are suitable as initial drafts for the current demo and pilot. The later target model may separate factual agent handover from centralized final copy generation to improve consistency.
 - Owner review and approval remain required before publication, especially for missing facts, access information and final wording.
+- The content roadmap should express strategic sequence and parallel dependencies rather than fixed dates and person-level scheduling.
+- The current communication model is a working hypothesis, not a final decision.
 
 ## Risks and Open Questions
 
@@ -92,6 +104,9 @@ For the agent-curation process, relevant Hub candidates should converge with Dom
 - The content model must stay lightweight enough that the hub does not create disproportionate editorial maintenance.
 - Agents may not know or expose ownership, maturity or tool configuration reliably. Unknown information must be routed back to the respective owner rather than inferred.
 - It remains open whether final Slider, Card and Slack copy should continue to be generated inside the source agent or be produced centrally from a structured handover.
+- The exact role and boundary of `#creative_studio` and `#creative-ops-marketing` are not yet agreed, including where new Hub agents should be announced and whether cross-posting is useful or duplicative.
+- The communication model for team-specific agent projects is still open. Dominik wants to avoid joining or creating many additional channels and prefers meetings, direct messages and threads where possible.
+- The relative order of libraries and automated News work may depend on Peter's implementation progress and Dominik's capacity; they are intended as parallel follow-up workstreams, not a rigid sequence.
 
 ## Next Steps
 
@@ -100,10 +115,11 @@ For the agent-curation process, relevant Hub candidates should converge with Dom
 - Formalize the direct in-agent prompt as the first extraction and content-generation workflow.
 - Define the owner review, completion and approval step before publication.
 - Test the complete process with relevant real agents such as ScoutData so the process design produces visible Hub content in parallel.
-- Define the communication approach for each newly integrated Hub agent together with Eve.
+- Translate the strategic roadmap into one compact presentation slide without fixed person-level dates.
+- Continue defining the communication architecture with Eve and Peter, including channel roles, cross-posting rules and the lightweight setup for team-specific support.
 - Peter prepares the weekly announcement and agent-spotlight slider, a reusable detail-page template and the new library section.
 - Peter briefs Henning on a short, focused intro video for the Image Generator.
-- Review the strategy and first operational preparations together at the next Tuesday alignment.
+- Review the strategy and first operational preparations together at the next alignment.
 
 ## Last Confirmed
 
