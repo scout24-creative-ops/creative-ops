@@ -10,6 +10,8 @@ The production Landing Page Builder is currently a Custom GPT, not an agent. It 
 
 Users open the GPT, describe the landing-page topic and select the modules they want to use from the Design Library. The GPT generates the page code from those approved modules. The result is not yet connected to a CMS and has no integrated preview; users currently need to place the generated code manually into an empty AEM page to see the complete design result.
 
+The productive GPT now uses AEM-fragment output as its default contract: required asset links first, followed by approved section markup, without `doctype`, `html`, `head` or `body` tags. A complete standalone HTML document is produced only when explicitly requested for preview or download.
+
 The product remains strategically important, but active development has slowed down in recent months. A new transition strategy is still needed.
 
 ## Product Versions and Boundaries
@@ -20,6 +22,8 @@ The product remains strategically important, but active development has slowed d
 - Contains the broader, production-relevant module set.
 - Used by multiple Marketing teams.
 - Has no CMS integration or integrated preview.
+- Uses AEM-fragment output by default.
+- Supports complete standalone HTML only for explicit preview or downloadable HTML requests.
 - Remains the current operational standard.
 
 ### Landing Page Builder Agent Prototype
@@ -62,9 +66,17 @@ Ciaran works as a freelancer and implements new modules and system changes based
 
 - The existing Custom GPT remains the current production tool until a viable replacement is ready.
 - Reusable approved modules and the Design Library remain the basis of the creation workflow.
+- AEM-fragment output is the productive default.
+- Complete HTML is reserved for explicit standalone preview or downloadable-file use.
 - Operational module work can be handled by Ciaran, while Dominik retains strategic and product responsibility.
 - The reduced agent prototype should be treated as a testcase, not as the current product or the final Contentful agent.
 - The future Contentful agent should eventually replace the Custom GPT, but only after the target architecture and integration approach are defined.
+
+## Important Developments
+
+- 2026-07-30: Ciaran identified that the system instructions incorrectly required a full HTML document for the AEM workflow.
+- Dominik worked through the issue with Codex, updated the prompt, guardrails and usage documentation, added regression tests, updated the productive Custom GPT and verified the corrected behavior in a fresh chat.
+- Draft PR #3, `Make AEM fragment output the LP Builder default`, was opened for review in `scout24-creative-ops/lp-builder`.
 
 ## Risks and Open Questions
 
@@ -73,18 +85,20 @@ Ciaran works as a freelancer and implements new modules and system changes based
 - Existing users, modules and working practices must be preserved or migrated without disrupting the current strong usage.
 - The future handling of preview, CMS transfer and later editing depends on the Contentful MVP decisions.
 - Historical user-survey findings and module requests have not yet been consolidated into a current roadmap.
+- The draft PR still requires review before merge.
 
 ## Next Steps
 
-1. Define a transition strategy covering stabilization of the current GPT, the prototype's role and the future Contentful agent.
-2. Keep the current Custom GPT operational for existing Marketing users.
-3. Continue necessary module and maintenance work through Ciaran and Linear tickets.
-4. Wait for the Contentful target format before making larger architectural changes.
-5. Later define how users, modules and workflows move from the GPT to the Contentful-connected agent.
+1. Ask Ciaran to review PR #3 and confirm the corrected output contract works for his workflow.
+2. Merge the reviewed change when approved.
+3. Define a transition strategy covering stabilization of the current GPT, the prototype's role and the future Contentful agent.
+4. Keep the current Custom GPT operational for existing Marketing users.
+5. Continue necessary module and maintenance work through Ciaran and Linear tickets.
+6. Wait for the Contentful target format before making larger architectural changes.
 
 ## Last Confirmed
 
-Current status clarified by Dominik in July 2026.
+Productive GPT output and repository review setup confirmed on 2026-07-30.
 
 ## Related Context
 
