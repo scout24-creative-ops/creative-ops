@@ -33,23 +33,15 @@ Whenever Dominik asks to create, implement, visualize, or prompt the creation of
 - Project goals, status, decisions, support commitments, risks, stakeholders, or durable next steps: the matching file in `projects/`
 - All work-relevant developments for the current week: the matching file in `documentation/`
 
-One new piece of information may require updates to more than one file.
+One new piece of information may require updates to more than one file, but adapt it to each file's purpose instead of copying the same full narrative.
 
 ## Primary Documentation Rule
 
 Every work-relevant update Dominik provides must first be recorded in the current weekly file under `documentation/YYYY-Www.md`.
 
-The weekly documentation may include:
+The weekly documentation may include meetings and workshops, progress and completed work, discussions and open questions, delays, follow-ups, decisions, risks, blockers, and other context that may help create the end-of-week recap.
 
-- meetings and workshops;
-- progress and completed work;
-- discussions and open questions;
-- delays and reasons for them;
-- follow-ups and planned continuations;
-- decisions, risks, and blockers;
-- other context that may help create the end-of-week recap.
-
-The weekly file is source material, not a polished management summary. A later skill creates the short summary for Jorin in the chat. That short summary is not stored in this repository.
+The weekly file is source material and the chronological archive, not a polished management summary. A later skill creates the short summary for Jorin in the chat. That short summary is not stored in this repository.
 
 ## Summary Checkpoints
 
@@ -61,36 +53,24 @@ Each weekly file must show which information has already been included in a comp
 - `Erstelle ein Update seit der letzten Zusammenfassung.` uses only the entries under `Updates since last summary`.
 - `Erstelle die vollständige Zusammenfassung für diese Woche.` may use the full weekly documentation, including information that was already summarized.
 - When a new calendar week begins, create the new weekly file with no completed-summary checkpoint and an empty `Updates since last summary` section.
-- The checkpoint affects summary selection only. Continue to update durable project, profile, organization, GitHub and task context normally.
+- The checkpoint affects summary selection only. Continue to update durable context and tasks normally.
 
-## Bootstrap and Migration Exception
+## Bootstrap, Migration, and Cleanup Exception
 
-During the initial repository setup, cleanup, migration, or retrospective consolidation of historical information, do not create or update the current weekly documentation merely because the information is being discussed now.
+During initial setup, cleanup, migration, or retrospective consolidation, do not update the current weekly documentation merely because historical information is being reorganized now.
 
-In this mode:
-
-- classify historical or already completed information directly into the relevant durable-context files;
-- preserve the original timing when it is known;
-- do not assign older project information to the current calendar week;
-- use the weekly documentation only after the operating workflow has been activated for ongoing work.
-
-Once the repository and its skill are in normal operation, the Primary Documentation Rule applies again to every new work-relevant update.
+- Classify historical or completed information directly into the relevant maintained files.
+- Preserve original timing when known.
+- Do not assign older information to the current calendar week.
+- Do not treat repository cleanup itself as a work update unless it is independently relevant to Dominik's work.
 
 ## Durable Context Check
 
-After adding an update to the weekly documentation, decide whether it also changes durable context.
+After recording an update in weekly documentation, decide whether it also changes durable context.
 
-Update a project file only when the information remains useful beyond the current week, for example when it changes:
+Update a project file only when information remains useful beyond the current week, for example when it changes purpose, scope, current status, ownership, stakeholders, decisions, material risks, milestones, or durable next steps.
 
-- project purpose or scope;
-- current status or milestone;
-- ownership or durable support commitments;
-- key stakeholders;
-- confirmed decisions;
-- material risks or blockers;
-- durable next steps.
-
-Routine activity, individual meetings, temporary discussion details, and minor delays can remain only in the weekly documentation.
+Routine activity, individual meetings, temporary discussion details, minor delays, and implementation detail can remain only in weekly documentation or the technical source repository.
 
 Also update:
 
@@ -100,17 +80,17 @@ Also update:
 
 ## Classification Rules
 
-- Dominik does not need to name a target file.
-- Infer the target from the meaning of the information.
-- Do not create a new project for every activity, workshop, conversation, or tool test.
-- Create a project file only when there is a distinct purpose, ongoing status, concrete responsibility, or durable body of work.
+- Dominik does not need to name a target file; infer it from meaning.
+- Do not create a project for every activity, workshop, conversation, tool test, or second-hand initiative.
+- Create an active project file only for a distinct ongoing body of work with a clear purpose, current responsibility, or confirmed need for durable tracking.
+- Keep unconfirmed initiatives as provisional observations until ownership, scope, status, or Dominik's involvement is established.
 - Treat general AI enablement, advisory work, workshops, and strategic prioritization as part of Dominik's role unless they become a clearly scoped project.
 - When a project name is unclear, inspect [index.md](index.md) and filenames in `projects/` before creating anything new.
 
 ## Source of Truth
 
 - `documentation/` is the chronological record of work-relevant information by week.
-- Each file in `projects/` is the maintained durable context summary for that project.
+- Each active project file is the maintained current briefing for that project, not a second chronological archive.
 - Project repositories are the technical source of truth for code, configuration, deployments, and implementation status.
 - Do not silently reconcile conflicts. State them and preserve uncertainty until confirmed.
 
@@ -120,20 +100,41 @@ When Dominik provides new information:
 
 1. Identify the current calendar week.
 2. Read or create the matching file in `documentation/`.
-3. Record the work-relevant update in `Updates since last summary` when a checkpoint exists.
+3. Record the factual update in `Updates since last summary` when a checkpoint exists.
 4. Identify affected context areas and projects.
-5. Read only the relevant durable-context files.
+5. Read only the relevant maintained files.
 6. Update them only when the information has lasting relevance.
-7. Replace outdated statements when the new information clearly supersedes them.
-8. Preserve dates for historical statements.
+7. Replace or consolidate outdated statements when newer confirmed information supersedes them.
+8. Preserve dates for historical statements in weekly documentation.
 9. Mark missing or conflicting information explicitly instead of guessing.
-10. Summarize which files changed and why.
+10. Read `tasks.md` and update changed tasks instead of adding near-duplicates.
+11. Summarize which files changed and why.
 
-During bootstrap or migration work, replace steps 1–3 with the Bootstrap and Migration Exception above.
+During bootstrap, migration, or cleanup, replace steps 1–3 with the exception above.
+
+## Information Density and Compaction
+
+Treat weekly documentation as the full historical record and all other maintained files as current working views.
+
+- Do not preserve the same full narrative in weekly documentation, project files, and tasks.
+- In project files, replace or consolidate superseded status, decisions, risks, and next steps instead of appending another version of the story.
+- Keep `Important Developments` to durable turning points only.
+- In `tasks.md`, retain one concrete next action, minimum actionable context, useful dependencies or deadlines, and a source when helpful.
+- Move strategy, technical specifications, detailed rationale, and completed implementation history into the project file, weekly archive, or technical repository.
+- Remove obsolete current-state statements when a newer confirmed statement supersedes them.
+
+Use these soft thresholds as review signals, not deletion rules:
+
+- Project file above roughly 150–200 lines: inspect for repeated history and stale next steps.
+- More than roughly 25 active tasks: inspect for duplicates, unclear ownership, obsolete work, and project context stored as tasks.
+- More than 3–4 completed weeks retained in `tasks.md`: propose archiving older completed items.
+- Project not confirmed for 4–6 weeks: flag its current status as potentially stale before relying on it.
 
 ## Project File Rules
 
-Project files should stay compact and useful for future tasks. Prefer these sections when relevant:
+Project files should stay compact and answer four questions quickly: what is the purpose, where does it stand, what is decided or open, and what happens next.
+
+Prefer these sections when relevant:
 
 - Purpose
 - Current Status
@@ -147,6 +148,26 @@ Project files should stay compact and useful for future tasks. Prefer these sect
 
 Do not fill empty sections with invented details. Historical next steps must not be presented as current unless reconfirmed.
 
+## Task Rules
+
+Keep one central task list in `tasks.md` with Open, Waiting, Suggestions, and Completed sections.
+
+- Treat a task as confirmed only when Dominik accepted it, committed to it, or is clearly assigned to it by confirmed context.
+- Treat a derived next step as a suggestion and label it accordingly.
+- Do not assign another person's task to Dominik.
+- Update an existing task when scope, status, ownership, dependency, or relevance changes.
+- Keep active task context to a few concise sentences at most.
+- Do not use `tasks.md` as a project specification or historical log.
+- Use explicit states such as open, partially complete, completed, blocked, waiting, changed, obsolete, discarded, and suggestion.
+
+## Repository Health Check
+
+When Dominik asks to inspect, audit, clean up, or assess Profile, perform a read-only health check before proposing changes.
+
+Check for duplicated narratives, contradictory status or ownership, stale files and tasks, project files that became chronological logs, tasks that are overly broad or detailed, provisional initiatives listed as active projects, missing confirmation dates, unsupported certainty, and index mismatches.
+
+Rate structure, accuracy, duplication, freshness, task hygiene, and scalability briefly. Distinguish urgent inconsistencies, useful cleanup, and optional refinements. Propose the smallest useful cleanup and request explicit approval before writing.
+
 ## Weekly Summary Format
 
 When creating a weekly summary for colleagues:
@@ -154,15 +175,14 @@ When creating a weekly summary for colleagues:
 1. Write the complete summary in English.
 2. Start with `Dominik` on its own line.
 3. Use the headings `This week’s progress` and `Next steps`.
-4. Use one bullet per project or workstream. Do not split one project across several bullets.
+4. Use one bullet per project or workstream.
 5. Start each bullet with one relevant emoji, followed by the official project name in bold, an en dash, and a compact description.
-6. Include all relevant workstreams rather than forcing the recap into a fixed number of projects.
-7. Keep `Next steps` very short and limit the section to a maximum of five bullets.
-8. If more than five next steps are materially important, select the five most relevant and add a brief note that another important next step was omitted from the compact list.
-9. Exclude internal work-organization, repository-setup, or publishing-infrastructure topics from colleague-facing summaries unless Dominik explicitly asks to include them.
-10. Treat Dominik's Slack post from 2026-07-23 as the current formatting reference: compact, factual, easy to scan, and ready to paste into Slack.
-11. For a delta summary, use only `Updates since last summary`. For a full weekly summary, use the entire weekly file.
-12. After Dominik confirms the summary as complete, update the weekly summary checkpoint before treating later entries as input for the next summary.
+6. Include all relevant workstreams rather than forcing a fixed number.
+7. Keep `Next steps` very short and limit it to five bullets.
+8. Exclude internal work-organization, repository-setup, or publishing-infrastructure topics unless explicitly requested.
+9. Treat Dominik's Slack post from 2026-07-23 as the formatting reference: compact, factual, easy to scan, and ready to paste into Slack.
+10. For a delta summary, use only `Updates since last summary`. For a full weekly summary, use the entire weekly file.
+11. Advance the summary checkpoint only after Dominik confirms the completed version.
 
 ## Privacy and Safety
 
@@ -176,6 +196,7 @@ When creating a weekly summary for colleagues:
 - Prefer a branch and pull request for structural changes or broad context migrations.
 - Small, explicitly approved context updates may be committed directly when the available workflow requires it.
 - Never commit or push without Dominik's explicit instruction.
+- Group one coherent documentation update into as few commits as the available workflow reasonably allows.
 
 ## Response Behaviour
 
