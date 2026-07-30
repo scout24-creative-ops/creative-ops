@@ -12,16 +12,23 @@
 - [ ] Create the Creative Hub content roadmap
   - Area: Creative Hub
   - Status: Partially complete
-  - Next step: Turn the strategic sequence into a compact final slide and confirm the handover points between Hub prerequisites, agent pilots, libraries, automated news sourcing and the later Knowledge stage.
-  - Context: The roadmap is a strategic sequence with parallel workstreams rather than a fixed person-and-date schedule.
-  - Source: Eve and Peter working meeting on 2026-07-30
+  - Next step: Turn the strategic sequence into a compact final slide and confirm the handover points between Hub prerequisites, agent pilots, libraries and the later Knowledge stage.
+  - Context: The roadmap is a strategic sequence with parallel workstreams rather than a fixed person-and-date schedule. Knowledge remains deliberately last because it has the highest editorial and maintenance burden.
+  - Source: Eve and Peter working meeting and roadmap refinement on 2026-07-30
 
 - [ ] Consolidate the Creative Hub communication structure
   - Area: Creative Hub
   - Status: Partially complete
   - Next step: Align with Eve and Peter on the roles of `#creative_studio`, `#creative-ops-marketing`, Hub announcements, useful cross-posting and lightweight team-specific support.
-  - Context: The current channel model is exploratory; Dominik wants to avoid creating or joining many additional project channels.
+  - Context: The current channel model is exploratory; Dominik wants to avoid creating or joining many additional project channels. Activation of Dominik's own channel is handled as a separate work item rather than part of the joint Hub setup.
   - Source: Communication-structure exploration on 2026-07-30
+
+- [ ] Develop a lightweight activation plan for `#creative-ops-marketing`
+  - Area: Creative Operations communication
+  - Status: Open
+  - Next step: Define the channel's future purpose, a small set of useful recurring content types and a low-effort publishing approach before committing to any cadence or automation.
+  - Context: The channel should become more active and support Dominik's visibility without creating another operational maintenance burden. Possible monitoring of selected AI or ChatGPT channels may be explored later, but no solution or posting rhythm has been decided.
+  - Source: Dominik's communication-structure clarification on 2026-07-30
 
 - [ ] Develop the concept for the binding AI enablement series
   - Area: AI Enablement
