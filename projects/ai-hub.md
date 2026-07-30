@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Provide a central, curated overview of AI agents and, over time, practical projects, reusable libraries and knowledge that are relevant across Marketing.
+Provide a central, curated overview of AI agents and, over time, practical projects, reusable libraries and selected knowledge that are relevant across Marketing.
 
 ## Current Status
 
@@ -12,7 +12,7 @@ The next expansion is being shaped as a lightweight, repeatable operating model 
 
 1. prepare the Hub prerequisites such as a featured slider, reusable detail page and library category;
 2. test the recurring agent-curation process with two or three relevant agents;
-3. transfer the first reusable libraries and explore automated Slack-based news sourcing as follow-up workstreams;
+3. transfer the first reusable libraries;
 4. add Knowledge later because it has the highest editorial and maintenance burden.
 
 The agent-curation process now has four stages: discover relevant agents, assess Hub fit, translate approved facts into Hub formats, and communicate the new entry. A tested prompt executed directly inside the source agent is the practical MVP because an external Skill cannot inspect another agent's configuration automatically.
@@ -43,12 +43,13 @@ Dominik prefers team-specific agent support to happen primarily through meetings
 - 2026-07-30: Eve, Peter and Dominik aligned on prioritizing relevant, reusable and maintainable additions rather than publication speed alone.
 - 2026-07-30: The recurring four-stage agent-curation model and direct in-agent prompt were tested successfully enough for pilot use.
 - 2026-07-30: The roadmap was reframed as a strategic sequence with parallel workstreams instead of a fixed person-and-date schedule.
+- 2026-07-30: The possible monitoring of selected AI Slack channels was separated from the joint Creative Hub communication discussion. It primarily concerns future activation of `#creative-ops-marketing` and is not currently part of the shared Hub scope with Eve and Peter.
 
 ## Decisions
 
 - Prioritize understandable, relevant and maintainable content rather than listing everything.
 - Expand beyond a static Creative Studio agent directory.
-- Start with agents and reusable libraries; introduce automated news sourcing after the agent flow is stable; add Knowledge later.
+- Start with agents and reusable libraries; add Knowledge only later because of its comparatively high editorial and maintenance effort.
 - Keep non-agent content lightweight rather than creating several separate publishing systems immediately.
 - Use Slack for visibility while durable reusable content lives in the Hub.
 - Treat detailed agent pages as optional and use them only where the value justifies maintenance.
@@ -57,6 +58,7 @@ Dominik prefers team-specific agent support to happen primarily through meetings
 - Require owner review and approval before publication.
 - Express the roadmap as strategic sequence and dependencies rather than fixed dates.
 - Treat the current Slack communication model as a hypothesis, not a final decision.
+- Keep the separate question of activating `#creative-ops-marketing` outside the joint Hub scope until Dominik has developed a lightweight plan.
 
 ## Risks and Open Questions
 
