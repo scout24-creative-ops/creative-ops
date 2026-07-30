@@ -28,6 +28,11 @@ Read this file first, then load only the context relevant to the task. Agent beh
 - [Chart Agent](projects/chart-agent.md)
 - [Brand Agent – Tone of Voice](projects/brand-agent.md)
 - [PR Intelligence Hub](projects/pr-intelligence-hub.md)
+
+## Provisional Observations
+
+These files preserve potentially useful context but are not active projects or confirmed assignments for Dominik. Load them only when the initiative is explicitly discussed or its status is being clarified.
+
 - [Content Marketing Agent](projects/content-marketing-agent.md)
 - [Newsletter Automation](projects/newsletter-automation.md)
 
@@ -39,7 +44,7 @@ Read this file first, then load only the context relevant to the task. Agent beh
 ## Information Model
 
 - `tasks.md` contains confirmed tasks, waiting items, derived suggestions and completed work.
-- `documentation/` records every work-relevant update for the current week.
-- `projects/` contains only durable project knowledge.
+- `documentation/` records every work-relevant update for the current week and remains the chronological archive.
+- `projects/` contains compact maintained context for active projects and clearly labeled provisional observations.
 - `profile/`, `organization/`, and `github-setup/` contain durable context for their respective areas.
 - The short summary for Jorin is generated in chat from the current weekly documentation and is not stored here.
