@@ -11,17 +11,17 @@
 
 - [ ] Create the Creative Hub content roadmap
   - Area: Creative Hub
-  - Status: Open
-  - Next step: Sequence the first expansion steps, starting with the slider and then agents, libraries and knowledge content, and define when recurring source integrations such as selected Slack channels should be introduced.
-  - Context: Dominik, Eve and Peter agreed to increase relevance quickly without creating disproportionate technical or editorial effort. The first focus areas are agents, news and knowledge, and reusable libraries.
-  - Source: Alignment with Eve and Peter on 2026-07-30
+  - Status: Partially complete
+  - Next step: Turn the current strategic sequence into a compact final slide and confirm the relative handover points between Hub prerequisites, the first agent pilots, library integration, automated Slack-based news sourcing and the later Knowledge stage.
+  - Context: The roadmap is no longer treated as a fixed person- and date-based schedule. The current working direction is to build the slider, reusable detail page and library category first while Dominik starts the recurring agent process; use two or three agents to test the new Hub components; then continue with libraries and Slack-based news automation as parallel follow-up workstreams; and add Knowledge later because of the higher editorial and maintenance effort. The exact timing and dependencies remain open.
+  - Source: Strategic development after the Eve and Peter working meeting on 2026-07-30
 
 - [ ] Consolidate the Creative Hub communication structure
   - Area: Creative Hub
-  - Status: Open
-  - Next step: Define how the Hub, existing Slack channels, Frontify and the planned AI Enablement series should work together, including the primary destination for durable content and the role of each communication format.
-  - Context: Hub-related information is currently distributed across several channels and initiatives. A coherent structure should reduce fragmentation and support Eve's communication and targeted rollout planning.
-  - Source: Alignment with Eve and Peter on 2026-07-30
+  - Status: Partially complete
+  - Next step: Align the working channel model with Eve and Peter, including the distinct roles of `#creative_studio` and `#creative-ops-marketing`, where Hub announcements should live, when cross-posting is useful and how team-specific agent support can work through meetings, direct messages and threads without creating many new channels.
+  - Context: A first simplified model has been explored: both existing Slack channels remain equal but cover different themes, while the Creative Hub is the shared durable platform. This is not yet agreed. Dominik wants to avoid maintaining additional channels or joining a separate channel for every team project; most team support should happen in meetings, with direct Slack follow-ups and threads where useful.
+  - Source: Communication-structure exploration on 2026-07-30
 
 - [ ] Develop the concept for the binding AI enablement series
   - Area: AI Enablement
