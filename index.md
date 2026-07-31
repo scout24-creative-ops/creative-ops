@@ -12,17 +12,25 @@ Read this file first, then load only the context relevant to the task. Agent beh
 - [GitHub and workspace setup](github-setup/github-context.md)
 - [Communication standards](profile/communication/README.md)
 
+## Strategic Steering
+
+The shared steering layer sits above both pillars and is not a third pillar.
+
+- [AI Strategy & Steering](projects/ai-strategy-steering.md)
+
 ## Active Projects by Strategic Pillar
 
 The two pillars are Dominik's personal working and steering model. Projects can move, end or be added over time. Classification depends primarily on Dominik's role in the initiative.
 
 ### AI Enablement
 
-- [AI Enablement](projects/ai-enablement.md)
+- [AI Enablement Series](projects/ai-enablement.md)
 - [AI Team-Check](projects/marketing-ai-survey.md)
 - [Chart Agent](projects/chart-agent.md)
 - [Brand Agent – Tone of Voice](projects/brand-agent.md)
 - [PR Intelligence Hub](projects/pr-intelligence-hub.md)
+- [Content Marketing Agent](projects/content-marketing-agent.md)
+- [Coupa AI Support](projects/coupa-ai-support.md)
 
 ### AI Creative Operations
 
@@ -32,16 +40,10 @@ The two pillars are Dominik's personal working and steering model. Projects can 
 - [HeyImmo automated HomeOwner mail](projects/heyimmo-homeowner-mail.md)
 - [E-Mail Automation – Plus FOMO](projects/email-automation-plus-fomo.md)
 - [LOFT automation](projects/loft-automation.md)
+- [Newsletter Automation](projects/newsletter-automation.md)
 - [Design Library and Builder Library](projects/design-library.md)
 - [Creative Hub](projects/ai-hub.md)
 - [GIF Animation](projects/gif-automation.md)
-
-## Provisional Observations
-
-These files preserve potentially useful context but are not active projects or confirmed assignments for Dominik. Load them only when the initiative is explicitly discussed or its status is being clarified.
-
-- [Content Marketing Agent](projects/content-marketing-agent.md)
-- [Newsletter Automation](projects/newsletter-automation.md)
 
 ## Weekly Documentation
 
@@ -52,6 +54,6 @@ These files preserve potentially useful context but are not active projects or c
 
 - `tasks.md` contains confirmed tasks, waiting items, derived suggestions and completed work.
 - `documentation/` records every work-relevant update for the current week and remains the chronological archive.
-- `projects/` contains compact maintained context for active projects and clearly labeled provisional observations.
+- `projects/` contains compact maintained context for active projects.
 - `profile/`, `organization/`, and `github-setup/` contain durable context for their respective areas.
 - The short summary for Jorin is generated in chat from the current weekly documentation and is not stored here.
