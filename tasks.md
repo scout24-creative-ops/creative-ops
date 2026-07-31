@@ -86,12 +86,12 @@
   - Context: Kick-off, concept and roadmap are complete; the next session should establish the operating setup.
   - Source: Project handover confirmed on 2026-07-26
 
-- [ ] Contact Yvonne about the Content Marketing Agent
+- [ ] Define the first use case with Yvonne
   - Area: Content Marketing Agent
   - Status: Open
-  - Next step: Hold a discovery conversation to understand the current status, ownership, existing work, immediate problem and whether Dominik's support is useful.
-  - Context: The initiative is active in Dominik's work organization because a concrete follow-up exists; the fachliche and implementation ownership remains with Yvonne and the relevant team.
-  - Source: Dominik confirmed the project treatment on 2026-07-31
+  - Next step: Define the first concrete use case together with Yvonne.
+  - Context: The task is confirmed and remains in the current continuation queue; Yvonne and the relevant team retain functional and implementation ownership.
+  - Source: Dominik confirmed the task on 2026-07-31
 
 - [ ] Contact Steffi about Newsletter Automation
   - Area: Newsletter Automation
