@@ -24,14 +24,14 @@
   - Source: Communication-structure exploration on 2026-07-30
 
 - [ ] Develop a lightweight activation plan for `#creative-ops-marketing`
-  - Area: Creative Operations communication
+  - Area: AI Strategy & Steering
   - Status: Open
   - Next step: Define the channel's future purpose, a small set of useful recurring content types and a low-effort publishing approach before committing to any cadence or automation.
   - Context: The channel should become more active and support Dominik's visibility without creating another operational maintenance burden. Possible monitoring of selected AI or ChatGPT channels may be explored later, but no solution or posting rhythm has been decided.
   - Source: Dominik's communication-structure clarification on 2026-07-30
 
-- [ ] Develop the concept for the binding AI enablement series
-  - Area: AI Enablement
+- [ ] Develop the concept for the binding AI Enablement Series
+  - Area: AI Enablement Series
   - Status: Partially complete
   - Next step: Revise the HTML one-pager and complete the decision-ready concept, including cadence, participant setup, slide templates and protected working time, for alignment after Jorin's return.
   - Context: The concept uses two initial 45-minute sessions followed by a recurring progress and testing series.
@@ -48,7 +48,7 @@
   - Area: AI Team-Check
   - Status: Open
   - Next step: After the Social Media interview, reduce the findings to recurring barriers, enablement needs and strategic opportunity themes.
-  - Context: The result is needed for the management view and the separate AI Enablement project.
+  - Context: The result is needed for the management view and the separate AI Enablement Series.
   - Source: Scope clarification on 2026-07-27
 
 - [ ] Finalize the visual AI Team-Check results presentation
@@ -72,8 +72,22 @@
   - Context: Kick-off, concept and roadmap are complete; the next session should establish the operating setup.
   - Source: Project handover confirmed on 2026-07-26
 
+- [ ] Contact Yvonne about the Content Marketing Agent
+  - Area: Content Marketing Agent
+  - Status: Open
+  - Next step: Hold a discovery conversation to understand the current status, ownership, existing work, immediate problem and whether Dominik's support is useful.
+  - Context: The initiative is active in Dominik's work organization because a concrete follow-up exists; the fachliche and implementation ownership remains with Yvonne and the relevant team.
+  - Source: Dominik confirmed the project treatment on 2026-07-31
+
+- [ ] Contact Steffi about Newsletter Automation
+  - Area: Newsletter Automation
+  - Status: Open
+  - Next step: Hold a discovery conversation to understand the current workflow, existing agent or automation work, biggest manual burden and the smallest useful next step.
+  - Context: The initiative is active in Dominik's work organization because a concrete follow-up exists; links to Contentful, Landing Page Builder and email automation should be considered after discovery.
+  - Source: Dominik confirmed the project treatment on 2026-07-31
+
 - [ ] Re-establish the recurring alignment setup with Allan and Lars
-  - Area: Stakeholder alignment
+  - Area: AI Strategy & Steering
   - Status: Open
   - Next step: Agree whether future check-ins should be separate or joint and confirm a useful cadence before creating new recurring calendar series.
   - Context: The former recurring meetings appear to have been cancelled when paused for vacation; the previous rhythm is uncertain.
@@ -93,7 +107,7 @@
   - Source: Plus FOMO learnings and Dominik's confirmation on 2026-07-29
 
 - [ ] Align canonical project names with the workspace structure
-  - Area: Creative Operations work organization
+  - Area: AI Strategy & Steering
   - Status: Open
   - Next step: Compare the agreed canonical project names with the actual VS Code workspace, repository and subproject structure, then define a clear naming rule for visible project titles, nested projects and technical names.
   - Context: Not every project exists at the workspace's top level, so the naming model needs to distinguish canonical display names from repositories, folders and nested workstreams before any wider renaming is attempted.
@@ -115,14 +129,14 @@
   - Dominik's next step: Incorporate confirmed feedback, validate DIMS3 resizing with real listings and prepare a controlled test of Mitch's AWS/GitHub module process.
   - Context: The first responsive Outlook-aware reference mail is ready for feedback; the second concept should reuse its structure.
 
-- [ ] Align the AI Enablement concept with Jorin
-  - Area: AI Enablement
+- [ ] Align the AI Enablement Series concept with Jorin
+  - Area: AI Enablement Series
   - Status: Waiting for another person or decision
   - Waiting for: Jorin's return and concept alignment
   - Dominik's next step: Complete the revised three-part concept and visual overview during Jorin's vacation.
 
 - [ ] Clarify Coupa AI support and review the existing PO agent
-  - Area: AI Team-Check
+  - Area: Coupa AI Support
   - Status: Waiting for another person or decision
   - Waiting for: Jana Homfeldt's response about the responsible Coupa contact and existing or planned AI support
   - Dominik's next step: After clarification, speak with Franziska Stober about her Outlook-based PO-status agent and assess reusable learnings.
@@ -130,27 +144,22 @@
 
 ## Suggestions
 
-- [ ] Offer a discovery conversation to Yvonne about the Content Marketing Agent
-  - Area: Content Marketing Agent
-  - Status: Suggestion
-  - Reason: Clarify current status, ownership, MVP scope and whether Dominik's support is useful before treating the initiative as an active project.
-
-- [ ] Offer a discovery conversation to Steffi about Newsletter Automation
-  - Area: Newsletter Automation
-  - Status: Suggestion
-  - Reason: Clarify the current workflow, ownership, pain points and smallest useful automation step before treating the initiative as an active project.
-
 - [ ] Remove the checked legacy `Shared` folder
   - Area: AI-supported work organization system
   - Status: Suggestion
   - Reason: The folder contains no relevant files or active references; removal would simplify the workspace but is not required.
 
 - [ ] Turn the Agent Process Guide into a reusable standard after practical use
-  - Area: AI Enablement
+  - Area: AI Enablement Series
   - Status: Suggestion
   - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
 
 ## Completed
+
+- [x] Consolidate the role and portfolio into one steering layer and two pillars
+  - Area: AI Strategy & Steering
+  - Completed: 2026-07-31
+  - Outcome: AI Strategy & Steering now sits above AI Enablement and AI Creative Operations; project names, task presentation and active initiative classification were aligned.
 
 - [x] Complete the Event Team interview with Sophie
   - Area: AI Team-Check
