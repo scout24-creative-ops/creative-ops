@@ -6,7 +6,31 @@ Dominik arbeitet als **Creative Operations & Digital Transformation Lead** im Ma
 
 Sein fachlicher Kern liegt in **AI Creative Operations**: Er entwickelt AI-gestützte Lösungen, Prozesse und Systeme rund um Kreation, Content-Produktion und Marketing-Assets. Gleichzeitig übernimmt er ein breiteres **AI Enablement** für Jorins Unit und unterstützt dabei auch Themen außerhalb von Creative Operations, wenn Teams Orientierung, Struktur oder methodische Begleitung benötigen.
 
-Die zwei Säulen sind Dominiks persönliches Arbeits- und Steuerungsmodell. Sie helfen ihm, Projekte zu priorisieren, Energie bewusst zu verteilen und seine operative Tiefe je nach Themenfeld zu begrenzen. Sie sind keine formale Organisationsstruktur und keine feste Projektliste.
+Dominiks persönliches Arbeitsmodell besteht aus einer gemeinsamen Steuerungsebene und zwei fachlichen Säulen:
+
+1. **AI Strategy & Steering** als übergreifender Raum für Planung und Priorisierung
+2. **AI Enablement** als breite Befähigung und Begleitung von Teams
+3. **AI Creative Operations** als fachlich tiefer Schwerpunkt für Kreation und Produktion
+
+AI Strategy & Steering ist keine dritte Säule. Die zwei Säulen helfen Dominik, Projekte einzuordnen und Energie bewusst zu verteilen. Das Modell ist keine formale Organisationsstruktur und keine dauerhaft feste Projektliste.
+
+## AI Strategy & Steering
+
+Dominik steuert sein gesamtes AI-Arbeitsfeld über beide Säulen hinweg an einer gemeinsamen Stelle.
+
+Dazu gehören:
+
+- Prioritäten und Kapazität zwischen den beiden Säulen setzen;
+- neue Initiativen einordnen und ihren sinnvollen Umfang bestimmen;
+- entscheiden, welche Projekte verbunden, übergeben, pausiert oder beendet werden;
+- relevante Agents, Builder, Plattformen und Workflows als Gesamtportfolio betrachten;
+- Doppelarbeit und isolierte Einzellösungen erkennen;
+- prüfen, wo Dominik selbst zu operativ arbeitet;
+- sein Rollenmodell und seine Arbeitsorganisation weiterentwickeln;
+- wenige Themen mit hohem Hebel für die Unit und das Unternehmen auswählen;
+- Entscheidungen, Fortschritt und Wirkung für Jorin und relevante Stakeholder sichtbar machen.
+
+Diese Ebene ist der zentrale strategische Arbeitsraum. Es gibt keine getrennten Strategy-&-Steering-Projekte pro Säule.
 
 ## Säule 1: AI Enablement
 
@@ -14,7 +38,7 @@ Dominik befähigt Teams, eigene AI-Initiativen sinnvoll auszuwählen, als kleine
 
 Dazu gehören:
 
-- ein verbindliches AI-Enablement-Format konzipieren und weiterentwickeln;
+- die **AI Enablement Series** konzipieren und weiterentwickeln;
 - Teams bei Agent-, Workflow- und Automationsideen beraten;
 - Use Cases, MVP-Scope, Erfolgskriterien und nächste Schritte strukturieren;
 - Onboardings, Workshops und bedarfsbezogene Folgetermine durchführen;
@@ -22,7 +46,7 @@ Dazu gehören:
 - Orientierung zu Qualität, Wiederverwendung und sinnvoller AI-Nutzung geben;
 - Unterstützung reduzieren oder beenden, sobald ein Team eigenständig weiterarbeiten kann.
 
-AI Enablement ist in der Zielgruppe breit. Es kann Creative-Themen ebenso betreffen wie PR, Brand, Social, administrative Prozesse oder andere Aufgaben in Jorins Teams. Die fachliche und operative Verantwortung für die jeweilige Lösung bleibt grundsätzlich beim zuständigen Team.
+AI Enablement ist in der Zielgruppe breit. Es kann Creative-Themen ebenso betreffen wie PR, Brand, Social, Content, Newsletter, Beschaffung oder andere Aufgaben in Jorins Teams. Die fachliche und operative Verantwortung für die jeweilige Lösung bleibt grundsätzlich beim zuständigen Team.
 
 Dominik ist hier nicht der dauerhafte Agent-Bauer oder operative Owner für alle Initiativen. Seine Rolle ist, Entscheidungen zu verbessern, Fehlstarts und Doppelarbeit zu vermeiden und Teams schneller zu tragfähigen Lösungen zu führen.
 
@@ -43,22 +67,17 @@ Dazu gehören:
 
 In dieser Säule besitzt Dominik die größte fachliche Tiefe. Er kann Zielbild, Produktlogik, Priorisierung, Qualitätsmaßstab und strategische Weiterentwicklung verantworten. Operative und technische Umsetzung soll dennoch schrittweise an geeignete Kolleg:innen, Freelancer oder Plattformteams übergehen, wenn sie nicht dauerhaft Dominiks eigenen Beitrag erfordert.
 
-## Strategy & Steering
+## Projektzuordnung
 
-Beide Säulen enthalten eine übergreifende Strategy-&-Steering-Aufgabe. Sie ist keine dritte Säule und kein zusätzliches Pflichtprogramm.
+Projekte sind bewegliche Bestandteile der beiden Säulen. Neue Themen können hinzukommen, bestehende auslaufen oder ihre Einordnung verändern.
 
-Dominik prüft regelmäßig:
+Entscheidend ist Dominiks Funktion im Vorhaben:
 
-- welche Initiativen strategisch relevant sind;
-- welche Themen intensive Unterstützung benötigen und wo punktuelles Sparring genügt;
-- welche Projekte verbunden, standardisiert, übergeben, pausiert oder beendet werden sollten;
-- welche Agents, Builder, Plattformen und Workflows langfristig gebraucht werden;
-- wo Doppelarbeit oder isolierte Einzellösungen entstehen;
-- wo Dominik selbst zu operativ arbeitet;
-- welche wenigen Themen den größten Hebel für die Unit oder das Unternehmen haben;
-- wie Ergebnisse, Entscheidungen und Fortschritt verständlich sichtbar gemacht werden.
+- Unterstützt er ein Team bei dessen eigener Lösung, gehört die Arbeit primär zu **AI Enablement**.
+- Entwickelt und steuert er eine zentrale Creative-Produktionsweise oder Infrastruktur, gehört sie primär zu **AI Creative Operations**.
+- Betrifft eine Aufgabe Priorisierung, Portfolio, Rollenmodell oder Kapazitätsverteilung über mehrere Projekte hinweg, gehört sie zu **AI Strategy & Steering**.
 
-Projekte sind bewegliche Bestandteile der beiden Säulen. Neue Themen können hinzukommen, bestehende auslaufen oder ihre Einordnung verändern. Entscheidend ist nicht nur das Artefakt, sondern Dominiks Funktion im jeweiligen Vorhaben: Unterstützt er ein Team bei dessen Lösung, gehört die Arbeit primär zu AI Enablement. Entwickelt und steuert er eine zentrale Creative-Produktionsweise oder Infrastruktur, gehört sie primär zu AI Creative Operations.
+Eine Initiative gilt für Dominiks Arbeitsorganisation als begonnen, sobald er Informationen gesammelt, erste Gespräche geführt, Unterstützung angeboten oder einen konkreten nächsten Schritt übernommen hat. Zusätzliche sichtbare Statuskategorien sind für seine persönliche Aufgabenansicht nicht erforderlich.
 
 ## Arbeitsprinzip
 
@@ -141,4 +160,4 @@ Dominiks Beitrag zu Automationsprojekten soll möglichst über den einzelnen Use
 
 ## Last Confirmed
 
-Das Zwei-Säulen-Modell als persönliches Arbeits- und Steuerungssystem wurde von Dominik am 2026-07-31 bestätigt. Jorins Erwartungen und das fachliche Lead-Mandat wurden im Juli 2026 bestätigt.
+Die gemeinsame Steuerungsebene **AI Strategy & Steering** oberhalb der zwei Säulen wurde von Dominik am 2026-07-31 bestätigt. Jorins Erwartungen und das fachliche Lead-Mandat wurden im Juli 2026 bestätigt.
