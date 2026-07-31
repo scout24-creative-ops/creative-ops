@@ -1,0 +1,92 @@
+{
+  "updated": "2026-07-31",
+  "projects": [
+    {
+      "name": "Creative Hub",
+      "tasks": [
+        { "text": "Agenten-Kurationsstrategie finalisieren", "category": "continue" },
+        { "text": "Content-Roadmap als finale Folie ausarbeiten", "category": "continue" },
+        { "text": "Kommunikationsstruktur mit Eve und Peter abstimmen", "category": "continue" }
+      ]
+    },
+    {
+      "name": "AI Strategy & Steering",
+      "tasks": [
+        { "text": "Aktivierungsplan für #creative-ops-marketing entwickeln", "category": "continue" },
+        { "text": "Regelmäßige Abstimmung mit Allan und Lars vereinbaren", "category": "continue" },
+        { "text": "Kanonische Projektnamen mit der Workspace-Struktur abgleichen", "category": "focus" }
+      ]
+    },
+    {
+      "name": "AI Enablement Series",
+      "tasks": [
+        { "text": "Landingpage finalisieren und übergeben", "category": "focus" },
+        { "text": "Gemeinsame Projekt-Slides erstellen", "category": "focus" },
+        { "text": "Entscheidungsreifes Serienkonzept fertigstellen", "category": "focus" },
+        { "text": "Konzept mit Jorin abstimmen", "category": "waiting" }
+      ]
+    },
+    {
+      "name": "AI Team-Check",
+      "tasks": [
+        { "text": "Abschließendes Social-Media-Interview führen", "category": "focus" },
+        { "text": "Erkenntnisse zu gemeinsamen Themen verdichten", "category": "focus" },
+        { "text": "Visuelle Ergebnispräsentation finalisieren", "category": "focus" }
+      ]
+    },
+    {
+      "name": "Brand Agent – Tone of Voice",
+      "tasks": [
+        { "text": "MVP mit Marie festlegen", "category": "continue" }
+      ]
+    },
+    {
+      "name": "PR Intelligence Hub",
+      "tasks": [
+        { "text": "Nächste Arbeitssession vorbereiten und moderieren", "category": "continue" }
+      ]
+    },
+    {
+      "name": "Content Marketing Agent",
+      "tasks": [
+        { "text": "Discovery-Gespräch mit Yvonne führen", "category": "continue" }
+      ]
+    },
+    {
+      "name": "Newsletter Automation",
+      "tasks": [
+        { "text": "Discovery-Gespräch mit Steffi führen", "category": "continue" }
+      ]
+    },
+    {
+      "name": "Contentful Marketing MVP",
+      "tasks": [
+        { "text": "Mukhammadjon zum Implementierungsstand kontaktieren", "category": "continue" }
+      ]
+    },
+    {
+      "name": "E-Mail Automation",
+      "tasks": [
+        { "text": "Wiederverwendbare E-Mail-Standards für Codex entwickeln", "category": "continue" }
+      ]
+    },
+    {
+      "name": "Landing Page Builder / Design Library",
+      "tasks": [
+        { "text": "Review mit Ciaran abschließen", "category": "waiting" }
+      ]
+    },
+    {
+      "name": "E-Mail Automation – Plus FOMO",
+      "tasks": [
+        { "text": "Plus-FOMO-E-Mail nach Präsentationsfeedback fortführen", "category": "waiting" }
+      ]
+    },
+    {
+      "name": "Coupa AI Support",
+      "tasks": [
+        { "text": "Coupa-AI-Support und bestehenden PO-Agent prüfen", "category": "waiting" }
+      ]
+    }
+  ]
+}

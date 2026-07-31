@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Persönliches Dashboard für offene Projektaufgaben." />
+    <title>Project Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="dashboard-shell">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Creative Ops</p>
+          <h1>Project Dashboard</h1>
+          <p class="subtitle">Offene nächste Schritte über alle laufenden Projekte.</p>
+        </div>
+        <p class="updated">Letzte Aktualisierung: <time id="updated-date" datetime="">Wird geladen …</time></p>
+      </header>
+
+      <section class="toolbar" aria-label="Projektfilter">
+        <div class="filter-group" role="group" aria-label="Kategorien filtern">
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Alle</button>
+          <button class="filter-button" type="button" data-filter="focus" aria-pressed="false">Fokus</button>
+          <button class="filter-button" type="button" data-filter="continue" aria-pressed="false">Weiterführen</button>
+          <button class="filter-button" type="button" data-filter="waiting" aria-pressed="false">Warten &amp; Nachhalten</button>
+        </div>
+      </section>
+
+      <section aria-label="Projektübersicht">
+        <div id="project-grid" class="project-grid" aria-live="polite"></div>
+        <p id="empty-state" class="empty-state" hidden>Für diese Kategorie gibt es aktuell keine offenen Projekte.</p>
+        <p id="error-state" class="error-state" hidden>Die Projektdaten konnten nicht geladen werden. Bitte Seite erneut laden.</p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
