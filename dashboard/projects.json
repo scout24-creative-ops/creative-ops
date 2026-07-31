@@ -49,7 +49,7 @@
     {
       "name": "Content Marketing Agent",
       "tasks": [
-        { "text": "Discovery-Gespräch mit Yvonne führen", "category": "continue" }
+        { "text": "Ersten Use Case mit Yvonne definieren", "category": "continue" }
       ]
     },
     {
