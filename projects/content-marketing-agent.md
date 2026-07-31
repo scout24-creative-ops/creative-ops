@@ -12,7 +12,7 @@ The exact project scope, ownership model and current implementation status are n
 - Yvonne appears to be the primary person driving the project.
 - A kick-off had already taken place, but Andreas had not yet received a current status update.
 - The broader concept risks becoming too large if it tries to cover all content-marketing needs at once.
-- Dominik proactively offered strategic and methodological support after hearing about the initiative; Andreas did not assign or request this support as a formal task.
+- Dominik confirmed the next step to define the first concrete use case together with Yvonne.
 
 ## Provisional Scope
 
@@ -26,28 +26,26 @@ Possible capabilities mentioned in the conversation include:
 
 These capabilities are not yet a confirmed MVP.
 
-## Dominik's Potential Role
+## Dominik's Role
 
-Dominik could support the initiative by:
+Dominik supports the initiative strategically and methodologically by:
 
-- clarifying the current state and intended outcome;
+- defining the first concrete use case with Yvonne;
 - reducing the concept to one small testable MVP;
 - structuring requirements, responsibilities and success criteria;
 - connecting the team with relevant AI, data or automation expertise when needed;
 - identifying reusable components and avoiding parallel development.
 
-This support is currently an offer, not a confirmed assignment.
-
 ## Key Stakeholders
 
 - Yvonne — provisional project lead or primary owner; exact role to be confirmed
 - Andreas Böhm — source of the initial project context and team lead context
-- Dominik Böhme — potential strategic and methodological support
+- Dominik Böhme — strategic and methodological support
 - AI Solutions, Data or Automation stakeholders — only if the confirmed MVP requires technical support
 
 ## Next Step
 
-Hold a short discovery conversation with Yvonne to understand the current status, existing work, ownership, immediate problem and whether Dominik's support would be useful.
+Define the first use case together with Yvonne.
 
 ## Open Questions
 
@@ -59,4 +57,4 @@ Hold a short discovery conversation with Yvonne to understand the current status
 
 ## Last Confirmed
 
-2026-07-27
+2026-07-31
