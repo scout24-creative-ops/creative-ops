@@ -160,6 +160,16 @@ Keep one central task list in `tasks.md` with Open, Waiting, Suggestions, and Co
 - Do not use `tasks.md` as a project specification or historical log.
 - Use explicit states such as open, partially complete, completed, blocked, waiting, changed, obsolete, discarded, and suggestion.
 
+## Dashboard Synchronization
+
+`tasks.md` is the single source of truth for open and waiting tasks. `dashboard/projects.json` is a derived visual view and must never be used to write tasks back into `tasks.md`.
+
+When a confirmed change affects an open or waiting task, first read the relevant Profile context and obtain Dominik's existing explicit approval before writing. After approval, update `tasks.md` and any other relevant context files, then regenerate `dashboard/projects.json` from the final task state in the same change. Include every task from `Open` and `Waiting` exactly once, grouped by canonical `Area`/project name; exclude `Suggestions`, `Completed`, obsolete items, and unconfirmed ideas. Keep visible task text to a short action (normally 3–8 words) and assign each task exactly one category: `focus`, `continue`, or `waiting`. Preserve confirmed categories unless priority or dependency changed; ask when a reclassification is unclear.
+
+Do not synchronize the dashboard for historical-only documentation, context-only changes without task impact, or unrelated organization updates. Before committing a dashboard-relevant change, validate Open + Waiting count against dashboard task count, exact one-time task coverage, absence of suggestions/completed tasks, non-empty unique projects, valid task fields/categories, valid JSON, and local HTTP loading without JavaScript errors. Commit the task/context changes and derived dashboard update together. After an approved push to `main`, the existing GitHub Pages workflow deploys `dashboard/` automatically; no separate dashboard publish step or generated commit is allowed.
+
+The Profile skill must apply the same sequence whenever it is available: finalize `tasks.md`, regenerate `dashboard/projects.json`, validate both and the local dashboard, then report that the existing Pages workflow will deploy after push. No editable Profile skill is currently installed in this workspace; if one is later packaged, add this sequence to its task-update workflow without replacing its approval, compactness, or complete-coverage rules.
+
 ## Repository Health Check
 
 When Dominik asks to inspect, audit, clean up, or assess Profile, perform a read-only health check before proposing changes.
