@@ -92,6 +92,13 @@
   - Context: Only patterns confirmed through real rendering tests should become global standards; detailed requirements belong in the relevant technical context.
   - Source: Plus FOMO learnings and Dominik's confirmation on 2026-07-29
 
+- [ ] Align canonical project names with the workspace structure
+  - Area: Creative Operations work organization
+  - Status: Open
+  - Next step: Compare the agreed canonical project names with the actual VS Code workspace, repository and subproject structure, then define a clear naming rule for visible project titles, nested projects and technical names.
+  - Context: Not every project exists at the workspace's top level, so the naming model needs to distinguish canonical display names from repositories, folders and nested workstreams before any wider renaming is attempted.
+  - Source: [Project naming discussion](https://chatgpt.com/g/g-p-6a5fc37157cc8191b05795d276e02e4d-saved-chats/c/6a6b8c5c-ffdc-8385-b7a1-d891cd113c91), confirmed 2026-07-31
+
 ## Waiting
 
 - [ ] Complete LP Builder and Design Library review with Ciaran
