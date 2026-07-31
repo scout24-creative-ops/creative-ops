@@ -30,12 +30,26 @@
   - Context: The channel should become more active and support Dominik's visibility without creating another operational maintenance burden. Possible monitoring of selected AI or ChatGPT channels may be explored later, but no solution or posting rhythm has been decided.
   - Source: Dominik's communication-structure clarification on 2026-07-30
 
-- [ ] Develop the concept for the binding AI Enablement Series
+- [ ] Finalize and hand over the AI Enablement landing page
   - Area: AI Enablement Series
   - Status: Partially complete
-  - Next step: Revise the HTML one-pager and complete the decision-ready concept, including cadence, participant setup, slide templates and protected working time, for alignment after Jorin's return.
+  - Next step: Complete the simplified content logic, finish the HTML landing page and prepare it for handover to colleagues.
+  - Context: The landing page should explain the series and create a simple shared understanding of AI agents. It should not collect project inputs; those belong in the separate shared presentation.
+  - Source: Current landing-page refinement and urgency confirmed on 2026-07-31
+
+- [ ] Create the shared project-slide presentation for the series
+  - Area: AI Enablement Series
+  - Status: Open
+  - Next step: Build the shared presentation in which each person or group records the minimum information needed to introduce and later update their agent or workflow project.
+  - Context: The presentation is a separate working artifact from the explanatory landing page and is required for the recurring session format.
+  - Source: Current AI Enablement clarification and urgency confirmed on 2026-07-31
+
+- [ ] Complete the decision-ready AI Enablement Series concept
+  - Area: AI Enablement Series
+  - Status: Partially complete
+  - Next step: Resolve the remaining transition between the simple agent explanation and the six-step project model, then finalize cadence, participant setup and protected working time for alignment after Jorin's return.
   - Context: The concept uses two initial 45-minute sessions followed by a recurring progress and testing series.
-  - Source: Alignment on 2026-07-21 and refinement on 2026-07-27
+  - Source: Alignment on 2026-07-21 and content refinement through 2026-07-31
 
 - [ ] Complete the final Social Media interview for the AI Team-Check
   - Area: AI Team-Check
@@ -133,7 +147,7 @@
   - Area: AI Enablement Series
   - Status: Waiting for another person or decision
   - Waiting for: Jorin's return and concept alignment
-  - Dominik's next step: Complete the revised three-part concept and visual overview during Jorin's vacation.
+  - Dominik's next step: Complete the revised concept, landing page and shared project-slide presentation during Jorin's vacation.
 
 - [ ] Clarify Coupa AI support and review the existing PO agent
   - Area: Coupa AI Support
