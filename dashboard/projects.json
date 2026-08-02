@@ -4,88 +4,88 @@
     {
       "name": "Creative Hub",
       "tasks": [
-        { "text": "Agenten-Kurationsstrategie finalisieren", "category": "continue" },
-        { "text": "Content-Roadmap als finale Folie ausarbeiten", "category": "continue" },
-        { "text": "Kommunikationsstruktur mit Eve und Peter abstimmen", "category": "continue" }
+        { "text": "Agenten-Kurationsstrategie für den Creative Hub finalisieren", "category": "continue" },
+        { "text": "Creative-Hub-Inhaltsroadmap erstellen", "category": "continue" },
+        { "text": "Creative-Hub-Kommunikation mit Eve und Peter abstimmen", "category": "continue" }
       ]
     },
     {
       "name": "AI Strategy & Steering",
       "tasks": [
         { "text": "Aktivierungsplan für #creative-ops-marketing entwickeln", "category": "continue" },
-        { "text": "Regelmäßige Abstimmung mit Allan und Lars vereinbaren", "category": "continue" },
+        { "text": "Abstimmungsrhythmus mit Allan und Lars neu aufsetzen", "category": "continue" },
         { "text": "Kanonische Projektnamen mit der Workspace-Struktur abgleichen", "category": "focus" }
       ]
     },
     {
       "name": "AI Enablement Series",
       "tasks": [
-        { "text": "Landingpage finalisieren und übergeben", "category": "focus" },
-        { "text": "Gemeinsame Projekt-Slides erstellen", "category": "focus" },
-        { "text": "Entscheidungsreifes Serienkonzept fertigstellen", "category": "focus" },
-        { "text": "Konzept mit Jorin abstimmen", "category": "waiting" }
+        { "text": "AI-Enablement-Landingpage finalisieren und übergeben", "category": "focus" },
+        { "text": "Projekt-Slides für die AI Enablement Series erstellen", "category": "focus" },
+        { "text": "Entscheidungsvorlage für die AI Enablement Series fertigstellen", "category": "focus" },
+        { "text": "AI-Enablement-Serienkonzept mit Jorin abstimmen", "category": "waiting" }
       ]
     },
     {
       "name": "AI Team-Check",
       "tasks": [
-        { "text": "Abschließendes Social-Media-Interview führen", "category": "focus" },
-        { "text": "Erkenntnisse zu gemeinsamen Themen verdichten", "category": "focus" },
-        { "text": "Visuelle Ergebnispräsentation finalisieren", "category": "focus" }
+        { "text": "Abschließendes Social-Media-Interview für den AI Team-Check führen", "category": "focus" },
+        { "text": "AI-Team-Check-Erkenntnisse zu teamübergreifenden Themen verdichten", "category": "focus" },
+        { "text": "AI-Team-Check-Ergebnispräsentation finalisieren", "category": "focus" }
       ]
     },
     {
       "name": "Brand Agent – Tone of Voice",
       "tasks": [
-        { "text": "MVP mit Marie festlegen", "category": "continue" }
+        { "text": "Brand-Agent-MVP mit Marie definieren", "category": "continue" }
       ]
     },
     {
       "name": "PR Intelligence Hub",
       "tasks": [
-        { "text": "Nächste Arbeitssession vorbereiten und moderieren", "category": "continue" }
+        { "text": "Nächste PR-Intelligence-Hub-Session vorbereiten", "category": "continue" }
       ]
     },
     {
       "name": "Content Marketing Agent",
       "tasks": [
-        { "text": "Ersten Use Case mit Yvonne definieren", "category": "continue" }
+        { "text": "Ersten Content-Marketing-Use-Case mit Yvonne definieren", "category": "continue" }
       ]
     },
     {
       "name": "Newsletter Automation",
       "tasks": [
-        { "text": "Discovery-Gespräch mit Steffi führen", "category": "continue" }
+        { "text": "Newsletter-Automation mit Steffi besprechen", "category": "continue" }
       ]
     },
     {
       "name": "Contentful Marketing MVP",
       "tasks": [
-        { "text": "Mukhammadjon zum Implementierungsstand kontaktieren", "category": "continue" }
+        { "text": "Contentful-Umsetzungsstand mit Mukhammadjon prüfen", "category": "continue" }
       ]
     },
     {
       "name": "E-Mail Automation",
       "tasks": [
-        { "text": "Wiederverwendbare E-Mail-Standards für Codex entwickeln", "category": "continue" }
+        { "text": "Wiederverwendbare E-Mail-Standards für Codex definieren", "category": "continue" }
       ]
     },
     {
       "name": "Landing Page Builder / Design Library",
       "tasks": [
-        { "text": "Review mit Ciaran abschließen", "category": "waiting" }
+        { "text": "Ciarans Review für LP Builder und Design Library nachhalten", "category": "waiting" }
       ]
     },
     {
       "name": "E-Mail Automation – Plus FOMO",
       "tasks": [
-        { "text": "Plus-FOMO-E-Mail nach Präsentationsfeedback fortführen", "category": "waiting" }
+        { "text": "Plus-FOMO-Mail nach Feedback fortführen", "category": "waiting" }
       ]
     },
     {
       "name": "Coupa AI Support",
       "tasks": [
-        { "text": "Coupa-AI-Support und bestehenden PO-Agent prüfen", "category": "waiting" }
+        { "text": "Coupa-AI-Support klären und PO-Agent prüfen", "category": "waiting" }
       ]
     }
   ]

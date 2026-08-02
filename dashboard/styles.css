@@ -11,7 +11,7 @@ body { margin: 0; min-width: 320px; }
 
 button { font: inherit; }
 
-.dashboard-shell { max-width: 1440px; margin: 0 auto; padding: 56px clamp(20px, 5vw, 72px) 72px; }
+.dashboard-shell { max-width: 1140px; margin: 0 auto; padding: 56px clamp(20px, 5vw, 72px) 72px; }
 
 .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding-bottom: 34px; border-bottom: 1px solid #ddddd6; }
 .eyebrow { margin: 0 0 10px; color: #686964; font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
@@ -32,13 +32,16 @@ h1 { margin: 0; color: #1e1f20; font-size: clamp(2rem, 4vw, 3.2rem); letter-spac
 .pillar-column__header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 0 0 14px; }
 .pillar-column__title { margin: 0; color: #2a2b2e; font-size: 1.05rem; font-weight: 700; line-height: 1.25; letter-spacing: -.02em; }
 .task-column-list { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
-.task-row { display: grid; grid-template-columns: clamp(180px, 20vw, 220px) minmax(0, 1fr) auto; grid-template-areas: "project title status"; align-items: start; column-gap: 16px; min-width: 0; padding: 7px 10px 7px 12px; border: 1px solid #e2e1db; border-left: 4px solid var(--project-accent, #d7d9d2); border-radius: 8px; background: #fff; color: #242526; font-family: "Make It Better", Arial, Roboto, sans-serif; font-size: 12px; font-weight: 400; line-height: 18px; }
-.task-row__project { grid-area: project; min-width: 0; margin: 0; padding: 1px 8px; border: 1px solid #d6d8d2; border-radius: 999px; color: #5f615c; background: #f8f8f4; font-size: 11px; line-height: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.task-row__title { grid-area: title; min-width: 0; margin: 0; color: #232427; font-size: 14px; line-height: 20px; overflow-wrap: anywhere; }
+.task-row { display: grid; grid-template-columns: clamp(180px, 20vw, 220px) minmax(0, 1fr) auto; grid-template-areas: "project title status"; align-items: start; column-gap: 16px; min-width: 0; padding: 15px 10px 15px 12px; border: 1px solid #e2e1db; border-radius: 8px; background: var(--project-accent, #fff); color: #242526; font-family: "Make It Better", Arial, Roboto, sans-serif; font-size: 12px; font-weight: 400; line-height: 18px; }
+.task-row--continue,
+.task-row--waiting { grid-template-columns: clamp(180px, 20vw, 220px) minmax(0, 1fr); grid-template-areas: "project title"; }
+.task-row__project { grid-area: project; min-width: 0; margin: 0; padding: 0 0 0 10px; border: 0; border-radius: 0; color: #5f615c; background: transparent; font-size: 13px; line-height: 16px; font-weight: 400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.task-row__title { grid-area: title; min-width: 0; margin: 0; color: #232427; font-size: 15px; line-height: 21px; font-weight: 700; overflow-wrap: anywhere; }
 .task-row__status { grid-area: status; justify-self: end; margin: 0; padding: 1px 7px; border: 1px solid transparent; border-radius: 999px; color: #71746f; background: #fafafa; font-size: 10px; line-height: 16px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; white-space: nowrap; }
 .task-row__status--focus { border-color: #e0d2aa; color: #836628; background: #fbf3da; }
-.task-row__status--continue { border-color: #d2dbeb; color: #486284; background: #edf3fb; }
-.task-row__status--waiting { border-color: #dcced2; color: #865b67; background: #f6edf0; }
+.task-row--waiting { border-color: #dcdcd6; background: linear-gradient(rgba(243, 243, 239, 0.55), rgba(243, 243, 239, 0.55)), var(--project-accent, #fff); }
+.task-row--waiting .task-row__project { color: #74756f; }
+.task-row--waiting .task-row__title { color: #4c4d48; }
 .empty-column { margin: 0; padding: 6px 4px; color: #888b86; font-size: 12px; line-height: 18px; font-style: italic; }
 .empty-state, .error-state { margin: 10px 0; padding: 24px; border: 1px dashed #bec1ba; border-radius: 12px; color: #5d5f59; text-align: center; }
 .error-state { border-color: #9a5751; color: #743a35; }
@@ -54,6 +57,10 @@ h1 { margin: 0; color: #1e1f20; font-size: clamp(2rem, 4vw, 3.2rem); letter-spac
   .task-board { gap: 18px; }
   .pillar-column__header { margin-bottom: 10px; }
   .task-row { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "title title" "project status"; column-gap: 10px; row-gap: 4px; }
+  .task-row--continue,
+  .task-row--waiting { grid-template-columns: minmax(0, 1fr); grid-template-areas: "title" "project"; }
   .task-row__project { white-space: normal; }
   .task-row__status { justify-self: end; }
+  .task-row--continue .task-row__status,
+  .task-row--waiting .task-row__status { display: none; }
 }

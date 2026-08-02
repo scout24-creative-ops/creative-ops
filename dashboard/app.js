@@ -115,7 +115,7 @@ function colorForProject(name) {
 
 function createTaskRow(task) {
   const row = document.createElement("article");
-  row.className = "task-row";
+  row.className = `task-row task-row--${task.category}`;
   row.style.setProperty("--project-accent", colorForProject(task.projectName));
 
   const title = document.createElement("p");
@@ -126,11 +126,15 @@ function createTaskRow(task) {
   project.className = "task-row__project";
   project.textContent = task.projectName;
 
-  const category = document.createElement("span");
-  category.className = `task-row__status task-row__status--${task.category}`;
-  category.textContent = categoryLabels[task.category];
+  row.append(project, title);
 
-  row.append(project, title, category);
+  if (task.category === "focus") {
+    const category = document.createElement("span");
+    category.className = "task-row__status task-row__status--focus";
+    category.textContent = categoryLabels.focus;
+    row.append(category);
+  }
+
   return row;
 }
 

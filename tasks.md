@@ -2,28 +2,28 @@
 
 ## Open
 
-- [ ] Develop the Creative Hub agent-curation strategy
+- [ ] Finalize Creative Hub agent curation strategy
   - Area: Creative Hub
   - Status: Partially complete
   - Next step: Finalize the source list and Hub-suitability profile, formalize the direct in-agent prompt and owner approval step, then test the complete process with ScoutData or another relevant agent.
   - Context: The four-stage model and a usable direct in-agent prompt exist; owner validation remains required before publication.
   - Source: Agent-curation concept and prompt tests on 2026-07-30
 
-- [ ] Create the Creative Hub content roadmap
+- [ ] Create Creative Hub content roadmap
   - Area: Creative Hub
   - Status: Partially complete
   - Next step: Turn the strategic sequence into a compact final slide and confirm the handover points between Hub prerequisites, agent pilots, libraries and the later Knowledge stage.
   - Context: The roadmap is a strategic sequence with parallel workstreams rather than a fixed person-and-date schedule. Knowledge remains deliberately last because it has the highest editorial and maintenance burden.
   - Source: Eve and Peter working meeting and roadmap refinement on 2026-07-30
 
-- [ ] Consolidate the Creative Hub communication structure
+- [ ] Align Creative Hub communication structure with Eve and Peter
   - Area: Creative Hub
   - Status: Partially complete
   - Next step: Align with Eve and Peter on the roles of `#creative_studio`, `#creative-ops-marketing`, Hub announcements, useful cross-posting and lightweight team-specific support.
   - Context: The current channel model is exploratory; Dominik wants to avoid creating or joining many additional project channels. Activation of Dominik's own channel is handled as a separate work item rather than part of the joint Hub setup.
   - Source: Communication-structure exploration on 2026-07-30
 
-- [ ] Develop a lightweight activation plan for `#creative-ops-marketing`
+- [ ] Plan lightweight `#creative-ops-marketing` activation
   - Area: AI Strategy & Steering
   - Status: Open
   - Next step: Define the channel's future purpose, a small set of useful recurring content types and a low-effort publishing approach before committing to any cadence or automation.
@@ -37,90 +37,90 @@
   - Context: The landing page should explain the series and create a simple shared understanding of AI agents. It should not collect project inputs; those belong in the separate shared presentation.
   - Source: Current landing-page refinement and urgency confirmed on 2026-07-31
 
-- [ ] Create the shared project-slide presentation for the series
+- [ ] Create the shared project-slide deck for the AI Enablement Series
   - Area: AI Enablement Series
   - Status: Open
   - Next step: Build the shared presentation in which each person or group records the minimum information needed to introduce and later update their agent or workflow project.
   - Context: The presentation is a separate working artifact from the explanatory landing page and is required for the recurring session format.
   - Source: Current AI Enablement clarification and urgency confirmed on 2026-07-31
 
-- [ ] Complete the decision-ready AI Enablement Series concept
+- [ ] Finalize the decision-ready AI Enablement Series concept
   - Area: AI Enablement Series
   - Status: Partially complete
   - Next step: Resolve the remaining transition between the simple agent explanation and the six-step project model, then finalize cadence, participant setup and protected working time for alignment after Jorin's return.
   - Context: The concept uses two initial 45-minute sessions followed by a recurring progress and testing series.
   - Source: Alignment on 2026-07-21 and content refinement through 2026-07-31
 
-- [ ] Complete the final Social Media interview for the AI Team-Check
+- [ ] Complete the final Social Media interview for AI Team-Check
   - Area: AI Team-Check
   - Status: Open
   - Next step: Conduct the scheduled shared interview with Caroline von Cramm, Celina Mathiske, Jason Diaz Campos and Lena Mickel.
   - Context: This is the final missing team perspective before consolidation.
   - Source: Interview scheduled on 2026-07-27
 
-- [ ] Consolidate the AI Team-Check findings into cross-team themes
+- [ ] Synthesize AI Team-Check findings into cross-team themes
   - Area: AI Team-Check
   - Status: Open
   - Next step: After the Social Media interview, reduce the findings to recurring barriers, enablement needs and strategic opportunity themes.
   - Context: The result is needed for the management view and the separate AI Enablement Series.
   - Source: Scope clarification on 2026-07-27
 
-- [ ] Finalize the visual AI Team-Check results presentation
+- [ ] Finalize the AI Team-Check results presentation
   - Area: AI Team-Check
   - Status: Partially complete
   - Next step: Complete the HTML management view after incorporating the Social Media interview, without person- or team-based scoring or unsupported numerical precision.
   - Context: An initial version exists, but structure and visual implementation are not final.
   - Source: Work in progress and scope clarification on 2026-07-27
 
-- [ ] Define and confirm the Brand Agent MVP
+- [ ] Define the Brand Agent MVP with Marie
   - Area: Brand Agent – Tone of Voice
   - Status: Open
   - Next step: Agree the smallest testable scope, first test case, success criteria, responsibilities and initial implementation steps with Marie.
   - Context: Marie owns implementation; Dominik provides structure, prioritization and quality guidance.
   - Source: Project alignment on 2026-07-21
 
-- [ ] Prepare and facilitate the next PR Intelligence Hub working session
+- [ ] Prepare the next PR Intelligence Hub working session
   - Area: PR Intelligence Hub
   - Status: Open
   - Next step: Prepare the session to confirm the MVP, distribute responsibilities, agree the working model and output channel, and define the first small test run.
   - Context: Kick-off, concept and roadmap are complete; the next session should establish the operating setup.
   - Source: Project handover confirmed on 2026-07-26
 
-- [ ] Define the first use case with Yvonne
+- [ ] Define the first Content Marketing Agent use case with Yvonne
   - Area: Content Marketing Agent
   - Status: Open
   - Next step: Define the first concrete use case together with Yvonne.
   - Context: The task is confirmed and remains in the current continuation queue; Yvonne and the relevant team retain functional and implementation ownership.
   - Source: Dominik confirmed the task on 2026-07-31
 
-- [ ] Contact Steffi about Newsletter Automation
+- [ ] Discuss Newsletter Automation with Steffi
   - Area: Newsletter Automation
   - Status: Open
   - Next step: Hold a discovery conversation to understand the current workflow, existing agent or automation work, biggest manual burden and the smallest useful next step.
   - Context: The initiative is active in Dominik's work organization because a concrete follow-up exists; links to Contentful, Landing Page Builder and email automation should be considered after discovery.
   - Source: Dominik confirmed the project treatment on 2026-07-31
 
-- [ ] Re-establish the recurring alignment setup with Allan and Lars
+- [ ] Re-establish the Allan-and-Lars alignment cadence
   - Area: AI Strategy & Steering
   - Status: Open
   - Next step: Agree whether future check-ins should be separate or joint and confirm a useful cadence before creating new recurring calendar series.
   - Context: The former recurring meetings appear to have been cancelled when paused for vacation; the previous rhythm is uncertain.
   - Source: Dominik confirmed the task on 2026-07-22
 
-- [ ] Check in with Mukhammadjon on the Contentful implementation progress
+- [ ] Check Contentful implementation progress with Mukhammadjon
   - Area: Contentful Marketing MVP
   - Status: Open
   - Next step: Ask Mukhammadjon during KW31 about progress, blockers and any needed support before possible end-to-end tests after 2026-08-10.
   - Source: Bea's Slack update and Dominik's confirmation on 2026-07-22
 
-- [ ] Build reusable client-stable email standards for Codex
+- [ ] Define reusable email standards for Codex
   - Area: E-Mail Automation
   - Status: Open
   - Next step: Review confirmed Plus FOMO and HeyImmo rendering learnings and derive the first approved repository rules, reusable components and automated HTML checks.
   - Context: Only patterns confirmed through real rendering tests should become global standards; detailed requirements belong in the relevant technical context.
   - Source: Plus FOMO learnings and Dominik's confirmation on 2026-07-29
 
-- [ ] Align canonical project names with the workspace structure
+- [ ] Align canonical project names with workspace structure
   - Area: AI Strategy & Steering
   - Status: Open
   - Next step: Compare the agreed canonical project names with the actual VS Code workspace, repository and subproject structure, then define a clear naming rule for visible project titles, nested projects and technical names.
@@ -129,14 +129,14 @@
 
 ## Waiting
 
-- [ ] Complete LP Builder and Design Library review with Ciaran
+- [ ] Follow up on Ciaran's review of LP Builder and Design Library
   - Area: Landing Page Builder / Design Library
   - Status: Waiting for review
   - Waiting for: Ciaran's review of LP Builder PR #3 and Design System PR #2
   - Dominik's next step: Send the short explanation and both draft PR links, then merge or adjust only after review.
   - Context: The productive LP Builder GPT is updated and tested; neither draft PR has been merged.
 
-- [ ] Continue the Plus FOMO email after presentation feedback
+- [ ] Continue the Plus FOMO email after feedback
   - Area: E-Mail Automation – Plus FOMO
   - Status: Waiting for feedback
   - Waiting for: Feedback from the 2026-07-30 project presentation
