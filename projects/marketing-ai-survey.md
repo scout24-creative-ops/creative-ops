@@ -19,14 +19,9 @@ Dominik has completed conversations with:
 - Franziska Stober
 - Andreas Böhm
 - Sophie, representing the Event Team in place of Mohamed Sharia Rahim
+- Caroline von Cramm, Celina Mathiske and Lena Mickel from the Social Media team
 
-One final area remains open:
-
-- Social Media
-
-Mohamed Sharia Rahim did not have time to participate. Sophie provided the Event Team perspective but did not represent Social Media. Dominik has therefore invited Caroline von Cramm, Celina Mathiske, Jason Diaz Campos and Lena Mickel to one shared Social Media interview on Wednesday of the current week. Shari has been informed that no separate interview with him is required.
-
-There is no immediate time pressure because Jorin is expected to return from vacation in approximately two weeks. The Team-Check should be completed before the subsequent alignment and final consolidation.
+The planned interview phase is complete. Mohamed Sharia Rahim did not have time to participate; Sophie covered the Event Team perspective, and the Social Media perspective was gathered directly from the team.
 
 The interviews show significant differences in AI usage and maturity across Marketing. Some colleagues use ChatGPT and self-built agents as a regular part of their work, while others mainly use AI for individual tasks such as writing, research, summaries or variations. Connected end-to-end workflows remain uncommon.
 
@@ -66,8 +61,8 @@ The design and leadership of the recurring enablement format are maintained in t
 - Sophie and the Event Team
 - Caroline von Cramm
 - Celina Mathiske
-- Jason Diaz Campos
 - Lena Mickel
+- Social Media team
 - Marketing and Communications teams
 - Creative Studio and owners of reusable AI solutions
 - Team leads of the unit
@@ -84,6 +79,7 @@ The design and leadership of the recurring enablement format are maintained in t
 - Larger connected workflows and agent-to-agent processes are still rare.
 - The practical maturity of the unit is currently assessed at approximately 4 out of 10.
 - The Event Team uses AI more actively than initially expected, especially for ideation, concepts, administrative support and visualizing event ideas.
+- The Social Media team uses AI daily across communication, planning, scripts, community management, content preparation and visual concepts.
 
 ### Recurring Barriers
 
@@ -99,6 +95,8 @@ The design and leadership of the recurring enablement format are maintained in t
 - Disconnected systems can leave significant manual follow-up work even when individual steps are automated.
 - Incorrect facts, dates or location information quickly reduce trust, especially in operational event work.
 - Some AI attempts create more effort or a worse overview than existing manual tools, showing that not every process should be automated.
+- Scripts, dialogues and captions often require repeated rewriting because the output still sounds artificial or insufficiently natural.
+- Rapid changes in tools and models make it difficult for teams to know which solution to use and create a feeling of falling behind.
 
 ### Enablement Needs
 
@@ -111,6 +109,7 @@ The design and leadership of the recurring enablement format are maintained in t
 - The transformation should take uncertainty seriously while maintaining a clear expectation that everyone actively engages with AI.
 - Teams need support defining rules, success criteria and ownership so that agents become reliable rather than remain one-off experiments.
 - Teams also need practical criteria for deciding when AI is the right solution and when a simpler existing process is better.
+- Social Media needs clearer orientation on tool and model choices, support with natural-language quality and guidance on AI labeling, rights and compliance.
 
 ### Opportunities and Potential Lighthouse Themes
 
@@ -125,6 +124,7 @@ The design and leadership of the recurring enablement format are maintained in t
 - Automated reporting that combines Linear, spreadsheets and other operational sources into recurring summaries of assets, webinars, events and team output.
 - Administrative event support around Coupa, supplier setup, approvals, POs and invoices, provided ownership and existing central plans are clarified first.
 - Reuse of Franziska Stober's Outlook-based PO-status agent as a possible example for teams with many cooperation and procurement workflows.
+- Reusable support for rights checks, structured customer communication, production planning and community-management responses in Social Media.
 
 ## Important Developments
 
@@ -138,10 +138,10 @@ The design and leadership of the recurring enablement format are maintained in t
 - 2026-07-21: Dominik developed an initial HTML landing-page presentation for the Team-Check results. The presentation uses the official unit name `Marketing & Communications`, keeps agents as supporting evidence rather than the main story and remains unfinished.
 - 2026-07-23: AI Enablement was separated into its own project. The Team-Check remains the diagnostic source and management view.
 - 2026-07-27: Sophie completed an interview in representation of Shari and provided the Event Team perspective.
-- 2026-07-27: It was clarified that Sophie did not represent Social Media. One final Social Media interview remains open.
-- 2026-07-27: Caroline von Cramm, Celina Mathiske, Jason Diaz Campos and Lena Mickel were invited to a shared Social Media interview on Wednesday; Shari was informed that no separate appointment is needed.
 - 2026-07-27: Sophie highlighted that Coupa creates substantial administrative effort and that several AI experiments in event work remain too unreliable or less useful than existing manual approaches.
 - 2026-07-27: Dominik contacted Jana Homfeldt to identify the responsible Coupa contact and understand existing or planned AI support before initiating further work.
+- 2026-08-03: Dominik completed the final interview with the Social Media team. The planned interview phase is complete.
+- 2026-08-03: The Social Media interview confirmed advanced everyday use, strong potential in operational content workflows and continued barriers around natural language, time, tool orientation and visibility of shared agents.
 
 ## Decisions
 
@@ -158,7 +158,6 @@ The design and leadership of the recurring enablement format are maintained in t
 
 ## Risks and Open Questions
 
-- The Social Media interview may add or change the current patterns.
 - The final presentation structure and visual design are not yet completed.
 - The latest HTML implementation currently exists only as a local working draft and is not yet maintained as technical project code in a dedicated repository.
 - The long-term process for keeping the Marketing AI overview current is not yet defined.
@@ -168,8 +167,7 @@ The design and leadership of the recurring enablement format are maintained in t
 
 ## Next Steps
 
-- Conduct the scheduled Social Media interview with Caroline von Cramm, Celina Mathiske, Jason Diaz Campos and Lena Mickel on Wednesday.
-- Consolidate the interview findings into a small number of cross-team themes after the Social Media perspective is included.
+- Consolidate the completed interview findings into a small number of cross-team themes.
 - Finalize the visual results presentation without person- or team-based scoring.
 - Decide whether the final HTML presentation should receive a dedicated technical home once its structure is stable.
 - Provide the final findings as input to the AI Enablement project and later strategic prioritization.
@@ -181,4 +179,4 @@ The design and leadership of the recurring enablement format are maintained in t
 
 ## Last Confirmed
 
-2026-07-27.
+2026-08-03.
