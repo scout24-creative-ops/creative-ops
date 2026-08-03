@@ -51,26 +51,19 @@
   - Context: The concept uses two initial 45-minute sessions followed by a recurring progress and testing series.
   - Source: Alignment on 2026-07-21 and content refinement through 2026-07-31
 
-- [ ] Complete the final Social Media interview for AI Team-Check
-  - Area: AI Team-Check
-  - Status: Open
-  - Next step: Conduct the scheduled shared interview with Caroline von Cramm, Celina Mathiske, Jason Diaz Campos and Lena Mickel.
-  - Context: This is the final missing team perspective before consolidation.
-  - Source: Interview scheduled on 2026-07-27
-
 - [ ] Synthesize AI Team-Check findings into cross-team themes
   - Area: AI Team-Check
   - Status: Open
-  - Next step: After the Social Media interview, reduce the findings to recurring barriers, enablement needs and strategic opportunity themes.
+  - Next step: Reduce the completed interview findings to recurring barriers, enablement needs and strategic opportunity themes.
   - Context: The result is needed for the management view and the separate AI Enablement Series.
-  - Source: Scope clarification on 2026-07-27
+  - Source: Interview phase completed on 2026-08-03
 
 - [ ] Finalize the AI Team-Check results presentation
   - Area: AI Team-Check
   - Status: Partially complete
-  - Next step: Complete the HTML management view after incorporating the Social Media interview, without person- or team-based scoring or unsupported numerical precision.
+  - Next step: Complete the HTML management view after incorporating the Social Media findings, without person- or team-based scoring or unsupported numerical precision.
   - Context: An initial version exists, but structure and visual implementation are not final.
-  - Source: Work in progress and scope clarification on 2026-07-27
+  - Source: Interview phase completed on 2026-08-03
 
 - [ ] Define the Brand Agent MVP with Marie
   - Area: Brand Agent – Tone of Voice
@@ -170,6 +163,11 @@
 
 ## Completed
 
+- [x] Complete the final Social Media interview for AI Team-Check
+  - Area: AI Team-Check
+  - Completed: 2026-08-03
+  - Outcome: The interview completed the planned interview phase and added findings on daily operational AI use, natural-language quality, tool orientation, rights checks and cross-team visibility of agents.
+
 - [x] Consolidate the role and portfolio into one steering layer and two pillars
   - Area: AI Strategy & Steering
   - Completed: 2026-07-31
@@ -178,7 +176,7 @@
 - [x] Complete the Event Team interview with Sophie
   - Area: AI Team-Check
   - Completed: 2026-07-27
-  - Outcome: The interview added Event Team findings on use-case selection, reliability, Coupa administration and an Outlook-based PO agent; Social Media remains open.
+  - Outcome: The interview added Event Team findings on use-case selection, reliability, Coupa administration and an Outlook-based PO agent; Social Media remained open.
 
 - [x] Follow up with Eve and Peter on the Creative Hub wireframe
   - Area: Creative Hub
