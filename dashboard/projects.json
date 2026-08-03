@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31",
+  "updated": "2026-08-03",
   "projects": [
     {
       "name": "Creative Hub",
@@ -29,7 +29,6 @@
     {
       "name": "AI Team-Check",
       "tasks": [
-        { "text": "Abschließendes Social-Media-Interview für den AI Team-Check führen", "category": "focus" },
         { "text": "AI-Team-Check-Erkenntnisse zu teamübergreifenden Themen verdichten", "category": "focus" },
         { "text": "AI-Team-Check-Ergebnispräsentation finalisieren", "category": "focus" }
       ]
