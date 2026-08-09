@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-03",
+  "updated": "2026-08-09",
   "projects": [
     {
       "name": "Creative Hub",
@@ -20,17 +20,11 @@
     {
       "name": "AI Enablement Series",
       "tasks": [
+        { "text": "AI-Enablement-Abstimmung für das Teamlead-Meeting vorbereiten", "category": "focus" },
+        { "text": "AI-Team-Check-Ergebnis-LP für AI Enablement schärfen", "category": "focus" },
         { "text": "AI-Enablement-Landingpage finalisieren und übergeben", "category": "focus" },
         { "text": "Projekt-Slides für die AI Enablement Series erstellen", "category": "focus" },
-        { "text": "Entscheidungsvorlage für die AI Enablement Series fertigstellen", "category": "focus" },
-        { "text": "AI-Enablement-Serienkonzept mit Jorin abstimmen", "category": "waiting" }
-      ]
-    },
-    {
-      "name": "AI Team-Check",
-      "tasks": [
-        { "text": "AI-Team-Check-Erkenntnisse zu teamübergreifenden Themen verdichten", "category": "focus" },
-        { "text": "AI-Team-Check-Ergebnispräsentation finalisieren", "category": "focus" }
+        { "text": "Entscheidungsvorlage für die AI Enablement Series fertigstellen", "category": "focus" }
       ]
     },
     {
