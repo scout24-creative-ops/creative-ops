@@ -25,7 +25,6 @@ The two pillars are Dominik's personal working and steering model. Projects can 
 ### AI Enablement
 
 - [AI Enablement Series](projects/ai-enablement.md)
-- [AI Team-Check](projects/marketing-ai-survey.md)
 - [Chart Agent](projects/chart-agent.md)
 - [Brand Agent – Tone of Voice](projects/brand-agent.md)
 - [PR Intelligence Hub](projects/pr-intelligence-hub.md)
@@ -44,6 +43,10 @@ The two pillars are Dominik's personal working and steering model. Projects can 
 - [Design Library and Builder Library](projects/design-library.md)
 - [Creative Hub](projects/ai-hub.md)
 - [GIF Animation](projects/gif-automation.md)
+
+## Historical Project Context
+
+- [AI Team-Check / Marketing AI Survey](projects/marketing-ai-survey.md) — completed discovery phase now integrated into AI Enablement.
 
 ## Weekly Documentation
 
