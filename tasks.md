@@ -30,6 +30,20 @@
   - Context: The channel should become more active and support Dominik's visibility without creating another operational maintenance burden. Possible monitoring of selected AI or ChatGPT channels may be explored later, but no solution or posting rhythm has been decided.
   - Source: Dominik's communication-structure clarification on 2026-07-30
 
+- [ ] Prepare AI Enablement alignment for the Teamlead meeting
+  - Area: AI Enablement Series
+  - Status: Open
+  - Next step: Prepare the concise 5–10 minute story for the 2026-08-10 Teamlead meeting: Team-Check findings, resulting needs, proposed series model and the key working-mode decision.
+  - Context: Jorin and all Teamleads will attend. The discussion is informal and should align the concept rather than present a detailed session curriculum.
+  - Source: Teamlead-meeting preparation confirmed on 2026-08-09
+
+- [ ] Refine the AI Team-Check results LP for AI Enablement
+  - Area: AI Enablement Series
+  - Status: Partially complete
+  - Next step: Simplify the results landing page so the completed Team-Check leads clearly from current state and recurring barriers into the rationale for the AI Enablement Series.
+  - Context: The Team-Check is now the completed discovery phase of AI Enablement, not a separate active project. The results should remain anonymized and avoid team ranking.
+  - Source: Project consolidation confirmed on 2026-08-09
+
 - [ ] Finalize and hand over the AI Enablement landing page
   - Area: AI Enablement Series
   - Status: Partially complete
@@ -47,23 +61,9 @@
 - [ ] Finalize the decision-ready AI Enablement Series concept
   - Area: AI Enablement Series
   - Status: Partially complete
-  - Next step: Resolve the remaining transition between the simple agent explanation and the six-step project model, then finalize cadence, participant setup and protected working time for alignment after Jorin's return.
-  - Context: The concept uses two initial 45-minute sessions followed by a recurring progress and testing series.
-  - Source: Alignment on 2026-07-21 and content refinement through 2026-07-31
-
-- [ ] Synthesize AI Team-Check findings into cross-team themes
-  - Area: AI Team-Check
-  - Status: Open
-  - Next step: Reduce the completed interview findings to recurring barriers, enablement needs and strategic opportunity themes.
-  - Context: The result is needed for the management view and the separate AI Enablement Series.
-  - Source: Interview phase completed on 2026-08-03
-
-- [ ] Finalize the AI Team-Check results presentation
-  - Area: AI Team-Check
-  - Status: Partially complete
-  - Next step: Complete the HTML management view after incorporating the Social Media findings, without person- or team-based scoring or unsupported numerical precision.
-  - Context: An initial version exists, but structure and visual implementation are not final.
-  - Source: Interview phase completed on 2026-08-03
+  - Next step: Use the Teamlead alignment to resolve the working model, then finalize cadence, participant setup, protected working time and the remaining transition between the simple agent explanation and the six-step project model.
+  - Context: Current recommendation is to use shared sessions mainly for orientation, learning, visibility, blocker discussion and next-step commitment, with most building and testing between sessions.
+  - Source: Concept refinement through 2026-08-09
 
 - [ ] Define the Brand Agent MVP with Marie
   - Area: Brand Agent – Tone of Voice
@@ -103,7 +103,7 @@
 - [ ] Check Contentful implementation progress with Mukhammadjon
   - Area: Contentful Marketing MVP
   - Status: Open
-  - Next step: Ask Mukhammadjon during KW31 about progress, blockers and any needed support before possible end-to-end tests after 2026-08-10.
+  - Next step: Ask Mukhammadjon about progress, blockers and any needed support before possible end-to-end tests after 2026-08-10.
   - Source: Bea's Slack update and Dominik's confirmation on 2026-07-22
 
 - [ ] Define reusable email standards for Codex
@@ -136,12 +136,6 @@
   - Dominik's next step: Incorporate confirmed feedback, validate DIMS3 resizing with real listings and prepare a controlled test of Mitch's AWS/GitHub module process.
   - Context: The first responsive Outlook-aware reference mail is ready for feedback; the second concept should reuse its structure.
 
-- [ ] Align the AI Enablement Series concept with Jorin
-  - Area: AI Enablement Series
-  - Status: Waiting for another person or decision
-  - Waiting for: Jorin's return and concept alignment
-  - Dominik's next step: Complete the revised concept, landing page and shared project-slide presentation during Jorin's vacation.
-
 - [ ] Clarify Coupa AI support and review the existing PO agent
   - Area: Coupa AI Support
   - Status: Waiting for another person or decision
@@ -163,10 +157,15 @@
 
 ## Completed
 
+- [x] Consolidate AI Team-Check findings into AI Enablement
+  - Area: AI Enablement Series
+  - Completed: 2026-08-09
+  - Outcome: The completed Team-Check is now treated as the discovery and evidence phase of AI Enablement; its findings are integrated into the series rationale and active work is tracked under one project.
+
 - [x] Complete the final Social Media interview for AI Team-Check
-  - Area: AI Team-Check
+  - Area: AI Enablement Series
   - Completed: 2026-08-03
-  - Outcome: The interview completed the planned interview phase and added findings on daily operational AI use, natural-language quality, tool orientation, rights checks and cross-team visibility of agents.
+  - Outcome: The interview completed the planned discovery phase and added findings on daily operational AI use, natural-language quality, tool orientation, rights checks and cross-team visibility of agents.
 
 - [x] Consolidate the role and portfolio into one steering layer and two pillars
   - Area: AI Strategy & Steering
@@ -174,9 +173,9 @@
   - Outcome: AI Strategy & Steering now sits above AI Enablement and AI Creative Operations; project names, task presentation and active initiative classification were aligned.
 
 - [x] Complete the Event Team interview with Sophie
-  - Area: AI Team-Check
+  - Area: AI Enablement Series
   - Completed: 2026-07-27
-  - Outcome: The interview added Event Team findings on use-case selection, reliability, Coupa administration and an Outlook-based PO agent; Social Media remained open.
+  - Outcome: The interview added Event Team findings on use-case selection, reliability, Coupa administration and an Outlook-based PO agent.
 
 - [x] Follow up with Eve and Peter on the Creative Hub wireframe
   - Area: Creative Hub
@@ -189,7 +188,7 @@
   - Outcome: The repository, publication structure, validation checks, GitHub Pages and controlled approval workflow were configured and tested.
 
 - [x] Complete the AI Team-Check interview with Andreas Böhm
-  - Area: AI Team-Check
+  - Area: AI Enablement Series
   - Completed: 2026-07-22
   - Outcome: The interview reinforced the need for smaller MVPs and highlighted overlapping initiatives, disconnected systems and manual reporting.
 
