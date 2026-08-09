@@ -1,16 +1,20 @@
-# Marketing AI Survey
+# Marketing AI Survey / AI Team-Check
 
-## Purpose
+## Status
 
-Understand the current state of AI use across Marketing and Communications, identify successful practices, recurring barriers and larger opportunities, and translate the findings into practical priorities.
+Completed discovery phase of the broader [AI Enablement](ai-enablement.md) project.
 
-The initiative is not intended to rank teams or individuals. Its purpose is to create an anonymized overall picture of where Marketing currently stands and where focused support could create the most value.
+The planned interview phase is complete. This file is retained as historical reference for the research, interview coverage and consolidated findings. Active follow-up, current decisions, leadership alignment, landing-page work and the recurring Enablement Series are maintained in `projects/ai-enablement.md`.
 
-The AI Team-Check is the diagnostic and evidence-gathering initiative. The practical follow-up is maintained separately in the [AI Enablement](ai-enablement.md) project.
+## Purpose of the Completed Phase
 
-## Current Status
+Understand the current state of AI use across Marketing & Communications, identify successful practices, recurring barriers and larger opportunities, and translate the findings into practical priorities.
 
-Dominik has completed conversations with:
+The Team-Check was never intended to rank teams or individuals. Its purpose was to create an anonymized overall picture of where Marketing & Communications stands and what kind of support would create the most value.
+
+## Interview Coverage
+
+Dominik completed conversations with:
 
 - Juliane Bischoff
 - Christoph Pape
@@ -21,162 +25,59 @@ Dominik has completed conversations with:
 - Sophie, representing the Event Team in place of Mohamed Sharia Rahim
 - Caroline von Cramm, Celina Mathiske and Lena Mickel from the Social Media team
 
-The planned interview phase is complete. Mohamed Sharia Rahim did not have time to participate; Sophie covered the Event Team perspective, and the Social Media perspective was gathered directly from the team.
+The interview phase was completed on 2026-08-03.
 
-The interviews show significant differences in AI usage and maturity across Marketing. Some colleagues use ChatGPT and self-built agents as a regular part of their work, while others mainly use AI for individual tasks such as writing, research, summaries or variations. Connected end-to-end workflows remain uncommon.
+## Consolidated Findings
 
-The findings are being consolidated into a visual management presentation in the form of an HTML landing page. The presentation is intentionally reduced, avoids team- or person-based evaluation, and translates the qualitative findings into a clear narrative rather than a technical dashboard.
+### AI use is broad but uneven
 
-The current narrative is structured around current status, positive evidence, reasons for limited shared impact, required conditions, concrete next steps, strategic focus topics and a final target picture. The working direction for the opening is a neutral Team-Check hero followed by a large dark status card showing three condensed dimensions: breadth of use, depth of use and existing specialized solutions that are not yet sufficiently connected.
+- Some colleagues use AI daily and have built their own agents or recurring routines.
+- Others use AI mainly for individual tasks such as writing, research, summaries, concepts and variations.
+- Connected end-to-end workflows remain uncommon.
+- Curiosity and willingness to use AI are generally high; acceptance is not the main barrier.
 
-The presentation is still work in progress. The latest local HTML draft remains the implementation source and has not yet been finalized or added as technical project code to this context repository.
+### Recurring barriers
 
-Following alignment with Jorin on 2026-07-21, the findings became the rationale and input for the separate AI Enablement project. The Team-Check itself remains focused on completing and communicating the diagnosis.
+- Lack of protected time to explore, build, test and improve solutions.
+- Missing orientation around tools, models and existing internal solutions.
+- Limited visibility of agents and workflows already built in other teams.
+- Difficulty turning broad ideas into small, useful and testable first versions.
+- Quality and reliability problems that create repeated rework or reduce trust.
+- Rapid tool and model changes that make it difficult to know where to invest learning time.
+- Unclear ownership, success criteria and maintenance for some solutions.
+- Cases where a simple existing process is better than an AI solution.
 
-## Dominik's Role
+### Enablement needs
 
-Dominik initiated and conducts the Landscape Check in response to Jorin's expectation that he create more overview and influence around AI development in Marketing and Communications.
+- Practical guidance rather than one generic basic training for everyone.
+- Concrete examples and reusable internal solutions.
+- Support in selecting useful use cases and reducing broad ideas to first MVPs.
+- Better testing, quality criteria and reliable inputs.
+- More visibility and reuse across teams.
+- Shared learning and exchange across different experience levels.
+- Protected working time for concrete AI development.
 
-His role in this project is to:
+### Opportunity themes identified during discovery
 
-- understand the actual status and needs across teams
-- identify recurring barriers and opportunities
-- make existing solutions more visible
-- distinguish small individual use cases from larger strategic opportunities
-- translate findings into a concise management view and useful input for AI Enablement
-- avoid acting as a permanent builder for every individual team request
+Examples included PR Intelligence, Tone of Voice and brand-quality support, product and knowledge agents, easier data access, personalized communication, content and newsletter support, reporting, event and Coupa-related support, rights checks and reusable production assistance.
 
-The design and leadership of the recurring enablement format are maintained in the separate AI Enablement project.
+These themes are inputs to broader AI prioritization. They are not all automatically part of the Enablement Series and should not be interpreted as committed projects without separate confirmation.
 
-## Key Stakeholders
+## Key Historical Decisions
 
-- Jorin Verges
-- Juliane Bischoff
-- Christoph Pape
-- Lennart Dannenberg
-- Alexander Penkin
-- Franziska Stober
-- Andreas Böhm
-- Mohamed Sharia Rahim
-- Sophie and the Event Team
-- Caroline von Cramm
-- Celina Mathiske
-- Lena Mickel
-- Social Media team
-- Marketing and Communications teams
-- Creative Studio and owners of reusable AI solutions
-- Team leads of the unit
-- Internal AI practitioners and potential contributors
-
-## Consolidated Findings So Far
-
-### AI Use Is Uneven but Broadly Accepted
-
-- AI adoption differs significantly across teams and individuals.
-- Some colleagues already use AI daily and have built several agents for concrete tasks.
-- Others use AI mainly for writing, research, summaries, concept development or asset variations.
-- Resistance to AI is not the primary issue; many colleagues are curious and open to using it.
-- Larger connected workflows and agent-to-agent processes are still rare.
-- The practical maturity of the unit is currently assessed at approximately 4 out of 10.
-- The Event Team uses AI more actively than initially expected, especially for ideation, concepts, administrative support and visualizing event ideas.
-- The Social Media team uses AI daily across communication, planning, scripts, community management, content preparation and visual concepts.
-
-### Recurring Barriers
-
-- Lack of time to explore, build and improve solutions.
-- Missing technical knowledge and routine for turning ideas into reliable workflows.
-- Limited visibility of existing company-wide agents and tools.
-- Unclear strategic orientation and changing messages about which tools or approaches should be used.
-- Duplicate or overlapping initiatives because teams do not know what already exists.
-- Missing criteria for deciding whether an agent is worth the required build and maintenance effort.
-- AI activity runs beside daily business instead of having protected working time.
-- Some colleagues experience uncertainty or fear about how AI may change their roles.
-- Large ideas often become broad platform concepts before a stable first MVP exists.
-- Disconnected systems can leave significant manual follow-up work even when individual steps are automated.
-- Incorrect facts, dates or location information quickly reduce trust, especially in operational event work.
-- Some AI attempts create more effort or a worse overview than existing manual tools, showing that not every process should be automated.
-- Scripts, dialogues and captions often require repeated rewriting because the output still sounds artificial or insufficiently natural.
-- Rapid changes in tools and models make it difficult for teams to know which solution to use and create a feeling of falling behind.
-
-### Enablement Needs
-
-- Practical, low-threshold guidance is often more useful than broad training sessions.
-- Teams benefit from concrete tips, examples and clear starting points.
-- Larger ideas need support in being broken into realistic first steps.
-- Existing agents and tools need to be communicated and categorized more clearly.
-- Not every team should be expected to build its own agents; support should combine self-service, sparring and focused strategic project support.
-- The unit needs a shared learning experience that combines orientation, experimentation and concrete work.
-- The transformation should take uncertainty seriously while maintaining a clear expectation that everyone actively engages with AI.
-- Teams need support defining rules, success criteria and ownership so that agents become reliable rather than remain one-off experiments.
-- Teams also need practical criteria for deciding when AI is the right solution and when a simpler existing process is better.
-- Social Media needs clearer orientation on tool and model choices, support with natural-language quality and guidance on AI labeling, rights and compliance.
-
-### Opportunities and Potential Lighthouse Themes
-
-- PR Intelligence Hub combining external societal signals with internal platform and market data.
-- Central Tone-of-Voice agent for reusable language standards across formats and audiences.
-- Brand and quality checks for logos, typography, colors and basic visual standards.
-- Product and knowledge agents containing current USPs, target-group information, product facts and communication guardrails.
-- Easier self-service access to company and market data.
-- Personalized marketing and communication based on business events, customer data and AI-generated content.
-- Reusable presentation, PDF, event and asset-generation support.
-- Content-marketing support that knows products, existing content and production history and can generate coordinated UGC briefs, newsletter ideas and content-page input.
-- Automated reporting that combines Linear, spreadsheets and other operational sources into recurring summaries of assets, webinars, events and team output.
-- Administrative event support around Coupa, supplier setup, approvals, POs and invoices, provided ownership and existing central plans are clarified first.
-- Reuse of Franziska Stober's Outlook-based PO-status agent as a possible example for teams with many cooperation and procurement workflows.
-- Reusable support for rights checks, structured customer communication, production planning and community-management responses in Social Media.
-
-## Important Developments
-
-- July 2026: Started structured conversations across Marketing and Communications.
-- July 2026: Confirmed that the output should be an anonymized overall picture rather than a team ranking.
-- July 2026: Identified recurring barriers around time, knowledge, orientation and visibility of existing tools.
-- July 2026: Identified several potential shared solutions and lighthouse projects, including PR Intelligence, Tone of Voice, brand checks, data access and personalized automation.
-- July 2026: Completed the conversation with Andreas Böhm, reinforcing the need to reduce broad content-agent concepts to small MVPs and highlighting overlapping initiatives, process dependencies and manual reporting.
-- 2026-07-21: Jorin agreed with Dominik's diagnosis and supported a binding unit-wide AI enablement format.
-- 2026-07-21: Jorin confirmed Dominik as the appropriate fachlicher Lead for the broader AI development topic through expertise, enablement and influence without operational people-management responsibility.
-- 2026-07-21: Dominik developed an initial HTML landing-page presentation for the Team-Check results. The presentation uses the official unit name `Marketing & Communications`, keeps agents as supporting evidence rather than the main story and remains unfinished.
-- 2026-07-23: AI Enablement was separated into its own project. The Team-Check remains the diagnostic source and management view.
-- 2026-07-27: Sophie completed an interview in representation of Shari and provided the Event Team perspective.
-- 2026-07-27: Sophie highlighted that Coupa creates substantial administrative effort and that several AI experiments in event work remain too unreliable or less useful than existing manual approaches.
-- 2026-07-27: Dominik contacted Jana Homfeldt to identify the responsible Coupa contact and understand existing or planned AI support before initiating further work.
-- 2026-08-03: Dominik completed the final interview with the Social Media team. The planned interview phase is complete.
-- 2026-08-03: The Social Media interview confirmed advanced everyday use, strong potential in operational content workflows and continued barriers around natural language, time, tool orientation and visibility of shared agents.
-
-## Decisions
-
+- Do not rank teams or individuals.
 - Base future enablement and AI priorities on observed needs rather than assumptions.
-- Do not evaluate or rank individual teams or colleagues.
-- Present the findings as a concise visual management dashboard.
-- Use qualitative visualizations without unsupported numerical precision.
-- Keep agents and individual solutions as evidence of activity, not as the core narrative.
-- Focus Dominik's support on overview, enablement, reusable standards and high-impact projects rather than becoming the permanent agent builder for all teams.
-- Treat visibility and reuse of existing solutions as a major improvement area.
-- Maintain the practical AI Enablement series as a separate project while keeping the Team-Check as its evidence base.
 - Treat use-case selection and the conscious decision not to automate as part of AI maturity.
-- Clarify central ownership and existing plans before treating Coupa as a new solution project.
+- Focus Dominik's support on overview, enablement, reusable standards and high-impact work rather than becoming the permanent builder for every team.
+- Use the Team-Check findings as the evidence base for AI Enablement.
+- As of 2026-08-09, the Team-Check is no longer maintained as a separate active project. It is Phase 1 of the broader AI Enablement project.
 
-## Risks and Open Questions
+## Current Handover
 
-- The final presentation structure and visual design are not yet completed.
-- The latest HTML implementation currently exists only as a local working draft and is not yet maintained as technical project code in a dedicated repository.
-- The long-term process for keeping the Marketing AI overview current is not yet defined.
-- Success criteria for measuring progress from approximately 4 to 7 still need to be defined across the broader AI development effort.
-- The content-agent and Linear-reporting opportunities are still early discovery topics; current status, ownership, support needs and technical feasibility are not yet confirmed.
-- It is not yet clear what Coupa-related automation or AI support already exists, is planned or is centrally owned.
+The results are being refined into a concise visual landing page. That landing page now serves the broader AI Enablement story: it should show where Marketing & Communications stands, what recurring needs were identified and why the proposed Enablement Series follows from those findings.
 
-## Next Steps
-
-- Consolidate the completed interview findings into a small number of cross-team themes.
-- Finalize the visual results presentation without person- or team-based scoring.
-- Decide whether the final HTML presentation should receive a dedicated technical home once its structure is stable.
-- Provide the final findings as input to the AI Enablement project and later strategic prioritization.
-- Wait for Andreas to speak with Yvonne and Steffi and announce Dominik's offer to support them.
-- Ask Andreas for a status update no later than the following week. If no contact has happened yet, invite Yvonne and Steffi, probably separately, to short discovery kick-offs.
-- Use the first conversations only to understand the current status, previous work, open questions, support needs and relevant reporting context. Do not define an MVP or implementation scope yet.
-- Wait for Jana Homfeldt's response about the responsible Coupa contact and existing or planned AI support.
-- After the Coupa clarification, speak with Franziska Stober about her existing Outlook- and PO-related agent and assess whether its learnings are reusable.
+All active next steps are maintained in `projects/ai-enablement.md` and `tasks.md`.
 
 ## Last Confirmed
 
-2026-08-03.
+2026-08-09.
