@@ -95,12 +95,11 @@ ScoutData may become an important internal source because it can answer natural-
 
 - The kick-off with the PR team has taken place.
 - The concept and roadmap were developed and presented.
-- The proposed small-step MVP approach was positively received.
-- The team reported that the overall concept became significantly easier to understand.
-- Starting with a small MVP reduced concerns about excessive complexity.
-- The kick-off recording did not work.
-
-A central outcome of the kick-off was that the hub is now understood as an incrementally developable working approach rather than an unclear, highly technical large-scale project.
+- The proposed small-step MVP approach was positively received and made the project easier for the team to understand.
+- The original agreement was that the PR team would schedule the follow-up session and invite Dominik. After roughly three weeks without a follow-up invitation, Dominik scheduled the next session himself to keep the project moving.
+- The follow-up working session is scheduled for Wednesday, 2026-08-12, from 09:30 to 10:15.
+- Because the kick-off was several weeks ago, the team was asked to review the kick-off presentation beforehand and think about two points: what the MVP should concretely look like and which workstream each person can contribute to.
+- The delay occurred during the summer vacation period, which may have affected timing, but this is not a confirmed explanation. Dominik currently does not see any PR team member as being on vacation.
 
 ## Dominik's Role
 
@@ -135,18 +134,18 @@ Operational implementation and later use should remain with the PR team.
 
 ## Next Steps
 
-Before the next session, the PR team should reflect on the overall process, proposed MVP, possible individual contributions and suitable ways of working.
-
-The next session should:
+The follow-up working session on 2026-08-12 should reconnect the team with the existing concept and then:
 
 1. clarify open questions about the process;
 2. confirm the concrete MVP;
 3. distribute roles and responsibilities;
 4. agree the working model;
 5. decide the communication and output channel;
-6. prepare the first small test run.
+6. define the concrete next actions after the session.
 
-A 45-minute check-in every two weeks is a possible rhythm but has not yet been confirmed.
+The team should come prepared by reviewing the previous presentation and considering the proposed MVP and their own contribution to one of the workstreams.
+
+A 45-minute check-in every two weeks remains a possible rhythm but has not yet been confirmed.
 
 ## Guardrails
 
@@ -170,4 +169,4 @@ A 45-minute check-in every two weeks is a possible rhythm but has not yet been c
 
 ## Last Confirmed
 
-2026-07-26
+2026-08-10
