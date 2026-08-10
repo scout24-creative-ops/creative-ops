@@ -72,12 +72,12 @@
   - Context: Marie owns implementation; Dominik provides structure, prioritization and quality guidance.
   - Source: Project alignment on 2026-07-21
 
-- [ ] Prepare the next PR Intelligence Hub working session
+- [ ] Prepare and facilitate the PR Intelligence Hub follow-up on August 12
   - Area: PR Intelligence Hub
   - Status: Open
-  - Next step: Prepare the session to confirm the MVP, distribute responsibilities, agree the working model and output channel, and define the first small test run.
-  - Context: Kick-off, concept and roadmap are complete; the next session should establish the operating setup.
-  - Source: Project handover confirmed on 2026-07-26
+  - Next step: Prepare and facilitate the 2026-08-12 session so the team can confirm the MVP, distribute responsibilities, agree the working model and output channel, and define concrete next actions.
+  - Context: Dominik scheduled the follow-up for 09:30–10:15 after the originally agreed team-organized invitation had not happened for roughly three weeks. The team was asked to review the kick-off presentation and prepare thoughts on the MVP and their own contribution.
+  - Source: Follow-up invitation sent on 2026-08-10
 
 - [ ] Define the first Content Marketing Agent use case with Yvonne
   - Area: Content Marketing Agent
