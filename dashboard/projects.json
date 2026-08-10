@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09",
+  "updated": "2026-08-10",
   "projects": [
     {
       "name": "Creative Hub",
@@ -36,7 +36,7 @@
     {
       "name": "PR Intelligence Hub",
       "tasks": [
-        { "text": "Nächste PR-Intelligence-Hub-Session vorbereiten", "category": "continue" }
+        { "text": "PR-Intelligence-Hub-Follow-up am 12. August vorbereiten", "category": "continue" }
       ]
     },
     {
