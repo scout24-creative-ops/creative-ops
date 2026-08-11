@@ -100,12 +100,6 @@
   - Context: The former recurring meetings appear to have been cancelled when paused for vacation; the previous rhythm is uncertain.
   - Source: Dominik confirmed the task on 2026-07-22
 
-- [ ] Check Contentful implementation progress with Mukhammadjon
-  - Area: Contentful Marketing MVP
-  - Status: Open
-  - Next step: Ask Mukhammadjon about progress, blockers and any needed support before possible end-to-end tests after 2026-08-10.
-  - Source: Bea's Slack update and Dominik's confirmation on 2026-07-22
-
 - [ ] Define reusable email standards for Codex
   - Area: E-Mail Automation
   - Status: Open
@@ -156,6 +150,11 @@
   - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
 
 ## Completed
+
+- [x] Validate Contentful integration progress with Mukhammadjon
+  - Area: Contentful Marketing MVP
+  - Completed: 2026-08-11
+  - Outcome: Mukhammadjon demonstrated the working GPT Actions flow and Dominik independently verified Contentful draft creation and update through the shared Contentful-enabled Landing Page Builder.
 
 - [x] Consolidate AI Team-Check findings into AI Enablement
   - Area: AI Enablement Series
