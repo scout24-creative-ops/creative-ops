@@ -8,30 +8,32 @@ Provide a central, curated overview of AI agents and, over time, practical proje
 
 The Creative Hub is live at https://scout24-creative-ops.github.io/creative-hub/ and currently focuses mainly on Creative Studio agents with cross-Marketing relevance.
 
-The next expansion is being shaped as a lightweight, repeatable operating model rather than a one-off redesign. The working priority is:
+Eve and Peter continued the broader Hub work while Dominik was out sick. The current working split is now clearer: Dominik will focus on the Agent Library, while Eve and Peter continue the other Hub workstreams.
 
-1. prepare the Hub prerequisites such as a featured slider, reusable detail page and library category;
-2. test the recurring agent-curation process with two or three relevant agents;
-3. transfer the first reusable libraries;
-4. add Knowledge later because it has the highest editorial and maintenance burden.
+For Dominik, the immediate challenge is no longer to design the complete Hub roadmap or communication model. It is to establish a reliable way to discover which agents already exist across the company so the Agent Library can be expanded on a sound basis.
 
-The agent-curation process now has four stages: discover relevant agents, assess Hub fit, translate approved facts into Hub formats, and communicate the new entry. A tested prompt executed directly inside the source agent is the practical MVP because an external Skill cannot inspect another agent's configuration automatically.
-
-The communication architecture remains exploratory. The current hypothesis is that `#creative_studio` and `#creative-ops-marketing` remain equal channels with different subject areas, while the Creative Hub is the shared durable platform.
+Dominik has a meeting with Andrea Mendieta from AI Operations on 2026-08-18 at 14:00 to learn which sources, inventories or processes can provide a useful overview of existing company agents.
 
 ## Dominik's Role
 
-Dominik owns the strategic content roadmap, agent-curation approach and communication-structure proposal. He provides consistent relevance and quality checks for potential Hub entries.
+Dominik owns the Agent Library workstream for the Creative Hub going forward.
 
-Peter is expected to lead operational Hub implementation and maintenance of core components. Eve is developing communication cadence, messaging and targeted team outreach. Individual agent and content owners remain responsible for factual validation and approval before publication.
+His focus is to:
 
-Dominik prefers team-specific agent support to happen primarily through meetings, followed by direct messages or threads where useful, rather than through many additional project channels.
+- identify relevant existing agents across the company;
+- establish a reliable discovery and selection process;
+- assess which agents are suitable for inclusion in the Hub;
+- keep Agent Library entries useful, understandable and maintainable;
+- coordinate factual validation with agent owners when needed.
+
+The broader Hub roadmap, communication setup and implementation are no longer Dominik's primary active tasks. Eve and Peter are continuing those workstreams.
 
 ## Key Stakeholders
 
 - Eve-Sabrina Vogelein
-- Jorin Verges
 - Peter
+- Andrea Mendieta — AI Operations
+- Jorin Verges
 - Creative Studio agent owners
 - Owners of relevant agents and AI projects from other Marketing teams or departments
 
@@ -43,48 +45,34 @@ Dominik prefers team-specific agent support to happen primarily through meetings
 - 2026-07-30: Eve, Peter and Dominik aligned on prioritizing relevant, reusable and maintainable additions rather than publication speed alone.
 - 2026-07-30: The recurring four-stage agent-curation model and direct in-agent prompt were tested successfully enough for pilot use.
 - 2026-07-30: The roadmap was reframed as a strategic sequence with parallel workstreams instead of a fixed person-and-date schedule.
-- 2026-07-30: The possible monitoring of selected AI Slack channels was separated from the joint Creative Hub communication discussion. It primarily concerns future activation of `#creative-ops-marketing` and is not currently part of the shared Hub scope with Eve and Peter.
+- 2026-08-12: The role split was updated. Dominik will focus on the Agent Library, while Eve and Peter continue the broader Hub work.
 
 ## Decisions
 
 - Prioritize understandable, relevant and maintainable content rather than listing everything.
 - Expand beyond a static Creative Studio agent directory.
-- Start with agents and reusable libraries; add Knowledge only later because of its comparatively high editorial and maintenance effort.
-- Keep non-agent content lightweight rather than creating several separate publishing systems immediately.
-- Use Slack for visibility while durable reusable content lives in the Hub.
-- Treat detailed agent pages as optional and use them only where the value justifies maintenance.
-- Run agent curation as a repeatable four-stage process.
-- Use a prompt inside the source agent as the first practical extraction workflow.
-- Require owner review and approval before publication.
-- Express the roadmap as strategic sequence and dependencies rather than fixed dates.
-- Treat the current Slack communication model as a hypothesis, not a final decision.
-- Keep the separate question of activating `#creative-ops-marketing` outside the joint Hub scope until Dominik has developed a lightweight plan.
+- Keep Agent Library curation as Dominik's primary Creative Hub responsibility.
+- Use available company-wide agent sources or inventories where possible instead of relying only on manual discovery.
+- Require owner review or validation when source information is incomplete or uncertain.
+- Keep the Agent Library lightweight enough to remain maintainable.
 
 ## Risks and Open Questions
 
-- Long-term ownership and maintenance responsibilities need final confirmation beyond the current working split.
-- The compact Hub-suitability requirement profile still needs to be finalized and tested.
+- There is not yet a confirmed single source of truth for all company agents.
+- Existing inventories may be incomplete, distributed across teams or use inconsistent naming and ownership information.
 - Source agents may not reliably expose ownership, maturity, access or connected-tool information; unknown facts must be confirmed by owners.
-- It remains open whether final Hub and Slack copy should be generated inside the source agent or centrally from a structured factual handover.
-- The exact roles of `#creative_studio` and `#creative-ops-marketing`, including announcement and cross-posting rules, are not agreed.
-- The balance between broad announcements and targeted team outreach still needs practical testing.
-- The boundary between a Marketing-focused Hub and a broader company or Brand Hub remains open.
-- The content model must stay lightweight enough to avoid disproportionate editorial maintenance.
+- The boundary between Marketing-relevant agents and the broader company agent landscape still needs practical criteria.
 
 ## Next Steps
 
-- Finalize the discovery-source list and candidate collection process.
-- Define and test the compact Hub-suitability requirement profile.
-- Formalize the direct in-agent prompt and structured output.
-- Define the owner completion, review and approval step.
-- Test the complete process with relevant agents such as ScoutData.
-- Convert the strategic sequence into one compact roadmap slide.
-- Align the communication architecture with Eve and Peter.
-- Review Peter's first Hub prerequisites and use the initial agent pilots to validate them.
+- Meet Andrea Mendieta on 2026-08-18 at 14:00.
+- Clarify how AI Operations currently discovers or tracks existing agents across the company.
+- Identify the best available source or combination of sources for an initial Agent Library inventory.
+- Use that information to define the first practical discovery and curation workflow.
 
 ## Last Confirmed
 
-2026-07-30.
+2026-08-12.
 
 ## Related Context
 
