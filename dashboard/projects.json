@@ -4,9 +4,7 @@
     {
       "name": "Creative Hub",
       "tasks": [
-        { "text": "Agenten-Kurationsstrategie für den Creative Hub finalisieren", "category": "continue" },
-        { "text": "Creative-Hub-Inhaltsroadmap erstellen", "category": "continue" },
-        { "text": "Creative-Hub-Kommunikation mit Eve und Peter abstimmen", "category": "continue" }
+        { "text": "Bestehende Unternehmens-Agents für die Hub Agent Library erfassen", "category": "continue" }
       ]
     },
     {
@@ -20,11 +18,10 @@
     {
       "name": "AI Enablement Series",
       "tasks": [
-        { "text": "AI-Enablement-Abstimmung für das Teamlead-Meeting vorbereiten", "category": "focus" },
         { "text": "AI-Team-Check-Ergebnis-LP für AI Enablement schärfen", "category": "focus" },
         { "text": "AI-Enablement-Landingpage finalisieren und übergeben", "category": "focus" },
         { "text": "Projekt-Slides für die AI Enablement Series erstellen", "category": "focus" },
-        { "text": "Entscheidungsvorlage für die AI Enablement Series fertigstellen", "category": "focus" }
+        { "text": "Ersten AI-Enablement-Termin am 20. August vorbereiten", "category": "focus" }
       ]
     },
     {
@@ -61,12 +58,6 @@
       "name": "Landing Page Builder / Design Library",
       "tasks": [
         { "text": "Ciarans Review für LP Builder und Design Library nachhalten", "category": "waiting" }
-      ]
-    },
-    {
-      "name": "E-Mail Automation – Plus FOMO",
-      "tasks": [
-        { "text": "Plus-FOMO-Mail nach Feedback fortführen", "category": "waiting" }
       ]
     },
     {
