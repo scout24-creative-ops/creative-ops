@@ -2,26 +2,12 @@
 
 ## Open
 
-- [ ] Finalize Creative Hub agent curation strategy
+- [ ] Map available company agents for the Creative Hub Agent Library
   - Area: Creative Hub
-  - Status: Partially complete
-  - Next step: Finalize the source list and Hub-suitability profile, formalize the direct in-agent prompt and owner approval step, then test the complete process with ScoutData or another relevant agent.
-  - Context: The four-stage model and a usable direct in-agent prompt exist; owner validation remains required before publication.
-  - Source: Agent-curation concept and prompt tests on 2026-07-30
-
-- [ ] Create Creative Hub content roadmap
-  - Area: Creative Hub
-  - Status: Partially complete
-  - Next step: Turn the strategic sequence into a compact final slide and confirm the handover points between Hub prerequisites, agent pilots, libraries and the later Knowledge stage.
-  - Context: The roadmap is a strategic sequence with parallel workstreams rather than a fixed person-and-date schedule. Knowledge remains deliberately last because it has the highest editorial and maintenance burden.
-  - Source: Eve and Peter working meeting and roadmap refinement on 2026-07-30
-
-- [ ] Align Creative Hub communication structure with Eve and Peter
-  - Area: Creative Hub
-  - Status: Partially complete
-  - Next step: Align with Eve and Peter on the roles of `#creative_studio`, `#creative-ops-marketing`, Hub announcements, useful cross-posting and lightweight team-specific support.
-  - Context: The current channel model is exploratory; Dominik wants to avoid creating or joining many additional project channels. Activation of Dominik's own channel is handled as a separate work item rather than part of the joint Hub setup.
-  - Source: Communication-structure exploration on 2026-07-30
+  - Status: Open
+  - Next step: Meet Andrea Mendieta from AI Operations on 2026-08-18 at 14:00 to learn how to identify existing agents across the company and which sources or inventories can support a reliable overview.
+  - Context: Dominik will own the Agent Library going forward; Eve and Peter have continued the other Creative Hub workstreams.
+  - Source: Dominik confirmed the updated role split and Andrea meeting on 2026-08-12
 
 - [ ] Plan lightweight `#creative-ops-marketing` activation
   - Area: AI Strategy & Steering
@@ -29,13 +15,6 @@
   - Next step: Define the channel's future purpose, a small set of useful recurring content types and a low-effort publishing approach before committing to any cadence or automation.
   - Context: The channel should become more active and support Dominik's visibility without creating another operational maintenance burden. Possible monitoring of selected AI or ChatGPT channels may be explored later, but no solution or posting rhythm has been decided.
   - Source: Dominik's communication-structure clarification on 2026-07-30
-
-- [ ] Prepare AI Enablement alignment for the Teamlead meeting
-  - Area: AI Enablement Series
-  - Status: Open
-  - Next step: Prepare the concise 5–10 minute story for the 2026-08-10 Teamlead meeting: Team-Check findings, resulting needs, proposed series model and the key working-mode decision.
-  - Context: Jorin and all Teamleads will attend. The discussion is informal and should align the concept rather than present a detailed session curriculum.
-  - Source: Teamlead-meeting preparation confirmed on 2026-08-09
 
 - [ ] Refine the AI Team-Check results LP for AI Enablement
   - Area: AI Enablement Series
@@ -58,12 +37,12 @@
   - Context: The presentation is a separate working artifact from the explanatory landing page and is required for the recurring session format.
   - Source: Current AI Enablement clarification and urgency confirmed on 2026-07-31
 
-- [ ] Finalize the decision-ready AI Enablement Series concept
+- [ ] Prepare the first AI Enablement Series session on August 20
   - Area: AI Enablement Series
-  - Status: Partially complete
-  - Next step: Use the Teamlead alignment to resolve the working model, then finalize cadence, participant setup, protected working time and the remaining transition between the simple agent explanation and the six-step project model.
-  - Context: Current recommendation is to use shared sessions mainly for orientation, learning, visibility, blocker discussion and next-step commitment, with most building and testing between sessions.
-  - Source: Concept refinement through 2026-08-09
+  - Status: Open
+  - Next step: Prepare the first scheduled series session for 2026-08-20 from 11:15 to 12:30, including the final session story and supporting materials.
+  - Context: The Teamlead alignment has taken place and the first series appointment is now scheduled.
+  - Source: Dominik confirmed the completed alignment and first appointment on 2026-08-12
 
 - [ ] Define the Brand Agent MVP with Marie
   - Area: Brand Agent – Tone of Voice
@@ -123,13 +102,6 @@
   - Dominik's next step: Send the short explanation and both draft PR links, then merge or adjust only after review.
   - Context: The productive LP Builder GPT is updated and tested; neither draft PR has been merged.
 
-- [ ] Continue the Plus FOMO email after feedback
-  - Area: E-Mail Automation – Plus FOMO
-  - Status: Waiting for feedback
-  - Waiting for: Feedback from the 2026-07-30 project presentation
-  - Dominik's next step: Incorporate confirmed feedback, validate DIMS3 resizing with real listings and prepare a controlled test of Mitch's AWS/GitHub module process.
-  - Context: The first responsive Outlook-aware reference mail is ready for feedback; the second concept should reuse its structure.
-
 - [ ] Clarify Coupa AI support and review the existing PO agent
   - Area: Coupa AI Support
   - Status: Waiting for another person or decision
@@ -150,6 +122,16 @@
   - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
 
 ## Completed
+
+- [x] Deliver the Plus FOMO email design for implementation
+  - Area: E-Mail Automation – Plus FOMO
+  - Completed: 2026-08-12
+  - Outcome: Dominik delivered the expected design work. The email will be built directly in Iterable; Mitch's AWS/GitHub module process will not be used for this implementation.
+
+- [x] Complete the AI Enablement Teamlead alignment
+  - Area: AI Enablement Series
+  - Completed: 2026-08-10
+  - Outcome: The Teamlead meeting took place and the first AI Enablement Series appointment was scheduled for 2026-08-20 from 11:15 to 12:30.
 
 - [x] Hold PR Intelligence Hub follow-up session
   - Area: PR Intelligence Hub
