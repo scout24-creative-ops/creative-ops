@@ -25,25 +25,28 @@ The intended approach is deliberately practical and incremental rather than tech
 
 ## Current MVP Direction
 
-The proposed MVP starts with:
+The MVP should be defined explicitly before implementation, including what it should contain and be able to do and what is deliberately out of scope.
 
-- a small number of reliable external sources;
-- a small number of directly usable internal data sources and contexts;
-- a simple and explainable evaluation logic;
-- a compact recurring PR topic radar;
-- three to five prioritized signals per edition;
-- classification as `Opportunity`, `Risk` or `Observation`;
-- a short rationale and relevant sources;
-- a suggested next question or check for the PR team;
-- mandatory human review of every result.
+The current direction is:
 
-Slack is a possible output channel, but the final communication and operating setup still needs to be agreed with the team.
+- use the team's existing daily Medienspiegel as the first external source candidate;
+- use a deliberately stable fake Medienspiegel during MVP development so test inputs do not change continuously;
+- test with one clearly PR-relevant signal that can be supported by internal data and two additional signals that are not relevant or are not supported by internal data;
+- connect selected external signals with a small number of directly usable internal data sources or contexts;
+- use a simple and explainable evaluation logic;
+- keep mandatory human review of every result.
+
+The fake Medienspiegel setup is currently a supported test hypothesis, not yet the final MVP specification.
+
+Slack remains a possible output channel, but the final communication and operating setup still needs to be agreed with the team.
 
 ## Potential Sources
 
 ### External
 
-Possible MVP sources include:
+The first concrete MVP source candidate is the daily `Medienspiegel`, which currently arrives by email as a PDF and is manually stored by the PR team in SharePoint.
+
+Other possible sources remain:
 
 - selected relevant media and industry sources;
 - market and trend reports;
@@ -93,13 +96,14 @@ ScoutData may become an important internal source because it can answer natural-
 
 ## Current Status
 
-- The kick-off with the PR team has taken place.
-- The concept and roadmap were developed and presented.
-- The proposed small-step MVP approach was positively received and made the project easier for the team to understand.
-- The original agreement was that the PR team would schedule the follow-up session and invite Dominik. After roughly three weeks without a follow-up invitation, Dominik scheduled the next session himself to keep the project moving.
-- The follow-up working session is scheduled for Wednesday, 2026-08-12, from 09:30 to 10:15.
-- Because the kick-off was several weeks ago, the team was asked to review the kick-off presentation beforehand and think about two points: what the MVP should concretely look like and which workstream each person can contribute to.
-- The delay occurred during the summer vacation period, which may have affected timing, but this is not a confirmed explanation. Dominik currently does not see any PR team member as being on vacation.
+- Kick-off, concept and roadmap are complete.
+- Dominik held the follow-up session with the PR team on 2026-08-12 and reiterated the small-step MVP approach.
+- The team contributed first MVP ideas and supported the fake-Medienspiegel approach as a stable test setup.
+- The next priority is not implementation yet. The team should first define its project organization and the MVP boundary clearly.
+- Dominik wants the team to establish how communication works, who owns which responsibilities or workstreams, how decisions are handled and how follow-up meetings are organized.
+- The intended ambition is to have something tangible by the time Lennart returns from parental leave. If a working MVP is not realistic by then, the minimum useful outcome should be a clear team setup, an agreed MVP definition, planned steps and assigned roles.
+- Capacity is currently a material risk because Arne is expected to be unavailable until mid-October due to parental leave and the PR team is therefore strongly understaffed.
+- The team has a meeting with Jorin on 2026-08-13 and plans to give Dominik feedback on available capacity and continuation of the MVP work by the end of this week.
 
 ## Dominik's Role
 
@@ -134,23 +138,18 @@ Operational implementation and later use should remain with the PR team.
 
 ## Next Steps
 
-The follow-up working session on 2026-08-12 should reconnect the team with the existing concept and then:
-
-1. clarify open questions about the process;
-2. confirm the concrete MVP;
-3. distribute roles and responsibilities;
-4. agree the working model;
-5. decide the communication and output channel;
-6. define the concrete next actions after the session.
-
-The team should come prepared by reviewing the previous presentation and considering the proposed MVP and their own contribution to one of the workstreams.
-
-A 45-minute check-in every two weeks remains a possible rhythm but has not yet been confirmed.
+1. Wait for the PR team's capacity feedback after its discussion with Jorin, expected by the end of the current week.
+2. If sufficient capacity remains, define the team's working model: communication, ownership, responsibilities, decision handling and follow-up cadence.
+3. Define the MVP cleanly, including required inputs, capabilities, output and explicit out-of-scope items.
+4. Confirm whether the fake Medienspiegel becomes the first fixed test dataset and define its concrete test signals.
+5. Only then move into the first implementation and validation cycle.
 
 ## Guardrails
 
 - start small rather than designing a large solution too early;
+- define the MVP boundary before implementation;
 - prioritize usefulness and clarity over technical complexity;
+- use stable test inputs during MVP development where useful;
 - use a few reliable sources instead of maximizing input volume;
 - keep human review central;
 - leave communication relevance decisions with the PR team;
@@ -160,13 +159,15 @@ A 45-minute check-in every two weeks remains a possible rhythm but has not yet b
 
 ## Open Questions
 
-- Which exact sources will be used in the MVP?
+- Does the PR team have enough capacity to continue the MVP work in the current staffing situation?
+- What is the final MVP definition and explicit out-of-scope boundary?
+- Which internal data source will be used for the first test?
 - Which team members own the individual workstreams?
+- How will project communication, decisions and follow-up meetings be organized?
 - What is the final output format and channel?
-- What frequency is genuinely useful?
 - What signals define a successful first pilot?
 - Which technical or data support is actually needed after the MVP is agreed?
 
 ## Last Confirmed
 
-2026-08-10
+2026-08-12
