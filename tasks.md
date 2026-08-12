@@ -72,13 +72,6 @@
   - Context: Marie owns implementation; Dominik provides structure, prioritization and quality guidance.
   - Source: Project alignment on 2026-07-21
 
-- [ ] Prepare and facilitate the PR Intelligence Hub follow-up on August 12
-  - Area: PR Intelligence Hub
-  - Status: Open
-  - Next step: Prepare and facilitate the 2026-08-12 session so the team can confirm the MVP, distribute responsibilities, agree the working model and output channel, and define concrete next actions.
-  - Context: Dominik scheduled the follow-up for 09:30–10:15 after the originally agreed team-organized invitation had not happened for roughly three weeks. The team was asked to review the kick-off presentation and prepare thoughts on the MVP and their own contribution.
-  - Source: Follow-up invitation sent on 2026-08-10
-
 - [ ] Define the first Content Marketing Agent use case with Yvonne
   - Area: Content Marketing Agent
   - Status: Open
@@ -116,6 +109,13 @@
 
 ## Waiting
 
+- [ ] Await PR team capacity decision and MVP continuation
+  - Area: PR Intelligence Hub
+  - Status: Waiting for team feedback
+  - Waiting for: PR team's capacity feedback after the 2026-08-13 discussion with Jorin, expected by end of week
+  - Dominik's next step: If capacity is confirmed, guide the team to define its working model and a clean MVP boundary before implementation.
+  - Context: The 2026-08-12 follow-up produced a concrete Medienspiegel test direction, but the team is strongly understaffed because Arne will be unavailable until mid-October.
+
 - [ ] Follow up on Ciaran's review of LP Builder and Design Library
   - Area: Landing Page Builder / Design Library
   - Status: Waiting for review
@@ -150,6 +150,11 @@
   - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
 
 ## Completed
+
+- [x] Hold PR Intelligence Hub follow-up session
+  - Area: PR Intelligence Hub
+  - Completed: 2026-08-12
+  - Outcome: The team aligned on the small-step MVP approach, discussed the Medienspiegel as the first external source candidate and agreed that team organization and the MVP boundary need to be defined before implementation.
 
 - [x] Validate Contentful integration progress with Mukhammadjon
   - Area: Contentful Marketing MVP
