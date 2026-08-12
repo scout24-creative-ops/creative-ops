@@ -23,47 +23,33 @@ Core findings:
 - Not every process benefits from AI; better use-case selection and conscious decisions against unnecessary automation are part of AI maturity.
 - Teams need practical guidance, examples, support in reducing ideas to small testable steps, shared learning and protected time more than a single generic basic training.
 
-The Team-Check results are being refined into a concise visual landing page. They will be used both in leadership alignment and later as part of the first Enablement session.
-
 ### Phase 2: Series concept and preparation — current
 
-The immediate focus is to turn the Team-Check findings into a clear, lightweight Enablement model and the supporting communication artifacts.
+The Teamlead alignment took place on 2026-08-10. The preparation task for that leadership discussion is complete.
 
-The current proposed series structure is:
+The first AI Enablement Series appointment is scheduled for 2026-08-20 from 11:15 to 12:30. The immediate focus is therefore preparing the first session and the supporting materials.
 
-1. A 45-minute kick-off with strategic framing by Jorin, selected AI Team-Check findings, orientation on how AI is changing work and a clear explanation of the series.
-2. A 45-minute session `Vom Use Case zum Agent-Projekt`, focused on moving from a real work problem to a useful agent or workflow idea and a small testable first version, while introducing already prepared projects.
-3. A recurring series combining one selected AI topic with short progress updates from every active person or group.
+The current series direction remains:
 
-There is no separate final or consolidation session. Testing, learnings and continuation decisions are handled through the recurring project rhythm.
+1. use the Team-Check findings to explain the need for practical AI Enablement;
+2. give colleagues a simple, accessible model for understanding AI agents and useful AI projects;
+3. connect shared learning with real projects and recurring project updates;
+4. keep most building, testing and iteration in the teams between shared sessions rather than turning the large sessions into the main build environment.
 
 ### Phase 3: AI Enablement Series — planned operating phase
 
 The series should create a recurring shared structure for orientation, learning, project visibility and support while real development and testing continue in the teams between sessions.
 
-## Current Leadership Alignment
+## Current Status
 
-Dominik is invited to the regular Teamlead meeting with Jorin and all Teamleads on 2026-08-10 to align the proposed concept. The format is expected to be an informal 5–10 minute discussion rather than a formal presentation.
+The leadership-alignment step is complete and the first series appointment is fixed for 2026-08-20, 11:15–12:30.
 
-The intended story for the alignment is:
+The remaining preparation work is concentrated on the colleague-facing materials and the first-session flow:
 
-1. Briefly show what the AI Team-Check revealed.
-2. Explain the recurring needs and barriers behind those findings.
-3. Present the AI Enablement Series as a direct response to those observations.
-4. Align the operating model, especially how shared sessions and project work should relate to each other.
-
-The Team-Check results should therefore be presented as the rationale for the series, not as a separate unrelated report.
-
-A current discussion point is whether the recurring sessions should be used for substantial joint build work. Jorin is understood to currently see value in concrete work happening in the series itself. Dominik's current recommendation, also supported by Andreas Böhm in a recent conversation, is not to make the large shared sessions the main build environment because participant numbers and experience levels are too different.
-
-The preferred working model is:
-
-- shared sessions provide orientation, relevant AI knowledge, examples, project visibility, exchange, blocker discussion and commitment to next steps;
-- concrete building, testing and iteration happen mainly between sessions, individually, in small groups or in existing project setups;
-- Dominik accompanies the initiatives and provides guidance, sparring and structure without becoming the permanent builder for every project;
-- protected working time remains important so project work does not exist only as an additional task beside daily business.
-
-This is a proposal for alignment, not yet a final leadership decision.
+- refine the AI Team-Check results landing page so it leads clearly into the Enablement Series;
+- finalize and hand over the explanatory AI Enablement landing page;
+- create the shared project-slide presentation for recurring project introductions and updates;
+- prepare the first session story and supporting material for August 20.
 
 ## Target of the Series
 
@@ -96,11 +82,9 @@ The current content direction is intentionally simple:
 - use the later six-step module to explain how an agent project is developed and tested, not to collect inputs;
 - end with a call to action leading to the separate shared project presentation.
 
-For the Teamlead alignment, the existing concept document is currently too text-heavy. The leadership version should focus on the overall model rather than detailed agendas for every session.
-
 ## AI Team-Check Results Landing Page
 
-The results landing page is now part of the AI Enablement story rather than a separate active project deliverable.
+The results landing page is part of the AI Enablement story rather than a separate active project deliverable.
 
 Its role is to establish the rationale for the series in a concise sequence such as:
 
@@ -109,7 +93,7 @@ Its role is to establish the rationale for the series in a concise sequence such
 3. Shared structure, orientation, visibility and protected time are still missing.
 4. The AI Enablement Series is the practical response to those observations.
 
-The results should remain anonymized and should not rank teams or individuals. The final version still needs refinement before broader use.
+The results should remain anonymized and should not rank teams or individuals.
 
 ## Shared Project Presentation
 
@@ -117,14 +101,14 @@ The shared presentation is the working artifact for the appointment series and i
 
 Its purpose is to collect only the information genuinely necessary for a clear project start and later updates. The current direction is:
 
-1. A stable definition slide for the agent or workflow, including the problem, users, purpose and first MVP.
-2. A recurring update slide showing meaningful developments since the last session, tests, learnings, blockers and the next step.
+1. a stable definition slide for the agent or workflow, including the problem, users, purpose and first MVP;
+2. a recurring update slide showing meaningful developments since the last session, tests, learnings, blockers and the next step.
 
 The exact fields, slide layout and handover process still need to be created.
 
 ## Dominik's Role
 
-- Own the content concept and prepare it for leadership alignment.
+- Own the content concept and first-session preparation.
 - Lead and facilitate the Enablement Series.
 - Translate Team-Check findings into practical enablement priorities.
 - Select or coordinate relevant AI topics, demos and contributors.
@@ -138,9 +122,8 @@ Dominik should not become the permanent operational owner or builder for every p
 
 - Provide strategic framing, organizational legitimacy and visible leadership support.
 - Establish that the series and associated work are relevant and binding.
-- Align the operating model with Dominik and the Teamleads.
 - Support protected time for practical AI development.
-- Open the kick-off together with Dominik.
+- Open or support the series where useful.
 
 ## Key Stakeholders
 
@@ -157,36 +140,31 @@ Dominik should not become the permanent operational owner or builder for every p
 - Use the Team-Check results to explain why the Enablement Series is needed and how it should be designed.
 - Do not rank teams or individuals in the Team-Check results.
 - Use a binding recurring format with leadership backing and protected time.
-- Use two initial 45-minute sessions followed by a recurring series.
-- Do not repeat a general shared agent-building workshop as a mandatory element.
 - Start from real work problems and useful agents or workflows rather than building an agent for the sake of the format.
-- Keep the recurring session structure simple: one focused learning topic followed by updates from active initiatives.
+- Keep the recurring session structure simple and practical.
 - Keep the working model lightweight and avoid unnecessary coordination overhead.
 - Separate explanation from input: landing pages explain, while the shared presentation collects project information.
 - Keep introductory explanations of AI agents simple and accessible.
-- Current recommendation: use shared sessions primarily for orientation, learning, exchange, visibility, blocker discussion and next-step commitment; do most building and testing between sessions. This remains subject to leadership alignment.
+- Use shared sessions primarily for orientation, learning, exchange, visibility, blocker discussion and next-step commitment; do most building and testing between sessions.
 
 ## Risks and Open Questions
 
-- Final leadership agreement on the balance between joint working time in the sessions and project work between sessions.
-- Final participant scope and whether Teamleads participate directly.
-- Exact cadence and duration of recurring sessions.
+- Final participant scope and whether Teamleads participate directly in the operating series.
+- Exact cadence after the first appointment.
 - Number of initiatives and resulting total update time.
 - Final slide fields and layouts for project definitions and recurring updates.
 - How much protected working time participants receive between sessions.
 - How progress and stalled initiatives are handled without turning the format into ranking or control.
 - Final transition between the simple `Aufgabe`, `Informationen`, `Tools` model and the six-step project model.
-- Final simplification of both landing pages for leadership and colleague-facing use.
+- Final simplification of both landing pages for colleague-facing use.
 
 ## Next Steps
 
-- Prepare the concise AI Enablement story for the Teamlead alignment on 2026-08-10.
+- Prepare the first AI Enablement Series session for 2026-08-20, 11:15–12:30.
 - Refine the AI Team-Check results landing page so it leads logically into the Enablement Series.
 - Simplify and finalize the AI Enablement landing page for handover to colleagues.
 - Create the shared project-slide presentation for the series.
-- Use the 2026-08-10 leadership discussion to align the operating model, especially protected time and the balance between session work and between-session project work.
-- After alignment, finalize cadence, participant setup and the kick-off content.
 
 ## Last Confirmed
 
-2026-08-09.
+2026-08-12.
