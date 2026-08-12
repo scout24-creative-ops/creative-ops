@@ -10,7 +10,9 @@ The production Landing Page Builder is currently a Custom GPT, not an agent. It 
 
 Users open the GPT, describe the landing-page topic and select the modules they want to use from the Design Library. The GPT generates the page code from those approved modules. The productive tool still has no CMS integration and users currently place generated code manually into AEM.
 
-A separate duplicated `Landing Page Builder (Contentful)` GPT is now being used to validate the Contentful integration without changing the production tool. Mukhammadjon connected this test GPT to Contentful through GPT Actions. Dominik has independently verified that the same GPT can create and update an unpublished Contentful draft while preserving the existing LP Builder generation workflow.
+A separate duplicated `Landing Page Builder (Contentful)` GPT is now being used to validate the Contentful integration without changing the production tool. Mukhammadjon connected this test GPT to Contentful through GPT Actions. Dominik has independently verified that the same GPT can create a draft, return a direct preview link, update the same draft and show the updated result in the Contentful `next` environment while preserving the existing LP Builder generation workflow.
+
+The Contentful preview already looks broadly consistent with the normal LP Builder output. Some spacing and top/bottom padding differences remain and should be treated as later visual-parity refinement rather than a blocker for the current integration validation.
 
 The productive GPT uses AEM-fragment output as its default contract: required asset links first, followed by approved section markup, without `doctype`, `html`, `head` or `body` tags. A complete standalone HTML document is produced only when explicitly requested for preview or download.
 
@@ -32,8 +34,9 @@ The productive GPT uses AEM-fragment output as its default contract: required as
 - Keeps the existing controlled Marketing module workflow and generated HTML approach.
 - Uses configured GPT Actions for Contentful read, draft creation, draft update and explicit publish operations.
 - Draft creation and update require explicit approval; publishing is separate.
-- Dominik verified create and update successfully on 2026-08-11.
-- A dedicated preview or renderer URL for unpublished drafts is not currently returned by the Actions.
+- Dominik verified create, direct preview and update successfully in `next` on 2026-08-12.
+- The direct preview link is now returned from the GPT flow and supports review before any production-publishing step.
+- Production publishing is not yet available because the LP Builder content type and renderer have not been transferred to Contentful `pro`.
 
 ### Landing Page Builder Agent Prototype
 
@@ -43,13 +46,12 @@ The productive GPT uses AEM-fragment output as its default contract: required as
 - Includes a preview capability that the production GPT does not have.
 - Is not a production replacement and is not identical to the Contentful solution being tested through GPT Actions.
 
-### Future Contentful Agent
+### Future Authoring Options
 
-- The intended future replacement for the production Custom GPT.
-- Will be built as an agent and designed around the Contentful integration.
-- Belongs primarily to the Contentful Marketing MVP project.
-- The current GPT Actions backend should ideally remain reusable by a future agent or other client rather than being tied only to the Custom GPT frontend.
-- Must remain clearly separated from the existing reduced prototype until the target architecture is confirmed.
+- A future agent remains one possible replacement for the production Custom GPT once the target architecture is stable.
+- Matthias Brandstätter has also suggested evaluating Claude Design as a possible alternative authoring surface for the LP Builder.
+- Neither option is a current migration decision. The working GPT-based Contentful MVP should continue to be validated without blocking on the long-term interface choice.
+- The integration/service layer should ideally remain reusable by a future agent or other authoring client rather than being tied only to the Custom GPT frontend.
 
 ## Dominik's Role
 
@@ -70,6 +72,7 @@ Ciaran works as a freelancer and implements new modules and system changes based
 - Ciaran for module implementation and system adjustments
 - UX for module approval and design governance
 - SEO for page-generation guardrails
+- Matthias Brandstätter for Contentful ownership and long-term platform direction
 - Mukhammadjon Kayumov for the current Contentful GPT Actions integration
 - Contentful and Core Team stakeholders for the future target setup
 
@@ -81,8 +84,9 @@ Ciaran works as a freelancer and implements new modules and system changes based
 - Complete HTML is reserved for explicit standalone preview or downloadable-file use.
 - The Contentful test integration should augment the current LP Builder rather than replace its controlled Marketing module approach with Storybook-driven generation.
 - Operational module work can be handled by Ciaran, while Dominik retains strategic and product responsibility.
-- The reduced agent prototype should be treated as a testcase, not as the current product or the final Contentful agent.
-- The future Contentful agent should eventually replace the Custom GPT, but the current Contentful flow can be validated first through the duplicated GPT and reusable Actions backend.
+- The reduced agent prototype should be treated as a testcase, not as the current product or the final Contentful solution.
+- Create, update and preview can be validated through the duplicated GPT before deciding whether the long-term authoring surface should remain a GPT, move to an agent or use another interface such as Claude Design.
+- Production publishing is a separate Contentful implementation phase and is not yet available in `pro`.
 
 ## Important Developments
 
@@ -90,14 +94,17 @@ Ciaran works as a freelancer and implements new modules and system changes based
 - Dominik worked through the issue with Codex, updated the prompt, guardrails and usage documentation, added regression tests, updated the productive Custom GPT and verified the corrected behavior in a fresh chat.
 - Draft PR #3, `Make AEM fragment output the LP Builder default`, was opened for review in `scout24-creative-ops/lp-builder`.
 - 2026-08-11: The duplicated Contentful-enabled GPT successfully created and then updated an unpublished Contentful draft through GPT Actions in Dominik's own test session. A fresh chat resolved an earlier session-level Action availability issue.
+- 2026-08-12: Mukhammadjon added a direct preview link. Dominik verified the rendered draft and a subsequent GPT-driven update successfully.
+- 2026-08-12: A publish test returned a misleading published state and public 404; Mukhammadjon clarified that real LP Builder production publishing is not yet possible because the renderer/content type exist only in `next`, not `pro`.
+- 2026-08-12: Matthias Brandstätter suggested evaluating Claude Design as a possible future authoring surface for the LP Builder.
 
 ## Risks and Open Questions
 
-- A transition strategy from the productive Custom GPT to the future Contentful agent is still not fully defined.
+- The long-term transition strategy from the productive Custom GPT remains open: Custom GPT, future agent and Claude Design are possible authoring options to evaluate after the Contentful workflow is stable.
 - It is unclear how much further investment should go into the current production GPT before the replacement is ready.
 - Existing users, modules and working practices must be preserved or migrated without disrupting the current strong usage.
-- The Contentful test flow currently lacks a dedicated preview or renderer link for unpublished drafts.
-- The separate Contentful publish flow has not yet been validated by Dominik.
+- Minor visual spacing/padding differences remain between the Contentful preview and the current LP Builder/AEM appearance.
+- Real Contentful production publishing is not yet available and depends on transferring the required model/renderer to `pro` and aligning the publish flow.
 - Historical user-survey findings and module requests have not yet been consolidated into a current roadmap.
 - The draft PR still requires review before merge.
 
@@ -105,14 +112,15 @@ Ciaran works as a freelancer and implements new modules and system changes based
 
 1. Ask Ciaran to review PR #3 and confirm the corrected output contract works for his workflow.
 2. Merge the reviewed change when approved.
-3. Continue validating the Contentful test GPT lifecycle, especially preview and publish behavior.
-4. Define a transition strategy covering stabilization of the current GPT, the prototype's role and the future Contentful agent.
-5. Keep the current Custom GPT operational for existing Marketing users.
-6. Continue necessary module and maintenance work through Ciaran and Linear tickets.
+3. Continue representative Contentful test-GPT validation in `next`, using the direct preview link for review.
+4. Let the Contentful/Core implementation progress the `pro` renderer/content-type and real production-publishing phase before further publish validation.
+5. Treat visual spacing/padding parity as follow-up refinement after the core integration is stable.
+6. Evaluate the long-term authoring surface separately, including agent and Claude Design options, without blocking the current GPT-based MVP.
+7. Keep the current Custom GPT operational for existing Marketing users and continue necessary module/maintenance work through Ciaran and Linear tickets.
 
 ## Last Confirmed
 
-Contentful-enabled GPT create/update flow confirmed on 2026-08-11; production GPT remains the operational standard.
+Contentful-enabled GPT create/update/preview flow confirmed in `next` on 2026-08-12; production GPT remains the operational standard and real Contentful `pro` publishing is not yet available.
 
 ## Related Context
 
