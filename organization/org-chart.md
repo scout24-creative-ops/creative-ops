@@ -1,6 +1,6 @@
 # Relevanter Organisationskontext – vollständig
 
-Stand: 22.07.2026
+Stand: 14.08.2026
 
 Diese Datei ist die maßgebliche Version für Dominiks relevante Organisations- und Zusammenarbeitsstruktur.
 
@@ -13,7 +13,7 @@ Diese Datei ist die maßgebliche Version für Dominiks relevante Organisations- 
 Alle direkten Reports sind für Dominiks Arbeit relevant:
 
 - Christoph Pape — Teamlead Brand Management
-- Eve-Sabrina Vogelein — Teamlead Visual Design
+- Eve-Sabrina Vogelein — Teamlead Visual Design; führt das Creative Studio
 - Juliane Bischoff — Teamlead Product Marketing
 - Lennart Dannenberg — Teamlead PR & Corporate Communications
 - Mohamed Sharia Rahim — Head of Event & Social Media
@@ -22,6 +22,19 @@ Alle direkten Reports sind für Dominiks Arbeit relevant:
 - Dominik Böhme — Creative Operations & Digital Transformation Lead
 - Franziska Stober — Senior Event & Project Manager
 - Marie-Luis Fischbach — Lead Marketing Manager
+
+### Brand Management unter Christoph Pape
+
+- Entwickelt Kampagnenideen, Botschaften, Claims und den übergeordneten inhaltlichen Aufbau von Marketingkampagnen.
+- Definiert, welche kommunikativen Maßnahmen und Kanäle zu einer Kampagne gehören, ohne die visuelle Gestaltung der einzelnen Assets selbst zu verantworten.
+- Arbeitet damit auf der Ebene von Kampagnenlogik und Kommunikationsrichtung, nicht als visuelles Produktionsteam.
+
+### Creative Studio unter Eve-Sabrina Vogelein
+
+- Verantwortet einen großen Teil der visuellen Gestaltung und Produktion für Marketing & Communications, darunter Bilder, Illustrationen, Icons, Video, Landingpage-Designs und Präsentationen.
+- Baut und pflegt die Bildwelt beziehungsweise Bilddatenbank und entwickelt visuelle Standards und Assets für den Bereich.
+- Entwickelt auch wichtige visuelle AI-Lösungen, zum Beispiel für Bildgenerierung entlang der Brand Guidelines.
+- Dominik war vor seiner Lead-Rolle Teil des Creative Studio. Lösungen wie der Landing Page Builder sind aus diesem Arbeitskontext entstanden und gehören fachlich zur Creative-Studio-/Creative-Operations-Welt.
 
 ### PR & Corporate Communications unter Lennart Dannenberg
 Bestätigtes Team:
