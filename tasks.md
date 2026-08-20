@@ -27,22 +27,15 @@
   - Area: AI Enablement Series
   - Status: Partially complete
   - Next step: Complete the simplified content logic, finish the HTML landing page and prepare it for handover to colleagues.
-  - Context: The landing page should explain the series and create a simple shared understanding of AI agents. It should not collect project inputs; those belong in the separate shared presentation.
+  - Context: The landing page should explain the series and create a simple shared understanding of AI agents. It should not collect project inputs.
   - Source: Current landing-page refinement and urgency confirmed on 2026-07-31
 
-- [ ] Create the shared project-slide deck for the AI Enablement Series
+- [ ] Define cadence and dates for the AI Enablement Series
   - Area: AI Enablement Series
   - Status: Open
-  - Next step: Build the shared presentation in which each person or group records the minimum information needed to introduce and later update their agent or workflow project.
-  - Context: The presentation is a separate working artifact from the explanatory landing page and is required for the recurring session format.
-  - Source: Current AI Enablement clarification and urgency confirmed on 2026-07-31
-
-- [ ] Prepare the first AI Enablement Series session on August 20
-  - Area: AI Enablement Series
-  - Status: Open
-  - Next step: Prepare the first scheduled series session for 2026-08-20 from 11:15 to 12:30, including the final session story and supporting materials.
-  - Context: The Teamlead alignment has taken place and the first series appointment is now scheduled.
-  - Source: Dominik confirmed the completed alignment and first appointment on 2026-08-12
+  - Next step: Decide the recurring cadence and duration, schedule the next sessions and send the invitations.
+  - Context: The kickoff concept and presentation are complete. The first follow-up sessions can start with prepared Learn topics and Show & Share examples before team contributions increasingly shape the content.
+  - Source: Dominik confirmed the post-kickoff next step on 2026-08-20
 
 - [ ] Define the Brand Agent MVP with Marie
   - Area: Brand Agent – Tone of Voice
@@ -84,7 +77,7 @@
   - Status: Open
   - Next step: Compare the agreed canonical project names with the actual VS Code workspace, repository and subproject structure, then define a clear naming rule for visible project titles, nested projects and technical names.
   - Context: Not every project exists at the workspace's top level, so the naming model needs to distinguish canonical display names from repositories, folders and nested workstreams before any wider renaming is attempted.
-  - Source: [Project naming discussion](https://chatgpt.com/g/g-p-6a5fc37157cc8191b05795d276e02e4d-saved-chats/c/6a6b8c5c-ffdc-8385-b7a1-d891cd113c91), confirmed 2026-07-31
+  - Source: Project naming discussion confirmed 2026-07-31
 
 ## Waiting
 
@@ -123,6 +116,11 @@
 
 ## Completed
 
+- [x] Finalize the AI Enablement kickoff story and presentation
+  - Area: AI Enablement Series
+  - Completed: 2026-08-20
+  - Outcome: The kickoff concept and final presentation were completed around the Learn, Show & Share and Explore model. The previous shared-project-slide requirement was dropped because the Series no longer assumes that every participant maintains an individual agent or workflow project.
+
 - [x] Deliver the Plus FOMO email design for implementation
   - Area: E-Mail Automation – Plus FOMO
   - Completed: 2026-08-12
@@ -131,7 +129,7 @@
 - [x] Complete the AI Enablement Teamlead alignment
   - Area: AI Enablement Series
   - Completed: 2026-08-10
-  - Outcome: The Teamlead meeting took place and the first AI Enablement Series appointment was scheduled for 2026-08-20 from 11:15 to 12:30.
+  - Outcome: The Teamlead meeting took place and the first AI Enablement Series appointment was scheduled for 2026-08-20.
 
 - [x] Hold PR Intelligence Hub follow-up session
   - Area: PR Intelligence Hub
