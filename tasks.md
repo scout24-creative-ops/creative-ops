@@ -16,6 +16,13 @@
   - Context: The channel should become more active and support Dominik's visibility without creating another operational maintenance burden. Possible monitoring of selected AI or ChatGPT channels may be explored later, but no solution or posting rhythm has been decided.
   - Source: Dominik's communication-structure clarification on 2026-07-30
 
+- [ ] Identify the next high-impact AI use case for the unit
+  - Area: AI Strategy & Steering
+  - Status: Open
+  - Next step: Use signals from the AI Enablement Series and current team needs to identify and assess the next AI opportunity with meaningful unit-wide impact.
+  - Context: Jorin supported this as part of Dominik's focused priority set rather than treating every decentralized AI idea as an equal delivery commitment.
+  - Source: Jorin alignment confirmed by Dominik on 2026-08-20
+
 - [ ] Refine the AI Team-Check results LP for AI Enablement
   - Area: AI Enablement Series
   - Status: Partially complete
@@ -51,6 +58,27 @@
   - Context: The task is confirmed and remains in the current continuation queue; Yvonne and the relevant team retain functional and implementation ownership.
   - Source: Dominik confirmed the task on 2026-07-31
 
+- [ ] Test LP Builder & Contentful MVP and define future module model
+  - Area: Contentful Marketing MVP
+  - Status: Open
+  - Next step: Test the current MVP and define the future design-system, module and template approach needed for reliable ongoing Marketing use.
+  - Context: Jorin supported LP Builder & Contentful as a priority. The current module library is a useful base but is not yet sufficient for the broader future Contentful workflow and migration ambition.
+  - Source: Jorin alignment and Dominik's next-step definition on 2026-08-20
+
+- [ ] Plan the Contentful migration approach for existing landing pages
+  - Area: Contentful Marketing MVP
+  - Status: Open
+  - Next step: Define a conceptual migration approach for rebuilding and moving existing landing pages with the LP Builder and Contentful workflow.
+  - Context: The capability to create HTML-based Contentful pages changes the migration options, but scope, sequence, templates and operating model still need to be designed before migration work begins.
+  - Source: Jorin alignment and Dominik's next-step definition on 2026-08-20
+
+- [ ] Identify the next E-Mail Automation use cases with B2B
+  - Area: E-Mail Automation
+  - Status: Open
+  - Next step: Assess and prioritize the next automation use cases, using Juliane's B2B need as the next concrete test.
+  - Context: Jorin supported E-Mail Automation as a priority area. The next step is use-case selection rather than expanding generic self-service email creation.
+  - Source: Jorin alignment and Dominik's next-step definition on 2026-08-20
+
 - [ ] Discuss Newsletter Automation with Steffi
   - Area: Newsletter Automation
   - Status: Open
@@ -81,13 +109,6 @@
 
 ## Waiting
 
-- [ ] Await PR team capacity decision and MVP continuation
-  - Area: PR Intelligence Hub
-  - Status: Waiting for team feedback
-  - Waiting for: PR team's capacity feedback after the 2026-08-13 discussion with Jorin, expected by end of week
-  - Dominik's next step: If capacity is confirmed, guide the team to define its working model and a clean MVP boundary before implementation.
-  - Context: The 2026-08-12 follow-up produced a concrete Medienspiegel test direction, but the team is strongly understaffed because Arne will be unavailable until mid-October.
-
 - [ ] Follow up on Ciaran's review of LP Builder and Design Library
   - Area: Landing Page Builder / Design Library
   - Status: Waiting for review
@@ -115,6 +136,16 @@
   - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
 
 ## Completed
+
+- [x] Align AI operating model and priority set with Jorin
+  - Area: AI Strategy & Steering
+  - Completed: 2026-08-20
+  - Outcome: Jorin supported the separation of broad enablement from reliable delivery and agreed with Dominik's proposed focus on AI Enablement, LP Builder & Contentful, Contentful migration, E-Mail Automation and identifying the next high-impact AI use case.
+
+- [x] Confirm PR Intelligence Hub pause
+  - Area: PR Intelligence Hub
+  - Completed: 2026-08-20
+  - Outcome: The project is on hold because the PR team lacks implementation capacity; Jorin participated in the pause decision. Any restart requires explicit priority and delivery capacity.
 
 - [x] Finalize the AI Enablement kickoff story and presentation
   - Area: AI Enablement Series
