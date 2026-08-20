@@ -12,9 +12,13 @@ Dominik has independently validated the current core lifecycle from his own acco
 
 Production publishing is not yet available. Mukhammadjon clarified that the LP Builder content type and renderer currently exist only in Contentful `next`, not production `pro`. A publish test returned a published status but the public route produced a 404; this is currently considered an MCP-code issue rather than a real production publication. Production publishing and transfer of the required renderer/content type to `pro` remain a later implementation phase to be aligned with Beatrice.
 
+Jorin confirmed LP Builder & Contentful and the conceptual Contentful migration work as priorities with Dominik on 2026-08-20.
+
+The next product-level phase is therefore not only technical integration validation. Dominik also needs to define the future Marketing creation model: the current module library is a useful base, but broader Contentful usage and migration of existing pages require a more complete design system, reusable module set and page templates.
+
 ## Dominik's Role
 
-Dominik represents Marketing and Creative Operations requirements, documents the target process, provides and tests the existing Landing Page Builder output, prepares pilot pages and migration priorities, and validates that the Contentful integration preserves the controlled LP Builder workflow. He also communicates project status to management stakeholders.
+Dominik represents Marketing and Creative Operations requirements, documents the target process, provides and tests the existing Landing Page Builder output, prepares pilot pages and migration priorities, and validates that the Contentful integration preserves the controlled LP Builder workflow. He also owns the product-level concept for how Marketing should work with the LP Builder and Contentful in the future, including the required design-system, module and template model.
 
 ## Key Stakeholders
 
@@ -39,6 +43,8 @@ Dominik represents Marketing and Creative Operations requirements, documents the
 - Production publishing is not part of the validated MVP yet because the LP Builder renderer/content type have not been transferred to `pro`.
 - Existing AEM pages should be migrated gradually and by priority rather than through a big-bang migration.
 - During the transition, new Contentful pages may still link to old AEM pages.
+- The future Marketing workflow needs a stronger design-system, reusable module and page-template foundation before broad migration or scale-up.
+- Jorin supported LP Builder & Contentful and Contentful migration planning as current priorities on 2026-08-20.
 
 ## Important Developments
 
@@ -48,6 +54,7 @@ Dominik represents Marketing and Creative Operations requirements, documents the
 - 2026-08-12: Mukhammadjon added a direct preview link to the GPT flow. Dominik verified the preview and a subsequent content update successfully.
 - 2026-08-12: A publish test exposed the current environment boundary: the Action reported publication, but the public route returned 404 because LP Builder rendering/publishing has not yet been transferred from `next` to `pro`.
 - 2026-08-12: Matthias Brandstätter suggested evaluating Claude Design as a possible future authoring surface for the LP Builder. This remains exploratory; no replacement decision has been made.
+- 2026-08-20: Jorin supported the project as one of Dominik's priority workstreams and agreed with treating Contentful migration as a separate conceptual next step rather than assuming migration execution is already defined.
 
 ## Open Questions and Risks
 
@@ -59,20 +66,22 @@ Dominik represents Marketing and Creative Operations requirements, documents the
 - Which metadata is captured in the Landing Page Builder and which remains maintained in Contentful.
 - How an existing page can later be loaded back into the Landing Page Builder for broader editing workflows.
 - How link checking, redirects, slug conventions and retirement of old AEM URLs will be managed during migration.
+- What the target design system, module library and page-template set needs to contain for broad Marketing use and migration.
+- How the migration of existing pages should be scoped, sequenced and governed.
 
 ## Next Steps
 
-1. Mukhammadjon aligns with Beatrice on the next phase for `pro`, including renderer/content-type transfer and real production publishing.
-2. Keep current validation and review in the `next` environment using the direct preview links.
-3. Correct the MCP/Action behavior so it does not return a misleading production-publish result while `pro` is unavailable.
-4. Continue testing the Contentful-enabled LP Builder with representative Marketing pages before wider rollout.
-5. Treat visual spacing/padding parity as follow-up refinement after the core integration is stable.
-6. Evaluate Claude Design or an agent setup separately as a possible future authoring interface without blocking the current GPT-based MVP.
-7. Define a small prioritized pilot set of AEM pages for gradual rebuilding and clarify slug/redirect rules for migration.
+1. Test the current LP Builder & Contentful MVP with representative Marketing pages and validate the end-to-end creation and update workflow.
+2. Define the target design-system, module-library and page-template model required for future Marketing use.
+3. Conceptually design the migration approach for existing landing pages, including scope, prioritization, templates, redirects and operating model before execution begins.
+4. Let the Contentful/Core implementation progress the `pro` renderer/content-type and real production-publishing phase before further publish validation.
+5. Correct the MCP/Action behavior so it does not return a misleading production-publish result while `pro` is unavailable.
+6. Treat visual spacing/padding parity as follow-up refinement after the core integration is stable.
+7. Evaluate Claude Design or an agent setup separately as a possible future authoring interface without blocking the current GPT-based MVP.
 
 ## Last Confirmed
 
-Create, update and direct-preview flow verified by Dominik in `next` on 2026-08-12. Production `pro` publishing is not yet available and remains a later implementation phase.
+Jorin confirmed LP Builder & Contentful and conceptual Contentful migration planning as priorities on 2026-08-20. Create, update and direct-preview flow remains verified in `next`; production `pro` publishing is not yet available.
 
 ## Related Context
 
