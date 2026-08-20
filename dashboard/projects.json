@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12",
+  "updated": "2026-08-20",
   "projects": [
     {
       "name": "Creative Hub",
@@ -20,8 +20,7 @@
       "tasks": [
         { "text": "AI-Team-Check-Ergebnis-LP für AI Enablement schärfen", "category": "focus" },
         { "text": "AI-Enablement-Landingpage finalisieren und übergeben", "category": "focus" },
-        { "text": "Projekt-Slides für die AI Enablement Series erstellen", "category": "focus" },
-        { "text": "Ersten AI-Enablement-Termin am 20. August vorbereiten", "category": "focus" }
+        { "text": "Rhythmus, Dauer und Termine der AI Enablement Series festlegen", "category": "focus" }
       ]
     },
     {
