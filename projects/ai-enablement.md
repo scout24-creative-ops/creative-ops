@@ -87,6 +87,8 @@ Simple framing: `Diskutieren, was Potenzial hat – und was nicht.`
 
 The kickoff preparation is complete. The final presentation is available in German and an English version was prepared/requested for a colleague who does not speak German.
 
+Jorin supported the revised enablement direction on 2026-08-20, including the separation between broad enablement and reliable delivery for selected complex or strategically relevant AI solutions.
+
 The next organizational step is to define the recurring cadence, duration and dates for the follow-up sessions. The first sessions can start with already prepared Learn topics and initial Show & Share examples before the format increasingly draws on contributions from the teams.
 
 ## Operating Model
@@ -106,10 +108,10 @@ Practical experience from initiatives such as PR Intelligence Hub, Brand Agent a
 For selected complex or strategically relevant solutions:
 
 - the functional team provides the real problem, requirements, rules, knowledge, examples, testing and feedback;
-- the AI lead provides prioritization, solution design, strategic steering and quality guidance;
-- appropriate delivery capacity is needed for implementation, integration, operation and continued development.
+- the AI lead owns and leads the solution end-to-end through prioritization, scope, solution design, technical conception, strategic steering, quality and continued development;
+- appropriate delivery capacity is needed for technical implementation, integration, operation and continued development.
 
-Dominik should not become the permanent builder for every AI initiative.
+Dominik can contribute practically and technically where useful, but should not become the permanent builder for every AI initiative.
 
 ## Dominik's Role
 
@@ -119,6 +121,7 @@ Dominik should not become the permanent builder for every AI initiative.
 - Translate recurring questions and practical experience into useful Learn content.
 - Help assess which AI opportunities deserve further investigation.
 - Support selected initiatives with structure, scope, MVP thinking and strategic steering where appropriate.
+- Take end-to-end AI Lead ownership for selected high-impact initiatives when they are explicitly prioritized, while keeping delivery capacity distinct from broad enablement.
 - Keep the format lightweight and avoid unnecessary coordination overhead.
 
 ## Participation Model
@@ -144,6 +147,7 @@ Coordination runs through `#comms-team-only`.
 - Keep actual project implementation outside the large recurring Series sessions.
 - Use the existing `#comms-team-only` channel for continuity, contribution requests and Series communication.
 - Dominik curates and leads the format, but the teams are expected to contribute content over time.
+- Jorin supported this revised direction on 2026-08-20.
 
 ## Risks and Open Questions
 
@@ -160,4 +164,4 @@ Coordination runs through `#comms-team-only`.
 
 ## Last Confirmed
 
-2026-08-20.
+Jorin support for the revised AI Enablement and delivery direction confirmed on 2026-08-20.
