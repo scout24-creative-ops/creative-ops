@@ -25,9 +25,9 @@ The intended approach is deliberately practical and incremental rather than tech
 
 ## Current MVP Direction
 
-The MVP should be defined explicitly before implementation, including what it should contain and be able to do and what is deliberately out of scope.
+If the project is resumed, the MVP should still be defined explicitly before implementation, including what it should contain and be able to do and what is deliberately out of scope.
 
-The current direction is:
+The last working direction before the pause was:
 
 - use the team's existing daily Medienspiegel as the first external source candidate;
 - use a deliberately stable fake Medienspiegel during MVP development so test inputs do not change continuously;
@@ -36,80 +36,21 @@ The current direction is:
 - use a simple and explainable evaluation logic;
 - keep mandatory human review of every result.
 
-The fake Medienspiegel setup is currently a supported test hypothesis, not yet the final MVP specification.
-
-Slack remains a possible output channel, but the final communication and operating setup still needs to be agreed with the team.
-
-## Potential Sources
-
-### External
-
-The first concrete MVP source candidate is the daily `Medienspiegel`, which currently arrives by email as a PDF and is manually stored by the PR team in SharePoint.
-
-Other possible sources remain:
-
-- selected relevant media and industry sources;
-- market and trend reports;
-- publicly available studies;
-- competitor and industry signals.
-
-### Internal
-
-Possible internal sources include:
-
-- company data;
-- search and demand developments;
-- product and usage data;
-- marketing and campaign information;
-- expert input from relevant teams;
-- existing internal AI or data solutions.
-
-ScoutData may become an important internal source because it can answer natural-language questions based on internal company data. Any numbers or claims still require validation of definitions, limitations, data quality and external-use suitability.
-
-## Core Workstreams
-
-### Sources and Access
-
-- identify internal and external sources;
-- clarify access and responsible contacts;
-- assess reliability and freshness;
-- identify missing data or source gaps;
-- select a small MVP source set.
-
-### Evaluation Logic
-
-- define what is relevant for PR;
-- collect examples of opportunities, risks and observations;
-- classify relevance and urgency;
-- define when internal and external signals belong together;
-- test the logic with real PR examples;
-- keep the criteria deliberately simple.
-
-### Outputs and Usage
-
-- define the outputs the team needs;
-- agree content depth and detail;
-- align frequency and output channel;
-- define review and feedback processes;
-- agree how MVP usefulness will be evaluated;
-- clarify roles, responsibilities and ways of working.
+The fake Medienspiegel setup remains a supported test hypothesis, not a final MVP specification.
 
 ## Current Status
 
-- Kick-off, concept and roadmap are complete.
-- Dominik held the follow-up session with the PR team on 2026-08-12 and reiterated the small-step MVP approach.
-- The team contributed first MVP ideas and supported the fake-Medienspiegel approach as a stable test setup.
-- The next priority is not implementation yet. The team should first define its project organization and the MVP boundary clearly.
-- Dominik wants the team to establish how communication works, who owns which responsibilities or workstreams, how decisions are handled and how follow-up meetings are organized.
-- The intended ambition is to have something tangible by the time Lennart returns from parental leave. If a working MVP is not realistic by then, the minimum useful outcome should be a clear team setup, an agreed MVP definition, planned steps and assigned roles.
-- Capacity is currently a material risk because Arne is expected to be unavailable until mid-October due to parental leave and the PR team is therefore strongly understaffed.
-- The team has a meeting with Jorin on 2026-08-13 and plans to give Dominik feedback on available capacity and continuation of the MVP work by the end of this week.
+- Kick-off, concept and roadmap were completed.
+- Dominik held follow-up and onboarding sessions, structured the project and developed the MVP direction with the team.
+- The project is currently **on hold** because the PR team does not have sufficient capacity to continue implementation alongside its operational responsibilities.
+- Jorin participated in the decision with PR to pause the initiative; the pause was confirmed to Dominik on 2026-08-20.
+- The project should not restart merely because advisory support is available. A restart requires an explicit priority decision and reliable delivery capacity.
 
 ## Dominik's Role
 
-Dominik provides strategic and organizational guidance rather than building the agents or technical solution himself.
+Dominik provided strategic and organizational guidance and helped move the initiative from idea toward a concrete MVP direction.
 
-His contribution includes:
+His contribution included:
 
 - structuring the project;
 - developing the target picture, concept and roadmap;
@@ -117,14 +58,15 @@ His contribution includes:
 - moderating workshops and alignment;
 - clarifying roles and responsibilities;
 - connecting PR, Data, AI and other relevant stakeholders;
-- reducing complexity and enabling a practical start;
-- guiding the transition from idea to first usable pilot.
+- reducing complexity and enabling a practical start.
 
-Operational implementation and later use should remain with the PR team.
+The project became an important learning case for the wider AI operating model: enablement, onboarding and MVP structuring alone do not create reliable delivery when the functional team lacks implementation capacity.
+
+If the initiative is prioritized again, the functional PR team should provide domain knowledge, requirements, rules, examples, testing and feedback while AI Lead ownership and dedicated delivery capacity are clarified separately.
 
 ## Key Stakeholders
 
-- Jorin Verges — VP Marketing & Communications; leadership context and potential sponsor
+- Jorin Verges — VP Marketing & Communications; leadership context and sponsor
 - Lennart Dannenberg — Teamlead PR & Corporate Communications; primary functional counterpart
 - Arne Hartwig — PR & Communications Manager
 - Hannah Miller — Working Student
@@ -136,38 +78,24 @@ Operational implementation and later use should remain with the PR team.
 - Lars Brenncke — Lead AI Operations; potential AI operations support
 - Florian Kube — Head of AI Solutions & Analytics; potential data and AI stakeholder
 
+## Decisions
+
+- The project is paused due to insufficient PR-team capacity.
+- No implementation work should be expected from the PR team while the initiative is on hold.
+- Any restart needs explicit prioritization and a clear delivery model rather than relying on team-side implementation alongside daily work.
+- The previous small-step MVP direction can be reused if the project is resumed, but should be reconfirmed first.
+
+## Risks and Open Questions
+
+- Whether and when the initiative will become a high enough priority to resume.
+- Where reliable delivery capacity would come from if the project restarts.
+- Whether the previous Medienspiegel MVP direction is still the right first test at that time.
+
 ## Next Steps
 
-1. Wait for the PR team's capacity feedback after its discussion with Jorin, expected by the end of the current week.
-2. If sufficient capacity remains, define the team's working model: communication, ownership, responsibilities, decision handling and follow-up cadence.
-3. Define the MVP cleanly, including required inputs, capabilities, output and explicit out-of-scope items.
-4. Confirm whether the fake Medienspiegel becomes the first fixed test dataset and define its concrete test signals.
-5. Only then move into the first implementation and validation cycle.
-
-## Guardrails
-
-- start small rather than designing a large solution too early;
-- define the MVP boundary before implementation;
-- prioritize usefulness and clarity over technical complexity;
-- use stable test inputs during MVP development where useful;
-- use a few reliable sources instead of maximizing input volume;
-- keep human review central;
-- leave communication relevance decisions with the PR team;
-- clarify ownership early;
-- test the MVP before expanding it;
-- do not use internal data externally without validation.
-
-## Open Questions
-
-- Does the PR team have enough capacity to continue the MVP work in the current staffing situation?
-- What is the final MVP definition and explicit out-of-scope boundary?
-- Which internal data source will be used for the first test?
-- Which team members own the individual workstreams?
-- How will project communication, decisions and follow-up meetings be organized?
-- What is the final output format and channel?
-- What signals define a successful first pilot?
-- Which technical or data support is actually needed after the MVP is agreed?
+- No active implementation next step while the project is on hold.
+- Reassess only if Jorin and PR decide the initiative is a priority and delivery capacity can be assigned.
 
 ## Last Confirmed
 
-2026-08-12
+Project on hold with Jorin involved in the pause decision: 2026-08-20.
