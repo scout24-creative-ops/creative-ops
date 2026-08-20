@@ -34,7 +34,7 @@ Diese Ebene ist der zentrale strategische Arbeitsraum. Es gibt keine getrennten 
 
 ## Säule 1: AI Enablement
 
-Dominik befähigt Teams, eigene AI-Initiativen sinnvoll auszuwählen, als kleine testbare MVPs zu strukturieren und selbstständig weiterzuentwickeln.
+Dominik schafft Orientierung, Wissen, Austausch und Struktur, damit Marketing & Communications sinnvolle AI-Chancen erkennen, bewerten und besser nutzen kann.
 
 Dazu gehören:
 
@@ -44,11 +44,26 @@ Dazu gehören:
 - Onboardings, Workshops und bedarfsbezogene Folgetermine durchführen;
 - bestehende Kompetenzen und passende Expert:innen verbinden;
 - Orientierung zu Qualität, Wiederverwendung und sinnvoller AI-Nutzung geben;
-- Unterstützung reduzieren oder beenden, sobald ein Team eigenständig weiterarbeiten kann.
+- bestehende Lösungen, Learnings und relevante Probleme teamübergreifend sichtbar machen;
+- gemeinsam erkennen, welche AI-Chancen genug Impact für eine gezielte Weiterverfolgung haben.
 
-AI Enablement ist in der Zielgruppe breit. Es kann Creative-Themen ebenso betreffen wie PR, Brand, Social, Content, Newsletter, Beschaffung oder andere Aufgaben in Jorins Teams. Die fachliche und operative Verantwortung für die jeweilige Lösung bleibt grundsätzlich beim zuständigen Team.
+AI Enablement ist in der Zielgruppe breit. Es kann Creative-Themen ebenso betreffen wie PR, Brand, Social, Content, Newsletter, Beschaffung oder andere Aufgaben in Jorins Teams.
 
-Dominik ist hier nicht der dauerhafte Agent-Bauer oder operative Owner für alle Initiativen. Seine Rolle ist, Entscheidungen zu verbessern, Fehlstarts und Doppelarbeit zu vermeiden und Teams schneller zu tragfähigen Lösungen zu führen.
+Die Series und das allgemeine Enablement sind nicht als Modell gedacht, in dem jedes Fachteam eine komplexere AI-Lösung selbstständig bauen und dauerhaft betreiben muss. Praktische Erfahrungen haben gezeigt, dass Enablement und verlässliche Delivery unterschiedliche Verantwortungen sind.
+
+Dominik ist nicht der dauerhafte Agent-Bauer oder operative Owner für alle Initiativen. Seine Rolle ist, Entscheidungen zu verbessern, Fehlstarts und Doppelarbeit zu vermeiden, relevante Chancen zu erkennen und ausgewählte Themen zu tragfähigen Lösungen zu führen.
+
+## Operating Model für ausgewählte AI-Lösungen
+
+Für komplexere oder strategisch relevante AI-Lösungen gilt als bestätigte Arbeitsrichtung:
+
+- **AI Lead:** übernimmt Ownership und fachliche Führung end-to-end; priorisiert, definiert Scope, entwickelt Lösungsdesign und technische Konzeption und steuert Qualität und Weiterentwicklung;
+- **Fachteam:** liefert Problem, Anforderungen, Regeln, Fachwissen, Beispiele sowie Testing und Feedback;
+- **Delivery:** stellt verlässliche Kapazität für technische Umsetzung, Integration, Betrieb und technische Weiterentwicklung bereit.
+
+Dieses Modell trennt AI Enablement von Solution Delivery. Es soll verhindern, dass strategisch relevante Vorhaben davon abhängen, ob Fachteams neben ihrem Tagesgeschäft ausreichend technische Umsetzungs- und Betreuungskapazität haben.
+
+Dominik kann selbst praktisch und technisch mitarbeiten, das Modell darf aber nicht voraussetzen, dass er jede priorisierte Lösung dauerhaft allein implementiert oder betreibt.
 
 ## Säule 2: AI Creative Operations
 
@@ -67,13 +82,26 @@ Dazu gehören:
 
 In dieser Säule besitzt Dominik die größte fachliche Tiefe. Er kann Zielbild, Produktlogik, Priorisierung, Qualitätsmaßstab und strategische Weiterentwicklung verantworten. Operative und technische Umsetzung soll dennoch schrittweise an geeignete Kolleg:innen, Freelancer oder Plattformteams übergehen, wenn sie nicht dauerhaft Dominiks eigenen Beitrag erfordert.
 
+## Aktueller strategischer Fokus
+
+Jorin bestätigte am 2026-08-20 Dominiks vorgeschlagene Prioritäten für die nächste Phase:
+
+- AI Enablement Series weiterentwickeln;
+- LP Builder & Contentful MVP testen und das zukünftige Design-System-, Modul- und Template-Modell konzipieren;
+- das Vorgehen für die Migration bestehender Landing Pages zu Contentful konzeptionell planen;
+- E-Mail Automation weiterentwickeln und mit B2B / Juliane den nächsten konkreten Use Case testen;
+- den nächsten High-Impact AI Use Case für die Unit identifizieren.
+
+Der Fokus liegt damit bewusst auf einer kleineren Zahl relevanter Themen mit hohem Hebel statt auf gleich tiefer Delivery-Unterstützung für jede dezentrale AI-Idee.
+
 ## Projektzuordnung
 
 Projekte sind bewegliche Bestandteile der beiden Säulen. Neue Themen können hinzukommen, bestehende auslaufen oder ihre Einordnung verändern.
 
 Entscheidend ist Dominiks Funktion im Vorhaben:
 
-- Unterstützt er ein Team bei dessen eigener Lösung, gehört die Arbeit primär zu **AI Enablement**.
+- Unterstützt er ein Team bei Discovery, Orientierung, Struktur oder MVP-Sparring, gehört die Arbeit primär zu **AI Enablement**.
+- Übernimmt er bei einer ausgewählten strategisch relevanten Lösung fachliche Ownership und Führung, kann das Vorhaben zusätzlich dem bestätigten AI-Lead-/Delivery-Modell folgen.
 - Entwickelt und steuert er eine zentrale Creative-Produktionsweise oder Infrastruktur, gehört sie primär zu **AI Creative Operations**.
 - Betrifft eine Aufgabe Priorisierung, Portfolio, Rollenmodell oder Kapazitätsverteilung über mehrere Projekte hinweg, gehört sie zu **AI Strategy & Steering**.
 
@@ -89,9 +117,10 @@ Dominiks größter Wert liegt nicht in dauerhafter Einzelumsetzung, sondern in:
 - Workflows und Buildern;
 - Automationen und wiederverwendbaren Systemen;
 - verständlichen Zielbildern und kleinen testbaren MVPs;
+- fachlicher Führung ausgewählter High-Impact-Lösungen;
 - Übergabe, Skalierung und Befähigung anderer.
 
-Ziel ist, Abhängigkeiten zu reduzieren, Teams eigenständiger zu machen und aus einzelnen Problemen tragfähige gemeinsame Lösungen abzuleiten.
+Ziel ist, Abhängigkeiten zu reduzieren, Teams sinnvoll einzubinden und aus einzelnen Problemen tragfähige gemeinsame Lösungen abzuleiten.
 
 Eine zusätzliche Querschnittsstärke ist die Fähigkeit, komplexe, überladene oder unstrukturierte Inhalte und Abläufe in einfache, reduzierte und verständliche Lösungen zu übersetzen. Dieses Prinzip gilt für Tools, Prozesse und Automationen ebenso wie für Konzepte, Landing Pages, Mailings und andere Kommunikationsartefakte. Operative Designarbeit ist nicht mehr Dominiks Hauptschwerpunkt, bleibt aber eine relevante Stärke, besonders bei Informationshierarchie, Nutzerführung, Verständlichkeit und klarer Handlungslogik.
 
@@ -109,8 +138,9 @@ Eine zusätzliche Querschnittsstärke ist die Fähigkeit, komplexe, überladene 
 ## Strategische Ziele
 
 - AI in Jorins Unit sichtbar, sinnvoll und verantwortungsvoll einsetzen;
-- Teams befähigen, eigene AI-Initiativen strukturiert voranzubringen;
-- wenige strategisch relevante, teamübergreifende Initiativen aus dezentralen Experimenten ableiten;
+- Teams befähigen, AI-Chancen strukturiert zu erkennen und zu bewerten;
+- wenige strategisch relevante, teamübergreifende Initiativen aus dezentralen Signalen und Experimenten ableiten;
+- für ausgewählte komplexere Lösungen klare Ownership und verlässliche Delivery sicherstellen;
 - Creative- und Produktionsprozesse vereinfachen;
 - Qualität, Geschwindigkeit und Wiederverwendung erhöhen;
 - skalierbare Creative-Operations-Infrastruktur schaffen;
@@ -138,6 +168,8 @@ Im Juli 2026 bestätigte Jorin Dominik ausdrücklich als geeigneten fachlichen L
 
 Jorin versteht dies als Leadership durch Expertise, Enablement und Einfluss ohne operative Personalverantwortung. Jorin schafft dafür die organisatorische Legitimation und geschützte Zeit; Dominik übernimmt die fachliche Konzeption und Führung.
 
+Am 2026-08-20 bestätigte Jorin zusätzlich die von Dominik vorgeschlagene Trennung von breitem Enablement und verlässlicher Delivery für ausgewählte komplexere AI-Lösungen sowie den daraus abgeleiteten Projektfokus.
+
 ## Rollenabgrenzung
 
 Dominik ist nicht der dauerhafte Agent-Bauer für alle Teams und nicht automatisch Owner jedes AI-bezogenen Prozesses in Marketing & Communications.
@@ -148,16 +180,16 @@ Seine Rolle ist:
 - priorisieren;
 - Standards schaffen;
 - Teams enablen;
-- strategische Themen mit hohem Hebel unterstützen;
+- strategische Themen mit hohem Hebel auswählen und fachlich führen;
 - nachhaltige Lösungen statt Einzellösungen fördern;
 - AI-Transformation innerhalb der Unit fachlich mitführen;
 - praktische Lern- und Arbeitsformate entwickeln;
 - aus Einzelideen gemeinsame Prioritäten und skalierbare Lösungen ableiten;
 - im fachlichen Kern AI Creative Operations tiefe System- und Produktverantwortung übernehmen;
-- außerhalb dieses Kerns vor allem über Beratung, Struktur, MVP-Sparring und Vernetzung wirken.
+- außerhalb dieses Kerns je nach Priorität über Discovery, Beratung, Struktur, MVP-Sparring, Vernetzung oder fachliche AI-Lead-Ownership wirken.
 
 Dominiks Beitrag zu Automationsprojekten soll möglichst über den einzelnen Use Case hinausgehen. Technische MVPs sollen wiederverwendbare Muster, Module, Standards und Entscheidungsgrundlagen für weitere Teams schaffen.
 
 ## Last Confirmed
 
-Die gemeinsame Steuerungsebene **AI Strategy & Steering** oberhalb der zwei Säulen wurde von Dominik am 2026-07-31 bestätigt. Jorins Erwartungen und das fachliche Lead-Mandat wurden im Juli 2026 bestätigt.
+Jorins Bestätigung des weiterentwickelten AI-Operating-Models und des aktuellen strategischen Projektfokus: 2026-08-20.
