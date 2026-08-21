@@ -37,13 +37,6 @@
   - Context: The landing page should explain the series and create a simple shared understanding of AI agents. It should not collect project inputs.
   - Source: Current landing-page refinement and urgency confirmed on 2026-07-31
 
-- [ ] Schedule the recurring AI Enablement sessions
-  - Area: AI Enablement Series
-  - Status: Open
-  - Next step: Schedule the next bi-weekly 90-minute sessions and send the invitations.
-  - Context: The kickoff took place on 2026-08-20. Cadence and duration are confirmed; Learn, Show & Share and Explore form the recurring content basis and participants actively contribute.
-  - Source: Dominik confirmed the post-kickoff operating model on 2026-08-21
-
 - [ ] Define the Brand Agent MVP with Marie
   - Area: Brand Agent – Tone of Voice
   - Status: Open
@@ -136,6 +129,11 @@
   - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
 
 ## Completed
+
+- [x] Schedule the recurring AI Enablement sessions
+  - Area: AI Enablement Series
+  - Completed: 2026-08-21
+  - Outcome: The recurring series was invited for every second Tuesday from 12:30–14:00, starting 2026-09-08, with Charlottenburg (07-405) as the room and the kickoff participant group invited.
 
 - [x] Align AI operating model and priority set with Jorin
   - Area: AI Strategy & Steering
