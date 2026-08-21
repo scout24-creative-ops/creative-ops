@@ -23,19 +23,16 @@ Core findings:
 
 The findings are not intended to rank teams or individuals.
 
-### Phase 2: Series concept and kickoff — completed preparation
+### Phase 2: Series concept and kickoff — completed
 
-The Teamlead alignment took place on 2026-08-10. The kickoff concept, story and presentation were finalized on 2026-08-20.
+The Teamlead alignment took place on 2026-08-10. The kickoff concept, story and presentation were finalized on 2026-08-20, and the kickoff meeting took place the same day.
 
-The first kickoff is scheduled for 2026-08-20 at 11:15 and is planned as a 45-minute session.
+The kickoff established the operating model for the recurring Series:
 
-The kickoff explains:
-
-1. why AI Enablement is needed now;
-2. what the AI Team-Check shows about the current state;
-3. where current AI work runs into limits;
-4. how the Series should respond through `Learn`, `Show & Share` and `Explore`;
-5. how colleagues can actively contribute to the format.
+1. continue as a bi-weekly 90-minute format;
+2. use `Learn`, `Show & Share` and `Explore` as the three core content pillars;
+3. have all participants actively contribute topics, solutions, learnings, questions and opportunities;
+4. keep actual project delivery outside the Series.
 
 ### Phase 3: AI Enablement Series — operating model
 
@@ -85,15 +82,17 @@ Simple framing: `Diskutieren, was Potenzial hat – und was nicht.`
 
 ## Current Status
 
-The kickoff preparation is complete. The final presentation is available in German and an English version was prepared/requested for a colleague who does not speak German.
+The kickoff has taken place and the recurring format is defined.
+
+The AI Enablement Series will continue bi-weekly in 90-minute sessions using Learn, Show & Share and Explore as the recurring content pillars. Participation is intentionally active: colleagues are expected to contribute topics, existing solutions, learnings, questions and opportunities so that the Series becomes a shared format rather than a centrally prepared presentation series.
 
 Jorin supported the revised enablement direction on 2026-08-20, including the separation between broad enablement and reliable delivery for selected complex or strategically relevant AI solutions.
-
-The next organizational step is to define the recurring cadence, duration and dates for the follow-up sessions. The first sessions can start with already prepared Learn topics and initial Show & Share examples before the format increasingly draws on contributions from the teams.
 
 ## Operating Model
 
 - Dominik leads, curates and facilitates the Series.
+- The Series runs bi-weekly in 90-minute sessions.
+- `Learn`, `Show & Share` and `Explore` are the three recurring content pillars.
 - The Series is not intended to be a presentation format in which Dominik prepares and presents all content.
 - Teams contribute by suggesting relevant topics, showing existing solutions or learnings and bringing problems that benefit from broader discussion.
 - Contributions do not need to be finished AI projects; useful learnings, work in progress and failed experiments can also be valuable.
@@ -126,7 +125,7 @@ Dominik can contribute practically and technically where useful, but should not 
 
 ## Participation Model
 
-The Series should increasingly draw on contributions from the group rather than only centrally prepared content.
+The Series is a shared format and should increasingly draw on contributions from the group rather than only centrally prepared content.
 
 Colleagues can contribute by:
 
@@ -143,6 +142,8 @@ Coordination runs through `#comms-team-only`.
 - Do not rank teams or individuals in Team-Check communication.
 - Replace the earlier assumption that every participant should develop and maintain a concrete agent or workflow.
 - Structure the Series around `Learn`, `Show & Share` and `Explore`.
+- Continue the Series bi-weekly in 90-minute sessions.
+- Expect active participation and contributions from all participants.
 - Separate enablement from project delivery.
 - Keep actual project implementation outside the large recurring Series sessions.
 - Use the existing `#comms-team-only` channel for continuity, contribution requests and Series communication.
@@ -151,17 +152,16 @@ Coordination runs through `#comms-team-only`.
 
 ## Risks and Open Questions
 
-- Final cadence and duration of the recurring Series.
-- How frequently different teams and colleagues will actively contribute after the first prepared sessions.
+- How consistently different teams and colleagues will actively contribute over time.
 - How to keep contributions lightweight enough that the Series does not create additional presentation overhead.
 - Which Explore topics justify separate follow-up and delivery capacity.
 
 ## Next Steps
 
-- Define cadence, duration and dates for the recurring AI Enablement sessions.
+- Schedule and run the recurring bi-weekly 90-minute sessions.
 - Start the first follow-up sessions with prepared Learn topics and initial Show & Share examples.
-- Begin collecting additional topics, solutions, learnings and problems from teams through `#comms-team-only`.
+- Collect additional topics, solutions, learnings and problems from teams through `#comms-team-only`.
 
 ## Last Confirmed
 
-Jorin support for the revised AI Enablement and delivery direction confirmed on 2026-08-20.
+Kickoff completed and bi-weekly 90-minute operating cadence confirmed on 2026-08-20.
