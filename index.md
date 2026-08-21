@@ -34,7 +34,7 @@ The two pillars are Dominik's personal working and steering model. Projects can 
 ### AI Creative Operations
 
 - [Landing Page Builder](projects/landing-page-builder.md)
-- [Contentful Marketing MVP](projects/contentful-marketing-mvp.md)
+- [Landing Page Builder & Contentful](projects/contentful-marketing-mvp.md)
 - [E-Mail Builder](projects/email-builder.md)
 - [HeyImmo automated HomeOwner mail](projects/heyimmo-homeowner-mail.md)
 - [E-Mail Automation – Plus FOMO](projects/email-automation-plus-fomo.md)
