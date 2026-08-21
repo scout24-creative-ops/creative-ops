@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20",
+  "updated": "2026-08-21",
   "projects": [
     {
       "name": "Creative Hub",
@@ -21,7 +21,7 @@
       "tasks": [
         { "text": "AI-Team-Check-Ergebnis-LP für AI Enablement schärfen", "category": "focus" },
         { "text": "AI-Enablement-Landingpage finalisieren und übergeben", "category": "focus" },
-        { "text": "Rhythmus, Dauer und Termine der AI Enablement Series festlegen", "category": "focus" }
+        { "text": "Wiederkehrende AI-Enablement-Sessions terminieren", "category": "focus" }
       ]
     },
     {
@@ -37,7 +37,7 @@
       ]
     },
     {
-      "name": "Contentful Marketing MVP",
+      "name": "Landing Page Builder & Contentful",
       "tasks": [
         { "text": "LP-Builder-&-Contentful-MVP testen und Modulmodell definieren", "category": "focus" },
         { "text": "Contentful-Migrationsvorgehen für bestehende Landingpages planen", "category": "focus" }
