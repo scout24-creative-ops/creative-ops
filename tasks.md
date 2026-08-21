@@ -37,12 +37,12 @@
   - Context: The landing page should explain the series and create a simple shared understanding of AI agents. It should not collect project inputs.
   - Source: Current landing-page refinement and urgency confirmed on 2026-07-31
 
-- [ ] Define cadence and dates for the AI Enablement Series
+- [ ] Schedule the recurring AI Enablement sessions
   - Area: AI Enablement Series
   - Status: Open
-  - Next step: Decide the recurring cadence and duration, schedule the next sessions and send the invitations.
-  - Context: The kickoff concept and presentation are complete. The first follow-up sessions can start with prepared Learn topics and Show & Share examples before team contributions increasingly shape the content.
-  - Source: Dominik confirmed the post-kickoff next step on 2026-08-20
+  - Next step: Schedule the next bi-weekly 90-minute sessions and send the invitations.
+  - Context: The kickoff took place on 2026-08-20. Cadence and duration are confirmed; Learn, Show & Share and Explore form the recurring content basis and participants actively contribute.
+  - Source: Dominik confirmed the post-kickoff operating model on 2026-08-21
 
 - [ ] Define the Brand Agent MVP with Marie
   - Area: Brand Agent – Tone of Voice
@@ -59,14 +59,14 @@
   - Source: Dominik confirmed the task on 2026-07-31
 
 - [ ] Test LP Builder & Contentful MVP and define future module model
-  - Area: Contentful Marketing MVP
+  - Area: Landing Page Builder & Contentful
   - Status: Open
-  - Next step: Test the current MVP and define the future design-system, module and template approach needed for reliable ongoing Marketing use.
-  - Context: Jorin supported LP Builder & Contentful as a priority. The current module library is a useful base but is not yet sufficient for the broader future Contentful workflow and migration ambition.
-  - Source: Jorin alignment and Dominik's next-step definition on 2026-08-20
+  - Next step: Test the current MVP and define the future design-system, module and template approach needed for reliable ongoing use.
+  - Context: Jorin supported LP Builder & Contentful as a priority. The MVP is close to completion: pages can be generated in the Landing Page Builder, transferred directly into Contentful and previewed immediately in `next`.
+  - Source: Dominik confirmed the current MVP status and naming on 2026-08-21
 
 - [ ] Plan the Contentful migration approach for existing landing pages
-  - Area: Contentful Marketing MVP
+  - Area: Landing Page Builder & Contentful
   - Status: Open
   - Next step: Define a conceptual migration approach for rebuilding and moving existing landing pages with the LP Builder and Contentful workflow.
   - Context: The capability to create HTML-based Contentful pages changes the migration options, but scope, sequence, templates and operating model still need to be designed before migration work begins.
@@ -168,7 +168,7 @@
   - Outcome: The team aligned on the small-step MVP approach, discussed the Medienspiegel as the first external source candidate and agreed that team organization and the MVP boundary need to be defined before implementation.
 
 - [x] Validate Contentful integration progress with Mukhammadjon
-  - Area: Contentful Marketing MVP
+  - Area: Landing Page Builder & Contentful
   - Completed: 2026-08-11
   - Outcome: Mukhammadjon demonstrated the working GPT Actions flow and Dominik independently verified Contentful draft creation and update through the shared Contentful-enabled Landing Page Builder.
 
