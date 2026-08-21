@@ -82,16 +82,19 @@ Simple framing: `Diskutieren, was Potenzial hat – und was nicht.`
 
 ## Current Status
 
-The kickoff has taken place and the recurring format is defined.
+The kickoff has taken place and the recurring format is defined and scheduled.
 
-The AI Enablement Series will continue bi-weekly in 90-minute sessions using Learn, Show & Share and Explore as the recurring content pillars. Participation is intentionally active: colleagues are expected to contribute topics, existing solutions, learnings, questions and opportunities so that the Series becomes a shared format rather than a centrally prepared presentation series.
+The AI Enablement Series runs bi-weekly on Tuesdays from 12:30 to 14:00, starting on 2026-09-08, with Charlottenburg (07-405) as the booked room. The invitation has been sent to the kickoff participant group and includes both German and English context.
+
+The Series uses Learn, Show & Share and Explore as the recurring content pillars. Participation is intentionally active: colleagues are expected to contribute topics, existing solutions, learnings, questions and opportunities so that the Series becomes a shared format rather than a centrally prepared presentation series.
 
 Jorin supported the revised enablement direction on 2026-08-20, including the separation between broad enablement and reliable delivery for selected complex or strategically relevant AI solutions.
 
 ## Operating Model
 
 - Dominik leads, curates and facilitates the Series.
-- The Series runs bi-weekly in 90-minute sessions.
+- The Series runs bi-weekly on Tuesdays from 12:30 to 14:00 in 90-minute sessions, starting on 2026-09-08.
+- Charlottenburg (07-405) is the booked room for the recurring Series.
 - `Learn`, `Show & Share` and `Explore` are the three recurring content pillars.
 - The Series is not intended to be a presentation format in which Dominik prepares and presents all content.
 - Teams contribute by suggesting relevant topics, showing existing solutions or learnings and bringing problems that benefit from broader discussion.
@@ -99,6 +102,7 @@ Jorin supported the revised enablement direction on 2026-08-20, including the se
 - Communication, topic collection and contribution requests run through the existing private `#comms-team-only` channel rather than a new channel.
 - The Series creates shared learning, visibility and orientation. Actual project implementation and delivery happen separately with the relevant owners and delivery capacity.
 - Not every team or colleague is expected to build an agent.
+- Optional topic-specific sessions can be scheduled between the main Series appointments when a topic is relevant only to a smaller group.
 
 ## Delivery Principle
 
@@ -127,7 +131,7 @@ Dominik can contribute practically and technically where useful, but should not 
 
 The Series is a shared format and should increasingly draw on contributions from the group rather than only centrally prepared content.
 
-Colleagues can contribute by:
+Colleagues are expected to contribute by:
 
 - suggesting topics or questions;
 - presenting useful solutions, workflows or experiments;
@@ -142,10 +146,12 @@ Coordination runs through `#comms-team-only`.
 - Do not rank teams or individuals in Team-Check communication.
 - Replace the earlier assumption that every participant should develop and maintain a concrete agent or workflow.
 - Structure the Series around `Learn`, `Show & Share` and `Explore`.
-- Continue the Series bi-weekly in 90-minute sessions.
+- Run the Series bi-weekly on Tuesdays from 12:30 to 14:00, starting on 2026-09-08.
+- Use Charlottenburg (07-405) as the recurring room.
 - Expect active participation and contributions from all participants.
 - Separate enablement from project delivery.
 - Keep actual project implementation outside the large recurring Series sessions.
+- Use optional additional sessions between main appointments for topics relevant only to a smaller group.
 - Use the existing `#comms-team-only` channel for continuity, contribution requests and Series communication.
 - Dominik curates and leads the format, but the teams are expected to contribute content over time.
 - Jorin supported this revised direction on 2026-08-20.
@@ -158,10 +164,10 @@ Coordination runs through `#comms-team-only`.
 
 ## Next Steps
 
-- Schedule and run the recurring bi-weekly 90-minute sessions.
+- Prepare and run the first recurring session on 2026-09-08.
 - Start the first follow-up sessions with prepared Learn topics and initial Show & Share examples.
 - Collect additional topics, solutions, learnings and problems from teams through `#comms-team-only`.
 
 ## Last Confirmed
 
-Kickoff completed and bi-weekly 90-minute operating cadence confirmed on 2026-08-20.
+Recurring Series invitation sent and final schedule confirmed on 2026-08-21: bi-weekly Tuesdays, 12:30–14:00, starting 2026-09-08, room Charlottenburg (07-405).
