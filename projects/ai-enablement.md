@@ -99,10 +99,71 @@ Jorin supported the revised enablement direction on 2026-08-20, including the se
 - The Series is not intended to be a presentation format in which Dominik prepares and presents all content.
 - Teams contribute by suggesting relevant topics, showing existing solutions or learnings and bringing problems that benefit from broader discussion.
 - Contributions do not need to be finished AI projects; useful learnings, work in progress and failed experiments can also be valuable.
-- Communication, topic collection and contribution requests run through the existing private `#comms-team-only` channel rather than a new channel.
+- Communication and contribution requests run through the existing private `#comms-team-only` channel rather than a new channel.
 - The Series creates shared learning, visibility and orientation. Actual project implementation and delivery happen separately with the relevant owners and delivery capacity.
 - Not every team or colleague is expected to build an agent.
 - Optional topic-specific sessions can be scheduled between the main Series appointments when a topic is relevant only to a smaller group.
+- The repository is Dominik's working source for topic ideas, the next-session agenda, reusable Slack post patterns and useful resources; Slack remains the communication surface for participants.
+
+## Content and Communication Workspace
+
+Keep this lightweight. Do not create a separate planning board or parallel project-management system.
+
+### Topic Pool
+
+The `Learn`, `Show & Share` and `Explore` topic lists above are the current starting pool and should be extended here when new ideas are worth retaining. A topic can come from the kickoff material, a team contribution, a useful link or tool, a recurring question, or a new opportunity. Capturing an idea does not create a delivery commitment.
+
+### Next Session
+
+- Date: 2026-09-08, 12:30–14:00
+- Room: Charlottenburg (07-405)
+- Agenda: to be curated from the topic pool before the session.
+
+The agenda does not need to contain all three pillars. Select only the topics that make the session useful.
+
+### Slack Communication
+
+Use `#comms-team-only` for Series communication. Keep replies and discussion in the thread of the relevant post so the channel stays readable.
+
+Use the consistent prefix `🎓 AI Enablement | ...` so Series posts are immediately recognizable while the body remains flexible.
+
+#### Agenda Post
+
+Publish on the day before or the day of a Series appointment.
+
+```text
+🎓 AI Enablement | Next Session
+
+📅 [date / time]
+📍 [room]
+
+Agenda
+- [topic]
+- [topic]
+- [topic]
+
+Questions or additions? Please reply in this thread.
+```
+
+#### Topic Call
+
+Use only when additional topics are needed; it is not required before every session because the existing topic pool already contains multiple starting ideas.
+
+```text
+🎓 AI Enablement | Topic Call
+
+What should we cover in one of the next AI Enablement sessions?
+
+Share topics, questions, useful solutions, experiments or things worth exploring in this thread.
+```
+
+#### Update Post
+
+Use when there is a useful link, tool, important AI update or other Series-relevant information worth sharing. Keep the same `🎓 AI Enablement | ...` prefix and adapt the content freely. Replies should stay in the thread when discussion is useful.
+
+### Resources & Updates
+
+Keep only links, tools or updates that are useful as future Series content or Slack communication. Do not turn this into a general AI news archive.
 
 ## Delivery Principle
 
@@ -153,6 +214,9 @@ Coordination runs through `#comms-team-only`.
 - Keep actual project implementation outside the large recurring Series sessions.
 - Use optional additional sessions between main appointments for topics relevant only to a smaller group.
 - Use the existing `#comms-team-only` channel for continuity, contribution requests and Series communication.
+- Keep Series replies and discussion in the thread of the relevant Slack post.
+- Use `🎓 AI Enablement | ...` as the recognizable prefix for Agenda, Topic Call and Update posts.
+- Use the repository as the maintained source for topic ideas, next-session planning, Slack post patterns and relevant resources instead of introducing another planning tool.
 - Dominik curates and leads the format, but the teams are expected to contribute content over time.
 - Jorin supported this revised direction on 2026-08-20.
 
@@ -165,9 +229,10 @@ Coordination runs through `#comms-team-only`.
 ## Next Steps
 
 - Prepare and run the first recurring session on 2026-09-08.
-- Start the first follow-up sessions with prepared Learn topics and initial Show & Share examples.
-- Collect additional topics, solutions, learnings and problems from teams through `#comms-team-only`.
+- Curate the first agenda from the existing topic pool and publish the Agenda Post on the day before or the day of the session.
+- Add new topic ideas and useful Series resources to this maintained project context as they emerge.
+- Use a Topic Call in `#comms-team-only` only when more input is actually needed.
 
 ## Last Confirmed
 
-Recurring Series invitation sent and final schedule confirmed on 2026-08-21: bi-weekly Tuesdays, 12:30–14:00, starting 2026-09-08, room Charlottenburg (07-405).
+Lightweight content and communication operating model confirmed on 2026-08-21. The recurring Series is scheduled bi-weekly on Tuesdays, 12:30–14:00, starting 2026-09-08, in Charlottenburg (07-405).
