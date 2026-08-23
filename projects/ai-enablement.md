@@ -90,6 +90,8 @@ The Series uses Learn, Show & Share and Explore as the recurring content pillars
 
 Jorin supported the revised enablement direction on 2026-08-20, including the separation between broad enablement and reliable delivery for selected complex or strategically relevant AI solutions.
 
+Preparation for the first recurring session on 2026-09-08 is now tracked as a set of concrete, separately completable tasks rather than one umbrella preparation task.
+
 ## Operating Model
 
 - Dominik leads, curates and facilitates the Series.
@@ -117,9 +119,18 @@ The `Learn`, `Show & Share` and `Explore` topic lists above are the current star
 
 - Date: 2026-09-08, 12:30–14:00
 - Room: Charlottenburg (07-405)
-- Agenda: to be curated from the topic pool before the session.
+- Agenda: to be assembled after the first agent, first Explore topic and reusable presentation format are selected.
 
 The agenda does not need to contain all three pillars. Select only the topics that make the session useful.
+
+### Reusable Presentation Formats
+
+Before the first recurring session, create two lightweight reusable presentation formats:
+
+- a Series template that can structure the recurring session around the agenda and the three pillars `Learn`, `Show & Share` and `Explore`;
+- a simple contributor template that colleagues can use when they present a solution, workflow, learning or experiment themselves.
+
+The templates should reduce preparation effort rather than create a new presentation process.
 
 ### Slack Communication
 
@@ -127,39 +138,13 @@ Use `#comms-team-only` for Series communication. Keep replies and discussion in 
 
 Use the consistent prefix `🎓 AI Enablement | ...` so Series posts are immediately recognizable while the body remains flexible.
 
-#### Agenda Post
+Prepare reusable post templates for:
 
-Publish on the day before or the day of a Series appointment.
+- Agenda posts;
+- Topic Calls;
+- flexible update posts for useful links, tools or developments.
 
-```text
-🎓 AI Enablement | Next Session
-
-📅 [date / time]
-📍 [room]
-
-Agenda
-- [topic]
-- [topic]
-- [topic]
-
-Questions or additions? Please reply in this thread.
-```
-
-#### Topic Call
-
-Use only when additional topics are needed; it is not required before every session because the existing topic pool already contains multiple starting ideas.
-
-```text
-🎓 AI Enablement | Topic Call
-
-What should we cover in one of the next AI Enablement sessions?
-
-Share topics, questions, useful solutions, experiments or things worth exploring in this thread.
-```
-
-#### Update Post
-
-Use when there is a useful link, tool, important AI update or other Series-relevant information worth sharing. Keep the same `🎓 AI Enablement | ...` prefix and adapt the content freely. Replies should stay in the thread when discussion is useful.
+A Topic Call should be used only when additional topics are needed; it is not required before every session because the existing topic pool already contains multiple starting ideas.
 
 ### Resources & Updates
 
@@ -218,6 +203,7 @@ Coordination runs through `#comms-team-only`.
 - Use `🎓 AI Enablement | ...` as the recognizable prefix for Agenda, Topic Call and Update posts.
 - Use the repository as the maintained source for topic ideas, next-session planning, Slack post patterns and relevant resources instead of introducing another planning tool.
 - Dominik curates and leads the format, but the teams are expected to contribute content over time.
+- Track first-session preparation as separate executable tasks so progress can be completed step by step.
 - Jorin supported this revised direction on 2026-08-20.
 
 ## Risks and Open Questions
@@ -228,11 +214,14 @@ Coordination runs through `#comms-team-only`.
 
 ## Next Steps
 
-- Prepare and run the first recurring session on 2026-09-08.
-- Curate the first agenda from the existing topic pool and publish the Agenda Post on the day before or the day of the session.
-- Add new topic ideas and useful Series resources to this maintained project context as they emerge.
-- Use a Topic Call in `#comms-team-only` only when more input is actually needed.
+1. Select the agent to present in the first recurring AI Enablement session.
+2. Choose the first Explore topic for the session.
+3. Create a reusable presentation template for the AI Enablement Series.
+4. Create a lightweight presentation template for colleagues who contribute their own topic.
+5. Prepare reusable Slack post templates for Agenda, Topic Call and Update posts.
+6. Assemble the agenda for the 2026-09-08 session.
+7. Run the first recurring AI Enablement session on 2026-09-08.
 
 ## Last Confirmed
 
-Lightweight content and communication operating model confirmed on 2026-08-21. The recurring Series is scheduled bi-weekly on Tuesdays, 12:30–14:00, starting 2026-09-08, in Charlottenburg (07-405).
+Detailed preparation tasks for the first recurring session confirmed on 2026-08-23. The Series remains scheduled bi-weekly on Tuesdays, 12:30–14:00, starting 2026-09-08, in Charlottenburg (07-405).
