@@ -86,19 +86,26 @@
   - Context: The task is confirmed and remains in the current continuation queue; Yvonne and the relevant team retain functional and implementation ownership.
   - Source: Dominik confirmed the task on 2026-07-31
 
-- [ ] Test LP Builder & Contentful MVP and define future module model
-  - Area: Landing Page Builder & Contentful
+- [ ] Prepare the SSOT for Images document for Matthias
+  - Area: LP Builder & Contentful MVP
   - Status: Open
-  - Next step: Test the current MVP and define the future design-system, module and template approach needed for reliable ongoing use.
-  - Context: Jorin supported LP Builder & Contentful as a priority. The MVP is close to completion: pages can be generated in the Landing Page Builder, transferred directly into Contentful and previewed immediately in `next`.
-  - Source: Dominik confirmed the current MVP status and naming on 2026-08-21
+  - Next step: Prepare a concise working document with the relevant context, questions and decisions needed for the upcoming SSOT for Images alignment with Matthias.
+  - Context: The meeting itself is already in the calendar and is not tracked as a dashboard task. The preparation document is the concrete next action.
+  - Source: Dominik clarified the current Contentful MVP next steps on 2026-08-23
 
-- [ ] Plan the Contentful migration approach for existing landing pages
-  - Area: Landing Page Builder & Contentful
+- [ ] Clarify the LP Builder target model for a Contentful-only setup
+  - Area: LP Builder & Contentful MVP
   - Status: Open
-  - Next step: Define a conceptual migration approach for rebuilding and moving existing landing pages with the LP Builder and Contentful workflow.
-  - Context: The capability to create HTML-based Contentful pages changes the migration options, but scope, sequence, templates and operating model still need to be designed before migration work begins.
-  - Source: Jorin alignment and Dominik's next-step definition on 2026-08-20
+  - Next step: Define how the Landing Page Builder should continue when Contentful becomes the target environment, including the future slug and URL logic instead of the current directory-based structure and the boundary between Builder and Contentful responsibilities.
+  - Context: The core MVP flow is working in `next`, but the future product model and concrete follow-up implementation steps are intentionally still open.
+  - Source: Dominik clarified the current Contentful MVP next steps on 2026-08-23
+
+- [ ] Develop the Contentful migration concept for existing landing pages
+  - Area: Contentful Migration
+  - Status: Open
+  - Next step: Develop the conceptual approach for migrating existing landing pages to the future LP Builder and Contentful setup.
+  - Context: Migration is now treated as a separate workstream from the MVP. The concept has not yet been started and should define the approach before execution work is planned.
+  - Source: Dominik clarified the current Contentful migration status on 2026-08-23
 
 - [ ] Identify the next E-Mail Automation use cases with B2B
   - Area: E-Mail Automation
