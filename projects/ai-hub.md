@@ -8,31 +8,30 @@ Provide a central, curated overview of AI agents and, over time, practical proje
 
 The Creative Hub is live at https://scout24-creative-ops.github.io/creative-hub/ and currently focuses mainly on Creative Studio agents with cross-Marketing relevance.
 
-Eve and Peter continued the broader Hub work while Dominik was out sick. The current working split is now clearer: Dominik will focus on the Agent Library, while Eve and Peter continue the other Hub workstreams.
+Eve and Peter continued the broader Hub work while Dominik was out sick. Dominik's intended contribution is now deliberately lightweight: relevant agents and solutions that surface through the recurring AI Enablement Series can be referenced in the Hub, but Dominik does not plan a separate ongoing company-wide agent-discovery or curation workstream.
 
-For Dominik, the immediate challenge is no longer to design the complete Hub roadmap or communication model. It is to establish a reliable way to discover which agents already exist across the company so the Agent Library can be expanded on a sound basis.
+Dominik met Andrea Mendieta on 2026-08-18 to learn whether AI Operations or existing internal formats could provide a reliable overview of available company agents. The meeting did not produce a comprehensive inventory or source of truth.
 
-Dominik has a meeting with Andrea Mendieta from AI Operations on 2026-08-18 at 14:00 to learn which sources, inventories or processes can provide a useful overview of existing company agents.
+Andrea is `Lead Talent & Org Development | AI Enablement`. According to the discussion, she previously worked in HR and moved into the AI Operations context roughly one and a half years ago. She is responsible for the weekly `Lunch & Learn - Meet my Agent` format. The format is currently in a summer break and is expected to restart in autumn. Recordings of earlier sessions are stored in ScoutAcademy, but only a small number of sessions have taken place so far, so they do not provide a broad company-wide overview of agents.
 
 ## Dominik's Role
 
-Dominik owns the Agent Library workstream for the Creative Hub going forward.
+Dominik's Creative Hub contribution is limited to connecting useful AI Enablement outputs with the Hub.
 
 His focus is to:
 
-- identify relevant existing agents across the company;
-- establish a reliable discovery and selection process;
-- assess which agents are suitable for inclusion in the Hub;
-- keep Agent Library entries useful, understandable and maintainable;
-- coordinate factual validation with agent owners when needed.
+- surface relevant agents and solutions through the bi-weekly AI Enablement Series;
+- point Eve and Peter to agents that are worth linking in the Hub;
+- avoid building and maintaining a separate parallel company-wide agent inventory;
+- keep any Hub contribution lightweight enough not to duplicate AI Enablement work.
 
-The broader Hub roadmap, communication setup and implementation are no longer Dominik's primary active tasks. Eve and Peter are continuing those workstreams.
+The broader Hub roadmap, communication setup and implementation remain with Eve and Peter. Dominik does not intend to take on additional recurring Hub work beyond sharing useful agents that naturally emerge through AI Enablement.
 
 ## Key Stakeholders
 
 - Eve-Sabrina Vogelein
 - Peter
-- Andrea Mendieta — AI Operations
+- Andrea Mendieta — Lead Talent & Org Development | AI Enablement
 - Jorin Verges
 - Creative Studio agent owners
 - Owners of relevant agents and AI projects from other Marketing teams or departments
@@ -45,35 +44,34 @@ The broader Hub roadmap, communication setup and implementation are no longer Do
 - 2026-07-30: Eve, Peter and Dominik aligned on prioritizing relevant, reusable and maintainable additions rather than publication speed alone.
 - 2026-07-30: The recurring four-stage agent-curation model and direct in-agent prompt were tested successfully enough for pilot use.
 - 2026-07-30: The roadmap was reframed as a strategic sequence with parallel workstreams instead of a fixed person-and-date schedule.
-- 2026-08-12: The role split was updated. Dominik will focus on the Agent Library, while Eve and Peter continue the broader Hub work.
+- 2026-08-12: The role split was updated, with Dominik focusing on the Agent Library while Eve and Peter continued the broader Hub work.
+- 2026-08-18: The Andrea Mendieta meeting confirmed that neither AI Operations nor the current `Lunch & Learn - Meet my Agent` archive provides a sufficiently complete agent inventory. ScoutAcademy contains recordings, but only a few sessions exist so far.
+- 2026-08-23: Dominik narrowed his intended Hub contribution further. Relevant agents discovered or presented through AI Enablement can be linked in the Hub; no additional ongoing Hub discovery workload is planned.
 
 ## Decisions
 
 - Prioritize understandable, relevant and maintainable content rather than listing everything.
-- Expand beyond a static Creative Studio agent directory.
-- Keep Agent Library curation as Dominik's primary Creative Hub responsibility.
-- Use available company-wide agent sources or inventories where possible instead of relying only on manual discovery.
-- Require owner review or validation when source information is incomplete or uncertain.
-- Keep the Agent Library lightweight enough to remain maintainable.
+- Expand beyond a static Creative Studio agent directory where useful.
+- Do not create a separate company-wide agent-discovery workstream for Dominik.
+- Use the AI Enablement Series as the practical source of relevant new agents and solutions for Dominik's contribution.
+- Share useful agents with Eve and Peter so they can be linked from the Hub.
+- Keep Dominik's Hub contribution intentionally lightweight and avoid duplicating AI Enablement work.
 
 ## Risks and Open Questions
 
-- There is not yet a confirmed single source of truth for all company agents.
-- Existing inventories may be incomplete, distributed across teams or use inconsistent naming and ownership information.
-- Source agents may not reliably expose ownership, maturity, access or connected-tool information; unknown facts must be confirmed by owners.
-- The boundary between Marketing-relevant agents and the broader company agent landscape still needs practical criteria.
+- There is still no confirmed single source of truth for all company agents.
+- `Lunch & Learn - Meet my Agent` and ScoutAcademy currently provide only partial coverage.
+- The Hub still depends on selective discovery and contribution from people who encounter useful agents in practice.
 
 ## Next Steps
 
-- Meet Andrea Mendieta on 2026-08-18 at 14:00.
-- Clarify how AI Operations currently discovers or tracks existing agents across the company.
-- Identify the best available source or combination of sources for an initial Agent Library inventory.
-- Use that information to define the first practical discovery and curation workflow.
+- Align the reduced Creative Hub scope with Eve and Peter.
+- When relevant agents surface through AI Enablement, share them with Eve and Peter for possible Hub inclusion.
 
 ## Last Confirmed
 
-2026-08-12.
+2026-08-23.
 
 ## Related Context
 
-See [Design Library](design-library.md).
+See [AI Enablement](ai-enablement.md) and [Design Library](design-library.md).
