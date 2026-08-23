@@ -6,9 +6,9 @@ Provide a central, curated overview of AI agents and, over time, practical proje
 
 ## Current Status
 
-The Creative Hub is live at https://scout24-creative-ops.github.io/creative-hub/ and currently focuses mainly on Creative Studio agents with cross-Marketing relevance.
+The Creative Hub is live and currently focuses mainly on Creative Studio agents with cross-Marketing relevance.
 
-Eve and Peter continued the broader Hub work while Dominik was out sick. Dominik's intended contribution is now deliberately lightweight: relevant agents and solutions that surface through the recurring AI Enablement Series can be referenced in the Hub, but Dominik does not plan a separate ongoing company-wide agent-discovery or curation workstream.
+Eve and Peter continue the broader Hub work. Dominik's contribution is now deliberately limited: future new input from him should come only from relevant agents, solutions and learnings that naturally surface through the recurring AI Enablement Series. He does not plan a separate ongoing company-wide agent-discovery, research or curation workstream for the Hub because that would create too much additional workload.
 
 Dominik met Andrea Mendieta on 2026-08-18 to learn whether AI Operations or existing internal formats could provide a reliable overview of available company agents. The meeting did not produce a comprehensive inventory or source of truth.
 
@@ -21,11 +21,12 @@ Dominik's Creative Hub contribution is limited to connecting useful AI Enablemen
 His focus is to:
 
 - surface relevant agents and solutions through the bi-weekly AI Enablement Series;
-- point Eve and Peter to agents that are worth linking in the Hub;
+- let Eve and Peter use relevant AI Enablement outputs for Hub updates when useful;
 - avoid building and maintaining a separate parallel company-wide agent inventory;
+- avoid additional recurring research or curation work for the Hub;
 - keep any Hub contribution lightweight enough not to duplicate AI Enablement work.
 
-The broader Hub roadmap, communication setup and implementation remain with Eve and Peter. Dominik does not intend to take on additional recurring Hub work beyond sharing useful agents that naturally emerge through AI Enablement.
+The broader Hub roadmap, communication setup and implementation remain with Eve and Peter.
 
 ## Key Stakeholders
 
@@ -46,15 +47,15 @@ The broader Hub roadmap, communication setup and implementation remain with Eve 
 - 2026-07-30: The roadmap was reframed as a strategic sequence with parallel workstreams instead of a fixed person-and-date schedule.
 - 2026-08-12: The role split was updated, with Dominik focusing on the Agent Library while Eve and Peter continued the broader Hub work.
 - 2026-08-18: The Andrea Mendieta meeting confirmed that neither AI Operations nor the current `Lunch & Learn - Meet my Agent` archive provides a sufficiently complete agent inventory. ScoutAcademy contains recordings, but only a few sessions exist so far.
-- 2026-08-23: Dominik narrowed his intended Hub contribution further. Relevant agents discovered or presented through AI Enablement can be linked in the Hub; no additional ongoing Hub discovery workload is planned.
+- 2026-08-23: Dominik narrowed his intended Hub contribution further. Future new input from him should come only from relevant AI Enablement outputs; no additional recurring Hub research or curation workload is planned.
 
 ## Decisions
 
 - Prioritize understandable, relevant and maintainable content rather than listing everything.
 - Expand beyond a static Creative Studio agent directory where useful.
 - Do not create a separate company-wide agent-discovery workstream for Dominik.
-- Use the AI Enablement Series as the practical source of relevant new agents and solutions for Dominik's contribution.
-- Share useful agents with Eve and Peter so they can be linked from the Hub.
+- Use the AI Enablement Series as the practical source of any future new Hub input from Dominik.
+- Eve and Peter can use relevant AI Enablement outputs for Hub updates when useful.
 - Keep Dominik's Hub contribution intentionally lightweight and avoid duplicating AI Enablement work.
 
 ## Risks and Open Questions
@@ -65,8 +66,8 @@ The broader Hub roadmap, communication setup and implementation remain with Eve 
 
 ## Next Steps
 
-- Align the reduced Creative Hub scope with Eve and Peter.
-- When relevant agents surface through AI Enablement, share them with Eve and Peter for possible Hub inclusion.
+- Tell Eve and Peter that future new input from Dominik for the Creative Hub will come only from relevant AI Enablement outputs.
+- When relevant agents, solutions or learnings surface through AI Enablement, let Eve and Peter decide whether to use them for Hub updates.
 
 ## Last Confirmed
 
