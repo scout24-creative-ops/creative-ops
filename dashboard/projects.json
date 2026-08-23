@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-21",
+  "updated": "2026-08-23",
   "projects": [
     {
       "name": "Creative Hub",
       "tasks": [
-        { "text": "Bestehende Unternehmens-Agents für die Hub Agent Library erfassen", "category": "continue" }
+        { "text": "Reduzierten Creative-Hub-Beitrag mit Eve und Peter abstimmen", "category": "continue" }
       ]
     },
     {
@@ -14,13 +14,6 @@
         { "text": "Nächsten High-Impact-AI-Use-Case für die Unit identifizieren", "category": "focus" },
         { "text": "Abstimmungsrhythmus mit Allan und Lars neu aufsetzen", "category": "continue" },
         { "text": "Kanonische Projektnamen mit der Workspace-Struktur abgleichen", "category": "focus" }
-      ]
-    },
-    {
-      "name": "AI Enablement Series",
-      "tasks": [
-        { "text": "AI-Team-Check-Ergebnis-LP für AI Enablement schärfen", "category": "focus" },
-        { "text": "AI-Enablement-Landingpage finalisieren und übergeben", "category": "focus" }
       ]
     },
     {
