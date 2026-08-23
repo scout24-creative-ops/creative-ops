@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Enable landing pages to be created in the Landing Page Builder and transferred into Contentful through a controlled end-to-end workflow, while keeping the Landing Page Builder as the central authoring experience.
+Enable landing pages to be created in the Landing Page Builder and transferred into Contentful through a controlled end-to-end workflow, while keeping the Landing Page Builder as the central authoring experience during the MVP phase.
 
 ## Current Status
 
@@ -12,17 +12,19 @@ The current end-to-end flow is working: a new landing page can be generated in t
 
 Production publishing is not yet available. Mukhammadjon clarified that the LP Builder content type and renderer currently exist only in Contentful `next`, not production `pro`. A publish test returned a published status but the public route produced a 404; this is currently considered an MCP-code issue rather than a real production publication. Production publishing and transfer of the required renderer/content type to `pro` remain a later implementation phase to be aligned with Beatrice.
 
-Jorin confirmed LP Builder & Contentful and the conceptual migration work as priorities with Dominik on 2026-08-20.
+Jorin confirmed the LP Builder & Contentful work as a current priority on 2026-08-20. Contentful migration is related but is now treated as a separate workstream rather than as part of the MVP task set.
 
-The next product-level phase is therefore not only technical integration validation. Dominik also needs to define the future landing-page creation model: the current module library is a useful base, but broader Contentful usage and migration of existing pages require a more complete design system, reusable module set and page templates.
+The immediate MVP work is no longer a generic "test and define the module model" task. Dominik's current focus is to prepare the SSOT for Images discussion with Matthias and then clarify the future product model for the Landing Page Builder in a Contentful-first or Contentful-only setup.
 
 ## Dominik's Role
 
-Dominik represents Creative Operations and landing-page requirements, documents the target process, provides and tests the existing Landing Page Builder output, prepares pilot pages and migration priorities, and validates that the Contentful integration preserves the controlled LP Builder workflow. He also owns the product-level concept for how the Landing Page Builder and Contentful should work together in the future, including the required design-system, module and template model.
+Dominik represents Creative Operations and landing-page requirements, documents the target process, validates the controlled LP Builder workflow and owns the product-level questions around how the Landing Page Builder and Contentful should work together in the future.
+
+He is currently responsible for preparing the relevant SSOT for Images context and for defining the product-side target model, including the future boundary between Builder and Contentful and the URL/slug approach.
 
 ## Key Stakeholders
 
-- Matthias Brandstätter for Contentful ownership and strategic platform direction
+- Matthias Brandstätter for Contentful ownership, strategic platform direction and SSOT for Images alignment
 - Mukhammadjon Kayumov for the GPT Actions / Contentful integration implementation
 - Beatrice for Core Team coordination and production-publishing alignment
 - Stefan Harssdorf for Contentful architecture and technical assessment
@@ -33,8 +35,8 @@ Dominik represents Creative Operations and landing-page requirements, documents 
 
 ## Confirmed Direction and Decisions
 
-- Use `Landing Page Builder & Contentful` as the visible project name; `Contentful Marketing MVP` is misleading because the initiative is specifically about creating landing pages with the Landing Page Builder and transferring them to Contentful.
-- The Landing Page Builder remains the central controlled creation workflow for landing pages during the MVP.
+- Use `Landing Page Builder & Contentful` as the maintained project name in the repository; the dashboard may use the more focused label `LP Builder & Contentful MVP` for the current task group.
+- The Landing Page Builder remains the central controlled creation workflow during the MVP.
 - The short-term MVP remains HTML-based rather than requiring a component-based rebuild.
 - The current working integration uses GPT Actions to transfer generated LP Builder HTML into Contentful `next`.
 - Draft creation and updates require explicit user approval; publishing remains a separate consequential action.
@@ -42,10 +44,8 @@ Dominik represents Creative Operations and landing-page requirements, documents 
 - The working Contentful model uses `lpBuilder` entries with `slug`, `mainTitle` and HTML content as the core payload.
 - Direct preview of unpublished drafts is now part of the workflow in `next`.
 - Production publishing is not part of the validated MVP yet because the LP Builder renderer/content type have not been transferred to `pro`.
-- Existing AEM pages should be migrated gradually and by priority rather than through a big-bang migration.
-- During the transition, new Contentful pages may still link to old AEM pages.
-- The future workflow needs a stronger design-system, reusable module and page-template foundation before broad migration or scale-up.
-- Jorin supported LP Builder & Contentful and Contentful migration planning as current priorities on 2026-08-20.
+- Contentful migration is a separate conceptual workstream and should not be bundled into the MVP task list.
+- Do not invent a generic "plan next steps" task while the product and architecture questions are still open. Concrete implementation tasks should follow from the relevant alignments and target-model decisions.
 
 ## Important Developments
 
@@ -56,34 +56,35 @@ Dominik represents Creative Operations and landing-page requirements, documents 
 - 2026-08-12: A publish test exposed the current environment boundary: the Action reported publication, but the public route returned 404 because LP Builder rendering/publishing has not yet been transferred from `next` to `pro`.
 - 2026-08-12: Matthias Brandstätter suggested evaluating Claude Design as a possible future authoring surface for the LP Builder. This remains exploratory; no replacement decision has been made.
 - 2026-08-20: Jorin supported the project as one of Dominik's priority workstreams and agreed with treating Contentful migration as a separate conceptual next step rather than assuming migration execution is already defined.
-- 2026-08-21: The MVP is now described as close to completion: generation in the Landing Page Builder, direct transfer to Contentful and immediate preview are working end to end in `next`.
+- 2026-08-21: The MVP was described as close to completion: generation in the Landing Page Builder, direct transfer to Contentful and immediate preview are working end to end in `next`.
+- 2026-08-23: Dominik clarified the immediate MVP task set: prepare an SSOT for Images document for the upcoming Matthias alignment and clarify the future Landing Page Builder model for a Contentful-only setup. The calendar meeting itself is not tracked as an additional task.
+- 2026-08-23: Contentful migration was separated from the MVP as its own workstream; the migration concept has not yet been started.
 
 ## Open Questions and Risks
 
+- What the SSOT for Images should be and how image ownership, storage and reuse should work in the future Contentful setup.
+- How the Landing Page Builder should continue if Contentful becomes the only target environment.
+- How future URL and slug handling should work compared with the current directory-based landing-page structure.
+- Which responsibilities, metadata and editing capabilities should remain in the Landing Page Builder and which should live in Contentful.
 - How and when the LP Builder content type, renderer and publishing flow will move from `next` to production `pro`.
 - The MCP/Action should not report or imply successful production publication while production publishing is unavailable.
 - Some visual spacing and padding in the Contentful preview differ from the current LP Builder/AEM rendering; these appear to be refinement work rather than a blocker for the MVP integration.
 - Whether Claude Design, a future agent, or the Custom GPT should become the long-term authoring surface after the Contentful workflow is stable.
 - How the approval experience should be presented later; a clearer prompt or modal-style confirmation has been suggested as a possible UX improvement.
-- Which metadata is captured in the Landing Page Builder and which remains maintained in Contentful.
-- How an existing page can later be loaded back into the Landing Page Builder for broader editing workflows.
-- How link checking, redirects, slug conventions and retirement of old AEM URLs will be managed during migration.
-- What the target design system, module library and page-template set needs to contain for broad use and migration.
-- How the migration of existing pages should be scoped, sequenced and governed.
 
 ## Next Steps
 
-1. Test the current LP Builder & Contentful MVP with representative landing pages and validate the end-to-end creation and update workflow.
-2. Define the target design-system, module-library and page-template model required for future use.
-3. Conceptually design the migration approach for existing landing pages, including scope, prioritization, templates, redirects and operating model before execution begins.
-4. Let the Contentful/Core implementation progress the `pro` renderer/content-type and real production-publishing phase before further publish validation.
-5. Correct the MCP/Action behavior so it does not return a misleading production-publish result while `pro` is unavailable.
-6. Treat visual spacing/padding parity as follow-up refinement after the core integration is stable.
-7. Evaluate Claude Design or an agent setup separately as a possible future authoring interface without blocking the current GPT-based MVP.
+1. Prepare a concise SSOT for Images working document for the upcoming alignment with Matthias, covering the relevant context, questions and decisions needed.
+2. Clarify the target model for the Landing Page Builder in a Contentful-only setup, including URL/slug logic and the boundary between Builder and Contentful responsibilities.
+3. Derive concrete implementation next steps only after those product and architecture questions are clearer.
+
+## Contentful Migration Boundary
+
+Migration of existing landing pages is now treated as a separate workstream. The current migration task is to develop the concept before any execution plan is created. Relevant topics will likely include scope, prioritization, templates, URL and redirect handling, and the operating model, but these details are not yet a confirmed migration plan.
 
 ## Last Confirmed
 
-Landing Page Builder generation, direct Contentful transfer and immediate preview remain verified in `next` as of 2026-08-21; production `pro` publishing is not yet available.
+Current MVP task set and separation from Contentful Migration confirmed by Dominik on 2026-08-23. The end-to-end creation, transfer and preview flow remains verified in `next`; production `pro` publishing is not yet available.
 
 ## Related Context
 
