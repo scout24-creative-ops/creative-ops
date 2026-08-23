@@ -41,7 +41,7 @@ h1 { margin: 0; color: #1e1f20; font-size: clamp(2rem, 4vw, 3.2rem); letter-spac
 .project-section__header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 0 0 14px; }
 .project-section__title { margin: 0; color: #2a2b2e; font-size: 1.05rem; font-weight: 700; line-height: 1.25; letter-spacing: -.02em; }
 .project-section__items { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
-.task-board--tiles .project-section__items { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 190px)); gap: 10px; justify-content: start; align-items: start; max-width: calc((190px * 5) + (10px * 4)); }
+.task-board--tiles .project-section__items { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 240px)); gap: 16px; justify-content: start; align-items: start; max-width: calc((240px * 4) + (16px * 3)); }
 .task-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "title status"; align-items: start; column-gap: 16px; min-width: 0; padding: 15px 16px; border: 1px solid #e2e1db; border-radius: 8px; background: var(--project-accent, #fff); color: #242526; font-family: "Make It Better", Arial, Roboto, sans-serif; font-size: 12px; font-weight: 400; line-height: 18px; }
 .task-row--continue,
 .task-row--waiting { grid-template-columns: minmax(0, 1fr); grid-template-areas: "title"; }
@@ -50,12 +50,14 @@ h1 { margin: 0; color: #1e1f20; font-size: clamp(2rem, 4vw, 3.2rem); letter-spac
 .task-row__status--focus { border-color: #e0d2aa; color: #836628; background: #fbf3da; }
 .task-row--waiting { border-color: #dcdcd6; background: linear-gradient(rgba(243, 243, 239, 0.55), rgba(243, 243, 239, 0.55)), var(--project-accent, #fff); }
 .task-row--waiting .task-row__title { color: #4c4d48; }
-.task-card { display: flex; flex-direction: column; gap: 10px; min-width: 0; padding: 16px 16px 14px; border: 1px solid #e2e1db; border-radius: 12px; background: var(--project-accent, #fff); color: #242526; font-family: "Make It Better", Arial, Roboto, sans-serif; font-size: 12px; font-weight: 400; line-height: 18px; min-height: 100%; width: 100%; }
+.task-card { display: flex; flex-direction: column; gap: 14px; min-width: 0; padding: 24px 24px 22px; border: 1px solid #e2e1db; border-radius: 14px; background: var(--project-accent, #fff); color: #242526; font-family: "Make It Better", Arial, Roboto, sans-serif; font-size: 12px; font-weight: 400; line-height: 18px; min-height: 100%; width: 100%; }
 .task-card__title { margin: 0; color: #232427; font-size: 15px; line-height: 21px; font-weight: 700; overflow-wrap: anywhere; }
 .task-card__status { align-self: flex-start; margin: 0; padding: 1px 7px; border: 1px solid transparent; border-radius: 999px; color: #71746f; background: #fafafa; font-size: 10px; line-height: 16px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; white-space: nowrap; }
 .task-card__status--focus { border-color: #e0d2aa; color: #836628; background: #fbf3da; }
 .task-card--waiting { border-color: #dcdcd6; background: linear-gradient(rgba(243, 243, 239, 0.55), rgba(243, 243, 239, 0.55)), var(--project-accent, #fff); }
 .task-card--waiting .task-card__title { color: #4c4d48; }
+.task-card__steps { margin: 0; padding: 0 0 0 18px; color: #656761; display: grid; gap: 7px; font-size: 0.9rem; line-height: 1.45; }
+.task-card__step { margin: 0; }
 .empty-column { margin: 0; padding: 6px 4px; color: #888b86; font-size: 12px; line-height: 18px; font-style: italic; }
 .empty-state, .error-state { margin: 10px 0; padding: 24px; border: 1px dashed #bec1ba; border-radius: 12px; color: #5d5f59; text-align: center; }
 .error-state { border-color: #9a5751; color: #743a35; }
@@ -80,7 +82,8 @@ h1 { margin: 0; color: #1e1f20; font-size: clamp(2rem, 4vw, 3.2rem); letter-spac
   .task-row__status { justify-self: end; }
   .task-row--continue .task-row__status,
   .task-row--waiting .task-row__status { display: none; }
-  .task-board--tiles .project-section__items { grid-template-columns: repeat(auto-fit, minmax(170px, 170px)); gap: 8px; }
-  .task-card { padding: 14px 14px 13px; border-radius: 10px; gap: 8px; }
+  .task-board--tiles .project-section__items { grid-template-columns: repeat(auto-fit, minmax(220px, 220px)); gap: 12px; max-width: 100%; }
+  .task-card { padding: 20px 18px 18px; border-radius: 12px; gap: 12px; }
   .task-card__title { font-size: 14px; line-height: 20px; }
+  .task-card__steps { gap: 6px; font-size: 0.86rem; }
 }

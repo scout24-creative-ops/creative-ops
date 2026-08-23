@@ -48,6 +48,16 @@ function isValidTask(task) {
   return typeof task?.text === "string" && categoryLabels[task.category];
 }
 
+function normalizeTaskSteps(steps) {
+  if (!Array.isArray(steps)) {
+    return [];
+  }
+
+  return steps
+    .map((step) => (typeof step === "string" ? step.trim() : ""))
+    .filter(Boolean);
+}
+
 function normalizeProjectName(name) {
   return String(name).trim();
 }
@@ -128,6 +138,20 @@ function createTaskCard(task) {
     category.className = "task-card__status task-card__status--focus";
     category.textContent = categoryLabels.focus;
     card.append(category);
+  }
+
+  if (task.steps.length > 0) {
+    const steps = document.createElement("ul");
+    steps.className = "task-card__steps";
+
+    task.steps.forEach((step) => {
+      const item = document.createElement("li");
+      item.className = "task-card__step";
+      item.textContent = step;
+      steps.append(item);
+    });
+
+    card.append(steps);
   }
 
   return card;
@@ -256,6 +280,7 @@ function buildTasks(projects) {
       resolvedTasks.push({
         text: task.text.trim(),
         category: task.category,
+        steps: normalizeTaskSteps(task.steps),
         projectName: project.name,
         projectIndex,
         taskIndex

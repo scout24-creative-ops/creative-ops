@@ -4,13 +4,27 @@
     {
       "name": "AI Enablement Series",
       "tasks": [
-        { "text": "Agent für die erste AI Enablement Session auswählen", "category": "focus" },
-        { "text": "Erstes Explore-Thema für AI Enablement festlegen", "category": "focus" },
-        { "text": "Wiederverwendbares AI-Enablement-Präsentationstemplate erstellen", "category": "focus" },
-        { "text": "Präsentationsvorlage für AI-Enablement-Beiträge erstellen", "category": "focus" },
-        { "text": "Slack-Post-Templates für AI Enablement vorbereiten", "category": "focus" },
-        { "text": "Agenda für die AI Enablement Session am 08.09. zusammenstellen", "category": "focus" },
-        { "text": "Erste reguläre AI Enablement Session am 08.09. durchführen", "category": "focus" }
+        {
+          "text": "Vorlagen für die AI Enablement Series erstellen",
+          "category": "focus",
+          "steps": [
+            "Präsentationstemplate erstellen",
+            "Vorlage für Beiträge anderer erstellen",
+            "Slack-Post-Templates vorbereiten"
+          ]
+        },
+        {
+          "text": "Inhalte für die nächste AI Enablement Session festlegen",
+          "category": "focus",
+          "steps": [
+            "Agent für Show & Share auswählen",
+            "Explore-Thema auswählen"
+          ]
+        },
+        {
+          "text": "Agenda für die nächste AI Enablement Session zusammenstellen",
+          "category": "focus"
+        }
       ]
     },
     {
