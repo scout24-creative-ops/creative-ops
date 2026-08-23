@@ -53,9 +53,12 @@ const emptyState = document.querySelector("#empty-state");
 const errorState = document.querySelector("#error-state");
 const updatedDate = document.querySelector("#updated-date");
 const filterButtons = document.querySelectorAll("[data-filter]");
+const viewButtons = document.querySelectorAll("[data-view]");
+const viewStorageKey = "creative-ops-dashboard-view";
 
 let tasks = [];
 let activeFilter = "all";
+let activeView = loadSavedView();
 let projectLabelColors = new Map();
 
 function formatDate(value) {
@@ -139,6 +142,75 @@ function createTaskRow(task) {
   return row;
 }
 
+function createTaskCard(task) {
+  const card = document.createElement("article");
+  card.className = `task-card task-card--${task.category}`;
+  card.style.setProperty("--project-accent", colorForProject(task.projectName));
+
+  const project = document.createElement("span");
+  project.className = "task-card__project";
+  project.textContent = task.projectName;
+
+  const title = document.createElement("p");
+  title.className = "task-card__title";
+  title.textContent = task.text;
+
+  card.append(project, title);
+
+  if (task.category === "focus") {
+    const category = document.createElement("span");
+    category.className = "task-card__status task-card__status--focus";
+    category.textContent = categoryLabels.focus;
+    card.append(category);
+  }
+
+  return card;
+}
+
+function loadSavedView() {
+  try {
+    const savedView = localStorage.getItem(viewStorageKey);
+    if (savedView === "list" || savedView === "tiles") {
+      return savedView;
+    }
+  } catch (error) {
+    // Ignore storage access errors and fall back to the default view.
+  }
+
+  return "list";
+}
+
+function persistView(view) {
+  try {
+    localStorage.setItem(viewStorageKey, view);
+  } catch (error) {
+    // Ignore storage access errors; the selected view still applies for this session.
+  }
+}
+
+function syncViewControls() {
+  document.body.dataset.view = activeView;
+  board.classList.toggle("task-board--tiles", activeView === "tiles");
+  board.classList.toggle("task-board--list", activeView !== "tiles");
+
+  viewButtons.forEach((button) => {
+    const isActive = button.dataset.view === activeView;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+}
+
+function setView(view) {
+  if (view !== "list" && view !== "tiles") {
+    return;
+  }
+
+  activeView = view;
+  persistView(view);
+  syncViewControls();
+  renderBoard();
+}
+
 function renderBoard() {
   const visibleTasks = activeFilter === "all"
     ? tasks
@@ -177,7 +249,7 @@ function renderBoard() {
       list.append(emptyColumn);
     } else {
       columnTasks.forEach((task) => {
-        list.append(createTaskRow(task));
+        list.append(activeView === "tiles" ? createTaskCard(task) : createTaskRow(task));
       });
     }
 
@@ -198,6 +270,10 @@ function setFilter(filter) {
 
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => setFilter(button.dataset.filter));
+});
+
+viewButtons.forEach((button) => {
+  button.addEventListener("click", () => setView(button.dataset.view));
 });
 
 function buildTasks(projects) {
@@ -247,6 +323,7 @@ async function loadDashboard() {
     tasks = buildTasks(projects);
     updatedDate.dateTime = data.updated;
     updatedDate.textContent = formatDate(data.updated);
+    syncViewControls();
     renderBoard();
   } catch (error) {
     errorState.hidden = false;
@@ -254,4 +331,5 @@ async function loadDashboard() {
   }
 }
 
+syncViewControls();
 loadDashboard();
