@@ -8,21 +8,21 @@ Provide a central source of truth for reusable builder modules, design tokens, p
 
 The active Design Library source lives in `scout24-creative-ops/design-system`. The separate `s24-creative-ops/design-library` repository is the live publish mirror and is not the source of truth.
 
-The Design Library is now prepared as a self-contained static artifact. It contains its required email preview stylesheet locally and no longer depends on Email Builder or LP Builder runtime paths when published.
+The Design Library is prepared as a self-contained static artifact. It contains its required email preview stylesheet locally and no longer depends on Email Builder or LP Builder runtime paths when published.
 
-A manual-only GitHub workflow can later prepare a review PR in the publish repository. It does not merge or publish automatically.
+The previous task to follow up on Ciaran's review of the LP Builder and Design Library PRs is no longer relevant as an active task. The current question is instead whether Ciaran has enough remaining working hours through the end of 2026 to support further LP Builder development in the Contentful context.
 
 ## Dominik's Role
 
 Dominik initiated the library approach, connected it to the builders and AI Agent overview, supported adoption, and coordinated the move toward a central GitHub-based publication path.
 
-He retains product and workflow responsibility and coordinates implementation and review with Ciaran.
+He retains product and workflow responsibility. Any further implementation support from Ciaran should be decided based on Ciaran's remaining capacity and the priorities around LP Builder & Contentful.
 
 ## Key Stakeholders
 
 - Creative Studio
 - Marketing teams using the builders
-- Ciaran for modules and workflow review
+- Ciaran for possible further LP Builder / Contentful support
 - Peter and Allan for GitHub and publishing support
 - UX for module approval and standards
 
@@ -32,10 +32,8 @@ He retains product and workflow responsibility and coordinates implementation an
 - May 2026: Introduced the Design Library as a shared source for design tokens, modules and patterns.
 - May to July 2026: Used the library to direct colleagues to existing modules and reduce duplicate work.
 - July 2026: Followed up on new modules and organized Scout24 GitHub onboarding to support central storage and publication.
-- 2026-07-30: Ciaran reported that the publication setup required access to multiple repositories.
-- Dominik and Codex identified that the library loaded Email Builder preview CSS and that the previous sync copied source material from several repositories into the publish mirror.
-- The Design Library was made self-contained, the local publish script was changed to prepare only a mirror without commit or push, and a manual review-PR workflow was added.
-- Technical checks passed and draft PR #2, `Make Design Library publishing self-contained`, was opened in `scout24-creative-ops/design-system`.
+- 2026-07-30: The Design Library was made self-contained and a manual review-PR workflow was prepared.
+- 2026-08-23: The previous Ciaran review follow-up was retired. Ciaran is checking how many working hours he has left through the end of the year; once that is known, Dominik will assess whether those hours can support the further development of the LP Builder in relation to Contentful.
 
 ## Decisions
 
@@ -43,24 +41,20 @@ He retains product and workflow responsibility and coordinates implementation an
 - Keep shared builder knowledge and assets centrally discoverable.
 - Treat `scout24-creative-ops/design-system` as the active source.
 - Treat `s24-creative-ops/design-library` as a publish mirror only.
-- Publish only through a deliberate review process; no automatic merge or deployment.
-- Keep the published Design Library self-contained and free of runtime dependencies on source repositories.
+- Do not keep the old PR-review follow-up as an active task.
+- Decide on further Ciaran support based on his remaining 2026 capacity and current LP Builder & Contentful priorities.
 
 ## Risks and Open Questions
 
-- Ownership for maintenance and adding new modules is not fully documented.
-- The boundary between Design Library, Builder Library and Creative Hub needs current clarification.
-- Draft PR #2 still requires Ciaran's review before merge.
-- The later automated review-PR workflow requires an administrator-managed repository secret and has not yet been tested end to end.
+- How many working hours Ciaran still has available through the end of 2026.
+- Whether that capacity is sufficient and appropriate for further LP Builder development in the Contentful context.
+- Ownership for long-term maintenance and adding new modules is not fully documented.
 
 ## Next Steps
 
-1. Ask Ciaran to review PR #2 and confirm the new setup works for his workflow.
-2. Merge the reviewed source change when approved.
-3. Configure the required repository secret only when the manual review-PR workflow is ready to be tested.
-4. Run one controlled publication test and review the resulting PR in the live publish repository before merge.
-5. Clarify ongoing maintenance ownership and the boundary to the Creative Hub.
+1. Wait for Ciaran to confirm his remaining working hours through the end of 2026.
+2. Assess whether he can support further LP Builder development in the Contentful context.
 
 ## Last Confirmed
 
-Source-of-truth and publishing setup confirmed on 2026-07-30.
+Ciaran capacity-based support decision confirmed as the current next step on 2026-08-23.
