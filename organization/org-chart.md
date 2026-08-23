@@ -1,6 +1,6 @@
 # Relevanter Organisationskontext – vollständig
 
-Stand: 14.08.2026
+Stand: 23.08.2026
 
 Diese Datei ist die maßgebliche Version für Dominiks relevante Organisations- und Zusammenarbeitsstruktur.
 
@@ -81,6 +81,14 @@ Relevantes vollständiges Team:
 - Lars Brenncke — Lead AI Operations
 - Florian Kube — Head of AI Solutions & Analytics
 - Ana Cristina De la Colin… — Senior Business Analyst
+
+## AI Enablement / Talent & Org Development
+
+- Andrea Mendieta — Lead Talent & Org Development | AI Enablement
+- Andrea verantwortet das interne Format `Lunch & Learn - Meet my Agent`.
+- Das Format befindet sich im Sommer 2026 in Pause und soll im Herbst wieder starten.
+- Aufzeichnungen bisheriger Sessions liegen in ScoutAcademy; bislang gibt es nur wenige Sessions und damit keinen umfassenden Überblick über verfügbare Unternehmens-Agents.
+- Andrea arbeitete nach eigener Aussage zuvor im HR-Bereich und wechselte ungefähr Anfang 2025 in den AI-Operations-/AI-Enablement-Kontext.
 
 ## Builders Platform und Engineering
 - Matthias Brandstetter — Director Builders Platform
