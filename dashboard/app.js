@@ -19,6 +19,7 @@ const projectPillarMap = new Map([
   ["Content Marketing Agent", "enablement"],
   ["Coupa AI Support", "enablement"],
   ["Contentful Marketing MVP", "creative"],
+  ["Landing Page Builder & Contentful", "creative"],
   ["E-Mail Automation", "creative"],
   ["E-Mail Automation – Plus FOMO", "creative"],
   ["Newsletter Automation", "creative"],
