@@ -2,6 +2,55 @@
 
 ## Open
 
+- [ ] Select the agent for the first AI Enablement session
+  - Area: AI Enablement Series
+  - Status: Open
+  - Next step: Decide which existing agent or solution should be presented in the first recurring session on 2026-09-08.
+  - Context: Show & Share should make existing useful solutions visible; the first concrete example still needs to be selected.
+  - Source: Dominik confirmed the first-session preparation tasks on 2026-08-23
+
+- [ ] Choose the first Explore topic for AI Enablement
+  - Area: AI Enablement Series
+  - Status: Open
+  - Next step: Select the first topic for the Explore part of the 2026-09-08 session from the current topic pool or a new relevant signal.
+  - Context: Explore is intended to discuss opportunities or problems before deciding whether they deserve deeper follow-up.
+  - Source: Dominik confirmed the first-session preparation tasks on 2026-08-23
+
+- [ ] Create a reusable AI Enablement Series presentation template
+  - Area: AI Enablement Series
+  - Status: Open
+  - Next step: Create a recurring presentation structure that can cover the agenda and the three pillars Learn, Show & Share and Explore.
+  - Context: The template should reduce preparation effort across future sessions without turning the Series into a centrally prepared presentation format.
+  - Source: Dominik confirmed the first-session preparation tasks on 2026-08-23
+
+- [ ] Create a presentation template for AI Enablement contributors
+  - Area: AI Enablement Series
+  - Status: Open
+  - Next step: Create a lightweight template colleagues can use when they present a solution, workflow, learning or experiment themselves.
+  - Context: Contributor preparation should stay simple and consistent with the shared participation model.
+  - Source: Dominik confirmed the first-session preparation tasks on 2026-08-23
+
+- [ ] Prepare reusable Slack post templates for AI Enablement
+  - Area: AI Enablement Series
+  - Status: Open
+  - Next step: Prepare reusable Agenda, Topic Call and Update post patterns for `#comms-team-only` using the `🎓 AI Enablement | ...` prefix.
+  - Context: The templates should support recurring communication without creating a separate planning or communication system.
+  - Source: Dominik confirmed the first-session preparation tasks on 2026-08-23
+
+- [ ] Assemble the agenda for the 2026-09-08 AI Enablement session
+  - Area: AI Enablement Series
+  - Status: Open
+  - Next step: Build the first recurring-session agenda once the agent, Explore topic and presentation format are sufficiently clear.
+  - Context: The session does not need to include all three pillars if a smaller agenda is more useful.
+  - Source: Dominik confirmed the first-session preparation tasks on 2026-08-23
+
+- [ ] Run the first recurring AI Enablement session on 2026-09-08
+  - Area: AI Enablement Series
+  - Status: Open
+  - Next step: Facilitate the first recurring 90-minute session on 2026-09-08 from 12:30 to 14:00 in Charlottenburg (07-405).
+  - Context: This is the first session after the successful kickoff and establishes the ongoing bi-weekly operating rhythm.
+  - Source: Dominik confirmed the first-session preparation tasks on 2026-08-23
+
 - [ ] Align reduced Creative Hub contribution with Eve and Peter
   - Area: Creative Hub
   - Status: Open
