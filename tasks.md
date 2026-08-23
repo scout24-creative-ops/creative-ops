@@ -66,21 +66,21 @@
   - Source: Dominik clarified the channel uncertainty on 2026-08-23
 
 - [ ] Identify the next high-impact AI use case for the unit
-  - Area: AI Strategy & Steering
+  - Area: Creative Ops
   - Status: Open
   - Next step: Use signals from the AI Enablement Series and current team needs to identify and assess the next AI opportunity with meaningful unit-wide impact.
   - Context: Jorin supported this as part of Dominik's focused priority set rather than treating every decentralized AI idea as an equal delivery commitment.
   - Source: Jorin alignment confirmed by Dominik on 2026-08-20
 
 - [ ] Define the Brand Agent MVP with Marie
-  - Area: Brand Agent – Tone of Voice
+  - Area: Creative Ops
   - Status: Open
   - Next step: Agree the smallest testable scope, first test case, success criteria, responsibilities and initial implementation steps with Marie.
   - Context: Marie owns implementation; Dominik provides structure, prioritization and quality guidance.
   - Source: Project alignment on 2026-07-21
 
 - [ ] Define the first Content Marketing Agent use case with Yvonne
-  - Area: Content Marketing Agent
+  - Area: Creative Ops
   - Status: Open
   - Next step: Define the first concrete use case together with Yvonne.
   - Context: The task is confirmed and remains in the current continuation queue; Yvonne and the relevant team retain functional and implementation ownership.
@@ -108,35 +108,35 @@
   - Source: Dominik clarified the current Contentful migration status on 2026-08-23
 
 - [ ] Identify the next E-Mail Automation use cases with B2B
-  - Area: E-Mail Automation
+  - Area: E-Mail Automation Professional
   - Status: Open
   - Next step: Assess and prioritize the next automation use cases, using Juliane's B2B need as the next concrete test.
   - Context: Jorin supported E-Mail Automation as a priority area. The next step is use-case selection rather than expanding generic self-service email creation.
   - Source: Jorin alignment and Dominik's next-step definition on 2026-08-20
 
 - [ ] Discuss Newsletter Automation with Steffi
-  - Area: Newsletter Automation
+  - Area: Creative Ops
   - Status: Open
   - Next step: Hold a discovery conversation to understand the current workflow, existing agent or automation work, biggest manual burden and the smallest useful next step.
   - Context: The initiative is active in Dominik's work organization because a concrete follow-up exists; links to Contentful, Landing Page Builder and email automation should be considered after discovery.
   - Source: Dominik confirmed the project treatment on 2026-07-31
 
 - [ ] Re-establish the Allan-and-Lars alignment cadence
-  - Area: AI Strategy & Steering
+  - Area: Creative Ops
   - Status: Open
   - Next step: Agree whether future check-ins should be separate or joint and confirm a useful cadence before creating new recurring calendar series.
   - Context: The former recurring meetings appear to have been cancelled when paused for vacation; the previous rhythm is uncertain.
   - Source: Dominik confirmed the task on 2026-07-22
 
 - [ ] Define reusable email standards for Codex
-  - Area: E-Mail Automation
+  - Area: E-Mail Automation Professional
   - Status: Open
   - Next step: Review confirmed Plus FOMO and HeyImmo rendering learnings and derive the first approved repository rules, reusable components and automated HTML checks.
   - Context: Only patterns confirmed through real rendering tests should become global standards; detailed requirements belong in the relevant technical context.
   - Source: Plus FOMO learnings and Dominik's confirmation on 2026-07-29
 
 - [ ] Align canonical project names with workspace structure
-  - Area: AI Strategy & Steering
+  - Area: Creative Ops
   - Status: Open
   - Next step: Compare the agreed canonical project names with the actual VS Code workspace, repository and subproject structure, then define a clear naming rule for visible project titles, nested projects and technical names.
   - Context: Not every project exists at the workspace's top level, so the naming model needs to distinguish canonical display names from repositories, folders and nested workstreams before any wider renaming is attempted.
@@ -152,7 +152,7 @@
   - Context: The previous LP Builder / Design Library review follow-up is obsolete and is replaced by this capacity-based decision.
 
 - [ ] Clarify Coupa AI support and review the existing PO agent
-  - Area: Coupa AI Support
+  - Area: Creative Ops
   - Status: Waiting for another person or decision
   - Waiting for: Jana Homfeldt's response about the responsible Coupa contact and existing or planned AI support
   - Dominik's next step: After clarification, speak with Franziska Stober about her Outlook-based PO-status agent and assess reusable learnings.
