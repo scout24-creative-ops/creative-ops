@@ -51,19 +51,19 @@
   - Context: This is the first session after the successful kickoff and establishes the ongoing bi-weekly operating rhythm.
   - Source: Dominik confirmed the first-session preparation tasks on 2026-08-23
 
-- [ ] Align reduced Creative Hub contribution with Eve and Peter
-  - Area: Creative Hub
+- [ ] Limit Creative Hub input to AI Enablement updates
+  - Area: Creative Ops
   - Status: Open
-  - Next step: Tell Eve and Peter that Dominik will no longer run a separate company-wide agent-discovery workstream and will instead surface relevant agents through AI Enablement for possible Hub inclusion.
-  - Context: The Andrea Mendieta meeting did not reveal a reliable company-wide agent inventory. Dominik's bi-weekly AI Enablement Series already provides a recurring place to discover and present useful agents without duplicating work.
-  - Source: Dominik confirmed the reduced Creative Hub scope on 2026-08-23
+  - Next step: Tell Eve and Peter that future new input from Dominik for the Creative Hub will come only from relevant agents, solutions and learnings that surface through the AI Enablement Series.
+  - Context: Maintaining a separate discovery or curation workstream for the Hub would create too much additional workload. Eve and Peter can use relevant AI Enablement outputs for Hub updates when useful.
+  - Source: Dominik clarified the Creative Hub contribution model on 2026-08-23
 
-- [ ] Plan lightweight `#creative-ops-marketing` activation
-  - Area: AI Strategy & Steering
+- [ ] Reassess the need for `#creative-ops-marketing`
+  - Area: Creative Ops
   - Status: Open
-  - Next step: Define the channel's future purpose, a small set of useful recurring content types and a low-effort publishing approach before committing to any cadence or automation.
-  - Context: The channel should become more active and support Dominik's visibility without creating another operational maintenance burden. Possible monitoring of selected AI or ChatGPT channels may be explored later, but no solution or posting rhythm has been decided.
-  - Source: Dominik's communication-structure clarification on 2026-07-30
+  - Next step: Reassess whether the channel still serves a useful purpose before investing in activation, recurring content or automation.
+  - Context: The future role and communication needs are still evolving, so it is not yet clear whether the channel is needed at all. Keep the topic open without committing to an activation plan.
+  - Source: Dominik clarified the channel uncertainty on 2026-08-23
 
 - [ ] Identify the next high-impact AI use case for the unit
   - Area: AI Strategy & Steering
@@ -144,12 +144,12 @@
 
 ## Waiting
 
-- [ ] Follow up on Ciaran's review of LP Builder and Design Library
-  - Area: Landing Page Builder / Design Library
-  - Status: Waiting for review
-  - Waiting for: Ciaran's review of LP Builder PR #3 and Design System PR #2
-  - Dominik's next step: Send the short explanation and both draft PR links, then merge or adjust only after review.
-  - Context: The productive LP Builder GPT is updated and tested; neither draft PR has been merged.
+- [ ] Check Ciaran's remaining capacity for LP Builder & Contentful support
+  - Area: Creative Ops
+  - Status: Waiting for another person or decision
+  - Waiting for: Ciaran to confirm how many working hours he still has available through the end of 2026
+  - Dominik's next step: Once the remaining hours are clear, assess whether Ciaran can support further LP Builder development in the Contentful context.
+  - Context: The previous LP Builder / Design Library review follow-up is obsolete and is replaced by this capacity-based decision.
 
 - [ ] Clarify Coupa AI support and review the existing PO agent
   - Area: Coupa AI Support
