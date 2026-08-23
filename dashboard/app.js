@@ -4,29 +4,6 @@ const categoryLabels = {
   waiting: "Warten & Nachhalten"
 };
 
-const pillarDefinitions = [
-  { key: "strategy", title: "AI Strategy & Steering" },
-  { key: "enablement", title: "AI Enablement" },
-  { key: "creative", title: "AI Creative Operations" }
-];
-
-const projectPillarMap = new Map([
-  ["AI Strategy & Steering", "strategy"],
-  ["AI Enablement Series", "enablement"],
-  ["AI Team-Check", "enablement"],
-  ["Brand Agent – Tone of Voice", "enablement"],
-  ["PR Intelligence Hub", "enablement"],
-  ["Content Marketing Agent", "enablement"],
-  ["Coupa AI Support", "enablement"],
-  ["Contentful Marketing MVP", "creative"],
-  ["Landing Page Builder & Contentful", "creative"],
-  ["E-Mail Automation", "creative"],
-  ["E-Mail Automation – Plus FOMO", "creative"],
-  ["Newsletter Automation", "creative"],
-  ["Creative Hub", "creative"],
-  ["Landing Page Builder / Design Library", "creative"]
-]);
-
 const taskLabelPalette = [
   "#FFF1C9",
   "#FDECCF",
@@ -57,6 +34,7 @@ const viewButtons = document.querySelectorAll("[data-view]");
 const viewStorageKey = "creative-ops-dashboard-view";
 
 let tasks = [];
+let projectOrder = [];
 let activeFilter = "all";
 let activeView = loadSavedView();
 let projectLabelColors = new Map();
@@ -72,10 +50,6 @@ function isValidTask(task) {
 
 function normalizeProjectName(name) {
   return String(name).trim();
-}
-
-function resolveProjectPillar(name) {
-  return projectPillarMap.get(normalizeProjectName(name)) ?? null;
 }
 
 function hashProjectName(name) {
@@ -126,11 +100,7 @@ function createTaskRow(task) {
   title.className = "task-row__title";
   title.textContent = task.text;
 
-  const project = document.createElement("span");
-  project.className = "task-row__project";
-  project.textContent = task.projectName;
-
-  row.append(project, title);
+  row.append(title);
 
   if (task.category === "focus") {
     const category = document.createElement("span");
@@ -147,15 +117,11 @@ function createTaskCard(task) {
   card.className = `task-card task-card--${task.category}`;
   card.style.setProperty("--project-accent", colorForProject(task.projectName));
 
-  const project = document.createElement("span");
-  project.className = "task-card__project";
-  project.textContent = task.projectName;
-
   const title = document.createElement("p");
   title.className = "task-card__title";
   title.textContent = task.text;
 
-  card.append(project, title);
+  card.append(title);
 
   if (task.category === "focus") {
     const category = document.createElement("span");
@@ -216,46 +182,53 @@ function renderBoard() {
     ? tasks
     : tasks.filter((task) => task.category === activeFilter);
 
-  const tasksByPillar = new Map(pillarDefinitions.map((pillar) => [pillar.key, []]));
+  const tasksByProject = new Map(projectOrder.map((projectName) => [projectName, []]));
   visibleTasks.forEach((task) => {
-    tasksByPillar.get(task.pillar).push(task);
+    const projectTasks = tasksByProject.get(task.projectName);
+    if (projectTasks) {
+      projectTasks.push(task);
+    }
   });
 
   board.replaceChildren();
   emptyState.hidden = true;
 
-  pillarDefinitions.forEach((pillar) => {
-    const column = document.createElement("section");
-    column.className = "pillar-column";
-    column.setAttribute("aria-label", pillar.title);
+  let renderedSections = 0;
+
+  projectOrder.forEach((projectName) => {
+    const projectTasks = tasksByProject.get(projectName) ?? [];
+    if (projectTasks.length === 0) {
+      return;
+    }
+
+    const section = document.createElement("section");
+    section.className = "project-section";
+    section.setAttribute("aria-label", projectName);
 
     const header = document.createElement("header");
-    header.className = "pillar-column__header";
+    header.className = "project-section__header";
 
     const title = document.createElement("h2");
-    title.className = "pillar-column__title";
-    title.textContent = pillar.title;
+    title.className = "project-section__title";
+    title.textContent = projectName;
 
     header.append(title);
 
     const list = document.createElement("div");
-    list.className = "task-column-list";
+    list.className = "project-section__items";
 
-    const columnTasks = tasksByPillar.get(pillar.key);
-    if (columnTasks.length === 0) {
-      const emptyColumn = document.createElement("p");
-      emptyColumn.className = "empty-column";
-      emptyColumn.textContent = "Keine Aufgaben";
-      list.append(emptyColumn);
-    } else {
-      columnTasks.forEach((task) => {
-        list.append(activeView === "tiles" ? createTaskCard(task) : createTaskRow(task));
-      });
-    }
+    projectTasks.forEach((task) => {
+      list.append(activeView === "tiles" ? createTaskCard(task) : createTaskRow(task));
+    });
 
-    column.append(header, list);
-    board.append(column);
+    section.append(header, list);
+    board.append(section);
+    renderedSections += 1;
   });
+
+  if (renderedSections === 0) {
+    emptyState.hidden = false;
+  }
 }
 
 function setFilter(filter) {
@@ -278,30 +251,17 @@ viewButtons.forEach((button) => {
 
 function buildTasks(projects) {
   const resolvedTasks = [];
-  const unknownProjects = new Set();
-
   projects.forEach((project, projectIndex) => {
-    const pillar = resolveProjectPillar(project.name);
-    if (!pillar) {
-      unknownProjects.add(project.name);
-      return;
-    }
-
     project.tasks.forEach((task, taskIndex) => {
       resolvedTasks.push({
         text: task.text.trim(),
         category: task.category,
         projectName: project.name,
-        pillar,
         projectIndex,
         taskIndex
       });
     });
   });
-
-  if (unknownProjects.size > 0) {
-    throw new Error(`Nicht zugeordnete Projekte: ${[...unknownProjects].join(", ")}`);
-  }
 
   return resolvedTasks;
 }
@@ -319,6 +279,7 @@ async function loadDashboard() {
       tasks: project.tasks.filter(isValidTask)
     }));
 
+    projectOrder = projects.map((project) => project.name);
     assignProjectLabelColors(projects);
     tasks = buildTasks(projects);
     updatedDate.dateTime = data.updated;
