@@ -2,12 +2,12 @@
 
 ## Open
 
-- [ ] Map available company agents for the Creative Hub Agent Library
+- [ ] Align reduced Creative Hub contribution with Eve and Peter
   - Area: Creative Hub
   - Status: Open
-  - Next step: Meet Andrea Mendieta from AI Operations on 2026-08-18 at 14:00 to learn how to identify existing agents across the company and which sources or inventories can support a reliable overview.
-  - Context: Dominik will own the Agent Library going forward; Eve and Peter have continued the other Creative Hub workstreams.
-  - Source: Dominik confirmed the updated role split and Andrea meeting on 2026-08-12
+  - Next step: Tell Eve and Peter that Dominik will no longer run a separate company-wide agent-discovery workstream and will instead surface relevant agents through AI Enablement for possible Hub inclusion.
+  - Context: The Andrea Mendieta meeting did not reveal a reliable company-wide agent inventory. Dominik's bi-weekly AI Enablement Series already provides a recurring place to discover and present useful agents without duplicating work.
+  - Source: Dominik confirmed the reduced Creative Hub scope on 2026-08-23
 
 - [ ] Plan lightweight `#creative-ops-marketing` activation
   - Area: AI Strategy & Steering
@@ -22,20 +22,6 @@
   - Next step: Use signals from the AI Enablement Series and current team needs to identify and assess the next AI opportunity with meaningful unit-wide impact.
   - Context: Jorin supported this as part of Dominik's focused priority set rather than treating every decentralized AI idea as an equal delivery commitment.
   - Source: Jorin alignment confirmed by Dominik on 2026-08-20
-
-- [ ] Refine the AI Team-Check results LP for AI Enablement
-  - Area: AI Enablement Series
-  - Status: Partially complete
-  - Next step: Simplify the results landing page so the completed Team-Check leads clearly from current state and recurring barriers into the rationale for the AI Enablement Series.
-  - Context: The Team-Check is now the completed discovery phase of AI Enablement, not a separate active project. The results should remain anonymized and avoid team ranking.
-  - Source: Project consolidation confirmed on 2026-08-09
-
-- [ ] Finalize and hand over the AI Enablement landing page
-  - Area: AI Enablement Series
-  - Status: Partially complete
-  - Next step: Complete the simplified content logic, finish the HTML landing page and prepare it for handover to colleagues.
-  - Context: The landing page should explain the series and create a simple shared understanding of AI agents. It should not collect project inputs.
-  - Source: Current landing-page refinement and urgency confirmed on 2026-07-31
 
 - [ ] Define the Brand Agent MVP with Marie
   - Area: Brand Agent – Tone of Voice
@@ -129,6 +115,21 @@
   - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
 
 ## Completed
+
+- [x] Retire the standalone AI Team-Check results LP task
+  - Area: AI Enablement Series
+  - Completed: 2026-08-23
+  - Outcome: The completed Team-Check now serves as evidence inside the running AI Enablement Series; the standalone results-LP deliverable is no longer needed.
+
+- [x] Retire the standalone AI Enablement landing-page task
+  - Area: AI Enablement Series
+  - Completed: 2026-08-23
+  - Outcome: The successful kickoff, recurring Series format and lightweight communication model superseded the earlier general Enablement landing-page deliverable.
+
+- [x] Meet Andrea Mendieta about company agent discovery
+  - Area: Creative Hub
+  - Completed: 2026-08-18
+  - Outcome: Andrea confirmed that `Lunch & Learn - Meet my Agent` is currently in summer break and that ScoutAcademy contains only a small number of past session recordings, so no reliable company-wide agent inventory emerged from the meeting.
 
 - [x] Schedule the recurring AI Enablement sessions
   - Area: AI Enablement Series
