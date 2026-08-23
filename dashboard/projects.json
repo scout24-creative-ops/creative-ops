@@ -41,10 +41,16 @@
       ]
     },
     {
-      "name": "Landing Page Builder & Contentful",
+      "name": "LP Builder & Contentful MVP",
       "tasks": [
-        { "text": "LP-Builder-&-Contentful-MVP testen und Modulmodell definieren", "category": "focus" },
-        { "text": "Contentful-Migrationsvorgehen für bestehende Landingpages planen", "category": "focus" }
+        { "text": "SSOT-for-Images-Dokument für Matthias vorbereiten", "category": "focus" },
+        { "text": "Zielbild für LP Builder im Contentful-only-Setup klären", "category": "focus" }
+      ]
+    },
+    {
+      "name": "Contentful Migration",
+      "tasks": [
+        { "text": "Migrationskonzept für bestehende Landingpages ausarbeiten", "category": "focus" }
       ]
     },
     {
