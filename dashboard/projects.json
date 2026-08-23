@@ -14,16 +14,14 @@
           ]
         },
         {
-          "text": "Inhalte für die nächste AI Enablement Session festlegen",
+          "text": "Nächste AI Enablement Session am 08.09. vorbereiten",
           "category": "focus",
           "steps": [
-            "Agent für Show & Share auswählen",
-            "Explore-Thema auswählen"
+            "Learn-Thema finden und vorbereiten",
+            "Agent auswählen und selbst vorstellen oder vorstellen lassen",
+            "Diskussionsthema auswählen",
+            "Präsentation für die Session vorbereiten"
           ]
-        },
-        {
-          "text": "Agenda für die nächste AI Enablement Session zusammenstellen",
-          "category": "focus"
         }
       ]
     },
@@ -93,15 +91,6 @@
         {
           "text": "Bedarf für #creative-ops-marketing neu bewerten",
           "category": "continue"
-        },
-        {
-          "text": "Nächsten High-Impact-AI-Use-Case für die Unit identifizieren",
-          "category": "focus",
-          "steps": [
-            "Signale aus AI Enablement nutzen",
-            "Aktuelle Team-Bedarfe einbeziehen",
-            "Unit-weiten Impact bewerten"
-          ]
         },
         {
           "text": "Brand-Agent-MVP mit Marie definieren",
