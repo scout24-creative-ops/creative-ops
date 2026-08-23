@@ -14,15 +14,16 @@
       ]
     },
     {
-      "name": "Creative Hub",
+      "name": "Creative Ops",
       "tasks": [
-        { "text": "Reduzierten Creative-Hub-Beitrag mit Eve und Peter abstimmen", "category": "continue" }
+        { "text": "Creative-Hub-Beitrag auf AI-Enablement-Updates begrenzen", "category": "continue" },
+        { "text": "Bedarf für #creative-ops-marketing neu bewerten", "category": "continue" },
+        { "text": "Ciarans verbleibende Kapazität für LP Builder & Contentful prüfen", "category": "waiting" }
       ]
     },
     {
       "name": "AI Strategy & Steering",
       "tasks": [
-        { "text": "Aktivierungsplan für #creative-ops-marketing entwickeln", "category": "continue" },
         { "text": "Nächsten High-Impact-AI-Use-Case für die Unit identifizieren", "category": "focus" },
         { "text": "Abstimmungsrhythmus mit Allan und Lars neu aufsetzen", "category": "continue" },
         { "text": "Kanonische Projektnamen mit der Workspace-Struktur abgleichen", "category": "focus" }
@@ -64,12 +65,6 @@
       "name": "Newsletter Automation",
       "tasks": [
         { "text": "Newsletter-Automation mit Steffi besprechen", "category": "continue" }
-      ]
-    },
-    {
-      "name": "Landing Page Builder / Design Library",
-      "tasks": [
-        { "text": "Ciarans Review für LP Builder und Design Library nachhalten", "category": "waiting" }
       ]
     },
     {
