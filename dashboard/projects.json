@@ -30,36 +30,130 @@
     {
       "name": "LP Builder & Contentful MVP",
       "tasks": [
-        { "text": "SSOT-for-Images-Dokument für Matthias vorbereiten", "category": "focus" },
-        { "text": "Zielbild für LP Builder im Contentful-only-Setup klären", "category": "focus" }
+        {
+          "text": "SSOT-for-Images-Dokument für Matthias vorbereiten",
+          "category": "focus",
+          "steps": [
+            "Relevanten Kontext bündeln",
+            "Offene Fragen festhalten",
+            "Benötigte Entscheidungen vorbereiten"
+          ]
+        },
+        {
+          "text": "Zielbild für LP Builder im Contentful-only-Setup klären",
+          "category": "focus",
+          "steps": [
+            "Rolle des LP Builders definieren",
+            "Slug- und URL-Logik klären",
+            "Verantwortung zwischen Builder und Contentful abgrenzen"
+          ]
+        }
       ]
     },
     {
       "name": "Contentful Migration",
       "tasks": [
-        { "text": "Migrationskonzept für bestehende Landingpages ausarbeiten", "category": "focus" }
+        {
+          "text": "Migrationskonzept für bestehende Landingpages ausarbeiten",
+          "category": "focus"
+        }
       ]
     },
     {
       "name": "E-Mail Automation Professional",
       "tasks": [
-        { "text": "Nächste E-Mail-Automation-Use-Cases mit B2B identifizieren", "category": "focus" },
-        { "text": "Wiederverwendbare E-Mail-Standards für Codex definieren", "category": "continue" }
+        {
+          "text": "Nächste E-Mail-Automation-Use-Cases mit B2B identifizieren",
+          "category": "focus",
+          "steps": [
+            "B2B-Bedarf von Juliane als konkreten Test nutzen",
+            "Weitere geeignete Use Cases bewerten",
+            "Nächsten Automationsfokus priorisieren"
+          ]
+        },
+        {
+          "text": "Wiederverwendbare E-Mail-Standards für Codex definieren",
+          "category": "continue",
+          "steps": [
+            "Bestätigte Rendering-Learnings prüfen",
+            "Repository-Regeln ableiten",
+            "Wiederverwendbare Komponenten definieren",
+            "Automatisierte HTML-Checks festlegen"
+          ]
+        }
       ]
     },
     {
       "name": "Creative Ops",
       "tasks": [
-        { "text": "Creative-Hub-Beitrag auf AI-Enablement-Updates begrenzen", "category": "continue" },
-        { "text": "Bedarf für #creative-ops-marketing neu bewerten", "category": "continue" },
-        { "text": "Nächsten High-Impact-AI-Use-Case für die Unit identifizieren", "category": "focus" },
-        { "text": "Brand-Agent-MVP mit Marie definieren", "category": "continue" },
-        { "text": "Ersten Content-Marketing-Use-Case mit Yvonne definieren", "category": "continue" },
-        { "text": "Newsletter-Automation mit Steffi besprechen", "category": "continue" },
-        { "text": "Abstimmungsrhythmus mit Allan und Lars neu aufsetzen", "category": "continue" },
-        { "text": "Kanonische Projektnamen mit der Workspace-Struktur abgleichen", "category": "focus" },
-        { "text": "Ciarans verbleibende Kapazität für LP Builder & Contentful prüfen", "category": "waiting" },
-        { "text": "Coupa-AI-Support klären und PO-Agent prüfen", "category": "waiting" }
+        {
+          "text": "Creative-Hub-Beitrag auf AI-Enablement-Updates begrenzen",
+          "category": "continue"
+        },
+        {
+          "text": "Bedarf für #creative-ops-marketing neu bewerten",
+          "category": "continue"
+        },
+        {
+          "text": "Nächsten High-Impact-AI-Use-Case für die Unit identifizieren",
+          "category": "focus",
+          "steps": [
+            "Signale aus AI Enablement nutzen",
+            "Aktuelle Team-Bedarfe einbeziehen",
+            "Unit-weiten Impact bewerten"
+          ]
+        },
+        {
+          "text": "Brand-Agent-MVP mit Marie definieren",
+          "category": "continue",
+          "steps": [
+            "Kleinsten testbaren MVP-Scope festlegen",
+            "Ersten Testfall definieren",
+            "Erfolgskriterien abstimmen",
+            "Verantwortlichkeiten und erste Umsetzungsschritte klären"
+          ]
+        },
+        {
+          "text": "Ersten Content-Marketing-Use-Case mit Yvonne definieren",
+          "category": "continue"
+        },
+        {
+          "text": "Newsletter-Automation mit Steffi besprechen",
+          "category": "continue",
+          "steps": [
+            "Aktuellen Workflow verstehen",
+            "Bestehende Agent- oder Automation-Arbeit prüfen",
+            "Größten manuellen Aufwand identifizieren",
+            "Kleinsten sinnvollen nächsten Schritt festlegen"
+          ]
+        },
+        {
+          "text": "Abstimmungsrhythmus mit Allan und Lars neu aufsetzen",
+          "category": "continue"
+        },
+        {
+          "text": "Kanonische Projektnamen mit der Workspace-Struktur abgleichen",
+          "category": "focus",
+          "steps": [
+            "Projektnamen mit Workspace und Repositories vergleichen",
+            "Regel für sichtbare Projekttitel definieren",
+            "Nested Projects und technische Namen abgrenzen"
+          ]
+        },
+        {
+          "text": "Ciarans verbleibende Kapazität für LP Builder & Contentful prüfen",
+          "category": "waiting"
+        },
+        {
+          "text": "Coupa-AI-Support klären und PO-Agent prüfen",
+          "category": "waiting",
+          "steps": [
+            "Zentrale Zuständigkeit und bestehende Unterstützung klären",
+            "Bestehende Lösungen oder Pläne prüfen",
+            "Franziskas PO-Status-Agent ansehen",
+            "Sinnvollen kleinen nächsten Schritt bewerten"
+          ]
+        }
       ]
     }
   ]
