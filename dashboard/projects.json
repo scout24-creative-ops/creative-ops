@@ -14,34 +14,6 @@
       ]
     },
     {
-      "name": "Creative Ops",
-      "tasks": [
-        { "text": "Creative-Hub-Beitrag auf AI-Enablement-Updates begrenzen", "category": "continue" },
-        { "text": "Bedarf für #creative-ops-marketing neu bewerten", "category": "continue" },
-        { "text": "Ciarans verbleibende Kapazität für LP Builder & Contentful prüfen", "category": "waiting" }
-      ]
-    },
-    {
-      "name": "AI Strategy & Steering",
-      "tasks": [
-        { "text": "Nächsten High-Impact-AI-Use-Case für die Unit identifizieren", "category": "focus" },
-        { "text": "Abstimmungsrhythmus mit Allan und Lars neu aufsetzen", "category": "continue" },
-        { "text": "Kanonische Projektnamen mit der Workspace-Struktur abgleichen", "category": "focus" }
-      ]
-    },
-    {
-      "name": "Brand Agent – Tone of Voice",
-      "tasks": [
-        { "text": "Brand-Agent-MVP mit Marie definieren", "category": "continue" }
-      ]
-    },
-    {
-      "name": "Content Marketing Agent",
-      "tasks": [
-        { "text": "Ersten Content-Marketing-Use-Case mit Yvonne definieren", "category": "continue" }
-      ]
-    },
-    {
       "name": "LP Builder & Contentful MVP",
       "tasks": [
         { "text": "SSOT-for-Images-Dokument für Matthias vorbereiten", "category": "focus" },
@@ -55,21 +27,24 @@
       ]
     },
     {
-      "name": "E-Mail Automation",
+      "name": "E-Mail Automation Professional",
       "tasks": [
         { "text": "Nächste E-Mail-Automation-Use-Cases mit B2B identifizieren", "category": "focus" },
         { "text": "Wiederverwendbare E-Mail-Standards für Codex definieren", "category": "continue" }
       ]
     },
     {
-      "name": "Newsletter Automation",
+      "name": "Creative Ops",
       "tasks": [
-        { "text": "Newsletter-Automation mit Steffi besprechen", "category": "continue" }
-      ]
-    },
-    {
-      "name": "Coupa AI Support",
-      "tasks": [
+        { "text": "Creative-Hub-Beitrag auf AI-Enablement-Updates begrenzen", "category": "continue" },
+        { "text": "Bedarf für #creative-ops-marketing neu bewerten", "category": "continue" },
+        { "text": "Nächsten High-Impact-AI-Use-Case für die Unit identifizieren", "category": "focus" },
+        { "text": "Brand-Agent-MVP mit Marie definieren", "category": "continue" },
+        { "text": "Ersten Content-Marketing-Use-Case mit Yvonne definieren", "category": "continue" },
+        { "text": "Newsletter-Automation mit Steffi besprechen", "category": "continue" },
+        { "text": "Abstimmungsrhythmus mit Allan und Lars neu aufsetzen", "category": "continue" },
+        { "text": "Kanonische Projektnamen mit der Workspace-Struktur abgleichen", "category": "focus" },
+        { "text": "Ciarans verbleibende Kapazität für LP Builder & Contentful prüfen", "category": "waiting" },
         { "text": "Coupa-AI-Support klären und PO-Agent prüfen", "category": "waiting" }
       ]
     }
