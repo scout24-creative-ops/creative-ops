@@ -49,6 +49,18 @@ function normalizeTaskSteps(steps) {
     .filter(Boolean);
 }
 
+function normalizeTaskId(id) {
+  if (typeof id === "string") {
+    return id.trim();
+  }
+
+  if (typeof id === "number" && Number.isFinite(id)) {
+    return String(id);
+  }
+
+  return "";
+}
+
 function normalizeProjectName(name) {
   return String(name).trim();
 }
@@ -97,15 +109,25 @@ function createTaskCard(task) {
   card.className = `task-card task-card--${task.category}`;
   card.style.setProperty("--project-accent", colorForProject(task.projectName));
 
-  const category = document.createElement("span");
-  category.className = `task-card__status task-card__status--${task.category}`;
-  category.textContent = categoryLabels[task.category];
+  if (task.id) {
+    const id = document.createElement("span");
+    id.className = "task-card__id";
+    id.textContent = task.id;
+    card.append(id);
+  }
+
+  if (task.category === "focus") {
+    const category = document.createElement("span");
+    category.className = "task-card__status task-card__status--focus";
+    category.textContent = categoryLabels.focus;
+    card.append(category);
+  }
 
   const title = document.createElement("p");
   title.className = "task-card__title";
   title.textContent = task.text;
 
-  card.append(category, title);
+  card.append(title);
 
   if (task.steps.length > 0) {
     const steps = document.createElement("ul");
@@ -197,6 +219,7 @@ function buildTasks(projects) {
   projects.forEach((project) => {
     project.tasks.forEach((task) => {
       resolvedTasks.push({
+        id: normalizeTaskId(task.id),
         text: task.text.trim(),
         category: task.category,
         steps: normalizeTaskSteps(task.steps),
