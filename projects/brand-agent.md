@@ -11,7 +11,8 @@ Develop a Brand Agent that provides reusable brand tone-of-voice guidance to oth
 - The tone-of-voice logic has also been implemented as a reusable Skill, as Dominik requested, so it can later be integrated into other agents.
 - Dominik continues to support the project through structure, scope, prioritization, enablement and quality guidance.
 - The Brand team remains responsible for defining the actual tone-of-voice standards and quality criteria.
-- The remaining focus is review, testing and presentation readiness rather than defining the MVP from scratch.
+- Dominik and Marie have a preparation meeting scheduled for 2026-09-04, and Marie will present the current state in the AI Enablement session on 2026-09-08.
+- There is no separate active follow-up task before those scheduled events. Further next steps will be decided after the 2026-09-08 presentation.
 
 ## MVP Hypothesis
 
@@ -74,9 +75,9 @@ Dominik and Marie will review the planned contribution together on 2026-09-04 so
 
 ## Next Steps
 
-- Review the Brand Agent, reusable Skill and planned AI Enablement contribution with Marie on 2026-09-04.
-- Validate the near-complete MVP and identify any remaining changes before broader reuse.
-- Use Marie's 2026-09-08 AI Enablement contribution as a practical learning case for Agent-versus-Skill decisions.
+- Hold the already scheduled preparation meeting with Marie on 2026-09-04.
+- Use Marie's 2026-09-08 AI Enablement contribution to present the current state and practical learnings.
+- Decide further Brand Agent next steps only after the 2026-09-08 presentation.
 
 ## Last Confirmed
 
