@@ -1,6 +1,6 @@
 # Relevanter Organisationskontext – vollständig
 
-Stand: 23.08.2026
+Stand: 24.08.2026
 
 Diese Datei ist die maßgebliche Version für Dominiks relevante Organisations- und Zusammenarbeitsstruktur.
 
@@ -81,6 +81,11 @@ Relevantes vollständiges Team:
 - Lars Brenncke — Lead AI Operations
 - Florian Kube — Head of AI Solutions & Analytics
 - Ana Cristina De la Colin… — Senior Business Analyst
+
+## Content / Newsletter
+
+- Stefanie Mersmann — Content Team; verantwortlich für die Newsletter-Inhalte, den Aufbau der Mails und die zugehörigen Pages.
+- Die Newsletter dienen primär der Bewerbung von ImmoScout24-Produkten, sind redaktionell aber als Newsletter aufgebaut.
 
 ## AI Enablement / Talent & Org Development
 
