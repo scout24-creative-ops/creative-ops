@@ -72,13 +72,6 @@
   - Context: Jorin supported E-Mail Automation as a priority area. The next step is use-case selection rather than expanding generic self-service email creation.
   - Source: Jorin alignment and Dominik's next-step definition on 2026-08-20
 
-- [ ] Discuss Newsletter Automation with Steffi
-  - Area: Creative Ops
-  - Status: Open
-  - Next step: Hold a discovery conversation to understand the current workflow, existing agent or automation work, biggest manual burden and the smallest useful next step.
-  - Context: The initiative is active in Dominik's work organization because a concrete follow-up exists; links to Contentful, Landing Page Builder and email automation should be considered after discovery.
-  - Source: Dominik confirmed the project treatment on 2026-07-31
-
 - [ ] Re-establish the Allan-and-Lars alignment cadence
   - Area: Creative Ops
   - Status: Open
@@ -129,6 +122,11 @@
   - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
 
 ## Completed
+
+- [x] Complete Newsletter Automation discovery with Stefanie
+  - Area: Newsletter Automation
+  - Completed: 2026-08-24
+  - Outcome: Dominik and Stefanie Mersmann confirmed that no newsletter workflow should currently be automated because missing user-journey and targeting signals are the main constraint on relevant content; reassess only if those signals materially improve.
 
 - [x] Retire the standalone AI Team-Check results LP task
   - Area: AI Enablement Series
