@@ -22,6 +22,8 @@ Dominik represents Creative Operations and landing-page requirements, validates 
 
 His immediate role is to establish the current MVP status, identify the remaining gaps and then decide whether further alignment with Beatrice and Mukhammadjon is needed. He also needs to clarify the post-MVP direction for modules and the design-system approach.
 
+For Contentful Migration, Dominik owns the initial migration framing before broader team alignment: first clarify slug and URL logic, then develop the first migration concept, then use that concept as the basis for a kickoff with the B2B Product Marketing team.
+
 ## Key Stakeholders
 
 - Mukhammadjon Kayumov for the GPT Actions / Contentful integration implementation
@@ -29,6 +31,7 @@ His immediate role is to establish the current MVP status, identify the remainin
 - Matthias Brandstätter for Contentful ownership and strategic platform direction
 - Stefan Harssdorf for Contentful architecture and technical assessment
 - Contentful team
+- B2B Product Marketing team for migration kickoff and practical rollout alignment
 - Marketing team leads for Seeker, Homeowner, Professional and B2B
 - SEO and UX
 - Jorin and Eve for management alignment when needed
@@ -46,6 +49,7 @@ His immediate role is to establish the current MVP status, identify the remainin
 - Production publishing was not part of the validated MVP at the last technical confirmation because the LP Builder renderer/content type had not been transferred to `pro`.
 - Contentful migration is a separate conceptual workstream and should not be bundled into the MVP task list.
 - Slug and URL logic for existing pages belongs to the Contentful Migration workstream rather than the current MVP task set.
+- The migration sequence is: define slug and URL logic first, then draft the migration concept, then hold a kickoff with the B2B Product Marketing team.
 - Concrete implementation work after the MVP should follow from a fresh status check and the post-MVP module/design-system decision.
 
 ## Important Developments
@@ -59,6 +63,7 @@ His immediate role is to establish the current MVP status, identify the remainin
 - 2026-08-20: Jorin supported the project as one of Dominik's priority workstreams and agreed with treating Contentful migration as a separate conceptual next step rather than assuming migration execution is already defined.
 - 2026-08-21: The MVP was described as close to completion: generation in the Landing Page Builder, direct transfer to Contentful and immediate preview were working end to end in `next`.
 - 2026-08-24: Dominik changed the immediate task sequence. He will first review the actual MVP status, then decide whether an alignment with Beatrice and Mukhammadjon is needed. The separate post-MVP question is how modules and the design-system approach should continue. Slug and URL logic moved to Contentful Migration.
+- 2026-08-24: Dominik clarified the migration sequence: slug and URL logic first, initial migration concept second, and then a kickoff with the B2B Product Marketing team to align the practical approach.
 
 ## Open Questions and Risks
 
@@ -69,6 +74,7 @@ His immediate role is to establish the current MVP status, identify the remainin
 - The MCP/Action should not report or imply successful production publication while production publishing is unavailable.
 - Some visual spacing and padding in the Contentful preview previously differed from the current LP Builder/AEM rendering; these appeared to be refinement work rather than a blocker for the MVP integration.
 - Whether Claude Design, a future agent, or the Custom GPT should become the long-term authoring surface after the Contentful workflow is stable.
+- Which landing-page groups should be included first in migration and how the B2B Product Marketing team wants to sequence execution after the initial concept.
 
 ## Next Steps
 
@@ -78,11 +84,11 @@ His immediate role is to establish the current MVP status, identify the remainin
 
 ## Contentful Migration Boundary
 
-Migration of existing landing pages is a separate workstream. The migration concept should be developed before execution is planned. Slug, URL and redirect handling belong to that migration work rather than the immediate MVP task set.
+Migration of existing landing pages is a separate workstream. The first migration task is to define the slug and URL logic for the future Contentful setup. Once that is clear enough, Dominik will draft the migration concept for existing landing pages. After the first concept exists, he will schedule a kickoff with the B2B Product Marketing team to align scope, approach and how to proceed.
 
 ## Last Confirmed
 
-Current MVP task sequence, Beatrice/Mukhammadjon follow-up logic and post-MVP module/design-system question confirmed by Dominik on 2026-08-24. The last technically verified implementation state remains the working creation, transfer and preview flow in `next`; a fresh status check is now the immediate next action.
+Current MVP task sequence, Contentful Migration sequence and post-MVP module/design-system question confirmed by Dominik on 2026-08-24. The last technically verified implementation state remains the working creation, transfer and preview flow in `next`; a fresh status check is now the immediate MVP action.
 
 ## Related Context
 
