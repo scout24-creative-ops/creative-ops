@@ -29,8 +29,8 @@ h1 { margin: 0; color: #1e1f20; font-size: clamp(2rem, 4vw, 3.2rem); letter-spac
 .project-section__header { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; min-height: 3.75rem; margin: 0 0 18px; padding: 12px 0 12px; }
 .project-section__title { margin: 0; color: #2a2b2e; font-size: 1.05rem; font-weight: 700; line-height: 1.25; letter-spacing: -.02em; }
 .project-section__items { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
-.task-card { position: relative; display: flex; flex-direction: column; gap: 12px; min-width: 0; padding: 28px 26px 24px; border: 1px solid #e2e1db; border-radius: 14px; background: var(--project-accent, #fff); color: #242526; font-family: "Make It Better", Arial, Roboto, sans-serif; font-size: 12px; font-weight: 400; line-height: 18px; width: 100%; }
-.task-card__id { position: absolute; top: 22px; right: 22px; color: #7a7d77; font-size: 10px; line-height: 1; font-weight: 700; letter-spacing: .06em; white-space: nowrap; }
+.task-card { position: relative; display: flex; flex-direction: column; gap: 12px; min-width: 0; padding: 28px 26px 42px; border: 1px solid #e2e1db; border-radius: 14px; background: var(--project-accent, #fff); color: #242526; font-family: "Make It Better", Arial, Roboto, sans-serif; font-size: 12px; font-weight: 400; line-height: 18px; width: 100%; }
+.task-card__id { position: absolute; right: 22px; bottom: 16px; color: rgba(90, 93, 87, 0.58); font-size: 9px; line-height: 1; font-weight: 600; letter-spacing: .08em; white-space: nowrap; }
 .task-card__status { align-self: flex-start; margin: 0; padding: 1px 7px; border: 1px solid #e0d2aa; border-radius: 999px; color: #836628; background: #fbf3da; font-size: 10px; line-height: 16px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; white-space: nowrap; }
 .task-card__status--focus { border-color: #e0d2aa; color: #836628; background: #fbf3da; }
 .task-card__title { margin: 0; color: #232427; font-size: 15px; line-height: 21px; font-weight: 700; overflow-wrap: anywhere; }
@@ -49,8 +49,8 @@ h1 { margin: 0; color: #1e1f20; font-size: clamp(2rem, 4vw, 3.2rem); letter-spac
   .filter-button { padding-inline: 11px; }
   .task-board { gap: 18px; }
   .project-section__header { min-height: 0; margin-bottom: 14px; padding: 10px 0 10px; }
-  .task-card { padding: 24px 20px 20px; border-radius: 12px; gap: 12px; }
-  .task-card__id { top: 18px; right: 18px; }
+  .task-card { padding: 24px 20px 38px; border-radius: 12px; gap: 12px; }
+  .task-card__id { right: 18px; bottom: 12px; }
   .task-card__title { font-size: 14px; line-height: 20px; }
   .task-card__steps { gap: 6px; font-size: 0.86rem; }
 }

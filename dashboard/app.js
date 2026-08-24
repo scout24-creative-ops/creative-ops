@@ -51,7 +51,7 @@ function normalizeTaskSteps(steps) {
 
 function normalizeTaskId(id) {
   if (typeof id === "string") {
-    return id.trim();
+    return id.trim().replace(/^#/, "");
   }
 
   if (typeof id === "number" && Number.isFinite(id)) {
@@ -112,7 +112,7 @@ function createTaskCard(task) {
   if (task.id) {
     const id = document.createElement("span");
     id.className = "task-card__id";
-    id.textContent = task.id;
+    id.textContent = `#${task.id}`;
     card.append(id);
   }
 
