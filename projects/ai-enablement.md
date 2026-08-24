@@ -88,6 +88,8 @@ The AI Enablement Series runs bi-weekly on Tuesdays from 12:30 to 14:00, startin
 
 The Series uses Learn, Show & Share and Explore as the recurring content pillars. Participation is intentionally active: colleagues are expected to contribute topics, existing solutions, learnings, questions and opportunities so that the Series becomes a shared format rather than a centrally prepared presentation series.
 
+For the first recurring session on 2026-09-08, Marie-Lord Lumumba has agreed to contribute a Show & Share slot around the Brand Agent – Tone of Voice. She will present the agent, explain how she built it, show the reusable Skill approach and share her research on when to use an Agent, when to use a Skill and when another setup may be more appropriate. Dominik and Marie will review the planned contribution together on 2026-09-04.
+
 Jorin supported the revised enablement direction on 2026-08-20, including the separation between broad enablement and reliable delivery for selected complex or strategically relevant AI solutions.
 
 Recurring preparation is now kept deliberately compact: one reusable template package plus one bi-weekly session-preparation task.
@@ -119,7 +121,10 @@ The `Learn`, `Show & Share` and `Explore` topic lists above are the current star
 
 - Date: 2026-09-08, 12:30–14:00
 - Room: Charlottenburg (07-405)
-- Preparation: find and prepare one Learn topic; select an agent to present or arrange for someone else to present it; choose the discussion topic; prepare the session presentation.
+- Confirmed contributor: Marie-Lord Lumumba with the Brand Agent – Tone of Voice as a Show & Share contribution.
+- Marie's planned contribution: agent demo, implementation approach, reusable Skill approach and practical framing for when to use an Agent versus a Skill or another setup.
+- Preparation alignment with Marie: 2026-09-04.
+- Remaining preparation: find and prepare one Learn topic if needed, choose the discussion topic and prepare the session presentation.
 
 ### Reusable Formats
 
@@ -197,6 +202,7 @@ Coordination runs through `#comms-team-only`.
 - Use the repository as the maintained source for topic ideas, next-session planning, Slack post patterns and relevant resources instead of introducing another planning tool.
 - Dominik curates and leads the format, but the teams are expected to contribute content over time.
 - Keep recurring preparation represented by one template task and one bi-weekly session-preparation task.
+- Use colleague-led Show & Share contributions such as Marie's Brand Agent session to make practical implementation learnings visible.
 - Jorin supported this revised direction on 2026-08-20.
 
 ## Risks and Open Questions
@@ -208,8 +214,9 @@ Coordination runs through `#comms-team-only`.
 ## Next Steps
 
 1. Create the reusable AI Enablement template package.
-2. Prepare the 2026-09-08 session: Learn topic, agent presentation, discussion topic and session presentation.
+2. Review Marie's Brand Agent contribution on 2026-09-04.
+3. Prepare the remaining parts of the 2026-09-08 session: Learn topic if needed, discussion topic and session presentation.
 
 ## Last Confirmed
 
-Recurring preparation model consolidated on 2026-08-23. The Series remains scheduled bi-weekly on Tuesdays, 12:30–14:00, starting 2026-09-08, in Charlottenburg (07-405).
+Updated on 2026-08-24 with Marie-Lord Lumumba's confirmed Brand Agent contribution for the first recurring session. The Series remains scheduled bi-weekly on Tuesdays, 12:30–14:00, starting 2026-09-08, in Charlottenburg (07-405).
