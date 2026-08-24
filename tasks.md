@@ -23,13 +23,6 @@
   - Context: Maintaining a separate discovery or curation workstream for the Hub would create too much additional workload. Eve and Peter can use relevant AI Enablement outputs for Hub updates when useful.
   - Source: Dominik clarified the Creative Hub contribution model on 2026-08-23
 
-- [ ] Reassess the need for `#creative-ops-marketing`
-  - Area: Creative Ops
-  - Status: Open
-  - Next step: Reassess whether the channel still serves a useful purpose before investing in activation, recurring content or automation.
-  - Context: The future role and communication needs are still evolving, so it is not yet clear whether the channel is needed at all. Keep the topic open without committing to an activation plan.
-  - Source: Dominik clarified the channel uncertainty on 2026-08-23
-
 - [ ] Review Brand Agent and reusable Skill with Marie on 2026-09-04
   - Area: Creative Ops
   - Status: Open
@@ -37,40 +30,61 @@
   - Context: Marie has implemented the agent and Skill and will present both in the AI Enablement session on 2026-09-08. Dominik will inspect the solution and planned presentation before the session.
   - Source: Dominik and Marie aligned the next step on 2026-08-24
 
-- [ ] Define the first Content Marketing Agent use case with Yvonne
+- [ ] Contact Yvonne about the Content Marketing Agent
   - Area: Creative Ops
   - Status: Open
-  - Next step: Define the first concrete use case together with Yvonne.
-  - Context: The task is confirmed and remains in the current continuation queue; Yvonne and the relevant team retain functional and implementation ownership.
-  - Source: Dominik confirmed the task on 2026-07-31
+  - Next step: Send Yvonne a short Slack message to restart the topic and clarify whether there is still a concrete use case to pursue.
+  - Context: The previous task to define the first use case was too far ahead; the immediate action is to reconnect first.
+  - Source: Dominik clarified the next action on 2026-08-24
 
-- [ ] Prepare the SSOT for Images document for Matthias
+- [ ] Check the current LP Builder & Contentful MVP status
   - Area: LP Builder & Contentful MVP
   - Status: Open
-  - Next step: Prepare a concise working document with the relevant context, questions and decisions needed for the upcoming SSOT for Images alignment with Matthias.
-  - Context: The meeting itself is already in the calendar and is not tracked as a dashboard task. The preparation document is the concrete next action.
-  - Source: Dominik clarified the current Contentful MVP next steps on 2026-08-23
+  - Next step: Review the current state of the MVP and identify what is still missing before considering the next alignment.
+  - Context: The end-to-end flow was previously close to completion in `next`; Dominik now wants a fresh status check before planning further work.
+  - Source: Dominik clarified the MVP next step on 2026-08-24
 
-- [ ] Clarify the LP Builder target model for a Contentful-only setup
+- [ ] Plan the next LP Builder MVP alignment with Bea and Mukhammadjon
   - Area: LP Builder & Contentful MVP
   - Status: Open
-  - Next step: Define how the Landing Page Builder should continue when Contentful becomes the target environment, including the future slug and URL logic instead of the current directory-based structure and the boundary between Builder and Contentful responsibilities.
-  - Context: The core MVP flow is working in `next`, but the future product model and concrete follow-up implementation steps are intentionally still open.
-  - Source: Dominik clarified the current Contentful MVP next steps on 2026-08-23
+  - Next step: After the status check, decide whether an alignment with Beatrice and Mukhammadjon is needed and schedule it if useful.
+  - Context: The meeting depends on what the current MVP review shows and should not be treated as a fixed appointment yet.
+  - Source: Dominik clarified the MVP next step on 2026-08-24
+
+- [ ] Clarify LP Builder module development after the MVP
+  - Area: LP Builder & Contentful MVP
+  - Status: Open
+  - Next step: Clarify how the LP Builder should continue after the MVP, especially how modules and the design-system approach should be developed further.
+  - Context: This is the product-level follow-up once the current MVP is sufficiently complete.
+  - Source: Dominik clarified the post-MVP question on 2026-08-24
 
 - [ ] Develop the Contentful migration concept for existing landing pages
   - Area: Contentful Migration
   - Status: Open
   - Next step: Develop the conceptual approach for migrating existing landing pages to the future LP Builder and Contentful setup.
-  - Context: Migration is now treated as a separate workstream from the MVP. The concept has not yet been started and should define the approach before execution work is planned.
+  - Context: Migration is a separate workstream from the MVP and should be conceptually defined before execution work is planned.
   - Source: Dominik clarified the current Contentful migration status on 2026-08-23
 
-- [ ] Identify the next E-Mail Automation use cases with B2B
+- [ ] Define slug and URL logic for Contentful migration
+  - Area: Contentful Migration
+  - Status: Open
+  - Next step: Define how slugs and URLs should work when existing landing pages move into the Contentful setup.
+  - Context: The URL model belongs to migration rather than the current MVP work because it affects how existing pages are transferred and addressed in the future setup.
+  - Source: Dominik reassigned the topic to Contentful Migration on 2026-08-24
+
+- [ ] Set up B2B automation discovery with Juliane
   - Area: E-Mail Automation Professional
   - Status: Open
-  - Next step: Assess and prioritize the next automation use cases, using Juliane's B2B need as the next concrete test.
-  - Context: Jorin supported E-Mail Automation as a priority area. The next step is use-case selection rather than expanding generic self-service email creation.
-  - Source: Jorin alignment and Dominik's next-step definition on 2026-08-20
+  - Next step: Schedule a meeting with Juliane and ask her to define concrete automation ideas, relevant triggers and the desired reaction or offer for each trigger.
+  - Context: A useful example is a professional customer's project losing visibility and then receiving a relevant upgrade or reach offer. The business logic needs to be defined before a solution is designed.
+  - Source: Dominik clarified the B2B automation next step on 2026-08-24
+
+- [ ] Clarify Salesforce feasibility for B2B automation
+  - Area: E-Mail Automation Professional
+  - Status: Open
+  - Next step: Clarify how Data Lake signals and Salesforce could support a trigger-based B2B automation flow and whether a setup analogous in principle to HeyImmo with Iterable is feasible.
+  - Context: In a discussion on 2026-08-24, Taha explained that he works with the Data Lake and builds setups such as the LOFT visibility project, but could not confirm whether Salesforce can be used in the same way as Iterable. The route appears potentially feasible but needs technical clarification.
+  - Source: Dominik's discussion with Taha on 2026-08-24
 
 - [ ] Re-establish the Allan-and-Lars alignment cadence
   - Area: Creative Ops
@@ -78,20 +92,6 @@
   - Next step: Agree whether future check-ins should be separate or joint and confirm a useful cadence before creating new recurring calendar series.
   - Context: The former recurring meetings appear to have been cancelled when paused for vacation; the previous rhythm is uncertain.
   - Source: Dominik confirmed the task on 2026-07-22
-
-- [ ] Define reusable email standards for Codex
-  - Area: E-Mail Automation Professional
-  - Status: Open
-  - Next step: Review confirmed Plus FOMO and HeyImmo rendering learnings and derive the first approved repository rules, reusable components and automated HTML checks.
-  - Context: Only patterns confirmed through real rendering tests should become global standards; detailed requirements belong in the relevant technical context.
-  - Source: Plus FOMO learnings and Dominik's confirmation on 2026-07-29
-
-- [ ] Align canonical project names with workspace structure
-  - Area: Creative Ops
-  - Status: Open
-  - Next step: Compare the agreed canonical project names with the actual VS Code workspace, repository and subproject structure, then define a clear naming rule for visible project titles, nested projects and technical names.
-  - Context: Not every project exists at the workspace's top level, so the naming model needs to distinguish canonical display names from repositories, folders and nested workstreams before any wider renaming is attempted.
-  - Source: Project naming discussion confirmed 2026-07-31
 
 ## Waiting
 
@@ -102,12 +102,12 @@
   - Dominik's next step: Once the remaining hours are clear, assess whether Ciaran can support further LP Builder development in the Contentful context.
   - Context: The previous LP Builder / Design Library review follow-up is obsolete and is replaced by this capacity-based decision.
 
-- [ ] Clarify Coupa AI support and review the existing PO agent
+- [ ] Clarify Coupa AI support
   - Area: Creative Ops
   - Status: Waiting for another person or decision
   - Waiting for: Jana Homfeldt's response about the responsible Coupa contact and existing or planned AI support
-  - Dominik's next step: After clarification, speak with Franziska Stober about her Outlook-based PO-status agent and assess reusable learnings.
-  - Context: Understand central ownership and existing plans before defining solution work.
+  - Dominik's next step: Reassess the topic once the central ownership and support situation are clear.
+  - Context: The separate PO-agent review is no longer part of the active dashboard task.
 
 ## Suggestions
 
