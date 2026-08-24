@@ -10,20 +10,22 @@
   <body>
     <main class="dashboard-shell">
       <header class="page-header">
-        <div>
-          <p class="eyebrow">Creative Ops</p>
-          <h1>Project Dashboard</h1>
-          <p class="subtitle">Offene nächste Schritte über alle laufenden Projekte.</p>
-        </div>
-        <p class="updated">Letzte Aktualisierung: <time id="updated-date" datetime="">Wird geladen …</time></p>
-      </header>
+        <div class="page-header__sticky">
+          <div class="page-header__title">
+            <p class="eyebrow">Creative Ops</p>
+            <h1>Project Dashboard</h1>
+          </div>
 
-      <section class="toolbar" aria-label="Projektfilter">
-        <div class="filter-group" role="group" aria-label="Aufgaben filtern">
-          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Alle</button>
-          <button class="filter-button" type="button" data-filter="focus" aria-pressed="false">Fokus</button>
+          <div class="filter-group" role="group" aria-label="Aufgaben filtern">
+            <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Alle</button>
+            <button class="filter-button" type="button" data-filter="focus" aria-pressed="false">Fokus</button>
+          </div>
         </div>
-      </section>
+        <div class="page-header__meta">
+          <p class="subtitle">Offene nächste Schritte über alle laufenden Projekte.</p>
+          <p class="updated">Letzte Aktualisierung: <time id="updated-date" datetime="">Wird geladen …</time></p>
+        </div>
+      </header>
 
       <section aria-label="Aufgabenübersicht">
         <div id="project-grid" class="task-board" aria-live="polite"></div>

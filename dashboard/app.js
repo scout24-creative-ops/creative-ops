@@ -30,6 +30,7 @@ const emptyState = document.querySelector("#empty-state");
 const errorState = document.querySelector("#error-state");
 const updatedDate = document.querySelector("#updated-date");
 const filterButtons = document.querySelectorAll("[data-filter]");
+const stickyHeader = document.querySelector(".page-header__sticky");
 
 let tasks = [];
 let projectOrder = [];
@@ -96,6 +97,17 @@ function assignProjectLabelColors(projectList) {
 
 function colorForProject(name) {
   return projectLabelColors.get(name) ?? taskLabelPalette[hashProjectName(name) % taskLabelPalette.length];
+}
+
+function updateStickyOffsets() {
+  if (!stickyHeader) {
+    return;
+  }
+
+  document.documentElement.style.setProperty(
+    "--dashboard-sticky-header-height",
+    `${Math.ceil(stickyHeader.getBoundingClientRect().height)}px`
+  );
 }
 
 function createTaskCard(task) {
@@ -232,10 +244,25 @@ async function loadDashboard() {
     tasks = buildTasks(projects);
     updatedDate.dateTime = data.updated;
     updatedDate.textContent = formatDate(data.updated);
+    updateStickyOffsets();
     renderBoard();
   } catch (error) {
     errorState.hidden = false;
     console.error(error);
   }
+}
+
+updateStickyOffsets();
+if (stickyHeader && "ResizeObserver" in window) {
+  const stickyObserver = new ResizeObserver(() => updateStickyOffsets());
+  stickyObserver.observe(stickyHeader);
+}
+
+window.addEventListener("resize", updateStickyOffsets);
+window.addEventListener("load", updateStickyOffsets);
+if (document.fonts?.ready) {
+  document.fonts.ready.then(updateStickyOffsets).catch(() => {
+    // Ignore font loading errors; the initial measurement still applies.
+  });
 }
 loadDashboard();
