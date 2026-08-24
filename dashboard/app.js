@@ -28,19 +28,12 @@ const taskLabelPalette = [
 const board = document.querySelector("#project-grid");
 const emptyState = document.querySelector("#empty-state");
 const errorState = document.querySelector("#error-state");
-const updatedDate = document.querySelector("#updated-date");
 const filterButtons = document.querySelectorAll("[data-filter]");
-const stickyHeader = document.querySelector(".page-header__sticky");
 
 let tasks = [];
 let projectOrder = [];
 let activeFilter = "all";
 let projectLabelColors = new Map();
-
-function formatDate(value) {
-  const date = new Date(`${value}T00:00:00`);
-  return new Intl.DateTimeFormat("de-DE", { dateStyle: "long" }).format(date);
-}
 
 function isValidTask(task) {
   return typeof task?.text === "string" && categoryLabels[task.category];
@@ -97,17 +90,6 @@ function assignProjectLabelColors(projectList) {
 
 function colorForProject(name) {
   return projectLabelColors.get(name) ?? taskLabelPalette[hashProjectName(name) % taskLabelPalette.length];
-}
-
-function updateStickyOffsets() {
-  if (!stickyHeader) {
-    return;
-  }
-
-  document.documentElement.style.setProperty(
-    "--dashboard-sticky-header-height",
-    `${Math.ceil(stickyHeader.getBoundingClientRect().height)}px`
-  );
 }
 
 function createTaskCard(task) {
@@ -242,27 +224,10 @@ async function loadDashboard() {
     projectOrder = projects.map((project) => project.name);
     assignProjectLabelColors(projects);
     tasks = buildTasks(projects);
-    updatedDate.dateTime = data.updated;
-    updatedDate.textContent = formatDate(data.updated);
-    updateStickyOffsets();
     renderBoard();
   } catch (error) {
     errorState.hidden = false;
     console.error(error);
   }
-}
-
-updateStickyOffsets();
-if (stickyHeader && "ResizeObserver" in window) {
-  const stickyObserver = new ResizeObserver(() => updateStickyOffsets());
-  stickyObserver.observe(stickyHeader);
-}
-
-window.addEventListener("resize", updateStickyOffsets);
-window.addEventListener("load", updateStickyOffsets);
-if (document.fonts?.ready) {
-  document.fonts.ready.then(updateStickyOffsets).catch(() => {
-    // Ignore font loading errors; the initial measurement still applies.
-  });
 }
 loadDashboard();
