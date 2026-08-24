@@ -10,11 +10,6 @@
           "category": "continue"
         },
         {
-          "id": "02",
-          "text": "Bedarf für #creative-ops-marketing neu bewerten",
-          "category": "continue"
-        },
-        {
           "id": "03",
           "text": "Brand Agent und Skill mit Marie am 04.09. reviewen",
           "category": "continue",
@@ -26,7 +21,7 @@
         },
         {
           "id": "04",
-          "text": "Ersten Content-Marketing-Use-Case mit Yvonne definieren",
+          "text": "Yvonne wegen Content-Marketing-Agent kontaktieren",
           "category": "continue"
         },
         {
@@ -35,23 +30,13 @@
           "category": "continue"
         },
         {
-          "id": "06",
-          "text": "Kanonische Projektnamen mit der Workspace-Struktur abgleichen",
-          "category": "focus",
-          "steps": [
-            "Projektnamen mit Workspace und Repositories vergleichen",
-            "Regel für sichtbare Projekttitel definieren",
-            "Nested Projects und technische Namen abgrenzen"
-          ]
-        },
-        {
           "id": "07",
           "text": "Ciarans verbleibende Kapazität für LP Builder & Contentful prüfen",
           "category": "waiting"
         },
         {
           "id": "08",
-          "text": "Coupa-AI-Support klären und PO-Agent prüfen",
+          "text": "Coupa-AI-Support klären",
           "category": "waiting"
         }
       ]
@@ -60,18 +45,22 @@
       "name": "LP Builder & Contentful MVP",
       "tasks": [
         {
-          "id": "09",
-          "text": "SSOT-for-Images-Dokument für Matthias vorbereiten",
+          "id": "16",
+          "text": "Aktuellen Stand des LP Builder & Contentful MVP prüfen",
           "category": "focus"
         },
         {
-          "id": "10",
-          "text": "Zielbild für LP Builder im Contentful-only-Setup klären",
+          "id": "17",
+          "text": "Nächste MVP-Abstimmung mit Bea und Mukhammadjon planen",
+          "category": "focus"
+        },
+        {
+          "id": "18",
+          "text": "LP-Builder-Module nach dem MVP weiterentwickeln",
           "category": "focus",
           "steps": [
-            "Rolle des LP Builders definieren",
-            "Slug- und URL-Logik klären",
-            "Verantwortung zwischen Builder und Contentful abgrenzen"
+            "Weiterentwicklung des Design-Systems klären",
+            "Nächsten Modul-Schritt definieren"
           ]
         }
       ]
@@ -83,6 +72,11 @@
           "id": "11",
           "text": "Migrationskonzept für bestehende Landingpages ausarbeiten",
           "category": "focus"
+        },
+        {
+          "id": "19",
+          "text": "Slug- und URL-Logik für Contentful Migration definieren",
+          "category": "focus"
         }
       ]
     },
@@ -90,24 +84,24 @@
       "name": "E-Mail Automation Professional",
       "tasks": [
         {
-          "id": "12",
-          "text": "Nächste E-Mail-Automation-Use-Cases mit B2B identifizieren",
+          "id": "20",
+          "text": "B2B-Automation mit Juliane konkretisieren",
           "category": "focus",
           "steps": [
-            "Julianes B2B-Use-Case bewerten",
-            "Weitere geeignete B2B-Use-Cases bewerten",
-            "Nächsten Automationsfokus priorisieren"
+            "Termin mit Juliane aufsetzen",
+            "Konkrete Automationsideen definieren",
+            "Mögliche Trigger definieren",
+            "Gewünschte Reaktionen oder Angebote definieren"
           ]
         },
         {
-          "id": "13",
-          "text": "Wiederverwendbare E-Mail-Standards für Codex definieren",
-          "category": "continue",
+          "id": "21",
+          "text": "Salesforce-Setup für B2B-Automation technisch klären",
+          "category": "focus",
           "steps": [
-            "Bestätigte Rendering-Learnings prüfen",
-            "Repository-Regeln ableiten",
-            "Wiederverwendbare Komponenten definieren",
-            "Automatisierte HTML-Checks festlegen"
+            "Nutzung von Data-Lake-Signalen klären",
+            "Trigger-basierte Verarbeitung in Salesforce prüfen",
+            "Machbarkeit analog zu HeyImmo und Iterable bewerten"
           ]
         }
       ]
