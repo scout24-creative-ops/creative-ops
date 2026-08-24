@@ -2,61 +2,40 @@
 
 ## Purpose
 
-This is a provisional project around newsletter and related content-page automation involving Steffi. The initiative appears to explore how AI and automation could reduce recurring manual work in newsletter creation and potentially connect email content with supporting CMS or landing-page content.
-
-The exact project scope, ownership model and current implementation status are not yet confirmed.
+This project documents the assessment of newsletter automation and the conditions under which automation could become useful. The discovery with Stefanie Mersmann showed that the current constraint is not primarily newsletter production effort, but insufficient user and journey information to select meaningfully relevant content.
 
 ## Current Status
 
-- Andreas described the initiative during the AI Team-Check interview on 2026-07-22.
-- Steffi is responsible for newsletters and associated CMS or content pages and is part of the broader agent-related project setup.
-- A content-marketing agent has reportedly already supported the July tenant newsletter.
-- Steffi was on vacation at the time of the conversation, and Andreas did not yet have a current status update.
-- Dominik proactively offered strategic and methodological support after hearing about the initiative; Andreas did not assign or request this support as a formal task.
+- Dominik met with Stefanie Mersmann on 2026-08-24 after Jorin had suggested they connect because Stefanie was reportedly already working on automation in her area.
+- The meeting corrected that understanding: Stefanie is not currently running a concrete newsletter-automation initiative that Dominik should connect to.
+- Stefanie is responsible for newsletter content, building the mails and creating the associated pages.
+- Newsletters are primarily used to promote ImmoScout24 products while using a newsletter-style editorial structure.
+- Landlord newsletters perform well, particularly with contextual topics such as new legislation.
+- Tenant newsletters are less successful because the team cannot reliably determine where recipients are in the rental journey, for example whether they are casually browsing, actively searching, have already found a property or have just moved in.
+- These journey states would be valuable triggers for more relevant content but are currently not available with sufficient reliability.
+- Stefanie has tested Central Orchestration in B2C, where target groups are selected technically based on estimated product-purchase likelihood rather than manually. According to Stefanie, this currently works well only for a limited number of selected products.
 
-## Provisional Scope
+## Decision
 
-Possible areas mentioned in the conversation include:
+Dominik and Stefanie agreed that there is currently no newsletter workflow that should be automated. Without better recipient and journey signals, automation would not solve the underlying relevance problem or enable better content selection.
 
-- supporting or automating newsletter creation;
-- generating or preparing related content pages;
-- reducing recurring manual work;
-- connecting newsletter workflows with Contentful, the Landing Page Builder or existing email-automation capabilities;
-- improving the handoff between email content, CMS content and reporting.
+Newsletter automation is therefore not an active automation use case for now. A future restart should depend on materially better user, journey or targeting information that creates useful content triggers.
 
-These areas are exploratory and do not yet represent a confirmed MVP.
+## Dominik's Role
 
-## Dominik's Potential Role
-
-Dominik could support the initiative by:
-
-- clarifying the current workflow, pain points and desired outcome;
-- identifying one small testable automation step;
-- structuring requirements, responsibilities and success criteria;
-- connecting the initiative with existing email, Landing Page Builder and Contentful work;
-- avoiding unnecessary parallel solutions.
-
-This support is currently an offer, not a confirmed assignment.
+The discovery is complete. No further automation work is planned unless the underlying data and targeting capabilities change enough to create a meaningful use case.
 
 ## Key Stakeholders
 
-- Steffi — primary domain owner for newsletters and related CMS content; exact project ownership to be confirmed
-- Andreas Böhm — source of the initial project context and team lead context
-- Dominik Böhme — potential strategic and methodological support
-- Contentful, Landing Page Builder, email automation, AI or data stakeholders — only if required by the confirmed MVP
+- Stefanie Mersmann — Content team; responsible for newsletter content, mail creation and associated pages
+- Dominik Böhme — discovery and automation assessment
+- Jorin Verges — suggested the discovery connection
+- B2C / Central Orchestration stakeholders — relevant only if targeting capabilities become a viable dependency for a future restart
 
-## Next Step
+## Revisit Trigger
 
-Hold a short discovery conversation with Steffi to understand the current process, existing agent or automation work, biggest manual burden and whether Dominik's support would be useful.
-
-## Open Questions
-
-- What has already been automated or tested?
-- Is newsletter generation the first use case or only one part of a wider content workflow?
-- Who owns implementation and ongoing maintenance?
-- Which existing systems must be connected?
-- What is the smallest useful MVP?
+Reassess only if reliable user-journey or targeting signals become available that make content selection materially more relevant.
 
 ## Last Confirmed
 
-2026-07-27
+2026-08-24
