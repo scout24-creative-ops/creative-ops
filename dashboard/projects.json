@@ -5,21 +5,6 @@
       "name": "Creative Ops",
       "tasks": [
         {
-          "id": "01",
-          "text": "Creative-Hub-Beitrag auf AI-Enablement-Updates begrenzen",
-          "category": "continue"
-        },
-        {
-          "id": "03",
-          "text": "Brand Agent und Skill mit Marie am 04.09. reviewen",
-          "category": "continue",
-          "steps": [
-            "Brand-Agent-MVP prüfen",
-            "Wiederverwendbaren Tone-of-Voice-Skill ansehen",
-            "AI-Enablement-Beitrag abstimmen"
-          ]
-        },
-        {
           "id": "04",
           "text": "Yvonne wegen Content-Marketing-Agent kontaktieren",
           "category": "continue"
@@ -69,13 +54,18 @@
       "name": "Contentful Migration",
       "tasks": [
         {
+          "id": "19",
+          "text": "Slug- und URL-Logik für Contentful Migration definieren",
+          "category": "focus"
+        },
+        {
           "id": "11",
           "text": "Migrationskonzept für bestehende Landingpages ausarbeiten",
           "category": "focus"
         },
         {
-          "id": "19",
-          "text": "Slug- und URL-Logik für Contentful Migration definieren",
+          "id": "22",
+          "text": "Contentful-Migration-Kickoff mit B2B Product Marketing planen",
           "category": "focus"
         }
       ]
