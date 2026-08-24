@@ -12,9 +12,9 @@
 - [ ] Prepare the next AI Enablement session on 2026-09-08
   - Area: AI Enablement Series
   - Status: Open
-  - Next step: Find and prepare one Learn topic, select an agent to present or arrange for someone else to present it, choose the discussion topic and prepare the session presentation.
-  - Context: This is the recurring preparation task for each bi-weekly AI Enablement session. The calendar event itself is not tracked as a separate dashboard task.
-  - Source: Dominik consolidated the recurring AI Enablement preparation model on 2026-08-23
+  - Next step: Prepare the remaining session content and presentation; Marie-Lord Lumumba is confirmed for the Brand Agent Show & Share contribution.
+  - Context: Marie will present the Brand Agent, reusable Skill approach and her research on when to use an Agent versus a Skill or another setup. Dominik and Marie will align her contribution on 2026-09-04. The calendar event itself is not tracked as a separate dashboard task.
+  - Source: Marie confirmed her contribution with Dominik on 2026-08-24
 
 - [ ] Limit Creative Hub input to AI Enablement updates
   - Area: Creative Ops
@@ -30,12 +30,12 @@
   - Context: The future role and communication needs are still evolving, so it is not yet clear whether the channel is needed at all. Keep the topic open without committing to an activation plan.
   - Source: Dominik clarified the channel uncertainty on 2026-08-23
 
-- [ ] Define the Brand Agent MVP with Marie
+- [ ] Review Brand Agent and reusable Skill with Marie on 2026-09-04
   - Area: Creative Ops
   - Status: Open
-  - Next step: Agree the smallest testable scope, first test case, success criteria, responsibilities and initial implementation steps with Marie.
-  - Context: Marie owns implementation; Dominik provides structure, prioritization and quality guidance.
-  - Source: Project alignment on 2026-07-21
+  - Next step: Review the near-complete Brand Agent MVP, reusable tone-of-voice Skill and planned AI Enablement presentation with Marie.
+  - Context: Marie has implemented the agent and Skill and will present both in the AI Enablement session on 2026-09-08. Dominik will inspect the solution and planned presentation before the session.
+  - Source: Dominik and Marie aligned the next step on 2026-08-24
 
 - [ ] Define the first Content Marketing Agent use case with Yvonne
   - Area: Creative Ops
@@ -122,6 +122,11 @@
   - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
 
 ## Completed
+
+- [x] Define the Brand Agent MVP with Marie
+  - Area: Brand Agent – Tone of Voice
+  - Completed: 2026-08-24
+  - Outcome: Marie demonstrated a near-complete Brand Agent MVP and has implemented the tone-of-voice logic as a reusable Skill for integration into other agents; the work has moved from MVP definition into final review and reuse preparation.
 
 - [x] Complete Newsletter Automation discovery with Stefanie
   - Area: Newsletter Automation
