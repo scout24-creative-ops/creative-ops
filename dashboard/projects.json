@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23",
+  "updated": "2026-08-24",
   "projects": [
     {
       "name": "AI Enablement Series",
@@ -105,16 +105,6 @@
         {
           "text": "Ersten Content-Marketing-Use-Case mit Yvonne definieren",
           "category": "continue"
-        },
-        {
-          "text": "Newsletter-Automation mit Steffi besprechen",
-          "category": "continue",
-          "steps": [
-            "Aktuellen Workflow verstehen",
-            "Bestehende Agent- oder Automation-Arbeit prüfen",
-            "Größten manuellen Aufwand identifizieren",
-            "Kleinsten sinnvollen nächsten Schritt festlegen"
-          ]
         },
         {
           "text": "Abstimmungsrhythmus mit Allan und Lars neu aufsetzen",
