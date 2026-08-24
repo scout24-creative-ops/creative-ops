@@ -17,8 +17,8 @@
           "text": "Nächste AI Enablement Session am 08.09. vorbereiten",
           "category": "focus",
           "steps": [
-            "Learn-Thema finden und vorbereiten",
-            "Agent auswählen und selbst vorstellen oder vorstellen lassen",
+            "Verbleibende Session-Inhalte vorbereiten",
+            "Maries Brand-Agent-Beitrag am 04.09. abstimmen",
             "Diskussionsthema auswählen",
             "Präsentation für die Session vorbereiten"
           ]
@@ -93,13 +93,12 @@
           "category": "continue"
         },
         {
-          "text": "Brand-Agent-MVP mit Marie definieren",
+          "text": "Brand Agent und Skill mit Marie am 04.09. reviewen",
           "category": "continue",
           "steps": [
-            "Kleinsten testbaren MVP-Scope festlegen",
-            "Ersten Testfall definieren",
-            "Erfolgskriterien abstimmen",
-            "Verantwortlichkeiten und erste Umsetzungsschritte klären"
+            "Near-complete Brand-Agent-MVP prüfen",
+            "Wiederverwendbaren Tone-of-Voice-Skill ansehen",
+            "Geplanten AI-Enablement-Beitrag abstimmen"
           ]
         },
         {
