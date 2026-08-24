@@ -16,20 +16,6 @@
   - Context: Marie will present the Brand Agent, reusable Skill approach and her research on when to use an Agent versus a Skill or another setup. Dominik and Marie will align her contribution on 2026-09-04. The calendar event itself is not tracked as a separate dashboard task.
   - Source: Marie confirmed her contribution with Dominik on 2026-08-24
 
-- [ ] Limit Creative Hub input to AI Enablement updates
-  - Area: Creative Ops
-  - Status: Open
-  - Next step: Tell Eve and Peter that future new input from Dominik for the Creative Hub will come only from relevant agents, solutions and learnings that surface through the AI Enablement Series.
-  - Context: Maintaining a separate discovery or curation workstream for the Hub would create too much additional workload. Eve and Peter can use relevant AI Enablement outputs for Hub updates when useful.
-  - Source: Dominik clarified the Creative Hub contribution model on 2026-08-23
-
-- [ ] Review Brand Agent and reusable Skill with Marie on 2026-09-04
-  - Area: Creative Ops
-  - Status: Open
-  - Next step: Review the near-complete Brand Agent MVP, reusable tone-of-voice Skill and planned AI Enablement presentation with Marie.
-  - Context: Marie has implemented the agent and Skill and will present both in the AI Enablement session on 2026-09-08. Dominik will inspect the solution and planned presentation before the session.
-  - Source: Dominik and Marie aligned the next step on 2026-08-24
-
 - [ ] Contact Yvonne about the Content Marketing Agent
   - Area: Creative Ops
   - Status: Open
@@ -58,19 +44,26 @@
   - Context: This is the product-level follow-up once the current MVP is sufficiently complete.
   - Source: Dominik clarified the post-MVP question on 2026-08-24
 
-- [ ] Develop the Contentful migration concept for existing landing pages
-  - Area: Contentful Migration
-  - Status: Open
-  - Next step: Develop the conceptual approach for migrating existing landing pages to the future LP Builder and Contentful setup.
-  - Context: Migration is a separate workstream from the MVP and should be conceptually defined before execution work is planned.
-  - Source: Dominik clarified the current Contentful migration status on 2026-08-23
-
 - [ ] Define slug and URL logic for Contentful migration
   - Area: Contentful Migration
   - Status: Open
   - Next step: Define how slugs and URLs should work when existing landing pages move into the Contentful setup.
-  - Context: The URL model belongs to migration rather than the current MVP work because it affects how existing pages are transferred and addressed in the future setup.
-  - Source: Dominik reassigned the topic to Contentful Migration on 2026-08-24
+  - Context: This is the first migration task because the URL model affects how existing pages can be transferred and addressed in the future setup.
+  - Source: Dominik prioritized the migration sequence on 2026-08-24
+
+- [ ] Develop the Contentful migration concept for existing landing pages
+  - Area: Contentful Migration
+  - Status: Open
+  - Next step: Develop the conceptual approach for migrating existing landing pages to the future LP Builder and Contentful setup after the slug and URL logic is clearer.
+  - Context: Migration is a separate workstream from the MVP and should be conceptually defined before execution work is planned.
+  - Source: Dominik clarified the migration sequence on 2026-08-24
+
+- [ ] Plan Contentful migration kickoff with B2B Product Marketing
+  - Area: Contentful Migration
+  - Status: Open
+  - Next step: After the first migration concept is drafted, schedule a kickoff with the B2B Product Marketing team to align how to proceed.
+  - Context: The team kickoff should follow the initial concept work rather than precede it, so there is a concrete basis for discussing scope and approach.
+  - Source: Dominik added the B2B Product Marketing kickoff on 2026-08-24
 
 - [ ] Set up B2B automation discovery with Juliane
   - Area: E-Mail Automation Professional
