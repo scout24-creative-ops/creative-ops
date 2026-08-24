@@ -2,26 +2,57 @@
   "updated": "2026-08-24",
   "projects": [
     {
-      "name": "AI Enablement Series",
+      "name": "Creative Ops",
       "tasks": [
         {
-          "text": "Vorlagen für die AI Enablement Series erstellen",
-          "category": "focus",
+          "id": "01",
+          "text": "Creative-Hub-Beitrag auf AI-Enablement-Updates begrenzen",
+          "category": "continue"
+        },
+        {
+          "id": "02",
+          "text": "Bedarf für #creative-ops-marketing neu bewerten",
+          "category": "continue"
+        },
+        {
+          "id": "03",
+          "text": "Brand Agent und Skill mit Marie am 04.09. reviewen",
+          "category": "continue",
           "steps": [
-            "Präsentationstemplate erstellen",
-            "Vorlage für Beiträge anderer erstellen",
-            "Slack-Post-Templates vorbereiten"
+            "Brand-Agent-MVP prüfen",
+            "Wiederverwendbaren Tone-of-Voice-Skill ansehen",
+            "AI-Enablement-Beitrag abstimmen"
           ]
         },
         {
-          "text": "Nächste AI Enablement Session am 08.09. vorbereiten",
+          "id": "04",
+          "text": "Ersten Content-Marketing-Use-Case mit Yvonne definieren",
+          "category": "continue"
+        },
+        {
+          "id": "05",
+          "text": "Abstimmungsrhythmus mit Allan und Lars neu aufsetzen",
+          "category": "continue"
+        },
+        {
+          "id": "06",
+          "text": "Kanonische Projektnamen mit der Workspace-Struktur abgleichen",
           "category": "focus",
           "steps": [
-            "Verbleibende Session-Inhalte vorbereiten",
-            "Maries Brand-Agent-Beitrag am 04.09. abstimmen",
-            "Diskussionsthema auswählen",
-            "Präsentation für die Session vorbereiten"
+            "Projektnamen mit Workspace und Repositories vergleichen",
+            "Regel für sichtbare Projekttitel definieren",
+            "Nested Projects und technische Namen abgrenzen"
           ]
+        },
+        {
+          "id": "07",
+          "text": "Ciarans verbleibende Kapazität für LP Builder & Contentful prüfen",
+          "category": "waiting"
+        },
+        {
+          "id": "08",
+          "text": "Coupa-AI-Support klären und PO-Agent prüfen",
+          "category": "waiting"
         }
       ]
     },
@@ -29,15 +60,12 @@
       "name": "LP Builder & Contentful MVP",
       "tasks": [
         {
+          "id": "09",
           "text": "SSOT-for-Images-Dokument für Matthias vorbereiten",
-          "category": "focus",
-          "steps": [
-            "Relevanten Kontext bündeln",
-            "Offene Fragen festhalten",
-            "Benötigte Entscheidungen vorbereiten"
-          ]
+          "category": "focus"
         },
         {
+          "id": "10",
           "text": "Zielbild für LP Builder im Contentful-only-Setup klären",
           "category": "focus",
           "steps": [
@@ -52,6 +80,7 @@
       "name": "Contentful Migration",
       "tasks": [
         {
+          "id": "11",
           "text": "Migrationskonzept für bestehende Landingpages ausarbeiten",
           "category": "focus"
         }
@@ -61,15 +90,17 @@
       "name": "E-Mail Automation Professional",
       "tasks": [
         {
+          "id": "12",
           "text": "Nächste E-Mail-Automation-Use-Cases mit B2B identifizieren",
           "category": "focus",
           "steps": [
-            "B2B-Bedarf von Juliane als konkreten Test nutzen",
-            "Weitere geeignete Use Cases bewerten",
+            "Julianes B2B-Use-Case bewerten",
+            "Weitere geeignete B2B-Use-Cases bewerten",
             "Nächsten Automationsfokus priorisieren"
           ]
         },
         {
+          "id": "13",
           "text": "Wiederverwendbare E-Mail-Standards für Codex definieren",
           "category": "continue",
           "steps": [
@@ -82,54 +113,27 @@
       ]
     },
     {
-      "name": "Creative Ops",
+      "name": "AI Enablement Series",
       "tasks": [
         {
-          "text": "Creative-Hub-Beitrag auf AI-Enablement-Updates begrenzen",
-          "category": "continue"
-        },
-        {
-          "text": "Bedarf für #creative-ops-marketing neu bewerten",
-          "category": "continue"
-        },
-        {
-          "text": "Brand Agent und Skill mit Marie am 04.09. reviewen",
-          "category": "continue",
-          "steps": [
-            "Near-complete Brand-Agent-MVP prüfen",
-            "Wiederverwendbaren Tone-of-Voice-Skill ansehen",
-            "Geplanten AI-Enablement-Beitrag abstimmen"
-          ]
-        },
-        {
-          "text": "Ersten Content-Marketing-Use-Case mit Yvonne definieren",
-          "category": "continue"
-        },
-        {
-          "text": "Abstimmungsrhythmus mit Allan und Lars neu aufsetzen",
-          "category": "continue"
-        },
-        {
-          "text": "Kanonische Projektnamen mit der Workspace-Struktur abgleichen",
+          "id": "14",
+          "text": "Vorlagen für die AI Enablement Series erstellen",
           "category": "focus",
           "steps": [
-            "Projektnamen mit Workspace und Repositories vergleichen",
-            "Regel für sichtbare Projekttitel definieren",
-            "Nested Projects und technische Namen abgrenzen"
+            "Präsentationstemplate erstellen",
+            "Vorlage für Beiträge anderer erstellen",
+            "Slack-Post-Templates vorbereiten"
           ]
         },
         {
-          "text": "Ciarans verbleibende Kapazität für LP Builder & Contentful prüfen",
-          "category": "waiting"
-        },
-        {
-          "text": "Coupa-AI-Support klären und PO-Agent prüfen",
-          "category": "waiting",
+          "id": "15",
+          "text": "Nächste AI Enablement Session am 08.09. vorbereiten",
+          "category": "focus",
           "steps": [
-            "Zentrale Zuständigkeit und bestehende Unterstützung klären",
-            "Bestehende Lösungen oder Pläne prüfen",
-            "Franziskas PO-Status-Agent ansehen",
-            "Sinnvollen kleinen nächsten Schritt bewerten"
+            "Learn-Thema finden und vorbereiten",
+            "Maries Brand-Agent-Beitrag am 04.09. abstimmen",
+            "Diskussionsthema auswählen",
+            "Präsentation für die Session vorbereiten"
           ]
         }
       ]
