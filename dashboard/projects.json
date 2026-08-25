@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-24",
+  "updated": "2026-08-25",
   "projects": [
     {
       "name": "Creative Ops",
@@ -31,7 +31,7 @@
       "tasks": [
         {
           "id": "16",
-          "text": "Aktuellen Stand des LP Builder & Contentful MVP prüfen",
+          "text": "CSS-Klassen im generierten Contentful-Code prüfen",
           "category": "focus"
         },
         {
