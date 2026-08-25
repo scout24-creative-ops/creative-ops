@@ -23,12 +23,12 @@
   - Context: The previous task to define the first use case was too far ahead; the immediate action is to reconnect first.
   - Source: Dominik clarified the next action on 2026-08-24
 
-- [ ] Check the current LP Builder & Contentful MVP status
+- [ ] Check CSS classes in generated Contentful code
   - Area: LP Builder & Contentful MVP
   - Status: Open
-  - Next step: Review the current state of the MVP and identify what is still missing before considering the next alignment.
-  - Context: The end-to-end flow was previously close to completion in `next`; Dominik now wants a fresh status check before planning further work.
-  - Source: Dominik clarified the MVP next step on 2026-08-24
+  - Next step: Inspect the generated Contentful output and verify whether the LP Builder's own CSS classes are still included to the same extent or whether the code has been reduced and relies more on Contentful-native styling or structures.
+  - Context: This is the immediate technical check within the broader MVP status review and should clarify the current rendering boundary before the next alignment or post-MVP module decision.
+  - Source: Dominik specified the MVP status-check focus on 2026-08-25
 
 - [ ] Plan the next LP Builder MVP alignment with Bea and Mukhammadjon
   - Area: LP Builder & Contentful MVP
