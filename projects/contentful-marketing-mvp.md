@@ -14,13 +14,13 @@ Production publishing was not yet available at the last technical confirmation. 
 
 Jorin confirmed the LP Builder & Contentful work as a current priority on 2026-08-20. Contentful migration remains a separate workstream rather than part of the MVP task set.
 
-Dominik now wants to re-check the actual MVP status before planning the next alignment. Depending on what is still open, the next discussion may involve Beatrice and Mukhammadjon. A separate post-MVP question is how the Landing Page Builder modules and design-system approach should continue once the current MVP is complete.
+Dominik now wants to re-check the actual MVP status before planning the next alignment. The immediate technical check is how CSS classes are currently handled in the generated Contentful output: whether the LP Builder's own classes are still included to the same extent or whether the generated code has been reduced and relies more strongly on Contentful-native styling or structures. Depending on what this and the broader status review show, the next discussion may involve Beatrice and Mukhammadjon. A separate post-MVP question is how the Landing Page Builder modules and design-system approach should continue once the current MVP is complete.
 
 ## Dominik's Role
 
 Dominik represents Creative Operations and landing-page requirements, validates the controlled LP Builder workflow and owns the product-level questions around how the Landing Page Builder and Contentful should work together in the future.
 
-His immediate role is to establish the current MVP status, identify the remaining gaps and then decide whether further alignment with Beatrice and Mukhammadjon is needed. He also needs to clarify the post-MVP direction for modules and the design-system approach.
+His immediate role is to establish the current MVP status, including the current CSS-class and rendering boundary between generated LP Builder code and Contentful, identify the remaining gaps and then decide whether further alignment with Beatrice and Mukhammadjon is needed. He also needs to clarify the post-MVP direction for modules and the design-system approach.
 
 For Contentful Migration, Dominik owns the initial migration framing before broader team alignment: first clarify slug and URL logic, then develop the first migration concept, then use that concept as the basis for a kickoff with the B2B Product Marketing team.
 
@@ -64,9 +64,11 @@ For Contentful Migration, Dominik owns the initial migration framing before broa
 - 2026-08-21: The MVP was described as close to completion: generation in the Landing Page Builder, direct transfer to Contentful and immediate preview were working end to end in `next`.
 - 2026-08-24: Dominik changed the immediate task sequence. He will first review the actual MVP status, then decide whether an alignment with Beatrice and Mukhammadjon is needed. The separate post-MVP question is how modules and the design-system approach should continue. Slug and URL logic moved to Contentful Migration.
 - 2026-08-24: Dominik clarified the migration sequence: slug and URL logic first, initial migration concept second, and then a kickoff with the B2B Product Marketing team to align the practical approach.
+- 2026-08-25: Dominik specified the immediate MVP review further: inspect the generated Contentful code to determine whether LP Builder CSS classes are still fully present or whether the output is reduced and relies more on Contentful-native styling or structures.
 
 ## Open Questions and Risks
 
+- Whether the generated Contentful code still carries the LP Builder's own CSS classes to the same extent or now relies more strongly on Contentful-native styling or structures.
 - What is still missing from the current MVP at the latest implementation state.
 - Whether a follow-up alignment with Beatrice and Mukhammadjon is needed after the status review.
 - How the module model and design-system approach should evolve after the MVP.
@@ -78,7 +80,7 @@ For Contentful Migration, Dominik owns the initial migration framing before broa
 
 ## Next Steps
 
-1. Review the current LP Builder & Contentful MVP status and identify the remaining gaps.
+1. Inspect the generated Contentful output and verify whether LP Builder CSS classes are still fully included or whether the code has been reduced and relies more on Contentful-native styling or structures; use this as part of the current MVP status review.
 2. Decide whether a follow-up alignment with Beatrice and Mukhammadjon is needed and schedule it if useful.
 3. Clarify how LP Builder modules and the design-system approach should continue after the MVP.
 
@@ -88,7 +90,7 @@ Migration of existing landing pages is a separate workstream. The first migratio
 
 ## Last Confirmed
 
-Current MVP task sequence, Contentful Migration sequence and post-MVP module/design-system question confirmed by Dominik on 2026-08-24. The last technically verified implementation state remains the working creation, transfer and preview flow in `next`; a fresh status check is now the immediate MVP action.
+Current MVP task sequence, including the CSS-class check, confirmed by Dominik on 2026-08-25. The Contentful Migration sequence and post-MVP module/design-system question remain as confirmed on 2026-08-24. The last technically verified implementation state remains the working creation, transfer and preview flow in `next`; the CSS-class and rendering-boundary check is now the immediate MVP action.
 
 ## Related Context
 
