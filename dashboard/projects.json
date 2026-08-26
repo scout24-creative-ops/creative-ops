@@ -8,7 +8,12 @@
           "id": "05",
           "text": "Abstimmungsrhythmus mit Allan und Lars neu aufsetzen",
           "category": "continue"
-        },
+        }
+      ]
+    },
+    {
+      "name": "Coupa AI Support",
+      "tasks": [
         {
           "id": "08",
           "text": "Coupa-AI-Support klären",
