@@ -41,7 +41,7 @@ Every work-relevant update Dominik provides must first be recorded in the curren
 
 The weekly documentation may include meetings and workshops, progress and completed work, discussions and open questions, delays, follow-ups, decisions, risks, blockers, and other context that may help create the end-of-week recap.
 
-The weekly file is source material and the chronological archive, not a polished management summary. A later skill creates the short summary for Jorin in the chat. That short summary is not stored in this repository.
+The weekly file is source material and the chronological archive, not a polished management summary. A later skill creates the short summary for Jorin in the chat. That short summary is not stored here.
 
 ## Summary Checkpoints
 
@@ -117,7 +117,7 @@ During bootstrap, migration, or cleanup, replace steps 1–3 with the exception 
 Treat weekly documentation as the full historical record and all other maintained files as current working views.
 
 - Do not preserve the same full narrative in weekly documentation, project files, and tasks.
-- In project files, replace or consolidate superseded status, decisions, risks, and next steps instead of appending another version of the story.
+- In project files, replace or consolidate superseded status, decisions, risks, and next steps instead of appending another version of the same story.
 - Keep `Important Developments` to durable turning points only.
 - In `tasks.md`, retain one concrete next action, minimum actionable context, useful dependencies or deadlines, and a source when helpful.
 - Move strategy, technical specifications, detailed rationale, and completed implementation history into the project file, weekly archive, or technical repository.
@@ -160,6 +160,36 @@ Keep one central task list in `tasks.md` with Open, Waiting, Suggestions, and Co
 - Do not use `tasks.md` as a project specification or historical log.
 - Use explicit states such as open, partially complete, completed, blocked, waiting, changed, obsolete, discarded, and suggestion.
 - Formulate task titles as short, isolated action statements that remain understandable without extra project knowledge; use roughly 5–12 words when that still keeps the meaning clear.
+
+### Default task overview output
+
+When Dominik asks for his current, open, active, or upcoming tasks, use this presentation by default unless he requests another format:
+
+1. Group tasks directly by the current canonical project or `Area` name. Do not add the former AI Strategy / AI Enablement / AI Creative Operations pillar grouping around the task list.
+2. Start every project heading with its established project emoji and canonical project name.
+3. Directly below the heading, add one very short internal working-status or next-goal sentence. Write it for Dominik, not for an external reader; avoid background explanations, project definitions, or introductory context he already knows.
+4. Under that sentence, show each main task as a bold bullet.
+5. Under each main task, show all concrete next steps or subtasks as nested bullets when they are known and still current.
+6. Do not omit known subtasks merely because `tasks.md` stores the main outcome compactly. For read-only task overviews, reconcile the main task with `dashboard/projects.json`, the relevant current project file, and newer current-week documentation when those sources contain more recent or more detailed confirmed next steps.
+7. Use `tasks.md` as the source of truth for whether a task is active or waiting; use dashboard/project/weekly context only to enrich, correct, or flag stale task wording and subtasks. Never revive completed, obsolete, removed, or unconfirmed work from those secondary sources.
+8. If the sources conflict, prefer the newest confirmed work update and call out the inconsistency rather than silently presenting stale steps as current.
+9. Keep the overview compact and operational. Do not add an introduction, prioritization commentary, external-facing explanation, or closing summary unless requested.
+10. Preserve useful detail. The desired structure is: `project → one-line internal status → main task → concrete subtasks`.
+
+Example:
+
+```markdown
+### 🤖 Marketing Content Platform
+MVP fertigziehen und parallel die Asset-Library-Richtung klären.
+
+- **LP Builder & Contentful MVP abschließen**
+  - Offene Acceptance Criteria klären
+  - CTA- und Link-Handling finalisieren
+  - Production-/pro-Setup mit Bea und Mukhammadjon klären
+- **Marketing Asset Library planen**
+  - Johns Rückmeldung zur bestehenden Infrastruktur abwarten
+  - Technische Lösung, Ownership und Umsetzung festlegen
+```
 
 ## Dashboard Synchronization
 
