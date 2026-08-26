@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-25",
+  "updated": "2026-08-26",
   "projects": [
     {
       "name": "Creative Ops",
@@ -60,13 +60,18 @@
         },
         {
           "id": "11",
-          "text": "Migrationskonzept für bestehende Landingpages ausarbeiten",
+          "text": "Anwenderhandbuch-Migrationspilot durchführen",
           "category": "focus"
         },
         {
           "id": "22",
           "text": "Contentful-Migration-Kickoff mit B2B Product Marketing planen",
           "category": "focus"
+        },
+        {
+          "id": "23",
+          "text": "Marketing-Asset-Infrastruktur mit John Ford klären",
+          "category": "waiting"
         }
       ]
     },
