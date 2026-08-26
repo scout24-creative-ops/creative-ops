@@ -5,19 +5,9 @@
       "name": "Creative Ops",
       "tasks": [
         {
-          "id": "04",
-          "text": "Yvonne wegen Content-Marketing-Agent kontaktieren",
-          "category": "continue"
-        },
-        {
           "id": "05",
           "text": "Abstimmungsrhythmus mit Allan und Lars neu aufsetzen",
           "category": "continue"
-        },
-        {
-          "id": "07",
-          "text": "Ciarans verbleibende Kapazität für LP Builder & Contentful prüfen",
-          "category": "waiting"
         },
         {
           "id": "08",
@@ -27,25 +17,25 @@
       ]
     },
     {
-      "name": "LP Builder & Contentful MVP",
+      "name": "Marketing Content Platform",
       "tasks": [
         {
           "id": "16",
-          "text": "CSS-Klassen im generierten Contentful-Code prüfen",
-          "category": "focus"
-        },
-        {
-          "id": "17",
-          "text": "Nächste MVP-Abstimmung mit Bea und Mukhammadjon planen",
-          "category": "focus"
-        },
-        {
-          "id": "18",
-          "text": "LP-Builder-Module nach dem MVP weiterentwickeln",
+          "text": "LP Builder & Contentful MVP abschließen",
           "category": "focus",
           "steps": [
-            "Weiterentwicklung des Design-Systems klären",
-            "Nächsten Modul-Schritt definieren"
+            "Offene Acceptance Criteria klären",
+            "CTA- und Link-Handling finalisieren",
+            "Production-/pro-Setup mit Bea und Mukhammadjon klären"
+          ]
+        },
+        {
+          "id": "23",
+          "text": "Marketing Asset Library planen",
+          "category": "waiting",
+          "steps": [
+            "Johns Rückmeldung zur bestehenden Infrastruktur abwarten",
+            "Technische Lösung, Ownership und Umsetzung festlegen"
           ]
         }
       ]
@@ -54,24 +44,15 @@
       "name": "Contentful Migration",
       "tasks": [
         {
-          "id": "19",
-          "text": "Slug- und URL-Logik für Contentful Migration definieren",
-          "category": "focus"
-        },
-        {
           "id": "11",
           "text": "Anwenderhandbuch-Migrationspilot durchführen",
-          "category": "focus"
-        },
-        {
-          "id": "22",
-          "text": "Contentful-Migration-Kickoff mit B2B Product Marketing planen",
-          "category": "focus"
-        },
-        {
-          "id": "23",
-          "text": "Marketing-Asset-Infrastruktur mit John Ford klären",
-          "category": "waiting"
+          "category": "focus",
+          "steps": [
+            "SEO-Termin zu URLs, Redirects, SEO und LLM-Sichtbarkeit aufsetzen",
+            "Ulrikes Rolle und Kapazität im Pod mit Juliane festlegen",
+            "Fachliche URL- und Content-Entscheidungen über Ulrike bündeln",
+            "Design-, Bildbedarf und Pilot gemeinsam weiterführen"
+          ]
         }
       ]
     },
