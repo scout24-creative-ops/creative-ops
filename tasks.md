@@ -48,22 +48,22 @@
   - Area: Contentful Migration
   - Status: Open
   - Next step: Define how slugs and URLs should work when existing landing pages move into the Contentful setup.
-  - Context: This is the first migration task because the URL model affects how existing pages can be transferred and addressed in the future setup.
+  - Context: The URL model affects how existing pages can be transferred and addressed in the future setup, especially for SEO-sensitive pages.
   - Source: Dominik prioritized the migration sequence on 2026-08-24
 
-- [ ] Develop the Contentful migration concept for existing landing pages
+- [ ] Run the Anwenderhandbuch Contentful migration pilot
   - Area: Contentful Migration
   - Status: Open
-  - Next step: Develop the conceptual approach for migrating existing landing pages to the future LP Builder and Contentful setup after the slug and URL logic is clearer.
-  - Context: Migration is a separate workstream from the MVP and should be conceptually defined before execution work is planned.
-  - Source: Dominik clarified the migration sequence on 2026-08-24
+  - Next step: Validate the repeatable migration flow for the B2B Anwenderhandbuch from source-page crawl through content reconstruction and automated asset extraction.
+  - Context: Claude Design has already validated page crawling, exact source-copy preservation and a shared overview/detail-page system; the pilot should now prove how reliably the workflow can be repeated across the area.
+  - Source: Dominik confirmed the Anwenderhandbuch pilot and Claude Design validation on 2026-08-26
 
 - [ ] Plan Contentful migration kickoff with B2B Product Marketing
   - Area: Contentful Migration
   - Status: Open
-  - Next step: After the first migration concept is drafted, schedule a kickoff with the B2B Product Marketing team to align how to proceed.
-  - Context: The team kickoff should follow the initial concept work rather than precede it, so there is a concrete basis for discussing scope and approach.
-  - Source: Dominik added the B2B Product Marketing kickoff on 2026-08-24
+  - Next step: After the Anwenderhandbuch pilot has produced a concrete migration approach, schedule a kickoff with the B2B Product Marketing team to align how to proceed.
+  - Context: The team kickoff should use the pilot findings as a practical basis for discussing scope and rollout.
+  - Source: Dominik refined the migration approach on 2026-08-26
 
 - [ ] Set up B2B automation discovery with Juliane
   - Area: E-Mail Automation Professional
@@ -87,6 +87,13 @@
   - Source: Dominik confirmed the task on 2026-07-22
 
 ## Waiting
+
+- [ ] Clarify Marketing asset infrastructure with John Ford
+  - Area: Contentful Migration
+  - Status: Waiting for another person or decision
+  - Waiting for: John Ford's response on whether he is the right contact for Scout24 image storage and delivery infrastructure
+  - Dominik's next step: If John is the right contact, clarify whether Marketing can use an existing AWS/S3 storage path and the existing image-delivery service for a central Marketing Asset Library and migration uploads.
+  - Context: Dominik contacted John after Matthias Brandstätter suggested him as a possible technical contact on 2026-08-26.
 
 - [ ] Check Ciaran's remaining capacity for LP Builder & Contentful support
   - Area: Creative Ops
