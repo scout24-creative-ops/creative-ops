@@ -26,23 +26,23 @@
 - [ ] Run the Anwenderhandbuch Contentful migration pilot
   - Area: Contentful Migration
   - Status: Open
-  - Next step: Continue the Anwenderhandbuch pilot while establishing the SEO rules and the intended Pod split with Ulrike.
-  - Context: The pilot should cover URL/slug and redirect rules, SEO/LLM visibility requirements, Ulrike's role in thematic URL and content decisions, design coordination and important image/content needs, while Dominik drives the system and migration workflow.
-  - Source: Dominik refined the migration organization on 2026-08-26
+  - Next step: In the 2026-08-27 11:00 alignment with Juliane, ask whether Ulrike can join Dominik and Peter in a small pod; if agreed, define Ulrike's fachlich/content-facing support role and continue the Anwenderhandbuch pilot with that split.
+  - Context: Dominik wants Ulrike to support the AI Enablement Series and initially take a fachlich coordinating role around Contentful Migration, with later potential to support Automation topics as well. For the migration pilot, her intended contribution includes thematic URL/content decisions, stakeholder coordination, design reviews and important image/content needs, while Dominik drives the system and migration workflow. Juliane's agreement is still pending.
+  - Source: Dominik clarified the planned Juliane alignment and proposed Ulrike role on 2026-08-26
 
 - [ ] Set up B2B automation discovery with Juliane
   - Area: E-Mail Automation Professional
-  - Status: Open
-  - Next step: Schedule a meeting with Juliane and ask her to define concrete automation ideas, relevant triggers and the desired reaction or offer for each trigger.
-  - Context: A useful example is a professional customer's project losing visibility and then receiving a relevant upgrade or reach offer. The business logic needs to be defined before a solution is designed.
-  - Source: Dominik clarified the B2B automation next step on 2026-08-24
+  - Status: Open, deliberately deprioritized for the coming weeks
+  - Next step: Revisit when Automation becomes relevant again; then prepare a kickoff with Juliane and schedule a meeting to define concrete automation ideas, relevant triggers and the desired reaction or offer for each trigger.
+  - Context: The topic should remain visible, but it is not a near-term priority. When prioritization allows, remind Dominik to prepare and schedule the kickoff rather than pushing the discovery now.
+  - Source: Dominik deprioritized B2B Automation on 2026-08-26
 
 - [ ] Clarify Salesforce feasibility for B2B automation
   - Area: E-Mail Automation Professional
-  - Status: Open
-  - Next step: Clarify how Data Lake signals and Salesforce could support a trigger-based B2B automation flow and whether a setup analogous in principle to HeyImmo with Iterable is feasible.
-  - Context: In a discussion on 2026-08-24, Taha explained that he works with the Data Lake and builds setups such as the LOFT visibility project, but could not confirm whether Salesforce can be used in the same way as Iterable. The route appears potentially feasible but needs technical clarification.
-  - Source: Dominik's discussion with Taha on 2026-08-24
+  - Status: Open, deliberately deprioritized for the coming weeks
+  - Next step: Revisit after the business scenarios are prioritized again; then clarify how Data Lake signals and Salesforce could support a trigger-based B2B automation flow and whether a setup analogous in principle to HeyImmo with Iterable is feasible.
+  - Context: In a discussion on 2026-08-24, Taha explained that he works with the Data Lake and builds setups such as the LOFT visibility project, but could not confirm whether Salesforce can be used in the same way as Iterable. The route appears potentially feasible but does not need near-term investigation while the broader Automation work is deprioritized.
+  - Source: Dominik deprioritized B2B Automation on 2026-08-26; technical context from discussion with Taha on 2026-08-24
 
 - [ ] Re-establish the Allan-and-Lars alignment cadence
   - Area: Creative Ops
