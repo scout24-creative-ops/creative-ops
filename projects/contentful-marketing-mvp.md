@@ -14,15 +14,17 @@ Production publishing was not yet available at the last technical confirmation. 
 
 Jorin confirmed the LP Builder & Contentful work as a current priority on 2026-08-20. Contentful migration remains a separate workstream rather than part of the MVP task set.
 
-Dominik now wants to re-check the actual MVP status before planning the next alignment. The immediate technical check is how CSS classes are currently handled in the generated Contentful output: whether the LP Builder's own classes are still included to the same extent or whether the generated code has been reduced and relies more strongly on Contentful-native styling or structures. Depending on what this and the broader status review show, the next discussion may involve Beatrice and Mukhammadjon. A separate post-MVP question is how the Landing Page Builder modules and design-system approach should continue once the current MVP is complete.
+The migration concept has now advanced into a concrete B2B pilot. The `tipps` / Anwenderhandbuch area will be used as the first blueprint. Claude Design successfully crawled existing pages, preserved original copy, inspected structure and generated an overview page plus varied detail pages from the source content. The target is therefore not a visual 1:1 AEM recreation but a shared Anwenderhandbuch page system with reusable modules while preserving original texts, images and links as migration content.
+
+The asset workflow is also becoming a separate technical layer of the migration. For the pilot, Claude Design produced a structured inventory covering 30 pages and 97 assets, with 90 marked migration-relevant. The intended repeatable flow is to use this inventory to automate extraction of original assets from AEM, later upload them to the future central asset store and write the new delivery URLs back into the mapping.
+
+In parallel, Dominik is exploring a central Marketing Asset Library as a future single source of truth for images across Contentful, Iterable, Beefree, Salesforce, LP Builder workflows and agents. The current direction is to evaluate AWS/S3 as storage and reuse Scout24's existing image-delivery infrastructure for dynamic resizing, format conversion, compression and CDN delivery. A visual asset-library UI is not required for the migration pilot itself but is relevant for the future LP Builder + Contentful authoring experience.
 
 ## Dominik's Role
 
 Dominik represents Creative Operations and landing-page requirements, validates the controlled LP Builder workflow and owns the product-level questions around how the Landing Page Builder and Contentful should work together in the future.
 
-His immediate role is to establish the current MVP status, including the current CSS-class and rendering boundary between generated LP Builder code and Contentful, identify the remaining gaps and then decide whether further alignment with Beatrice and Mukhammadjon is needed. He also needs to clarify the post-MVP direction for modules and the design-system approach.
-
-For Contentful Migration, Dominik owns the initial migration framing before broader team alignment: first clarify slug and URL logic, then develop the first migration concept, then use that concept as the basis for a kickoff with the B2B Product Marketing team.
+For Contentful Migration, Dominik owns the migration framing and pilot design. He is testing the Anwenderhandbuch as the first blueprint, defining what must be preserved from AEM, shaping the repeatable content and asset migration workflow and aligning the future asset architecture with relevant technical stakeholders.
 
 ## Key Stakeholders
 
@@ -30,6 +32,8 @@ For Contentful Migration, Dominik owns the initial migration framing before broa
 - Beatrice for Core Team coordination and production-publishing alignment
 - Matthias Brandstätter for Contentful ownership and strategic platform direction
 - Stefan Harssdorf for Contentful architecture and technical assessment
+- Paul for the 2026-08-26 asset / migration discussion
+- John Ford as a potential technical contact for Scout24 image storage and delivery infrastructure
 - Contentful team
 - B2B Product Marketing team for migration kickoff and practical rollout alignment
 - Marketing team leads for Seeker, Homeowner, Professional and B2B
@@ -48,9 +52,12 @@ For Contentful Migration, Dominik owns the initial migration framing before broa
 - Direct preview of unpublished drafts is part of the workflow in `next`.
 - Production publishing was not part of the validated MVP at the last technical confirmation because the LP Builder renderer/content type had not been transferred to `pro`.
 - Contentful migration is a separate conceptual workstream and should not be bundled into the MVP task list.
-- Slug and URL logic for existing pages belongs to the Contentful Migration workstream rather than the current MVP task set.
-- The migration sequence is: define slug and URL logic first, then draft the migration concept, then hold a kickoff with the B2B Product Marketing team.
-- Concrete implementation work after the MVP should follow from a fresh status check and the post-MVP module/design-system decision.
+- The B2B `tipps` / Anwenderhandbuch area is the first migration blueprint.
+- Existing texts, images and links should be preserved during migration even when the new layout or module composition differs from AEM.
+- The future Anwenderhandbuch should use one coherent page system: an overview/navigation page plus detail pages composed from a small reusable module set.
+- Historical AEM directory placement should not determine the future information architecture; help/FAQ pages outside `/tipps/` may move into the Anwenderhandbuch when functionally appropriate.
+- Image downloading should become a repeatable technical workflow rather than a manual or Claude-specific step.
+- The future Marketing Asset Library should aim for one central asset source reused across marketing tools; AWS/S3 plus existing Scout24 image delivery is the current architecture to evaluate, not yet a final implementation decision.
 
 ## Important Developments
 
@@ -59,38 +66,43 @@ For Contentful Migration, Dominik owns the initial migration framing before broa
 - 2026-08-11: Dominik updated the same Contentful draft after changing the H1. The entry remained stable, stayed unpublished and advanced to version 2.
 - 2026-08-12: Mukhammadjon added a direct preview link to the GPT flow. Dominik verified the preview and a subsequent content update successfully.
 - 2026-08-12: A publish test exposed the current environment boundary: the Action reported publication, but the public route returned 404 because LP Builder rendering/publishing had not yet been transferred from `next` to `pro`.
-- 2026-08-12: Matthias Brandstätter suggested evaluating Claude Design as a possible future authoring surface for the LP Builder. This remains exploratory; no replacement decision has been made.
+- 2026-08-12: Matthias Brandstätter suggested evaluating Claude Design as a possible future authoring surface for the LP Builder.
 - 2026-08-20: Jorin supported the project as one of Dominik's priority workstreams and agreed with treating Contentful migration as a separate conceptual next step rather than assuming migration execution is already defined.
-- 2026-08-21: The MVP was described as close to completion: generation in the Landing Page Builder, direct transfer to Contentful and immediate preview were working end to end in `next`.
-- 2026-08-24: Dominik changed the immediate task sequence. He will first review the actual MVP status, then decide whether an alignment with Beatrice and Mukhammadjon is needed. The separate post-MVP question is how modules and the design-system approach should continue. Slug and URL logic moved to Contentful Migration.
-- 2026-08-24: Dominik clarified the migration sequence: slug and URL logic first, initial migration concept second, and then a kickoff with the B2B Product Marketing team to align the practical approach.
-- 2026-08-25: Dominik specified the immediate MVP review further: inspect the generated Contentful code to determine whether LP Builder CSS classes are still fully present or whether the output is reduced and relies more on Contentful-native styling or structures.
+- 2026-08-24: Dominik clarified the migration sequence: slug and URL logic, migration concept and then B2B Product Marketing alignment.
+- 2026-08-26: Claude Design successfully validated the Anwenderhandbuch migration approach by crawling existing pages, preserving original text and producing a coherent overview/detail-page system with varied modules.
+- 2026-08-26: The first structured asset inventory covered 30 pages and 97 assets, including 90 migration-relevant assets, renditions, shared DAM assets and a PDF.
+- 2026-08-26: Dominik aligned the broader asset problem with Matthias Brandstätter and Paul. The preferred direction is a central Marketing Asset Library with one stored original per asset and shared URL-based delivery across marketing tools and AI workflows.
+- 2026-08-26: Dominik contacted John Ford to verify whether the existing Scout24 AWS/S3 and image-delivery infrastructure can support this Marketing use case.
 
 ## Open Questions and Risks
 
-- Whether the generated Contentful code still carries the LP Builder's own CSS classes to the same extent or now relies more strongly on Contentful-native styling or structures.
 - What is still missing from the current MVP at the latest implementation state.
 - Whether a follow-up alignment with Beatrice and Mukhammadjon is needed after the status review.
 - How the module model and design-system approach should evolve after the MVP.
 - How and when the LP Builder content type, renderer and publishing flow will move from `next` to production `pro` if not already addressed.
-- The MCP/Action should not report or imply successful production publication while production publishing is unavailable.
-- Some visual spacing and padding in the Contentful preview previously differed from the current LP Builder/AEM rendering; these appeared to be refinement work rather than a blocker for the MVP integration.
+- How future slugs and public URLs should work for migrated pages, especially where SEO value makes URL preservation preferable.
+- How much of the Anwenderhandbuch migration can be automated reliably from crawl through content reconstruction, asset extraction, upload and Contentful draft creation.
+- How to retrieve the highest-quality originals for AEM image renditions and handle assets requiring manual review.
+- Whether Marketing can use an existing Scout24 AWS/S3 namespace or bucket and the existing `pictures.immobilienscout24.de` image-delivery service for a central Marketing Asset Library.
+- What ownership, permissions, metadata and upload API are required for that future asset platform.
 - Whether Claude Design, a future agent, or the Custom GPT should become the long-term authoring surface after the Contentful workflow is stable.
-- Which landing-page groups should be included first in migration and how the B2B Product Marketing team wants to sequence execution after the initial concept.
 
 ## Next Steps
 
-1. Inspect the generated Contentful output and verify whether LP Builder CSS classes are still fully included or whether the code has been reduced and relies more on Contentful-native styling or structures; use this as part of the current MVP status review.
-2. Decide whether a follow-up alignment with Beatrice and Mukhammadjon is needed and schedule it if useful.
-3. Clarify how LP Builder modules and the design-system approach should continue after the MVP.
+1. Continue the Anwenderhandbuch pilot and validate the repeatable migration flow from page crawl through content reconstruction and asset extraction.
+2. Define the slug and URL logic for migrated pages, including SEO-sensitive cases.
+3. Await John's response on the existing Scout24 image infrastructure and clarify the supported Marketing storage/upload path if he is the right contact.
+4. Turn the asset inventory into an automated download/mapping step that can later upload to the selected central asset store and write back new delivery URLs.
+5. Use the pilot findings as the concrete basis for the B2B Product Marketing migration kickoff.
+6. Separately continue the LP Builder & Contentful MVP status review and post-MVP module/design-system decision.
 
 ## Contentful Migration Boundary
 
-Migration of existing landing pages is a separate workstream. The first migration task is to define the slug and URL logic for the future Contentful setup. Once that is clear enough, Dominik will draft the migration concept for existing landing pages. After the first concept exists, he will schedule a kickoff with the B2B Product Marketing team to align scope, approach and how to proceed.
+Migration of existing landing pages is a separate workstream from the current LP Builder & Contentful MVP. The Anwenderhandbuch is now the concrete first pilot. The migration should preserve source content and assets, normalize legacy AEM variety into a smaller reusable page/module system and avoid carrying the historic AEM directory structure into the future information architecture without review.
 
 ## Last Confirmed
 
-Current MVP task sequence, including the CSS-class check, confirmed by Dominik on 2026-08-25. The Contentful Migration sequence and post-MVP module/design-system question remain as confirmed on 2026-08-24. The last technically verified implementation state remains the working creation, transfer and preview flow in `next`; the CSS-class and rendering-boundary check is now the immediate MVP action.
+Anwenderhandbuch pilot, Claude Design validation, asset inventory and Marketing Asset Library direction confirmed by Dominik on 2026-08-26. The technically verified Contentful implementation state remains the working creation, transfer and preview flow in `next`; real production publishing had not yet been confirmed.
 
 ## Related Context
 
