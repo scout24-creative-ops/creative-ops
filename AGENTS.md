@@ -106,8 +106,9 @@ Also update:
 
 - `documentation/` is the chronological record of work-relevant information by week.
 - Each active project file is the maintained current briefing for that project, not a second chronological archive.
-- `tasks.md` is the source of truth for confirmed Open and Waiting work.
-- `dashboard/projects.json` is a derived operational view of `tasks.md` plus maintained current subtasks.
+- `tasks.md` is the single source of truth for confirmed Open and Waiting work.
+- The current chat is the primary operational interface for viewing, prioritizing, selecting and working through tasks.
+- `dashboard/projects.json` and the dashboard UI are optional legacy visualizations. Do not treat them as required task-maintenance surfaces or sources of truth.
 - Project repositories are the technical source of truth for code, configuration, deployments, and implementation status.
 - Do not silently reconcile conflicts. Prefer newer confirmed information and explicitly preserve unresolved uncertainty.
 
@@ -124,8 +125,9 @@ When Dominik provides confirmed new work information in a Profile/Repo-framed co
 7. Preserve dates for historical statements in weekly documentation.
 8. Mark missing or conflicting information explicitly instead of guessing.
 9. Read `tasks.md` and update changed tasks instead of adding near-duplicates.
-10. If Open or Waiting work changes, synchronize `dashboard/projects.json` from the final task state.
-11. Verify the changed files and summarize the repository update briefly.
+10. Verify the changed files and summarize the repository update briefly.
+
+Do not update `dashboard/projects.json` as part of routine task maintenance unless Dominik explicitly asks to maintain, repair or use the dashboard.
 
 Routine confirmed updates under this workflow do not require a separate approval message.
 
@@ -180,18 +182,20 @@ Keep one central task list in `tasks.md` with Open, Waiting, Suggestions, and Co
 
 ### Default task overview output
 
-When Dominik asks for his current, open, active, or upcoming tasks, use this presentation by default unless he requests another format:
+When Dominik asks to output, show or list his current/open/active/upcoming tasks without an additional selection criterion, provide the complete current task overview.
 
-1. Group tasks directly by the current canonical project or `Area` name. Do not add the former AI Strategy / AI Enablement / AI Creative Operations pillar grouping around the task list.
-2. Start every project heading with its established project emoji and canonical project name.
-3. Directly below the heading, add one very short internal working-status or next-goal sentence. Write it for Dominik, not for an external reader; avoid background explanations, project definitions, or introductory context he already knows.
-4. Under that sentence, show each main task as a bold bullet.
-5. Under each main task, show all concrete next steps or subtasks as nested bullets when they are known and still current.
-6. Do not omit known subtasks merely because `tasks.md` stores the main outcome compactly. For read-only task overviews, reconcile the main task with `dashboard/projects.json`, the relevant current project file, and newer current-week documentation when those sources contain more recent or more detailed confirmed next steps.
-7. Use `tasks.md` as the source of truth for whether a task is active or waiting; use dashboard/project/weekly context only to enrich, correct, or flag stale task wording and subtasks. Never revive completed, obsolete, removed, or unconfirmed work from those secondary sources.
-8. If the sources conflict, prefer the newest confirmed work update and call out the inconsistency rather than silently presenting stale steps as current.
-9. Keep the overview compact and operational. Do not add an introduction, prioritization commentary, external-facing explanation, or closing summary unless requested.
-10. Preserve useful detail. The desired structure is: `project → one-line internal status → main task → concrete subtasks`.
+1. Read `tasks.md` first.
+2. Read the relevant current project files and current-week documentation when they contain newer confirmed next steps or concrete subtasks.
+3. Group tasks directly by the current canonical project or `Area` name. Do not add the former AI Strategy / AI Enablement / AI Creative Operations pillar grouping around the task list.
+4. Start every project heading with its established project emoji and canonical project name.
+5. Directly below the heading, add one very short internal working-status or next-goal sentence. Write it for Dominik, not for an external reader; avoid background explanations, project definitions, or introductory context he already knows.
+6. Under that sentence, show each main task as a bold bullet.
+7. Under each main task, show all concrete next steps or subtasks as nested bullets when they are known and still current.
+8. Do not omit known subtasks merely because `tasks.md` stores the main outcome compactly. Use relevant project context and newer current-week documentation to enrich current subtasks.
+9. Use `tasks.md` as the source of truth for whether a task is active or waiting. Never revive completed, obsolete, removed, or unconfirmed work from secondary context.
+10. If sources conflict, prefer the newest confirmed work update and call out the inconsistency rather than silently presenting stale steps as current.
+11. Keep the overview compact and operational. Do not add an introduction, prioritization commentary, external-facing explanation, or closing summary unless requested.
+12. Preserve useful detail. The desired structure is: `project → one-line internal status → main task → concrete subtasks`.
 
 Example:
 
@@ -208,28 +212,51 @@ MVP fertigziehen und parallel die Asset-Library-Richtung klären.
   - Technische Lösung, Ownership und Umsetzung festlegen
 ```
 
-## Dashboard Synchronization
+### Task-assistant selection and prioritization
 
-`tasks.md` is the single source of truth for Open and Waiting tasks. `dashboard/projects.json` is a derived visual view and must never be used to write tasks back into `tasks.md`.
+When Dominik asks about his tasks with any additional attribute, constraint, perspective or selection criterion, do not default to the complete task list. Act as an assistant and curate the answer around that request.
 
-When a confirmed change affects an Open or Waiting task:
+Interpret natural language flexibly rather than requiring fixed trigger phrases. Determine three things from the request:
 
-1. Finalize the task change in `tasks.md` first.
-2. Regenerate `dashboard/projects.json` from the final task state in the same repository update.
-3. Include every task from `Open` and `Waiting` exactly once, grouped by canonical `Area` / project name; exclude `Suggestions`, `Completed`, obsolete items, and unconfirmed ideas.
-4. Keep visible task text short and independently understandable.
-5. Include `steps` only for concrete, individually actionable subtasks; do not turn project context, method descriptions or explanatory scope into dashboard bullets.
-6. Preserve confirmed categories unless priority or dependency changed.
-7. Preserve existing task IDs permanently. Removing, filtering or reordering cards must never renumber surviving tasks.
-8. Assign a new unique ID only to a genuinely new dashboard task. Never recycle a removed task's ID for unrelated work.
-9. Preserve project order as an intentional maintained sequence rather than alphabetically sorting projects.
-10. Set dashboard `updated` only when dashboard data actually changes.
-11. Validate Open + Waiting count against dashboard task count, exact one-time task coverage, unique IDs, absence of suggestions/completed tasks, non-empty unique projects, valid fields/categories, and valid JSON.
-12. Commit the task source and dashboard derivation together.
+1. **Scope** — for example all work, today, this week, before vacation, a specific project, a deadline, or one workstream.
+2. **Selection criterion** — for example most important, urgent, quick to finish, blocking others, high impact, suitable for low motivation, suitable for deep focus, long overdue, or dependent on another event.
+3. **Desired depth** — for example a shortlist, ranked priorities, one next step, or a concrete work sequence.
 
-Only `focus` should require a visible status label in the dashboard UI. `continue` and `waiting` may remain internal categories without a visible card label.
+Examples include:
 
-Do not synchronize the dashboard for historical-only documentation, context-only changes without task impact, or unrelated organization updates.
+- `Was sind die wichtigsten Aufgaben für diese Woche?`
+- `Was sollte ich vor meinem Urlaub noch fertig machen?`
+- `Was ist der nächste wichtige Step bei Projekt X?`
+- `Welche Aufgaben kann ich heute schnell erledigen?`
+- `Ich habe zwei Stunden, woran sollte ich arbeiten?`
+- `Ich habe gerade wenig Motivation, was wäre ein guter Einstieg?`
+- `Was sollte ich heute zuerst machen?`
+
+For this assistant mode:
+
+- Usually return one to three recommended actions instead of every active task.
+- Consider strategic importance, deadlines, blockers, dependencies, expected impact, task size, quick wins, focus requirements and context-switch cost.
+- Use any time, energy or motivation constraint Dominik provides as a real selection signal.
+- Prefer tasks that unlock other work when that matters.
+- Prefer a small clear action when momentum is more useful than choosing the theoretically largest task.
+- Do not recommend work that is waiting on someone else unless the useful next action is a follow-up or escalation.
+- For project-specific questions, read the relevant project context and identify the next meaningful action rather than summarizing the whole project.
+- For time-bounded requests, choose work that realistically fits the stated window or explicitly suggest a bounded slice of a larger task.
+- Give a short reason for recommendations when it helps Dominik choose, but avoid turning the answer into a long prioritization essay.
+- If several options are similarly useful and the request is about motivation or preference, offer a small choice across different work modes, such as quick/admin, creative, or focused/deep work.
+- Do not invent precise effort estimates when the repository does not support them. Use qualitative sizing such as quick, short, focused block, or larger task when appropriate.
+
+The goal is not only to display tasks but to reduce the effort Dominik needs to decide what to do next.
+
+## Dashboard Status
+
+The dashboard remains in the repository as an existing optional visualization, but it is no longer part of the required task-management workflow.
+
+- Do not read `dashboard/projects.json` for routine task output or prioritization.
+- Do not synchronize it when `tasks.md` changes during normal Profile maintenance.
+- Do not assign or maintain dashboard categories, project order, steps or task IDs unless Dominik explicitly asks to use or maintain the dashboard.
+- If Dominik later asks to repair, revive or remove the dashboard, treat that as a separate repository-maintenance task and inspect its current implementation before changing it.
+- Never use dashboard data to overwrite `tasks.md`.
 
 ## Repository Health Check
 
