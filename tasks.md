@@ -16,54 +16,19 @@
   - Context: Marie will present the Brand Agent, reusable Skill approach and her research on when to use an Agent versus a Skill or another setup. Dominik and Marie will align her contribution on 2026-09-04. The calendar event itself is not tracked as a separate dashboard task.
   - Source: Marie confirmed her contribution with Dominik on 2026-08-24
 
-- [ ] Contact Yvonne about the Content Marketing Agent
-  - Area: Creative Ops
+- [ ] Complete the Landing Page Builder and Contentful MVP
+  - Area: Marketing Content Platform
   - Status: Open
-  - Next step: Send Yvonne a short Slack message to restart the topic and clarify whether there is still a concrete use case to pursue.
-  - Context: The previous task to define the first use case was too far ahead; the immediate action is to reconnect first.
-  - Source: Dominik clarified the next action on 2026-08-24
-
-- [ ] Check CSS classes in generated Contentful code
-  - Area: LP Builder & Contentful MVP
-  - Status: Open
-  - Next step: Inspect the generated Contentful output and verify whether the LP Builder's own CSS classes are still included to the same extent or whether the code has been reduced and relies more on Contentful-native styling or structures.
-  - Context: This is the immediate technical check within the broader MVP status review and should clarify the current rendering boundary before the next alignment or post-MVP module decision.
-  - Source: Dominik specified the MVP status-check focus on 2026-08-25
-
-- [ ] Plan the next LP Builder MVP alignment with Bea and Mukhammadjon
-  - Area: LP Builder & Contentful MVP
-  - Status: Open
-  - Next step: After the status check, decide whether an alignment with Beatrice and Mukhammadjon is needed and schedule it if useful.
-  - Context: The meeting depends on what the current MVP review shows and should not be treated as a fixed appointment yet.
-  - Source: Dominik clarified the MVP next step on 2026-08-24
-
-- [ ] Clarify LP Builder module development after the MVP
-  - Area: LP Builder & Contentful MVP
-  - Status: Open
-  - Next step: Clarify how the LP Builder should continue after the MVP, especially how modules and the design-system approach should be developed further.
-  - Context: This is the product-level follow-up once the current MVP is sufficiently complete.
-  - Source: Dominik clarified the post-MVP question on 2026-08-24
-
-- [ ] Define slug and URL logic for Contentful migration
-  - Area: Contentful Migration
-  - Status: Open
-  - Next step: Define how slugs and URLs should work when existing landing pages move into the Contentful setup.
-  - Context: The URL model affects how existing pages can be transferred and addressed in the future setup, especially for SEO-sensitive pages.
-  - Source: Dominik prioritized the migration sequence on 2026-08-24
+  - Next step: Close the remaining MVP gaps around acceptance criteria, CTA/link handling and the production `pro` path with Beatrice and Mukhammadjon.
+  - Context: Generation, draft creation, update, preview, OAuth and reuse of existing Contentful assets are already validated in `next`; production publishing is not yet confirmed.
+  - Source: Dominik consolidated the platform scope on 2026-08-26
 
 - [ ] Run the Anwenderhandbuch Contentful migration pilot
   - Area: Contentful Migration
   - Status: Open
-  - Next step: Validate the repeatable migration flow for the B2B Anwenderhandbuch from source-page crawl through content reconstruction and automated asset extraction.
-  - Context: Claude Design has already validated page crawling, exact source-copy preservation and a shared overview/detail-page system; the pilot should now prove how reliably the workflow can be repeated across the area.
-  - Source: Dominik confirmed the Anwenderhandbuch pilot and Claude Design validation on 2026-08-26
-
-- [ ] Plan Contentful migration kickoff with B2B Product Marketing
-  - Area: Contentful Migration
-  - Status: Open
-  - Next step: After the Anwenderhandbuch pilot has produced a concrete migration approach, schedule a kickoff with the B2B Product Marketing team to align how to proceed.
-  - Context: The team kickoff should use the pilot findings as a practical basis for discussing scope and rollout.
-  - Source: Dominik refined the migration approach on 2026-08-26
+  - Next step: Continue the Anwenderhandbuch pilot while establishing the SEO rules and the intended Pod split with Ulrike.
+  - Context: The pilot should cover URL/slug and redirect rules, SEO/LLM visibility requirements, Ulrike's role in thematic URL and content decisions, design coordination and important image/content needs, while Dominik drives the system and migration workflow.
+  - Source: Dominik refined the migration organization on 2026-08-26
 
 - [ ] Set up B2B automation discovery with Juliane
   - Area: E-Mail Automation Professional
@@ -88,19 +53,12 @@
 
 ## Waiting
 
-- [ ] Clarify Marketing asset infrastructure with John Ford
-  - Area: Contentful Migration
+- [ ] Define the Marketing Asset Library setup
+  - Area: Marketing Content Platform
   - Status: Waiting for another person or decision
   - Waiting for: John Ford's response on whether he is the right contact for Scout24 image storage and delivery infrastructure
-  - Dominik's next step: If John is the right contact, clarify whether Marketing can use an existing AWS/S3 storage path and the existing image-delivery service for a central Marketing Asset Library and migration uploads.
-  - Context: Dominik contacted John after Matthias Brandstätter suggested him as a possible technical contact on 2026-08-26.
-
-- [ ] Check Ciaran's remaining capacity for LP Builder & Contentful support
-  - Area: Creative Ops
-  - Status: Waiting for another person or decision
-  - Waiting for: Ciaran to confirm how many working hours he still has available through the end of 2026
-  - Dominik's next step: Once the remaining hours are clear, assess whether Ciaran can support further LP Builder development in the Contentful context.
-  - Context: The previous LP Builder / Design Library review follow-up is obsolete and is replaced by this capacity-based decision.
+  - Dominik's next step: After the infrastructure path is clear, define the technical solution, ownership and implementation plan for a central Marketing Asset Library.
+  - Context: The current direction is to evaluate AWS/S3 plus Scout24 image delivery as the shared asset source for Contentful, Iterable, Beefree, Salesforce, LP Builder workflows and agents.
 
 - [ ] Clarify Coupa AI support
   - Area: Creative Ops
@@ -122,6 +80,16 @@
   - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
 
 ## Completed
+
+- [x] Connect with Yvonne on the Content Marketing Agent
+  - Area: Content Marketing Agent
+  - Completed: 2026-08-26
+  - Outcome: The follow-up is arranged; Dominik will meet Yvonne and her team next week so they can present their current projects. No separate active dashboard task is needed for the scheduled meeting.
+
+- [x] Clarify Ciaran's remaining LP Builder & Contentful capacity
+  - Area: Marketing Content Platform
+  - Completed: 2026-08-26
+  - Outcome: No further budget is available for Ciaran, so additional support from him should not be assumed in current platform or migration planning.
 
 - [x] Define the Brand Agent MVP with Marie
   - Area: Brand Agent – Tone of Voice
