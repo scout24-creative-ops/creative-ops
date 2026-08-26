@@ -14,6 +14,18 @@ Technical project repositories remain the source of truth for code, configuratio
 4. Do not read every project file by default.
 5. Read the current weekly documentation whenever new work information is being recorded or a weekly recap is requested.
 
+## Continuous Profile Maintenance
+
+Treat the repository as the durable work context and the current chat as the active working surface.
+
+- When Dominik clearly works in a Profile/Repo context, including phrases such as `Skill Profile`, `Profile`, `mein Repo`, `meinem Repo`, `ins Repo`, `im Repo` or `Repository`, read the relevant repository context automatically.
+- Proactively detect confirmed work-relevant changes to project status, decisions, tasks, dependencies, ownership, milestones, risks or durable working rules.
+- Do not wait for Dominik to remember to ask for a repository update after every relevant exchange.
+- When the information is clearly confirmed and its destination is unambiguous, update the relevant repository files directly as normal maintenance without requiring a second `Go`.
+- Do not persist brainstorming, discarded options, tentative ideas or unconfirmed interpretations.
+- Ask one concise clarification question when meaning, owner, timing, permanence, project classification or operational effect is materially unclear.
+- Continue to require explicit confirmation for destructive cleanup, permission or access changes, protected areas, external publishing, or changes outside `scout24-creative-ops/creative-ops`.
+
 ## Artifact Readiness Reminder
 
 Whenever Dominik asks to create, implement, visualize, or prompt the creation of a presentation, landing page, HTML page, slide deck, infographic, diagram, or similar communication artifact, briefly assess whether the audience, objective, core message, content, and structure are sufficiently clear.
@@ -37,7 +49,7 @@ One new piece of information may require updates to more than one file, but adap
 
 ## Primary Documentation Rule
 
-Every work-relevant update Dominik provides must first be recorded in the current weekly file under `documentation/YYYY-Www.md`.
+Every new work-relevant update Dominik provides in normal operation must first be recorded in the current weekly file under `documentation/YYYY-Www.md`.
 
 The weekly documentation may include meetings and workshops, progress and completed work, discussions and open questions, delays, follow-ups, decisions, risks, blockers, and other context that may help create the end-of-week recap.
 
@@ -57,16 +69,19 @@ Each weekly file must show which information has already been included in a comp
 
 ## Bootstrap, Migration, and Cleanup Exception
 
-During initial setup, cleanup, migration, or retrospective consolidation, do not update the current weekly documentation merely because historical information is being reorganized now.
+During initial setup, cleanup, migration, old-chat consolidation, or retrospective reorganization, do not update the current weekly documentation merely because historical information is being reorganized now.
 
+- Compare migration input with the current repository before writing.
+- Prefer newer confirmed repository information over older chat history.
 - Classify historical or completed information directly into the relevant maintained files.
 - Preserve original timing when known.
 - Do not assign older information to the current calendar week.
 - Do not treat repository cleanup itself as a work update unless it is independently relevant to Dominik's work.
+- Do not create duplicate tasks or duplicate project narratives.
 
 ## Durable Context Check
 
-After recording an update in weekly documentation, decide whether it also changes durable context.
+After recording a normal-operation update in weekly documentation, decide whether it also changes durable context.
 
 Update a project file only when information remains useful beyond the current week, for example when it changes purpose, scope, current status, ownership, stakeholders, decisions, material risks, milestones, or durable next steps.
 
@@ -91,26 +106,28 @@ Also update:
 
 - `documentation/` is the chronological record of work-relevant information by week.
 - Each active project file is the maintained current briefing for that project, not a second chronological archive.
+- `tasks.md` is the source of truth for confirmed Open and Waiting work.
+- `dashboard/projects.json` is a derived operational view of `tasks.md` plus maintained current subtasks.
 - Project repositories are the technical source of truth for code, configuration, deployments, and implementation status.
-- Do not silently reconcile conflicts. State them and preserve uncertainty until confirmed.
+- Do not silently reconcile conflicts. Prefer newer confirmed information and explicitly preserve unresolved uncertainty.
 
 ## Updating Context
 
-When Dominik provides new information:
+When Dominik provides confirmed new work information in a Profile/Repo-framed conversation:
 
-1. Identify the current calendar week.
-2. Read or create the matching file in `documentation/`.
-3. Record the factual update in `Updates since last summary` when a checkpoint exists.
-4. Identify affected context areas and projects.
-5. Read only the relevant maintained files.
-6. Update them only when the information has lasting relevance.
-7. Replace or consolidate outdated statements when newer confirmed information supersedes them.
-8. Preserve dates for historical statements in weekly documentation.
-9. Mark missing or conflicting information explicitly instead of guessing.
-10. Read `tasks.md` and update changed tasks instead of adding near-duplicates.
-11. Summarize which files changed and why.
+1. Identify whether this is normal operation or migration/cleanup.
+2. For normal operation, read or create the matching current weekly file and record the factual update under `Updates since last summary` when applicable.
+3. Identify affected context areas and projects.
+4. Read only the relevant maintained files.
+5. Update durable context only when the information remains useful beyond the current week.
+6. Replace or consolidate outdated statements when newer confirmed information supersedes them.
+7. Preserve dates for historical statements in weekly documentation.
+8. Mark missing or conflicting information explicitly instead of guessing.
+9. Read `tasks.md` and update changed tasks instead of adding near-duplicates.
+10. If Open or Waiting work changes, synchronize `dashboard/projects.json` from the final task state.
+11. Verify the changed files and summarize the repository update briefly.
 
-During bootstrap, migration, or cleanup, replace steps 1–3 with the exception above.
+Routine confirmed updates under this workflow do not require a separate approval message.
 
 ## Information Density and Compaction
 
@@ -193,21 +210,34 @@ MVP fertigziehen und parallel die Asset-Library-Richtung klären.
 
 ## Dashboard Synchronization
 
-`tasks.md` is the single source of truth for open and waiting tasks. `dashboard/projects.json` is a derived visual view and must never be used to write tasks back into `tasks.md`.
+`tasks.md` is the single source of truth for Open and Waiting tasks. `dashboard/projects.json` is a derived visual view and must never be used to write tasks back into `tasks.md`.
 
-When a confirmed change affects an open or waiting task, first read the relevant Profile context and obtain Dominik's existing explicit approval before writing. After approval, update `tasks.md` and any other relevant context files, then regenerate `dashboard/projects.json` from the final task state in the same change. Include every task from `Open` and `Waiting` exactly once, grouped by canonical `Area`/project name; exclude `Suggestions`, `Completed`, obsolete items, and unconfirmed ideas. Keep visible task text short and isolated enough to read without extra project knowledge; use a concise concrete action and name the object or result whenever that improves clarity. Assign each task exactly one category: `focus`, `continue`, or `waiting`. Preserve confirmed categories unless priority or dependency changed; ask when a reclassification is unclear.
+When a confirmed change affects an Open or Waiting task:
 
-Do not synchronize the dashboard for historical-only documentation, context-only changes without task impact, or unrelated organization updates. Before committing a dashboard-relevant change, validate Open + Waiting count against dashboard task count, exact one-time task coverage, absence of suggestions/completed tasks, non-empty unique projects, valid task fields/categories, valid JSON, and local HTTP loading without JavaScript errors. Commit the task/context changes and derived dashboard update together. After an approved push to `main`, the existing GitHub Pages workflow deploys `dashboard/` automatically; no separate dashboard publish step or generated commit is allowed.
+1. Finalize the task change in `tasks.md` first.
+2. Regenerate `dashboard/projects.json` from the final task state in the same repository update.
+3. Include every task from `Open` and `Waiting` exactly once, grouped by canonical `Area` / project name; exclude `Suggestions`, `Completed`, obsolete items, and unconfirmed ideas.
+4. Keep visible task text short and independently understandable.
+5. Include `steps` only for concrete, individually actionable subtasks; do not turn project context, method descriptions or explanatory scope into dashboard bullets.
+6. Preserve confirmed categories unless priority or dependency changed.
+7. Preserve existing task IDs permanently. Removing, filtering or reordering cards must never renumber surviving tasks.
+8. Assign a new unique ID only to a genuinely new dashboard task. Never recycle a removed task's ID for unrelated work.
+9. Preserve project order as an intentional maintained sequence rather than alphabetically sorting projects.
+10. Set dashboard `updated` only when dashboard data actually changes.
+11. Validate Open + Waiting count against dashboard task count, exact one-time task coverage, unique IDs, absence of suggestions/completed tasks, non-empty unique projects, valid fields/categories, and valid JSON.
+12. Commit the task source and dashboard derivation together.
 
-The Profile skill must apply the same sequence whenever it is available: finalize `tasks.md`, regenerate `dashboard/projects.json`, validate both and the local dashboard, then report that the existing Pages workflow will deploy after push. No editable Profile skill is currently installed in this workspace; if one is later packaged, add this sequence to its task-update workflow without replacing its approval, compactness, or complete-coverage rules.
+Only `focus` should require a visible status label in the dashboard UI. `continue` and `waiting` may remain internal categories without a visible card label.
+
+Do not synchronize the dashboard for historical-only documentation, context-only changes without task impact, or unrelated organization updates.
 
 ## Repository Health Check
 
-When Dominik asks to inspect, audit, clean up, or assess Profile, perform a read-only health check before proposing changes.
+When Dominik asks to inspect, audit, clean up, or assess Profile, perform a read-only health check before proposing or applying non-trivial cleanup.
 
 Check for duplicated narratives, contradictory status or ownership, stale files and tasks, project files that became chronological logs, tasks that are overly broad or detailed, provisional initiatives listed as active projects, missing confirmation dates, unsupported certainty, and index mismatches.
 
-Rate structure, accuracy, duplication, freshness, task hygiene, and scalability briefly. Distinguish urgent inconsistencies, useful cleanup, and optional refinements. Propose the smallest useful cleanup and request explicit approval before writing.
+Rate structure, accuracy, duplication, freshness, task hygiene, and scalability briefly. Distinguish urgent inconsistencies, useful cleanup, and optional refinements. Apply only clearly safe routine corrections automatically; destructive or ambiguous cleanup still requires confirmation.
 
 ## Weekly Summary Format
 
@@ -215,13 +245,13 @@ When creating a weekly summary for colleagues:
 
 1. Write the complete summary in English.
 2. Start with `Dominik` on its own line.
-3. Use the headings `This week’s progress` and `Next steps`.
+3. Use the heading `This week’s progress`.
 4. Use one bullet per project or workstream.
 5. Start each bullet with one relevant emoji, followed by the official project name in bold, an en dash, and a compact description.
 6. Include all relevant workstreams rather than forcing a fixed number.
-7. Keep `Next steps` very short and limit it to five bullets.
+7. Do not add a `Next steps` section unless Dominik explicitly asks for one.
 8. Exclude internal work-organization, repository-setup, or publishing-infrastructure topics unless explicitly requested.
-9. Treat Dominik's Slack post from 2026-07-23 as the formatting reference: compact, factual, easy to scan, and ready to paste into Slack.
+9. Treat the maintained weekly-summary reference as the formatting authority.
 10. For a delta summary, use only `Updates since last summary`. For a full weekly summary, use the entire weekly file.
 11. Advance the summary checkpoint only after Dominik confirms the completed version.
 
@@ -234,13 +264,13 @@ When creating a weekly summary for colleagues:
 
 ## Git Behaviour
 
-- Prefer a branch and pull request for structural changes or broad context migrations.
-- Small, explicitly approved context updates may be committed directly when the available workflow requires it.
-- Never commit or push without Dominik's explicit instruction.
+- Routine confirmed Profile maintenance in `scout24-creative-ops/creative-ops` may be committed directly when the intended change is clear and non-destructive.
+- Prefer a branch and pull request for broad structural migrations, risky refactors, or changes with substantial operational side effects.
+- Never perform destructive cleanup, permission changes, protected-area changes, external publishing, or cross-repository writes without explicit confirmation.
 - Group one coherent documentation update into as few commits as the available workflow reasonably allows.
 
 ## Response Behaviour
 
 - Clearly separate confirmed facts, historical information, assumptions, and open questions.
-- Mention changed file paths.
-- Keep the update summary concise.
+- Keep routine repository update summaries concise.
+- Mention file paths, commit SHAs or diffs only when requested or when a problem occurred.
