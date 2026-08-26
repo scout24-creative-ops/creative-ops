@@ -61,7 +61,7 @@
   - Context: The current direction is to evaluate AWS/S3 plus Scout24 image delivery as the shared asset source for Contentful, Iterable, Beefree, Salesforce, LP Builder workflows and agents.
 
 - [ ] Clarify Coupa AI support
-  - Area: Creative Ops
+  - Area: Coupa AI Support
   - Status: Waiting for another person or decision
   - Waiting for: Jana Homfeldt's response about the responsible Coupa contact and existing or planned AI support
   - Dominik's next step: Reassess the topic once the central ownership and support situation are clear.
