@@ -19,9 +19,9 @@
 - [ ] Complete the Landing Page Builder and Contentful MVP
   - Area: Marketing Content Platform
   - Status: Open
-  - Next step: Close the remaining MVP gaps around acceptance criteria, CTA/link handling and the production `pro` path with Beatrice and Mukhammadjon.
-  - Context: Generation, draft creation, update, preview, OAuth and reuse of existing Contentful assets are already validated in `next`; production publishing is not yet confirmed.
-  - Source: Dominik consolidated the platform scope on 2026-08-26
+  - Next step: Use the 2026-08-27 alignment with Beatrice to review the concrete MVP status, identify what is ready versus still missing or undecided, clarify the production `pro` path and discuss how B2B Salesforce form components can be supported in the LP Builder.
+  - Context: Generation, draft creation, update, preview, OAuth and reuse of existing Contentful assets are already validated in `next`; production publishing is not yet confirmed. CTA/link handling remains part of the MVP gap assessment. B2B pages need forms and are expected to require Salesforce form components; Dominik wants to understand what already exists and how those components can be integrated into the LP Builder.
+  - Source: Dominik confirmed the Beatrice alignment topics on 2026-08-26
 
 - [ ] Run the Anwenderhandbuch Contentful migration pilot
   - Area: Contentful Migration
