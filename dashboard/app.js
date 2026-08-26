@@ -25,6 +25,8 @@ const taskLabelPalette = [
   "#F9E4D8"
 ];
 
+const projectBandPalette = ["#DDF4EC", "#F5EBDD", "#EEF4C9", "#EAE2F8", "#DDEFF8"];
+
 const board = document.querySelector("#project-grid");
 const emptyState = document.querySelector("#empty-state");
 const errorState = document.querySelector("#error-state");
@@ -34,6 +36,7 @@ let tasks = [];
 let projectOrder = [];
 let activeFilter = "all";
 let projectLabelColors = new Map();
+let projectBandColors = new Map();
 
 function isValidTask(task) {
   return typeof task?.text === "string" && categoryLabels[task.category];
@@ -82,6 +85,7 @@ function assignProjectLabelColors(projectList) {
   });
 
   projectLabelColors = new Map();
+  projectBandColors = new Map();
   const occupiedSlots = new Set();
 
   orderedProjects.forEach((project) => {
@@ -98,10 +102,18 @@ function assignProjectLabelColors(projectList) {
 
     projectLabelColors.set(project.name, taskLabelPalette[startIndex]);
   });
+
+  projectList.forEach((project, index) => {
+    projectBandColors.set(project.name, projectBandPalette[index % projectBandPalette.length]);
+  });
 }
 
 function colorForProject(name) {
   return projectLabelColors.get(name) ?? taskLabelPalette[hashProjectName(name) % taskLabelPalette.length];
+}
+
+function bandColorForProject(name) {
+  return projectBandColors.get(name) ?? projectBandPalette[hashProjectName(name) % projectBandPalette.length];
 }
 
 function createTaskCard(task) {
@@ -133,10 +145,14 @@ function createTaskCard(task) {
     const steps = document.createElement("ul");
     steps.className = "task-card__steps";
 
-    task.steps.forEach((step) => {
+    task.steps.forEach((step, index) => {
       const item = document.createElement("li");
       item.className = "task-card__step";
+      const number = document.createElement("span");
+      number.className = "task-card__step-number";
+      number.textContent = String(index + 1).padStart(2, "0");
       item.textContent = step;
+      item.prepend(number);
       steps.append(item);
     });
 
@@ -173,15 +189,25 @@ function renderBoard() {
     const section = document.createElement("section");
     section.className = "project-section";
     section.setAttribute("aria-label", projectName);
+    section.style.setProperty("--project-band", bandColorForProject(projectName));
 
-    const header = document.createElement("header");
-    header.className = "project-section__header";
+    const details = document.createElement("div");
+    details.className = "project-section__details";
+
+    const eyebrow = document.createElement("p");
+    eyebrow.className = "project-section__eyebrow";
+    eyebrow.textContent = `Projekt ${String(projectOrder.indexOf(projectName) + 1).padStart(2, "0")}`;
 
     const title = document.createElement("h2");
     title.className = "project-section__title";
     title.textContent = projectName;
 
-    header.append(title);
+    const summary = document.createElement("p");
+    summary.className = "project-section__summary";
+    const focusCount = projectTasks.filter((task) => task.category === "focus").length;
+    summary.textContent = `${projectTasks.length} offene ${projectTasks.length === 1 ? "Aufgabe" : "Aufgaben"}${focusCount ? ` · ${focusCount}× Fokus` : ""}`;
+
+    details.append(eyebrow, title, summary);
 
     const list = document.createElement("div");
     list.className = "project-section__items";
@@ -190,7 +216,7 @@ function renderBoard() {
       list.append(createTaskCard(task));
     });
 
-    section.append(header, list);
+    section.append(details, list);
     board.append(section);
     renderedSections += 1;
   });
