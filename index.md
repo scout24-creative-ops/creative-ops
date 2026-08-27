@@ -35,6 +35,7 @@ The two pillars are Dominik's personal working and steering model. Projects can 
 
 - [Landing Page Builder](projects/landing-page-builder.md)
 - [Marketing Content Platform](projects/contentful-marketing-mvp.md)
+- [Contentful Migration](projects/contentful-migration.md)
 - [E-Mail Builder](projects/email-builder.md)
 - [HeyImmo automated HomeOwner mail](projects/heyimmo-homeowner-mail.md)
 - [E-Mail Automation – Plus FOMO](projects/email-automation-plus-fomo.md)
