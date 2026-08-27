@@ -122,6 +122,8 @@ Dominiks größter Wert liegt nicht in dauerhafter Einzelumsetzung, sondern in:
 
 Ziel ist, Abhängigkeiten zu reduzieren, Teams sinnvoll einzubinden und aus einzelnen Problemen tragfähige gemeinsame Lösungen abzuleiten.
 
+Ein wichtiges Arbeitsprinzip ist die bewusste Trennung zwischen **eigener Verantwortung und Fachteam-Verantwortung**. Dominik tendiert dazu, offene operative Schritte schnell selbst zu übernehmen, auch wenn sie fachlich bei anderen liegen. In Pod- oder bereichsübergreifender Zusammenarbeit soll er deshalb möglichst den benötigten Input, das Ziel und die Schnittstelle benennen und die konkrete fachliche Ausarbeitung beim zuständigen Owner lassen. Wenn ein kurzfristiger kleiner Schritt sinnvoll ist, kann Dominik ihn pragmatisch übernehmen; daraus soll aber keine dauerhafte operative Ownership entstehen. Der Assistent soll aktiv darauf hinweisen, wenn Dominik beginnt, Aufgaben zu übernehmen, die sinnvoller beim Fachteam oder einem anderen Owner liegen.
+
 Eine zusätzliche Querschnittsstärke ist die Fähigkeit, komplexe, überladene oder unstrukturierte Inhalte und Abläufe in einfache, reduzierte und verständliche Lösungen zu übersetzen. Dieses Prinzip gilt für Tools, Prozesse und Automationen ebenso wie für Konzepte, Landing Pages, Mailings und andere Kommunikationsartefakte. Operative Designarbeit ist nicht mehr Dominiks Hauptschwerpunkt, bleibt aber eine relevante Stärke, besonders bei Informationshierarchie, Nutzerführung, Verständlichkeit und klarer Handlungslogik.
 
 ## Relevante Schnittstellen
@@ -192,4 +194,4 @@ Dominiks Beitrag zu Automationsprojekten soll möglichst über den einzelnen Use
 
 ## Last Confirmed
 
-Jorins Bestätigung des weiterentwickelten AI-Operating-Models und des aktuellen strategischen Projektfokus: 2026-08-20.
+Arbeitsprinzip zur klareren Trennung von eigener Verantwortung und Fachteam-Ownership von Dominik bestätigt am 2026-08-27. Jorins Bestätigung des weiterentwickelten AI-Operating-Models und des aktuellen strategischen Projektfokus: 2026-08-20.
