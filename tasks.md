@@ -19,16 +19,16 @@
 - [ ] Complete the Landing Page Builder and Contentful MVP
   - Area: Marketing Content Platform
   - Status: Open
-  - Next step: Use the 2026-08-27 alignment with Beatrice to review the concrete MVP status, identify what is ready versus still missing or undecided, clarify the production `pro` path and discuss how B2B Salesforce form components can be supported in the LP Builder.
-  - Context: Generation, draft creation, update, preview, OAuth and reuse of existing Contentful assets are already validated in `next`; production publishing is not yet confirmed. CTA/link handling remains part of the MVP gap assessment. B2B pages need forms and are expected to require Salesforce form components; Dominik wants to understand what already exists and how those components can be integrated into the LP Builder.
-  - Source: Dominik confirmed the Beatrice alignment topics on 2026-08-26
+  - Next step: Get the remaining `pro` / real-publishing work explicitly prioritized, align MCP-side link validation with the Builder checks, and complete the handover so Dominik can duplicate the finished Contentful-enabled GPT for continued ownership and development.
+  - Context: Generation, draft creation, update, preview and OAuth are validated in `next`. Mukhammadjon estimates the remaining production setup at roughly one working day once tasked. Image-selection work is not part of the MVP and should revert to the established placeholder + user-supplied direct-URL flow. Beatrice aligned with this direction on 2026-08-27; production publishing and validation remain the material completion items.
+  - Source: Beatrice alignment and Mukhammadjon status update on 2026-08-27
 
 - [ ] Run the Anwenderhandbuch Contentful migration pilot
   - Area: Contentful Migration
   - Status: Open
-  - Next step: In the 2026-08-27 11:00 alignment with Juliane, ask whether Ulrike can join Dominik and Peter in a small pod; if agreed, define Ulrike's fachlich/content-facing support role and continue the Anwenderhandbuch pilot with that split.
-  - Context: Dominik wants Ulrike to support the AI Enablement Series and initially take a fachlich coordinating role around Contentful Migration, with later potential to support Automation topics as well. For the migration pilot, her intended contribution includes thematic URL/content decisions, stakeholder coordination, design reviews and important image/content needs, while Dominik drives the system and migration workflow. Juliane's agreement is still pending.
-  - Source: Dominik clarified the planned Juliane alignment and proposed Ulrike role on 2026-08-26
+  - Next step: Align with Juliane on the proposed Ulrike/Peter/Dominik pod, send Beatrice representative B2B form URLs, clarify the reusable Salesforce form integration pattern, and continue the Anwenderhandbuch pilot preparation including SEO/URL alignment.
+  - Context: Claude Design has been validated for crawling AEM page groups and extracting exact text, links and image URLs into structured inputs for the LP Builder. The current pilot is expected to cover roughly 40–60 pages once the B2B team confirms scope. B2B forms are a critical migration dependency and should be centrally managed and embedded/referenced through an LP Builder slot/module rather than generated inside the Builder.
+  - Source: Beatrice alignment on 2026-08-27 and prior migration validation
 
 - [ ] Set up B2B automation discovery with Juliane
   - Area: E-Mail Automation Professional
