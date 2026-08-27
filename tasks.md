@@ -30,6 +30,13 @@
   - Context: Claude Design has been validated for crawling AEM page groups and extracting exact text, links and image URLs into structured inputs for the LP Builder. The current pilot is expected to cover roughly 40–60 pages once the B2B team confirms scope. B2B forms are a critical migration dependency and should be centrally managed and embedded/referenced through an LP Builder slot/module rather than generated inside the Builder. Dominik asked Ulrike on 2026-08-27 for representative live-form URLs, current setup/data-flow information and the responsible Salesforce contact so Beatrice can start assessing the module. The Juliane meeting originally planned for 2026-08-27 was cancelled at short notice and moved to Monday 2026-08-31 at 11:30.
   - Source: Dominik confirmed the Ulrike outreach and rescheduled Juliane alignment on 2026-08-27; Beatrice alignment and prior migration validation
 
+- [ ] Pilot persistent image storage for AEM migration
+  - Area: Marketing Content Platform
+  - Status: Open, resume next week
+  - Next step: Next week, approach Application Platform with a small discovery/pilot request for persistent storage and stable image-delivery URLs for a limited first AEM asset set; ask which existing Scout24 storage/CDN building blocks and technical ownership model should be used.
+  - Context: The goal is not yet to build the full Marketing Asset Library. The first test should move a small AEM directory or asset subset into persistent storage, produce stable direct URLs, and validate them end-to-end in the LP Builder → Contentful migration flow. Full UI, permissions, asset IDs, agent APIs and dynamic transformations remain later decisions. Dominik should own product direction and Marketing requirements, not ongoing AWS/storage operations.
+  - Source: Dominik confirmed the small migration-storage pilot direction on 2026-08-27
+
 - [ ] Set up B2B automation discovery with Juliane
   - Area: E-Mail Automation Professional
   - Status: Open, deliberately deprioritized for the coming weeks
@@ -52,13 +59,6 @@
   - Source: Dominik confirmed the task on 2026-07-22
 
 ## Waiting
-
-- [ ] Define the Marketing Asset Library setup
-  - Area: Marketing Content Platform
-  - Status: Waiting for another person or decision
-  - Waiting for: John Ford's response on whether he is the right contact for Scout24 image storage and delivery infrastructure
-  - Dominik's next step: After the infrastructure path is clear, define the technical solution, ownership and implementation plan for a central Marketing Asset Library.
-  - Context: The current direction is to evaluate AWS/S3 plus Scout24 image delivery as the shared asset source for Contentful, Iterable, Beefree, Salesforce, LP Builder workflows and agents.
 
 - [ ] Clarify Coupa AI support
   - Area: Coupa AI Support
