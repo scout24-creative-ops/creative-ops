@@ -26,9 +26,9 @@
 - [ ] Run the Anwenderhandbuch Contentful migration pilot
   - Area: Contentful Migration
   - Status: Open
-  - Next step: Align with Juliane on the proposed Ulrike/Peter/Dominik pod, send Beatrice representative B2B form URLs, clarify the reusable Salesforce form integration pattern, and continue the Anwenderhandbuch pilot preparation including SEO/URL alignment.
-  - Context: Claude Design has been validated for crawling AEM page groups and extracting exact text, links and image URLs into structured inputs for the LP Builder. The current pilot is expected to cover roughly 40–60 pages once the B2B team confirms scope. B2B forms are a critical migration dependency and should be centrally managed and embedded/referenced through an LP Builder slot/module rather than generated inside the Builder.
-  - Source: Beatrice alignment on 2026-08-27 and prior migration validation
+  - Next step: Use the rescheduled Juliane alignment on 2026-08-31 at 11:30 to discuss the proposed Ulrike/Peter/Dominik pod; in parallel send Beatrice representative B2B form URLs, clarify the reusable Salesforce form integration pattern, and continue the Anwenderhandbuch pilot preparation including SEO/URL alignment.
+  - Context: Claude Design has been validated for crawling AEM page groups and extracting exact text, links and image URLs into structured inputs for the LP Builder. The current pilot is expected to cover roughly 40–60 pages once the B2B team confirms scope. B2B forms are a critical migration dependency and should be centrally managed and embedded/referenced through an LP Builder slot/module rather than generated inside the Builder. The Juliane meeting originally planned for 2026-08-27 was cancelled at short notice and moved to Monday 2026-08-31 at 11:30.
+  - Source: Dominik confirmed the rescheduled Juliane alignment on 2026-08-27; Beatrice alignment and prior migration validation
 
 - [ ] Set up B2B automation discovery with Juliane
   - Area: E-Mail Automation Professional
