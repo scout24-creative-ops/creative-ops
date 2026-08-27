@@ -8,21 +8,17 @@ The platform work is distinct from the migration of existing AEM pages. `Marketi
 
 ## Current Status
 
-The Landing Page Builder → Contentful MVP is already substantially validated in the development environment `next`.
+The Landing Page Builder → Contentful MVP is substantially validated in the development environment `next`.
 
-The current end-to-end flow has been demonstrated: a new landing page can be generated in the Landing Page Builder, transferred directly into Contentful and viewed immediately through a preview link. Dominik independently validated draft creation and updates. OAuth works with the personal Contentful account, and existing published Contentful assets can be searched, selected and assigned to image slots before saving or updating a draft.
+The current end-to-end flow has been demonstrated: a new landing page can be generated in the Landing Page Builder, transferred directly into Contentful and viewed through a preview link. Dominik independently validated draft creation and updates, and OAuth works with his Contentful account.
 
-The MVP remains HTML-based. The existing controlled Marketing module approach remains intact and should not be replaced by an unconstrained component-generation model.
+Production publishing is the main remaining platform step. Mukhammadjon confirmed on 2026-08-27 that production requires migrating the LP Builder content type, merging the renderer code from development into production, and configuring the required services and MCP production environment. He estimates this as roughly one working day once the work is explicitly tasked/prioritized through Beatrice.
 
-Production publishing is not yet validated. The LP Builder renderer/content type previously existed only in Contentful `next`, not production `pro`, and an earlier publish action incorrectly implied success while the public route returned 404. CTA/link handling also remains to be finalized.
+Image handling should not be expanded as part of the MVP. The intended MVP behavior is the established LP Builder flow: placeholder images are used by default until the user provides direct image URLs. Mukhammadjon can revert his current image-grid / Contentful-image-selection experiments. This same URL-based flow is intended for the migration pilot, while a later Marketing Asset Library should provide the durable image URLs.
 
-The broader image workflow is now part of the platform direction. The current Contentful asset search solves reuse of already existing Contentful assets, but not the larger Marketing need for a central image source across Contentful, Iterable, Beefree, Salesforce, LP Builder workflows and AI agents.
+Dominik plans pre-publish checks for required image URLs, links and basic SEO/quality guardrails. Mukhammadjon confirmed that link validation also appears to require implementation in the MCP layer, so the validation model is expected to combine Builder-side UX checks with MCP-side technical enforcement.
 
-Dominik is therefore exploring a central Marketing Asset Library. The current architecture to evaluate is AWS/S3 as the original asset store plus Scout24's existing image-delivery infrastructure for dynamic resizing, format conversion, compression and CDN delivery. A later visual library could provide search, filtering and curated asset selection for marketers and the LP Builder.
-
-For the future LP Builder workflow, the preferred experience is not a list of individual image URLs and not automatic image recommendations pulled from Contentful. The builder should use explicit image URLs as the stable integration contract. Before a page is published, if required image slots still have no image URL, the agent should tell the user that images are missing and offer two clear options: either the user supplies image URLs, or the agent inserts temporary/example images for preview purposes. In the target architecture, production image URLs should come from the central Marketing Asset Library / AWS-based asset setup rather than making Contentful the source of truth for imagery.
-
-A future visual asset-library UI should make it easy for colleagues to browse and select assets stored centrally and pass the selected stable asset URL back into the LP Builder. That UI is not part of the MVP, but image URL handling is required before migration starts because migrated pages will contain images.
+After the MVP is finished, Dominik plans to duplicate the Contentful-enabled GPT so he owns the working copy used for migration and continued LP Builder development.
 
 ## Dominik's Role
 
@@ -31,10 +27,11 @@ Dominik owns the product direction, Marketing requirements and quality of the pl
 ## Key Stakeholders
 
 - Mukhammadjon Kayumov for the GPT Actions / Contentful integration implementation
-- Beatrice for Core Team coordination and production-publishing alignment
+- Beatrice for Core Team coordination, prioritization and production-publishing alignment
+- Daniel Herold, Director of Tech - Core/Builders Platform, for broader Builder-platform direction and future collaboration
 - Matthias Brandstätter for Contentful ownership and strategic platform direction
 - Stefan Harssdorf for Contentful architecture and technical assessment
-- Paul for the 2026-08-26 asset / migration discussion
+- Paul for the asset / migration discussion
 - John Ford as a potential technical contact for Scout24 image storage and delivery infrastructure
 - Contentful team
 - Marketing teams using Landing Page Builder, Contentful and future asset workflows
@@ -44,56 +41,49 @@ Dominik owns the product direction, Marketing requirements and quality of the pl
 
 - Use `Marketing Content Platform` as the broader project name for the tool and infrastructure work around Landing Page Builder, Contentful and the future asset workflow.
 - Keep `Contentful Migration` separate for the actual migration of existing AEM pages.
-- The Landing Page Builder remains the controlled Marketing creation workflow during the current MVP phase.
 - The short-term MVP remains HTML-based.
-- The current integration uses GPT Actions to transfer generated LP Builder HTML into Contentful `next`.
+- The current integration uses GPT Actions / MCP to transfer generated LP Builder HTML into Contentful `next`.
 - Draft creation and updates require explicit user approval; publishing remains a separate consequential action.
 - Direct preview of unpublished drafts is part of the validated workflow in `next`.
-- Existing Contentful assets can already be searched and reused through the test GPT, but this is not the desired long-term image-selection model.
-- Automatic Contentful image recommendations should be removed from the intended LP Builder publishing flow.
-- The LP Builder should support explicit image URLs as the core image reference.
-- If image URLs are missing before publish, the agent should explicitly ask the user to provide them or offer to insert temporary/example images rather than silently selecting Contentful assets.
-- The broader Marketing image problem should not be solved by making Contentful the default SSOT without further evaluation.
-- The current asset-platform direction to evaluate is one central source reused across Marketing tools, with AWS/S3 plus existing Scout24 image delivery as the leading technical option.
-- A future visual asset-library experience should support LP Builder and other Marketing workflows, but is not required for the Anwenderhandbuch migration pilot.
-- The long-term authoring surface may later be GPT, agent or Claude Design; this should not block completion of the current Contentful workflow.
+- Do not add a new image-selection experience to the MVP. Keep the established LP Builder behavior: placeholders first, user-supplied direct image URLs when available.
+- Automatic Contentful image recommendations / grids should be removed from the intended MVP flow.
+- The broader Marketing image problem should later be solved through a central Marketing Asset Library rather than Contentful as image SSOT.
+- The current asset-platform direction to evaluate is AWS/S3 plus existing Scout24 image delivery.
+- Pre-publish quality checks should include required image URLs, valid links and basic SEO/quality rules.
+- According to Mukhammadjon, link validation also needs support in the MCP/integration layer.
+- Detailed user-role and publishing-permission governance is not required for the current MVP and can be defined later for broader production use.
+- After MVP completion, Dominik intends to duplicate the Contentful-enabled GPT and continue migration and Builder development from his own copy.
 
 ## Important Developments
 
 - 2026-08-11: Mukhammadjon demonstrated a successful GPT-to-Contentful draft flow with a rendered test result.
 - 2026-08-12: Dominik verified direct preview and updates in Contentful `next`.
 - 2026-08-12: A publish test exposed that production publishing was not yet available because the required renderer/content type had not been transferred to `pro`.
-- 2026-08-12: Matthias Brandstätter suggested evaluating Claude Design as a possible future authoring surface.
-- 2026-08-26: Existing Contentful asset search and assignment was confirmed as working for the dev MVP.
-- 2026-08-26: Dominik aligned the broader asset problem with Matthias Brandstätter and Paul and defined the direction of a central Marketing Asset Library rather than separate image stores per tool.
-- 2026-08-26: Dominik contacted John Ford to verify whether existing Scout24 AWS/S3 and image-delivery infrastructure can support the Marketing use case.
-- 2026-08-26: Dominik decided to group Landing Page Builder, Contentful integration and the future asset workflow under the broader `Marketing Content Platform` project.
-- 2026-08-26: Ciaran's capacity question was resolved; no further budget is available for additional support from him.
-- 2026-08-26: Dominik clarified the target LP Builder image behavior: do not automatically recommend Contentful assets as the default. Use explicit image URLs, and if image slots are still empty before publishing, ask the user to provide URLs or consciously choose temporary/example imagery. The later asset-library UI can handle browsing and selection, but is not required for the MVP.
+- 2026-08-26: Dominik defined the direction of a central Marketing Asset Library and decided Contentful image suggestions should not become the target Builder image workflow.
+- 2026-08-27: Mukhammadjon clarified that production publishing requires content-type migration, renderer merge to production, service configuration and MCP production setup; he estimates roughly one working day once tasked.
+- 2026-08-27: Mukhammadjon confirmed the current image-grid/image-selection work can be reverted and the MVP can remain URL-based.
+- 2026-08-27: Mukhammadjon indicated link validation also needs implementation inside MCP.
+- 2026-08-27: Dominik clarified that after MVP completion he plans to duplicate the Contentful-enabled GPT for migration and continued Builder development.
 
 ## Open Questions and Risks
 
-- Which remaining acceptance criteria are still open for the Landing Page Builder → Contentful MVP.
-- How CTA/link handling should be finalized so generated CTAs never contain invented or empty targets.
-- How and when the LP Builder content type, renderer and publishing flow will move from `next` to production `pro`.
-- How to prevent misleading publish/live-link responses while production publishing is unavailable.
-- Can the LP Builder renderer safely use external image URLs directly, including future URLs from the AWS/image-delivery setup, without requiring assets to be copied into Contentful first?
-- What URL/domain allowlisting, security or delivery constraints apply to external image URLs in LP Builder HTML?
-- Should temporary/example imagery be limited to preview only so it can never be published accidentally?
+- Whether Beatrice gives the go to prioritize the remaining production-enablement work for `pro`.
+- Exact implementation and scope of MCP-side link validation before publishing.
+- What URL/domain allowlisting, security or delivery constraints apply to future external image URLs.
 - Whether Marketing can use an existing Scout24 AWS/S3 namespace or bucket and the existing image-delivery service for a central Marketing Asset Library.
 - What ownership, permissions, metadata and upload API are needed for the future asset platform.
-- How the visual asset-library experience should integrate with LP Builder and Contentful after the underlying storage path is clear.
-- Whether Claude Design, a future agent or the Custom GPT should become the long-term authoring surface after the Contentful workflow is stable.
 
 ## Next Steps
 
-1. Complete the remaining Landing Page Builder → Contentful MVP work: clarify outstanding acceptance criteria, finalize CTA/link handling and align the production `pro` path with Beatrice and Mukhammadjon.
-2. In the Beatrice alignment, clarify whether LP Builder modules can use external image URLs directly, what constraints apply, and how missing-image handling should work before publish.
-3. Await John Ford's response on the existing Scout24 image infrastructure, then define the Marketing Asset Library technical approach, ownership and implementation plan.
+1. Align with Beatrice on prioritizing the remaining production-enablement work for `pro` and real publishing.
+2. Have Mukhammadjon revert the current image-selection experiments and keep the MVP on the established placeholder + direct-URL flow.
+3. Align the Builder-side pre-publish checks with the MCP-side link-validation implementation.
+4. After MVP completion, duplicate the Contentful-enabled GPT and use that copy for migration and continued Builder development.
+5. Continue defining the Marketing Asset Library technical approach once the AWS/image-delivery path is clear.
 
 ## Last Confirmed
 
-Project grouping, Marketing Asset Library direction and the LP Builder target image behavior confirmed by Dominik on 2026-08-26. The technically verified Contentful state remains the working generation, draft, update, preview, OAuth and existing-asset reuse flow in `next`; real production publishing has not yet been confirmed.
+Mukhammadjon's technical status update and Dominik's MVP/handover direction confirmed on 2026-08-27. Generation, draft, update, preview and OAuth work in `next`; production publishing remains a bounded implementation step requiring content-type/renderer migration plus services/MCP production configuration.
 
 ## Related Context
 
