@@ -278,7 +278,7 @@ When creating a weekly summary for colleagues:
 6. Include all relevant workstreams rather than forcing a fixed number.
 7. Do not add a `Next steps` section unless Dominik explicitly asks for one.
 8. Exclude internal work-organization, repository-setup, or publishing-infrastructure topics unless explicitly requested.
-9. Treat the maintained weekly-summary reference as the formatting authority.
+9. Read [the Weekly summaries section of the Communication Playbook](profile/communication/communication-playbook.md#weekly-summaries-for-colleagues) for Dominik-specific selection guidance and approved calibration examples. Treat it alongside the maintained weekly-summary reference as the formatting authority.
 10. For a delta summary, use only `Updates since last summary`. For a full weekly summary, use the entire weekly file.
 11. Select workstreams by demonstrated value, not merely by topical activity. Prioritize, in this order: concrete initiatives or decisions, tested or validated progress, reached milestones, and aligned implementation steps. Include strategic context only when it is necessary to make the concrete result understandable.
 12. Do not include a workstream whose primary outcome is that no action is currently appropriate, unless that clarification materially changes a relevant team decision.
