@@ -280,7 +280,9 @@ When creating a weekly summary for colleagues:
 8. Exclude internal work-organization, repository-setup, or publishing-infrastructure topics unless explicitly requested.
 9. Treat the maintained weekly-summary reference as the formatting authority.
 10. For a delta summary, use only `Updates since last summary`. For a full weekly summary, use the entire weekly file.
-11. Advance the summary checkpoint only after Dominik confirms the completed version.
+11. Select workstreams by demonstrated value, not merely by topical activity. Prioritize, in this order: concrete initiatives or decisions, tested or validated progress, reached milestones, and aligned implementation steps. Include strategic context only when it is necessary to make the concrete result understandable.
+12. Do not include a workstream whose primary outcome is that no action is currently appropriate, unless that clarification materially changes a relevant team decision.
+13. Advance the summary checkpoint only after Dominik confirms the completed version.
 
 ## Privacy and Safety
 
