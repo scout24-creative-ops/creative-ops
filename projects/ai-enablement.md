@@ -94,6 +94,8 @@ Jorin supported the revised enablement direction on 2026-08-20, including the se
 
 Recurring preparation is now kept deliberately compact: one reusable template package plus one bi-weekly session-preparation task.
 
+A private `Creative Operations` Scout Wiki space now provides the shared Series workspace. Its reduced hub page shows only the next session and session subpages; each session page serves as a slide-like agenda, live working surface and later documentation for notes, recordings, resources and follow-ups.
+
 ## Operating Model
 
 - Dominik leads, curates and facilitates the Series.
@@ -107,11 +109,13 @@ Recurring preparation is now kept deliberately compact: one reusable template pa
 - The Series creates shared learning, visibility and orientation. Actual project implementation and delivery happen separately with the relevant owners and delivery capacity.
 - Not every team or colleague is expected to build an agent.
 - Optional topic-specific sessions can be scheduled between the main Series appointments when a topic is relevant only to a smaller group.
-- The repository is Dominik's working source for topic ideas, the next-session agenda, reusable Slack post patterns and useful resources; Slack remains the communication surface for participants.
+- The `Creative Operations` Scout Wiki space is the shared Series workspace for the reduced overview, session agendas, live notes, recordings and resources; the repository remains Dominik's maintained source for project context, tasks and reusable communication guidance, while Slack remains the communication surface for participants.
 
 ## Content and Communication Workspace
 
 Keep this lightweight. Do not create a separate planning board or parallel project-management system.
+
+The shared Scout Wiki workspace uses one reduced hub page and one detail page per session. Future session pages should duplicate the 08.09.2026 page in the Wiki so its three-column, manual-divider layout is preserved.
 
 ### Topic Pool
 
