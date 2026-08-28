@@ -6,14 +6,7 @@ Load only the file relevant to the current task. Do not apply one format's rules
 
 ## Available Standards
 
+- [Communication Playbook](communication-playbook.md) — Central guidance and approved examples for weekly summaries, AI Enablement Series communication and general internal updates.
 - [Presentations for Jorin](jorin-presentations.md) — Use only for presentations prepared specifically for Jorin.
 
-## Future Standards
-
-Add separate files when stable conventions are established, for example:
-
-- weekly summaries for colleagues
-- Slack posts and updates
-- leadership updates
-
-Keep each format separate so audience-specific rules do not leak into unrelated communication.
+Load the matching playbook section rather than applying all format rules to every request.
