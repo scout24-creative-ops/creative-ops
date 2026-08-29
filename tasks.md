@@ -23,12 +23,12 @@
   - Context: Generation, draft creation, update, preview and OAuth are validated in `next`. Mukhammadjon estimates the remaining production setup at roughly one working day once tasked. Image-selection work is not part of the MVP and should revert to the established placeholder + user-supplied direct-URL flow. Beatrice aligned with this direction on 2026-08-27; production publishing and validation remain the material completion items.
   - Source: Beatrice alignment and Mukhammadjon status update on 2026-08-27
 
-- [ ] Run the Anwenderhandbuch Contentful migration pilot
+- [ ] Define and run the Contentful migration pilot
   - Area: Contentful Migration
   - Status: Open
-  - Next step: Use the rescheduled Juliane alignment on 2026-08-31 at 11:30 to discuss the proposed Ulrike/Peter/Dominik pod; meanwhile wait for Ulrike's requested B2B form examples/setup/contact information, then pass the material to Beatrice and continue the Anwenderhandbuch pilot preparation including SEO/URL alignment.
-  - Context: Claude Design has been validated for crawling AEM page groups and extracting exact text, links and image URLs into structured inputs for the LP Builder. The current pilot is expected to cover roughly 40–60 pages once the B2B team confirms scope. B2B forms are a critical migration dependency and should be centrally managed and embedded/referenced through an LP Builder slot/module rather than generated inside the Builder. Dominik asked Ulrike on 2026-08-27 for representative live-form URLs, current setup/data-flow information and the responsible Salesforce contact so Beatrice can start assessing the module. The Juliane meeting originally planned for 2026-08-27 was cancelled at short notice and moved to Monday 2026-08-31 at 11:30.
-  - Source: Dominik confirmed the Ulrike outreach and rescheduled Juliane alignment on 2026-08-27; Beatrice alignment and prior migration validation
+  - Next step: Turn the current migration thinking into an explicit plan, starting with the Anwenderhandbuch pilot: define scope, target page system, required LP Builder patterns, sitemap/manifest fields, ownership, SEO/URL dependencies, QA and completion criteria; use the Juliane alignment on 2026-08-31 to clarify the proposed Ulrike/Peter/Dominik working model.
+  - Context: Claude Design has validated the core analysis and redesign approach, but the Anwenderhandbuch is still a rough pilot concept rather than a defined end-to-end migration plan. The current fixed LP Builder module catalogue is too limited for the broader AEM page variety, so migration planning must include how Claude Design-derived page patterns become usable in the Builder workflow. B2B/Product Marketing should own page relevance and authoritative variants; SEO and platform owners should own their specialist decisions rather than Dominik taking those over.
+  - Source: Dominik clarified migration planning scope and LP Builder capability gap on 2026-08-29
 
 - [ ] Pilot persistent image storage for AEM migration
   - Area: Marketing Content Platform
