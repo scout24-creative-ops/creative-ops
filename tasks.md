@@ -23,19 +23,26 @@
   - Context: Generation, draft creation, update, preview and OAuth are validated in `next`. Mukhammadjon estimates the remaining production setup at roughly one working day once tasked. Image-selection work is not part of the MVP and should revert to the established placeholder + user-supplied direct-URL flow. Beatrice aligned with this direction on 2026-08-27; production publishing and validation remain the material completion items.
   - Source: Beatrice alignment and Mukhammadjon status update on 2026-08-27
 
-- [ ] Define and run the Contentful migration pilot
+- [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open
-  - Next step: Turn the current migration thinking into an explicit plan, starting with the Anwenderhandbuch pilot: define scope, target page system, required LP Builder patterns, sitemap/manifest fields, ownership, SEO/URL dependencies, QA and completion criteria; use the Juliane alignment on 2026-08-31 to clarify the proposed Ulrike/Peter/Dominik working model.
-  - Context: Claude Design has validated the core analysis and redesign approach, but the Anwenderhandbuch is still a rough pilot concept rather than a defined end-to-end migration plan. The current fixed LP Builder module catalogue is too limited for the broader AEM page variety, so migration planning must include how Claude Design-derived page patterns become usable in the Builder workflow. B2B/Product Marketing should own page relevance and authoritative variants; SEO and platform owners should own their specialist decisions rather than Dominik taking those over.
-  - Source: Dominik clarified migration planning scope and LP Builder capability gap on 2026-08-29
+  - Status: Open, top near-term priority
+  - Next step: Start the pilot with the minimum viable coordination layer: schedule the Peter/Ulrike kickoff, schedule the SEO/URL alignment with prepared questions, finish/resolve the remaining LP Builder -> Contentful MVP work, and prepare the Anwenderhandbuch handoff packages for Ulrike and Peter.
+  - Context: The pilot goal is not to solve the full migration program before starting. It is to prove as quickly as possible that a real B2B page group can move through scope -> Claude Design -> LP Builder -> QA -> Contentful with few dependencies. Ulrike should coordinate content/pages, sitemap ownership and SEO/URL questions; Peter should own Claude Design/design and the parallel small asset-storage pilot; Dominik should own orchestration, migration rules and LP Builder enablement without absorbing the specialist work. The working result should become the proof point for senior stakeholder alignment and broader scale-out support.
+  - Source: Pilot-first execution model consolidated on 2026-08-30
+
+- [ ] Prepare Sitemap V2 from the existing SEO Excel source
+  - Area: Contentful Migration
+  - Status: Open, supporting pilot task
+  - Next step: Keep `Anbieten Pages.xlsx` as the fachlich SSOT, refactor the visual HTML sitemap so its data can be regenerated from the workbook, and continue overlaying Screaming Frog/live-status information. Start with a manual/lightweight sync; do not build write-back or a new sitemap app for the pilot.
+  - Context: The existing Excel landscape is fragmented and not always fully current, but those files remain the authoritative business/SEO decision source. The visual sitemap should expose inconsistencies by combining Excel decisions with live crawl status instead of creating a competing master dataset. A later V2 may read SharePoint/Excel automatically via Microsoft Graph. If multiple workbook sources are added, use a small source manifest mapping directories/page groups to the authoritative workbook.
+  - Source: Sitemap source-model discussion on 2026-08-30
 
 - [ ] Pilot persistent image storage for AEM migration
   - Area: Marketing Content Platform
-  - Status: Open, resume next week
-  - Next step: Next week, approach Application Platform with a small discovery/pilot request for persistent storage and stable image-delivery URLs for a limited first AEM asset set; ask which existing Scout24 storage/CDN building blocks and technical ownership model should be used.
-  - Context: The goal is not yet to build the full Marketing Asset Library. The first test should move a small AEM directory or asset subset into persistent storage, produce stable direct URLs, and validate them end-to-end in the LP Builder → Contentful migration flow. Full UI, permissions, asset IDs, agent APIs and dynamic transformations remain later decisions. Dominik should own product direction and Marketing requirements, not ongoing AWS/storage operations.
-  - Source: Dominik confirmed the small migration-storage pilot direction on 2026-08-27
+  - Status: Open, parallel to migration pilot
+  - Next step: Let Peter drive the small storage/S3 pilot with Allan / the relevant platform contacts: move a limited first AEM asset set into persistent storage, produce stable delivery URLs and validate them in the LP Builder -> Contentful flow.
+  - Context: The goal is not yet to build the full Marketing Asset Library. Dominik should define the migration requirements and integration target but should not become the ongoing AWS/storage operator. Existing source image URLs can continue to unblock the first pilot if the storage work is not ready.
+  - Source: Asset ownership and pilot direction consolidated on 2026-08-30
 
 - [ ] Set up B2B automation discovery with Juliane
   - Area: E-Mail Automation Professional
