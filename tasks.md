@@ -16,19 +16,19 @@
   - Context: Marie will present the Brand Agent, reusable Skill approach and her research on when to use an Agent versus a Skill or another setup. Dominik and Marie will align her contribution on 2026-09-04. The calendar event itself is not tracked as a separate dashboard task.
   - Source: Marie confirmed her contribution with Dominik on 2026-08-24
 
-- [ ] Complete the Landing Page Builder and Contentful MVP
-  - Area: Marketing Content Platform
-  - Status: Open
-  - Next step: Get the remaining `pro` / real-publishing work explicitly prioritized, align MCP-side link validation with the Builder checks, and complete the handover so Dominik can duplicate the finished Contentful-enabled GPT for continued ownership and development.
-  - Context: Generation, draft creation, update, preview and OAuth are validated in `next`. Mukhammadjon estimates the remaining production setup at roughly one working day once tasked. Image-selection work is not part of the MVP and should revert to the established placeholder + user-supplied direct-URL flow. Beatrice aligned with this direction on 2026-08-27; production publishing and validation remain the material completion items.
-  - Source: Beatrice alignment and Mukhammadjon status update on 2026-08-27
+- [ ] Validate the CoreCSS/COSMA HTML contract
+  - Area: Landing Page Builder
+  - Status: Open, current implementation focus
+  - Next step: Run the dedicated COSMA/CoreCSS playground on `/dev-lp-builder-v01-test` without the old LP Builder runtime CSS, classify what works natively versus what needs an HTML hook or thin CSS bridge, then adapt the eight active v0.1 modules to that verified contract.
+  - Context: `is24-cms-frontend` globally loads CoreCSS/COSMA and direct HTML use is already verified for typography, spacing, responsive grid, standard buttons, utilities and icon-font classes. The migration-focused Builder should use those primitives first and introduce custom CSS only for the real remaining delta.
+  - Source: CoreCSS/COSMA verification and playground decision on 2026-09-01
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
   - Status: Open, top near-term priority
-  - Next step: Start the pilot with the minimum viable coordination layer: schedule the Peter/Ulrike kickoff, schedule the SEO/URL alignment with prepared questions, finish/resolve the remaining LP Builder -> Contentful MVP work, and prepare the Anwenderhandbuch handoff packages for Ulrike and Peter.
-  - Context: The pilot goal is not to solve the full migration program before starting. It is to prove as quickly as possible that a real B2B page group can move through scope -> Claude Design -> LP Builder -> QA -> Contentful with few dependencies. Ulrike should coordinate content/pages, sitemap ownership and SEO/URL questions; Peter should own Claude Design/design and the parallel small asset-storage pilot; Dominik should own orchestration, migration rules and LP Builder enablement without absorbing the specialist work. The working result should become the proof point for senior stakeholder alignment and broader scale-out support.
-  - Source: Pilot-first execution model consolidated on 2026-08-30
+  - Next step: Continue the Anwenderhandbuch pilot with two parallel tracks: finish the native CoreCSS/COSMA Builder contract and eight-module v0.1 baseline, while progressing Peter/Ulrike pilot coordination and SEO/URL alignment so real target designs can be translated into migration modules without waiting for a universal migration system.
+  - Context: The Contentful-enabled Builder now works through production publishing. The pilot should prove the real loop scope -> Claude Design -> migration-focused LP Builder -> QA -> Contentful. The current eight-module whitelist is only a development boundary; missing Anwenderhandbuch patterns should be added later from real page-group requirements.
+  - Source: Migration Builder handover and CoreCSS/COSMA direction confirmed 2026-08-31 to 2026-09-01
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
@@ -87,6 +87,11 @@
   - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
 
 ## Completed
+
+- [x] Complete the Landing Page Builder and Contentful MVP
+  - Area: Marketing Content Platform
+  - Completed: 2026-08-31
+  - Outcome: Dominik completed the handover and validated his own duplicated Contentful-enabled GPT end to end: OAuth, draft creation, preview, update, explicit publish and production URL work. Continued work has moved from proving the basic Contentful MVP into the migration-focused Builder and native CoreCSS/COSMA contract.
 
 - [x] Connect with Yvonne on the Content Marketing Agent
   - Area: Content Marketing Agent
