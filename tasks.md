@@ -18,17 +18,17 @@
 
 - [ ] Validate the CoreCSS/COSMA HTML contract
   - Area: Landing Page Builder
-  - Status: Open, current implementation focus
-  - Next step: Load the refactored v0.1 `component-library.html` into the Custom GPT `LP Builder – Contentful`, generate a real test page there, create/update a Contentful draft and inspect the preview before any publish step. Classify remaining issues as native CoreCSS, HTML/renderer hook, or LPBuilder CSS bridge and resolve only verified gaps.
-  - Context: The eight active modules have now been refactored to the CoreCSS/COSMA-first contract. Native typography, spacing, grid/responsive and standard button classes are used where confirmed; Accordion hooks, Callout structure and Checkmark bridge remain deliberately. Open visual bridges are documented as `OPEN / VERIFY`. Contentful Actions are available in the Custom GPT rather than Codex, so runtime validation belongs there.
-  - Source: v0.1 library refactor completed locally on 2026-09-01
+  - Status: Open, validation narrowed to remaining visual/runtime gaps
+  - Next step: Verify mobile responsive behavior and Accordion interaction/open state in the real `/dev-lp-builder-v01-test` preview, then decide the minimal remaining bridges for Hero media alignment, Callout surface styling and any Accordion visual delta. Keep the successful native CoreCSS baseline unchanged unless a test proves a gap.
+  - Context: The first real Contentful preview with `hero-split`, `teaser-2col`, `benefits-3col`, `callout--base`, `accordion` and `checkmark-list` rendered successfully. Native typography, spacing, grids/responsive classes and standard buttons are visually working at baseline quality; Checkmark bridge renders. The remaining questions are narrow visual/runtime checks rather than an architectural blocker.
+  - Source: First CoreCSS/COSMA-first Contentful preview validated on 2026-09-01
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
   - Status: Open, top near-term priority
-  - Next step: Continue the Anwenderhandbuch pilot with two parallel tracks: validate the refactored CoreCSS/COSMA eight-module v0.1 baseline in the real `LP Builder – Contentful` preview flow, while progressing Peter/Ulrike pilot coordination and SEO/URL alignment so real target designs can be translated into migration modules without waiting for a universal migration system.
-  - Context: The Contentful-enabled Builder now works through production publishing. The pilot should prove the real loop scope -> Claude Design -> migration-focused LP Builder -> QA -> Contentful. The current eight-module whitelist is only a development boundary; missing Anwenderhandbuch patterns should be added later from real page-group requirements.
-  - Source: Migration Builder handover, CoreCSS/COSMA direction and v0.1 library refactor confirmed 2026-08-31 to 2026-09-01
+  - Next step: Continue the Anwenderhandbuch pilot with two parallel tracks: finish the remaining runtime/visual validation of the CoreCSS/COSMA eight-module v0.1 baseline, while progressing Peter/Ulrike pilot coordination and SEO/URL alignment so real target designs can be translated into migration modules without waiting for a universal migration system.
+  - Context: The Contentful-enabled Builder now works through production publishing and the first refactored CoreCSS/COSMA preview is successful. The pilot should prove the real loop scope -> Claude Design -> migration-focused LP Builder -> QA -> Contentful. The current eight-module whitelist is only a development boundary; missing Anwenderhandbuch patterns should be added later from real page-group requirements.
+  - Source: Migration Builder handover, CoreCSS/COSMA direction and first real preview confirmed 2026-08-31 to 2026-09-01
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
