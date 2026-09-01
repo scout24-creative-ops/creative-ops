@@ -18,10 +18,10 @@
 
 - [ ] Validate the CoreCSS/COSMA HTML contract
   - Area: Landing Page Builder
-  - Status: Open, native baseline validated; namespaced bridge/module pass next
-  - Next step: Rename/scope the new Contentful bridge button selectors so they cannot affect existing legacy `ai-button` markup, then continue the v0.1 module pass and classify each remaining gap as native, bridge-solvable or frontend/renderer-required. Bundle genuine frontend-only needs, including centrally loading the new bridge stylesheet, for one later alignment with Mukhammadjon/Core Frontend.
-  - Context: The real Contentful playground confirms the broad static CoreCSS/COSMA baseline. The existing GitHub Pages runtime can deliver a separate `runtime/contentful/lpbuilder-bridge.css`, but the Contentful route must eventually load it centrally. Rounded buttons are mandatory and the legacy implementation is a reusable reference, while the new bridge must use new namespaced shared classes so global updates affect only intended new/migrated buttons.
-  - Source: CoreCSS/COSMA playground, bridge delivery verification and scoping decision on 2026-09-01
+  - Status: Open, native baseline and rounded-button bridge technically validated; visual tuning next
+  - Next step: Tune the four namespaced rounded-button bridge variants against the current Contentful/COSMA visual reference, focusing on padding/overall size and hover colors, then re-test them in the existing `dev-lp-builder-v01-test` draft without publishing. After that continue the v0.1 module pass and bundle genuine frontend-only gaps for later Core Frontend alignment.
+  - Context: The namespaced bridge is published under `runtime/contentful/lpbuilder-bridge.css` and a real Contentful preview successfully loads it from `htmlSource`; all four v0.1 button variants render. This validates the static bridge architecture. The current visual result is close but not yet parity: padding/overall dimensions look too generous and hover colors need correction. Final production use will still need the bridge URL loaded centrally by the Contentful LPBuilder route.
+  - Source: Real Contentful rounded-button bridge preview on 2026-09-01
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
