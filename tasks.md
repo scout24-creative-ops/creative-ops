@@ -18,10 +18,10 @@
 
 - [ ] Validate the CoreCSS/COSMA HTML contract
   - Area: Landing Page Builder
-  - Status: Open, native baseline validated; rounded CTA renderer is now required for v0.1
-  - Next step: Define the minimal semantic LP Builder contract for native `ButtonRounded` and align the frontend implementation with the Core Frontend owner. Use the existing legacy rounded-button markup/CSS only as migration reference, not as the new primary button architecture.
-  - Context: The real Contentful playground confirms static typography, tokens, spacing, grids, utilities, selected icon-font classes, links, lists and raw media. Rounded buttons are mandatory for the new Builder baseline. The old LP Builder already has four rounded variants, but its legacy runtime is not loaded by the Contentful renderer and the implementation uses hard-coded colors, one size, link-only markup and no visible focus. Native `ButtonRounded` remains the preferred launch implementation.
-  - Source: CoreCSS/COSMA playground, ButtonRounded GitHub MCP analysis and legacy button audit on 2026-09-01
+  - Status: Open, native baseline validated; central bridge/module pass next
+  - Next step: Build one centrally maintained LP Builder bridge stylesheet starting with the four required rounded-button variants, then continue the v0.1 module pass and classify each remaining gap as native, bridge-solvable or frontend/renderer-required. Bundle genuine frontend-only gaps for one later alignment with Mukhammadjon/Core Frontend.
+  - Context: The real Contentful playground confirms the broad static CoreCSS/COSMA baseline. Rounded buttons are mandatory and the old LP Builder implementation is available as a reusable starting point, but the new bridge should use stable shared classes, current COSMA tokens where possible and accessible focus behavior so one global CSS change propagates to all existing and future button instances.
+  - Source: CoreCSS/COSMA playground, legacy rounded-button audit and central bridge decision on 2026-09-01
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
