@@ -113,13 +113,14 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - 2026-09-01: Builder instructions were reworked from one development preview convention to a two-target contract: disposable `/dev-lp-builder-v01-test` plus permanent `/lp-builder-design-library`.
 - 2026-09-01: A clean local `design-library.html` source was created containing only the finalized CTA/link primitives; unfinished modules are deliberately excluded until reviewed.
 - 2026-09-01: The Contentful Design Library entry was created successfully as an unpublished draft at `/lp-builder-design-library`; the create flow also confirmed that Contentful slug operations require a leading `/`.
+- 2026-09-01: The local `gpt-instructions-v0.1.md` preview-target contract was corrected so Test Page and Design Library Contentful operations use `/dev-lp-builder-v01-test` and `/lp-builder-design-library`, while public preview URLs remain unchanged.
 
 ## Risks and Open Questions
 
 - Which remaining module-specific structures genuinely require the central bridge after the validated native playground baseline.
 - Which gaps ultimately cannot be solved cleanly through static HTML + central bridge CSS and therefore require renderer/frontend support.
 - The new Design Library draft still needs visual validation on desktop/mobile before it can be treated as the canonical rendered reference.
-- The local `gpt-instructions-v0.1.md` preview-target rules need to be corrected to use leading-slash Contentful slugs, and the latest instruction changes still need to be manually copied into the Custom GPT.
+- The latest local `gpt-instructions-v0.1.md` changes still need to be manually copied into the Custom GPT configuration.
 - The bridge still needs one small Core Frontend change to add its URL to the central LPBuilder stylesheet list for final production use; this can be bundled with other true frontend gaps after the module pass.
 - Accordion visual parity with the native Contentful component remains open even though interaction is working.
 - How the final migration module library should expand once Peter's Anwenderhandbuch designs expose missing patterns.
@@ -128,15 +129,16 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 
 ## Next Steps
 
-1. Correct `gpt-instructions-v0.1.md` so Contentful slug operations use `/dev-lp-builder-v01-test` and `/lp-builder-design-library`, while preview URLs remain unchanged; then manually copy the latest preview-target and bridge-primitive sections into the Custom GPT.
+1. Manually copy the latest `Preview targets` and `LPBuilder bridge primitives` sections from `gpt-instructions-v0.1.md` into the Custom GPT configuration.
 2. Visually validate the new `lp-builder-design-library` draft on desktop/mobile without publishing.
-3. Continue building and testing the remaining v0.1 modules against the verified CoreCSS/COSMA reference; promote only reviewed/finalized elements into the Design Library.
-4. After the module pass, consolidate the true frontend-only needs, including centrally loading the new bridge stylesheet, and align them with Mukhammadjon/Core Frontend in one discussion.
-5. Add new migration-specific modules from real Anwenderhandbuch design requirements.
+3. Once visually approved, commit the local `gpt-instructions-v0.1.md` and `design-library.html` changes so the reviewed contract/source is durable.
+4. Continue building and testing the remaining v0.1 modules against the verified CoreCSS/COSMA reference; promote only reviewed/finalized elements into the Design Library.
+5. After the module pass, consolidate the true frontend-only needs, including centrally loading the new bridge stylesheet, and align them with Mukhammadjon/Core Frontend in one discussion.
+6. Add new migration-specific modules from real Anwenderhandbuch design requirements.
 
 ## Last Confirmed
 
-2026-09-01: The permanent Contentful Design Library draft now exists at slug `/lp-builder-design-library` and remains unpublished. Its initial reviewed content is sourced from the local `design-library.html` and contains the four rounded-button variants, the opt-in mobile-full example and the finalized Chevron Link. The create flow confirmed that Contentful slugs must include a leading `/`.
+2026-09-01: The permanent Contentful Design Library draft exists at `/lp-builder-design-library` and remains unpublished. Its initial reviewed content comes from local `design-library.html`; the local GPT instruction contract now correctly distinguishes leading-slash Contentful slugs from slashless public preview routes. The next gate is desktop/mobile visual validation before committing the local instruction/library changes.
 
 ## Related Context
 
