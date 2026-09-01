@@ -26,6 +26,8 @@ Preview handling is deliberately split into two durable targets. `/dev-lp-builde
 
 The first Design Library Contentful entry has now been created successfully as a draft with slug `/lp-builder-design-library`. Its preview is `https://box-is24-cms-frontend.s24-fep.eu-west-1.infinity.s24cloud.net/lp-builder-design-library`. The initial draft contains the four rounded-button variants, one explicit mobile-full example and the finalized Chevron Link, and remains unpublished pending visual validation.
 
+A new naming guardrail is now confirmed: all user-facing artifacts, preview targets and references for the new Builder should make `Contentful` visible in the naming wherever practical so they cannot be confused with the legacy/AEM Builder. The preferred product label is `LP Builder – Contentful`; variants such as `LP Builder – Contentful Design Library` are acceptable. Existing generic preview slugs/titles should be migrated to Contentful-explicit equivalents while the project is still early.
+
 ## Product Versions and Boundaries
 
 ### Production Custom GPT
@@ -74,6 +76,7 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 
 - Keep the production Builder operational while the Contentful/migration version evolves separately.
 - The Contentful duplicate is now Dominik's working migration Builder.
+- Prefer the label `LP Builder – Contentful` for the new Builder. Any derivative page, library, preview or reference should visibly include `Contentful` wherever practical to avoid confusion with the legacy/AEM Builder.
 - v0.1 uses a small active module whitelist instead of physically deleting the rest of the library.
 - Do not automatically substitute non-whitelisted modules.
 - Do not perfect a universal migration mode before the first real pilot.
@@ -89,7 +92,7 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - Shared button classes must remain globally controllable within the new bridge contract so one bridge-CSS change updates all migrated/current v0.1 button instances.
 - Buttons stay content-width on mobile by default. Full-width mobile behavior is opt-in only via `lpb-button--mobile-full`, and the GPT must add that modifier only when the user explicitly requests it.
 - Maintain two separate preview targets: the Test Page is disposable and default for experiments; the Design Library is a durable reviewed reference and is only changed on explicit Design-Library requests.
-- Contentful slug operations require the leading `/`; use `/dev-lp-builder-v01-test` and `/lp-builder-design-library` for reads/writes while preview URLs omit that leading slash in the route path.
+- Contentful slug operations require the leading `/`; use leading-slash slugs for reads/writes while preview URLs omit that leading slash in the route path.
 - Maintain `design-library.html` as the local source of truth for the permanent Design Library; Contentful is the rendered preview, not the only copy of the library state.
 - The existing LPBuilder frontend already provides an HTML-specific Accordion interaction hook, so Accordion JavaScript should not be recreated in the GPT/library.
 - Build and test the module set first; collect any remaining renderer/component-only gaps and discuss them with Core Frontend together instead of escalating one-by-one.
@@ -113,12 +116,14 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - 2026-09-01: Builder instructions were reworked from one development preview convention to a two-target contract: disposable `/dev-lp-builder-v01-test` plus permanent `/lp-builder-design-library`.
 - 2026-09-01: A clean local `design-library.html` source was created containing only the finalized CTA/link primitives; unfinished modules are deliberately excluded until reviewed.
 - 2026-09-01: The Contentful Design Library entry was created successfully as an unpublished draft at `/lp-builder-design-library`; the create flow also confirmed that Contentful slug operations require a leading `/`.
-- 2026-09-01: The local `gpt-instructions-v0.1.md` preview-target contract was corrected so Test Page and Design Library Contentful operations use `/dev-lp-builder-v01-test` and `/lp-builder-design-library`, while public preview URLs remain unchanged.
+- 2026-09-01: The local `gpt-instructions-v0.1.md` preview-target contract was corrected so Test Page and Design Library Contentful operations use leading-slash slugs while public preview URLs remain unchanged.
+- 2026-09-01: A naming guardrail was added: new Builder artifacts should visibly identify themselves as `Contentful`, preferably using the `LP Builder – Contentful` naming family, to distinguish them from the legacy/AEM Builder.
 
 ## Risks and Open Questions
 
 - Which remaining module-specific structures genuinely require the central bridge after the validated native playground baseline.
 - Which gaps ultimately cannot be solved cleanly through static HTML + central bridge CSS and therefore require renderer/frontend support.
+- The current Test Page and Design Library slugs/titles are still generic and should be migrated to Contentful-explicit names before the preview contract is finalized.
 - The new Design Library draft still needs visual validation on desktop/mobile before it can be treated as the canonical rendered reference.
 - The latest local `gpt-instructions-v0.1.md` changes still need to be manually copied into the Custom GPT configuration.
 - The bridge still needs one small Core Frontend change to add its URL to the central LPBuilder stylesheet list for final production use; this can be bundled with other true frontend gaps after the module pass.
@@ -129,16 +134,17 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 
 ## Next Steps
 
-1. Manually copy the latest `Preview targets` and `LPBuilder bridge primitives` sections from `gpt-instructions-v0.1.md` into the Custom GPT configuration.
-2. Visually validate the new `lp-builder-design-library` draft on desktop/mobile without publishing.
-3. Once visually approved, commit the local `gpt-instructions-v0.1.md` and `design-library.html` changes so the reviewed contract/source is durable.
-4. Continue building and testing the remaining v0.1 modules against the verified CoreCSS/COSMA reference; promote only reviewed/finalized elements into the Design Library.
-5. After the module pass, consolidate the true frontend-only needs, including centrally loading the new bridge stylesheet, and align them with Mukhammadjon/Core Frontend in one discussion.
-6. Add new migration-specific modules from real Anwenderhandbuch design requirements.
+1. Rename the Test Page and Design Library conventions to Contentful-explicit labels/slugs/titles (preferred family: `LP Builder – Contentful`) while still in draft/development state, and update `gpt-instructions-v0.1.md` plus `design-library.html` accordingly.
+2. Manually copy the latest `Preview targets` and `LPBuilder bridge primitives` sections from `gpt-instructions-v0.1.md` into the Custom GPT configuration.
+3. Visually validate the renamed Design Library draft on desktop/mobile without publishing.
+4. Once visually approved, commit the local `gpt-instructions-v0.1.md` and `design-library.html` changes so the reviewed contract/source is durable.
+5. Continue building and testing the remaining v0.1 modules against the verified CoreCSS/COSMA reference; promote only reviewed/finalized elements into the Design Library.
+6. After the module pass, consolidate the true frontend-only needs, including centrally loading the new bridge stylesheet, and align them with Mukhammadjon/Core Frontend in one discussion.
+7. Add new migration-specific modules from real Anwenderhandbuch design requirements.
 
 ## Last Confirmed
 
-2026-09-01: The permanent Contentful Design Library draft exists at `/lp-builder-design-library` and remains unpublished. Its initial reviewed content comes from local `design-library.html`; the local GPT instruction contract now correctly distinguishes leading-slash Contentful slugs from slashless public preview routes. The next gate is desktop/mobile visual validation before committing the local instruction/library changes.
+2026-09-01: The preferred naming family for the new Builder is `LP Builder – Contentful`. New pages, previews, libraries and references should visibly include `Contentful` wherever practical so they cannot be mistaken for assets belonging to the legacy/AEM Landing Page Builder. Existing generic Test Page and Design Library names should be migrated before the convention is finalized.
 
 ## Related Context
 
