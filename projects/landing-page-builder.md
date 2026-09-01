@@ -16,9 +16,9 @@ The full existing component library remains available as reference, but v0.1 use
 
 The CoreCSS/COSMA-first direction is now validated both in source and in a real Contentful runtime playground. Static `htmlSource` can directly use the verified typography scale, spacing/grid utilities, COSMA color/border/radius/spacing tokens, selected utilities, static icon-font classes, links, lists and raw media behavior. The playground serves as a reusable design-system reference for future module development rather than continuing module-by-module guesswork.
 
-For gaps that static CoreCSS/COSMA does not cover, the Contentful Builder will use one small central LP Builder bridge stylesheet rather than CSS per module. Rounded buttons are the first confirmed bridge use case. Their existing legacy implementation should be reused as the starting point, then modernized toward current COSMA tokens and accessibility requirements. Shared stable classes must allow one global CSS change to update all existing and future buttons using that contract.
+For gaps that static CoreCSS/COSMA does not cover, the Contentful Builder will use one small central LP Builder bridge stylesheet rather than CSS per module. Rounded buttons are the first confirmed bridge use case. Their existing legacy implementation was reused as the starting point and moved to new namespaced classes (`lpb-button` plus four v0.1 variants) so future global bridge changes affect only migrated/new Contentful Builder markup.
 
-The existing GitHub Pages runtime delivery can also serve the new bridge. The preferred target is a separate Contentful-specific path such as `runtime/contentful/lpbuilder-bridge.css`, loaded centrally and last by the Contentful LPBuilder route. Because existing Contentful LPBuilder pages already load the legacy runtime, the new bridge must use a new scoped/namespaced selector contract rather than reusing generic legacy selectors such as `a.ai-button`, otherwise existing Contentful pages could be changed unintentionally.
+The bridge is now published through the existing GitHub Pages runtime under `runtime/contentful/lpbuilder-bridge.css`. A real Contentful draft preview confirmed that the external stylesheet can be loaded from `htmlSource` for testing and that all four namespaced rounded-button variants render successfully. This validates the static bridge approach technically. The remaining button work is visual parity: current padding/overall sizing looks too generous and hover colors do not yet match the desired current COSMA/native appearance closely enough.
 
 ## Product Versions and Boundaries
 
@@ -76,9 +76,9 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - Use the validated CoreCSS/COSMA playground as the technical reference for future module work.
 - Do not make the old `runtime/core/*` CSS the styling basis of the new Contentful library; preserve it for existing AEM/pages that already depend on it.
 - Maintain one small central LP Builder bridge stylesheet for verified static-HTML gaps; do not create CSS per module.
-- Deliver the bridge through a separate Contentful-specific runtime path and load it centrally in the Contentful LPBuilder route when frontend changes are bundled.
+- Deliver the bridge through a separate Contentful-specific runtime path.
 - Do not reuse generic legacy selectors for the new bridge. Use new namespaced selectors so existing Contentful `ai-button` instances remain unchanged unless explicitly migrated.
-- Reuse the existing rounded-button implementation as design/behavior reference for the first bridge primitive, then modernize it with current COSMA tokens and accessible focus behavior.
+- Rounded buttons are the first validated bridge primitive. The bridge works in a real Contentful preview, so the remaining task is visual tuning rather than architectural proof.
 - Rounded buttons are mandatory for the new Contentful/migration Builder baseline. The deprecated classic `button-primary` / `button-secondary` visual treatment must not be used as the launch-state CTA solution.
 - Shared button classes must remain globally controllable within the new bridge contract so one bridge-CSS change updates all migrated/current v0.1 button instances.
 - The existing LPBuilder frontend already provides an HTML-specific Accordion interaction hook, so Accordion JavaScript should not be recreated in the GPT/library.
@@ -97,14 +97,14 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - 2026-09-01: Dominik confirmed that rounded buttons are a required product baseline for the new Builder; falling back to the deprecated classic button visual style is not acceptable for launch.
 - 2026-09-01: The existing legacy rounded-button implementation was audited and retained as a reusable starting point rather than rebuilding button styling from scratch.
 - 2026-09-01: Dominik selected a pragmatic central CSS-bridge approach for static gaps and decided to finish broader module testing before bundling any remaining Core Frontend questions.
-- 2026-09-01: The existing LPBuilder route was verified to centrally load the public Creative Ops runtime CSS. A separate `runtime/contentful/` bridge path is the preferred delivery model; new selectors must be namespaced to avoid unintentionally restyling existing Contentful `ai-button` markup.
+- 2026-09-01: The bridge was namespaced, published under the new Contentful runtime path and successfully loaded in the real `dev-lp-builder-v01-test` Contentful draft. All four v0.1 button variants render; padding/size and hover-color parity still need refinement.
 
 ## Risks and Open Questions
 
 - Which remaining module-specific structures genuinely require the central bridge after the validated native playground baseline.
 - Which gaps ultimately cannot be solved cleanly through static HTML + central bridge CSS and therefore require renderer/frontend support.
-- Exact final namespaced selector contract for the Contentful bridge primitives.
-- The bridge still needs one small Core Frontend change to add its URL to the central LPBuilder stylesheet list; this should be bundled with other true frontend gaps after the module pass.
+- Button visual parity still needs tuning against current Contentful/COSMA reference, especially padding/overall dimensions and hover colors.
+- The bridge still needs one small Core Frontend change to add its URL to the central LPBuilder stylesheet list for final production use; this can be bundled with other true frontend gaps after the module pass.
 - Accordion visual parity with the native Contentful component remains open even though interaction is working.
 - How the final migration module library should expand once Peter's Anwenderhandbuch designs expose missing patterns.
 - Exact long-term read/update lookup contract for Contentful pages after one fresh-chat lookup failure.
@@ -112,15 +112,15 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 
 ## Next Steps
 
-1. Rename/scope the new bridge button selectors so they cannot affect existing Contentful legacy `ai-button` markup.
-2. Keep building the bridge locally under the intended `runtime/contentful/` contract, starting with the four required rounded-button variants.
+1. Tune the four rounded-button bridge variants against the current native/Contentful visual reference, focusing on padding/size and hover colors while retaining COSMA-token usage where verified.
+2. Re-test the updated bridge in the existing Contentful draft without publishing.
 3. Continue building and testing the remaining v0.1 modules against the verified CoreCSS/COSMA reference; classify each gap as native, bridge-solvable, or frontend/renderer-required.
 4. After the module pass, consolidate the true frontend-only needs, including centrally loading the new bridge stylesheet, and align them with Mukhammadjon/Core Frontend in one discussion.
 5. Add new migration-specific modules from real Anwenderhandbuch design requirements.
 
 ## Last Confirmed
 
-2026-09-01: CoreCSS/COSMA remains the default static design-system layer. Verified gaps use one centrally maintained Contentful-specific LP Builder bridge stylesheet. The existing GitHub Pages runtime can deliver that file, but new bridge selectors must be namespaced so global updates affect only the intended new/migrated button contract. The frontend stylesheet-list change will be bundled with other remaining frontend gaps after the module pass.
+2026-09-01: The namespaced Contentful LP Builder bridge is published and successfully renders all four rounded-button variants in a real Contentful preview. The static bridge architecture is therefore technically validated; remaining button work is limited to visual parity tuning before moving on.
 
 ## Related Context
 
