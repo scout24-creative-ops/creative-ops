@@ -8,97 +8,68 @@ The platform work is distinct from the migration of existing AEM pages. `Marketi
 
 ## Current Status
 
-The Landing Page Builder → Contentful MVP is substantially validated in the development environment `next`.
+The Landing Page Builder -> Contentful integration is now validated end to end in Dominik's duplicated GPT. OAuth, draft creation, preview, update, explicit publish and the resulting production URL have all been tested successfully.
 
-The current end-to-end flow has been demonstrated: a new landing page can be generated in the Landing Page Builder, transferred directly into Contentful and viewed through a preview link. Dominik independently validated draft creation and updates, and OAuth works with his Contentful account.
+Dominik has taken over a separate Contentful-enabled Builder copy for migration and continued product development. Mukhammadjon remains the relevant Core Frontend contact for changes to the Action, renderer, environment or authentication contract, but Dominik can now evolve the GPT-side behavior independently.
 
-Production publishing is the main remaining platform step. Mukhammadjon confirmed on 2026-08-27 that production requires migrating the LP Builder content type, merging the renderer code from development into production, and configuring the required services and MCP production environment. He estimates this as roughly one working day once the work is explicitly tasked/prioritized through Beatrice.
+The current migration-focused Builder is being rebuilt incrementally instead of inheriting all old product logic. v0.1 is a controlled module composer: the user provides real content and the intended module sequence; the GPT uses approved module markup, preserves structure/classes and does not automatically select, reorder, substitute or invent content.
 
-Image handling should not be expanded as a standalone MVP feature. The intended LP Builder behavior remains placeholder images first and direct image URLs when real assets are available. For the first Contentful migration pilot, Dominik wants to test a very small persistent asset-storage setup rather than import AEM images directly into Contentful: move a limited first AEM directory or asset set into a storage layer, expose stable URLs, and validate those URLs end-to-end in the LP Builder → Contentful migration flow.
+A major architectural direction is now verified: the Contentful frontend globally loads CoreCSS/COSMA, and many of those styles are usable directly from static `htmlSource`. The new Builder should therefore use the existing Scout24 design-system layer wherever possible and keep any LP Builder-specific CSS bridge small and token-based.
 
-This storage pilot is intentionally narrower than the longer-term Marketing Asset Library. A visual asset-management UI, full rights model, agent upload/search API, stable asset IDs and dynamic transformation logic remain future capabilities to evaluate only after the basic migration-storage path has proven useful.
-
-Dominik plans pre-publish checks for required image URLs, links and basic SEO/quality guardrails. Mukhammadjon confirmed that link validation also appears to require implementation in the MCP layer, so the validation model is expected to combine Builder-side UX checks with MCP-side technical enforcement.
-
-After the MVP is finished, Dominik plans to duplicate the Contentful-enabled GPT so he owns the working copy used for migration and continued LP Builder development.
+Image handling remains deliberately simple for the migration pilot. The Builder should continue to accept stable direct image URLs rather than creating a separate Contentful image-selection feature. A small persistent asset-storage pilot can be developed in parallel without blocking the first migration proof.
 
 ## Dominik's Role
 
-Dominik owns the product direction, Marketing requirements and quality of the platform setup. He validates the Landing Page Builder → Contentful workflow, defines the desired future authoring and asset experience and aligns the technical direction with Contentful and platform stakeholders.
-
-For the asset direction, Dominik should own the product need, Marketing workflow and quality requirements, but not become the long-term operator of AWS/storage/CDN infrastructure. The intended operating model is to use appropriate platform or delivery ownership for technical operations if the pilot develops into a durable Marketing capability.
+Dominik owns the product direction, Marketing requirements and quality of the platform setup. He validates the LP Builder -> Contentful workflow, owns the migration-focused Builder copy and decides how the authoring model evolves while keeping technical infrastructure responsibilities with the appropriate platform owners.
 
 ## Key Stakeholders
 
-- Mukhammadjon Kayumov for the GPT Actions / Contentful integration implementation
-- Beatrice for Core Team coordination, prioritization and production-publishing alignment
-- Daniel Herold, Director of Tech - Core/Builders Platform, for broader Builder-platform direction and future collaboration
-- Matthias Brandstätter for Contentful ownership and strategic platform direction
-- Stefan Harssdorf for Contentful architecture and technical assessment
-- Paul for the asset / migration discussion
-- John Ford as a potential technical contact for Scout24 image storage and delivery infrastructure
-- Application Platform / `#application-platform` as the strongest currently identified operational entry point for AWS/S3 and related platform questions
-- Contentful team
-- Marketing teams using Landing Page Builder, Contentful and future asset workflows
-- SEO and UX where platform rules affect generated pages
+- Mukhammadjon Kayumov for the Contentful Action/renderer integration contract
+- Beatrice for Core Team coordination and broader platform alignment
+- Daniel Herold for Core/Builders Platform direction
+- Matthias Brandstätter for Contentful/platform ownership
+- Contentful/Core Frontend teams
+- SEO and UX where generation rules affect quality and publishing
+- Peter / relevant platform contacts for the small migration asset-storage pilot
 
 ## Confirmed Direction and Decisions
 
-- Use `Marketing Content Platform` as the broader project name for the tool and infrastructure work around Landing Page Builder, Contentful and the future asset workflow.
-- Keep `Contentful Migration` separate for the actual migration of existing AEM pages.
-- The short-term MVP remains HTML-based.
-- The current integration uses GPT Actions / MCP to transfer generated LP Builder HTML into Contentful `next`.
-- Draft creation and updates require explicit user approval; publishing remains a separate consequential action.
-- Direct preview of unpublished drafts is part of the validated workflow in `next`.
-- Do not add a new Contentful-based image-selection experience to the MVP. Keep the established LP Builder behavior: placeholders first, direct image URLs when real assets are available.
-- Automatic Contentful image recommendations / grids should be removed from the intended MVP flow.
-- Do not use Contentful as the long-term image source of truth merely to solve the migration pilot.
-- For the first migration test, evaluate a small persistent storage setup for a limited AEM asset set, with stable direct URLs that can be used by the LP Builder and Contentful migration flow.
-- Treat the first asset-storage setup as a reversible migration pilot, not as commitment to building the complete Marketing Asset Library.
-- The broader Marketing image problem should later be solved through a central Marketing Asset Library rather than separate libraries per tool if the pilot and ownership model support it.
-- The current storage direction to evaluate is AWS/S3 plus an existing Scout24 image-delivery/CDN capability where appropriate.
-- Full library capabilities such as UI, permissions, agent APIs, stable asset IDs, metadata and dynamic delivery variants are deliberately outside the first pilot scope.
-- Technical infrastructure operations should not become Dominik's ongoing responsibility; durable platform operation needs an appropriate Platform/Delivery owner.
-- Pre-publish quality checks should include required image URLs, valid links and basic SEO/quality rules.
-- According to Mukhammadjon, link validation also needs support in the MCP/integration layer.
-- Detailed user-role and publishing-permission governance is not required for the current MVP and can be defined later for broader production use.
-- After MVP completion, Dominik intends to duplicate the Contentful-enabled GPT and continue migration and Builder development from his own copy.
+- The Contentful integration works end to end, including explicit production publishing.
+- Dominik owns a separate Contentful-enabled GPT copy for migration and continued Builder development.
+- Keep publishing consequential: draft/save can be requested directly; publish requires an explicit request.
+- Keep the authoring model HTML-based for the current phase.
+- Use CoreCSS/COSMA first for static HTML instead of rebuilding a parallel design system.
+- Verified global packages in `is24-cms-frontend`: `is24-corecss` 9.2.0, `is24-corecss-server` 9.2.0 and `@is24/cosma-ui-icons` 6.24.0.
+- Verified native HTML-friendly families include typography, spacing, responsive grid, buttons, basic utilities and the COSMA icon font.
+- Create custom LP Builder CSS only for the real remaining delta and base it on existing COSMA design tokens.
+- Do not use the old LP Builder runtime CSS as the long-term styling basis for the new Contentful module library; keep those assets backward-compatible for existing AEM pages.
+- Do not add a separate Contentful image-selection UX to the migration MVP. Keep stable direct-image-URL input.
+- Treat persistent migration asset storage as a small parallel pilot rather than a prerequisite for the first page proof.
 
 ## Important Developments
 
-- 2026-08-11: Mukhammadjon demonstrated a successful GPT-to-Contentful draft flow with a rendered test result.
-- 2026-08-12: Dominik verified direct preview and updates in Contentful `next`.
-- 2026-08-12: A publish test exposed that production publishing was not yet available because the required renderer/content type had not been transferred to `pro`.
-- 2026-08-26: Dominik defined the direction of a central Marketing Asset Library and decided Contentful image suggestions should not become the target Builder image workflow.
-- 2026-08-27: Mukhammadjon clarified that production publishing requires content-type migration, renderer merge to production, service configuration and MCP production setup; he estimates roughly one working day once tasked.
-- 2026-08-27: Mukhammadjon confirmed the current image-grid/image-selection work can be reverted and the MVP can remain URL-based.
-- 2026-08-27: Mukhammadjon indicated link validation also needs implementation inside MCP.
-- 2026-08-27: Dominik clarified that after MVP completion he plans to duplicate the Contentful-enabled GPT for migration and continued LP Builder development.
-- 2026-08-27: Asset discovery was narrowed from a full library build to a small migration-storage pilot: limited AEM assets, stable URLs, end-to-end validation first; broader library scope only afterwards.
-- 2026-08-27: ScoutWiki and Slack discovery identified Application Platform / `#application-platform` with `@halp` as the strongest current operational entry point for AWS/S3 questions, with active 2026 examples of bucket requests and S3 + CloudFront discussions.
+- 2026-08-31: Dominik completed OAuth configuration and successfully tested create -> preview -> update -> publish -> production URL in his duplicated Contentful-enabled GPT.
+- 2026-08-31: Dominik informed Mukhammadjon that the setup works and that he will continue adapting the duplicate for migration use.
+- 2026-08-31: The migration-focused Builder was reset to a deliberately small v0.1 product model rather than carrying over all old Landing Page Builder logic.
+- 2026-09-01: Repository and browser checks confirmed that CoreCSS/COSMA is globally loaded in the Contentful frontend and that many classes can be applied directly to static HTML.
+- 2026-09-01: The new strategic styling rule became CoreCSS/COSMA first, with only a thin LP Builder CSS bridge where static HTML needs extra layout/media/surface behavior.
 
 ## Open Questions and Risks
 
-- Whether Beatrice gives the go to prioritize the remaining production-enablement work for `pro`.
-- Exact implementation and scope of MCP-side link validation before publishing.
-- Which existing Scout24 storage and image-delivery building blocks can be reused for the small migration pilot.
-- What URL/domain allowlisting, security or delivery constraints apply to pilot image URLs.
-- Whether the small storage pilot can be operated by an appropriate platform/delivery owner rather than creating ongoing infrastructure work for Dominik.
-- Whether a later Marketing Asset Library is still justified after the pilot, and if so what ownership, permissions, metadata, UI and agent API are actually needed.
+- Exact long-term contract for the small LP Builder-specific CSS bridge after the browser playground test.
+- Which module-specific layouts can be expressed entirely with CoreCSS utilities versus needing small custom rules.
+- Final link-validation and pre-publish quality-check responsibilities across Builder and integration layers.
+- Long-term persistent asset storage/delivery ownership.
+- Whether Action read behavior should be standardized around Entry ID, slug/path or both; one fresh-chat read/update test returned `LP Builder page was not found` while the same flow worked in an existing chat.
 
 ## Next Steps
 
-1. Align with Beatrice on prioritizing the remaining production-enablement work for `pro` and real publishing.
-2. Have Mukhammadjon revert the current image-selection experiments and keep the MVP on the established placeholder + direct-URL flow.
-3. Align the Builder-side pre-publish checks with the MCP-side link-validation implementation.
-4. After MVP completion, duplicate the Contentful-enabled GPT and use that copy for migration and continued Builder development.
-5. Next week, resume the asset topic by framing a small discovery/pilot request to Application Platform: persistent storage + stable delivery URLs for a limited AEM migration asset set, while explicitly asking about reusable Scout24 building blocks and technical ownership.
-6. Only after the migration-storage pilot is validated, decide whether and how to expand toward a broader Marketing Asset Library.
+1. Run the COSMA/CoreCSS HTML playground on `/dev-lp-builder-v01-test` without the old LP Builder runtime CSS.
+2. Classify tested primitives as `USE NATIVE CORECSS`, `HTML STRUCTURE / HOOK REQUIRED` or `LPBUILDER CSS BRIDGE REQUIRED`.
+3. Migrate the active v0.1 module set onto that verified contract.
+4. Create only the minimal token-based CSS bridge proven necessary by those tests.
+5. Continue the small persistent asset-storage pilot in parallel when useful for real migration pages.
 
 ## Last Confirmed
 
-Dominik confirmed the small migration-storage pilot direction on 2026-08-27 and paused further asset work until the following week. Generation, draft, update, preview and OAuth work in `next`; production publishing remains a bounded implementation step requiring content-type/renderer migration plus services/MCP production configuration.
-
-## Related Context
-
-See [Landing Page Builder](landing-page-builder.md).
+2026-09-01: the Contentful-enabled Builder works through production publishing, and the current implementation direction is to rebuild the migration-focused module library around globally available CoreCSS/COSMA with only a minimal HTML-specific bridge.
