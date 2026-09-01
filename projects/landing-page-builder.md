@@ -18,7 +18,9 @@ The CoreCSS/COSMA-first direction is now validated both in source and in a real 
 
 Typography is now finalized as the first native Design Library contract. Twenty-two CoreCSS typography variants were technically verified; sixteen are product-approved for LP Builder – Contentful: all five Heading sizes in Regular and Bold, plus Body Large/Medium/Small in Regular and Bold. Body Light and XBold remain technically available but are intentionally excluded from the Builder contract. The approved typography is rendered correctly in the canonical Contentful Design Library and requires no bridge CSS.
 
-Spacing is now also finalized as a native LP Builder – Contentful contract after real Contentful preview verification across Palm, Lap and Desk behavior. Native CoreCSS `margin`, `padding` and `gap` utilities are approved with sizes `xs`, `s`, `m`, `l`, `xl`, `xxl`, `none`, all verified directional variants and the responsive `palm-`, `lap-`, `desk-` prefixes. Negative spacing utilities and direct `--spacing-*` CSS variables are intentionally excluded from the normal Builder API. No spacing bridge or inline spacing CSS is needed. The local `gpt-instructions-v0.1.md`, `design-library.html` and gap log now contain the finalized spacing contract; the canonical Contentful Design Library still needs the prepared `3. Spacing` section synced into its existing unpublished draft.
+Spacing is now also finalized as a native LP Builder – Contentful contract after real Contentful preview verification across Palm, Lap and Desk behavior. Native CoreCSS `margin`, `padding` and `gap` utilities are approved with sizes `xs`, `s`, `m`, `l`, `xl`, `xxl`, `none`, all verified directional variants and the responsive `palm-`, `lap-`, `desk-` prefixes. Negative spacing utilities and direct `--spacing-*` CSS variables are intentionally excluded from the normal Builder API. No spacing bridge or inline spacing CSS is needed. The finalized `3. Spacing` section has been synced into the canonical unpublished Contentful Design Library and visually confirmed.
+
+Colors & Surfaces is now in audit rather than product-approved state. The deprecated CoreCSS `background-*` palette did render in the Contentful test surface but was judged visually inconsistent with the current Brand Guidelines and is therefore not a suitable Builder contract. A migration audit of the old LP Builder palette found that most core Brand values still map exactly to current COSMA tokens: Teal `#3DF5DC`, Charcoal `#333333`, White `#FFFFFF`, Sand `#FBF8F6`, Orange `#FF9626`, Yellow `#EFF933`, Blue `#24E3FF`, Purple `#D5AAFF`, Teal Hover `#55E6CB`, Charcoal Hover `#484848`, and Muted Text `#6A6A69`. Grey Light, Border Soft, Error and some alternative Teal values remain semantically related but use changed current values; module/vendor-specific colors without generic purpose are treated as legacy. The main remaining gap is delivery: only `background-white` is a verified static utility, while current Brand/Neutral/Status/Text/Link/Border roles are primarily token-only or component-only. No Color/Surface bridge has been created yet.
 
 For gaps that static CoreCSS/COSMA does not cover, the Contentful Builder uses one small central LP Builder bridge stylesheet rather than CSS per module. Rounded buttons and the Chevron Link are the first validated bridge primitives. Their legacy LP Builder behavior was reused as the starting point and moved to new namespaced classes so future global bridge changes affect only migrated/new Contentful Builder markup.
 
@@ -28,7 +30,7 @@ The optional `lpb-button--mobile-full` utility is now published in the central b
 
 Preview handling is deliberately split into two durable targets. The Contentful-specific Test Page is `/dev-lp-builder-contentful-v01-test`, used as the disposable default surface for experiments, module tests, bridge tests and smoke tests. The permanent reviewed reference is `/lp-builder-contentful-design-library`. The Design Library must be read before targeted updates and unrelated sections must be preserved. A local `design-library.html` source is maintained as the durable source of truth for this reference page.
 
-The canonical Contentful Design Library draft now exists at `/lp-builder-contentful-design-library` with preview `https://box-is24-cms-frontend.s24-fep.eu-west-1.infinity.s24cloud.net/lp-builder-contentful-design-library`. The reviewed library currently contains Bridge Primitives and Typography and remains unpublished while the design-system contract is expanded incrementally. The old generic `/lp-builder-design-library` draft is legacy/unpublished and is not the canonical target.
+The canonical Contentful Design Library draft now exists at `/lp-builder-contentful-design-library` with preview `https://box-is24-cms-frontend.s24-fep.eu-west-1.infinity.s24cloud.net/lp-builder-contentful-design-library`. The reviewed library currently contains Bridge Primitives, Typography and Spacing and remains unpublished while the design-system contract is expanded incrementally. The old generic `/lp-builder-design-library` draft is legacy/unpublished and is not the canonical target.
 
 A naming guardrail is confirmed: all user-facing artifacts, preview targets and references for the new Builder should make `Contentful` visible in the naming wherever practical so they cannot be confused with the legacy/AEM Builder. The preferred product label is `LP Builder – Contentful`; variants such as `LP Builder – Contentful Design Library` are acceptable.
 
@@ -88,6 +90,7 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - Verified native families now include typography, spacing, responsive grid, COSMA design tokens, several utilities, icon-font classes, links, lists and raw media behavior.
 - Typography contract: allow `font-heading-{xlarge,large,medium,small,xsmall}-{regular,bold}` and `font-body-{large,medium,small}-{regular,bold}` only; do not use Body Light or XBold in Builder output. HTML heading semantics remain independent from visual typography class.
 - Spacing contract: native `margin`, `padding` and `gap` utilities are approved with `xs` through `xxl`, `none`, all verified directional variants and `palm-`, `lap-`, `desk-` prefixes. Do not invent or use negative spacing utilities, inline spacing CSS or a spacing bridge. Direct `--spacing-*` variables are not part of the normal Builder API.
+- Colors/Surfaces audit: do not adopt the deprecated CoreCSS `background-*` palette merely because it renders; the real Contentful preview showed that those colors do not fit the current Brand Guidelines. Most legacy foundation Brand values still map exactly to current COSMA tokens, but those tokens are not yet exposed as a general static Builder utility API.
 - Use the validated CoreCSS/COSMA playground as the technical reference for future module work.
 - Do not make the old `runtime/core/*` CSS the styling basis of the new Contentful library; preserve it for existing AEM/pages that already depend on it.
 - Maintain one small central LP Builder bridge stylesheet for verified static-HTML gaps; do not create CSS per module.
@@ -123,13 +126,17 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - 2026-09-01: Builder instructions were reworked to a two-target contract: disposable Contentful Test Page plus permanent Contentful Design Library.
 - 2026-09-01: The canonical Contentful Design Library was created at `/lp-builder-contentful-design-library`; the earlier generic Design Library draft remains unpublished legacy state because the Action cannot rename slugs.
 - 2026-09-01: Typography audit verified 22 native CoreCSS variants. Sixteen were product-approved and added to the canonical Design Library; Body Light and XBold were intentionally excluded. Typography is complete and needs no bridge.
-- 2026-09-01: Spacing audit verified native Margin/Padding/Gap utilities, responsive `xs`-`xxl` scales, directional variants, `none`, and Palm/Lap/Desk prefixes. Real Contentful preview subsequently confirmed the uncommon directional and responsive cases across Palm, Lap and Desk; the spacing contract is now product-approved and requires no bridge. The local instructions and Design Library source contain the finalized `3. Spacing` section, pending sync to the canonical Contentful draft.
+- 2026-09-01: Spacing audit verified native Margin/Padding/Gap utilities, responsive `xs`-`xxl` scales, directional variants, `none`, and Palm/Lap/Desk prefixes. Real Contentful preview subsequently confirmed the uncommon directional and responsive cases across Palm, Lap and Desk; the spacing contract is now product-approved and requires no bridge. The finalized `3. Spacing` section was then synced to and visually confirmed in the canonical Contentful Design Library draft.
+- 2026-09-01: Colors & Surfaces audit found no verified general static text-color utility API and only `background-white` as a robust static background utility. Deprecated background candidates rendered but looked inconsistent with current Brand Guidelines.
+- 2026-09-01: Brand-color migration audit mapped the old foundation palette against current COSMA tokens. Core Brand values including Teal, Charcoal, White, Sand, Orange, Yellow, Blue, Purple and key hover/muted-text values remain exact current-token matches; the unresolved question is how to expose the required semantic colors to static LPBuilder HTML without creating a parallel color system.
 
 ## Risks and Open Questions
 
 - Which remaining module-specific structures genuinely require the central bridge after the validated native playground baseline.
 - Which gaps ultimately cannot be solved cleanly through static HTML + central bridge CSS and therefore require renderer/frontend support.
-- The finalized local `3. Spacing` Design Library section still needs to be synced into the canonical unpublished Contentful Design Library draft.
+- Colors & Surfaces still needs a product-level decision on the smallest semantic surface/text contract and whether those token-only roles should be exposed through the existing central LPBuilder bridge.
+- The byte-exact token mapping in the compiled `is24-corecss@9.2.0` artifact remains unverified; the audit used the accessible current COSMA token source plus current CMS usage.
+- General inversive/status text-surface pairings remain open and should not be invented before verification.
 - The latest local `gpt-instructions-v0.1.md` changes still need to be manually copied into the Custom GPT configuration.
 - The bridge still needs one small Core Frontend change to add its URL to the central LPBuilder stylesheet list for final production use; this can be bundled with other true frontend gaps after the module pass.
 - Accordion visual parity with the native Contentful component remains open even though interaction is working.
@@ -139,17 +146,18 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 
 ## Next Steps
 
-1. Sync the finalized local `design-library.html` into the existing `/lp-builder-contentful-design-library` Contentful draft without publishing, then visually confirm the new `3. Spacing` section.
-2. Continue the design-system contract with colors/surfaces, borders/radii and grid/layout before returning to complex module polish.
-3. Manually copy the latest approved instruction sections from `gpt-instructions-v0.1.md` into the Custom GPT configuration.
-4. Continue building and testing the remaining v0.1 modules against the verified CoreCSS/COSMA reference; promote only reviewed/finalized elements into the Design Library.
-5. After the module pass, consolidate the true frontend-only needs, including centrally loading the new bridge stylesheet, and align them with Mukhammadjon/Core Frontend in one discussion.
-6. Add new migration-specific modules from real Anwenderhandbuch design requirements.
+1. Define the smallest useful LP Builder – Contentful Colors & Surfaces contract from the verified current token mappings; avoid the deprecated CoreCSS background palette and do not expose raw tokens directly to normal Builder output.
+2. Prototype any required namespaced surface/text delivery through the existing central bridge only if the native static API is insufficient, then validate it on the disposable Contentful Test Page before product approval or Design Library promotion.
+3. Continue with borders/radii and grid/layout once Colors & Surfaces is settled.
+4. Manually copy the latest approved instruction sections from `gpt-instructions-v0.1.md` into the Custom GPT configuration.
+5. Continue building and testing the remaining v0.1 modules against the verified CoreCSS/COSMA reference; promote only reviewed/finalized elements into the Design Library.
+6. After the module pass, consolidate the true frontend-only needs, including centrally loading the new bridge stylesheet, and align them with Mukhammadjon/Core Frontend in one discussion.
+7. Add new migration-specific modules from real Anwenderhandbuch design requirements.
 
 ## Last Confirmed
 
-2026-09-01: Spacing is product-approved for LP Builder – Contentful after real Palm/Lap/Desk preview verification. Native CoreCSS Margin/Padding/Gap utilities with sizes `xs`–`xxl`, `none`, directional variants and responsive prefixes are allowed; negative utilities, direct `--spacing-*` API use, inline spacing CSS and a spacing bridge are excluded. The local Design Library source contains the finalized `3. Spacing` section and now needs to be synced into the canonical Contentful draft.
+2026-09-01: Brand-color migration audit confirmed that most old LP Builder foundation colors still map exactly to current COSMA tokens, while the deprecated CoreCSS `background-*` palette is visually unsuitable for the new Contentful Builder. Only `background-white` is a robust static background utility; most useful Brand/Neutral/Status/Text roles are token-only or component-only. Colors & Surfaces therefore remains an open product contract, with a small namespaced bridge as the likely delivery mechanism if native static utilities remain insufficient.
 
 ## Related Context
 
-See [Marketing Content Platform](contentful-marketing-mvp.md), [Contentful Migration](contentful-migration.md) and [Design Library and Builder Library](design-library.md).
+See [Marketing Content Platform](contentful-marketing-mvp.md), [Contentful Migration](contentful-migration.md) and [Design Library and Builder Library](design-library.md].
