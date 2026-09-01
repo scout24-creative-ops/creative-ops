@@ -18,10 +18,10 @@
 
 - [ ] Validate the CoreCSS/COSMA HTML contract
   - Area: Landing Page Builder
-  - Status: Open, validation narrowed to remaining visual/runtime gaps
-  - Next step: Verify mobile responsive behavior and Accordion interaction/open state in the real `/dev-lp-builder-v01-test` preview, then decide the minimal remaining bridges for Hero media alignment, Callout surface styling and any Accordion visual delta. Keep the successful native CoreCSS baseline unchanged unless a test proves a gap.
-  - Context: The first real Contentful preview with `hero-split`, `teaser-2col`, `benefits-3col`, `callout--base`, `accordion` and `checkmark-list` rendered successfully. Native typography, spacing, grids/responsive classes and standard buttons are visually working at baseline quality; Checkmark bridge renders. The remaining questions are narrow visual/runtime checks rather than an architectural blocker.
-  - Source: First CoreCSS/COSMA-first Contentful preview validated on 2026-09-01
+  - Status: Open, native baseline validated; remaining work is scope/bridge decisions
+  - Next step: Use the successful CoreCSS/COSMA playground as the reference for future module work, then decide whether rounded CTA support is important enough for the pilot to justify a small renderer-level `ButtonRounded` primitive with the Core Frontend owner. Only refine other module bridges when a real migration design or runtime test demonstrates a gap.
+  - Context: The real Contentful playground confirms static typography, tokens, spacing, grids, standard buttons, utilities, selected icon-font classes, links, lists and raw media. `ButtonRounded` has no verified stable static DOM contract; direct copying should be avoided and a semantic renderer primitive is the preferred technical direction if needed. Accordion interaction already works; its remaining gap is visual parity rather than behavior.
+  - Source: CoreCSS/COSMA playground runtime validation and ButtonRounded GitHub MCP analysis on 2026-09-01
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
