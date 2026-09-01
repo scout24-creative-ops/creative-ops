@@ -16,17 +16,21 @@ The full existing component library remains available as reference, but v0.1 use
 
 The CoreCSS/COSMA-first direction is now validated both in source and in a real Contentful runtime playground. Static `htmlSource` can directly use the verified typography scale, spacing/grid utilities, COSMA color/border/radius/spacing tokens, selected utilities, static icon-font classes, links, lists and raw media behavior. The playground serves as a reusable design-system reference for future module development rather than continuing module-by-module guesswork.
 
+Typography is now finalized as the first native Design Library contract. Twenty-two CoreCSS typography variants were technically verified; sixteen are product-approved for LP Builder – Contentful: all five Heading sizes in Regular and Bold, plus Body Large/Medium/Small in Regular and Bold. Body Light and XBold remain technically available but are intentionally excluded from the Builder contract. The approved typography is rendered correctly in the canonical Contentful Design Library and requires no bridge CSS.
+
+Spacing has now been audited but is not yet product-approved. Native CoreCSS supports `margin`, `padding` and `gap` utilities with `xs`, `s`, `m`, `l`, `xl`, `xxl`, `none`, directional variants and `palm-`, `lap-`, `desk-` prefixes. The utility scale is responsive: Palm (<=668px) resolves to 2/4/8/16/24/32px, while Lap/Desk resolves to 4/8/16/24/32/40px. Separate `--spacing-*` CSS variables exist but are not equivalent to the utility scale. No spacing bridge has been identified; a real Contentful preview of the less common combinations and responsive prefixes remains the final verification gate before product approval.
+
 For gaps that static CoreCSS/COSMA does not cover, the Contentful Builder uses one small central LP Builder bridge stylesheet rather than CSS per module. Rounded buttons and the Chevron Link are the first validated bridge primitives. Their legacy LP Builder behavior was reused as the starting point and moved to new namespaced classes so future global bridge changes affect only migrated/new Contentful Builder markup.
 
 The bridge is published through the existing GitHub Pages runtime under `runtime/contentful/lpbuilder-bridge.css`. A real Contentful draft preview confirmed that the external stylesheet can be loaded from `htmlSource` for testing. All four rounded-button variants and the Chevron Link now render with the intended v0.1 styling and interaction. Button sizing intentionally follows the old LP Builder contract (`16px 24px` padding, `16px/16px/700` type). Filled Brand is validated as-is; Filled Default keeps white text and changes only from `#333333` to `#3F3F3F` on hover/active; Outline Strong uses a white default background and optically doubles its `#333333` contour on hover/active without layout shift; Outline Weak keeps its validated default and gets the same stronger hover contour; the Chevron Link is un-underlined by default and underlined on hover/active.
 
 The optional `lpb-button--mobile-full` utility is now published in the central bridge. Default buttons remain content-width on mobile; only explicit use of that modifier makes a button full-width at max-width `668px`. The GPT contract states that this class must never be added automatically.
 
-Preview handling is deliberately split into two durable targets. `/dev-lp-builder-v01-test` remains the disposable default surface for experiments, module tests, bridge tests and smoke tests. A second permanent target, `/lp-builder-design-library`, is reserved for reviewed/finalized primitives and modules only. The Design Library must be read before targeted updates and unrelated sections must be preserved. A local `design-library.html` source is maintained as the durable source of truth for this reference page.
+Preview handling is deliberately split into two durable targets. The Contentful-specific Test Page is `/dev-lp-builder-contentful-v01-test`, used as the disposable default surface for experiments, module tests, bridge tests and smoke tests. The permanent reviewed reference is `/lp-builder-contentful-design-library`. The Design Library must be read before targeted updates and unrelated sections must be preserved. A local `design-library.html` source is maintained as the durable source of truth for this reference page.
 
-The first Design Library Contentful entry has now been created successfully as a draft with slug `/lp-builder-design-library`. Its preview is `https://box-is24-cms-frontend.s24-fep.eu-west-1.infinity.s24cloud.net/lp-builder-design-library`. The initial draft contains the four rounded-button variants, one explicit mobile-full example and the finalized Chevron Link, and remains unpublished pending visual validation.
+The canonical Contentful Design Library draft now exists at `/lp-builder-contentful-design-library` with preview `https://box-is24-cms-frontend.s24-fep.eu-west-1.infinity.s24cloud.net/lp-builder-contentful-design-library`. The reviewed library currently contains Bridge Primitives and Typography and remains unpublished while the design-system contract is expanded incrementally. The old generic `/lp-builder-design-library` draft is legacy/unpublished and is not the canonical target.
 
-A new naming guardrail is now confirmed: all user-facing artifacts, preview targets and references for the new Builder should make `Contentful` visible in the naming wherever practical so they cannot be confused with the legacy/AEM Builder. The preferred product label is `LP Builder – Contentful`; variants such as `LP Builder – Contentful Design Library` are acceptable. Existing generic preview slugs/titles should be migrated to Contentful-explicit equivalents while the project is still early.
+A naming guardrail is confirmed: all user-facing artifacts, preview targets and references for the new Builder should make `Contentful` visible in the naming wherever practical so they cannot be confused with the legacy/AEM Builder. The preferred product label is `LP Builder – Contentful`; variants such as `LP Builder – Contentful Design Library` are acceptable.
 
 ## Product Versions and Boundaries
 
@@ -82,6 +86,8 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - Do not perfect a universal migration mode before the first real pilot.
 - Use native CoreCSS/COSMA primitives wherever they work for static HTML.
 - Verified native families now include typography, spacing, responsive grid, COSMA design tokens, several utilities, icon-font classes, links, lists and raw media behavior.
+- Typography contract: allow `font-heading-{xlarge,large,medium,small,xsmall}-{regular,bold}` and `font-body-{large,medium,small}-{regular,bold}` only; do not use Body Light or XBold in Builder output. HTML heading semantics remain independent from visual typography class.
+- Spacing audit: native `margin`, `padding` and `gap` utilities are available with `xs` through `xxl`, `none`, directional variants and Palm/Lap/Desk prefixes. Do not invent negative spacing utilities. Product approval remains pending real preview verification of uncommon combinations and responsive prefixes.
 - Use the validated CoreCSS/COSMA playground as the technical reference for future module work.
 - Do not make the old `runtime/core/*` CSS the styling basis of the new Contentful library; preserve it for existing AEM/pages that already depend on it.
 - Maintain one small central LP Builder bridge stylesheet for verified static-HTML gaps; do not create CSS per module.
@@ -93,6 +99,7 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - Buttons stay content-width on mobile by default. Full-width mobile behavior is opt-in only via `lpb-button--mobile-full`, and the GPT must add that modifier only when the user explicitly requests it.
 - Maintain two separate preview targets: the Test Page is disposable and default for experiments; the Design Library is a durable reviewed reference and is only changed on explicit Design-Library requests.
 - Contentful slug operations require the leading `/`; use leading-slash slugs for reads/writes while preview URLs omit that leading slash in the route path.
+- `updateLpBuilderDraft` cannot change an Entry slug; slug migration requires a new Entry rather than renaming the existing one.
 - Maintain `design-library.html` as the local source of truth for the permanent Design Library; Contentful is the rendered preview, not the only copy of the library state.
 - The existing LPBuilder frontend already provides an HTML-specific Accordion interaction hook, so Accordion JavaScript should not be recreated in the GPT/library.
 - Build and test the module set first; collect any remaining renderer/component-only gaps and discuss them with Core Frontend together instead of escalating one-by-one.
@@ -110,21 +117,19 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - 2026-09-01: Dominik confirmed that rounded buttons are a required product baseline for the new Builder; falling back to the deprecated classic button visual style is not acceptable for launch.
 - 2026-09-01: The existing legacy rounded-button implementation was audited and retained as a reusable starting point rather than rebuilding button styling from scratch.
 - 2026-09-01: Dominik selected a pragmatic central CSS-bridge approach for static gaps and decided to finish broader module testing before bundling any remaining Core Frontend questions.
-- 2026-09-01: The bridge was namespaced, published under the new Contentful runtime path and successfully loaded in the real `dev-lp-builder-v01-test` Contentful draft.
-- 2026-09-01: The four required rounded-button variants and the Chevron Link were visually tuned and validated in Contentful preview. Button sizing now deliberately follows the old LP Builder contract, variant-specific hover behavior is fixed, and the Chevron Link underlines only on hover/active.
+- 2026-09-01: The bridge was namespaced, published under the new Contentful runtime path and successfully loaded in the real Contentful test draft.
+- 2026-09-01: The four required rounded-button variants and the Chevron Link were visually tuned and validated in Contentful preview.
 - 2026-09-01: The opt-in `lpb-button--mobile-full` utility was published in the bridge; default mobile buttons remain content-width and the modifier is used only on explicit request.
-- 2026-09-01: Builder instructions were reworked from one development preview convention to a two-target contract: disposable `/dev-lp-builder-v01-test` plus permanent `/lp-builder-design-library`.
-- 2026-09-01: A clean local `design-library.html` source was created containing only the finalized CTA/link primitives; unfinished modules are deliberately excluded until reviewed.
-- 2026-09-01: The Contentful Design Library entry was created successfully as an unpublished draft at `/lp-builder-design-library`; the create flow also confirmed that Contentful slug operations require a leading `/`.
-- 2026-09-01: The local `gpt-instructions-v0.1.md` preview-target contract was corrected so Test Page and Design Library Contentful operations use leading-slash slugs while public preview URLs remain unchanged.
-- 2026-09-01: A naming guardrail was added: new Builder artifacts should visibly identify themselves as `Contentful`, preferably using the `LP Builder – Contentful` naming family, to distinguish them from the legacy/AEM Builder.
+- 2026-09-01: Builder instructions were reworked to a two-target contract: disposable Contentful Test Page plus permanent Contentful Design Library.
+- 2026-09-01: The canonical Contentful Design Library was created at `/lp-builder-contentful-design-library`; the earlier generic Design Library draft remains unpublished legacy state because the Action cannot rename slugs.
+- 2026-09-01: Typography audit verified 22 native CoreCSS variants. Sixteen were product-approved and added to the canonical Design Library; Body Light and XBold were intentionally excluded. Typography is complete and needs no bridge.
+- 2026-09-01: Spacing audit verified native Margin/Padding/Gap utilities, responsive `xs`-`xxl` scales, directional variants, `none`, and Palm/Lap/Desk prefixes. No bridge is needed; uncommon combinations and responsive prefixes still need one real Contentful preview before the product contract is finalized.
 
 ## Risks and Open Questions
 
 - Which remaining module-specific structures genuinely require the central bridge after the validated native playground baseline.
 - Which gaps ultimately cannot be solved cleanly through static HTML + central bridge CSS and therefore require renderer/frontend support.
-- The current Test Page and Design Library slugs/titles are still generic and should be migrated to Contentful-explicit names before the preview contract is finalized.
-- The new Design Library draft still needs visual validation on desktop/mobile before it can be treated as the canonical rendered reference.
+- Spacing product contract is not finalized until uncommon directional combinations and responsive prefixes are visually checked in the real Contentful Test Page.
 - The latest local `gpt-instructions-v0.1.md` changes still need to be manually copied into the Custom GPT configuration.
 - The bridge still needs one small Core Frontend change to add its URL to the central LPBuilder stylesheet list for final production use; this can be bundled with other true frontend gaps after the module pass.
 - Accordion visual parity with the native Contentful component remains open even though interaction is working.
@@ -134,17 +139,17 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 
 ## Next Steps
 
-1. Rename the Test Page and Design Library conventions to Contentful-explicit labels/slugs/titles (preferred family: `LP Builder – Contentful`) while still in draft/development state, and update `gpt-instructions-v0.1.md` plus `design-library.html` accordingly.
-2. Manually copy the latest `Preview targets` and `LPBuilder bridge primitives` sections from `gpt-instructions-v0.1.md` into the Custom GPT configuration.
-3. Visually validate the renamed Design Library draft on desktop/mobile without publishing.
-4. Once visually approved, commit the local `gpt-instructions-v0.1.md` and `design-library.html` changes so the reviewed contract/source is durable.
+1. Define the proposed LP Builder – Contentful spacing subset from the completed audit, then validate that subset on the Contentful Test Page before adding it to the Design Library.
+2. Once spacing is approved, update `gpt-instructions-v0.1.md` and `design-library.html`, then update the canonical Design Library draft without publishing.
+3. Continue the design-system contract with colors/surfaces, borders/radii and grid/layout before returning to complex module polish.
+4. Manually copy the latest approved instruction sections from `gpt-instructions-v0.1.md` into the Custom GPT configuration.
 5. Continue building and testing the remaining v0.1 modules against the verified CoreCSS/COSMA reference; promote only reviewed/finalized elements into the Design Library.
 6. After the module pass, consolidate the true frontend-only needs, including centrally loading the new bridge stylesheet, and align them with Mukhammadjon/Core Frontend in one discussion.
 7. Add new migration-specific modules from real Anwenderhandbuch design requirements.
 
 ## Last Confirmed
 
-2026-09-01: The preferred naming family for the new Builder is `LP Builder – Contentful`. New pages, previews, libraries and references should visibly include `Contentful` wherever practical so they cannot be mistaken for assets belonging to the legacy/AEM Landing Page Builder. Existing generic Test Page and Design Library names should be migrated before the convention is finalized.
+2026-09-01: Typography is finalized in the canonical LP Builder – Contentful Design Library. The next design-system decision is the Spacing product contract: native CoreCSS Margin/Padding/Gap utilities are technically verified, no bridge is needed, but uncommon combinations and responsive prefixes still need one real Contentful preview before final approval.
 
 ## Related Context
 
