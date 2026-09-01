@@ -14,7 +14,9 @@ The migration-focused duplicate is intentionally being rebuilt from a smaller pr
 
 The full existing component library remains available as reference, but v0.1 uses a provisional active whitelist of eight modules: `hero-split`, `teaser-2col`, `teaser-3col`, `benefits-2col`, `benefits-3col`, `accordion`, `callout--base` and `checkmark-list`. This is a development boundary, not the final module set for the Anwenderhandbuch migration.
 
-A key technical direction is now confirmed: `is24-cms-frontend` globally loads CoreCSS/COSMA, and many of those classes can be used directly on static HTML in `htmlSource`. The new library should therefore be rebuilt around native CoreCSS/COSMA primitives wherever possible instead of carrying forward the old LP Builder runtime CSS as its styling foundation.
+The CoreCSS/COSMA-first direction is now validated both in source and in a real Contentful runtime playground. Static `htmlSource` can directly use the verified typography scale, spacing/grid utilities, standard buttons, COSMA color/border/radius/spacing tokens, selected utilities, static icon-font classes, links, lists and raw media behavior. The playground serves as a reusable design-system reference for future module development rather than continuing module-by-module guesswork.
+
+`ButtonRounded` is an important exception: the native Contentful CTA docs render the React `ButtonRounded` component through the normal component resolver, and no stable static DOM/CSS-class contract is exposed from `is24-cms-frontend`. The preferred technical direction is therefore a small semantic LP Builder renderer primitive that instantiates the native component rather than copying package-internal markup or rebuilding its variants in LP Builder CSS.
 
 ## Product Versions and Boundaries
 
@@ -38,6 +40,8 @@ A key technical direction is now confirmed: `is24-cms-frontend` globally loads C
 The Landing Page Builder should become a controlled generative layer rather than remain permanently constrained to a fixed component catalogue. Marketing should be able to create pages and later new patterns within brand, design-system, accessibility, SEO and technical guardrails.
 
 The current implementation direction is **CoreCSS/COSMA first**. Static HTML should reuse the existing Scout24 design system wherever possible. Custom LP Builder CSS should be a thin bridge for module-specific layout, media or surface behavior that cannot be expressed through native classes, and should use existing COSMA tokens rather than introduce a parallel design system.
+
+Where a design-system capability is exposed only as a React component and no supported static contract exists, prefer a small renderer-level LP Builder primitive over copying internal DOM or recreating the component styling. `ButtonRounded` is the first confirmed case for this pattern.
 
 ## Dominik's Role
 
@@ -63,10 +67,13 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - Do not automatically substitute non-whitelisted modules.
 - Do not perfect a universal migration mode before the first real pilot.
 - Use native CoreCSS/COSMA primitives wherever they work for static HTML.
-- Verified native families include typography, spacing, responsive grid, standard buttons, several utilities and COSMA icon-font classes.
+- Verified native families now include typography, spacing, responsive grid, standard buttons, COSMA design tokens, several utilities, icon-font classes, links, lists and raw media behavior.
+- Use the validated CoreCSS/COSMA playground as the technical reference for future module work.
 - Do not make the old `runtime/core/*` CSS the styling basis of the new Contentful library; preserve it for existing AEM pages.
-- Build a minimal LP Builder CSS bridge only after browser testing proves what is missing.
+- Build a minimal LP Builder CSS bridge only after runtime testing proves a real static-HTML gap.
 - The existing LPBuilder frontend already provides an HTML-specific Accordion interaction hook, so Accordion JavaScript should not be recreated in the GPT/library.
+- Do not copy `ButtonRounded` package-internal DOM into static `htmlSource`; no stable static contract has been verified.
+- For component-only design-system primitives such as `ButtonRounded`, prefer a small semantic renderer contract that instantiates the native React component when implementation is justified.
 
 ## Important Developments
 
@@ -74,26 +81,31 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - 2026-08-31: The migration-focused Builder was reset to a simple module-composer v0.1 model.
 - 2026-08-31: Eight modules were selected as the active v0.1 whitelist while the full library remains available as reference.
 - 2026-09-01: CoreCSS/COSMA-first feasibility for static HTML was verified directly against `is24-cms-frontend` and live rendering.
-- 2026-09-01: The next proof was defined as a dedicated COSMA/CoreCSS HTML playground before module refactoring begins.
+- 2026-09-01: The v0.1 modules were refactored onto the native CoreCSS/COSMA baseline and validated in a real desktop/mobile Contentful preview.
+- 2026-09-01: A dedicated CoreCSS/COSMA reference playground successfully rendered typography, tokens, spacing, grid, buttons, utilities, icons, links, lists and raw media through static `htmlSource`.
+- 2026-09-01: Codex gained read-only GitHub MCP access to `Scout24/is24-cms-frontend`, removing the previous local-repository verification blocker.
+- 2026-09-01: `ButtonRounded` was traced as a React/CoreCSS component without a verified static DOM contract; a semantic renderer primitive is the preferred architecture if rounded CTA support is added to LP Builder.
 
 ## Risks and Open Questions
 
-- Which module-specific structures still require custom CSS after the native HTML playground test.
+- Which remaining module-specific structures genuinely require custom CSS after the validated native playground baseline.
+- Exact semantic contract and implementation ownership for a future LP Builder `ButtonRounded` renderer primitive, including icons and possible form-button use cases.
+- Accordion visual parity with the native Contentful component remains open even though interaction is working.
 - How the final migration module library should expand once Peter's Anwenderhandbuch designs expose missing patterns.
 - Exact long-term read/update lookup contract for Contentful pages after one fresh-chat lookup failure.
 - Final pre-publish validation and link-check split between Builder and platform integration.
 
 ## Next Steps
 
-1. Build and render the COSMA/CoreCSS HTML playground on the existing Contentful smoke-test page.
-2. Classify primitives into native, hook/structure-dependent or custom-bridge-required.
-3. Refactor only the eight active v0.1 modules onto that verified contract.
-4. Add new migration-specific modules later from real Anwenderhandbuch design requirements.
+1. Use the validated CoreCSS/COSMA playground as the reference when expanding or refining the Contentful module library.
+2. Decide whether rounded CTA support is important enough for v0.1/pilot scope to justify a small renderer-level `ButtonRounded` primitive with the Core Frontend owner.
+3. Refine remaining module bridges only when a real migration design or runtime test demonstrates a gap.
+4. Add new migration-specific modules from real Anwenderhandbuch design requirements.
 5. Generalize migration rules only after the first end-to-end pilot proves what actually repeats.
 
 ## Last Confirmed
 
-2026-09-01: the Contentful/migration duplicate is working through production publishing; v0.1 is intentionally small and CoreCSS/COSMA-first, with the next step being a native HTML playground before any new CSS bridge is created.
+2026-09-01: the static CoreCSS/COSMA contract is validated through a real Contentful playground and can serve as the design-system baseline for future module development. Native `ButtonRounded` remains component-only from the LP Builder perspective; a semantic renderer primitive is the preferred solution if rounded CTA support is prioritized.
 
 ## Related Context
 
