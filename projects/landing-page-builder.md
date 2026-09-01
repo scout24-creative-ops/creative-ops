@@ -20,7 +20,9 @@ For gaps that static CoreCSS/COSMA does not cover, the Contentful Builder uses o
 
 The bridge is published through the existing GitHub Pages runtime under `runtime/contentful/lpbuilder-bridge.css`. A real Contentful draft preview confirmed that the external stylesheet can be loaded from `htmlSource` for testing. All four rounded-button variants and the Chevron Link now render with the intended v0.1 styling and interaction. Button sizing intentionally follows the old LP Builder contract (`16px 24px` padding, `16px/16px/700` type). Filled Brand is validated as-is; Filled Default keeps white text and changes only from `#333333` to `#3F3F3F` on hover/active; Outline Strong uses a white default background and optically doubles its `#333333` contour on hover/active without layout shift; Outline Weak keeps its validated default and gets the same stronger hover contour; the Chevron Link is un-underlined by default and underlined on hover/active.
 
-An optional `lpb-button--mobile-full` utility has also been implemented locally. Default buttons remain content-width on mobile; only explicit use of that modifier makes a button full-width at max-width `668px`. The GPT contract states that this class must never be added automatically. This utility has not yet been committed/pushed to the published bridge.
+The optional `lpb-button--mobile-full` utility is now published in the central bridge. Default buttons remain content-width on mobile; only explicit use of that modifier makes a button full-width at max-width `668px`. The GPT contract states that this class must never be added automatically.
+
+Preview handling is now deliberately split into two durable targets. `dev-lp-builder-v01-test` remains the disposable default surface for experiments, module tests, bridge tests and smoke tests. A second permanent target, `lp-builder-design-library`, is reserved for reviewed/finalized primitives and modules only. The Design Library must be read before targeted updates and unrelated sections must be preserved. A local `design-library.html` source has been created as the durable source of truth for this reference page; its initial content contains the four rounded-button variants, one explicit mobile-full example and the finalized Chevron Link, while unfinished modules remain excluded.
 
 ## Product Versions and Boundaries
 
@@ -84,6 +86,8 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - Rounded buttons are mandatory for the new Contentful/migration Builder baseline. The deprecated classic `button-primary` / `button-secondary` visual treatment must not be used as the launch-state CTA solution.
 - Shared button classes must remain globally controllable within the new bridge contract so one bridge-CSS change updates all migrated/current v0.1 button instances.
 - Buttons stay content-width on mobile by default. Full-width mobile behavior is opt-in only via `lpb-button--mobile-full`, and the GPT must add that modifier only when the user explicitly requests it.
+- Maintain two separate preview targets: the Test Page is disposable and default for experiments; the Design Library is a durable reviewed reference and is only changed on explicit Design-Library requests.
+- Maintain `design-library.html` as the local source of truth for the permanent Design Library; Contentful is the rendered preview, not the only copy of the library state.
 - The existing LPBuilder frontend already provides an HTML-specific Accordion interaction hook, so Accordion JavaScript should not be recreated in the GPT/library.
 - Build and test the module set first; collect any remaining renderer/component-only gaps and discuss them with Core Frontend together instead of escalating one-by-one.
 
@@ -102,13 +106,16 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - 2026-09-01: Dominik selected a pragmatic central CSS-bridge approach for static gaps and decided to finish broader module testing before bundling any remaining Core Frontend questions.
 - 2026-09-01: The bridge was namespaced, published under the new Contentful runtime path and successfully loaded in the real `dev-lp-builder-v01-test` Contentful draft.
 - 2026-09-01: The four required rounded-button variants and the Chevron Link were visually tuned and validated in Contentful preview. Button sizing now deliberately follows the old LP Builder contract, variant-specific hover behavior is fixed, and the Chevron Link underlines only on hover/active.
-- 2026-09-01: An opt-in `lpb-button--mobile-full` utility was implemented locally and documented in the GPT contract; default mobile buttons remain content-width and the modifier is used only on explicit request. Publication of this utility is still pending.
+- 2026-09-01: The opt-in `lpb-button--mobile-full` utility was published in the bridge; default mobile buttons remain content-width and the modifier is used only on explicit request.
+- 2026-09-01: Builder instructions were reworked from one development preview convention to a two-target contract: disposable `dev-lp-builder-v01-test` plus permanent `lp-builder-design-library`.
+- 2026-09-01: A clean local `design-library.html` source was created containing only the finalized CTA/link primitives; unfinished modules are deliberately excluded until reviewed.
 
 ## Risks and Open Questions
 
 - Which remaining module-specific structures genuinely require the central bridge after the validated native playground baseline.
 - Which gaps ultimately cannot be solved cleanly through static HTML + central bridge CSS and therefore require renderer/frontend support.
-- The optional `lpb-button--mobile-full` utility still needs to be committed/pushed and then smoke-tested in the real Contentful preview.
+- The new `lp-builder-design-library` Contentful entry still needs to be created from the local `design-library.html` source and visually validated.
+- The latest `gpt-instructions-v0.1.md` changes still need to be manually copied into the Custom GPT instructions before the two-target preview convention becomes operational there.
 - The bridge still needs one small Core Frontend change to add its URL to the central LPBuilder stylesheet list for final production use; this can be bundled with other true frontend gaps after the module pass.
 - Accordion visual parity with the native Contentful component remains open even though interaction is working.
 - How the final migration module library should expand once Peter's Anwenderhandbuch designs expose missing patterns.
@@ -117,15 +124,15 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 
 ## Next Steps
 
-1. Publish the opt-in `lpb-button--mobile-full` utility to the existing Contentful bridge and smoke-test that default buttons remain content-width while the explicit modifier becomes full-width on mobile only.
-2. Move the confirmed CTA/Link contract into the active Builder instructions/library so the GPT uses the four button variants, Chevron Link and mobile-full modifier correctly.
-3. Continue building and testing the remaining v0.1 modules against the verified CoreCSS/COSMA reference; classify each gap as native, bridge-solvable, or frontend/renderer-required.
+1. Copy the latest `gpt-instructions-v0.1.md` preview-target and bridge-primitive sections into the Custom GPT manually.
+2. Bootstrap the new `lp-builder-design-library` Contentful draft from the exact local `design-library.html` source, then visually validate the initial primitives without publishing.
+3. Continue building and testing the remaining v0.1 modules against the verified CoreCSS/COSMA reference; promote only reviewed/finalized elements into the Design Library.
 4. After the module pass, consolidate the true frontend-only needs, including centrally loading the new bridge stylesheet, and align them with Mukhammadjon/Core Frontend in one discussion.
 5. Add new migration-specific modules from real Anwenderhandbuch design requirements.
 
 ## Last Confirmed
 
-2026-09-01: The namespaced Contentful LP Builder bridge is technically and visually validated for the four rounded-button variants and Chevron Link in a real Contentful preview. Default mobile buttons remain content-width by design; an explicit `lpb-button--mobile-full` modifier has been implemented locally for optional full-width mobile CTAs and still needs to be published/tested.
+2026-09-01: The CTA/link bridge baseline is complete and published, including opt-in mobile full-width behavior. Preview handling is now split into a disposable Test Page and a permanent Design Library. The local `design-library.html` file is the source of truth for the reviewed reference and currently contains only the finalized button and Chevron primitives; the corresponding Contentful Design Library entry still needs to be created and validated.
 
 ## Related Context
 
