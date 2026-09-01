@@ -18,7 +18,7 @@ The CoreCSS/COSMA-first direction is now validated both in source and in a real 
 
 Typography is now finalized as the first native Design Library contract. Twenty-two CoreCSS typography variants were technically verified; sixteen are product-approved for LP Builder – Contentful: all five Heading sizes in Regular and Bold, plus Body Large/Medium/Small in Regular and Bold. Body Light and XBold remain technically available but are intentionally excluded from the Builder contract. The approved typography is rendered correctly in the canonical Contentful Design Library and requires no bridge CSS.
 
-Spacing has now been audited but is not yet product-approved. Native CoreCSS supports `margin`, `padding` and `gap` utilities with `xs`, `s`, `m`, `l`, `xl`, `xxl`, `none`, directional variants and `palm-`, `lap-`, `desk-` prefixes. The utility scale is responsive: Palm (<=668px) resolves to 2/4/8/16/24/32px, while Lap/Desk resolves to 4/8/16/24/32/40px. Separate `--spacing-*` CSS variables exist but are not equivalent to the utility scale. No spacing bridge has been identified; a real Contentful preview of the less common combinations and responsive prefixes remains the final verification gate before product approval.
+Spacing is now also finalized as a native LP Builder – Contentful contract after real Contentful preview verification across Palm, Lap and Desk behavior. Native CoreCSS `margin`, `padding` and `gap` utilities are approved with sizes `xs`, `s`, `m`, `l`, `xl`, `xxl`, `none`, all verified directional variants and the responsive `palm-`, `lap-`, `desk-` prefixes. Negative spacing utilities and direct `--spacing-*` CSS variables are intentionally excluded from the normal Builder API. No spacing bridge or inline spacing CSS is needed. The local `gpt-instructions-v0.1.md`, `design-library.html` and gap log now contain the finalized spacing contract; the canonical Contentful Design Library still needs the prepared `3. Spacing` section synced into its existing unpublished draft.
 
 For gaps that static CoreCSS/COSMA does not cover, the Contentful Builder uses one small central LP Builder bridge stylesheet rather than CSS per module. Rounded buttons and the Chevron Link are the first validated bridge primitives. Their legacy LP Builder behavior was reused as the starting point and moved to new namespaced classes so future global bridge changes affect only migrated/new Contentful Builder markup.
 
@@ -87,7 +87,7 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - Use native CoreCSS/COSMA primitives wherever they work for static HTML.
 - Verified native families now include typography, spacing, responsive grid, COSMA design tokens, several utilities, icon-font classes, links, lists and raw media behavior.
 - Typography contract: allow `font-heading-{xlarge,large,medium,small,xsmall}-{regular,bold}` and `font-body-{large,medium,small}-{regular,bold}` only; do not use Body Light or XBold in Builder output. HTML heading semantics remain independent from visual typography class.
-- Spacing audit: native `margin`, `padding` and `gap` utilities are available with `xs` through `xxl`, `none`, directional variants and Palm/Lap/Desk prefixes. Do not invent negative spacing utilities. Product approval remains pending real preview verification of uncommon combinations and responsive prefixes.
+- Spacing contract: native `margin`, `padding` and `gap` utilities are approved with `xs` through `xxl`, `none`, all verified directional variants and `palm-`, `lap-`, `desk-` prefixes. Do not invent or use negative spacing utilities, inline spacing CSS or a spacing bridge. Direct `--spacing-*` variables are not part of the normal Builder API.
 - Use the validated CoreCSS/COSMA playground as the technical reference for future module work.
 - Do not make the old `runtime/core/*` CSS the styling basis of the new Contentful library; preserve it for existing AEM/pages that already depend on it.
 - Maintain one small central LP Builder bridge stylesheet for verified static-HTML gaps; do not create CSS per module.
@@ -123,13 +123,13 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - 2026-09-01: Builder instructions were reworked to a two-target contract: disposable Contentful Test Page plus permanent Contentful Design Library.
 - 2026-09-01: The canonical Contentful Design Library was created at `/lp-builder-contentful-design-library`; the earlier generic Design Library draft remains unpublished legacy state because the Action cannot rename slugs.
 - 2026-09-01: Typography audit verified 22 native CoreCSS variants. Sixteen were product-approved and added to the canonical Design Library; Body Light and XBold were intentionally excluded. Typography is complete and needs no bridge.
-- 2026-09-01: Spacing audit verified native Margin/Padding/Gap utilities, responsive `xs`-`xxl` scales, directional variants, `none`, and Palm/Lap/Desk prefixes. No bridge is needed; uncommon combinations and responsive prefixes still need one real Contentful preview before the product contract is finalized.
+- 2026-09-01: Spacing audit verified native Margin/Padding/Gap utilities, responsive `xs`-`xxl` scales, directional variants, `none`, and Palm/Lap/Desk prefixes. Real Contentful preview subsequently confirmed the uncommon directional and responsive cases across Palm, Lap and Desk; the spacing contract is now product-approved and requires no bridge. The local instructions and Design Library source contain the finalized `3. Spacing` section, pending sync to the canonical Contentful draft.
 
 ## Risks and Open Questions
 
 - Which remaining module-specific structures genuinely require the central bridge after the validated native playground baseline.
 - Which gaps ultimately cannot be solved cleanly through static HTML + central bridge CSS and therefore require renderer/frontend support.
-- Spacing product contract is not finalized until uncommon directional combinations and responsive prefixes are visually checked in the real Contentful Test Page.
+- The finalized local `3. Spacing` Design Library section still needs to be synced into the canonical unpublished Contentful Design Library draft.
 - The latest local `gpt-instructions-v0.1.md` changes still need to be manually copied into the Custom GPT configuration.
 - The bridge still needs one small Core Frontend change to add its URL to the central LPBuilder stylesheet list for final production use; this can be bundled with other true frontend gaps after the module pass.
 - Accordion visual parity with the native Contentful component remains open even though interaction is working.
@@ -139,17 +139,16 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 
 ## Next Steps
 
-1. Define the proposed LP Builder – Contentful spacing subset from the completed audit, then validate that subset on the Contentful Test Page before adding it to the Design Library.
-2. Once spacing is approved, update `gpt-instructions-v0.1.md` and `design-library.html`, then update the canonical Design Library draft without publishing.
-3. Continue the design-system contract with colors/surfaces, borders/radii and grid/layout before returning to complex module polish.
-4. Manually copy the latest approved instruction sections from `gpt-instructions-v0.1.md` into the Custom GPT configuration.
-5. Continue building and testing the remaining v0.1 modules against the verified CoreCSS/COSMA reference; promote only reviewed/finalized elements into the Design Library.
-6. After the module pass, consolidate the true frontend-only needs, including centrally loading the new bridge stylesheet, and align them with Mukhammadjon/Core Frontend in one discussion.
-7. Add new migration-specific modules from real Anwenderhandbuch design requirements.
+1. Sync the finalized local `design-library.html` into the existing `/lp-builder-contentful-design-library` Contentful draft without publishing, then visually confirm the new `3. Spacing` section.
+2. Continue the design-system contract with colors/surfaces, borders/radii and grid/layout before returning to complex module polish.
+3. Manually copy the latest approved instruction sections from `gpt-instructions-v0.1.md` into the Custom GPT configuration.
+4. Continue building and testing the remaining v0.1 modules against the verified CoreCSS/COSMA reference; promote only reviewed/finalized elements into the Design Library.
+5. After the module pass, consolidate the true frontend-only needs, including centrally loading the new bridge stylesheet, and align them with Mukhammadjon/Core Frontend in one discussion.
+6. Add new migration-specific modules from real Anwenderhandbuch design requirements.
 
 ## Last Confirmed
 
-2026-09-01: Typography is finalized in the canonical LP Builder – Contentful Design Library. The next design-system decision is the Spacing product contract: native CoreCSS Margin/Padding/Gap utilities are technically verified, no bridge is needed, but uncommon combinations and responsive prefixes still need one real Contentful preview before final approval.
+2026-09-01: Spacing is product-approved for LP Builder – Contentful after real Palm/Lap/Desk preview verification. Native CoreCSS Margin/Padding/Gap utilities with sizes `xs`–`xxl`, `none`, directional variants and responsive prefixes are allowed; negative utilities, direct `--spacing-*` API use, inline spacing CSS and a spacing bridge are excluded. The local Design Library source contains the finalized `3. Spacing` section and now needs to be synced into the canonical Contentful draft.
 
 ## Related Context
 
