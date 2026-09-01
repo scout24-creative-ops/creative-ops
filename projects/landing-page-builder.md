@@ -33,6 +33,7 @@ The CoreCSS/COSMA-first direction is now validated both in source and in a real 
 - Uses GPT Actions for read, draft creation, update and explicit publish.
 - End-to-end publishing flow is validated.
 - v0.1 uses the eight-module whitelist and controlled composition behavior.
+- Rounded CTA support is a required part of the v0.1 baseline; the Contentful/migration Builder must not launch using the deprecated classic button designs as its primary CTA treatment.
 - Will evolve based on real migration page-group requirements rather than trying to generalize the full migration system upfront.
 
 ## Long-term Product Direction
@@ -73,7 +74,8 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - Build a minimal LP Builder CSS bridge only after runtime testing proves a real static-HTML gap.
 - The existing LPBuilder frontend already provides an HTML-specific Accordion interaction hook, so Accordion JavaScript should not be recreated in the GPT/library.
 - Do not copy `ButtonRounded` package-internal DOM into static `htmlSource`; no stable static contract has been verified.
-- For component-only design-system primitives such as `ButtonRounded`, prefer a small semantic renderer contract that instantiates the native React component when implementation is justified.
+- Rounded buttons are mandatory for the new Contentful/migration Builder baseline. The deprecated classic `button-primary` / `button-secondary` visual treatment must not be used as the launch-state CTA solution merely because it is easier to render from static HTML.
+- For component-only design-system primitives such as `ButtonRounded`, prefer a small semantic renderer contract that instantiates the native React component.
 
 ## Important Developments
 
@@ -84,12 +86,13 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - 2026-09-01: The v0.1 modules were refactored onto the native CoreCSS/COSMA baseline and validated in a real desktop/mobile Contentful preview.
 - 2026-09-01: A dedicated CoreCSS/COSMA reference playground successfully rendered typography, tokens, spacing, grid, buttons, utilities, icons, links, lists and raw media through static `htmlSource`.
 - 2026-09-01: Codex gained read-only GitHub MCP access to `Scout24/is24-cms-frontend`, removing the previous local-repository verification blocker.
-- 2026-09-01: `ButtonRounded` was traced as a React/CoreCSS component without a verified static DOM contract; a semantic renderer primitive is the preferred architecture if rounded CTA support is added to LP Builder.
+- 2026-09-01: `ButtonRounded` was traced as a React/CoreCSS component without a verified static DOM contract; a semantic renderer primitive is the preferred architecture.
+- 2026-09-01: Dominik confirmed that rounded buttons are a required product baseline for the new Builder; falling back to the deprecated classic button visual style is not acceptable for launch.
 
 ## Risks and Open Questions
 
 - Which remaining module-specific structures genuinely require custom CSS after the validated native playground baseline.
-- Exact semantic contract and implementation ownership for a future LP Builder `ButtonRounded` renderer primitive, including icons and possible form-button use cases.
+- Exact semantic contract and implementation ownership for the required LP Builder `ButtonRounded` renderer primitive, including icons and possible form-button use cases.
 - Accordion visual parity with the native Contentful component remains open even though interaction is working.
 - How the final migration module library should expand once Peter's Anwenderhandbuch designs expose missing patterns.
 - Exact long-term read/update lookup contract for Contentful pages after one fresh-chat lookup failure.
@@ -97,15 +100,15 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 
 ## Next Steps
 
-1. Use the validated CoreCSS/COSMA playground as the reference when expanding or refining the Contentful module library.
-2. Decide whether rounded CTA support is important enough for v0.1/pilot scope to justify a small renderer-level `ButtonRounded` primitive with the Core Frontend owner.
+1. Define the minimal semantic contract for a native `ButtonRounded` renderer primitive and align the required frontend implementation with the Core Frontend owner.
+2. Use the validated CoreCSS/COSMA playground as the reference when expanding or refining the Contentful module library.
 3. Refine remaining module bridges only when a real migration design or runtime test demonstrates a gap.
 4. Add new migration-specific modules from real Anwenderhandbuch design requirements.
 5. Generalize migration rules only after the first end-to-end pilot proves what actually repeats.
 
 ## Last Confirmed
 
-2026-09-01: the static CoreCSS/COSMA contract is validated through a real Contentful playground and can serve as the design-system baseline for future module development. Native `ButtonRounded` remains component-only from the LP Builder perspective; a semantic renderer primitive is the preferred solution if rounded CTA support is prioritized.
+2026-09-01: the static CoreCSS/COSMA contract is validated through a real Contentful playground and can serve as the design-system baseline for future module development. Rounded CTA support is mandatory for the Contentful/migration Builder baseline; a semantic renderer primitive for native `ButtonRounded` is the preferred implementation path rather than shipping the old classic button design.
 
 ## Related Context
 
