@@ -22,7 +22,9 @@ The bridge is published through the existing GitHub Pages runtime under `runtime
 
 The optional `lpb-button--mobile-full` utility is now published in the central bridge. Default buttons remain content-width on mobile; only explicit use of that modifier makes a button full-width at max-width `668px`. The GPT contract states that this class must never be added automatically.
 
-Preview handling is now deliberately split into two durable targets. `dev-lp-builder-v01-test` remains the disposable default surface for experiments, module tests, bridge tests and smoke tests. A second permanent target, `lp-builder-design-library`, is reserved for reviewed/finalized primitives and modules only. The Design Library must be read before targeted updates and unrelated sections must be preserved. A local `design-library.html` source has been created as the durable source of truth for this reference page; its initial content contains the four rounded-button variants, one explicit mobile-full example and the finalized Chevron Link, while unfinished modules remain excluded.
+Preview handling is deliberately split into two durable targets. `/dev-lp-builder-v01-test` remains the disposable default surface for experiments, module tests, bridge tests and smoke tests. A second permanent target, `/lp-builder-design-library`, is reserved for reviewed/finalized primitives and modules only. The Design Library must be read before targeted updates and unrelated sections must be preserved. A local `design-library.html` source is maintained as the durable source of truth for this reference page.
+
+The first Design Library Contentful entry has now been created successfully as a draft with slug `/lp-builder-design-library`. Its preview is `https://box-is24-cms-frontend.s24-fep.eu-west-1.infinity.s24cloud.net/lp-builder-design-library`. The initial draft contains the four rounded-button variants, one explicit mobile-full example and the finalized Chevron Link, and remains unpublished pending visual validation.
 
 ## Product Versions and Boundaries
 
@@ -87,6 +89,7 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - Shared button classes must remain globally controllable within the new bridge contract so one bridge-CSS change updates all migrated/current v0.1 button instances.
 - Buttons stay content-width on mobile by default. Full-width mobile behavior is opt-in only via `lpb-button--mobile-full`, and the GPT must add that modifier only when the user explicitly requests it.
 - Maintain two separate preview targets: the Test Page is disposable and default for experiments; the Design Library is a durable reviewed reference and is only changed on explicit Design-Library requests.
+- Contentful slug operations require the leading `/`; use `/dev-lp-builder-v01-test` and `/lp-builder-design-library` for reads/writes while preview URLs omit that leading slash in the route path.
 - Maintain `design-library.html` as the local source of truth for the permanent Design Library; Contentful is the rendered preview, not the only copy of the library state.
 - The existing LPBuilder frontend already provides an HTML-specific Accordion interaction hook, so Accordion JavaScript should not be recreated in the GPT/library.
 - Build and test the module set first; collect any remaining renderer/component-only gaps and discuss them with Core Frontend together instead of escalating one-by-one.
@@ -107,15 +110,16 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - 2026-09-01: The bridge was namespaced, published under the new Contentful runtime path and successfully loaded in the real `dev-lp-builder-v01-test` Contentful draft.
 - 2026-09-01: The four required rounded-button variants and the Chevron Link were visually tuned and validated in Contentful preview. Button sizing now deliberately follows the old LP Builder contract, variant-specific hover behavior is fixed, and the Chevron Link underlines only on hover/active.
 - 2026-09-01: The opt-in `lpb-button--mobile-full` utility was published in the bridge; default mobile buttons remain content-width and the modifier is used only on explicit request.
-- 2026-09-01: Builder instructions were reworked from one development preview convention to a two-target contract: disposable `dev-lp-builder-v01-test` plus permanent `lp-builder-design-library`.
+- 2026-09-01: Builder instructions were reworked from one development preview convention to a two-target contract: disposable `/dev-lp-builder-v01-test` plus permanent `/lp-builder-design-library`.
 - 2026-09-01: A clean local `design-library.html` source was created containing only the finalized CTA/link primitives; unfinished modules are deliberately excluded until reviewed.
+- 2026-09-01: The Contentful Design Library entry was created successfully as an unpublished draft at `/lp-builder-design-library`; the create flow also confirmed that Contentful slug operations require a leading `/`.
 
 ## Risks and Open Questions
 
 - Which remaining module-specific structures genuinely require the central bridge after the validated native playground baseline.
 - Which gaps ultimately cannot be solved cleanly through static HTML + central bridge CSS and therefore require renderer/frontend support.
-- The new `lp-builder-design-library` Contentful entry still needs to be created from the local `design-library.html` source and visually validated.
-- The latest `gpt-instructions-v0.1.md` changes still need to be manually copied into the Custom GPT instructions before the two-target preview convention becomes operational there.
+- The new Design Library draft still needs visual validation on desktop/mobile before it can be treated as the canonical rendered reference.
+- The local `gpt-instructions-v0.1.md` preview-target rules need to be corrected to use leading-slash Contentful slugs, and the latest instruction changes still need to be manually copied into the Custom GPT.
 - The bridge still needs one small Core Frontend change to add its URL to the central LPBuilder stylesheet list for final production use; this can be bundled with other true frontend gaps after the module pass.
 - Accordion visual parity with the native Contentful component remains open even though interaction is working.
 - How the final migration module library should expand once Peter's Anwenderhandbuch designs expose missing patterns.
@@ -124,15 +128,15 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 
 ## Next Steps
 
-1. Copy the latest `gpt-instructions-v0.1.md` preview-target and bridge-primitive sections into the Custom GPT manually.
-2. Bootstrap the new `lp-builder-design-library` Contentful draft from the exact local `design-library.html` source, then visually validate the initial primitives without publishing.
+1. Correct `gpt-instructions-v0.1.md` so Contentful slug operations use `/dev-lp-builder-v01-test` and `/lp-builder-design-library`, while preview URLs remain unchanged; then manually copy the latest preview-target and bridge-primitive sections into the Custom GPT.
+2. Visually validate the new `lp-builder-design-library` draft on desktop/mobile without publishing.
 3. Continue building and testing the remaining v0.1 modules against the verified CoreCSS/COSMA reference; promote only reviewed/finalized elements into the Design Library.
 4. After the module pass, consolidate the true frontend-only needs, including centrally loading the new bridge stylesheet, and align them with Mukhammadjon/Core Frontend in one discussion.
 5. Add new migration-specific modules from real Anwenderhandbuch design requirements.
 
 ## Last Confirmed
 
-2026-09-01: The CTA/link bridge baseline is complete and published, including opt-in mobile full-width behavior. Preview handling is now split into a disposable Test Page and a permanent Design Library. The local `design-library.html` file is the source of truth for the reviewed reference and currently contains only the finalized button and Chevron primitives; the corresponding Contentful Design Library entry still needs to be created and validated.
+2026-09-01: The permanent Contentful Design Library draft now exists at slug `/lp-builder-design-library` and remains unpublished. Its initial reviewed content is sourced from the local `design-library.html` and contains the four rounded-button variants, the opt-in mobile-full example and the finalized Chevron Link. The create flow confirmed that Contentful slugs must include a leading `/`.
 
 ## Related Context
 
