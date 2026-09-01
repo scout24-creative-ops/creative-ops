@@ -18,10 +18,10 @@
 
 - [ ] Validate the CoreCSS/COSMA HTML contract
   - Area: Landing Page Builder
-  - Status: Open, native baseline validated; remaining work is scope/bridge decisions
-  - Next step: Use the successful CoreCSS/COSMA playground as the reference for future module work, then decide whether rounded CTA support is important enough for the pilot to justify a small renderer-level `ButtonRounded` primitive with the Core Frontend owner. Only refine other module bridges when a real migration design or runtime test demonstrates a gap.
-  - Context: The real Contentful playground confirms static typography, tokens, spacing, grids, standard buttons, utilities, selected icon-font classes, links, lists and raw media. `ButtonRounded` has no verified stable static DOM contract; direct copying should be avoided and a semantic renderer primitive is the preferred technical direction if needed. Accordion interaction already works; its remaining gap is visual parity rather than behavior.
-  - Source: CoreCSS/COSMA playground runtime validation and ButtonRounded GitHub MCP analysis on 2026-09-01
+  - Status: Open, native baseline validated; rounded CTA renderer is now required for v0.1
+  - Next step: Define the minimal semantic LP Builder contract for native `ButtonRounded` and align the frontend implementation with the Core Frontend owner. Use the existing legacy rounded-button markup/CSS only as migration reference, not as the new primary button architecture.
+  - Context: The real Contentful playground confirms static typography, tokens, spacing, grids, utilities, selected icon-font classes, links, lists and raw media. Rounded buttons are mandatory for the new Builder baseline. The old LP Builder already has four rounded variants, but its legacy runtime is not loaded by the Contentful renderer and the implementation uses hard-coded colors, one size, link-only markup and no visible focus. Native `ButtonRounded` remains the preferred launch implementation.
+  - Source: CoreCSS/COSMA playground, ButtonRounded GitHub MCP analysis and legacy button audit on 2026-09-01
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
