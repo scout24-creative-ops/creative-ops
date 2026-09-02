@@ -18,10 +18,17 @@
 
 - [ ] Validate the CoreCSS/COSMA HTML contract
   - Area: Landing Page Builder
-  - Status: Open, native baseline and rounded-button bridge technically validated; visual tuning next
-  - Next step: Tune the four namespaced rounded-button bridge variants against the current Contentful/COSMA visual reference, focusing on padding/overall size and hover colors, then re-test them in the existing `dev-lp-builder-v01-test` draft without publishing. After that continue the v0.1 module pass and bundle genuine frontend-only gaps for later Core Frontend alignment.
-  - Context: The namespaced bridge is published under `runtime/contentful/lpbuilder-bridge.css` and a real Contentful preview successfully loads it from `htmlSource`; all four v0.1 button variants render. This validates the static bridge architecture. The current visual result is close but not yet parity: padding/overall dimensions look too generous and hover colors need correction. Final production use will still need the bridge URL loaded centrally by the Contentful LPBuilder route.
-  - Source: Real Contentful rounded-button bridge preview on 2026-09-01
+  - Status: Open, Typography, Spacing, Colors and Borders/Radii product-approved; Grid & Layout currently in real Contentful verification
+  - Next step: Finalize the Grid & Layout contract from the current desktop/tablet/mobile preview, then continue with the remaining smaller foundation areas such as Links, Lists, Icons and Media before returning to the v0.1 module pass.
+  - Context: The native CoreCSS/COSMA baseline is now substantially validated. Typography and Spacing use native APIs; Colors and the approved Card/Media radii use the central namespaced bridge where static APIs are missing. Grid structure and responsive fractions work in the Contentful runtime, but native vertical gutter spacing on Palm is visually very small and should not be globally overridden until the intended frontend pattern is clarified.
+  - Source: Foundation audits and real Contentful preview validation, 2026-09-01 to 2026-09-02
+
+- [ ] Bundle LP Builder frontend questions for Mukhammadjon / Core Frontend
+  - Area: Landing Page Builder
+  - Status: Open, collect during foundation and module pass; discuss as one bundle rather than one-by-one
+  - Next step: Keep adding verified frontend-only questions and review them together with Mukhammadjon / Core Frontend after the foundation/module pass has exposed the real recurring gaps.
+  - Context: Current clarification list: (1) Mobile card/grid spacing: the native `gutter-vertical-s` behavior produces only a very small Palm separation (observed as roughly 4px). Confirm whether this is the intended frontend/CoreCSS behavior and the preferred supported way for card-heavy modules to request a larger semantic mobile separation without arbitrary CSS. (2) Central bridge loading: confirm adding the LP Builder – Contentful bridge stylesheet centrally to the LPBuilder frontend route instead of depending on per-entry `<link>` tags. (3) Accordion: interaction hook works, but visual parity with the native Contentful component remains open. (4) Collect any further component-only/static-renderer gaps from the remaining module pass before deciding whether native renderer support is warranted.
+  - Source: CoreCSS/COSMA foundation work and Grid & Layout mobile preview, 2026-09-01 to 2026-09-02
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
