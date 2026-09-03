@@ -14,43 +14,50 @@ ScoutWiki project pages:
 
 ## Current Status
 
-The B2B Anwenderhandbuch / `tipps` area remains the first end-to-end pilot for the broader migration program. The goal is still to prove a repeatable flow from scope and source analysis through Claude Design, LP Builder generation, QA and Contentful publishing before generalizing the full migration system.
+The B2B Anwenderhandbuch / `tipps` area is the first end-to-end pilot for the broader migration program. The intended proof is now clearer: preserve source content accurately, create one coherent target design for the page family with Claude Design, translate the approved patterns into `LP Builder – Contentful`, and then scale generation across the remaining pages as drafts before QA and explicit publishing.
 
-A major technical prerequisite is now substantially de-risked: Dominik's own Contentful-enabled Landing Page Builder duplicate works through OAuth, draft creation, preview, update, explicit publish and production URL. The migration work no longer needs to wait for a basic publish-capable Builder setup.
+The technical LP Builder prerequisite is substantially de-risked. Dominik's Contentful-enabled duplicate works through OAuth, draft creation, preview, update, explicit publish and production URL. The Builder has also grown well beyond the original eight-module development whitelist: 23 current ACTIVE module contracts have been validated in Contentful, with known runtime/frontend gaps isolated rather than blocking the static module catalogue.
 
-Dominik is now rebuilding this duplicate as a migration-focused Builder rather than extending the old product logic blindly. v0.1 is intentionally a controlled module composer. The complete existing module library remains available as reference, but the active development surface is currently limited to eight modules: `hero-split`, `teaser-2col`, `teaser-3col`, `benefits-2col`, `benefits-3col`, `accordion`, `callout--base` and `checkmark-list`.
+The migration source-crawl is now also proven. Alessandra's migration workbook was filtered to all URLs under `/anbieten/gewerbliche-anbieter/tipps/` except entries explicitly marked `delete` or already redirected. This produced 70 unique source URLs. A reusable HTTP/HTML crawler processed the set and produced structured source packages per page plus a central index and summary: 69 pages crawled successfully, one source (`sachkundenachweis.html`) returned HTTP 404, 12 redirects were discovered, 8 pages have extraction warnings, and no page showed evidence of missing client-side dynamic content. Across the crawl, 11,013 links and 493 assets were identified. Assets were indexed by URL but intentionally not downloaded or migrated.
 
-This whitelist is not intended to represent the final Anwenderhandbuch design. Missing modules should be added later from Peter's real page-group analysis and target designs. The purpose of the reduced set is to establish a clean technical contract before migration-specific patterns expand again.
-
-The most important new architecture finding is that static LP Builder `htmlSource` can reuse the globally loaded CoreCSS/COSMA system in `is24-cms-frontend`. Typography, spacing, responsive grid, standard buttons, basic utilities and COSMA icon-font classes have already been verified as directly usable HTML primitives. This gives the migration Builder a path to stay close to the existing Scout24 frontend system rather than carrying forward a separate LP-specific CSS world.
-
-The next technical proof is a browser-level COSMA/CoreCSS HTML playground on `/dev-lp-builder-v01-test`, deliberately without the old LP Builder runtime CSS. Only after this test should the eight v0.1 modules be adapted and any small LP Builder-specific CSS bridge be introduced.
+The crawl output is intended as the content source of truth for migration: original text, links, asset URLs and content order should be preserved there, while Claude Design is responsible for the target design and the LP Builder is responsible for mapping the source content onto approved modules/patterns.
 
 ## Pilot Execution Principle
 
-Optimize the first Anwenderhandbuch pilot for speed, proof and low dependency count rather than completeness.
+Optimize the first Anwenderhandbuch pilot for speed, proof and repeatability rather than building a universal migration system upfront.
 
-The intended loop remains:
+The intended loop is:
 
-1. **Content / page scope — Ulrike**
-   - Maintain the relevant migration inventory / sitemap view.
-   - Coordinate page relevance, consolidation and content requirements with B2B Product Marketing.
-   - Flag SEO/URL-sensitive cases for specialist alignment.
+1. **Source scope and crawl**
+   - Use the existing migration workbook as the fachlich scope source.
+   - Crawl the relevant source pages into stable per-page source packages.
+   - Preserve original text, links, asset URLs and content order without rewriting.
+   - Review redirects, 404s and extraction warnings before design work.
 
-2. **Claude Design analysis and target patterns — Peter**
-   - Analyze the selected AEM page group.
-   - Capture real source content, links, images and structures.
-   - Create target designs and reusable patterns that represent the real page variation.
+2. **Representative page selection and Claude Design**
+   - Select roughly 5–6 representative Anwenderhandbuch pages that cover the meaningful structural/content variation.
+   - Ask Claude Design to create one coherent design system capable of covering the page family.
+   - Prefer existing LP Builder modules wherever they fit.
+   - Identify genuinely missing reusable patterns as proposed new modules rather than inventing one-off replacements for every page.
 
-3. **Migration Builder adaptation and generation — Dominik**
-   - Translate approved target patterns into the migration-focused LP Builder.
-   - Add only the modules/rules required for the page group.
-   - Use structured source-page data as generation input.
+3. **Migration Builder adaptation**
+   - Translate approved new patterns into `LP Builder – Contentful`.
+   - Keep CoreCSS/COSMA first and use the central bridge only for verified static-HTML gaps.
+   - Add only the new modules/rules required by the approved target system.
 
-4. **Joint QA and publishing**
-   - Ulrike reviews content/business requirements.
-   - Peter reviews design.
-   - Dominik reviews technical behavior and migration flow.
+4. **Design/mapping guide**
+   - Produce a compact implementation guide describing which modules/variants to use, mapping rules, ordering, image behavior, spacing/composition rules and special cases.
+   - Treat this guide plus the structured crawl packages as the execution input for the GPT.
+
+5. **Scale-out generation**
+   - Validate the finished system first on a small set of additional source pages.
+   - Once mapping quality is stable, give the Builder larger batches of remaining pages and create Contentful drafts page by page.
+   - Errors on one page should not block the whole batch.
+
+6. **Joint QA and explicit publishing**
+   - Content/business review by B2B Product Marketing / Ulrike.
+   - Design review by Peter.
+   - Technical/migration-flow review by Dominik.
    - Publish only after explicit QA/approval.
 
 ## Dominik's Role
@@ -72,12 +79,13 @@ Dominik owns migration planning, orchestration, rules and the migration-focused 
 
 - Use the Anwenderhandbuch as the first proof of the broader migration operating model.
 - Do not solve the universal migration system before starting the pilot.
-- Keep the existing SEO/business Excel sources as fachlich source of truth where they already contain decisions; use the visual sitemap as an operational view over those decisions plus live/crawl status.
-- Preserve a central migration-inventory concept for treatment, ownership, SEO/URL requirements, functionality, assets and QA status.
-- Use Claude Design for page-group analysis, target design/pattern creation and structured source-data extraction.
-- Use the migration-focused LP Builder to consume approved target patterns plus real source content.
-- Keep the full old module library as reference, but use a small active v0.1 whitelist while the new rendering contract is established.
-- Add new modules later from real migration requirements instead of trying to predict the full final library now.
+- Keep the existing SEO/business Excel sources as fachlich source of truth where they already contain decisions.
+- Use the structured crawl packages as the content source of truth for migration execution; do not rely on the GPT to re-read and reinterpret dozens of live pages during batch generation.
+- Keep crawling neutral: capture what exists, but do not map old AEM components directly to future LP Builder modules during extraction.
+- Use Claude Design to derive one coherent target design from a representative subset of pages rather than redesigning every source page independently.
+- Prefer existing LP Builder modules in the target design and add new reusable modules only where the representative designs expose real gaps.
+- Require a compact design/mapping guide before larger batch generation.
+- Use the migration-focused LP Builder to consume approved target patterns plus exact source content.
 - Use CoreCSS/COSMA first for static HTML. Own LP Builder CSS should only cover the real delta and should use COSMA tokens.
 - Keep the old AEM LP Builder runtime backward-compatible but do not make it the styling basis of the new Contentful migration library.
 - For Accordion, reuse the existing LPBuilder frontend interaction hook rather than recreating JavaScript in generated HTML.
@@ -87,29 +95,32 @@ Dominik owns migration planning, orchestration, rules and the migration-focused 
 ## Important Developments
 
 - 2026-08-31: Dominik validated the full Contentful-enabled GPT flow through production publishing and took over his own migration-focused duplicate.
-- 2026-08-31: The Builder was deliberately simplified to a controlled module-composer v0.1 model.
-- 2026-08-31: Eight modules were selected as the active v0.1 whitelist while the full library remains intact as reference.
-- 2026-09-01: Direct repository inspection of `is24-cms-frontend` confirmed global CoreCSS/COSMA availability and direct HTML use of core typography, spacing, grid, buttons and utilities.
-- 2026-09-01: The next proof was defined as a COSMA/CoreCSS HTML playground before any new CSS bridge or module refactor.
+- 2026-09-01: CoreCSS/COSMA-first rendering was validated as the technical baseline for static LP Builder HTML.
+- 2026-09-03: The LP Builder module catalogue reached a broad working state with 23 ACTIVE contracts validated in Contentful; remaining JavaScript/frontend gaps are isolated and documented.
+- 2026-09-03: The migration approach was clarified: Claude Design should derive a common Anwenderhandbuch design from 5–6 representative pages, the Builder should absorb any approved missing modules, and the remaining pages should then be migrated from structured source data using an explicit mapping guide.
+- 2026-09-03: The first B2B `tipps` source crawl completed. Of 70 filtered URLs, 69 crawled successfully, one returned 404, 12 redirects were detected, 8 extraction warnings were recorded, no dynamic-content fallback was required, and 11,013 links plus 493 assets were indexed.
 
 ## Risks and Open Questions
 
-- Which module-specific layout/media/surface behaviors still require a thin custom CSS bridge after the playground test.
-- Which additional modules Peter's Anwenderhandbuch target designs will require.
-- Final SEO/URL preservation rules for the pilot and how Contentful slugs map to final public URLs.
-- Final supported pattern for Salesforce-backed forms where pilot pages require them.
+- Which of the 12 redirects still belong in the effective pilot scope and whether they duplicate newer source pages.
+- Whether the 8 extraction warnings hide any content that matters for migration; each page has an `extraction-report.md` for review.
+- The 404 `sachkundenachweis.html` needs a scope/source decision rather than crawler work.
+- Which 5–6 pages best represent the full Anwenderhandbuch variation for Claude Design.
+- Which new reusable modules the target design will require beyond the current LP Builder catalogue.
+- Final SEO/URL preservation rules for the pilot and how source URLs map to final Contentful URLs.
 - Persistent image-storage ownership and delivery path for scale-out.
-- One fresh-chat read/update test returned `LP Builder page was not found`; the Action lookup contract should later be clarified around Entry ID versus slug/path.
+- LP Builder page-composition spacing is waiting on Mukhammadjon's frontend change/response so the GPT can control inter-module spacing through explicit composition rules instead of implicit section padding.
 
 ## Next Steps
 
-1. Run the COSMA/CoreCSS HTML playground on the existing Contentful test page.
-2. Classify the primitives into native CoreCSS, HTML-structure/hook-dependent and LPBuilder-CSS-bridge-required.
-3. Adapt only the eight active v0.1 modules to that verified contract.
-4. Continue the Anwenderhandbuch pilot coordination and use Peter's real designs to identify missing migration modules.
-5. Align SEO/URL questions early enough that they do not block the first real publish loop.
-6. Run the first real page group through joint QA and use the result as the proof point for broader scale-out.
+1. Review the 12 discovered redirects and 8 extraction-warning pages and resolve the single 404 source case.
+2. Define the effective Anwenderhandbuch subset within the broader crawled `tipps` set.
+3. Select 5–6 representative pages for Claude Design based on structural/content variation, not traffic alone.
+4. Give Claude Design the representative source packages plus the current LP Builder module catalogue and ask for one coherent target system and explicit missing-module proposals.
+5. Review and implement only the approved new reusable modules in `LP Builder – Contentful`.
+6. Produce the design/mapping guide and validate the system on a small set of additional pages before larger batch generation.
+7. Run the remaining page set through draft generation, QA and explicit publishing.
 
 ## Last Confirmed
 
-2026-09-01: the migration-focused Builder works through production publishing and is being rebuilt around a small v0.1 module set plus native CoreCSS/COSMA. The next implementation proof is the native HTML playground before the module library is refactored further.
+2026-09-03: the source-crawl layer for the B2B `tipps` scope is proven, the migration Builder has a broad validated module catalogue, and the next pilot phase is crawl QA/scope cleanup followed by representative-page selection for Claude Design.
