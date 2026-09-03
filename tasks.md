@@ -18,24 +18,24 @@
 
 - [ ] Validate the CoreCSS/COSMA HTML contract
   - Area: Landing Page Builder
-  - Status: Open, Typography, Spacing, Colors and Borders/Radii product-approved; Grid & Layout currently in real Contentful verification
-  - Next step: Finalize the Grid & Layout contract from the current desktop/tablet/mobile preview, then continue with the remaining smaller foundation areas such as Links, Lists, Icons and Media before returning to the v0.1 module pass.
-  - Context: The native CoreCSS/COSMA baseline is now substantially validated. Typography and Spacing use native APIs; Colors and the approved Card/Media radii use the central namespaced bridge where static APIs are missing. Grid structure and responsive fractions work in the Contentful runtime, but native vertical gutter spacing on Palm is visually very small and should not be globally overridden until the intended frontend pattern is clarified.
-  - Source: Foundation audits and real Contentful preview validation, 2026-09-01 to 2026-09-02
+  - Status: Open, broad module/foundation contract substantially validated; remaining work is consolidation and targeted frontend/runtime gaps
+  - Next step: Finish the module/category taxonomy audit and consolidate the remaining frontend/runtime decisions before final Page Composition rules.
+  - Context: The Contentful Builder now has a broad working module catalogue with 23 ACTIVE contracts validated in Contentful. Runtime gaps are isolated for Counter, Card Carousel, Sticky Footer and Video; Accordion is proven through the existing frontend hook. Page spacing remains dependent on Mukhammadjon's response about removing automatic section padding.
+  - Source: LP Builder module and composition work through 2026-09-03
 
 - [ ] Bundle LP Builder frontend questions for Mukhammadjon / Core Frontend
   - Area: Landing Page Builder
-  - Status: Open, collect during foundation and module pass; discuss as one bundle rather than one-by-one
-  - Next step: Keep adding verified frontend-only questions and review them together with Mukhammadjon / Core Frontend after the foundation/module pass has exposed the real recurring gaps.
-  - Context: Current clarification list: (1) Mobile card/grid spacing: the native `gutter-vertical-s` behavior produces only a very small Palm separation (observed as roughly 4px). Confirm whether this is the intended frontend/CoreCSS behavior and the preferred supported way for card-heavy modules to request a larger semantic mobile separation without arbitrary CSS. (2) Central bridge loading: confirm adding the LP Builder – Contentful bridge stylesheet centrally to the LPBuilder frontend route instead of depending on per-entry `<link>` tags. (3) Accordion: interaction hook works, but visual parity with the native Contentful component remains open. (4) Collect any further component-only/static-renderer gaps from the remaining module pass before deciding whether native renderer support is warranted.
-  - Source: CoreCSS/COSMA foundation work and Grid & Layout mobile preview, 2026-09-01 to 2026-09-02
+  - Status: Open, current spacing question already sent; remaining runtime/frontend gaps to consolidate
+  - Next step: Wait for Mukhammadjon's response on removing automatic section padding, then bundle the remaining verified frontend-only questions for review with Mukhammadjon / Beatrice.
+  - Context: Current bundle includes central bridge loading, Counter/Carousel runtime ownership, Sticky Footer's frontend-native solution, Video player/consent integration, and final Page Composition ownership. The automatic section padding currently prevents the Builder from controlling inter-module spacing through explicit composition rules.
+  - Source: LP Builder frontend/runtime analysis through 2026-09-03
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open, top near-term priority
-  - Next step: Continue the Anwenderhandbuch pilot with two parallel tracks: finish the remaining runtime/visual validation of the CoreCSS/COSMA eight-module v0.1 baseline, while progressing Peter/Ulrike pilot coordination and SEO/URL alignment so real target designs can be translated into migration modules without waiting for a universal migration system.
-  - Context: The Contentful-enabled Builder now works through production publishing and the first refactored CoreCSS/COSMA preview is successful. The pilot should prove the real loop scope -> Claude Design -> migration-focused LP Builder -> QA -> Contentful. The current eight-module whitelist is only a development boundary; missing Anwenderhandbuch patterns should be added later from real page-group requirements.
-  - Source: Migration Builder handover, CoreCSS/COSMA direction and first real preview confirmed 2026-08-31 to 2026-09-01
+  - Status: Open, top near-term priority; source crawl completed
+  - Next step: Review the 12 detected redirects, 8 extraction-warning pages and the single 404; define the effective Anwenderhandbuch subset; then select 5–6 structurally representative pages for Claude Design.
+  - Context: The B2B `tipps` source crawl processed 70 filtered URLs: 69 successful, 1 HTTP 404, 12 redirects, 8 extraction warnings, no detected dynamic-content gaps, 11,013 links and 493 assets indexed. The pilot model is now: structured source crawl -> representative-page Claude Design -> approved reusable modules/patterns -> design/mapping guide -> small validation batch -> larger GPT-driven Contentful draft migration.
+  - Source: B2B migration source crawl and pilot-process clarification, 2026-09-03
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
