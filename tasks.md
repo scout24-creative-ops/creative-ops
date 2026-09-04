@@ -25,10 +25,10 @@
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open, top near-term priority; asset dry-run completed with a 100-asset SAFE batch identified
-  - Next step: Run a SAFE-only real download batch for the 100 classified assets, validate every downloaded binary by MIME type, dimensions, byte size and full-file SHA-256, derive final `ast-sha256-*` IDs and target keys, and report physical deduplication plus failures. Keep all 110 REVIEW assets excluded.
-  - Context: The dry-run classified 210 manifest entries into 100 SAFE and 110 REVIEW, with no RESOLVABLE entries. The 14 `{width}` URLs remain REVIEW because no deterministic concrete width can be derived. Both historical conflict URLs currently return `404 text/html`; the 94 historically unreachable entries are likewise dominated by `404 text/html`. Global manifest final fields remain empty and Contentful/S3 remain untouched.
-  - Source: Controlled asset proof and full dry-run classification confirmed on 2026-09-04
+  - Status: Open, top near-term priority; SAFE asset batch fully verified and ready for controlled manifest promotion
+  - Next step: Promote the verified values for exactly the 100 SAFE source identities from `proposed-manifest-update-safe-batch.json` into the matching global `migration/assets/manifest.json` entries. Preserve all source/history/reference data, keep all 110 REVIEW entries untouched, and keep every `target_url` empty. Validate the merged manifest before resuming broader page migration.
+  - Context: The real SAFE-only batch verified 100/100 inputs with zero failures. They resolve to 87 distinct physical files, with 13 source identities deduplicated by full-file SHA-256. Real MIME types are 75 PNG, 23 JPEG and 2 GIF. `ast-sha256-*` identities, target keys, dimensions and stored-blob rehashes all validate consistently. No REVIEW assets, Contentful, S3/CDN or global final manifest fields were changed during the batch.
+  - Source: Controlled asset proof, dry-run classification and SAFE-only real batch confirmed on 2026-09-04
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
