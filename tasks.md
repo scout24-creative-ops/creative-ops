@@ -25,10 +25,10 @@
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open, top near-term priority; SAFE asset batch fully verified and ready for controlled manifest promotion
-  - Next step: Promote the verified values for exactly the 100 SAFE source identities from `proposed-manifest-update-safe-batch.json` into the matching global `migration/assets/manifest.json` entries. Preserve all source/history/reference data, keep all 110 REVIEW entries untouched, and keep every `target_url` empty. Validate the merged manifest before resuming broader page migration.
-  - Context: The real SAFE-only batch verified 100/100 inputs with zero failures. They resolve to 87 distinct physical files, with 13 source identities deduplicated by full-file SHA-256. Real MIME types are 75 PNG, 23 JPEG and 2 GIF. `ast-sha256-*` identities, target keys, dimensions and stored-blob rehashes all validate consistently. No REVIEW assets, Contentful, S3/CDN or global final manifest fields were changed during the batch.
-  - Source: Controlled asset proof, dry-run classification and SAFE-only real batch confirmed on 2026-09-04
+  - Status: Open, top near-term priority; 100 verified SAFE asset identities promoted into the global manifest
+  - Next step: Review the promoted manifest as the local asset SSOT, then prepare a controlled storage/upload contract for the 87 unique verified blobs without provisioning or uploading anything yet. Keep the 110 REVIEW assets excluded and keep every `target_url` empty until the real S3/CDN target and ownership are confirmed.
+  - Context: Promotion passed preflight and is idempotent. Exactly 100 source identities now carry verified file SHA-256 in `content_hash`, final `ast-sha256-*` asset IDs and consistent target keys, resolving to 87 unique physical blobs with 13 deduplicated source identities. Historical source/reference data is preserved; 110 REVIEW entries remain untouched. Contentful and S3/CDN remain unchanged.
+  - Source: SAFE batch validation and manifest promotion confirmed on 2026-09-04
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
@@ -39,10 +39,10 @@
 
 - [ ] Pilot persistent image storage for AEM migration
   - Area: Marketing Content Platform
-  - Status: Open, infrastructure pilot remains separate; migration-side preparation is underway
-  - Next step: Let Peter drive the actual storage/S3 pilot with Allan / the relevant platform contacts when timing is right; meanwhile validate the local asset identity and deduplication model so the migration is ready to switch from source URLs to future S3/CDN URLs.
-  - Context: The migration project now has a central asset manifest and a planned hash-based identity/key model, but no S3/CDN target is being provisioned yet. Dominik should define the migration requirements and integration target without becoming the ongoing AWS/storage operator.
-  - Source: Asset ownership direction from 2026-08-30; migration-side asset preparation through 2026-09-04
+  - Status: Open, infrastructure pilot remains separate; migration-side asset identities are now verified
+  - Next step: Let Peter drive the actual storage/S3 pilot with Allan / the relevant platform contacts when timing is right; provide the verified 87-blob key model, required upload contract and manifest integration requirements so the future target can be connected without redesigning migration identities.
+  - Context: The migration manifest now contains verified final identities and target keys for 100 SAFE source assets representing 87 unique physical blobs, while `target_url` remains intentionally empty. Dominik should define requirements and integration boundaries without becoming the ongoing AWS/storage operator.
+  - Source: Asset ownership direction from 2026-08-30; verified manifest promotion on 2026-09-04
 
 - [ ] Set up B2B automation discovery with Juliane
   - Area: E-Mail Automation Professional
