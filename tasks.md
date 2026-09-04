@@ -25,10 +25,10 @@
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open, top near-term priority; storage/upload contract prepared and ready for platform alignment
-  - Next step: Align the verified 87-blob storage/upload contract with Peter / the relevant platform contacts and confirm Storage Owner, target/bucket and environment, upload authentication, delivery/CDN base URL, required header/metadata rules, encryption/retention requirements and cache policy. Do not upload or set `target_url` until those inputs are confirmed.
-  - Context: The promoted asset baseline remains 100 verified source identities representing 87 unique physical blobs, with 110 REVIEW entries excluded. A deterministic upload plan now covers exactly the 87 blobs; all local blobs were re-hashed successfully. The contract uses byte-verified MIME as `Content-Type`, treats content-addressed keys as immutable candidates, requires post-upload SHA-256 verification, and fails rather than overwrites when an existing object has different bytes. Contentful, S3/CDN and `manifest.json` were not changed by contract preparation.
-  - Source: SAFE manifest promotion and storage/upload contract confirmed on 2026-09-04
+  - Status: Open, top near-term priority; page readiness classified and first real eight-page batch ready
+  - Next step: Migrate the recommended READY batch as unpublished Contentful drafts: `001-meine-firmendaten`, `004-anbieterkennzeichnung-und-online-streitbeilegung`, `013-das-portal`, `031-meine-kundendaten`, `039-merkzettel-und-suchauftrag`, `046-platzierungsassistent`, `052-scoutreport` and `006-anwender-handbuch`. Run batch QA before scaling beyond these eight pages.
+  - Context: All 57 migration-ready Handbook pages were classified. 25 are READY, 30 are primarily blocked by REVIEW assets and 2 by source issues; 32 pages touch at least one REVIEW asset. No genuine module gaps were found. The first eight-page batch deliberately covers text/CTA, legal lists, single and multiple screenshots, step sequences, reporting/list content and different content densities while excluding already validated reference pages 007 and 042. Storage/platform alignment continues in parallel and must not block this READY page batch.
+  - Source: Page-readiness classification confirmed on 2026-09-04
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
