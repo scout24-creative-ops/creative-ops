@@ -14,17 +14,18 @@ ScoutWiki project pages:
 
 ## Current Status
 
-The B2B Anwenderhandbuch / `/tipps` area remains the first end-to-end pilot. The source side is now materially prepared and the target-page operating model has been validated far enough to move back into real migration tests.
+The B2B Anwenderhandbuch / `/tipps` area remains the first end-to-end pilot. The source side is materially prepared, the target-page operating model is validated, and an asset migration layer is now being prepared before scaling the remaining pages.
 
-The original crawl covered 70 unique source URLs. The current execution layer resolves to 57 migration-ready pages, 12 redirects and one missing source. Migration data is now organized under one project root:
+The original crawl covered 70 unique source URLs. The current execution layer resolves to 57 migration-ready pages, 12 redirects and one missing source. Migration data is organized under one project root:
 
 - `migration/source/` = raw crawl/debug data
 - `migration/processed/` = technical intermediate packages
 - `migration/ready/` = cleaned packages intended for GPT migration work
+- `migration/assets/` = central asset manifest and later asset-migration working area
 
 The previous three root-level migration folders were consolidated into this structure; active scripts and references were updated and no data loss was detected.
 
-The target system has also converged. A fixed Hub/Guide HTML-template experiment with slots, repeaters and page skeletons was abandoned because it made the GPT overinterpret templates. The active model is now intentionally simpler:
+The target system has converged. A fixed Hub/Guide HTML-template experiment with slots, repeaters and page skeletons was abandoned because it made the GPT overinterpret templates. The active model is intentionally simpler:
 
 1. global GPT Instructions define working behavior and template override rules;
 2. Foundation and Runtime files define technical guardrails;
@@ -33,7 +34,7 @@ The target system has also converged. A fixed Hub/Guide HTML-template experiment
 5. `b2b-handbook-composition.md` defines the default Handbook page composition only;
 6. explicit user requests may alter the composition or add other ACTIVE modules, while module/Foundation/Runtime contracts remain binding.
 
-The Handbook hub has been successfully built as an unpublished Contentful draft using the migration-specific `handbook-category-card` module. The first detail-page pattern has also been validated through the `Nachrichten-Manager` page and repeated isolated tests on `/dev-lp-builder-contentful-v01-test`.
+The Handbook hub has been successfully built as an unpublished Contentful draft using the migration-specific `handbook-category-card` module. The detail-page pattern has been validated through the `Nachrichten-Manager` page and repeated isolated tests on `/dev-lp-builder-contentful-v01-test`.
 
 The current `handbook-step-media` contract supports three valid variants:
 
@@ -51,6 +52,18 @@ This default was successfully reproduced by the GPT from Knowledge/contracts alo
 
 The Contentful frontend does not currently load the LP Builder bridge stylesheet automatically for these pages. For the pilot, the GPT Instructions therefore require the public bridge `<link>` exactly once at the beginning of newly created or fully recomposed `htmlSource`. This is sufficient to make the current migration modules render correctly without waiting for a frontend change.
 
+### Asset migration preparation
+
+The planned persistent asset target is still an S3/CDN setup, but provisioning is deliberately deferred. The migration is being prepared now so migrated pages are not permanently coupled to legacy AEM asset URLs.
+
+The current asset manifest under `migration/assets/` is generated locally from existing migration data and does not require a new page crawl. It contains 210 unique normalized source-URL entries derived from 221 asset references across the 57 migration-ready packages; 11 repeated URL references are consolidated. Current manifest status is 102 reachable, 94 unreachable and 14 unknown. Twenty-three manifest entries have source alt text and 187 do not.
+
+The manifest uses temporary global import IDs `src-<sha256(normalized-source-url)>`. Final physical asset IDs remain unset until files are actually downloaded and byte-hashed. The intended final identity is `ast-sha256-<full-file-sha256>`, with target keys based on the same hash rather than page slug or filename. This allows identical binary assets from different source URLs to be safely deduplicated later. Existing block `content_hash` values are explicitly not treated as file hashes.
+
+`target_url` stays empty until the real S3/CDN target exists. The intended migration model is: source content references a stable manifest identity; today it resolves to the legacy source URL, later to the verified S3/CDN URL. Existing `migration/ready/` packages should eventually carry the global asset identity in addition to the original source URL so target-host changes do not require renewed content mapping.
+
+Known asset-specific cases include 14 AEM URLs with a `{width}` placeholder, two consolidated URLs with conflicting historical reachability observations, and widespread missing alt text. These must remain explicit data/review cases rather than being guessed away.
+
 ## Pilot Execution Principle
 
 Optimize the first Anwenderhandbuch pilot for speed, proof and repeatability rather than building a universal migration system upfront.
@@ -62,22 +75,27 @@ The intended loop is now:
    - Preserve source text, links, asset references and order.
    - Treat redirects, missing assets and uncertain associations as explicit gaps.
 
-2. **Build or refine reusable modules only when a real source pattern requires them**
+2. **Prepare assets through the central manifest**
+   - Keep original source URLs and references traceable.
+   - Do not invent target URLs before S3/CDN exists.
+   - Introduce final asset identities only after byte-level validation.
+
+3. **Build or refine reusable modules only when a real source pattern requires them**
    - Claude Design can remain a visual exploration/reference tool.
    - Codex owns technical module implementation and contract updates.
    - New modules enter GPT Knowledge through the maintained module contract and component library.
 
-3. **Apply the default Handbook composition**
+4. **Apply the default Handbook composition**
    - Use `b2b-handbook-composition.md` as the default page-level arrangement.
    - Do not treat it as a rigid template or HTML skeleton.
    - Explicit user requests may add or change ACTIVE modules.
 
-4. **Generate Contentful drafts page by page**
+5. **Generate Contentful drafts page by page**
    - Use the existing Contentful Action flow.
    - Keep pages unpublished until explicit approval.
    - Report source/asset/contract gaps instead of inventing content or structure.
 
-5. **QA and scale out**
+6. **QA and scale out**
    - Validate additional real pages against the current module/composition system.
    - Add only reusable missing modules exposed by those pages.
    - Once quality is stable, expand to larger migration batches.
@@ -116,7 +134,11 @@ Dominik owns migration planning, orchestration, rules and the migration-focused 
 - Do not add Callout, Accordion, Video or other modules merely because they exist; use them when the source or an explicit user request calls for them.
 - Require the LP Builder bridge stylesheet exactly once at the beginning of newly created or fully recomposed pilot page `htmlSource` until frontend-level loading is available.
 - Contentful remains draft-first; never publish without explicit instruction.
-- Use existing reachable source asset URLs for the pilot; persistent asset storage can continue in parallel.
+- Prepare persistent asset migration before S3 provisioning through one central manifest; do not bake future bucket/domain assumptions into page content.
+- Keep original source URLs traceable while introducing a hosting-independent asset identity layer.
+- Use normalized-source-URL IDs only as temporary import IDs. Final asset IDs and physical deduplication require full-file SHA-256 hashes.
+- Never deduplicate assets by filename alone.
+- No new page crawl is needed for asset preparation; a later targeted asset download/validation pass provides hashes, dimensions and verified file types.
 
 ## Important Developments
 
@@ -129,25 +151,28 @@ Dominik owns migration planning, orchestration, rules and the migration-focused 
 - 2026-09-04: The Handbook hub and a representative detail page were successfully validated as unpublished Contentful drafts.
 - 2026-09-04: The default Handbook detail composition was reproduced successfully from GPT Knowledge without a separate visual template URL.
 - 2026-09-04: The local LP Builder project was audited and historical template/inventory documents were moved out of the active GPT package.
+- 2026-09-04: A central asset SSOT was added under `migration/assets/`, covering 210 unique normalized source URLs with stable temporary import IDs and full page/block traceability.
+- 2026-09-04: S3/CDN provisioning was intentionally deferred; the next asset proof is a small controlled download/validation test before processing the full set.
 
 ## Risks and Open Questions
 
-- Asset availability remains inconsistent across source packages; unreachable source assets must remain explicit `ASSET GAP`s.
+- 94 manifest assets are currently unreachable and 14 have unknown status; these require source-resolution or later asset-validation handling.
+- Fourteen AEM asset URLs contain `{width}` placeholders and need a verified resolution rule before download.
 - Many source assets lack verified alt text; draft migration can flag `ALT REVIEW REQUIRED`, but publish readiness requires editorial resolution.
-- Persistent image-storage ownership and delivery path for scale-out remain open; this does not block the first pilot pages.
+- Persistent image-storage ownership, bucket/CDN configuration and final delivery domain remain open; no values should be invented before provisioning.
 - Counter, Card Carousel, Sticky Footer and Video still have runtime/frontend limitations outside the Handbook core flow.
 - The bridge is still page-linked rather than centrally loaded by the Contentful frontend.
 - Broader batch behavior still needs proof across several real migration-ready detail pages, not only the validated reference cases.
 
 ## Next Steps
 
-1. Run additional real migration-ready Handbook detail pages through the validated composition and module contracts.
-2. For each mismatch, distinguish source-data issues from genuinely missing reusable modules before changing the system.
-3. Add only reusable migration modules that are proven necessary by multiple pages or a clear source pattern.
-4. Continue using Contentful drafts for validation and keep publishing explicit.
-5. Once several pages migrate cleanly, define the scale-out batch/QA process for the remaining migration-ready set.
-6. Resolve asset/alt-text and persistent-storage questions in parallel without blocking structural migration proof.
+1. Run the small controlled asset download proof on at most five representative assets: verify MIME type, dimensions, byte size, full SHA-256, final `ast-sha256-*` identity and target-key logic without changing the global manifest, packages, Contentful or S3.
+2. If the asset proof is clean, process the full reachable asset set into validated physical identities and prepare the manifest for later S3/CDN upload.
+3. Then resume additional real migration-ready Handbook detail pages through the validated composition and module contracts.
+4. For each mismatch, distinguish source/asset issues from genuinely missing reusable modules before changing the system.
+5. Continue using Contentful drafts for validation and keep publishing explicit.
+6. Once several pages migrate cleanly, define the scale-out batch/QA process for the remaining migration-ready set.
 
 ## Last Confirmed
 
-2026-09-04: the source pipeline, module contract model and default Handbook hub/detail composition are all validated enough to resume real migration testing. The next proof is breadth: run more migration-ready detail pages through the same system and add only genuinely reusable missing modules.
+2026-09-04: the source pipeline, Handbook module/composition model and central asset manifest are established. Before scaling the remaining pages, the next proof is a small controlled asset download/validation run; S3/CDN provisioning remains intentionally deferred.
