@@ -25,10 +25,10 @@
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open, top near-term priority; source pipeline, Handbook composition and asset manifest prepared
-  - Next step: Run the small controlled asset download/validation proof on at most five representative assets. If that validates MIME type, dimensions, full-file SHA-256, final asset IDs, target-key logic and deduplication, process the reachable asset set before resuming broader page migration.
-  - Context: The migration execution layer contains 57 migration-ready pages, 12 redirects and one missing source. The Handbook hub/detail composition and 25-module contract model are validated. `migration/assets/manifest.json` now centralizes 210 unique normalized source URLs from 221 references using temporary `src-*` import IDs; S3/CDN provisioning remains intentionally deferred and no target URLs are invented yet.
-  - Source: B2B migration, Handbook validation and asset-manifest preparation through 2026-09-04
+  - Status: Open, top near-term priority; controlled asset identity proof passed, batch exception handling still required
+  - Next step: Define and run a controlled asset batch process that first resolves the 14 `{width}` URLs, classifies the 94 unreachable entries and reconciles the two conflicting historical reachability cases. Only then process the safe reachable asset set into final byte-hash identities before resuming broader page migration.
+  - Context: The three-asset proof succeeded with 3/3 downloads, verified PNG/JPEG MIME types and dimensions, full-file SHA-256, working `ast-sha256-*` IDs, target-key logic and physical deduplication. The global manifest remains intentionally provisional with no final asset IDs, content hashes or target URLs. The migration execution layer still contains 57 migration-ready pages, 12 redirects and one missing source; S3/CDN provisioning remains deferred.
+  - Source: B2B migration, Handbook validation and asset-manifest work through 2026-09-04; controlled asset proof confirmed on 2026-09-04
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
