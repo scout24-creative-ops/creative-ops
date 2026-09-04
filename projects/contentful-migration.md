@@ -14,7 +14,7 @@ ScoutWiki project pages:
 
 ## Current Status
 
-The B2B Anwenderhandbuch / `/tipps` area remains the first end-to-end pilot. The source pipeline, target-page composition model, asset identity layer and local storage/upload contract are now materially validated.
+The B2B Anwenderhandbuch / `/tipps` area remains the first end-to-end pilot. The source pipeline, target-page composition model, asset identity layer and local storage/upload contract are materially validated, and page-level readiness has now been classified across the full 57-page migration-ready set.
 
 The source execution layer contains 57 migration-ready pages, 12 redirects and one missing source. Migration data is organized under one project root:
 
@@ -45,9 +45,35 @@ The SAFE-only real batch subsequently verified 100/100 source identities with ze
 
 The verified SAFE values have been promoted into the global `migration/assets/manifest.json` through an idempotent promotion process. Exactly 100 entries now contain verified file SHA-256 in `content_hash`, final `ast-sha256-<full-file-sha256>` asset identity, consistent hash-based `target_key` and verified file metadata according to the existing manifest schema. This produces 87 unique final `asset_id`s for 100 SAFE source identities. Historical source/reference data remains intact. All 110 REVIEW entries remain unchanged. `target_url` remains empty for all entries because no S3/CDN target has been provisioned.
 
-A deterministic storage upload plan has now also been generated for exactly the 87 unique verified blobs, with zero REVIEW assets included. Every local blob was re-hashed successfully and all target keys remain consistent and unique per physical blob. The accompanying storage/upload contract defines byte-verified MIME as `Content-Type`, requires post-upload SHA-256 validation and explicitly does not treat ETag as SHA-256. It proposes `public, max-age=31536000, immutable` for content-addressed assets, subject to Scout24/CDN alignment. Upload semantics are idempotent: a missing object may be uploaded, an existing object with identical bytes is treated as already present, and an existing object with different bytes is a hard failure and must not be overwritten.
+A deterministic storage upload plan exists for exactly the 87 unique verified blobs, with zero REVIEW assets included. Every local blob was re-hashed successfully and all target keys remain consistent and unique per physical blob. The storage/upload contract defines byte-verified MIME as `Content-Type`, requires post-upload SHA-256 validation, explicitly does not treat ETag as SHA-256 and fails rather than overwrites when an existing object has different bytes. The proposed immutable cache rule remains subject to platform alignment.
 
-The `target_url` promotion gate is also defined: upload success, object reachability, correct Content-Type and byte size, confirmed post-upload SHA-256 and a known final delivery base URL are required before any target URL may be written. Contentful, S3/CDN and the global manifest were not changed while preparing this contract.
+### Page readiness status
+
+All 57 migration-ready Handbook pages have now been classified against source completeness, asset readiness and existing ACTIVE module coverage.
+
+Current result:
+
+- 25 READY
+- 30 primarily `BLOCKED_REVIEW_ASSET`
+- 2 `BLOCKED_SOURCE`
+- 0 genuine `MODULE_GAP`
+
+Thirty-two pages touch at least one REVIEW asset. Two pages (`011` and `012`) have multiple issues: REVIEW assets plus seven asset references that cannot currently be resolved in the global manifest. The 25 READY pages use only promoted SAFE assets or no assets at all.
+
+The classification found no true module gaps. The current source patterns can be represented with Foundation, `handbook-step-media`, `handbook-category-card` and the existing link/button primitives.
+
+The recommended first real migration batch contains eight READY pages chosen to cover a broad set of source/content patterns while avoiding REVIEW assets and excluding already validated reference pages `007` and `042`:
+
+- `001-meine-firmendaten`
+- `004-anbieterkennzeichnung-und-online-streitbeilegung`
+- `013-das-portal`
+- `031-meine-kundendaten`
+- `039-merkzettel-und-suchauftrag`
+- `046-platzierungsassistent`
+- `052-scoutreport`
+- `006-anwender-handbuch`
+
+The batch covers text-only/CTA content, legal lists, single and multiple screenshots, step sequences, reporting/list content and different detail-page densities.
 
 ## Pilot Execution Principle
 
@@ -74,13 +100,14 @@ Optimize the first Anwenderhandbuch pilot for speed, proof and repeatability rat
    - Explicit user requests may add or change ACTIVE modules while Foundation/Runtime/module contracts remain binding.
 
 5. **Generate Contentful drafts page by page**
+   - Start with the eight-page representative READY batch.
    - Keep pages unpublished until explicit approval.
    - Report source/asset/contract gaps instead of inventing content or structure.
 
 6. **QA and scale out**
-   - Validate additional real pages against the current module/composition system.
-   - Add only reusable missing modules exposed by those pages.
-   - Once quality is stable, expand to larger migration batches.
+   - Validate the first eight-page batch for source fidelity, module choice, asset mapping, links, responsive rendering and absence of invented content.
+   - If the batch is stable, continue through the remaining READY pages before revisiting blocked REVIEW/source queues.
+   - Add only genuinely reusable missing modules if future pages expose them.
 
 ## Dominik's Role
 
@@ -110,21 +137,17 @@ For persistent asset storage, Dominik defines migration requirements, key/URL co
 - Do not reintroduce fixed Hub/Guide HTML templates, slots, repeaters or page skeletons.
 - `module-contracts.md`, Foundation and Runtime rules remain binding even when a user deviates from the default composition.
 - Use `handbook-category-card` for the current Handbook hub pattern.
-- Use `handbook-step-media` for appropriate detail-page text/media sections under its three verified variants.
+- Use `handbook-step-media` for appropriate detail-page text/media sections under its verified variants.
 - Require the LP Builder bridge stylesheet exactly once at the beginning of newly created or fully recomposed pilot page `htmlSource` until frontend-level loading is available.
 - Contentful remains draft-first; never publish without explicit instruction.
 - Keep original source URLs traceable while using hosting-independent asset identities.
 - Use full-file SHA-256 for final physical asset identity and deduplication; never deduplicate by filename.
-- `content_hash` in the asset manifest represents the verified full-file SHA-256 for promoted assets; historical block hashes elsewhere must not be confused with this file hash.
-- Multiple source/import identities may legitimately share one final `asset_id` and `target_key` when their bytes are identical.
 - REVIEW assets must not be silently repaired, guessed or promoted.
-- `{width}` source identities must not be mutated by inventing a width.
 - `target_url` must remain empty until the real S3/CDN target exists and post-upload validation passes.
-- Physical upload units are the 87 unique verified blobs keyed by existing hash-based `target_key`, not source URLs, import IDs, filenames or page slugs.
-- Byte-verified MIME determines `Content-Type`; source URL/file extension guessing and ETag-as-SHA assumptions are not allowed.
-- Existing storage objects with mismatching bytes must fail rather than be overwritten.
-- The immutable cache proposal requires explicit platform/CDN alignment before adoption.
-- Storage infrastructure remains a separate platform/ownership workstream; migration provides a validated upload and integration contract rather than independently provisioning AWS infrastructure.
+- Storage infrastructure remains a separate platform/ownership workstream and must not block migration of READY pages.
+- Page readiness is determined by source completeness, verified/promoted asset availability and existing ACTIVE module coverage.
+- READY pages may proceed independently of pages blocked by REVIEW assets or source gaps.
+- The first production-like migration proof should use the eight selected READY pages before scaling to all 25 READY pages.
 
 ## Important Developments
 
@@ -135,18 +158,16 @@ For persistent asset storage, Dominik defines migration requirements, key/URL co
 - 2026-09-04: Fixed template/skeleton approach replaced with contracts plus lightweight default composition.
 - 2026-09-04: Handbook-specific modules and representative hub/detail drafts validated; active module catalogue reached 25 modules.
 - 2026-09-04: Central asset SSOT created for 210 normalized source URLs.
-- 2026-09-04: Three-asset proof validated MIME, dimensions, SHA-256 identities, target keys and deduplication.
-- 2026-09-04: Full dry-run classified 100 assets SAFE and 110 REVIEW.
-- 2026-09-04: SAFE-only real batch verified 100/100 source identities, producing 87 unique physical blobs with 13 deduplicated source identities.
-- 2026-09-04: Verified SAFE metadata was promoted idempotently into the global manifest; 100 entries now carry final SHA-based identity and target keys while all 110 REVIEW entries and all `target_url` fields remain untouched.
-- 2026-09-04: A deterministic storage upload plan and contract were prepared for all 87 unique verified blobs; local SHA integrity, target-key uniqueness, upload idempotency/failure semantics and the target_url promotion gate are defined without any AWS/S3/CDN mutation.
+- 2026-09-04: SAFE asset pipeline validated, promoted and prepared through the storage handoff boundary.
+- 2026-09-04: Page-readiness classification completed across all 57 migration-ready pages: 25 READY, 30 primarily blocked by REVIEW assets, 2 blocked by source issues and no genuine module gaps.
+- 2026-09-04: An eight-page representative READY batch was selected as the first real multi-page migration/QA proof.
 
 ## Risks and Open Questions
 
+- 32 pages touch at least one REVIEW asset and cannot enter the current READY migration track unchanged.
+- Pages `011` and `012` also contain seven asset references not currently resolved in the global manifest.
+- Two pages remain blocked by source issues.
 - 110 assets remain REVIEW and require later source/content/retry handling.
-- Fourteen AEM asset URLs contain unresolved `{width}` placeholders with no deterministic concrete width in the available source data.
-- Ninety-four historically unreachable entries are dominated by `404 text/html` responses and require later source/retry review rather than bulk retries.
-- The two conflicting historical reachability cases currently also return `404 text/html`.
 - Many source assets lack verified alt text; publish readiness requires editorial resolution.
 - Persistent image-storage ownership, target/bucket, environment, upload authentication and final delivery/CDN base URL remain open platform inputs.
 - Platform-specific header/metadata, encryption, retention/lifecycle and cache-control requirements still need confirmation.
@@ -155,16 +176,14 @@ For persistent asset storage, Dominik defines migration requirements, key/URL co
 
 ## Next Steps
 
-1. Align the prepared 87-blob storage/upload plan and contract with Peter / relevant platform contacts.
-2. Confirm Storage Owner, storage target/bucket and environment, upload authentication, delivery/CDN base URL, required headers/metadata, encryption/retention requirements and the final cache-control rule.
-3. Keep S3/CDN untouched and `target_url` empty until those platform inputs are confirmed.
-4. Once the real storage/CDN target exists, run a small controlled real upload pilot using only verified unique blobs, verify bytes after upload and validate delivery behavior before scaling to all 87 blobs.
-5. Promote `target_url` only after the defined post-upload gate passes; all source identities sharing an `asset_id` must resolve to the same delivery URL.
-6. Keep REVIEW assets as a separate queue and do not let them block the verified SAFE path.
-7. Resume additional real migration-ready Handbook detail pages through the validated composition and module contracts, using the manifest identities as the asset reference layer.
-8. Continue using Contentful drafts for validation and keep publishing explicit.
-9. Once several pages migrate cleanly, define the scale-out batch/QA process for the remaining migration-ready set.
+1. Migrate the selected eight READY pages as unpublished Contentful drafts using the existing migration-ready source packages, composition rules and ACTIVE module contracts.
+2. QA the eight-page batch for source fidelity, content/order preservation, module selection, asset mapping, links, responsive rendering and absence of invented content.
+3. If the batch passes, migrate the remaining READY pages in larger batches until all 25 READY pages are covered.
+4. Keep the 32 REVIEW-affected pages and two source-blocked pages out of the READY track until their blockers are deliberately resolved.
+5. Continue storage/platform alignment with Peter in parallel; do not let missing final CDN URLs block page migration.
+6. Keep Contentful draft-first and publish only through explicit approval.
+7. After READY-page scale-out, define a separate remediation queue for REVIEW/source-blocked pages.
 
 ## Last Confirmed
 
-2026-09-04: the local asset pipeline is prepared through the storage handoff boundary. The manifest contains 100 promoted SAFE source identities representing 87 unique verified blobs; 110 REVIEW entries remain isolated. A deterministic 87-blob upload plan and storage contract now define Content-Type, integrity, idempotency, failure behavior, cache proposal and target_url promotion conditions. The next step is platform alignment with Peter / relevant storage owners before any real S3/CDN action.
+2026-09-04: all 57 migration-ready Handbook pages are classified. Twenty-five are READY, 32 touch REVIEW assets, two have source blockers and no genuine module gaps were found. The next migration step is the first real eight-page READY batch as unpublished Contentful drafts, followed by QA before scaling to the remaining READY pages. Storage/platform alignment continues in parallel.
