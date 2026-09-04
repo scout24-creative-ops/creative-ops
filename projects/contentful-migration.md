@@ -14,7 +14,7 @@ ScoutWiki project pages:
 
 ## Current Status
 
-The B2B Anwenderhandbuch / `/tipps` area remains the first end-to-end pilot. The source pipeline, target-page composition model and asset identity layer are now materially validated.
+The B2B Anwenderhandbuch / `/tipps` area remains the first end-to-end pilot. The source pipeline, target-page composition model, asset identity layer and local storage/upload contract are now materially validated.
 
 The source execution layer contains 57 migration-ready pages, 12 redirects and one missing source. Migration data is organized under one project root:
 
@@ -43,14 +43,11 @@ The 14 `{width}` placeholder URLs remain REVIEW because no deterministic concret
 
 The SAFE-only real batch subsequently verified 100/100 source identities with zero failures. These resolve to 87 unique physical files, with 13 source identities deduplicated by identical full-file SHA-256. Verified MIME types are 75 PNG, 23 JPEG and 2 GIF. Stored blobs were re-hashed successfully.
 
-The verified SAFE values have now been promoted into the global `migration/assets/manifest.json` through an idempotent promotion process. Exactly 100 entries now contain:
+The verified SAFE values have been promoted into the global `migration/assets/manifest.json` through an idempotent promotion process. Exactly 100 entries now contain verified file SHA-256 in `content_hash`, final `ast-sha256-<full-file-sha256>` asset identity, consistent hash-based `target_key` and verified file metadata according to the existing manifest schema. This produces 87 unique final `asset_id`s for 100 SAFE source identities. Historical source/reference data remains intact. All 110 REVIEW entries remain unchanged. `target_url` remains empty for all entries because no S3/CDN target has been provisioned.
 
-- verified file SHA-256 in `content_hash`
-- final `ast-sha256-<full-file-sha256>` asset identity
-- consistent hash-based `target_key`
-- verified file metadata according to the existing manifest schema
+A deterministic storage upload plan has now also been generated for exactly the 87 unique verified blobs, with zero REVIEW assets included. Every local blob was re-hashed successfully and all target keys remain consistent and unique per physical blob. The accompanying storage/upload contract defines byte-verified MIME as `Content-Type`, requires post-upload SHA-256 validation and explicitly does not treat ETag as SHA-256. It proposes `public, max-age=31536000, immutable` for content-addressed assets, subject to Scout24/CDN alignment. Upload semantics are idempotent: a missing object may be uploaded, an existing object with identical bytes is treated as already present, and an existing object with different bytes is a hard failure and must not be overwritten.
 
-This produces 87 unique final `asset_id`s for 100 SAFE source identities. Historical source/reference data remains intact. All 110 REVIEW entries remain unchanged. `target_url` remains empty for all entries because no S3/CDN target has been provisioned. Contentful, S3 and CDN have not been changed by the asset work.
+The `target_url` promotion gate is also defined: upload success, object reachability, correct Content-Type and byte size, confirmed post-upload SHA-256 and a known final delivery base URL are required before any target URL may be written. Contentful, S3/CDN and the global manifest were not changed while preparing this contract.
 
 ## Pilot Execution Principle
 
@@ -89,7 +86,7 @@ Optimize the first Anwenderhandbuch pilot for speed, proof and repeatability rat
 
 Dominik owns migration planning, orchestration, rules and the migration-focused Landing Page Builder. He translates source/design decisions into reusable migration rules and modules without absorbing SEO, content, design or infrastructure ownership from the relevant specialists.
 
-For persistent asset storage, Dominik should define migration requirements, key/URL contracts and integration expectations, while Peter / relevant platform contacts drive the actual S3/CDN infrastructure pilot and ongoing storage ownership.
+For persistent asset storage, Dominik defines migration requirements, key/URL contracts and integration expectations, while Peter / relevant platform contacts drive the actual S3/CDN infrastructure pilot and ongoing storage ownership.
 
 ## Key Stakeholders
 
@@ -118,12 +115,16 @@ For persistent asset storage, Dominik should define migration requirements, key/
 - Contentful remains draft-first; never publish without explicit instruction.
 - Keep original source URLs traceable while using hosting-independent asset identities.
 - Use full-file SHA-256 for final physical asset identity and deduplication; never deduplicate by filename.
-- `content_hash` in the asset manifest now represents the verified full-file SHA-256 for promoted assets; historical block hashes elsewhere must not be confused with this file hash.
+- `content_hash` in the asset manifest represents the verified full-file SHA-256 for promoted assets; historical block hashes elsewhere must not be confused with this file hash.
 - Multiple source/import identities may legitimately share one final `asset_id` and `target_key` when their bytes are identical.
 - REVIEW assets must not be silently repaired, guessed or promoted.
 - `{width}` source identities must not be mutated by inventing a width.
-- `target_url` must remain empty until the real S3/CDN target exists.
-- Storage infrastructure remains a separate platform/ownership workstream; migration should provide a validated key and integration contract rather than independently provisioning AWS infrastructure.
+- `target_url` must remain empty until the real S3/CDN target exists and post-upload validation passes.
+- Physical upload units are the 87 unique verified blobs keyed by existing hash-based `target_key`, not source URLs, import IDs, filenames or page slugs.
+- Byte-verified MIME determines `Content-Type`; source URL/file extension guessing and ETag-as-SHA assumptions are not allowed.
+- Existing storage objects with mismatching bytes must fail rather than be overwritten.
+- The immutable cache proposal requires explicit platform/CDN alignment before adoption.
+- Storage infrastructure remains a separate platform/ownership workstream; migration provides a validated upload and integration contract rather than independently provisioning AWS infrastructure.
 
 ## Important Developments
 
@@ -138,6 +139,7 @@ For persistent asset storage, Dominik should define migration requirements, key/
 - 2026-09-04: Full dry-run classified 100 assets SAFE and 110 REVIEW.
 - 2026-09-04: SAFE-only real batch verified 100/100 source identities, producing 87 unique physical blobs with 13 deduplicated source identities.
 - 2026-09-04: Verified SAFE metadata was promoted idempotently into the global manifest; 100 entries now carry final SHA-based identity and target keys while all 110 REVIEW entries and all `target_url` fields remain untouched.
+- 2026-09-04: A deterministic storage upload plan and contract were prepared for all 87 unique verified blobs; local SHA integrity, target-key uniqueness, upload idempotency/failure semantics and the target_url promotion gate are defined without any AWS/S3/CDN mutation.
 
 ## Risks and Open Questions
 
@@ -146,22 +148,23 @@ For persistent asset storage, Dominik should define migration requirements, key/
 - Ninety-four historically unreachable entries are dominated by `404 text/html` responses and require later source/retry review rather than bulk retries.
 - The two conflicting historical reachability cases currently also return `404 text/html`.
 - Many source assets lack verified alt text; publish readiness requires editorial resolution.
-- Persistent image-storage ownership, bucket/CDN configuration and final delivery domain remain open.
-- The exact S3/CDN upload and delivery contract still needs alignment with Peter / relevant platform contacts before any upload occurs.
+- Persistent image-storage ownership, target/bucket, environment, upload authentication and final delivery/CDN base URL remain open platform inputs.
+- Platform-specific header/metadata, encryption, retention/lifecycle and cache-control requirements still need confirmation.
 - Counter, Card Carousel, Sticky Footer and Video still have runtime/frontend limitations outside the Handbook core flow.
 - The bridge is still page-linked rather than centrally loaded by the Contentful frontend.
 
 ## Next Steps
 
-1. Review the promoted asset manifest as the local migration SSOT and confirm the 100 promoted / 110 REVIEW split is the intended working baseline.
-2. Prepare a controlled storage/upload contract for the 87 unique verified blobs: expected key format, MIME metadata, cache/content headers, upload idempotency, post-upload verification and how the final delivery URL maps back into `target_url`.
-3. Align that contract with Peter / relevant platform contacts before provisioning or uploading anything; keep infrastructure ownership separate from migration orchestration.
-4. Once the real storage/CDN target exists, upload only verified unique blobs, verify bytes after upload, and populate `target_url` through a controlled manifest update.
-5. Keep REVIEW assets as a separate queue and do not let them block the verified SAFE path.
-6. Resume additional real migration-ready Handbook detail pages through the validated composition and module contracts, using the manifest identities as the asset reference layer.
-7. Continue using Contentful drafts for validation and keep publishing explicit.
-8. Once several pages migrate cleanly, define the scale-out batch/QA process for the remaining migration-ready set.
+1. Align the prepared 87-blob storage/upload plan and contract with Peter / relevant platform contacts.
+2. Confirm Storage Owner, storage target/bucket and environment, upload authentication, delivery/CDN base URL, required headers/metadata, encryption/retention requirements and the final cache-control rule.
+3. Keep S3/CDN untouched and `target_url` empty until those platform inputs are confirmed.
+4. Once the real storage/CDN target exists, run a small controlled real upload pilot using only verified unique blobs, verify bytes after upload and validate delivery behavior before scaling to all 87 blobs.
+5. Promote `target_url` only after the defined post-upload gate passes; all source identities sharing an `asset_id` must resolve to the same delivery URL.
+6. Keep REVIEW assets as a separate queue and do not let them block the verified SAFE path.
+7. Resume additional real migration-ready Handbook detail pages through the validated composition and module contracts, using the manifest identities as the asset reference layer.
+8. Continue using Contentful drafts for validation and keep publishing explicit.
+9. Once several pages migrate cleanly, define the scale-out batch/QA process for the remaining migration-ready set.
 
 ## Last Confirmed
 
-2026-09-04: the SAFE asset batch is fully verified and its final SHA-based identities have been promoted into the global manifest. The working asset baseline is now 100 promoted source identities representing 87 unique physical blobs, with 110 REVIEW entries still isolated and all `target_url` values empty. The next infrastructure-related step is to prepare and align a storage/upload contract before any S3/CDN action.
+2026-09-04: the local asset pipeline is prepared through the storage handoff boundary. The manifest contains 100 promoted SAFE source identities representing 87 unique verified blobs; 110 REVIEW entries remain isolated. A deterministic 87-blob upload plan and storage contract now define Content-Type, integrity, idempotency, failure behavior, cache proposal and target_url promotion conditions. The next step is platform alignment with Peter / relevant storage owners before any real S3/CDN action.
