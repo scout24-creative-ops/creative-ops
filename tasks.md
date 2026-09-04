@@ -25,10 +25,10 @@
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open, top near-term priority; page readiness classified and first real eight-page batch ready
-  - Next step: Migrate the recommended READY batch as unpublished Contentful drafts: `001-meine-firmendaten`, `004-anbieterkennzeichnung-und-online-streitbeilegung`, `013-das-portal`, `031-meine-kundendaten`, `039-merkzettel-und-suchauftrag`, `046-platzierungsassistent`, `052-scoutreport` and `006-anwender-handbuch`. Run batch QA before scaling beyond these eight pages.
-  - Context: All 57 migration-ready Handbook pages were classified. 25 are READY, 30 are primarily blocked by REVIEW assets and 2 by source issues; 32 pages touch at least one REVIEW asset. No genuine module gaps were found. The first eight-page batch deliberately covers text/CTA, legal lists, single and multiple screenshots, step sequences, reporting/list content and different content densities while excluding already validated reference pages 007 and 042. Storage/platform alignment continues in parallel and must not block this READY page batch.
-  - Source: Page-readiness classification confirmed on 2026-09-04
+  - Status: Open, top near-term priority; page readiness classified and first GPT-driven eight-page batch ready
+  - Next step: Give `LP Builder – Contentful` one batch migration instruction covering the eight selected READY pages and let the GPT process them sequentially within the same job, creating unpublished Contentful drafts and reporting per-page outcomes. Run batch QA before scaling beyond these eight pages.
+  - Context: All 57 migration-ready Handbook pages were classified. 25 are READY, 30 are primarily blocked by REVIEW assets and 2 by source issues; 32 pages touch at least one REVIEW asset. No genuine module gaps were found. Codex owns migration engineering, data preparation, scripts, contracts and remediation; the GPT owns semantic page composition and Contentful draft creation. The first eight-page batch deliberately covers diverse source patterns while excluding already validated reference pages 007 and 042. Storage/platform alignment continues in parallel and must not block this READY page batch.
+  - Source: Page-readiness classification and GPT batch-execution decision confirmed on 2026-09-04
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
