@@ -6,65 +6,100 @@ Enable Marketing teams to create landing pages faster and more independently thr
 
 ## Current Status
 
-The existing production Landing Page Builder remains the operational Custom GPT used by Marketing teams for AEM-oriented landing-page generation.
+The existing production Landing Page Builder remains the operational Custom GPT for the established AEM-oriented workflow.
 
-In parallel, Dominik now owns a separate Contentful-enabled duplicate used for migration and future Builder development. The Contentful flow has been validated end to end: OAuth, draft creation, preview, update, explicit publish and production URL all work.
+In parallel, Dominik owns `LP Builder – Contentful`, a separate Contentful-enabled Builder used for migration and future product development. The Contentful flow is validated end to end: OAuth, draft creation, preview, update, explicit publish and production URL all work.
 
-The migration-focused duplicate is intentionally being rebuilt from a smaller product core instead of inheriting the complete old Builder behavior. v0.1 is a controlled module composer rather than a fully autonomous migration agent: the user supplies real content and an intended module sequence; the GPT uses approved module structures, preserves markup/classes and does not invent content or automatically select, reorder or substitute modules.
+The current Contentful Builder architecture has now moved beyond the early eight-module v0.1 whitelist. The active catalogue contains 25 module contracts, including two migration-specific Handbook modules: `handbook-category-card` and `handbook-step-media`.
 
-The full existing component library remains available as reference, but v0.1 uses a provisional active whitelist of eight modules: `hero-split`, `teaser-2col`, `teaser-3col`, `benefits-2col`, `benefits-3col`, `accordion`, `callout--base` and `checkmark-list`. This is a development boundary, not the final module set for the Anwenderhandbuch migration.
+The product model is deliberately layered and simple:
 
-The CoreCSS/COSMA-first direction is now validated both in source and in a real Contentful runtime playground. Static `htmlSource` can directly use the verified typography scale, spacing/grid utilities, COSMA color/border/radius/spacing tokens, selected utilities, static icon-font classes, links, lists and raw media behavior. The playground serves as a reusable design-system reference for future module development rather than continuing module-by-module guesswork.
+1. **GPT Instructions** define global behavior, including draft-first operation, template override rules and `GAP / ASK` behavior.
+2. **Foundation / Runtime** files define technical guardrails.
+3. **`module-contracts.md`** defines allowed module structures and variants.
+4. **`component-library.html`** provides valid implementation examples.
+5. **Composition files** such as `b2b-handbook-composition.md` define default page-level arrangements only.
+6. **Explicit user requests** may alter a default composition or add other ACTIVE modules; contracts remain binding.
 
-Typography is now finalized as the first native Design Library contract. Twenty-two CoreCSS typography variants were technically verified; sixteen are product-approved for LP Builder – Contentful: all five Heading sizes in Regular and Bold, plus Body Large/Medium/Small in Regular and Bold. Body Light and XBold remain technically available but are intentionally excluded from the Builder contract. The approved typography is rendered correctly in the canonical Contentful Design Library and requires no bridge CSS.
+A previous fixed Hub/Guide HTML-template experiment with skeletons, slots and repeaters was abandoned because it made GPT output brittle and duplicated module logic. The current rule is: modules are the technical source of truth; compositions describe defaults, not rigid templates.
 
-Spacing is now also finalized as a native LP Builder – Contentful contract after real Contentful preview verification across Palm, Lap and Desk behavior. Native CoreCSS `margin`, `padding` and `gap` utilities are approved with sizes `xs`, `s`, `m`, `l`, `xl`, `xxl`, `none`, all verified directional variants and the responsive `palm-`, `lap-`, `desk-` prefixes. Negative spacing utilities and direct `--spacing-*` CSS variables are intentionally excluded from the normal Builder API. No spacing bridge or inline spacing CSS is needed. The finalized `3. Spacing` section has been synced into the canonical unpublished Contentful Design Library and visually confirmed.
+The Custom GPT Knowledge set is intentionally compact and currently consists of:
 
-Colors & Surfaces is now in audit rather than product-approved state. The deprecated CoreCSS `background-*` palette did render in the Contentful test surface but was judged visually inconsistent with the current Brand Guidelines and is therefore not a suitable Builder contract. A migration audit of the old LP Builder palette found that most core Brand values still map exactly to current COSMA tokens: Teal `#3DF5DC`, Charcoal `#333333`, White `#FFFFFF`, Sand `#FBF8F6`, Orange `#FF9626`, Yellow `#EFF933`, Blue `#24E3FF`, Purple `#D5AAFF`, Teal Hover `#55E6CB`, Charcoal Hover `#484848`, and Muted Text `#6A6A69`. Grey Light, Border Soft, Error and some alternative Teal values remain semantically related but use changed current values; module/vendor-specific colors without generic purpose are treated as legacy. The main remaining gap is delivery: only `background-white` is a verified static utility, while current Brand/Neutral/Status/Text/Link/Border roles are primarily token-only or component-only. No Color/Surface bridge has been created yet.
+- `module-contracts.md`
+- `component-library.html`
+- `foundation-rules.md`
+- `runtime-rules.md`
+- `open-gaps.md`
+- `contentful-integration.md`
+- `cosma-icons-static.md`
+- `b2b-handbook-composition.md`
 
-For gaps that static CoreCSS/COSMA does not cover, the Contentful Builder uses one small central LP Builder bridge stylesheet rather than CSS per module. Rounded buttons and the Chevron Link are the first validated bridge primitives. Their legacy LP Builder behavior was reused as the starting point and moved to new namespaced classes so future global bridge changes affect only migrated/new Contentful Builder markup.
+`gpt-instructions-v0.1.md` belongs in the GPT Instructions field rather than duplicated as Knowledge.
 
-The bridge is published through the existing GitHub Pages runtime under `runtime/contentful/lpbuilder-bridge.css`. A real Contentful draft preview confirmed that the external stylesheet can be loaded from `htmlSource` for testing. All four rounded-button variants and the Chevron Link now render with the intended v0.1 styling and interaction. Button sizing intentionally follows the old LP Builder contract (`16px 24px` padding, `16px/16px/700` type). Filled Brand is validated as-is; Filled Default keeps white text and changes only from `#333333` to `#3F3F3F` on hover/active; Outline Strong uses a white default background and optically doubles its `#333333` contour on hover/active without layout shift; Outline Weak keeps its validated default and gets the same stronger hover contour; the Chevron Link is un-underlined by default and underlined on hover/active.
+The local `LP Builder – Contentful` workspace was audited and cleaned up. Historical template, inventory, test and gap-analysis documents were moved out of the active package into `archive/historical-not-active/`. The active project no longer contains Handbook skeleton/slot logic, the removed `media-left` Handbook variant or a forced heading for numbered Handbook steps.
 
-The optional `lpb-button--mobile-full` utility is now published in the central bridge. Default buttons remain content-width on mobile; only explicit use of that modifier makes a button full-width at max-width `668px`. The GPT contract states that this class must never be added automatically.
+## Foundation and Rendering Model
 
-Preview handling is deliberately split into two durable targets. The Contentful-specific Test Page is `/dev-lp-builder-contentful-v01-test`, used as the disposable default surface for experiments, module tests, bridge tests and smoke tests. The permanent reviewed reference is `/lp-builder-contentful-design-library`. The Design Library must be read before targeted updates and unrelated sections must be preserved. A local `design-library.html` source is maintained as the durable source of truth for this reference page.
+The implementation remains **CoreCSS/COSMA first**. Static `htmlSource` reuses verified native typography, spacing, responsive grid, icons and other design-system primitives wherever possible. LP Builder-specific CSS exists only for verified gaps and module-specific behavior.
 
-The canonical Contentful Design Library draft now exists at `/lp-builder-contentful-design-library` with preview `https://box-is24-cms-frontend.s24-fep.eu-west-1.infinity.s24cloud.net/lp-builder-contentful-design-library`. The reviewed library currently contains Bridge Primitives, Typography and Spacing and remains unpublished while the design-system contract is expanded incrementally. The old generic `/lp-builder-design-library` draft is legacy/unpublished and is not the canonical target.
+The central LP Builder bridge stylesheet remains the shared runtime layer for those gaps. It is not duplicated per module.
 
-A naming guardrail is confirmed: all user-facing artifacts, preview targets and references for the new Builder should make `Contentful` visible in the naming wherever practical so they cannot be confused with the legacy/AEM Builder. The preferred product label is `LP Builder – Contentful`; variants such as `LP Builder – Contentful Design Library` are acceptable.
+A key runtime discovery from the Handbook pilot is that the Contentful frontend does not currently inject the LP Builder bridge automatically into these pages. Correct module markup therefore did not reliably receive bridge styling until the public bridge stylesheet was linked explicitly. For the current pilot, GPT Instructions require the public bridge `<link>` exactly once at the beginning of every newly created or fully recomposed LP Builder page `htmlSource`.
 
-## Product Versions and Boundaries
+This is a pragmatic pilot rule, not a claim that page-level bridge loading is the ideal long-term architecture. A centralized frontend load can still replace it later.
 
-### Production Custom GPT
+## Handbook-specific Module Proof
 
-- Current operational Builder for Marketing.
-- Uses the broader existing approved module catalogue.
-- Still supports the established AEM workflow.
-- Remains unchanged while the Contentful/migration version is developed separately.
+### `handbook-category-card`
 
-### Contentful / Migration Builder
+Used for the B2B Anwenderhandbuch hub. It provides a simple category card with heading, optional description and one or more normal text links. The responsive page grid is composed outside the module through Foundation grid classes.
 
-- Dominik's duplicated Contentful-enabled GPT.
-- Uses GPT Actions for read, draft creation, update and explicit publish.
-- End-to-end publishing flow is validated.
-- v0.1 uses the eight-module whitelist and controlled composition behavior.
-- Rounded CTA support is a required part of the v0.1 baseline; the Contentful/migration Builder must not launch using the deprecated classic button designs as its primary CTA treatment.
-- Will evolve based on real migration page-group requirements rather than trying to generalize the full migration system upfront.
+The current Handbook hub draft is visually validated and remains unpublished.
 
-## Long-term Product Direction
+### `handbook-step-media`
 
-The Landing Page Builder should become a controlled generative layer rather than remain permanently constrained to a fixed component catalogue. Marketing should be able to create pages and later new patterns within brand, design-system, accessibility, SEO and technical guardrails.
+Used for detail-page text/screenshot sections. The current validated contract supports exactly three useful variants:
 
-The current implementation direction is **CoreCSS/COSMA first**. Static HTML should reuse the existing Scout24 design system wherever possible. A single central LP Builder bridge stylesheet should cover only the real delta that static HTML cannot express through native classes, and should use existing COSMA tokens rather than introduce a parallel design system.
+- Number + Body + Media
+- Heading + Body + Media
+- Body + Media
 
-Do not create separate CSS systems per module. Shared primitives such as buttons should use stable, Contentful-specific namespaced classes so later bridge-CSS changes automatically affect all intended LPBuilder pages without changing unrelated legacy Contentful/AEM entries.
+For all variants:
 
-A native renderer hook for component-only primitives such as `ButtonRounded` remains a possible later improvement, but it is not the first implementation step. The team should first build and test the required modules/primitives pragmatically, then collect the remaining frontend-only gaps and align those with Core Frontend in one bundle.
+- Desktop/Lap: text always left, media always right
+- Palm: text before media
+- no `media-left` / alternating variant
+- media uses `lpb-image--responsive`
+- no card/border/surface/radius treatment around screenshots
+
+For numbered steps, the number sits in the existing circle directly beside body copy; no separate heading is required or invented. Repeated step/media sections use the verified Foundation separation `border-top padding-top-xl margin-top-xl`.
+
+The module was validated independently on `/dev-lp-builder-contentful-v01-test` before being used as the basis for Handbook detail composition.
+
+## Page Composition Model
+
+`b2b-handbook-composition.md` is the current example of the new composition approach.
+
+The default Handbook detail page is:
+
+Foundation top spacing → H1 → Intro → source-based content modules → outlined `Zum Anwender-Handbuch` button → Foundation bottom spacing.
+
+This composition is intentionally not exhaustive. If a user explicitly requests another ACTIVE module, such as Video, the GPT may add it at the requested position as long as the module contract is satisfied. A default composition is not a refusal boundary.
+
+If the requested content has no matching ACTIVE module, or a user request conflicts with a binding module/Foundation/Runtime contract, the GPT should return `GAP / ASK` instead of improvising new markup, CSS or module variants.
+
+## Preview and Reference Targets
+
+- Contentful test surface: `/dev-lp-builder-contentful-v01-test`
+- Canonical Contentful Design Library: `/lp-builder-contentful-design-library`
+
+The test surface is disposable and used for isolated module/bridge/composition checks. The Design Library is the durable reviewed reference and should only be changed deliberately.
 
 ## Dominik's Role
 
-Dominik initiated and developed the Landing Page Builder and retains product, strategy, prioritization and quality responsibility. He now also owns the migration-focused Contentful duplicate and the evolution of its module/guardrail model.
+Dominik initiated and developed the Landing Page Builder and retains product, strategy, prioritization and quality responsibility. He owns the Contentful/migration-focused duplicate and decides which reusable module and composition rules enter the maintained GPT package.
+
+Codex is the preferred technical implementation surface for local module, contract, library, bridge and runtime-test changes. Claude Design remains useful for visual exploration/reference, while the GPT composes validated modules and writes Contentful drafts.
 
 ## Key Stakeholders and Users
 
@@ -72,92 +107,55 @@ Dominik initiated and developed the Landing Page Builder and retains product, st
 - Seeker Product Marketing
 - Homeowner Product Marketing
 - Other Marketing teams using the current Builder
-- UX and SEO for future generation guardrails
-- Mukhammadjon Kayumov for the Contentful Action/renderer contract
-- Beatrice and the Contentful/Core Frontend teams for platform coordination
+- UX and SEO for generation guardrails
+- Mukhammadjon Kayumov for Contentful Action/renderer behavior
+- Beatrice and Core/Contentful teams for platform coordination
 - Daniel Herold for broader Core/Builders Platform direction
-- Peter and Ulrike for the first migration pilot workflow
+- Peter and Ulrike for the first Handbook migration pilot
 
 ## Confirmed Direction and Decisions
 
-- Keep the production Builder operational while the Contentful/migration version evolves separately.
-- The Contentful duplicate is now Dominik's working migration Builder.
-- Prefer the label `LP Builder – Contentful` for the new Builder. Any derivative page, library, preview or reference should visibly include `Contentful` wherever practical to avoid confusion with the legacy/AEM Builder.
-- v0.1 uses a small active module whitelist instead of physically deleting the rest of the library.
-- Do not automatically substitute non-whitelisted modules.
-- Do not perfect a universal migration mode before the first real pilot.
-- Use native CoreCSS/COSMA primitives wherever they work for static HTML.
-- Verified native families now include typography, spacing, responsive grid, COSMA design tokens, several utilities, icon-font classes, links, lists and raw media behavior.
-- Typography contract: allow `font-heading-{xlarge,large,medium,small,xsmall}-{regular,bold}` and `font-body-{large,medium,small}-{regular,bold}` only; do not use Body Light or XBold in Builder output. HTML heading semantics remain independent from visual typography class.
-- Spacing contract: native `margin`, `padding` and `gap` utilities are approved with `xs` through `xxl`, `none`, all verified directional variants and `palm-`, `lap-`, `desk-` prefixes. Do not invent or use negative spacing utilities, inline spacing CSS or a spacing bridge. Direct `--spacing-*` variables are not part of the normal Builder API.
-- Colors/Surfaces audit: do not adopt the deprecated CoreCSS `background-*` palette merely because it renders; the real Contentful preview showed that those colors do not fit the current Brand Guidelines. Most legacy foundation Brand values still map exactly to current COSMA tokens, but those tokens are not yet exposed as a general static Builder utility API.
-- Use the validated CoreCSS/COSMA playground as the technical reference for future module work.
-- Do not make the old `runtime/core/*` CSS the styling basis of the new Contentful library; preserve it for existing AEM/pages that already depend on it.
-- Maintain one small central LP Builder bridge stylesheet for verified static-HTML gaps; do not create CSS per module.
-- Deliver the bridge through a separate Contentful-specific runtime path.
-- Do not reuse generic legacy selectors for the new bridge. Use new namespaced selectors so existing Contentful `ai-button` instances remain unchanged unless explicitly migrated.
-- Rounded buttons and the Chevron Link are the first validated bridge primitives and now match the intended v0.1 interaction contract in real Contentful preview.
-- Rounded buttons are mandatory for the new Contentful/migration Builder baseline. The deprecated classic `button-primary` / `button-secondary` visual treatment must not be used as the launch-state CTA solution.
-- Shared button classes must remain globally controllable within the new bridge contract so one bridge-CSS change updates all migrated/current v0.1 button instances.
-- Buttons stay content-width on mobile by default. Full-width mobile behavior is opt-in only via `lpb-button--mobile-full`, and the GPT must add that modifier only when the user explicitly requests it.
-- Maintain two separate preview targets: the Test Page is disposable and default for experiments; the Design Library is a durable reviewed reference and is only changed on explicit Design-Library requests.
-- Contentful slug operations require the leading `/`; use leading-slash slugs for reads/writes while preview URLs omit that leading slash in the route path.
-- `updateLpBuilderDraft` cannot change an Entry slug; slug migration requires a new Entry rather than renaming the existing one.
-- Maintain `design-library.html` as the local source of truth for the permanent Design Library; Contentful is the rendered preview, not the only copy of the library state.
-- The existing LPBuilder frontend already provides an HTML-specific Accordion interaction hook, so Accordion JavaScript should not be recreated in the GPT/library.
-- Build and test the module set first; collect any remaining renderer/component-only gaps and discuss them with Core Frontend together instead of escalating one-by-one.
+- Keep the production/AEM Builder operational while `LP Builder – Contentful` evolves separately.
+- Use CoreCSS/COSMA first; use one central bridge only for verified static-HTML gaps.
+- Module contracts are the technical source of truth for valid modules.
+- Component Library examples support contracts but do not override them.
+- Composition files define default page arrangements, not rigid HTML templates.
+- Explicit user requests may extend or alter a default composition using ACTIVE modules.
+- Never invent new modules, CSS variants or markup to satisfy a composition request.
+- Use `GAP / ASK` when no valid module exists or a request collides with a binding contract.
+- Keep Contentful draft-first and never publish without explicit instruction.
+- Require the bridge stylesheet once at the start of newly created/fully recomposed pilot pages until central frontend loading is available.
+- Keep the Contentful test page separate from the canonical Design Library.
+- Keep historical template/skeleton/slot approaches archived and out of GPT Knowledge.
+- Use Codex for technical module implementation and contract synchronization.
+- Validate new/changed modules on the general test page before relying on them in a page composition.
 
 ## Important Developments
 
-- 2026-08-31: Dominik completed setup and validated the full Contentful flow in his duplicate, including real publishing.
-- 2026-08-31: The migration-focused Builder was reset to a simple module-composer v0.1 model.
-- 2026-08-31: Eight modules were selected as the active v0.1 whitelist while the full library remains available as reference.
-- 2026-09-01: CoreCSS/COSMA-first feasibility for static HTML was verified directly against `is24-cms-frontend` and live rendering.
-- 2026-09-01: The v0.1 modules were refactored onto the native CoreCSS/COSMA baseline and validated in a real desktop/mobile Contentful preview.
-- 2026-09-01: A dedicated CoreCSS/COSMA reference playground successfully rendered typography, tokens, spacing, grid, utilities, icons, links, lists and raw media through static `htmlSource`.
-- 2026-09-01: Codex gained read-only GitHub MCP access to `Scout24/is24-cms-frontend`, removing the previous local-repository verification blocker.
-- 2026-09-01: `ButtonRounded` was traced as a React/CoreCSS component without a verified static DOM contract.
-- 2026-09-01: Dominik confirmed that rounded buttons are a required product baseline for the new Builder; falling back to the deprecated classic button visual style is not acceptable for launch.
-- 2026-09-01: The existing legacy rounded-button implementation was audited and retained as a reusable starting point rather than rebuilding button styling from scratch.
-- 2026-09-01: Dominik selected a pragmatic central CSS-bridge approach for static gaps and decided to finish broader module testing before bundling any remaining Core Frontend questions.
-- 2026-09-01: The bridge was namespaced, published under the new Contentful runtime path and successfully loaded in the real Contentful test draft.
-- 2026-09-01: The four required rounded-button variants and the Chevron Link were visually tuned and validated in Contentful preview.
-- 2026-09-01: The opt-in `lpb-button--mobile-full` utility was published in the bridge; default mobile buttons remain content-width and the modifier is used only on explicit request.
-- 2026-09-01: Builder instructions were reworked to a two-target contract: disposable Contentful Test Page plus permanent Contentful Design Library.
-- 2026-09-01: The canonical Contentful Design Library was created at `/lp-builder-contentful-design-library`; the earlier generic Design Library draft remains unpublished legacy state because the Action cannot rename slugs.
-- 2026-09-01: Typography audit verified 22 native CoreCSS variants. Sixteen were product-approved and added to the canonical Design Library; Body Light and XBold were intentionally excluded. Typography is complete and needs no bridge.
-- 2026-09-01: Spacing audit verified native Margin/Padding/Gap utilities, responsive `xs`-`xxl` scales, directional variants, `none`, and Palm/Lap/Desk prefixes. Real Contentful preview subsequently confirmed the uncommon directional and responsive cases across Palm, Lap and Desk; the spacing contract is now product-approved and requires no bridge. The finalized `3. Spacing` section was then synced to and visually confirmed in the canonical Contentful Design Library draft.
-- 2026-09-01: Colors & Surfaces audit found no verified general static text-color utility API and only `background-white` as a robust static background utility. Deprecated background candidates rendered but looked inconsistent with current Brand Guidelines.
-- 2026-09-01: Brand-color migration audit mapped the old foundation palette against current COSMA tokens. Core Brand values including Teal, Charcoal, White, Sand, Orange, Yellow, Blue, Purple and key hover/muted-text values remain exact current-token matches; the unresolved question is how to expose the required semantic colors to static LPBuilder HTML without creating a parallel color system.
+- 2026-08-31: Contentful-enabled duplicate validated end to end.
+- 2026-09-01: CoreCSS/COSMA-first static HTML direction and central bridge approach validated.
+- 2026-09-03: Broad module catalogue reached 23 ACTIVE module contracts.
+- 2026-09-04: `handbook-category-card` and `handbook-step-media` added, bringing the active catalogue to 25 modules.
+- 2026-09-04: The Handbook hub and detail composition were validated through real Contentful drafts and isolated test-page checks.
+- 2026-09-04: Fixed Hub/Guide templates, slots and skeletons were retired in favor of module contracts plus lightweight composition defaults.
+- 2026-09-04: Global template behavior was added to GPT Instructions: user-requested deviations are allowed, contracts remain binding, unresolved capability conflicts become `GAP / ASK`.
+- 2026-09-04: Local project audit archived obsolete template/inventory/test documents and reduced the active GPT package to the maintained sources.
 
 ## Risks and Open Questions
 
-- Which remaining module-specific structures genuinely require the central bridge after the validated native playground baseline.
-- Which gaps ultimately cannot be solved cleanly through static HTML + central bridge CSS and therefore require renderer/frontend support.
-- Colors & Surfaces still needs a product-level decision on the smallest semantic surface/text contract and whether those token-only roles should be exposed through the existing central LPBuilder bridge.
-- The byte-exact token mapping in the compiled `is24-corecss@9.2.0` artifact remains unverified; the audit used the accessible current COSMA token source plus current CMS usage.
-- General inversive/status text-surface pairings remain open and should not be invented before verification.
-- The latest local `gpt-instructions-v0.1.md` changes still need to be manually copied into the Custom GPT configuration.
-- The bridge still needs one small Core Frontend change to add its URL to the central LPBuilder stylesheet list for final production use; this can be bundled with other true frontend gaps after the module pass.
-- Accordion visual parity with the native Contentful component remains open even though interaction is working.
-- How the final migration module library should expand once Peter's Anwenderhandbuch designs expose missing patterns.
-- Exact long-term read/update lookup contract for Contentful pages after one fresh-chat lookup failure.
-- Final pre-publish validation and link-check split between Builder and platform integration.
+- Bridge loading is still page-level for the pilot rather than centrally owned by the frontend.
+- Counter, Card Carousel, Sticky Footer and Video retain runtime/frontend limitations outside the static Handbook core flow.
+- Asset availability and alt-text completeness remain migration concerns rather than module-contract problems.
+- The active module catalogue should continue to grow only from real reusable patterns, not speculative variants.
 
 ## Next Steps
 
-1. Define the smallest useful LP Builder – Contentful Colors & Surfaces contract from the verified current token mappings; avoid the deprecated CoreCSS background palette and do not expose raw tokens directly to normal Builder output.
-2. Prototype any required namespaced surface/text delivery through the existing central bridge only if the native static API is insufficient, then validate it on the disposable Contentful Test Page before product approval or Design Library promotion.
-3. Continue with borders/radii and grid/layout once Colors & Surfaces is settled.
-4. Manually copy the latest approved instruction sections from `gpt-instructions-v0.1.md` into the Custom GPT configuration.
-5. Continue building and testing the remaining v0.1 modules against the verified CoreCSS/COSMA reference; promote only reviewed/finalized elements into the Design Library.
-6. After the module pass, consolidate the true frontend-only needs, including centrally loading the new bridge stylesheet, and align them with Mukhammadjon/Core Frontend in one discussion.
-7. Add new migration-specific modules from real Anwenderhandbuch design requirements.
+1. Use the validated Handbook composition on additional real migration-ready detail pages.
+2. When a page fails to map cleanly, first determine whether the issue is source data, asset availability or a genuine reusable module gap.
+3. Implement only proven reusable module gaps in Codex, then refresh `module-contracts.md` and `component-library.html` in the GPT.
+4. Keep testing changed modules independently on the Contentful test page before broader use.
+5. Bundle remaining true frontend/runtime questions only after they are isolated from content/composition issues.
 
 ## Last Confirmed
 
-2026-09-01: Brand-color migration audit confirmed that most old LP Builder foundation colors still map exactly to current COSMA tokens, while the deprecated CoreCSS `background-*` palette is visually unsuitable for the new Contentful Builder. Only `background-white` is a robust static background utility; most useful Brand/Neutral/Status/Text roles are token-only or component-only. Colors & Surfaces therefore remains an open product contract, with a small namespaced bridge as the likely delivery mechanism if native static utilities remain insufficient.
-
-## Related Context
-
-See [Marketing Content Platform](contentful-marketing-mvp.md), [Contentful Migration](contentful-migration.md) and [Design Library and Builder Library](design-library.md].
+2026-09-04: the Contentful Builder has a stable layered architecture, 25 ACTIVE modules, a validated Handbook hub/detail composition model and a cleaned active GPT package. The immediate product proof is now repeated real migration, not more architecture redesign.
