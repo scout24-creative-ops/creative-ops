@@ -16,26 +16,19 @@
   - Context: Marie will present the Brand Agent, reusable Skill approach and her research on when to use an Agent versus a Skill or another setup. Dominik and Marie will align her contribution on 2026-09-04. The calendar event itself is not tracked as a separate dashboard task.
   - Source: Marie confirmed her contribution with Dominik on 2026-08-24
 
-- [ ] Validate the CoreCSS/COSMA HTML contract
-  - Area: Landing Page Builder
-  - Status: Open, broad module/foundation contract substantially validated; remaining work is consolidation and targeted frontend/runtime gaps
-  - Next step: Finish the module/category taxonomy audit and consolidate the remaining frontend/runtime decisions before final Page Composition rules.
-  - Context: The Contentful Builder now has a broad working module catalogue with 23 ACTIVE contracts validated in Contentful. Runtime gaps are isolated for Counter, Card Carousel, Sticky Footer and Video; Accordion is proven through the existing frontend hook. Page spacing remains dependent on Mukhammadjon's response about removing automatic section padding.
-  - Source: LP Builder module and composition work through 2026-09-03
-
 - [ ] Bundle LP Builder frontend questions for Mukhammadjon / Core Frontend
   - Area: Landing Page Builder
-  - Status: Open, current spacing question already sent; remaining runtime/frontend gaps to consolidate
-  - Next step: Wait for Mukhammadjon's response on removing automatic section padding, then bundle the remaining verified frontend-only questions for review with Mukhammadjon / Beatrice.
-  - Context: Current bundle includes central bridge loading, Counter/Carousel runtime ownership, Sticky Footer's frontend-native solution, Video player/consent integration, and final Page Composition ownership. The automatic section padding currently prevents the Builder from controlling inter-module spacing through explicit composition rules.
-  - Source: LP Builder frontend/runtime analysis through 2026-09-03
+  - Status: Open, narrowed to true frontend/runtime gaps
+  - Next step: Bundle only the remaining verified frontend-only questions for review with Mukhammadjon / Beatrice after they are isolated from composition and content issues.
+  - Context: The static module/composition model is now validated enough for the Handbook pilot. Remaining frontend topics include central bridge loading and runtime ownership for Counter, Card Carousel, Sticky Footer and Video. The pilot can continue with the bridge linked once in page `htmlSource`, so these questions no longer block structural migration proof.
+  - Source: LP Builder consolidation and Handbook validation through 2026-09-04
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open, top near-term priority; source crawl completed
-  - Next step: Review the 12 detected redirects, 8 extraction-warning pages and the single 404; define the effective Anwenderhandbuch subset; then select 5–6 structurally representative pages for Claude Design.
-  - Context: The B2B `tipps` source crawl processed 70 filtered URLs: 69 successful, 1 HTTP 404, 12 redirects, 8 extraction warnings, no detected dynamic-content gaps, 11,013 links and 493 assets indexed. The pilot model is now: structured source crawl -> representative-page Claude Design -> approved reusable modules/patterns -> design/mapping guide -> small validation batch -> larger GPT-driven Contentful draft migration.
-  - Source: B2B migration source crawl and pilot-process clarification, 2026-09-03
+  - Status: Open, top near-term priority; source pipeline and Handbook composition validated
+  - Next step: Run additional real pages from `migration/ready/b2b-anwenderhandbuch/` through the validated Handbook composition, distinguish source/asset gaps from genuine reusable module gaps, and add only the latter.
+  - Context: The migration execution layer now contains 57 migration-ready pages, 12 redirects and one missing source. `handbook-category-card` and `handbook-step-media` are validated; the Handbook hub and a representative detail composition render correctly as unpublished Contentful drafts. The active architecture is contracts + lightweight default composition, not fixed HTML templates or skeletons.
+  - Source: B2B migration and LP Builder Handbook validation through 2026-09-04
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
@@ -94,6 +87,11 @@
   - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
 
 ## Completed
+
+- [x] Validate the CoreCSS/COSMA HTML contract
+  - Area: Landing Page Builder
+  - Completed: 2026-09-04
+  - Outcome: The Contentful Builder foundation, module contract and page-composition model are validated far enough for the migration pilot. The active catalogue now contains 25 modules; the Handbook-specific `handbook-category-card` and `handbook-step-media` contracts were independently validated on the Contentful test page, and remaining issues are isolated frontend/runtime gaps rather than a blocker to structural migration.
 
 - [x] Complete the Landing Page Builder and Contentful MVP
   - Area: Marketing Content Platform
