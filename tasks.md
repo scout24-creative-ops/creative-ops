@@ -25,10 +25,10 @@
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open, top near-term priority; 100 verified SAFE asset identities promoted into the global manifest
-  - Next step: Review the promoted manifest as the local asset SSOT, then prepare a controlled storage/upload contract for the 87 unique verified blobs without provisioning or uploading anything yet. Keep the 110 REVIEW assets excluded and keep every `target_url` empty until the real S3/CDN target and ownership are confirmed.
-  - Context: Promotion passed preflight and is idempotent. Exactly 100 source identities now carry verified file SHA-256 in `content_hash`, final `ast-sha256-*` asset IDs and consistent target keys, resolving to 87 unique physical blobs with 13 deduplicated source identities. Historical source/reference data is preserved; 110 REVIEW entries remain untouched. Contentful and S3/CDN remain unchanged.
-  - Source: SAFE batch validation and manifest promotion confirmed on 2026-09-04
+  - Status: Open, top near-term priority; storage/upload contract prepared and ready for platform alignment
+  - Next step: Align the verified 87-blob storage/upload contract with Peter / the relevant platform contacts and confirm Storage Owner, target/bucket and environment, upload authentication, delivery/CDN base URL, required header/metadata rules, encryption/retention requirements and cache policy. Do not upload or set `target_url` until those inputs are confirmed.
+  - Context: The promoted asset baseline remains 100 verified source identities representing 87 unique physical blobs, with 110 REVIEW entries excluded. A deterministic upload plan now covers exactly the 87 blobs; all local blobs were re-hashed successfully. The contract uses byte-verified MIME as `Content-Type`, treats content-addressed keys as immutable candidates, requires post-upload SHA-256 verification, and fails rather than overwrites when an existing object has different bytes. Contentful, S3/CDN and `manifest.json` were not changed by contract preparation.
+  - Source: SAFE manifest promotion and storage/upload contract confirmed on 2026-09-04
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
@@ -39,10 +39,10 @@
 
 - [ ] Pilot persistent image storage for AEM migration
   - Area: Marketing Content Platform
-  - Status: Open, infrastructure pilot remains separate; migration-side asset identities are now verified
-  - Next step: Let Peter drive the actual storage/S3 pilot with Allan / the relevant platform contacts when timing is right; provide the verified 87-blob key model, required upload contract and manifest integration requirements so the future target can be connected without redesigning migration identities.
-  - Context: The migration manifest now contains verified final identities and target keys for 100 SAFE source assets representing 87 unique physical blobs, while `target_url` remains intentionally empty. Dominik should define requirements and integration boundaries without becoming the ongoing AWS/storage operator.
-  - Source: Asset ownership direction from 2026-08-30; verified manifest promotion on 2026-09-04
+  - Status: Open, ready for platform alignment; migration-side upload contract prepared
+  - Next step: Let Peter drive the actual storage/S3 pilot with Allan / the relevant platform contacts; align the prepared 87-blob upload plan and storage contract, then confirm the concrete storage target, ownership, authentication, delivery URL and platform header/security requirements before any real upload.
+  - Context: Migration now provides verified SHA-based identities, stable target keys, a deterministic 87-blob upload plan, byte-verified Content-Type rules, idempotency/failure behavior and the target_url promotion gate. Dominik should keep defining integration requirements without becoming the ongoing AWS/storage operator.
+  - Source: Asset ownership direction from 2026-08-30; storage/upload contract confirmed on 2026-09-04
 
 - [ ] Set up B2B automation discovery with Juliane
   - Area: E-Mail Automation Professional
