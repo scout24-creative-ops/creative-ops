@@ -25,10 +25,10 @@
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open, top near-term priority; source pipeline and Handbook composition validated
-  - Next step: Run additional real pages from `migration/ready/b2b-anwenderhandbuch/` through the validated Handbook composition, distinguish source/asset gaps from genuine reusable module gaps, and add only the latter.
-  - Context: The migration execution layer now contains 57 migration-ready pages, 12 redirects and one missing source. `handbook-category-card` and `handbook-step-media` are validated; the Handbook hub and a representative detail composition render correctly as unpublished Contentful drafts. The active architecture is contracts + lightweight default composition, not fixed HTML templates or skeletons.
-  - Source: B2B migration and LP Builder Handbook validation through 2026-09-04
+  - Status: Open, top near-term priority; source pipeline, Handbook composition and asset manifest prepared
+  - Next step: Run the small controlled asset download/validation proof on at most five representative assets. If that validates MIME type, dimensions, full-file SHA-256, final asset IDs, target-key logic and deduplication, process the reachable asset set before resuming broader page migration.
+  - Context: The migration execution layer contains 57 migration-ready pages, 12 redirects and one missing source. The Handbook hub/detail composition and 25-module contract model are validated. `migration/assets/manifest.json` now centralizes 210 unique normalized source URLs from 221 references using temporary `src-*` import IDs; S3/CDN provisioning remains intentionally deferred and no target URLs are invented yet.
+  - Source: B2B migration, Handbook validation and asset-manifest preparation through 2026-09-04
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
@@ -39,10 +39,10 @@
 
 - [ ] Pilot persistent image storage for AEM migration
   - Area: Marketing Content Platform
-  - Status: Open, parallel to migration pilot
-  - Next step: Let Peter drive the small storage/S3 pilot with Allan / the relevant platform contacts: move a limited first AEM asset set into persistent storage, produce stable delivery URLs and validate them in the LP Builder -> Contentful flow.
-  - Context: The goal is not yet to build the full Marketing Asset Library. Dominik should define the migration requirements and integration target but should not become the ongoing AWS/storage operator. Existing source image URLs can continue to unblock the first pilot if the storage work is not ready.
-  - Source: Asset ownership and pilot direction consolidated on 2026-08-30
+  - Status: Open, infrastructure pilot remains separate; migration-side preparation is underway
+  - Next step: Let Peter drive the actual storage/S3 pilot with Allan / the relevant platform contacts when timing is right; meanwhile validate the local asset identity and deduplication model so the migration is ready to switch from source URLs to future S3/CDN URLs.
+  - Context: The migration project now has a central asset manifest and a planned hash-based identity/key model, but no S3/CDN target is being provisioned yet. Dominik should define the migration requirements and integration target without becoming the ongoing AWS/storage operator.
+  - Source: Asset ownership direction from 2026-08-30; migration-side asset preparation through 2026-09-04
 
 - [ ] Set up B2B automation discovery with Juliane
   - Area: E-Mail Automation Professional
