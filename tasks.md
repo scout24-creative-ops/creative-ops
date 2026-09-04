@@ -25,10 +25,10 @@
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open, top near-term priority; controlled asset identity proof passed, batch exception handling still required
-  - Next step: Define and run a controlled asset batch process that first resolves the 14 `{width}` URLs, classifies the 94 unreachable entries and reconciles the two conflicting historical reachability cases. Only then process the safe reachable asset set into final byte-hash identities before resuming broader page migration.
-  - Context: The three-asset proof succeeded with 3/3 downloads, verified PNG/JPEG MIME types and dimensions, full-file SHA-256, working `ast-sha256-*` IDs, target-key logic and physical deduplication. The global manifest remains intentionally provisional with no final asset IDs, content hashes or target URLs. The migration execution layer still contains 57 migration-ready pages, 12 redirects and one missing source; S3/CDN provisioning remains deferred.
-  - Source: B2B migration, Handbook validation and asset-manifest work through 2026-09-04; controlled asset proof confirmed on 2026-09-04
+  - Status: Open, top near-term priority; asset dry-run completed with a 100-asset SAFE batch identified
+  - Next step: Run a SAFE-only real download batch for the 100 classified assets, validate every downloaded binary by MIME type, dimensions, byte size and full-file SHA-256, derive final `ast-sha256-*` IDs and target keys, and report physical deduplication plus failures. Keep all 110 REVIEW assets excluded.
+  - Context: The dry-run classified 210 manifest entries into 100 SAFE and 110 REVIEW, with no RESOLVABLE entries. The 14 `{width}` URLs remain REVIEW because no deterministic concrete width can be derived. Both historical conflict URLs currently return `404 text/html`; the 94 historically unreachable entries are likewise dominated by `404 text/html`. Global manifest final fields remain empty and Contentful/S3 remain untouched.
+  - Source: Controlled asset proof and full dry-run classification confirmed on 2026-09-04
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
