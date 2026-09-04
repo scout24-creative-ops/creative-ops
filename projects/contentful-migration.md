@@ -14,7 +14,7 @@ ScoutWiki project pages:
 
 ## Current Status
 
-The B2B Anwenderhandbuch / `/tipps` area remains the first end-to-end pilot. The source side is materially prepared, the target-page operating model is validated, and an asset migration layer is now being prepared before scaling the remaining pages.
+The B2B Anwenderhandbuch / `/tipps` area remains the first end-to-end pilot. The source side is materially prepared, the target-page operating model is validated, and the local asset identity model has now passed a controlled download proof. Before the full asset set is processed, the remaining exceptional URL/reachability cases need an explicit batch-handling rule.
 
 The original crawl covered 70 unique source URLs. The current execution layer resolves to 57 migration-ready pages, 12 redirects and one missing source. Migration data is organized under one project root:
 
@@ -62,7 +62,9 @@ The manifest uses temporary global import IDs `src-<sha256(normalized-source-url
 
 `target_url` stays empty until the real S3/CDN target exists. The intended migration model is: source content references a stable manifest identity; today it resolves to the legacy source URL, later to the verified S3/CDN URL. Existing `migration/ready/` packages should eventually carry the global asset identity in addition to the original source URL so target-host changes do not require renewed content mapping.
 
-Known asset-specific cases include 14 AEM URLs with a `{width}` placeholder, two consolidated URLs with conflicting historical reachability observations, and widespread missing alt text. These must remain explicit data/review cases rather than being guessed away.
+The controlled asset proof tested three representative temporary import IDs and succeeded for all three downloads. The actual files resolved to PNG, JPEG and PNG, with dimensions 1189×1223, 640×427 and 241×210. Full-file SHA-256 calculation, final `ast-sha256-*` identity generation, target-key logic and deduplication all behaved as intended. The multiply referenced PNG only needs one physical downloaded file. The three binaries had distinct byte hashes.
+
+The global `manifest.json` intentionally remains provisional: the proof did not write final asset IDs, file hashes or target URLs back into the full manifest. Processing the full asset estate is still gated by explicit handling for 14 `{width}` placeholder URLs, 94 currently unreachable entries and two consolidated URLs with conflicting historical reachability observations.
 
 ## Pilot Execution Principle
 
@@ -79,6 +81,7 @@ The intended loop is now:
    - Keep original source URLs and references traceable.
    - Do not invent target URLs before S3/CDN exists.
    - Introduce final asset identities only after byte-level validation.
+   - Resolve exceptional URL/reachability cases before running the full asset batch.
 
 3. **Build or refine reusable modules only when a real source pattern requires them**
    - Claude Design can remain a visual exploration/reference tool.
@@ -128,7 +131,7 @@ Dominik owns migration planning, orchestration, rules and the migration-focused 
 - `module-contracts.md`, Foundation and Runtime rules remain binding even when a user deviates from the default composition.
 - Use `handbook-category-card` for the current Handbook hub pattern.
 - Use `handbook-step-media` for appropriate detail-page text/media sections under its three verified variants.
-- On Handbook detail pages, Desktop/Lap text/media order is fixed to text left, media right; Palm text comes before media.
+- On Handbook detail pages, Desktop/Lap text/media order is fixed to text left and media right; Palm text comes before media.
 - Use `border-top padding-top-xl margin-top-xl` between repeated step/media sections.
 - Default Handbook detail pages end with one outlined `Zum Anwender-Handbuch` button; there is no default top back-button.
 - Do not add Callout, Accordion, Video or other modules merely because they exist; use them when the source or an explicit user request calls for them.
@@ -138,7 +141,8 @@ Dominik owns migration planning, orchestration, rules and the migration-focused 
 - Keep original source URLs traceable while introducing a hosting-independent asset identity layer.
 - Use normalized-source-URL IDs only as temporary import IDs. Final asset IDs and physical deduplication require full-file SHA-256 hashes.
 - Never deduplicate assets by filename alone.
-- No new page crawl is needed for asset preparation; a later targeted asset download/validation pass provides hashes, dimensions and verified file types.
+- The controlled asset proof confirmed the file-hash identity and target-key model; do not treat that as approval to batch-process unresolved exceptional URLs.
+- No new page crawl is needed for asset preparation; targeted asset download/validation provides hashes, dimensions and verified file types.
 
 ## Important Developments
 
@@ -152,12 +156,14 @@ Dominik owns migration planning, orchestration, rules and the migration-focused 
 - 2026-09-04: The default Handbook detail composition was reproduced successfully from GPT Knowledge without a separate visual template URL.
 - 2026-09-04: The local LP Builder project was audited and historical template/inventory documents were moved out of the active GPT package.
 - 2026-09-04: A central asset SSOT was added under `migration/assets/`, covering 210 unique normalized source URLs with stable temporary import IDs and full page/block traceability.
-- 2026-09-04: S3/CDN provisioning was intentionally deferred; the next asset proof is a small controlled download/validation test before processing the full set.
+- 2026-09-04: S3/CDN provisioning was intentionally deferred and a three-asset controlled download proof successfully validated MIME detection, dimensions, full-file SHA-256, final asset identities, target-key logic and deduplication.
+- 2026-09-04: Full asset processing remains gated until rules are defined for the 14 `{width}` URLs, 94 unreachable entries and two conflicting historical reachability cases.
 
 ## Risks and Open Questions
 
-- 94 manifest assets are currently unreachable and 14 have unknown status; these require source-resolution or later asset-validation handling.
+- 94 manifest assets are currently unreachable and need a classification/retry/source-resolution rule before batch processing.
 - Fourteen AEM asset URLs contain `{width}` placeholders and need a verified resolution rule before download.
+- Two consolidated asset URLs carry conflicting historical reachability observations and need deterministic reconciliation before the full batch.
 - Many source assets lack verified alt text; draft migration can flag `ALT REVIEW REQUIRED`, but publish readiness requires editorial resolution.
 - Persistent image-storage ownership, bucket/CDN configuration and final delivery domain remain open; no values should be invented before provisioning.
 - Counter, Card Carousel, Sticky Footer and Video still have runtime/frontend limitations outside the Handbook core flow.
@@ -166,13 +172,15 @@ Dominik owns migration planning, orchestration, rules and the migration-focused 
 
 ## Next Steps
 
-1. Run the small controlled asset download proof on at most five representative assets: verify MIME type, dimensions, byte size, full SHA-256, final `ast-sha256-*` identity and target-key logic without changing the global manifest, packages, Contentful or S3.
-2. If the asset proof is clean, process the full reachable asset set into validated physical identities and prepare the manifest for later S3/CDN upload.
-3. Then resume additional real migration-ready Handbook detail pages through the validated composition and module contracts.
-4. For each mismatch, distinguish source/asset issues from genuinely missing reusable modules before changing the system.
-5. Continue using Contentful drafts for validation and keep publishing explicit.
-6. Once several pages migrate cleanly, define the scale-out batch/QA process for the remaining migration-ready set.
+1. Define deterministic handling for the 14 `{width}` URLs, including how a concrete downloadable variant is selected and recorded without losing the original source reference.
+2. Define the batch policy for the 94 unreachable entries and reconcile the two conflicting historical reachability cases, including retry/classification outcomes rather than silently dropping them.
+3. Run the controlled asset batch only across the safe resolved/reachable set, computing verified MIME type, dimensions, byte size, full-file SHA-256, final `ast-sha256-*` IDs and target keys while preserving physical deduplication.
+4. Prepare the global manifest for later S3/CDN upload only from verified batch results; keep `target_url` empty until the real target exists.
+5. Then resume additional real migration-ready Handbook detail pages through the validated composition and module contracts.
+6. For each mismatch, distinguish source/asset issues from genuinely missing reusable modules before changing the system.
+7. Continue using Contentful drafts for validation and keep publishing explicit.
+8. Once several pages migrate cleanly, define the scale-out batch/QA process for the remaining migration-ready set.
 
 ## Last Confirmed
 
-2026-09-04: the source pipeline, Handbook module/composition model and central asset manifest are established. Before scaling the remaining pages, the next proof is a small controlled asset download/validation run; S3/CDN provisioning remains intentionally deferred.
+2026-09-04: the controlled three-asset proof passed and confirmed the hash-based identity, target-key and deduplication model. Before processing the full asset set, the migration now needs explicit handling rules for `{width}` placeholders, unreachable assets and conflicting historical reachability observations; S3/CDN provisioning remains intentionally deferred.
