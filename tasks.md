@@ -25,10 +25,10 @@
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open, structural QA rerun passed across all eight representative GPT-migrated drafts; visual Preview QA remains before READY scale-out
-  - Next step: Visually inspect a representative subset of the eight updated Preview pages, especially numbered `handbook-step-media` and `teaser-split-image-right` cases, on desktop and mobile. If the rendered module fidelity is correct, scale the remaining 17 READY pages through the same GPT batch process; keep publishing separate and explicit.
-  - Context: The patched GPT Knowledge was applied and the same eight existing drafts were updated in one QA rerun. All 8/8 updated without new entries, coverage failures, Contentful failures, publishing or systemic failure. Structural read-back confirms numbered patterns now use `handbook-step-media`, applicable non-sequential text+media uses `teaser-split-image-right`, no specific ACTIVE pattern was replaced by Foundation, the bridge is exactly once/first, and no REVIEW assets were used. This is a structural scale-out gate only: the GPT explicitly did not claim visual runtime verification or publish readiness, and informative screenshot ALT text remains review-required.
-  - Source: GPT QA-rerun batch report confirmed on 2026-09-05
+  - Status: Open, GPT batch orchestration and structural mapping work, but visual QA shows the Handbook composition rulebook is still not reliable enough for scale-out
+  - Next step: Pause migration of the remaining READY pages and convert the concrete manual corrections from the representative Preview pages into reusable Handbook composition rules. Tighten how source sections are grouped, how numbered steps, headings, screenshots, split-teasers and Foundation blocks are combined, then rerun the representative pages before scaling.
+  - Context: The eight-page GPT batch and its structural QA rerun both succeeded operationally, but manual Preview review still requires page-specific corrections because the GPT does not yet translate source structure consistently into the intended module composition. This is now broader than the earlier `handbook-step-media` versus `teaser-split` mapping issue: the Handbook needs a more explicit page-composition grammar covering grouping, hierarchy, module boundaries and when content belongs in one module versus a sequence of modules. Batch execution remains the target; the solution should be reusable rules rather than continued one-off page instructions.
+  - Source: Manual Preview QA during representative page refinement on 2026-09-05
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
