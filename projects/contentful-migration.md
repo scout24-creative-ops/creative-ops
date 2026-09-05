@@ -26,16 +26,16 @@ Execution layer:
 - 2 `BLOCKED_SOURCE`
 - 0 genuine `MODULE_GAP`
 
-The first representative GPT batch proved that multiple READY pages can be created/updated as unpublished Contentful drafts in one job. QA then showed that over-engineering deterministic source-to-module relationships created more friction than value for the roughly 60-page scope.
-
-The operating strategy is now deliberately pragmatic:
+The operating strategy is deliberately pragmatic:
 
 1. Build best-effort drafts in GPT batches.
 2. Compare each Preview against the current live source page.
 3. Correct individual pages where necessary.
 4. Generalize only genuinely repeated issues into shared GPT rules.
 
-The latest GPT rule set has now been simplified accordingly. Full association-proof requirements and `COMPOSITION_REVIEW_REQUIRED` as a generic pre-mutation blocker were removed/relaxed. Source fidelity, REVIEW-asset protection and draft-only behavior remain binding.
+The latest GPT rule set has been simplified accordingly. Full association-proof requirements and `COMPOSITION_REVIEW_REQUIRED` as a generic pre-mutation blocker were removed/relaxed. Source fidelity, REVIEW-asset protection and draft-only behavior remain binding.
+
+The cleanup pass on the existing representative drafts exposed one additional repeated composition error: the GPT still tends to treat one text block as one teaser even when several consecutive text blocks or numbered explanations all refer to the same shared screenshot. On pages such as `031-meine-kundendaten`, this causes the image to sit beside only the first short text block while later related copy falls below the teaser, creating large empty space. This is now treated as a reusable Handbook rule rather than a page-specific fix.
 
 ## Active GPT Package
 
@@ -54,7 +54,9 @@ The current GPT package changes cover:
 - Use the most specific appropriate ACTIVE module when the source pattern is clear.
 - Normal non-sequential text + one associated screenshot/image uses `teaser-split-image-right` where appropriate.
 - `teaser-split-image-right` is top-aligned on Desktop/Lap: text starts at the top of the module and aligns with the top of the media; no vertical centering.
-- Explicit numbered guide/step content uses `handbook-step-media` with the visible circular number treatment rather than plain `(n)` text.
+- Teasers are grouped by shared content/media relationship, not by individual text-block boundaries. If multiple consecutive text blocks, headings, paragraphs, lists or numbered explanations all refer to the same screenshot/media, they stay together in the same left teaser column while that media is rendered once on the right. A new teaser begins only when the semantic section or associated media changes.
+- Do not split a shared-media section merely because the source contains multiple paragraph or block nodes. The whole related text group should determine the teaser height so long screenshots do not create artificial whitespace beside only one short paragraph.
+- Explicit numbered guide/step content uses `handbook-step-media` with the visible circular number treatment rather than plain `(n)` text. Where several numbered explanations share one common screenshot for the whole group, keep the related numbered content grouped with that shared media rather than assigning the media to only the first step and pushing the remaining text below it.
 - Numbered circular steps in one sequence do **not** use divider lines between individual steps.
 - Horizontal dividers mark section boundaries, not steps.
 - If a new section has a section headline, the divider appears **above** that headline.
@@ -141,6 +143,7 @@ For persistent asset storage, Dominik defines migration requirements, key/URL co
 - Source-association enrichment is not a prerequisite for continuing READY-page migration.
 - `COMPOSITION_REVIEW_REQUIRED` is not a generic Draft blocker; smaller ambiguity becomes a QA warning where a safe best-effort draft is possible.
 - Split teasers are top-aligned.
+- All content that clearly refers to one shared media item belongs in the same teaser/media group; source paragraph boundaries alone must not split that group into separate teasers.
 - Circular numbered steps are not separated by horizontal divider lines.
 - Section dividers go above section headlines or between independent non-numbered text+image sections.
 - Every batch report exposes both Preview URL and current live source URL for fast comparison.
@@ -149,6 +152,7 @@ For persistent asset storage, Dominik defines migration requirements, key/URL co
 
 - Individual pages will still require manual layout/composition corrections; this is accepted for the current migration volume.
 - Repeated manual corrections must be recognized and promoted into shared rules to avoid unnecessary rework.
+- Shared screenshots that semantically cover several text blocks or steps must be grouped carefully so they are not attached only to the first block and leave artificial whitespace.
 - Informative screenshots without verified source alt text remain `ALT_REVIEW_REQUIRED` before publish readiness.
 - 32 pages touch REVIEW assets; two pages also have unresolved manifest references.
 - Persistent image-storage target, ownership, authentication, delivery URL and platform policies remain open.
@@ -156,9 +160,9 @@ For persistent asset storage, Dominik defines migration requirements, key/URL co
 
 ## Next Steps
 
-1. Load the updated `gpt-instructions-v0.1.md` into the Custom GPT Instructions field.
-2. Replace Knowledge versions of `b2b-handbook-composition.md`, `module-contracts.md` and `component-library.html`.
-3. Continue migrating the READY pages in batches as unpublished drafts.
+1. Patch the GPT Instructions/Handbook Knowledge with the shared-media grouping rule: all consecutive text/step content referring to the same screenshot stays in one teaser/media group; do not split solely on paragraph/block boundaries.
+2. Re-run the affected existing drafts (especially `031-meine-kundendaten` and any other long-image cases) and visually verify that the left content group spans the related text while the image is rendered once on the right.
+3. Continue migrating the remaining READY pages in batches as unpublished drafts.
 4. Visually compare Preview URL and current live source URL page by page; correct pages individually where necessary.
 5. Promote only genuinely repeated QA corrections into shared GPT rules via Codex.
 6. Keep REVIEW/source-blocked pages in their separate remediation track.
@@ -166,4 +170,4 @@ For persistent asset storage, Dominik defines migration requirements, key/URL co
 
 ## Last Confirmed
 
-2026-09-05: the GPT rule set was simplified for the approximately 60-page migration scope. Best-effort draft creation is restored for smaller composition ambiguities while source fidelity, REVIEW-asset protection and draft-only behavior remain binding. Reusable Handbook rules now explicitly require top-aligned split teasers, no divider lines between circular numbered steps, dividers before section headlines or between repeated non-numbered text+image sections, and batch reporting with both Preview and current live source URLs.
+2026-09-05: after the cleanup rerun, one repeated composition issue remained: the GPT can split several text blocks that all refer to one long screenshot into separate teaser/step regions, leaving the image beside only the first short block and producing excessive whitespace. This is now a reusable Handbook rule: group all consecutive content that clearly shares one media item into the same teaser/media section, render the media once, and begin a new teaser only when the semantic section or associated media changes. The pragmatic best-effort draft-first strategy remains unchanged.
