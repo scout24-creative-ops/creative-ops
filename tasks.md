@@ -25,10 +25,10 @@
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open, hardened Handbook grammar now fails safely on ambiguous media associations; source-association enrichment is the next gate
-  - Next step: Do not loosen the GPT grammar or scale the remaining READY pages yet. Use Codex to inspect the four representative `migration/ready` packages and add deterministic, source-backed grouping/media-association metadata where the existing DOM evidence is sufficient (for example group/sequence/association identifiers and association type). Keep genuinely ambiguous cases explicit. Then rerun the four-page GPT QA gate.
-  - Context: The fresh four-page QA rerun (`031`, `039`, `052`, `013`) processed all pages through semantic grouping and planning but updated 0 drafts because all 4 correctly stopped as `COMPOSITION_REVIEW_REQUIRED`; no Contentful or coverage failures, new entries or publishing occurred. Heading ownership and Context/Sequence boundaries were largely determinable, but not all media associations were provable from the current packages. This is evidence that the safer grammar works as intended and that the next bottleneck is source-level association metadata, not another looser GPT rule or page-specific prompting.
-  - Source: Four-page composition QA rerun confirmed on 2026-09-05
+  - Status: Open, strategy simplified to draft-first batch migration with manual QA instead of further deterministic source-association engineering
+  - Next step: Simplify the latest GPT Instructions/Knowledge so strict `COMPOSITION_REVIEW_REQUIRED` machinery no longer blocks safe best-effort drafts. Keep the reusable Handbook layout rules: split-teaser content top-aligned; circular numbered steps without divider lines between them; section dividers above section headlines or between repeated non-numbered text+image sections; batch report includes both Preview URL and current live source URL. Then continue the READY pages in GPT batches and correct pages individually during visual QA.
+  - Context: For the roughly 60-page scope, building a large deterministic grouping/association framework is no longer considered the most efficient path. Batch orchestration already works. The operating model is now build first, review second, and only generalize corrections when the same issue repeats across several pages. The source-association enrichment path is no longer a prerequisite for READY migration; nothing should be published during this phase, REVIEW assets still must not be guessed, and source fidelity remains binding.
+  - Source: Migration strategy simplification and Handbook layout rules confirmed on 2026-09-05
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
