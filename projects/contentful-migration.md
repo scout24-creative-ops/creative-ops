@@ -35,7 +35,9 @@ The operating strategy is deliberately pragmatic:
 
 The latest GPT rule set has been simplified accordingly. Full association-proof requirements and `COMPOSITION_REVIEW_REQUIRED` as a generic pre-mutation blocker were removed/relaxed. Source fidelity, REVIEW-asset protection and draft-only behavior remain binding.
 
-The cleanup pass on the existing representative drafts exposed one additional repeated composition error: the GPT still tends to treat one text block as one teaser even when several consecutive text blocks or numbered explanations all refer to the same shared screenshot. On pages such as `031-meine-kundendaten`, this causes the image to sit beside only the first short text block while later related copy falls below the teaser, creating large empty space. This is now treated as a reusable Handbook rule rather than a page-specific fix.
+The cleanup pass on the representative drafts exposed one additional repeated composition error: the GPT tended to treat one text block as one teaser even when several consecutive text blocks or numbered explanations referred to the same shared screenshot. On pages such as `031-meine-kundendaten`, this caused the image to sit beside only the first short text block while later related copy fell below the teaser, creating large empty space.
+
+That issue is now patched into the GPT rule set. `gpt-instructions-v0.1.md`, `b2b-handbook-composition.md` and `module-contracts.md` explicitly require shared-media grouping: all consecutive content that clearly relates to one media item stays in one left content group, the media is rendered once on the right, and teaser boundaries follow real semantic/media changes rather than paragraph boundaries. `component-library.html` did not need another change because the existing split shell already supports multiple blocks in the left column.
 
 ## Active GPT Package
 
@@ -46,7 +48,7 @@ The current GPT package changes cover:
 - `module-contracts.md`
 - `component-library.html`
 
-`component-library.html` changed because the technical reference for `teaser-split-image-right` still contained `lpb-content--center-y`; that centering behavior was removed so the split module is consistently top-aligned.
+`component-library.html` had previously changed because the technical reference for `teaser-split-image-right` still contained `lpb-content--center-y`; that centering behavior was removed so the split module is consistently top-aligned. The later shared-media patch did not require a further component-library change.
 
 ### Binding Handbook Layout Rules
 
@@ -144,6 +146,7 @@ For persistent asset storage, Dominik defines migration requirements, key/URL co
 - `COMPOSITION_REVIEW_REQUIRED` is not a generic Draft blocker; smaller ambiguity becomes a QA warning where a safe best-effort draft is possible.
 - Split teasers are top-aligned.
 - All content that clearly refers to one shared media item belongs in the same teaser/media group; source paragraph boundaries alone must not split that group into separate teasers.
+- Shared media is rendered once; one long image plus several related text/step blocks should produce one composition group, not multiple stacked teasers with artificial whitespace.
 - Circular numbered steps are not separated by horizontal divider lines.
 - Section dividers go above section headlines or between independent non-numbered text+image sections.
 - Every batch report exposes both Preview URL and current live source URL for fast comparison.
@@ -151,8 +154,8 @@ For persistent asset storage, Dominik defines migration requirements, key/URL co
 ## Risks and Open Questions
 
 - Individual pages will still require manual layout/composition corrections; this is accepted for the current migration volume.
-- Repeated manual corrections must be recognized and promoted into shared rules to avoid unnecessary rework.
-- Shared screenshots that semantically cover several text blocks or steps must be grouped carefully so they are not attached only to the first block and leave artificial whitespace.
+- Repeated manual corrections must still be recognized and promoted into shared rules to avoid unnecessary rework.
+- The shared-media grouping patch still needs visual regression confirmation on `031-meine-kundendaten` before assuming the behavior is stable across new batches.
 - Informative screenshots without verified source alt text remain `ALT_REVIEW_REQUIRED` before publish readiness.
 - 32 pages touch REVIEW assets; two pages also have unresolved manifest references.
 - Persistent image-storage target, ownership, authentication, delivery URL and platform policies remain open.
@@ -160,9 +163,9 @@ For persistent asset storage, Dominik defines migration requirements, key/URL co
 
 ## Next Steps
 
-1. Patch the GPT Instructions/Handbook Knowledge with the shared-media grouping rule: all consecutive text/step content referring to the same screenshot stays in one teaser/media group; do not split solely on paragraph/block boundaries.
-2. Re-run the affected existing drafts (especially `031-meine-kundendaten` and any other long-image cases) and visually verify that the left content group spans the related text while the image is rendered once on the right.
-3. Continue migrating the remaining READY pages in batches as unpublished drafts.
+1. Update the Custom GPT Instructions with the latest `gpt-instructions-v0.1.md` and replace Knowledge versions of `b2b-handbook-composition.md` and `module-contracts.md`; `component-library.html` does not need another replacement for this specific patch if the prior top-alignment version is already active.
+2. Re-run only `031-meine-kundendaten` against its existing draft as the focused regression check. Confirm visually that points 1–5 remain together in the left content area beside the shared screenshot and that the image renders once on the right without the previous artificial whitespace.
+3. If that regression passes, continue migrating the remaining READY pages in batches as unpublished drafts.
 4. Visually compare Preview URL and current live source URL page by page; correct pages individually where necessary.
 5. Promote only genuinely repeated QA corrections into shared GPT rules via Codex.
 6. Keep REVIEW/source-blocked pages in their separate remediation track.
@@ -170,4 +173,4 @@ For persistent asset storage, Dominik defines migration requirements, key/URL co
 
 ## Last Confirmed
 
-2026-09-05: after the cleanup rerun, one repeated composition issue remained: the GPT can split several text blocks that all refer to one long screenshot into separate teaser/step regions, leaving the image beside only the first short block and producing excessive whitespace. This is now a reusable Handbook rule: group all consecutive content that clearly shares one media item into the same teaser/media section, render the media once, and begin a new teaser only when the semantic section or associated media changes. The pragmatic best-effort draft-first strategy remains unchanged.
+2026-09-05: Codex patched the repeated shared-media grouping failure into the GPT Instructions and Handbook/module contracts. `one text block = one teaser` is now explicitly forbidden; multiple related paragraphs or numbered explanations can share one teaser text column, common media is rendered once, and a teaser ends only at a true semantic/media boundary. `031-meine-kundendaten` is the regression example. No module, source package or Contentful content was changed by the rule patch. The next gate is a focused `031` rerun before new READY batches continue.
