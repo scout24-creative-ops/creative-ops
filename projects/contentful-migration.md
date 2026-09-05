@@ -25,47 +25,59 @@ The execution layer contains 57 migration-ready pages, 12 redirects and one miss
 
 Thirty-two pages touch at least one REVIEW asset. Pages `011` and `012` additionally contain seven asset references not currently resolved in the global manifest. The 25 READY pages use only promoted SAFE assets or no assets.
 
-The first representative GPT batch covered eight READY pages and proved that the Custom GPT can process multiple migration-ready packages in one job, create or update the correct Contentful drafts and keep publishing explicit. A structural QA rerun after tightening the mapping layer also passed cleanly: numbered sequences were mapped to `handbook-step-media`, applicable non-sequential text+media to `teaser-split-image-right`, specific ACTIVE modules beat generic Foundation, no REVIEW assets were used, and no duplicate entries or publish actions occurred.
+The first representative GPT batch proved multi-page orchestration and draft creation. The first mapping patch fixed the obvious module-selection failures (`handbook-step-media` for explicit numbered sequences, `teaser-split-image-right` for appropriate non-sequential text+media) and the structural rerun passed, but manual Preview QA still showed that the GPT could form the wrong page structure even while using technically valid modules.
 
-Manual Preview QA has now exposed the next quality boundary: the Handbook rulebook is still not precise enough to reproduce the intended page structure without repeated page-specific corrections. The remaining issue is broader than individual module recognition. The GPT still needs a stronger composition grammar for how source blocks are grouped into sections, how headings/intro/body/media belong together, where one module ends and the next begins, how sequence-level media should be placed, and when a page should use one split module versus several step modules or Foundation blocks.
+A second, composition-focused Codex pass has now hardened the Handbook grammar. It changed:
 
-Scale-out of the remaining 17 READY pages is therefore paused. The next step is to capture the concrete manual corrections from the representative Preview pages and convert them into reusable Handbook composition rules, then rerun the same representative pages before resuming batch migration.
+- `gpt-package/gpt-instructions-v0.1.md`
+- `gpt-package/b2b-handbook-composition.md`
+- `gpt-package/module-contracts.md`
+
+No new module was built, `component-library.html` did not need changes, `migration/ready` was untouched and Contentful was not mutated during this rule update.
+
+The confirmed composition root causes were weak rules for grouping, module boundaries, media association, heading ownership and sequence boundaries. The updated grammar now requires semantic grouping before module selection and explicitly supports Intro, Context/Text-Media, Step Sequence, List/Legal and CTA groups.
+
+The next gate is to load the updated Instructions/Knowledge into the Custom GPT and rerun the four representative pages (`031`, `039`, `052`, `013`) without bespoke page-specific corrective prompts. Scale-out remains paused until that rerun is visually convincing.
 
 ## Target Composition Model
 
 The active page model uses global GPT Instructions plus Foundation/Runtime rules, `module-contracts.md`, `component-library.html` and `b2b-handbook-composition.md`. Fixed Hub/Guide HTML skeletons remain abandoned.
 
-Current binding mapping rules include:
+### Binding composition grammar
 
-- H1 + Intro -> Foundation.
-- Non-sequential text + one associated media -> existing `teaser-split-image-right`.
-- Explicit numbered sequence -> `handbook-step-media` with Number variant; the source marker is removed from plain body text and rendered through the module's dedicated number treatment.
-- Number + Body without step-specific media remains `handbook-step-media`; lack of media is not a reason to fall back to Foundation.
-- Heading + Body + Media within guide/step semantics -> `handbook-step-media` Heading variant.
-- Body + Media within guide/step semantics -> `handbook-step-media` Body variant.
-- Repeated Step Media sections use `border-top padding-top-xl margin-top-xl`.
-- Legal/plain/list content uses Foundation only when no more specific ACTIVE module is justified.
-- `Specific ACTIVE Module beats generic Foundation` is binding.
-- Before Contentful mutation the GPT derives a Page Module Plan and runs a coverage check so every MIGRATE block and media reference is consumed exactly once without flattening source semantics.
+The GPT must not select modules block-by-block immediately. The required order is:
 
-These rules are necessary but not yet sufficient. The next revision must add a Handbook composition grammar that governs grouping and hierarchy, not only Source Pattern -> Module selection.
+1. Read source order and hierarchy.
+2. Form semantic groups.
+3. Determine heading ownership.
+4. Determine media association.
+5. Determine sequence/section boundaries.
+6. Select the most specific valid ACTIVE module(s).
+7. Build the Page Module Plan.
+8. Run the coverage check.
+9. Only then build `htmlSource` / mutate Contentful.
 
-### Composition grammar to harden next
+Current grouping rules:
 
-The reusable rulebook should explicitly define at least:
+- H1 + immediate intro without a more specific pattern -> Foundation Intro group.
+- Context heading/body/media immediately before a numbered sequence stays a separate Context/Text-Media group; its screenshot must not be assigned to Step 1 merely because of DOM proximity.
+- Normal non-sequential text + one associated media -> `teaser-split-image-right`.
+- Explicit numbered sequence -> `handbook-step-media`; each step keeps its number semantics and sequence boundaries.
+- Step-specific media is used only when the source association is evidenced.
+- Sequence-level media is consumed once for the sequence and never duplicated; if no supported carrier exists, use `COMPOSITION_REVIEW_REQUIRED` rather than guessing.
+- Module headings are used only when the heading clearly belongs to that semantic group. Section/sequence headings remain Foundation. Every heading is consumed exactly once.
+- Legal/plain/list content remains Foundation only when no more specific ACTIVE pattern applies.
+- `Specific ACTIVE Module beats generic Foundation` remains binding.
 
-- how consecutive source blocks form one logical content section;
-- when a heading, explanatory body and screenshot belong to the same module;
-- when a screenshot is sequence-level context rather than step-specific media;
-- when numbered statements form one guide sequence versus independent sections;
-- when text+media should be one `teaser-split-image-right` instead of Foundation plus media or a guide module;
-- when repeated screenshots require repeated split modules;
-- when headings should remain outside a module versus become the module heading;
-- how source hierarchy and DOM order determine module boundaries;
-- how section rhythm/spacers are applied between logical groups;
-- how the Page Module Plan should express groups/sections before selecting modules.
+Each planned module now needs explicit consumed source block IDs/range, start/end conditions, heading consumed, media consumed and links consumed. DOM adjacency alone is insufficient to establish a semantic association.
 
-The goal is not a rigid page skeleton. It is a deterministic grammar that preserves source meaning while composing from the existing ACTIVE module vocabulary.
+The Page Module Plan now records semantic group, group type, heading ownership, sequence/step IDs where relevant, media-association type, target module/variant, consumed contents and the reason for the module choice.
+
+Coverage must verify complete and unique block/heading/link/media consumption, source order, context/sequence boundaries and evidenced associations. Ambiguous composition becomes `COMPOSITION_REVIEW_REQUIRED` rather than a guessed but formally valid page.
+
+### Known review case
+
+For `052-scoutreport`, media `b0020` and `b0021` are not unambiguously attributable to a single step from the available source structure. The grammar therefore does not guess a step assignment; this is an explicit `COMPOSITION_REVIEW_REQUIRED` case unless the sequence-level carrier can represent the source faithfully.
 
 ## Asset Migration Status
 
@@ -83,13 +95,13 @@ A deterministic storage upload plan exists for the 87 verified blobs. The upload
 
 1. Work from `migration/ready/` and preserve source content, order, links and traceability.
 2. Use the global asset manifest as SSOT; keep REVIEW assets separate and never guess them.
-3. Use the most specific valid ACTIVE module for a recognized source pattern; Foundation is not a convenience fallback.
-4. Group source blocks into logical Handbook sections before choosing the final module composition.
-5. Require an internal Page Module Plan and coverage check before Contentful mutation.
-6. Let the Custom GPT perform semantic page composition and draft creation in batches; Codex owns pipeline engineering, contracts, diagnostics and reusable fixes.
-7. Keep Contentful draft-first and never publish without explicit approval.
-8. Use representative structural and visual QA gates before scaling to all READY pages.
-9. Convert repeated manual corrections into reusable composition rules rather than maintaining page-specific instructions.
+3. Group source blocks semantically before choosing modules.
+4. Use the most specific valid ACTIVE module; Foundation is not a convenience fallback.
+5. Require a Page Module Plan and coverage check before Contentful mutation.
+6. Prefer `COMPOSITION_REVIEW_REQUIRED` over guessed associations.
+7. Let the Custom GPT perform semantic page composition and draft creation in batches; Codex owns pipeline engineering, contracts, diagnostics and reusable fixes.
+8. Keep Contentful draft-first and never publish without explicit approval.
+9. Convert repeated manual corrections into reusable grammar instead of permanent page-specific instructions.
 
 ## Dominik's Role
 
@@ -111,24 +123,23 @@ For persistent asset storage, Dominik defines migration requirements, key/URL co
 ## Confirmed Decisions
 
 - The Anwenderhandbuch remains the first proof of the broader migration model.
-- Batch migration is the intended execution model; do not return to manual page-by-page prompting as the operating model.
-- Codex owns migration engineering and reusable contract fixes; the Custom GPT owns semantic composition and Contentful draft creation.
+- Batch migration remains the intended operating model; manual page-by-page correction is QA input, not the target workflow.
+- Codex owns migration engineering and reusable rule fixes; the Custom GPT owns semantic composition and Contentful draft creation.
 - `migration/ready/` is the normal GPT migration input.
 - Source content/order must be preserved; do not invent missing content or associations.
 - Fixed Hub/Guide page skeletons remain out of scope.
-- `module-contracts.md`, Foundation, Runtime and Handbook composition rules remain binding.
 - Contentful remains draft-first.
 - REVIEW assets must never be silently repaired, guessed or promoted.
 - Storage/platform work continues in parallel and must not block READY-page rule development.
-- The corrected Source Pattern -> Module layer passes structural QA, but visual/manual QA shows composition grouping still needs refinement.
-- Do not scale the remaining READY pages until representative pages can be built correctly without page-specific corrective prompts.
-- Manual corrections from QA should be treated as evidence for reusable rule changes, not as permanent page overrides.
-- Additive source metadata such as `group_id`, `group_role`, `sequence_id`, `step_number`, association IDs and source layout may improve determinism if the composition grammar cannot be derived reliably from existing migration-ready data.
+- Grouping must happen before module selection.
+- DOM adjacency alone is not proof of media or heading ownership.
+- Ambiguous composition should stop as `COMPOSITION_REVIEW_REQUIRED` rather than produce a guessed layout.
+- Do not scale the remaining READY pages until representative pages can be built correctly without bespoke corrective prompts.
 
 ## Risks and Open Questions
 
-- The Handbook composition grammar is still too permissive, leading to incorrect module grouping and page structure despite correct individual module recognition.
-- Repeated page-specific corrective instructions would undermine the batch migration goal if converted into one-off exceptions instead of reusable rules.
+- The new composition grammar still needs real GPT/Preview validation on the representative pages.
+- `052-scoutreport` exposes an explicit ambiguity around media `b0020` / `b0021` that should not be guessed.
 - Informative screenshots without verified source alt text remain `ALT REVIEW REQUIRED` and block publish readiness until editorial resolution.
 - 32 pages touch REVIEW assets; two pages also have unresolved manifest references.
 - Persistent image-storage target, ownership, authentication, delivery URL and platform policies remain open.
@@ -137,15 +148,15 @@ For persistent asset storage, Dominik defines migration requirements, key/URL co
 
 ## Next Steps
 
-1. Finish manual QA on the representative pages and record every correction as a Source Pattern / intended logical group / expected module composition, not as a page-specific instruction.
-2. Consolidate these corrections into a stricter `b2b-handbook-composition.md` grammar, plus any necessary clarifications in `module-contracts.md`.
-3. Decide whether existing migration-ready fields are sufficient to infer grouping; only add `group_id`, `sequence_id`, associations or layout metadata if the rules cannot be made reliable from current data.
-4. Rerun the same representative pages in the GPT without bespoke page instructions and verify that the composition is now correct on desktop and mobile.
-5. Only after that gate passes, migrate the remaining 17 READY pages in larger GPT batches.
+1. Update the Custom GPT Instructions field with `gpt-instructions-v0.1.md` and replace Knowledge versions of `b2b-handbook-composition.md` and `module-contracts.md`.
+2. Start a fresh QA chat and rerun only `031-meine-kundendaten`, `039-merkzettel-und-suchauftrag`, `052-scoutreport` and `013-das-portal` against the existing drafts, with no bespoke page-specific structure instructions.
+3. Require the GPT to surface `COMPOSITION_REVIEW_REQUIRED` instead of guessing where the new grammar cannot establish a safe composition.
+4. Visually compare desktop/mobile previews for semantic grouping, module boundaries, heading ownership, media association, step sequence boundaries and source order.
+5. If those four pages now render correctly without individual corrections, resume batch migration of the remaining 17 READY pages.
 6. Keep all READY pages unpublished until separate content/ALT/final QA approval.
 7. Keep REVIEW/source-blocked pages in a separate remediation queue.
 8. Continue storage/platform alignment with Peter in parallel.
 
 ## Last Confirmed
 
-2026-09-05: the GPT batch mechanism and individual Source Pattern -> Module mapping are working, but manual Preview QA shows that the Handbook composition rulebook still allows incorrect grouping and page structure. The remaining READY-page scale-out is paused. The next quality step is to translate the representative manual corrections into a reusable Handbook composition grammar and rerun the same pages without bespoke corrective prompts.
+2026-09-05: Codex hardened the Handbook composition grammar across GPT Instructions, Handbook composition and module contracts. Grouping, boundaries, media association, heading ownership and sequence boundaries are now explicit; grouping must precede module selection, and ambiguous cases become `COMPOSITION_REVIEW_REQUIRED`. No new module, source-package change or Contentful mutation was made. The next gate is a four-page GPT QA rerun after loading the updated Instructions/Knowledge.
