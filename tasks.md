@@ -25,10 +25,10 @@
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open, pragmatic draft-first batch migration active; repeated shared-media grouping issue patched into GPT rules
-  - Next step: Update the Custom GPT Instructions with the latest `gpt-instructions-v0.1.md` and replace Knowledge versions of `b2b-handbook-composition.md` and `module-contracts.md`; then rerun `031-meine-kundendaten` as a focused regression check before continuing new READY-page batches.
-  - Context: The current operating model is build first, visual QA second, and only repeated issues are generalized. The latest repeated issue was that multiple consecutive text/step blocks referring to one long screenshot were split into separate modules, leaving excessive whitespace. The new rule makes shared-media grouping binding: all related content stays in one left content group while the media renders once on the right; teaser boundaries now follow real section/media changes rather than paragraph boundaries. Top-aligned split teasers, circular numbered steps without internal dividers, section-divider placement, source fidelity, REVIEW-asset protection and draft-only Contentful behavior remain binding.
-  - Source: Shared-media grouping patch confirmed on 2026-09-05
+  - Status: Open, pragmatic draft-first batch migration active; representative detail-page cleanup passed
+  - Next step: Continue with the remaining not-yet-migrated READY detail pages in GPT batches, then compare each Contentful Preview with its current live source and correct only page-specific issues. Always exclude `006-anwender-handbuch` from detail-page migration/cleanup batches because it is the Handbook hub/start page.
+  - Context: The shared-media regression on `031-meine-kundendaten` passed visually. A subsequent six-page cleanup left `004` and `013` unchanged and updated `001`, `039`, `046` and `052`; all six remained unpublished, no new entries were created, and shared-media grouping/top alignment/numbered-step/divider rules now produce a consistent draft-first baseline. Only repeated QA problems should trigger another shared rule patch.
+  - Source: Handbook shared-media regression and six-page cleanup confirmed on 2026-09-05
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
