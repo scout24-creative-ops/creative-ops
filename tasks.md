@@ -25,10 +25,10 @@
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open, first GPT batch proved orchestration; quality-gate mapping patch prepared but not yet active in GPT Knowledge
-  - Next step: Replace the active GPT Knowledge versions of `module-contracts.md`, `b2b-handbook-composition.md` and `component-library.html` with the patched versions, then rerun the same eight-page batch against the existing Contentful drafts and compare module/visual fidelity before scaling.
-  - Context: Root cause is confirmed in the mapping layer, not batch orchestration. The migration-ready packages are sufficient for the observed issues. The patch makes numbered sequences map to `handbook-step-media` with dedicated number treatment, promotes the existing `teaser-split-image-right` pattern for non-sequential text+media, establishes `specific ACTIVE module beats generic Foundation`, and requires an internal Page Module Plan plus coverage check before Contentful mutation. No new module was built; `migration/ready` and Contentful were unchanged. The original GPT Knowledge uploads are read-only in Codex, so the patch must be applied to the active GPT Knowledge before QA rerun.
-  - Source: GPT batch visual QA and mapping-layer diagnosis confirmed on 2026-09-05
+  - Status: Open, structural QA rerun passed across all eight representative GPT-migrated drafts; visual Preview QA remains before READY scale-out
+  - Next step: Visually inspect a representative subset of the eight updated Preview pages, especially numbered `handbook-step-media` and `teaser-split-image-right` cases, on desktop and mobile. If the rendered module fidelity is correct, scale the remaining 17 READY pages through the same GPT batch process; keep publishing separate and explicit.
+  - Context: The patched GPT Knowledge was applied and the same eight existing drafts were updated in one QA rerun. All 8/8 updated without new entries, coverage failures, Contentful failures, publishing or systemic failure. Structural read-back confirms numbered patterns now use `handbook-step-media`, applicable non-sequential text+media uses `teaser-split-image-right`, no specific ACTIVE pattern was replaced by Foundation, the bridge is exactly once/first, and no REVIEW assets were used. This is a structural scale-out gate only: the GPT explicitly did not claim visual runtime verification or publish readiness, and informative screenshot ALT text remains review-required.
+  - Source: GPT QA-rerun batch report confirmed on 2026-09-05
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
