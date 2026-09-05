@@ -33,15 +33,22 @@ The operating strategy is deliberately pragmatic:
 3. Correct individual pages where necessary.
 4. Generalize only genuinely repeated issues into shared GPT rules.
 
-The latest GPT rule set has been simplified accordingly. Full association-proof requirements and `COMPOSITION_REVIEW_REQUIRED` as a generic pre-mutation blocker were removed/relaxed. Source fidelity, REVIEW-asset protection and draft-only behavior remain binding.
+The current GPT rule set is now simplified and stable enough for throughput. Full association-proof requirements and `COMPOSITION_REVIEW_REQUIRED` as a generic pre-mutation blocker were removed/relaxed. Source fidelity, REVIEW-asset protection and draft-only behavior remain binding.
 
-The cleanup pass on the representative drafts exposed one additional repeated composition error: the GPT tended to treat one text block as one teaser even when several consecutive text blocks or numbered explanations referred to the same shared screenshot. On pages such as `031-meine-kundendaten`, this caused the image to sit beside only the first short text block while later related copy fell below the teaser, creating large empty space.
+The repeated shared-media grouping issue has been patched and visually confirmed on `031-meine-kundendaten`: all related numbered content can remain together beside one shared screenshot without artificial whitespace. A follow-up cleanup of six previously created detail drafts confirmed the current baseline:
 
-That issue is now patched into the GPT rule set. `gpt-instructions-v0.1.md`, `b2b-handbook-composition.md` and `module-contracts.md` explicitly require shared-media grouping: all consecutive content that clearly relates to one media item stays in one left content group, the media is rendered once on the right, and teaser boundaries follow real semantic/media changes rather than paragraph boundaries. `component-library.html` did not need another change because the existing split shell already supports multiple blocks in the left column.
+- `001`, `039`, `046`, `052` updated
+- `004`, `013` already conformant / no change required
+- no new entries created
+- nothing published
+- all six remained unpublished drafts
+- shared-media grouping, top alignment, circular-step treatment and divider rules are now consistently applied at draft-first quality
+
+`006-anwender-handbuch` is the Handbook hub/start page and is now explicitly excluded from automated detail-page migration and cleanup batches. It must not be treated like a normal Handbook detail page.
 
 ## Active GPT Package
 
-The current GPT package changes cover:
+The current GPT package covers:
 
 - `gpt-instructions-v0.1.md`
 - `b2b-handbook-composition.md`
@@ -67,6 +74,7 @@ The current GPT package changes cover:
 - Bridge stylesheet remains exactly once at the beginning of newly created/fully recomposed `htmlSource` until frontend-level loading exists.
 - Contentful remains draft-first; never publish without explicit approval.
 - REVIEW assets must not be guessed or silently substituted.
+- `006-anwender-handbuch` is a hub/start-page exception and must be ignored by automated detail-page migration/cleanup prompts unless explicitly requested as a hub task.
 
 ### Best-effort QA Behavior
 
@@ -83,7 +91,7 @@ Only stop a page when proceeding would require invented content, a REVIEW asset,
 
 ## Draft-first QA Workflow
 
-1. Load one or more READY migration packages into the Custom GPT.
+1. Load one or more READY detail-page migration packages into the Custom GPT; exclude `006-anwender-handbuch` by default.
 2. GPT builds or updates all pages in the batch sequentially as unpublished Contentful drafts.
 3. GPT follows the maintained module/layout rules and produces the best supported composition from the available source data.
 4. Ambiguities are surfaced as QA warnings instead of blocking the whole page where safe drafting is possible.
@@ -139,6 +147,7 @@ For persistent asset storage, Dominik defines migration requirements, key/URL co
 - Generalize only repeated issues into GPT rules.
 - Codex owns technical pipeline/contract changes; the Custom GPT owns semantic composition and Contentful draft creation.
 - `migration/ready/` is the normal GPT migration input.
+- `006-anwender-handbuch` is the Handbook hub/start page and is excluded from normal detail-page migration and cleanup batches.
 - Source content/order must be preserved; do not invent missing content or associations.
 - Contentful remains draft-first.
 - REVIEW assets must never be silently repaired, guessed or promoted.
@@ -155,7 +164,6 @@ For persistent asset storage, Dominik defines migration requirements, key/URL co
 
 - Individual pages will still require manual layout/composition corrections; this is accepted for the current migration volume.
 - Repeated manual corrections must still be recognized and promoted into shared rules to avoid unnecessary rework.
-- The shared-media grouping patch still needs visual regression confirmation on `031-meine-kundendaten` before assuming the behavior is stable across new batches.
 - Informative screenshots without verified source alt text remain `ALT_REVIEW_REQUIRED` before publish readiness.
 - 32 pages touch REVIEW assets; two pages also have unresolved manifest references.
 - Persistent image-storage target, ownership, authentication, delivery URL and platform policies remain open.
@@ -163,14 +171,13 @@ For persistent asset storage, Dominik defines migration requirements, key/URL co
 
 ## Next Steps
 
-1. Update the Custom GPT Instructions with the latest `gpt-instructions-v0.1.md` and replace Knowledge versions of `b2b-handbook-composition.md` and `module-contracts.md`; `component-library.html` does not need another replacement for this specific patch if the prior top-alignment version is already active.
-2. Re-run only `031-meine-kundendaten` against its existing draft as the focused regression check. Confirm visually that points 1–5 remain together in the left content area beside the shared screenshot and that the image renders once on the right without the previous artificial whitespace.
-3. If that regression passes, continue migrating the remaining READY pages in batches as unpublished drafts.
-4. Visually compare Preview URL and current live source URL page by page; correct pages individually where necessary.
-5. Promote only genuinely repeated QA corrections into shared GPT rules via Codex.
-6. Keep REVIEW/source-blocked pages in their separate remediation track.
-7. Continue storage/platform alignment with Peter in parallel.
+1. Continue with the remaining not-yet-migrated READY detail pages in GPT batches; exclude `006-anwender-handbuch`.
+2. For each batch, compare Preview URL and current live source URL page by page and correct only actual page-specific issues.
+3. Promote only genuinely repeated QA corrections into shared GPT rules via Codex.
+4. Keep REVIEW/source-blocked pages in their separate remediation track.
+5. Keep all migrated pages unpublished until separate content/ALT/final visual QA approval.
+6. Continue storage/platform alignment with Peter in parallel.
 
 ## Last Confirmed
 
-2026-09-05: Codex patched the repeated shared-media grouping failure into the GPT Instructions and Handbook/module contracts. `one text block = one teaser` is now explicitly forbidden; multiple related paragraphs or numbered explanations can share one teaser text column, common media is rendered once, and a teaser ends only at a true semantic/media boundary. `031-meine-kundendaten` is the regression example. No module, source package or Contentful content was changed by the rule patch. The next gate is a focused `031` rerun before new READY batches continue.
+2026-09-05: the shared-media grouping regression passed visually on `031-meine-kundendaten`. A subsequent cleanup batch checked six existing detail drafts: `001`, `039`, `046` and `052` were updated; `004` and `013` required no change. No new entries were created, nothing was published and all six remained unpublished. The representative detail-page baseline is now considered consistent enough to continue with new READY-page batches. `006-anwender-handbuch` is confirmed as the Handbook hub/start page and must be ignored by normal detail-page migration and cleanup automation.
