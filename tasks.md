@@ -25,10 +25,10 @@
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open, Handbook composition grammar hardened; four-page GPT QA rerun is the next gate before scale-out
-  - Next step: Update the Custom GPT Instructions with `gpt-instructions-v0.1.md`, replace Knowledge versions of `b2b-handbook-composition.md` and `module-contracts.md`, then rerun `031`, `039`, `052` and `013` against their existing drafts without bespoke page-specific corrections. Visually verify grouping, module boundaries, heading ownership, media association and sequence boundaries before resuming the remaining 17 READY pages.
-  - Context: Codex confirmed no true module gap and strengthened the reusable composition layer rather than adding page exceptions. The GPT must now group source blocks before selecting modules, distinguish step-specific from sequence-level media, assign each heading exactly once, define explicit module boundaries/consumed blocks, and use `COMPOSITION_REVIEW_REQUIRED` instead of guessing ambiguous compositions. `migration/ready` and Contentful were unchanged; no new module was built and `component-library.html` did not require changes. `052-scoutreport` currently exposes an explicit ambiguity around media `b0020` / `b0021` that should not be guessed.
-  - Source: Handbook composition-grammar Codex pass confirmed on 2026-09-05
+  - Status: Open, hardened Handbook grammar now fails safely on ambiguous media associations; source-association enrichment is the next gate
+  - Next step: Do not loosen the GPT grammar or scale the remaining READY pages yet. Use Codex to inspect the four representative `migration/ready` packages and add deterministic, source-backed grouping/media-association metadata where the existing DOM evidence is sufficient (for example group/sequence/association identifiers and association type). Keep genuinely ambiguous cases explicit. Then rerun the four-page GPT QA gate.
+  - Context: The fresh four-page QA rerun (`031`, `039`, `052`, `013`) processed all pages through semantic grouping and planning but updated 0 drafts because all 4 correctly stopped as `COMPOSITION_REVIEW_REQUIRED`; no Contentful or coverage failures, new entries or publishing occurred. Heading ownership and Context/Sequence boundaries were largely determinable, but not all media associations were provable from the current packages. This is evidence that the safer grammar works as intended and that the next bottleneck is source-level association metadata, not another looser GPT rule or page-specific prompting.
+  - Source: Four-page composition QA rerun confirmed on 2026-09-05
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
