@@ -25,10 +25,10 @@
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open, GPT batch orchestration and structural mapping work, but visual QA shows the Handbook composition rulebook is still not reliable enough for scale-out
-  - Next step: Pause migration of the remaining READY pages and convert the concrete manual corrections from the representative Preview pages into reusable Handbook composition rules. Tighten how source sections are grouped, how numbered steps, headings, screenshots, split-teasers and Foundation blocks are combined, then rerun the representative pages before scaling.
-  - Context: The eight-page GPT batch and its structural QA rerun both succeeded operationally, but manual Preview review still requires page-specific corrections because the GPT does not yet translate source structure consistently into the intended module composition. This is now broader than the earlier `handbook-step-media` versus `teaser-split` mapping issue: the Handbook needs a more explicit page-composition grammar covering grouping, hierarchy, module boundaries and when content belongs in one module versus a sequence of modules. Batch execution remains the target; the solution should be reusable rules rather than continued one-off page instructions.
-  - Source: Manual Preview QA during representative page refinement on 2026-09-05
+  - Status: Open, Handbook composition grammar hardened; four-page GPT QA rerun is the next gate before scale-out
+  - Next step: Update the Custom GPT Instructions with `gpt-instructions-v0.1.md`, replace Knowledge versions of `b2b-handbook-composition.md` and `module-contracts.md`, then rerun `031`, `039`, `052` and `013` against their existing drafts without bespoke page-specific corrections. Visually verify grouping, module boundaries, heading ownership, media association and sequence boundaries before resuming the remaining 17 READY pages.
+  - Context: Codex confirmed no true module gap and strengthened the reusable composition layer rather than adding page exceptions. The GPT must now group source blocks before selecting modules, distinguish step-specific from sequence-level media, assign each heading exactly once, define explicit module boundaries/consumed blocks, and use `COMPOSITION_REVIEW_REQUIRED` instead of guessing ambiguous compositions. `migration/ready` and Contentful were unchanged; no new module was built and `component-library.html` did not require changes. `052-scoutreport` currently exposes an explicit ambiguity around media `b0020` / `b0021` that should not be guessed.
+  - Source: Handbook composition-grammar Codex pass confirmed on 2026-09-05
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
