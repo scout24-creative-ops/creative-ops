@@ -25,10 +25,10 @@
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open, pragmatic draft-first batch migration active; representative detail-page cleanup passed
-  - Next step: Continue with the remaining not-yet-migrated READY detail pages in GPT batches, then compare each Contentful Preview with its current live source and correct only page-specific issues. Always exclude `006-anwender-handbuch` from detail-page migration/cleanup batches because it is the Handbook hub/start page.
-  - Context: The shared-media regression on `031-meine-kundendaten` passed visually. A subsequent six-page cleanup left `004` and `013` unchanged and updated `001`, `039`, `046` and `052`; all six remained unpublished, no new entries were created, and shared-media grouping/top alignment/numbered-step/divider rules now produce a consistent draft-first baseline. Only repeated QA problems should trigger another shared rule patch.
-  - Source: Handbook shared-media regression and six-page cleanup confirmed on 2026-09-05
+  - Status: Open, READY draft migration unblocked by package-level asset resolution
+  - Next step: Re-run Batch 1 (`005`, `008`, `009`, `014`, `017`, `019`) against the existing drafts so the five previously omitted SAFE images can be rendered via the new validated `render_url` resolution; then continue the remaining READY detail-page batches. Always exclude `006-anwender-handbuch` because it is the Handbook hub/start page.
+  - Context: Asset resolution now covers all 56 detail-page `content-assets.json` packages. The 100 SAFE source identities (105 references) have validated draft-time `render_url` values; 110 REVIEW identities (116 references) remain `BLOCKED_DO_NOT_RENDER`. Final AEM-independent delivery is still separate: 87 verified blobs need storage/CDN upload before `target_url` promotion. Nothing should be published during this phase.
+  - Source: Handbook asset-resolution pass confirmed on 2026-09-05
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
@@ -41,8 +41,8 @@
   - Area: Marketing Content Platform
   - Status: Open, ready for platform alignment; migration-side upload contract prepared
   - Next step: Let Peter drive the actual storage/S3 pilot with Allan / the relevant platform contacts; align the prepared 87-blob upload plan and storage contract, then confirm the concrete storage target, ownership, authentication, delivery URL and platform header/security requirements before any real upload.
-  - Context: Migration now provides verified SHA-based identities, stable target keys, a deterministic 87-blob upload plan, byte-verified Content-Type rules, idempotency/failure behavior and the target_url promotion gate. Dominik should keep defining integration requirements without becoming the ongoing AWS/storage operator.
-  - Source: Asset ownership direction from 2026-08-30; storage/upload contract confirmed on 2026-09-04
+  - Context: Migration now provides verified SHA-based identities, stable target keys, a deterministic 87-blob upload plan, byte-verified Content-Type rules, idempotency/failure behavior and the target_url promotion gate. Draft migration can temporarily use validated `render_url` values, but durable AEM-independent delivery still requires the storage/CDN target. Dominik should keep defining integration requirements without becoming the ongoing AWS/storage operator.
+  - Source: Asset ownership direction from 2026-08-30; package asset resolution confirmed on 2026-09-05
 
 - [ ] Set up B2B automation discovery with Juliane
   - Area: E-Mail Automation Professional
