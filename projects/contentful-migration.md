@@ -14,93 +14,73 @@ ScoutWiki project pages:
 
 ## Current Status
 
-The B2B Anwenderhandbuch `/tipps` area remains the first end-to-end pilot. Source preparation, asset identity, storage handoff, GPT batch orchestration and the core Handbook composition grammar are materially validated.
+The B2B Anwenderhandbuch `/tipps` area remains the first end-to-end pilot. Source preparation, asset identity, storage handoff and GPT batch orchestration are materially validated.
 
-The execution layer contains 57 migration-ready pages, 12 redirects and one missing source. Page readiness remains:
+Execution layer:
 
+- 57 migration-ready pages
+- 12 redirects
+- 1 missing source
 - 25 READY
 - 30 primarily `BLOCKED_REVIEW_ASSET`
 - 2 `BLOCKED_SOURCE`
 - 0 genuine `MODULE_GAP`
 
-Thirty-two pages touch at least one REVIEW asset. Pages `011` and `012` additionally contain seven asset references not currently resolved in the global manifest. The 25 READY pages use only promoted SAFE assets or no assets.
+The first representative GPT batch proved that multiple READY pages can be created/updated as unpublished Contentful drafts in one job. Subsequent QA work improved the module mapping and Handbook composition rules, but also showed diminishing returns from trying to make every source-to-module relationship deterministic before building the relatively small migration set.
 
-The first representative GPT batch proved multi-page orchestration and draft creation. A first mapping patch fixed obvious module-selection failures (`handbook-step-media` for explicit numbered sequences and `teaser-split-image-right` for appropriate non-sequential text+media). Manual Preview QA then showed that technically valid modules could still be composed into the wrong page structure.
+The operating strategy is therefore now pragmatic: build migration drafts first, review them visually, correct pages individually where needed, and only generalize corrections into GPT rules when the same problem repeats across several pages. The source-association enrichment path is no longer a prerequisite for continuing the READY migration track.
 
-A second Codex pass therefore hardened the Handbook grammar across:
-
-- `gpt-package/gpt-instructions-v0.1.md`
-- `gpt-package/b2b-handbook-composition.md`
-- `gpt-package/module-contracts.md`
-
-No new module was built, `component-library.html` did not need changes, `migration/ready` was untouched and Contentful was not mutated during that rule update.
-
-The fresh four-page GPT QA rerun (`031`, `039`, `052`, `013`) now demonstrates that the stricter grammar fails safely instead of guessing:
-
-- 4 input pages
-- 0 drafts updated
-- 4 `COMPOSITION_REVIEW_REQUIRED`
-- 0 coverage failures
-- 0 Contentful failures
-- no new entries
-- nothing published
-
-The GPT could derive semantic groups, heading ownership and Context/Sequence boundaries, but it could not prove all required media associations from the current `migration/ready` data. This is now the primary quality bottleneck. The next step is not to loosen the GPT grammar; it is to enrich the source packages with deterministic, source-backed grouping/media-association metadata where the underlying DOM evidence supports it, while preserving explicit review states for genuinely ambiguous cases.
-
-Scale-out of the remaining 17 READY pages remains paused until this source-association gate is resolved and the four representative pages can pass without bespoke prompts.
+The latest strict grammar that stopped ambiguous pages as `COMPOSITION_REVIEW_REQUIRED` should be simplified rather than kept as a hard pre-mutation gate. Useful module-selection and fidelity rules stay; heavy association proof requirements should not prevent a best-effort draft when the page can be built safely for manual QA.
 
 ## Target Composition Model
 
-The active page model uses global GPT Instructions plus Foundation/Runtime rules, `module-contracts.md`, `component-library.html` and `b2b-handbook-composition.md`. Fixed Hub/Guide HTML skeletons remain abandoned.
+The active page model continues to use GPT Instructions plus Foundation/Runtime rules, `module-contracts.md`, `component-library.html` and `b2b-handbook-composition.md`. Fixed Hub/Guide HTML skeletons remain abandoned.
 
-### Binding composition grammar
+### Rules to keep
 
-The GPT must not select modules block-by-block immediately. The required order is:
+- Preserve source content, order, links and known asset associations; do not invent missing content.
+- Use the most specific appropriate ACTIVE module rather than generic Foundation when a clear module pattern exists.
+- Explicit numbered guide/step content uses `handbook-step-media` and the visible circular number treatment rather than plain `(n)` text.
+- Normal non-sequential text + one associated image/screenshot uses `teaser-split-image-right` where appropriate.
+- `teaser-split-image-right` content is top-aligned: text starts at the top of the module and aligns with the top of the media, not vertically centered.
+- Numbered circular step sequences do not use horizontal divider lines between individual numbered steps.
+- Section divider rule: when a new logical section has a section headline, the divider belongs above that headline. For repeated non-numbered text+image sections without numbered steps, use one divider between sections (effectively before the next section), matching the Handbook reference pattern.
+- Avoid duplicate headings, duplicate media and invented CTAs/navigation.
+- Bridge stylesheet remains exactly once at the beginning of newly created/fully recomposed `htmlSource` until frontend-level loading exists.
+- Contentful remains draft-first; never publish without explicit approval.
+- REVIEW assets must not be guessed or silently substituted.
 
-1. Read source order and hierarchy.
-2. Form semantic groups.
-3. Determine heading ownership.
-4. Determine media association.
-5. Determine sequence/section boundaries.
-6. Select the most specific valid ACTIVE module(s).
-7. Build the Page Module Plan.
-8. Run the coverage check.
-9. Only then build `htmlSource` / mutate Contentful.
+### Rules to simplify / remove as blockers
 
-Current grouping rules:
+- Do not require full source-block consumption metadata, association evidence and explicit start/end conditions before creating a draft.
+- Do not require every media relationship to be provable before Contentful mutation when a sensible best-effort draft can be produced for manual QA.
+- `COMPOSITION_REVIEW_REQUIRED` may be used as a warning/QA flag for uncertain areas, but it should not automatically prevent the whole draft from being created or updated unless proceeding would require inventing content, using a REVIEW asset, or creating a clearly unsupported association.
+- Do not make source-association enrichment a gate for migrating the remaining READY pages.
 
-- H1 + immediate intro without a more specific pattern -> Foundation Intro group.
-- Context heading/body/media immediately before a numbered sequence stays a separate Context/Text-Media group; its screenshot must not be assigned to Step 1 merely because of DOM proximity.
-- Normal non-sequential text + one associated media -> `teaser-split-image-right`.
-- Explicit numbered sequence -> `handbook-step-media`; each step keeps its number semantics and sequence boundaries.
-- Step-specific media is used only when the source association is evidenced.
-- Sequence-level media is consumed once for the sequence and never duplicated; if no supported/evidenced carrier exists, use `COMPOSITION_REVIEW_REQUIRED` rather than guessing.
-- Module headings are used only when the heading clearly belongs to that semantic group. Section/sequence headings remain Foundation. Every heading is consumed exactly once.
-- Legal/plain/list content remains Foundation only when no more specific ACTIVE pattern applies.
-- `Specific ACTIVE Module beats generic Foundation` remains binding.
+## Draft-first QA Workflow
 
-Each planned module needs explicit consumed source block IDs/range, start/end conditions, heading consumed, media consumed and links consumed. DOM adjacency alone is insufficient to establish a semantic association.
+1. Load one or more READY migration packages into the Custom GPT.
+2. GPT builds or updates all pages in the batch sequentially as unpublished Contentful drafts.
+3. GPT follows the maintained module/layout rules and produces the best supported composition from the available source data.
+4. Uncertain composition choices are called out in the batch report instead of blocking the entire page where safe drafting is still possible.
+5. Dominik visually compares each Preview against the current live source page and gives page-specific corrections where needed.
+6. Only repeated corrections that clearly apply across multiple pages are promoted back into reusable GPT Knowledge/Instructions via Codex.
+7. Publish readiness remains a separate later gate covering content, ALT text, assets, links and final visual QA.
 
-The Page Module Plan records semantic group, group type, heading ownership, sequence/step IDs where relevant, media-association type, target module/variant, consumed contents and the reason for the module choice.
+## Batch Report Contract
 
-Coverage must verify complete and unique block/heading/link/media consumption, source order, context/sequence boundaries and evidenced associations. Ambiguous composition becomes `COMPOSITION_REVIEW_REQUIRED` rather than a guessed but formally valid page.
+For every migrated/updated page, the GPT should report at least:
 
-### Source-association enrichment now required
+- page ID / title
+- Contentful entry ID
+- Preview URL
+- current live source URL from the migration-ready package (the public/current AEM/live page URL for side-by-side comparison, not an internal authoring/AEL URL)
+- modules used
+- assets used
+- warnings / manual QA notes
+- published = false
 
-The four-page rerun shows that the existing packages do not expose enough deterministic association information for all representative cases. The next pipeline pass should evaluate additive metadata such as:
-
-- `group_id`
-- `group_role` / semantic group type
-- `sequence_id`
-- `step_number`
-- `association_id` or `associated_block_ids`
-- `media_association_type` (`group-level`, `sequence-level`, `step-specific`)
-- optional source column/layout information where reliably derivable
-- confidence/evidence for every generated association
-
-These fields must be derived from source-backed evidence such as shared AEM/Flexigrid ancestry, DOM containment, column structure, explicit block relationships or other deterministic source signals. They must not convert uncertain proximity into a fake association.
-
-For cases where the original source cannot establish a reliable mapping, the package should remain review-required rather than force the GPT to infer intent.
+The report should make Preview and current live source URL easy to open next to each other during manual QA.
 
 ## Asset Migration Status
 
@@ -112,78 +92,50 @@ The central manifest covers 210 unique normalized source URLs from 221 reference
 - Promoted assets use full-file SHA-256 in `content_hash`, final `ast-sha256-*` IDs and consistent hash-based target keys.
 - `target_url` remains empty until a real storage/CDN target exists and post-upload verification passes.
 
-A deterministic storage upload plan exists for the 87 verified blobs. The upload contract uses byte-verified MIME as `Content-Type`, requires post-upload SHA-256 verification, treats an existing same-byte object as idempotent, and treats an existing different-byte object as a hard failure without overwrite. The immutable cache proposal still requires platform alignment.
-
-## Pilot Execution Principle
-
-1. Work from `migration/ready/` and preserve source content, order, links and traceability.
-2. Use the global asset manifest as SSOT; keep REVIEW assets separate and never guess them.
-3. Group source blocks semantically before choosing modules.
-4. Use the most specific valid ACTIVE module; Foundation is not a convenience fallback.
-5. Require a Page Module Plan and coverage check before Contentful mutation.
-6. Prefer `COMPOSITION_REVIEW_REQUIRED` over guessed associations.
-7. Improve deterministic source metadata when the GPT lacks evidence; do not compensate by weakening safety rules.
-8. Let the Custom GPT perform semantic composition and draft creation in batches; Codex owns pipeline engineering, contracts, diagnostics and reusable fixes.
-9. Keep Contentful draft-first and never publish without explicit approval.
-10. Convert repeated manual corrections into reusable grammar/data improvements instead of permanent page-specific instructions.
+A deterministic storage upload plan exists for the 87 verified blobs. Storage/platform alignment remains a separate parallel track and does not block READY page drafting.
 
 ## Dominik's Role
 
-Dominik owns migration planning, orchestration, rules and the migration-focused Landing Page Builder. He translates source/design decisions into reusable migration rules and modules without absorbing SEO, content, design or infrastructure ownership from the relevant specialists.
+Dominik owns migration planning, orchestration, rules and the migration-focused Landing Page Builder. He translates repeated QA findings into reusable migration rules without trying to eliminate every page-specific correction upfront or absorbing SEO, content, design or infrastructure ownership from the relevant specialists.
 
 For persistent asset storage, Dominik defines migration requirements, key/URL contracts and integration expectations, while Peter / relevant platform contacts drive the actual S3/CDN infrastructure pilot and ongoing storage ownership.
-
-## Key Stakeholders
-
-- B2B Product Marketing as first migration target / fachlich owner
-- Ulrike for content, pages and sitemap coordination
-- Peter for visual design/reference work and asset-storage pilot
-- Beatrice and Core/Contentful stakeholders for platform coordination
-- Mukhammadjon for the Contentful Action/renderer contract
-- SEO for URL/slug, redirect and visibility decisions
-- Daniel Herold / Matthias Brandstätter as senior platform/migration stakeholders
-- Relevant platform contacts for persistent image storage/delivery
 
 ## Confirmed Decisions
 
 - The Anwenderhandbuch remains the first proof of the broader migration model.
-- Batch migration remains the intended operating model; manual page-by-page correction is QA input, not the target workflow.
-- Codex owns migration engineering and reusable rule/data fixes; the Custom GPT owns semantic composition and Contentful draft creation.
+- Batch migration remains the intended operating model.
+- For the roughly 60-page migration scope, optimize for throughput and manual QA rather than a universal deterministic migration framework.
+- Build drafts first, then correct individual pages.
+- Generalize only repeated issues into GPT rules.
+- Codex owns technical pipeline/contract changes; the Custom GPT owns semantic composition and Contentful draft creation.
 - `migration/ready/` is the normal GPT migration input.
 - Source content/order must be preserved; do not invent missing content or associations.
-- Fixed Hub/Guide page skeletons remain out of scope.
 - Contentful remains draft-first.
 - REVIEW assets must never be silently repaired, guessed or promoted.
-- Storage/platform work continues in parallel and must not block READY-page rule development.
-- Grouping must happen before module selection.
-- DOM adjacency alone is not proof of media or heading ownership.
-- Ambiguous composition should stop as `COMPOSITION_REVIEW_REQUIRED` rather than produce a guessed layout.
-- The four-page QA rerun confirms this fail-safe behavior and exposes source-level association metadata as the next bottleneck.
-- Do not loosen the GPT rules to force green results.
-- Do not scale the remaining READY pages until the representative pages pass with source-backed associations and without bespoke corrective prompts.
+- The previous source-association enrichment idea is not a prerequisite for continuing READY-page migration.
+- Heavy `COMPOSITION_REVIEW_REQUIRED` gating should be simplified so ambiguity becomes a QA warning where a safe best-effort draft is possible.
+- Top-aligned split teasers, unseparated circular numbered steps, and consistent section-divider placement are reusable Handbook layout rules.
+- Every batch report should expose both Preview URL and current live source URL for fast side-by-side QA.
 
 ## Risks and Open Questions
 
-- Existing `migration/ready` packages do not yet expose sufficient explicit media/group associations for all representative pages.
-- The source DOM may not contain enough evidence for every association; those cases need explicit review rather than automation.
-- Informative screenshots without verified source alt text remain `ALT REVIEW REQUIRED` and block publish readiness until editorial resolution.
+- Individual pages will still require manual layout/composition corrections; this is accepted for the current migration volume.
+- Repeated manual corrections must still be recognized and promoted into shared rules to avoid unnecessary rework.
+- Informative screenshots without verified source alt text remain `ALT REVIEW REQUIRED` before publish readiness.
 - 32 pages touch REVIEW assets; two pages also have unresolved manifest references.
 - Persistent image-storage target, ownership, authentication, delivery URL and platform policies remain open.
-- Counter, Card Carousel, Sticky Footer and Video still have runtime/frontend limitations outside the Handbook core flow.
 - Bridge CSS is still page-linked rather than centrally loaded.
 
 ## Next Steps
 
-1. Use Codex to inspect the four representative `migration/ready` packages together with their source/processed evidence and identify which semantic/media associations can be derived deterministically.
-2. Define and implement the smallest additive association schema needed by the GPT, with explicit evidence/confidence and no guessed proximity mappings.
-3. Regenerate or enrich the four representative packages only where deterministic evidence exists; preserve review states for unresolved associations.
-4. Rerun the four-page GPT QA gate with the same strict grammar and no page-specific instructions.
-5. Visually verify desktop/mobile grouping, module boundaries, heading ownership, media association, sequence boundaries and source order.
-6. Only after those four pages pass, resume batch migration of the remaining 17 READY pages.
-7. Keep all READY pages unpublished until separate content/ALT/final QA approval.
-8. Keep REVIEW/source-blocked pages in a separate remediation queue.
-9. Continue storage/platform alignment with Peter in parallel.
+1. Simplify the latest GPT Instructions/Handbook Knowledge: preserve useful mapping/fidelity rules, remove strict composition-blocking machinery, and add the confirmed top-alignment/divider/numbered-step rules plus source-URL reporting.
+2. Load the simplified Instructions/Knowledge into `LP Builder - Contentful`.
+3. Continue migrating the READY pages in batches as unpublished drafts.
+4. Visually compare Preview URL and current live source URL page by page; correct pages individually where necessary.
+5. Promote only genuinely repeated QA corrections into shared GPT rules via Codex.
+6. Keep REVIEW/source-blocked pages in their separate remediation track.
+7. Continue storage/platform alignment with Peter in parallel.
 
 ## Last Confirmed
 
-2026-09-05: the hardened Handbook grammar was loaded into the GPT and tested on `031`, `039`, `052` and `013`. All four were safely stopped as `COMPOSITION_REVIEW_REQUIRED`; no drafts were updated, no Contentful/coverage failures occurred, no entries were created and nothing was published. Semantic grouping and section boundaries are substantially more reliable, but not all media associations can be proven from the current migration-ready data. The next gate is deterministic source-association enrichment, not weaker GPT rules or further page-specific prompting.
+2026-09-05: the pilot strategy was deliberately simplified for the approximately 60-page migration scope. Rather than building a large deterministic source-association framework, the team will migrate READY pages as best-effort unpublished drafts, review and correct them individually, and only generalize repeated issues. The GPT rulebook should retain core source/module fidelity plus concrete Handbook layout rules: split-teaser content top-aligned, no dividers between circular numbered steps, dividers before section headlines or between repeated non-numbered text+image sections, and batch reporting with both Preview and current live source URLs.
