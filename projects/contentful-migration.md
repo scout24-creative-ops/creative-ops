@@ -36,27 +36,29 @@ The first GPT-driven representative batch covered eight READY pages:
 - `052-scoutreport`
 - `006-anwender-handbuch`
 
-The GPT successfully processed the whole batch in one job and created Contentful drafts without publishing, proving the desired batch orchestration model. Visual QA did not pass the migration-quality gate: some numbered source structures were flattened into plain text, and text+media areas did not consistently use the intended existing split module.
+The first run proved that the Custom GPT can process the full batch in one job and create Contentful drafts without publishing, but visual QA exposed overly permissive Source Pattern -> Module mapping.
 
-A dedicated mapping-layer diagnosis confirmed that the migration-ready data is sufficient for the observed problems. The root cause is in the reusable Source Pattern -> Module mapping and module whitelist/contract logic, not in batch orchestration or missing source data.
+The mapping-layer patch was then applied to the active GPT Knowledge and the same eight existing drafts were rerun. The structural QA rerun passed cleanly:
 
-A Knowledge/Contract patch has been prepared with updated versions of:
+- 8/8 existing drafts updated
+- 0 new entries
+- 0 coverage failures
+- 0 Contentful failures
+- 0 systemic failures
+- nothing published
+- numbered source sequences map to `handbook-step-media`
+- applicable non-sequential text+media maps to `teaser-split-image-right`
+- no specific ACTIVE pattern was replaced by Foundation
+- bridge stylesheet is exactly once and first
+- no REVIEW assets were processed
 
-- `module-contracts.md`
-- `b2b-handbook-composition.md`
-- `component-library.html`
-- supporting `QA-diagnosis.md`
-- supporting Unified Diff
-
-The original GPT Knowledge uploads are read-only in the Codex session, so this patch is not yet active in the Custom GPT. `migration/ready` and Contentful were not changed while preparing the patch.
+The GPT explicitly did not claim visual runtime verification or publish readiness. Informative screenshots still require ALT review where no verified source alt exists. The next gate is therefore a focused manual visual Preview QA before scaling the remaining 17 READY pages.
 
 ## Target Composition Model
 
 The active page model uses global GPT Instructions plus Foundation/Runtime rules, `module-contracts.md`, `component-library.html` and `b2b-handbook-composition.md`. Fixed Hub/Guide HTML skeletons remain abandoned.
 
-The Handbook hub and representative detail pattern have already been validated as unpublished Contentful drafts. The active catalogue contains the existing Handbook modules including `handbook-category-card` and `handbook-step-media`.
-
-The mapping patch adds or clarifies these binding rules once applied to active GPT Knowledge:
+The active mapping rules now include:
 
 - H1 + Intro -> Foundation.
 - Non-sequential text + one associated media -> existing `teaser-split-image-right`.
@@ -67,9 +69,9 @@ The mapping patch adds or clarifies these binding rules once applied to active G
 - Repeated Step Media sections use `border-top padding-top-xl margin-top-xl`.
 - Legal/plain/list content uses Foundation only when no more specific ACTIVE module is justified.
 - `Specific ACTIVE Module beats generic Foundation` is binding.
-- Before Contentful mutation the GPT must derive a Page Module Plan and run a coverage check so every MIGRATE block and media reference is consumed exactly once without flattening source semantics.
+- Before Contentful mutation the GPT derives a Page Module Plan and runs a coverage check so every MIGRATE block and media reference is consumed exactly once without flattening source semantics.
 
-The patch does not add a new module. `teaser-split-image-right` already existed in the Component Library and is promoted into the active Handbook mapping for this pattern.
+The patch did not add a new module. `teaser-split-image-right` already existed in the Component Library and is now ACTIVE for this Handbook pattern.
 
 ## Asset Migration Status
 
@@ -91,7 +93,7 @@ A deterministic storage upload plan exists for the 87 verified blobs. The upload
 4. Require an internal Page Module Plan and coverage check before Contentful mutation.
 5. Let the Custom GPT perform semantic page composition and draft creation in batches; Codex owns pipeline engineering, contracts, diagnostics and reusable fixes.
 6. Keep Contentful draft-first and never publish without explicit approval.
-7. Use representative QA batches before scaling to all READY pages.
+7. Use representative structural and visual QA gates before scaling to all READY pages.
 
 ## Dominik's Role
 
@@ -122,28 +124,29 @@ For persistent asset storage, Dominik defines migration requirements, key/URL co
 - Contentful remains draft-first.
 - REVIEW assets must never be silently repaired, guessed or promoted.
 - Storage/platform work continues in parallel and must not block READY page QA.
-- The first eight-page batch proved orchestration but not composition fidelity; scale-out is paused until the mapping patch is active and the same batch passes the rerun.
-- For future scale, additive source metadata such as `group_id`, `group_role`, `sequence_id`, `step_number`, association IDs and source layout may improve determinism, but these are optional and not required for the immediate QA rerun.
+- The corrected mapping layer has passed structural read-back across the eight representative pages.
+- Structural QA success is not the publish gate; visual Preview QA and ALT review remain separate.
+- If the visual spot check passes, the remaining 17 READY pages should be migrated in larger GPT batches rather than individually.
+- Additive source metadata such as `group_id`, `group_role`, `sequence_id`, `step_number`, association IDs and source layout may improve future determinism, but is optional and not required for the current READY scale-out.
 
 ## Risks and Open Questions
 
-- The prepared mapping patch is not yet active in the GPT Knowledge; the active Knowledge must be replaced manually before rerun.
-- The first batch drafts currently reflect the older permissive mapping and should be updated rather than duplicated during QA rerun.
+- Visual Preview fidelity after the mapping patch has not yet been manually confirmed across representative desktop/mobile pages.
+- Informative screenshots without verified source alt text remain `ALT REVIEW REQUIRED` and block publish readiness until editorial resolution.
 - 32 pages touch REVIEW assets; two pages also have unresolved manifest references.
-- Many assets still lack verified alt text and require editorial review before publish readiness.
 - Persistent image-storage target, ownership, authentication, delivery URL and platform policies remain open.
 - Counter, Card Carousel, Sticky Footer and Video still have runtime/frontend limitations outside the Handbook core flow.
 - Bridge CSS is still page-linked rather than centrally loaded.
 
 ## Next Steps
 
-1. Apply the patched `module-contracts.md`, `b2b-handbook-composition.md` and `component-library.html` to the active `LP Builder - Contentful` GPT Knowledge.
-2. Reuse the same eight migration-ready packages and rerun one batch instruction against the existing eight Contentful drafts; read existing entries first and update instead of creating duplicates.
-3. QA specifically for numbered step treatment, `teaser-split-image-right` use, Source Pattern -> Module fidelity, media association, coverage, source order, links and absence of invented content.
-4. If the rerun passes, migrate the remaining READY pages in larger GPT batches.
+1. Visually inspect representative updated Previews from the eight-page QA rerun, focusing on `031-meine-kundendaten` for numbered steps, `039-merkzettel-und-suchauftrag` for repeated split teasers, `052-scoutreport` for multiple numbered sequences, and at least one simpler page such as `013-das-portal`.
+2. Check desktop and mobile ordering, circular number treatment, text-left/image-right layout, spacing, media scale, links and absence of duplicate/loose content.
+3. If the visual gate passes, migrate the remaining 17 READY pages in two or three GPT batches using the same Knowledge and coverage rules.
+4. Keep all 25 READY pages unpublished until separate content/ALT/final QA approval.
 5. Keep REVIEW/source-blocked pages in a separate remediation queue.
 6. Continue storage/platform alignment with Peter in parallel.
 
 ## Last Confirmed
 
-2026-09-05: the first GPT multi-page batch proved end-to-end batch orchestration, but composition fidelity failed QA. Codex diagnosed the reusable mapping layer and prepared a Knowledge/Contract patch: numbered source sequences map to `handbook-step-media`, normal non-sequential text+media maps to the existing `teaser-split-image-right`, specific modules beat Foundation, and a Page Module Plan plus coverage check is required before Contentful mutation. No new modules, source-package changes or Contentful changes were made during the diagnosis. The patch must now be applied to active GPT Knowledge before rerunning the same eight-page batch.
+2026-09-05: after applying the mapping-layer patch to active GPT Knowledge, the same eight representative Contentful drafts were structurally rerun and updated successfully. All eight passed coverage/read-back without new entries, publishing, REVIEW-asset use or system failures; numbered patterns now use `handbook-step-media`, appropriate text+media uses `teaser-split-image-right`, and Foundation no longer replaces a more specific ACTIVE pattern. The remaining gate before READY-page scale-out is manual visual Preview QA; ALT review and publish readiness remain separate.
