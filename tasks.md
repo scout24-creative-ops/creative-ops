@@ -25,10 +25,10 @@
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open, first GPT-driven eight-page batch created successfully but failed the migration-quality gate on composition fidelity
-  - Next step: Tighten the reusable source-pattern-to-module mapping before scaling: numbered step/list patterns must preserve the intended circular-number treatment, and applicable text-left/image-right sections must use the existing `teaser-split` contract rather than generic Foundation content. Then rerun the same representative batch as drafts and compare visual/module fidelity before migrating the remaining READY pages.
-  - Context: The GPT successfully processed all eight selected READY pages in one sequential batch and created Contentful drafts without publishing, proving batch orchestration. Visual QA shows that page construction is still too permissive: some source semantics are flattened into plain text and existing modules are not selected consistently. This is a reusable migration-rule problem, not a reason to return to page-by-page manual migration. The 25 READY / 32 REVIEW-affected split remains unchanged; scale-out is paused until the mapping rules pass the batch QA gate.
-  - Source: First GPT multi-page batch and visual QA confirmed on 2026-09-05
+  - Status: Open, first GPT batch proved orchestration; quality-gate mapping patch prepared but not yet active in GPT Knowledge
+  - Next step: Replace the active GPT Knowledge versions of `module-contracts.md`, `b2b-handbook-composition.md` and `component-library.html` with the patched versions, then rerun the same eight-page batch against the existing Contentful drafts and compare module/visual fidelity before scaling.
+  - Context: Root cause is confirmed in the mapping layer, not batch orchestration. The migration-ready packages are sufficient for the observed issues. The patch makes numbered sequences map to `handbook-step-media` with dedicated number treatment, promotes the existing `teaser-split-image-right` pattern for non-sequential text+media, establishes `specific ACTIVE module beats generic Foundation`, and requires an internal Page Module Plan plus coverage check before Contentful mutation. No new module was built; `migration/ready` and Contentful were unchanged. The original GPT Knowledge uploads are read-only in Codex, so the patch must be applied to the active GPT Knowledge before QA rerun.
+  - Source: GPT batch visual QA and mapping-layer diagnosis confirmed on 2026-09-05
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
