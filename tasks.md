@@ -25,10 +25,10 @@
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open, top near-term priority; page readiness classified and first GPT-driven eight-page batch ready
-  - Next step: Give `LP Builder – Contentful` one batch migration instruction covering the eight selected READY pages and let the GPT process them sequentially within the same job, creating unpublished Contentful drafts and reporting per-page outcomes. Run batch QA before scaling beyond these eight pages.
-  - Context: All 57 migration-ready Handbook pages were classified. 25 are READY, 30 are primarily blocked by REVIEW assets and 2 by source issues; 32 pages touch at least one REVIEW asset. No genuine module gaps were found. Codex owns migration engineering, data preparation, scripts, contracts and remediation; the GPT owns semantic page composition and Contentful draft creation. The first eight-page batch deliberately covers diverse source patterns while excluding already validated reference pages 007 and 042. Storage/platform alignment continues in parallel and must not block this READY page batch.
-  - Source: Page-readiness classification and GPT batch-execution decision confirmed on 2026-09-04
+  - Status: Open, first GPT-driven eight-page batch created successfully but failed the migration-quality gate on composition fidelity
+  - Next step: Tighten the reusable source-pattern-to-module mapping before scaling: numbered step/list patterns must preserve the intended circular-number treatment, and applicable text-left/image-right sections must use the existing `teaser-split` contract rather than generic Foundation content. Then rerun the same representative batch as drafts and compare visual/module fidelity before migrating the remaining READY pages.
+  - Context: The GPT successfully processed all eight selected READY pages in one sequential batch and created Contentful drafts without publishing, proving batch orchestration. Visual QA shows that page construction is still too permissive: some source semantics are flattened into plain text and existing modules are not selected consistently. This is a reusable migration-rule problem, not a reason to return to page-by-page manual migration. The 25 READY / 32 REVIEW-affected split remains unchanged; scale-out is paused until the mapping rules pass the batch QA gate.
+  - Source: First GPT multi-page batch and visual QA confirmed on 2026-09-05
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
