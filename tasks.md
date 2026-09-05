@@ -25,10 +25,10 @@
 
 - [ ] Run the Contentful migration pilot end to end
   - Area: Contentful Migration
-  - Status: Open, strategy simplified to draft-first batch migration with manual QA instead of further deterministic source-association engineering
-  - Next step: Simplify the latest GPT Instructions/Knowledge so strict `COMPOSITION_REVIEW_REQUIRED` machinery no longer blocks safe best-effort drafts. Keep the reusable Handbook layout rules: split-teaser content top-aligned; circular numbered steps without divider lines between them; section dividers above section headlines or between repeated non-numbered text+image sections; batch report includes both Preview URL and current live source URL. Then continue the READY pages in GPT batches and correct pages individually during visual QA.
-  - Context: For the roughly 60-page scope, building a large deterministic grouping/association framework is no longer considered the most efficient path. Batch orchestration already works. The operating model is now build first, review second, and only generalize corrections when the same issue repeats across several pages. The source-association enrichment path is no longer a prerequisite for READY migration; nothing should be published during this phase, REVIEW assets still must not be guessed, and source fidelity remains binding.
-  - Source: Migration strategy simplification and Handbook layout rules confirmed on 2026-09-05
+  - Status: Open, pragmatic draft-first batch migration active; repeated shared-media grouping issue patched into GPT rules
+  - Next step: Update the Custom GPT Instructions with the latest `gpt-instructions-v0.1.md` and replace Knowledge versions of `b2b-handbook-composition.md` and `module-contracts.md`; then rerun `031-meine-kundendaten` as a focused regression check before continuing new READY-page batches.
+  - Context: The current operating model is build first, visual QA second, and only repeated issues are generalized. The latest repeated issue was that multiple consecutive text/step blocks referring to one long screenshot were split into separate modules, leaving excessive whitespace. The new rule makes shared-media grouping binding: all related content stays in one left content group while the media renders once on the right; teaser boundaries now follow real section/media changes rather than paragraph boundaries. Top-aligned split teasers, circular numbered steps without internal dividers, section-divider placement, source fidelity, REVIEW-asset protection and draft-only Contentful behavior remain binding.
+  - Source: Shared-media grouping patch confirmed on 2026-09-05
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
