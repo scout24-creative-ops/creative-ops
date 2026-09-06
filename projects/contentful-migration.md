@@ -14,163 +14,138 @@ ScoutWiki project pages:
 
 ## Current Status
 
-The B2B Anwenderhandbuch `/tipps` area remains the first end-to-end pilot. Source preparation, asset identity, package-level asset resolution, storage handoff and GPT batch orchestration are materially validated.
+The B2B Anwenderhandbuch is the first end-to-end migration pilot and the page-migration phase is materially complete.
 
-Execution layer:
+Canonical scope:
 
-- 57 migration-ready pages
-- 12 redirects
-- 1 missing source
-- 25 READY
-- 30 primarily `BLOCKED_REVIEW_ASSET`
-- 2 `BLOCKED_SOURCE`
-- 0 genuine `MODULE_GAP`
+- 45 real target pages
+- 44 detail pages + 1 hub
+- 12 legacy duplicate source packages excluded from the target set
+- 006 is the canonical Anwenderhandbuch hub; 007 is its legacy duplicate
+- all 45 Canonical/Unique targets have been migrated as unpublished drafts through the GPT workflow
+- visual/content QA and selected optimization remain before publish readiness
 
-The operating strategy is deliberately pragmatic:
+Canonical target structure:
 
-1. Build best-effort drafts in GPT batches.
-2. Compare each Preview against the current live source page.
-3. Correct individual pages where necessary.
-4. Generalize only genuinely repeated issues into shared GPT rules.
+- Hub: `/anbieter/gewerbliche-anbieter/anwender-handbuch.html`
+- Details: `/anbieter/gewerbliche-anbieter/anwender-handbuch/<canonical_slug>.html`
 
-The current GPT rule set is simplified and stable enough for throughput. Full association-proof requirements and `COMPOSITION_REVIEW_REQUIRED` as a generic pre-mutation blocker were removed/relaxed. Source fidelity, REVIEW-asset protection and draft-only behavior remain binding.
+Existing drafts created before canonical mapping can still retain legacy preview paths because the current Contentful Action cannot rename an existing slug/target path.
 
-The repeated shared-media grouping issue has been patched and visually confirmed on `031-meine-kundendaten`. A follow-up cleanup of six representative detail drafts confirmed the composition baseline. `006-anwender-handbuch` is the Handbook hub/start page and is explicitly excluded from automated detail-page migration and cleanup batches.
+The migration strategy remains pragmatic:
 
-A first new-page Batch 1 (`005`, `008`, `009`, `014`, `017`, `019`) exposed a separate asset-delivery issue: five pages omitted images because historical AEM URLs returned 404. Codex has now resolved the Handbook packages against the central asset manifest. All 56 detail-page `content-assets.json` packages carry `migration_asset_resolution`; SAFE assets use validated draft-time `render_url` references, while REVIEW assets remain blocked. This unblocks image rendering for READY drafts without pretending the final CDN/storage step is complete.
+1. Build best-effort unpublished drafts.
+2. Compare previews against source pages.
+3. Correct page-specific issues.
+4. Promote only repeated issues into shared rules.
+5. Hand visual/content QA to the relevant colleagues instead of requiring Dominik to polish every page personally.
 
-## Active GPT Package
+## Handbook Composition and Spacing
 
-The current GPT package covers:
+The Handbook-specific composition is now explicit and visually validated.
 
-- `gpt-instructions-v0.1.md`
-- `b2b-handbook-composition.md`
-- `module-contracts.md`
-- `component-library.html`
+Detail pages use `lpb-explicit-spacing` with:
 
-`component-library.html` had previously changed because the technical reference for `teaser-split-image-right` still contained `lpb-content--center-y`; that centering behavior was removed so the split module is consistently top-aligned. The later shared-media patch did not require a further component-library change.
+- `spacer-xl` before the H1/intro block
+- `spacer-xl` after the H1/intro block
+- `spacer-xl` between independent modules
+- `spacer-xl` before and after each horizontal section divider
+- `spacer-3xl` once at page end before the footer
+- no generic module-root margin/padding combinations for page rhythm
 
-### Binding Handbook Layout Rules
+The updated public LP Builder bridge contains all spacer primitives. The Firmendaten test confirmed the runtime values and removed the earlier 0px-spacer issue.
 
-- Preserve source text, links, order and known asset associations; do not invent missing content.
-- Use the most specific appropriate ACTIVE module when the source pattern is clear.
-- Normal non-sequential text + one associated screenshot/image uses `teaser-split-image-right` where appropriate.
-- `teaser-split-image-right` is top-aligned on Desktop/Lap: text starts at the top of the module and aligns with the top of the media; no vertical centering.
-- Teasers are grouped by shared content/media relationship, not by individual text-block boundaries. If multiple consecutive text blocks, headings, paragraphs, lists or numbered explanations all refer to the same screenshot/media, they stay together in the same left teaser column while that media is rendered once on the right. A new teaser begins only when the semantic section or associated media changes.
-- Explicit numbered guide/step content uses `handbook-step-media` with visible circular number treatment rather than plain `(n)` text. Where several numbered explanations share one common screenshot, keep the related numbered content grouped with that shared media.
-- Numbered circular steps in one sequence do **not** use divider lines between individual steps.
-- Horizontal dividers mark section boundaries, not steps.
-- If a new section has a section headline, the divider appears **above** that headline.
-- For repeated non-numbered text+image sections, use one divider between sections.
-- Avoid duplicate headings, duplicate media and invented CTAs/navigation.
-- Bridge stylesheet remains exactly once at the beginning of newly created/fully recomposed `htmlSource` until frontend-level loading exists.
-- Contentful remains draft-first; never publish without explicit approval.
-- REVIEW assets must not be guessed or silently substituted.
-- `006-anwender-handbuch` is a hub/start-page exception and must be ignored by automated detail-page migration/cleanup prompts unless explicitly requested as a hub task.
+Other binding Handbook layout rules remain:
 
-### Best-effort QA Behavior
-
-Smaller composition ambiguity should no longer stop the whole page when a safe, source-backed draft can still be created.
-
-Use QA warnings instead, including:
-
-- `MEDIA_ASSOCIATION_QA_REQUIRED`
-- `MODULE_CHOICE_QA_REQUIRED`
-- `SECTION_BOUNDARY_QA_REQUIRED`
-- `ALT_REVIEW_REQUIRED`
-
-Only stop a page when proceeding would require invented content, a REVIEW asset, a clearly unsupported association or an unsafe Contentful mutation.
-
-## Draft-first QA Workflow
-
-1. Load one or more READY detail-page migration packages into the Custom GPT; exclude `006-anwender-handbuch` by default.
-2. GPT builds or updates all pages in the batch sequentially as unpublished Contentful drafts.
-3. SAFE package assets should use the resolved draft-time `render_url`; REVIEW assets remain `BLOCKED_DO_NOT_RENDER`.
-4. GPT follows the maintained module/layout rules and produces the best supported composition from the available source data.
-5. Ambiguities are surfaced as QA warnings instead of blocking the whole page where safe drafting is possible.
-6. Dominik visually compares each Preview against the current live source page and gives page-specific corrections where needed.
-7. Only repeated corrections that clearly apply across multiple pages are promoted back into reusable GPT Knowledge/Instructions via Codex.
-8. Publish readiness remains a later gate covering content, ALT text, assets, links and final visual QA.
-
-## Batch Report Contract
-
-For every migrated/updated page, the GPT should report at least:
-
-- page ID / title
-- Contentful entry ID
-- Preview URL
-- current live source URL from the migration-ready package
-- modules used
-- QA warnings / manual QA notes
-- `published = false`
-
-The current live source URL must be the public/current AEM/live URL, not an internal authoring/AEL URL. If it cannot be resolved unambiguously, report `SOURCE_LIVE_URL_NOT_RESOLVED`.
-
-Preferred report format:
-
-| Page | Live Source | Contentful Preview | Status | QA |
-|---|---|---|---|---|
+- source content/order and known media associations are preserved
+- split teasers are top-aligned
+- related text that shares one screenshot/media remains grouped with that media
+- numbered steps use the circular-number treatment
+- divider lines mark section boundaries, not individual numbered steps
+- ambiguous but safe cases become QA warnings rather than generic blockers
+- drafts remain unpublished until explicit approval
 
 ## Asset Migration Status
 
-The central manifest covers 210 unique normalized source URLs from 221 references.
+The asset pipeline is prepared far enough for continued migration and later storage promotion.
 
-- 100 SAFE source identities cover 105 page references.
-- They resolve to 87 unique physical blobs with deduplication across source identities.
-- All SAFE references now have package-level draft-time `render_url` resolution validated for migration use.
-- 110 REVIEW source identities cover 116 references and remain `BLOCKED_DO_NOT_RENDER`.
-- 94 assets are historical 404-only source URLs; two additional conflict assets include a historical 404 observation.
-- `target_url` remains empty until a real storage/CDN target exists and post-upload verification passes.
-- 56 detail-page `content-assets.json` packages now include `migration_asset_resolution`.
+Stable identity contract:
 
-The package-level resolver is implemented in `scripts/resolve_b2b_handbook_package_assets.rb`, with aggregate reporting in `migration/page-asset-resolution-report.json`. This is sufficient for READY draft rendering now; durable AEM-independent delivery still requires upload of the 87 verified blobs and later `target_url` promotion.
+- asset ID: `ast-sha256-<full-file-sha256>`
+- content hash: full SHA-256
+- deterministic target-key model based on the hash
+- `render_url` is used for current draft rendering where validated
+- `target_url` remains empty until a real S3/CDN target exists
+
+Current verified asset state:
+
+- 207 SAFE/MIGRATE asset references have valid stable asset IDs
+- 0 missing stable IDs among SAFE/MIGRATE references
+- 0 manifest/hash inconsistencies
+- all 56 asset-bearing GPT-ready packages contain the stable `migration_asset_resolution.asset_id`; one additional package contains no assets
+- the GPT therefore sees the stable asset ID directly in `migration/ready/`
+- asset identity, hash, render URL, source reference and package/page can be reconstructed from the migration-ready data
+- 14 REVIEW/BLOCKED references remain intentionally without a stable migrated asset ID; they are unresolved dynamic gallery references rather than data errors
+
+A local `asset-usage-registry.json` also exists for later Contentful usage mapping. Exact Contentful usage by Entry ID/module position is not derivable from the migration packages alone and requires a draft export/read when that later URL-rewrite step is executed.
+
+Persistent AEM-independent delivery remains a separate platform dependency: a real S3/CDN target is still needed before `target_url` promotion.
+
+## Canonical Mapping and Draft Inventory
+
+The canonical map contains:
+
+- 12 CANONICAL source pages
+- 33 UNIQUE source pages
+- 12 LEGACY_DUPLICATE source packages
+- 45 final target pages
+
+The GPT migration runs reported all 45 target drafts created, but the local migration repository does not yet contain a complete verified read/export of every current Contentful draft. A future draft inventory can capture Entry ID, current slug, `htmlSource`, actual asset usage and publish state in one machine-readable snapshot.
+
+This inventory is useful for handoff and later asset URL rewrites, but it is not a reason to rebuild already migrated pages.
+
+## Source-Duplicate / Exact-Rebuild Workflow
+
+A second migration path is now validated for highly custom legacy pages that should remain visually close to the source instead of being approximated with the normal module library.
+
+Workflow:
+
+1. Codex crawls and analyzes the source.
+2. Codex creates a high-fidelity rebuild.
+3. Codex performs a Contentful-ready cleanup while preserving the visual structure.
+4. GPT imports the prepared `htmlSource` through `SOURCE_DUPLICATE_IMPORT_LOCKED` without recomposition.
+5. GPT verifies input vs stored HTML by length and SHA-256.
+6. Visual QA is performed in the Contentful preview.
+
+The reduced Mitgliedschaften test proved the locked import works: a 20.6 KB custom rebuild was written and read back byte-identically with matching SHA-256. A larger ~60 KB real-page rebuild is rejected by the current Contentful Text-field validation with HTTP 422 rather than being transformed by Contentful.
+
+For future exact-rebuild pages, the current platform requirement is therefore to support materially larger `htmlSource` payloads. The working requirement to discuss with Mukhammadjon is at least 256 KB, ideally 512 KB, with complete write and read-back and no silent truncation/transformation.
 
 ## Dominik's Role
 
-Dominik owns migration planning, orchestration, rules and the migration-focused Landing Page Builder. He translates repeated QA findings into reusable migration rules without trying to eliminate every page-specific correction upfront or absorbing SEO, content, design or infrastructure ownership from the relevant specialists.
+Dominik owns migration planning, orchestration, migration rules and the migration-focused Landing Page Builder. He defines reusable migration contracts and integration requirements, while visual/content QA and infrastructure ownership should remain with the relevant specialists.
 
-For persistent asset storage, Dominik defines migration requirements, key/URL contracts and integration expectations, while Peter / relevant platform contacts drive the actual S3/CDN infrastructure pilot and ongoing storage ownership.
+For persistent asset storage, Dominik defines the migration requirements and URL/key contract while Peter / relevant platform contacts drive the actual S3/CDN pilot and ongoing storage ownership.
 
-## Confirmed Decisions
+## Key Dependencies and Open Issues
 
-- The Anwenderhandbuch remains the first proof of the broader migration model.
-- Batch migration is the intended operating model.
-- For the roughly 60-page scope, optimize for throughput and manual QA rather than a universal deterministic migration framework.
-- Build drafts first, then correct individual pages.
-- Generalize only repeated issues into GPT rules.
-- Codex owns technical pipeline/contract changes; the Custom GPT owns semantic composition and Contentful draft creation.
-- `migration/ready/` is the normal GPT migration input.
-- `006-anwender-handbuch` is the Handbook hub/start page and is excluded from normal detail-page migration and cleanup batches.
-- Source content/order must be preserved; do not invent missing content or associations.
-- Contentful remains draft-first.
-- REVIEW assets must never be silently repaired, guessed or promoted.
-- SAFE assets may use validated package-level `render_url` values for draft migration before final storage/CDN promotion.
-- Final `target_url` promotion remains a separate storage gate and is not required to continue READY draft migration.
-- Split teasers are top-aligned.
-- All content that clearly refers to one shared media item belongs in the same teaser/media group.
-- Circular numbered steps are not separated by horizontal divider lines.
-- Section dividers go above section headlines or between independent non-numbered text+image sections.
-- Every batch report exposes both Preview URL and current live source URL for fast comparison.
-
-## Risks and Open Questions
-
-- Individual pages will still require manual layout/composition corrections; this is accepted for the current migration volume.
-- Informative screenshots without verified source alt text remain `ALT_REVIEW_REQUIRED` before publish readiness.
-- REVIEW assets remain excluded until explicitly resolved.
-- Draft-time `render_url` values are not the final AEM-independent delivery solution.
-- Persistent image-storage target, ownership, authentication, delivery URL and platform policies remain open.
-- Bridge CSS is still page-linked rather than centrally loaded.
+- Existing Contentful drafts cannot currently be renamed to canonical slugs/target paths through the available GPT Action. A dedicated draft-only slug update capability is needed.
+- `htmlSource` capacity is too small for some real custom/duplicate pages. A practical future target is at least 256 KB, ideally 512 KB, with full read-back integrity.
+- Persistent S3/CDN delivery is still needed before final asset `target_url` promotion.
+- 14 REVIEW/BLOCKED dynamic gallery asset references remain unresolved; seven occur on each of the two gallery source variants.
+- ALT review remains required for many informative images before publish readiness.
+- The hub still has visual/content QA, including category placement for page 054 where the category was not unambiguous.
+- Some existing Handbook drafts retain legacy slugs until the rename capability exists.
 
 ## Next Steps
 
-1. Re-run Batch 1 (`005`, `008`, `009`, `014`, `017`, `019`) against the existing drafts using the updated packages so the five previously omitted SAFE images can be rendered.
-2. Visually verify the repaired Batch 1 previews.
-3. Continue the remaining READY detail pages in GPT batches; exclude `006-anwender-handbuch`.
-4. Promote only genuinely repeated QA corrections into shared GPT rules via Codex.
-5. Keep REVIEW/source-blocked pages in their separate remediation track.
-6. Keep all migrated pages unpublished until separate content/ALT/final visual QA approval.
-7. Continue storage/platform alignment with Peter in parallel; later upload the 87 verified blobs and promote `target_url` after verification.
+1. Hand off visual/content QA for the 44 detail drafts and the hub, including ALT review, media associations and hub category/card review.
+2. Align the remaining Contentful platform gaps with Mukhammadjon: slug rename capability and larger `htmlSource` capacity; keep central bridge loading and true runtime-only module gaps in the same frontend discussion.
+3. Continue the S3/CDN storage pilot with Peter / platform owners and later promote `target_url` values after verified upload.
+4. Resolve or explicitly accept the 14 remaining REVIEW/BLOCKED gallery asset references before final publish readiness.
+5. When useful for final handoff or asset URL migration, export/read the 45 current Contentful drafts into a verified inventory rather than rebuilding them.
+6. Review `/lp` source pages for additional FAQ/help/how-to content that should potentially be integrated into the Anwenderhandbuch scope.
 
 ## Last Confirmed
 
-2026-09-05: Codex resolved the Handbook asset packages against the central manifest. All 56 detail-page `content-assets.json` packages now carry `migration_asset_resolution`. The 100 SAFE source identities / 105 references have validated draft-time `render_url` values, while 110 REVIEW identities / 116 references remain blocked. READY draft migration can therefore continue with images before final CDN/storage rollout. The immediate next action is to rerun Batch 1 against its existing drafts to restore the five images previously omitted because historical AEM URLs returned 404.
+2026-09-06: all 45 Canonical/Unique Anwenderhandbuch target pages have been migrated as unpublished drafts. Stable asset IDs are present in all 207 SAFE/MIGRATE references across the GPT-ready packages, with 14 REVIEW/BLOCKED dynamic gallery references still unresolved. The explicit Handbook spacing model is validated. A locked exact-rebuild import was also proven byte-identical on a 20.6 KB real custom-page subset; larger ~60 KB HTML is rejected by the current Contentful Text-field validation. The immediate work has shifted from migration construction to QA/handoff and platform alignment.
