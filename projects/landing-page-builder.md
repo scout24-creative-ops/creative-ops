@@ -6,156 +6,156 @@ Enable Marketing teams to create landing pages faster and more independently thr
 
 ## Current Status
 
-The existing production Landing Page Builder remains the operational Custom GPT for the established AEM-oriented workflow.
+The production/AEM Builder remains operational, while `LP Builder – Contentful` is the maintained Contentful-enabled Builder for migration and future product development.
 
-In parallel, Dominik owns `LP Builder – Contentful`, a separate Contentful-enabled Builder used for migration and future product development. The Contentful flow is validated end to end: OAuth, draft creation, preview, update, explicit publish and production URL all work.
+The Contentful flow works end to end: OAuth, draft creation, preview, update, explicit publish and production URL have been validated. The active static module catalogue contains 25 module contracts, including the two Handbook-specific modules `handbook-category-card` and `handbook-step-media`.
 
-The current Contentful Builder architecture has now moved beyond the early eight-module v0.1 whitelist. The active catalogue contains 25 module contracts, including two migration-specific Handbook modules: `handbook-category-card` and `handbook-step-media`.
+The maintained architecture is layered:
 
-The product model is deliberately layered and simple:
+1. GPT Instructions define global behavior and mode selection.
+2. Foundation / Runtime files define technical guardrails.
+3. `module-contracts.md` defines valid module structures and variants.
+4. `component-library.html` provides implementation examples.
+5. Composition files define page-type defaults such as the B2B Handbook.
+6. Explicit user requests may alter composition defaults while contracts remain binding.
 
-1. **GPT Instructions** define global behavior, including draft-first operation, template override rules and `GAP / ASK` behavior.
-2. **Foundation / Runtime** files define technical guardrails.
-3. **`module-contracts.md`** defines allowed module structures and variants.
-4. **`component-library.html`** provides valid implementation examples.
-5. **Composition files** such as `b2b-handbook-composition.md` define default page-level arrangements only.
-6. **Explicit user requests** may alter a default composition or add other ACTIVE modules; contracts remain binding.
-
-A previous fixed Hub/Guide HTML-template experiment with skeletons, slots and repeaters was abandoned because it made GPT output brittle and duplicated module logic. The current rule is: modules are the technical source of truth; compositions describe defaults, not rigid templates.
-
-The Custom GPT Knowledge set is intentionally compact and currently consists of:
-
-- `module-contracts.md`
-- `component-library.html`
-- `foundation-rules.md`
-- `runtime-rules.md`
-- `open-gaps.md`
-- `contentful-integration.md`
-- `cosma-icons-static.md`
-- `b2b-handbook-composition.md`
-
-`gpt-instructions-v0.1.md` belongs in the GPT Instructions field rather than duplicated as Knowledge.
-
-The local `LP Builder – Contentful` workspace was audited and cleaned up. Historical template, inventory, test and gap-analysis documents were moved out of the active package into `archive/historical-not-active/`. The active project no longer contains Handbook skeleton/slot logic, the removed `media-left` Handbook variant or a forced heading for numbered Handbook steps.
+The normal Builder remains module-first. A separate `SOURCE_DUPLICATE_MODE` now exists for highly custom pages that need source fidelity rather than approximation through existing modules.
 
 ## Foundation and Rendering Model
 
-The implementation remains **CoreCSS/COSMA first**. Static `htmlSource` reuses verified native typography, spacing, responsive grid, icons and other design-system primitives wherever possible. LP Builder-specific CSS exists only for verified gaps and module-specific behavior.
+The implementation remains CoreCSS/COSMA first. Static `htmlSource` reuses native typography, responsive grid, spacing utilities, icons and other verified design-system primitives wherever possible.
 
-The central LP Builder bridge stylesheet remains the shared runtime layer for those gaps. It is not duplicated per module.
+The public LP Builder bridge is the shared runtime/style layer for static-HTML gaps. It is still linked at page level for the pilot rather than centrally injected by the renderer.
 
-A key runtime discovery from the Handbook pilot is that the Contentful frontend does not currently inject the LP Builder bridge automatically into these pages. Correct module markup therefore did not reliably receive bridge styling until the public bridge stylesheet was linked explicitly. For the current pilot, GPT Instructions require the public bridge `<link>` exactly once at the beginning of every newly created or fully recomposed LP Builder page `htmlSource`.
+The current frontend no longer applies the earlier large automatic section padding. The remaining direct `section + section` margin can be structurally bypassed through the explicit-spacing wrapper.
 
-This is a pragmatic pilot rule, not a claim that page-level bridge loading is the ideal long-term architecture. A centralized frontend load can still replace it later.
+## Explicit Spacing Contract
+
+A general page-composition spacing contract is now implemented and tested.
+
+Normal explicit-spacing pages use:
+
+`lpb-explicit-spacing -> MODULE -> spacer-xl -> MODULE -> ... -> spacer-3xl -> FOOTER`
+
+General rules:
+
+- no default opening spacer
+- Hero / Full-width Hero starts directly and is followed by `spacer-xl`
+- `spacer-xl` between independent modules
+- `spacer-3xl` once before the footer
+- `spacer-4xl` only when explicitly requested
+- no consecutive spacers
+- no generic module-root margin/padding combinations for page rhythm
+- internal module spacing remains allowed
+
+The spacer scale is aligned with COSMA/Foundation through `xxl`, with LP Builder extensions for larger transitions:
+
+- xs: 2 / 4 px Palm vs Lap/Desktop
+- s: 4 / 8
+- m: 8 / 16
+- l: 16 / 24
+- xl: 24 / 32
+- xxl: 32 / 40
+- 3xl: 48 / 64
+- 4xl: 50 / 80
+
+The public bridge was updated and the Firmendaten preview confirmed that `spacer-xl` and `spacer-3xl` now render with the expected values instead of collapsing to 0px.
+
+The B2B Handbook has its own stricter composition override: `spacer-xl` before and after the page intro and `spacer-xl -> divider -> spacer-xl` at every section boundary.
+
+## Source Duplicate Mode
+
+A second workflow now exists for pages that are too custom to reproduce faithfully through the standard module library.
+
+### `SOURCE_DUPLICATE_MODE`
+
+For source-driven rebuilds, priority becomes:
+
+Source fidelity -> source structure/CSS -> page-specific HTML/CSS -> existing modules only for a true 1:1 match.
+
+A visually similar ACTIVE module is not sufficient. Custom page-scoped HTML/CSS is allowed when needed.
+
+### `SOURCE_DUPLICATE_IMPORT_LOCKED`
+
+When Codex has already produced a Contentful-ready `htmlSource.html`, the GPT must treat that input file as the technical truth and may not recomcompose, rename classes, alter copy, replace assets or apply normal composition defaults.
+
+The import contract includes a post-write integrity check using input/stored length and SHA-256. A mismatch must return `IMPORT_INTEGRITY_FAILED` rather than claiming success.
+
+This workflow was validated on a reduced real Member­ships exact-rebuild test:
+
+- 20,609 characters / 20,623 bytes
+- write succeeded through `updateLpBuilderDraft`
+- stored length matched input
+- stored SHA-256 matched input exactly
+- 3/3 selected source sections were preserved
+- page remained unpublished
+
+A larger ~60 KB version was rejected by Contentful with HTTP 422 `InvalidEntry / Validation error / type: Text`. Contentful did not rewrite the HTML; the write was rejected and the previous draft remained unchanged.
 
 ## Handbook-specific Module Proof
 
-### `handbook-category-card`
+`handbook-category-card` is the hub category-card contract.
 
-Used for the B2B Anwenderhandbuch hub. It provides a simple category card with heading, optional description and one or more normal text links. The responsive page grid is composed outside the module through Foundation grid classes.
-
-The current Handbook hub draft is visually validated and remains unpublished.
-
-### `handbook-step-media`
-
-Used for detail-page text/screenshot sections. The current validated contract supports exactly three useful variants:
+`handbook-step-media` supports:
 
 - Number + Body + Media
 - Heading + Body + Media
 - Body + Media
 
-For all variants:
-
-- Desktop/Lap: text always left, media always right
-- Palm: text before media
-- no `media-left` / alternating variant
-- media uses `lpb-image--responsive`
-- no card/border/surface/radius treatment around screenshots
-
-For numbered steps, the number sits in the existing circle directly beside body copy; no separate heading is required or invented. Repeated step/media sections use the verified Foundation separation `border-top padding-top-xl margin-top-xl`.
-
-The module was validated independently on `/dev-lp-builder-contentful-v01-test` before being used as the basis for Handbook detail composition.
-
-## Page Composition Model
-
-`b2b-handbook-composition.md` is the current example of the new composition approach.
-
-The default Handbook detail page is:
-
-Foundation top spacing → H1 → Intro → source-based content modules → outlined `Zum Anwender-Handbuch` button → Foundation bottom spacing.
-
-This composition is intentionally not exhaustive. If a user explicitly requests another ACTIVE module, such as Video, the GPT may add it at the requested position as long as the module contract is satisfied. A default composition is not a refusal boundary.
-
-If the requested content has no matching ACTIVE module, or a user request conflicts with a binding module/Foundation/Runtime contract, the GPT should return `GAP / ASK` instead of improvising new markup, CSS or module variants.
+Desktop/Lap keeps text left and media right; Palm stacks text before media. Shared-media text remains grouped with the corresponding screenshot.
 
 ## Preview and Reference Targets
 
-- Contentful test surface: `/dev-lp-builder-contentful-v01-test`
+- Disposable Contentful test surface: `/dev-lp-builder-contentful-v01-test`
 - Canonical Contentful Design Library: `/lp-builder-contentful-design-library`
 
-The test surface is disposable and used for isolated module/bridge/composition checks. The Design Library is the durable reviewed reference and should only be changed deliberately.
+The test surface is disposable and should be used for isolated runtime, import and composition experiments. The Design Library is the reviewed durable reference.
 
 ## Dominik's Role
 
-Dominik initiated and developed the Landing Page Builder and retains product, strategy, prioritization and quality responsibility. He owns the Contentful/migration-focused duplicate and decides which reusable module and composition rules enter the maintained GPT package.
+Dominik owns product direction, strategy, prioritization and quality for the Landing Page Builder. He owns the migration-focused Contentful GPT and decides which reusable rules, modules, composition patterns and special modes enter the maintained package.
 
-Codex is the preferred technical implementation surface for local module, contract, library, bridge and runtime-test changes. Claude Design remains useful for visual exploration/reference, while the GPT composes validated modules and writes Contentful drafts.
+Codex is the preferred implementation surface for local contracts, bridge CSS, libraries, runtime tests, exact-rebuild preparation and technical source analysis. The GPT composes normal validated modules and performs controlled Contentful writes.
 
 ## Key Stakeholders and Users
 
 - B2B Marketing
 - Seeker Product Marketing
 - Homeowner Product Marketing
-- Other Marketing teams using the current Builder
+- Other Marketing teams using the Builder
 - UX and SEO for generation guardrails
 - Mukhammadjon Kayumov for Contentful Action/renderer behavior
 - Beatrice and Core/Contentful teams for platform coordination
 - Daniel Herold for broader Core/Builders Platform direction
-- Peter and Ulrike for the first Handbook migration pilot
 
 ## Confirmed Direction and Decisions
 
 - Keep the production/AEM Builder operational while `LP Builder – Contentful` evolves separately.
-- Use CoreCSS/COSMA first; use one central bridge only for verified static-HTML gaps.
-- Module contracts are the technical source of truth for valid modules.
-- Component Library examples support contracts but do not override them.
-- Composition files define default page arrangements, not rigid HTML templates.
-- Explicit user requests may extend or alter a default composition using ACTIVE modules.
-- Never invent new modules, CSS variants or markup to satisfy a composition request.
-- Use `GAP / ASK` when no valid module exists or a request collides with a binding contract.
-- Keep Contentful draft-first and never publish without explicit instruction.
-- Require the bridge stylesheet once at the start of newly created/fully recomposed pilot pages until central frontend loading is available.
-- Keep the Contentful test page separate from the canonical Design Library.
-- Keep historical template/skeleton/slot approaches archived and out of GPT Knowledge.
-- Use Codex for technical module implementation and contract synchronization.
-- Validate new/changed modules on the general test page before relying on them in a page composition.
-
-## Important Developments
-
-- 2026-08-31: Contentful-enabled duplicate validated end to end.
-- 2026-09-01: CoreCSS/COSMA-first static HTML direction and central bridge approach validated.
-- 2026-09-03: Broad module catalogue reached 23 ACTIVE module contracts.
-- 2026-09-04: `handbook-category-card` and `handbook-step-media` added, bringing the active catalogue to 25 modules.
-- 2026-09-04: The Handbook hub and detail composition were validated through real Contentful drafts and isolated test-page checks.
-- 2026-09-04: Fixed Hub/Guide templates, slots and skeletons were retired in favor of module contracts plus lightweight composition defaults.
-- 2026-09-04: Global template behavior was added to GPT Instructions: user-requested deviations are allowed, contracts remain binding, unresolved capability conflicts become `GAP / ASK`.
-- 2026-09-04: Local project audit archived obsolete template/inventory/test documents and reduced the active GPT package to the maintained sources.
+- Use CoreCSS/COSMA first and keep one central bridge for verified static-HTML gaps.
+- Module contracts remain the technical SSOT for standard page building.
+- Composition files define defaults rather than rigid templates.
+- Explicit spacing controls page rhythm; module-root margins do not.
+- Keep Handbook-specific spacing separate from the general default.
+- Use `SOURCE_DUPLICATE_MODE` only when source fidelity is explicitly required.
+- Use `SOURCE_DUPLICATE_IMPORT_LOCKED` for already prepared Contentful-ready HTML and verify the stored payload after writing.
+- Never publish without explicit approval.
+- Continue using page-level bridge loading for the pilot until a central renderer load exists.
 
 ## Risks and Open Questions
 
-- Bridge loading is still page-level for the pilot rather than centrally owned by the frontend.
-- Counter, Card Carousel, Sticky Footer and Video retain runtime/frontend limitations outside the static Handbook core flow.
-- Asset availability and alt-text completeness remain migration concerns rather than module-contract problems.
-- The active module catalogue should continue to grow only from real reusable patterns, not speculative variants.
+- `htmlSource` capacity is too small for some real custom pages; a working future requirement is at least 256 KB, ideally 512 KB, including complete read-back with no silent truncation/transformation.
+- Existing draft slugs/target paths cannot currently be renamed through the available GPT Action.
+- Bridge loading remains page-level rather than centrally owned by the frontend.
+- Counter, Card Carousel, Sticky Footer and Video still have true runtime/frontend gaps beyond the static markup contract.
+- The exact-rebuild Member­ships test exposed a full-bleed mismatch at the outer page/container level even when the imported custom HTML itself was byte-identical; this should be isolated before it is treated as a frontend requirement.
 
 ## Next Steps
 
-1. Use the validated Handbook composition on additional real migration-ready detail pages.
-2. When a page fails to map cleanly, first determine whether the issue is source data, asset availability or a genuine reusable module gap.
-3. Implement only proven reusable module gaps in Codex, then refresh `module-contracts.md` and `component-library.html` in the GPT.
-4. Keep testing changed modules independently on the Contentful test page before broader use.
-5. Bundle remaining true frontend/runtime questions only after they are isolated from content/composition issues.
+1. Bundle the remaining platform/runtime topics for Mukhammadjon / Core Frontend: larger `htmlSource` capacity, draft slug rename, central bridge loading and runtime ownership for Counter/Card Carousel/Sticky Footer/Video.
+2. Isolate whether exact-rebuild pages need an explicit full-bleed escape/container contract before adding that to the frontend request.
+3. Continue validating the general module-building experience separately from the Handbook-specific migration composition.
+4. Use the exact-rebuild workflow only for real legacy/custom pages that genuinely need visual fidelity rather than forcing those pages into the normal module library.
 
 ## Last Confirmed
 
-2026-09-04: the Contentful Builder has a stable layered architecture, 25 ACTIVE modules, a validated Handbook hub/detail composition model and a cleaned active GPT package. The immediate product proof is now repeated real migration, not more architecture redesign.
+2026-09-06: explicit page spacing is implemented and validated, the Handbook composition has a confirmed spacing blueprint, the general module-composition default is consistent, and a locked raw-HTML duplicate import has been proven byte-identical on a real 20.6 KB custom-page subset. The remaining platform conversation is now focused on true renderer/Contentful constraints rather than GPT composition behavior.
