@@ -8,68 +8,79 @@ The platform work is distinct from the migration of existing AEM pages. `Marketi
 
 ## Current Status
 
-The Landing Page Builder -> Contentful integration is now validated end to end in Dominik's duplicated GPT. OAuth, draft creation, preview, update, explicit publish and the resulting production URL have all been tested successfully.
+The Landing Page Builder -> Contentful integration is validated end to end in Dominik's duplicated GPT. OAuth, draft creation, preview, update, explicit publish and production URL all work.
 
-Dominik has taken over a separate Contentful-enabled Builder copy for migration and continued product development. Mukhammadjon remains the relevant Core Frontend contact for changes to the Action, renderer, environment or authentication contract, but Dominik can now evolve the GPT-side behavior independently.
+The migration-focused Builder has moved beyond the early v0.1 whitelist into a broader maintained module catalogue, explicit page-spacing rules and a second exact-rebuild workflow for highly custom source pages.
 
-The current migration-focused Builder is being rebuilt incrementally instead of inheriting all old product logic. v0.1 is a controlled module composer: the user provides real content and the intended module sequence; the GPT uses approved module markup, preserves structure/classes and does not automatically select, reorder, substitute or invent content.
+CoreCSS/COSMA remains the default styling foundation. A small public LP Builder bridge covers verified static-HTML gaps and the current explicit-spacing primitives. The bridge still has to be linked from page `htmlSource` during the pilot rather than being loaded centrally by the renderer.
 
-A major architectural direction is now verified: the Contentful frontend globally loads CoreCSS/COSMA, and many of those styles are usable directly from static `htmlSource`. The new Builder should therefore use the existing Scout24 design-system layer wherever possible and keep any LP Builder-specific CSS bridge small and token-based.
+Image handling remains intentionally decoupled from Contentful asset selection. Migration-ready packages carry stable SHA-based asset IDs and current draft-time `render_url` values; later S3/CDN promotion can replace URLs without changing asset identity.
 
-Image handling remains deliberately simple for the migration pilot. The Builder should continue to accept stable direct image URLs rather than creating a separate Contentful image-selection feature. A small persistent asset-storage pilot can be developed in parallel without blocking the first migration proof.
+## Asset Platform Direction
+
+The migration-side asset contract is now materially prepared:
+
+- stable asset ID: `ast-sha256-<full-file-sha256>`
+- deterministic SHA-based content identity
+- deterministic future storage-key model
+- 207 SAFE/MIGRATE references have valid IDs in GPT-ready packages
+- `target_url` intentionally remains empty until a real storage/CDN target exists
+- current drafts can use validated `render_url` values in the meantime
+
+The remaining platform task is therefore not identity design but durable delivery: confirm the storage target, ownership, authentication, delivery URL and relevant security/header policies, then upload/verify assets and promote `target_url` values.
+
+Dominik should continue defining the migration integration contract without becoming the long-term AWS/storage operator.
+
+## Contentful / Renderer Platform Gaps
+
+The current platform discussion with Mukhammadjon / Core Frontend has narrowed to genuine technical gaps:
+
+1. **Existing draft slug/target-path rename** — the current Action can update draft content but cannot rename an existing slug/path. A draft-only rename capability with current-value and uniqueness checks is needed for canonical migration cleanup.
+2. **Larger `htmlSource` capacity** — a real custom page rebuild around 60 KB is rejected by the current Contentful Text-field validation. The desired future contract is at least 256 KB, ideally 512 KB, with complete write/read-back and no silent truncation/transformation.
+3. **Central bridge loading** — pilot pages can link the public bridge once in `htmlSource`, but central renderer loading would remove repetitive per-page dependency management for the larger rollout.
+4. **Runtime ownership** — Counter, Card Carousel, Sticky Footer and Video still need confirmed frontend/runtime support beyond their static visual contracts.
+5. **Potential full-bleed custom-page contract** — a byte-identical exact-rebuild import still showed an outer-container/full-bleed difference in preview; this should first be isolated before becoming a formal frontend requirement.
 
 ## Dominik's Role
 
-Dominik owns the product direction, Marketing requirements and quality of the platform setup. He validates the LP Builder -> Contentful workflow, owns the migration-focused Builder copy and decides how the authoring model evolves while keeping technical infrastructure responsibilities with the appropriate platform owners.
+Dominik owns the product direction, Marketing requirements and quality of the platform setup. He validates the LP Builder -> Contentful workflow, owns the migration-focused Builder copy and defines the authoring/migration contracts while keeping infrastructure responsibilities with the appropriate platform owners.
 
 ## Key Stakeholders
 
-- Mukhammadjon Kayumov for the Contentful Action/renderer integration contract
+- Mukhammadjon Kayumov for Contentful Action/renderer behavior
 - Beatrice for Core Team coordination and broader platform alignment
 - Daniel Herold for Core/Builders Platform direction
 - Matthias Brandstätter for Contentful/platform ownership
 - Contentful/Core Frontend teams
 - SEO and UX where generation rules affect quality and publishing
-- Peter / relevant platform contacts for the small migration asset-storage pilot
+- Peter / relevant platform contacts for persistent migration asset storage
 
 ## Confirmed Direction and Decisions
 
-- The Contentful integration works end to end, including explicit production publishing.
-- Dominik owns a separate Contentful-enabled GPT copy for migration and continued Builder development.
-- Keep publishing consequential: draft/save can be requested directly; publish requires an explicit request.
-- Keep the authoring model HTML-based for the current phase.
-- Use CoreCSS/COSMA first for static HTML instead of rebuilding a parallel design system.
-- Verified global packages in `is24-cms-frontend`: `is24-corecss` 9.2.0, `is24-corecss-server` 9.2.0 and `@is24/cosma-ui-icons` 6.24.0.
-- Verified native HTML-friendly families include typography, spacing, responsive grid, buttons, basic utilities and the COSMA icon font.
-- Create custom LP Builder CSS only for the real remaining delta and base it on existing COSMA design tokens.
-- Do not use the old LP Builder runtime CSS as the long-term styling basis for the new Contentful module library; keep those assets backward-compatible for existing AEM pages.
-- Do not add a separate Contentful image-selection UX to the migration MVP. Keep stable direct-image-URL input.
-- Treat persistent migration asset storage as a small parallel pilot rather than a prerequisite for the first page proof.
+- Keep draft/save and explicit publish as separate consequential actions.
+- Keep the current authoring model HTML-based for this phase.
+- Use CoreCSS/COSMA first and only a thin shared bridge for verified gaps.
+- Use explicit spacer primitives for page-level rhythm rather than implicit module-root margins.
+- Keep stable direct asset URLs in the migration MVP; do not build a separate Contentful image picker as a prerequisite.
+- Treat stable asset identity as independent from delivery URL so later S3/CDN migration is a controlled URL-promotion step.
+- Use normal module composition for standard pages and the source-duplicate workflow only for custom pages that must preserve source fidelity.
+- Keep Contentful draft-first and never publish automatically.
 
-## Important Developments
+## Risks and Open Questions
 
-- 2026-08-31: Dominik completed OAuth configuration and successfully tested create -> preview -> update -> publish -> production URL in his duplicated Contentful-enabled GPT.
-- 2026-08-31: Dominik informed Mukhammadjon that the setup works and that he will continue adapting the duplicate for migration use.
-- 2026-08-31: The migration-focused Builder was reset to a deliberately small v0.1 product model rather than carrying over all old Landing Page Builder logic.
-- 2026-09-01: Repository and browser checks confirmed that CoreCSS/COSMA is globally loaded in the Contentful frontend and that many classes can be applied directly to static HTML.
-- 2026-09-01: The new strategic styling rule became CoreCSS/COSMA first, with only a thin LP Builder CSS bridge where static HTML needs extra layout/media/surface behavior.
-
-## Open Questions and Risks
-
-- Exact long-term contract for the small LP Builder-specific CSS bridge after the browser playground test.
-- Which module-specific layouts can be expressed entirely with CoreCSS utilities versus needing small custom rules.
-- Final link-validation and pre-publish quality-check responsibilities across Builder and integration layers.
-- Long-term persistent asset storage/delivery ownership.
-- Whether Action read behavior should be standardized around Entry ID, slug/path or both; one fresh-chat read/update test returned `LP Builder page was not found` while the same flow worked in an existing chat.
+- Final S3/CDN target and ongoing ownership are not yet confirmed.
+- `htmlSource` field capacity is insufficient for some real exact-rebuild pages.
+- Existing slugs cannot yet be renamed through the available GPT Action.
+- The bridge remains page-linked during the pilot.
+- True runtime gaps remain for Counter, Card Carousel, Sticky Footer and Video.
 
 ## Next Steps
 
-1. Run the COSMA/CoreCSS HTML playground on `/dev-lp-builder-v01-test` without the old LP Builder runtime CSS.
-2. Classify tested primitives as `USE NATIVE CORECSS`, `HTML STRUCTURE / HOOK REQUIRED` or `LPBUILDER CSS BRIDGE REQUIRED`.
-3. Migrate the active v0.1 module set onto that verified contract.
-4. Create only the minimal token-based CSS bridge proven necessary by those tests.
-5. Continue the small persistent asset-storage pilot in parallel when useful for real migration pages.
+1. Align the remaining Contentful/renderer gaps with Mukhammadjon / Core Frontend.
+2. Continue the persistent asset-storage pilot with Peter / platform owners and confirm the real delivery target before any `target_url` promotion.
+3. Keep the migration pilot moving with current `render_url` values while final storage is prepared.
+4. Only add new platform capabilities when proven by real migration/page-building needs rather than speculative architecture work.
 
 ## Last Confirmed
 
-2026-09-01: the Contentful-enabled Builder works through production publishing, and the current implementation direction is to rebuild the migration-focused module library around globally available CoreCSS/COSMA with only a minimal HTML-specific bridge.
+2026-09-06: the platform baseline is proven. Current work is focused on a small set of real scaling constraints: slug rename, larger raw `htmlSource` capacity, central bridge/runtime ownership and final S3/CDN delivery. The migration-side asset identity contract is already stable enough for the broader rollout.
