@@ -25,13 +25,15 @@ The normal Builder remains module-first. A separate `SOURCE_DUPLICATE_MODE` now 
 
 The implementation remains CoreCSS/COSMA first. Static `htmlSource` reuses native typography, responsive grid, spacing utilities, icons and other verified design-system primitives wherever possible.
 
-The public LP Builder bridge is the shared runtime/style layer for static-HTML gaps. It is still linked at page level for the pilot rather than centrally injected by the renderer.
+The public LP Builder bridge is the shared CSS layer for static-HTML gaps. It is currently linked at page level and has been proven to survive sanitization and load correctly in the rendered DOM.
+
+A separate central JavaScript runtime is now the preferred direction for interactive modules. A real Counter proof established that external `<script>` tags can be stored unchanged in Contentful but are removed by `sanitizeLPBuilderHtml` before the final DOM. The browser therefore never requests the page-linked JS asset. The desired future contract is a trusted centrally loaded `lpbuilder-runtime.js` plus one root-scoped, idempotent initialization call after `htmlSource` is rendered or replaced.
 
 The current frontend no longer applies the earlier large automatic section padding. The remaining direct `section + section` margin can be structurally bypassed through the explicit-spacing wrapper.
 
 ## Explicit Spacing Contract
 
-A general page-composition spacing contract is now implemented and tested.
+A general page-composition spacing contract is implemented and tested.
 
 Normal explicit-spacing pages use:
 
@@ -59,13 +61,13 @@ The spacer scale is aligned with COSMA/Foundation through `xxl`, with LP Builder
 - 3xl: 48 / 64
 - 4xl: 50 / 80
 
-The public bridge was updated and the Firmendaten preview confirmed that `spacer-xl` and `spacer-3xl` now render with the expected values instead of collapsing to 0px.
+The public bridge was updated and the Firmendaten preview confirmed that `spacer-xl` and `spacer-3xl` render with the expected values instead of collapsing to 0px.
 
 The B2B Handbook has its own stricter composition override: `spacer-xl` before and after the page intro and `spacer-xl -> divider -> spacer-xl` at every section boundary.
 
 ## Source Duplicate Mode
 
-A second workflow now exists for pages that are too custom to reproduce faithfully through the standard module library.
+A second workflow exists for pages that are too custom to reproduce faithfully through the standard module library.
 
 ### `SOURCE_DUPLICATE_MODE`
 
@@ -81,7 +83,7 @@ When Codex has already produced a Contentful-ready `htmlSource.html`, the GPT mu
 
 The import contract includes a post-write integrity check using input/stored length and SHA-256. A mismatch must return `IMPORT_INTEGRITY_FAILED` rather than claiming success.
 
-This workflow was validated on a reduced real Member­ships exact-rebuild test:
+This workflow was validated on a reduced real Memberships exact-rebuild test:
 
 - 20,609 characters / 20,623 bytes
 - write succeeded through `updateLpBuilderDraft`
@@ -92,17 +94,41 @@ This workflow was validated on a reduced real Member­ships exact-rebuild test:
 
 A larger ~60 KB version was rejected by Contentful with HTTP 422 `InvalidEntry / Validation error / type: Text`. Contentful did not rewrite the HTML; the write was rejected and the previous draft remained unchanged.
 
-## Handbook-specific Module Proof
+## Contentful Lifecycle Audit
 
-`handbook-category-card` is the hub category-card contract.
+A controlled lifecycle audit on disposable entries established the current Action coverage.
 
-`handbook-step-media` supports:
+Supported:
 
-- Number + Body + Media
-- Heading + Body + Media
-- Body + Media
+- read by slug/path
+- create draft
+- update title and `htmlSource`
+- explicit publish
+- update a published page as a new draft and re-publish
+- update/publish actions can target Entry ID or slug where exposed by their schemas
 
-Desktop/Lap keeps text left and media right; Palm stacks text before media. Shared-media text remains grouped with the corresponding screenshot.
+Missing from the currently available Actions:
+
+- read an existing page by `entryId`
+- rename slug / target path on an existing entry
+- unpublish
+- archive/delete
+
+A native clone operation is not considered a required backend capability because a GPT-level get/create flow can cover duplication if needed.
+
+## Runtime Proof
+
+The AEM-era model of page-level CSS + JS links was tested directly in Contentful.
+
+Confirmed browser behavior:
+
+- the external CSS `<link>` is present in the final DOM and loads successfully
+- the external JS `<script>` is present in stored Contentful `htmlSource`
+- the script node is absent from the final rendered DOM
+- no network request for the JS asset occurs
+- `sanitizeLPBuilderHtml` removes the script before React renders the sanitized HTML
+
+This confirms that adding the JS URL more strongly to GPT Instructions would not solve the problem. A trusted renderer-level runtime entry point is required for custom JavaScript behavior.
 
 ## Preview and Reference Targets
 
@@ -139,23 +165,24 @@ Codex is the preferred implementation surface for local contracts, bridge CSS, l
 - Use `SOURCE_DUPLICATE_MODE` only when source fidelity is explicitly required.
 - Use `SOURCE_DUPLICATE_IMPORT_LOCKED` for already prepared Contentful-ready HTML and verify the stored payload after writing.
 - Never publish without explicit approval.
-- Continue using page-level bridge loading for the pilot until a central renderer load exists.
+- Prefer one stable global CSS entry point and one stable global JS runtime entry point in the renderer while keeping the underlying Creative Ops public assets independently maintainable.
+- Do not allow arbitrary page-authored script execution merely to restore legacy behavior; use a trusted global runtime instead.
 
 ## Risks and Open Questions
 
-- `htmlSource` capacity is too small for some real custom pages; a working future requirement is at least 256 KB, ideally 512 KB, including complete read-back with no silent truncation/transformation.
+- `htmlSource` capacity is too small for some real custom pages; the requested future contract is at least 256 KB, ideally 512 KB, including complete read-back with no silent truncation/transformation.
 - Existing draft slugs/target paths cannot currently be renamed through the available GPT Action.
-- Bridge loading remains page-level rather than centrally owned by the frontend.
-- Counter, Card Carousel, Sticky Footer and Video still have true runtime/frontend gaps beyond the static markup contract.
-- The exact-rebuild Member­ships test exposed a full-bleed mismatch at the outer page/container level even when the imported custom HTML itself was byte-identical; this should be isolated before it is treated as a frontend requirement.
+- Read-by-entryId, unpublish and archive/delete are missing from the current lifecycle Action set.
+- The renderer does not execute page-linked JavaScript because script nodes are removed during sanitization; trusted central runtime loading is required.
+- The exact-rebuild Memberships test exposed a full-bleed mismatch at the outer page/container level even when the imported custom HTML itself was byte-identical; this remains a secondary issue to isolate if it becomes relevant.
 
 ## Next Steps
 
-1. Bundle the remaining platform/runtime topics for Mukhammadjon / Core Frontend: larger `htmlSource` capacity, draft slug rename, central bridge loading and runtime ownership for Counter/Card Carousel/Sticky Footer/Video.
-2. Isolate whether exact-rebuild pages need an explicit full-bleed escape/container contract before adding that to the frontend request.
-3. Continue validating the general module-building experience separately from the Handbook-specific migration composition.
-4. Use the exact-rebuild workflow only for real legacy/custom pages that genuinely need visual fidelity rather than forcing those pages into the normal module library.
+1. Wait for Mukhammadjon's feedback on the bundled request covering larger `htmlSource`, missing lifecycle Actions, and global LP Builder CSS + JS runtime loading.
+2. Validate any implemented lifecycle/runtime changes on disposable NEXT/Preview entries and, where relevant, PRO.
+3. Once a trusted runtime entry point exists, move interactive LP Builder behavior such as Counter and Carousel into the independently maintained central runtime rather than requesting one frontend hook per module.
+4. Continue validating the normal module-building experience separately from the Handbook-specific migration composition and exact-rebuild path.
 
 ## Last Confirmed
 
-2026-09-06: explicit page spacing is implemented and validated, the Handbook composition has a confirmed spacing blueprint, the general module-composition default is consistent, and a locked raw-HTML duplicate import has been proven byte-identical on a real 20.6 KB custom-page subset. The remaining platform conversation is now focused on true renderer/Contentful constraints rather than GPT composition behavior.
+2026-09-06: the Contentful Builder is operational for real migration work, explicit spacing and exact locked imports are validated, the common page lifecycle has been audited, and the JavaScript limitation has been proven at browser/DOM level. Dominik sent Mukhammadjon one bundled platform request covering the remaining scaling requirements rather than raising them piecemeal.
