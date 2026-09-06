@@ -32,17 +32,20 @@ Canonical target structure:
 
 Existing drafts created before canonical mapping can still retain legacy preview paths because the current Contentful Action cannot rename an existing slug/target path.
 
-The migration strategy remains pragmatic:
+The real migration work has reinforced the intended operating model: the GPT can create and later update large groups of pages quickly, while highly custom legacy pages are handled through a separate exact-rebuild path and still require human guidance/QA where source structure is ambiguous or unusually bespoke. This is treated as a pragmatic hybrid migration model rather than a blocker to scale.
+
+The migration strategy remains:
 
 1. Build best-effort unpublished drafts.
 2. Compare previews against source pages.
-3. Correct page-specific issues.
+3. Correct page-specific issues where needed.
 4. Promote only repeated issues into shared rules.
-5. Hand visual/content QA to the relevant colleagues instead of requiring Dominik to polish every page personally.
+5. Use exact-rebuild preparation for custom pages that should stay close to the source.
+6. Hand visual/content QA to the relevant colleagues instead of requiring Dominik to polish every page personally.
 
 ## Handbook Composition and Spacing
 
-The Handbook-specific composition is now explicit and visually validated.
+The Handbook-specific composition is explicit and visually validated.
 
 Detail pages use `lpb-explicit-spacing` with:
 
@@ -106,7 +109,7 @@ This inventory is useful for handoff and later asset URL rewrites, but it is not
 
 ## Source-Duplicate / Exact-Rebuild Workflow
 
-A second migration path is now validated for highly custom legacy pages that should remain visually close to the source instead of being approximated with the normal module library.
+A second migration path is validated for highly custom legacy pages that should remain visually close to the source instead of being approximated with the normal module library.
 
 Workflow:
 
@@ -119,7 +122,16 @@ Workflow:
 
 The reduced Mitgliedschaften test proved the locked import works: a 20.6 KB custom rebuild was written and read back byte-identically with matching SHA-256. A larger ~60 KB real-page rebuild is rejected by the current Contentful Text-field validation with HTTP 422 rather than being transformed by Contentful.
 
-For future exact-rebuild pages, the current platform requirement is therefore to support materially larger `htmlSource` payloads. The working requirement to discuss with Mukhammadjon is at least 256 KB, ideally 512 KB, with complete write and read-back and no silent truncation/transformation.
+For future exact-rebuild pages, the requested platform contract is at least 256 KB, ideally 512 KB, with complete write and read-back and no silent truncation/transformation.
+
+## Stakeholder Alignment
+
+The project now has broader visibility because the first real migration results are tangible.
+
+- Mukhammadjon received one bundled technical request covering larger `htmlSource`, missing lifecycle Actions and a global LP Builder CSS/JS runtime contract.
+- Beatrice received a migration progress update and was asked for the current B2B contact-form implementation plan/timing; Dominik offered Ulrike as B2B support for Salesforce/business requirements.
+- Daniel received a progress update that the Contentful-adapted LP Builder is already migrating real B2B pages successfully, can update many pages together efficiently, and is progressing at or ahead of the expected pace. The hybrid nature of custom-page migration was framed as a practical operating model rather than a failure of the approach.
+- SEO routing/URL strategy remains a parallel coordination topic for future Contentful delivery.
 
 ## Dominik's Role
 
@@ -129,23 +141,26 @@ For persistent asset storage, Dominik defines the migration requirements and URL
 
 ## Key Dependencies and Open Issues
 
-- Existing Contentful drafts cannot currently be renamed to canonical slugs/target paths through the available GPT Action. A dedicated draft-only slug update capability is needed.
-- `htmlSource` capacity is too small for some real custom/duplicate pages. A practical future target is at least 256 KB, ideally 512 KB, with full read-back integrity.
+- Mukhammadjon's feedback/implementation is pending for larger `htmlSource`, read-by-entryId, slug rename, unpublish, archive/delete and trusted global CSS/JS loading.
 - Persistent S3/CDN delivery is still needed before final asset `target_url` promotion.
 - 14 REVIEW/BLOCKED dynamic gallery asset references remain unresolved; seven occur on each of the two gallery source variants.
 - ALT review remains required for many informative images before publish readiness.
 - The hub still has visual/content QA, including category placement for page 054 where the category was not unambiguous.
 - Some existing Handbook drafts retain legacy slugs until the rename capability exists.
+- The B2B contact form is becoming a key dependency for broader directory migration; implementation/timing and Salesforce integration details are still being clarified with Beatrice/Core/B2B.
+- Future Contentful routing and SEO/LLM visibility requirements still need coordination with SEO.
 
 ## Next Steps
 
 1. Hand off visual/content QA for the 44 detail drafts and the hub, including ALT review, media associations and hub category/card review.
-2. Align the remaining Contentful platform gaps with Mukhammadjon: slug rename capability and larger `htmlSource` capacity; keep central bridge loading and true runtime-only module gaps in the same frontend discussion.
-3. Continue the S3/CDN storage pilot with Peter / platform owners and later promote `target_url` values after verified upload.
-4. Resolve or explicitly accept the 14 remaining REVIEW/BLOCKED gallery asset references before final publish readiness.
-5. When useful for final handoff or asset URL migration, export/read the 45 current Contentful drafts into a verified inventory rather than rebuilding them.
-6. Review `/lp` source pages for additional FAQ/help/how-to content that should potentially be integrated into the Anwenderhandbuch scope.
+2. Wait for Mukhammadjon's feedback/implementation on the bundled platform request and validate changes on disposable entries.
+3. Clarify the B2B contact-form implementation plan and, if useful, connect Ulrike with the relevant developer for Salesforce/business requirements.
+4. Continue the S3/CDN storage pilot with Peter / platform owners and later promote `target_url` values after verified upload.
+5. Resolve or explicitly accept the 14 remaining REVIEW/BLOCKED gallery asset references before final publish readiness.
+6. When useful for final handoff or asset URL migration, export/read the 45 current Contentful drafts into a verified inventory rather than rebuilding them.
+7. Review `/lp` source pages for additional FAQ/help/how-to content that should potentially be integrated into the Anwenderhandbuch scope.
+8. Once the key platform components are available, continue with additional B2B directories rather than waiting for a fully automated universal migration framework.
 
 ## Last Confirmed
 
-2026-09-06: all 45 Canonical/Unique Anwenderhandbuch target pages have been migrated as unpublished drafts. Stable asset IDs are present in all 207 SAFE/MIGRATE references across the GPT-ready packages, with 14 REVIEW/BLOCKED dynamic gallery references still unresolved. The explicit Handbook spacing model is validated. A locked exact-rebuild import was also proven byte-identical on a 20.6 KB real custom-page subset; larger ~60 KB HTML is rejected by the current Contentful Text-field validation. The immediate work has shifted from migration construction to QA/handoff and platform alignment.
+2026-09-06: all 45 Canonical/Unique Anwenderhandbuch target pages have been migrated as unpublished drafts. The Contentful-adapted LP Builder is proving fast for both creation and grouped page changes, and the exact-rebuild path covers highly custom legacy pages with human QA where needed. The remaining work is concentrated on QA/handoff plus a small set of platform dependencies already handed to Mukhammadjon, the B2B contact form, SEO routing and final asset delivery.
