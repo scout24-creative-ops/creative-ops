@@ -16,13 +16,6 @@
   - Context: Marie will present the Brand Agent, reusable Skill approach and her research on when to use an Agent versus a Skill or another setup. Dominik and Marie will align her contribution on 2026-09-04. The calendar event itself is not tracked as a separate dashboard task.
   - Source: Marie confirmed her contribution with Dominik on 2026-08-24
 
-- [ ] Align remaining LP Builder platform gaps with Mukhammadjon
-  - Area: Landing Page Builder
-  - Status: Open, narrowed to verified Contentful/frontend constraints
-  - Next step: Bundle and discuss the confirmed gaps: draft slug/target-path rename, larger `htmlSource` capacity (at least 256 KB, ideally 512 KB, with complete read-back), central bridge loading and runtime ownership for Counter, Card Carousel, Sticky Footer and Video. First isolate whether the exact-rebuild full-bleed mismatch is an outer-container limitation before adding it as a formal requirement.
-  - Context: Static module composition, explicit page spacing and the locked exact-rebuild import are now validated. A 20.6 KB real custom-page subset was written/read byte-identically; a ~60 KB version was rejected by the current Contentful Text-field validation with HTTP 422. Existing canonical Handbook drafts also need a slug-update capability because `updateLpBuilderDraft` cannot rename the target path.
-  - Source: LP Builder / exact-rebuild validation through 2026-09-06
-
 - [ ] Complete Anwenderhandbuch migration handoff and QA
   - Area: Contentful Migration
   - Status: Open, page migration complete; moved into QA/handoff
@@ -73,6 +66,22 @@
   - Source: Dominik confirmed the task on 2026-07-22
 
 ## Waiting
+
+- [ ] Align remaining LP Builder platform gaps with Mukhammadjon
+  - Area: Landing Page Builder
+  - Status: Waiting for Mukhammadjon feedback / implementation
+  - Waiting for: Review of the bundled platform request sent on 2026-09-06.
+  - Dominik's next step: Reassess once Mukhammadjon responds; validate the implemented changes on NEXT/Preview and PRO where relevant.
+  - Context: The request bundles three proven scaling needs: (1) larger `htmlSource` capacity of at least 256 KB, ideally 512 KB, with full read-back integrity; (2) missing lifecycle support for read-by-entryId, slug/target-path rename, unpublish and archive/delete; and (3) centrally loaded LP Builder CSS + trusted JS runtime. The JS requirement is confirmed by a browser proof: `<script>` is stored in Contentful but removed by `sanitizeLPBuilderHtml` before the final DOM, while the CSS `<link>` remains and loads successfully.
+  - Source: Lifecycle audit, exact-rebuild size test, runtime/sanitizer proof and Slack handoff to Mukhammadjon on 2026-09-06
+
+- [ ] Clarify B2B contact form plan for Contentful
+  - Area: Marketing Content Platform
+  - Status: Waiting for Beatrice feedback
+  - Waiting for: Beatrice's current implementation plan and timing for the B2B contact form module.
+  - Dominik's next step: If useful, connect Ulrike with the relevant developer so B2B/Salesforce requirements can be clarified while the component is being built.
+  - Context: The contact form is expected to become one of the most important remaining B2B migration capabilities. Existing B2B forms use Salesforce and require multiple variants/field sets; the LP Builder should configure/integrate a centrally managed form rather than recreate Salesforce logic per page.
+  - Source: Dominik asked Beatrice for the current contact-form plan and offered Ulrike as B2B support on 2026-09-06
 
 - [ ] Clarify Coupa AI support
   - Area: Coupa AI Support
