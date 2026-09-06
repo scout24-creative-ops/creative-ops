@@ -16,19 +16,26 @@
   - Context: Marie will present the Brand Agent, reusable Skill approach and her research on when to use an Agent versus a Skill or another setup. Dominik and Marie will align her contribution on 2026-09-04. The calendar event itself is not tracked as a separate dashboard task.
   - Source: Marie confirmed her contribution with Dominik on 2026-08-24
 
-- [ ] Bundle LP Builder frontend questions for Mukhammadjon / Core Frontend
+- [ ] Align remaining LP Builder platform gaps with Mukhammadjon
   - Area: Landing Page Builder
-  - Status: Open, narrowed to true frontend/runtime gaps
-  - Next step: Bundle only the remaining verified frontend-only questions for review with Mukhammadjon / Beatrice after they are isolated from composition and content issues.
-  - Context: The static module/composition model is now validated enough for the Handbook pilot. Remaining frontend topics include central bridge loading and runtime ownership for Counter, Card Carousel, Sticky Footer and Video. The pilot can continue with the bridge linked once in page `htmlSource`, so these questions no longer block structural migration proof.
-  - Source: LP Builder consolidation and Handbook validation through 2026-09-04
+  - Status: Open, narrowed to verified Contentful/frontend constraints
+  - Next step: Bundle and discuss the confirmed gaps: draft slug/target-path rename, larger `htmlSource` capacity (at least 256 KB, ideally 512 KB, with complete read-back), central bridge loading and runtime ownership for Counter, Card Carousel, Sticky Footer and Video. First isolate whether the exact-rebuild full-bleed mismatch is an outer-container limitation before adding it as a formal requirement.
+  - Context: Static module composition, explicit page spacing and the locked exact-rebuild import are now validated. A 20.6 KB real custom-page subset was written/read byte-identically; a ~60 KB version was rejected by the current Contentful Text-field validation with HTTP 422. Existing canonical Handbook drafts also need a slug-update capability because `updateLpBuilderDraft` cannot rename the target path.
+  - Source: LP Builder / exact-rebuild validation through 2026-09-06
 
-- [ ] Run the Contentful migration pilot end to end
+- [ ] Complete Anwenderhandbuch migration handoff and QA
   - Area: Contentful Migration
-  - Status: Open, READY draft migration unblocked by package-level asset resolution
-  - Next step: Re-run Batch 1 (`005`, `008`, `009`, `014`, `017`, `019`) against the existing drafts so the five previously omitted SAFE images can be rendered via the new validated `render_url` resolution; then continue the remaining READY detail-page batches. Always exclude `006-anwender-handbuch` because it is the Handbook hub/start page.
-  - Context: Asset resolution now covers all 56 detail-page `content-assets.json` packages. The 100 SAFE source identities (105 references) have validated draft-time `render_url` values; 110 REVIEW identities (116 references) remain `BLOCKED_DO_NOT_RENDER`. Final AEM-independent delivery is still separate: 87 verified blobs need storage/CDN upload before `target_url` promotion. Nothing should be published during this phase.
-  - Source: Handbook asset-resolution pass confirmed on 2026-09-05
+  - Status: Open, page migration complete; moved into QA/handoff
+  - Next step: Hand off visual/content QA for the 44 detail drafts and hub, including ALT review, media associations, hub category/card review and selected visual optimization. Keep the 14 unresolved gallery asset references and canonical-slug cleanup as explicit dependencies rather than rebuilding migrated pages.
+  - Context: All 45 Canonical/Unique targets (44 detail pages + 1 hub) have been migrated as unpublished drafts. Twelve legacy duplicate source packages are excluded from the target set. Stable asset IDs are present in all 207 SAFE/MIGRATE references across all 56 asset-bearing GPT-ready packages; 14 REVIEW/BLOCKED dynamic gallery references remain. A complete Contentful draft inventory can be generated later for handoff/asset URL rewrites if needed.
+  - Source: Handbook migration, spacing and asset audits confirmed through 2026-09-06
+
+- [ ] Review `/lp` pages for additional Handbook content
+  - Area: Contentful Migration
+  - Status: Open, scope check before final Handbook closure
+  - Next step: Audit `/lp` pages for FAQ, help, how-to and product-support content that should become a new Handbook page or be integrated into an existing one; classify duplicates and marketing-only pages separately before migrating anything.
+  - Context: The core 45-page Handbook target set is migrated, but older `/lp` content may contain relevant FAQ/support material that was not part of the original `/tipps` crawl.
+  - Source: Dominik requested the additional `/lp` scope review on 2026-09-05
 
 - [ ] Prepare Sitemap V2 from the existing SEO Excel source
   - Area: Contentful Migration
@@ -39,10 +46,10 @@
 
 - [ ] Pilot persistent image storage for AEM migration
   - Area: Marketing Content Platform
-  - Status: Open, ready for platform alignment; migration-side upload contract prepared
-  - Next step: Let Peter drive the actual storage/S3 pilot with Allan / the relevant platform contacts; align the prepared 87-blob upload plan and storage contract, then confirm the concrete storage target, ownership, authentication, delivery URL and platform header/security requirements before any real upload.
-  - Context: Migration now provides verified SHA-based identities, stable target keys, a deterministic 87-blob upload plan, byte-verified Content-Type rules, idempotency/failure behavior and the target_url promotion gate. Draft migration can temporarily use validated `render_url` values, but durable AEM-independent delivery still requires the storage/CDN target. Dominik should keep defining integration requirements without becoming the ongoing AWS/storage operator.
-  - Source: Asset ownership direction from 2026-08-30; package asset resolution confirmed on 2026-09-05
+  - Status: Open, migration-side identity contract validated; waiting on real storage target
+  - Next step: Let Peter drive the actual storage/S3 pilot with Allan / the relevant platform contacts; align the prepared SHA-based upload/URL contract, then confirm the concrete storage target, ownership, authentication, delivery URL and platform header/security requirements before any real `target_url` promotion.
+  - Context: All 207 SAFE/MIGRATE references in the GPT-ready migration packages have stable `ast-sha256-*` IDs with matching hashes and current `render_url` values. The migration can continue without final CDN delivery, but durable AEM-independent delivery still requires the S3/CDN target. The 14 remaining REVIEW/BLOCKED dynamic gallery references are a separate source-resolution issue, not a storage-identity gap.
+  - Source: Asset audits and Handbook migration status confirmed through 2026-09-06
 
 - [ ] Set up B2B automation discovery with Juliane
   - Area: E-Mail Automation Professional
