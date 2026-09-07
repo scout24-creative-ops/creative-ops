@@ -31,7 +31,7 @@
   - Source: Sitemap source-model discussion on 2026-08-30
 
 - [ ] Pilot persistent image storage for AEM migration
-  - Area: Marketing Content Platform
+  - Area: Contentful Migration
   - Status: Open, migration-side identity contract validated; waiting on real storage target
   - Next step: Let Peter drive the actual storage/S3 pilot with Allan / the relevant platform contacts; align the prepared SHA-based upload/URL contract, then confirm the concrete storage target, ownership, authentication, delivery URL and platform header/security requirements before any real `target_url` promotion.
   - Context: All 207 SAFE/MIGRATE references in the GPT-ready migration packages have stable `ast-sha256-*` IDs with matching hashes and current `render_url` values. The migration can continue without final CDN delivery, but durable AEM-independent delivery still requires the S3/CDN target. The 14 remaining REVIEW/BLOCKED dynamic gallery references are a separate source-resolution issue, not a storage-identity gap.
@@ -69,7 +69,7 @@
   - Source: Lifecycle audit, exact-rebuild size test, runtime/sanitizer proof and Slack handoff to Mukhammadjon on 2026-09-06
 
 - [ ] Clarify B2B contact form plan for Contentful
-  - Area: Marketing Content Platform
+  - Area: Contentful Migration
   - Status: Waiting for Beatrice feedback
   - Waiting for: Beatrice's current implementation plan and timing for the B2B contact form module.
   - Dominik's next step: If useful, connect Ulrike with the relevant developer so B2B/Salesforce requirements can be clarified while the component is being built.
@@ -108,7 +108,7 @@
   - Outcome: The Contentful Builder foundation, module contract and page-composition model are validated far enough for the migration pilot. The active catalogue now contains 25 modules; the Handbook-specific `handbook-category-card` and `handbook-step-media` contracts were independently validated on the Contentful test page, and remaining issues are isolated frontend/runtime gaps rather than a blocker to structural migration.
 
 - [x] Complete the Landing Page Builder and Contentful MVP
-  - Area: Marketing Content Platform
+  - Area: Landing Page Builder
   - Completed: 2026-08-31
   - Outcome: Dominik completed the handover and validated his own duplicated Contentful-enabled GPT end to end: OAuth, draft creation, preview, update, explicit publish and production URL work. Continued work has moved from proving the basic Contentful MVP into the migration-focused Builder and native CoreCSS/COSMA contract.
 
@@ -118,7 +118,7 @@
   - Outcome: The follow-up is arranged; Dominik will meet Yvonne and her team next week so they can present their current projects. No separate active dashboard task is needed for the scheduled meeting.
 
 - [x] Clarify Ciaran's remaining LP Builder & Contentful capacity
-  - Area: Marketing Content Platform
+  - Area: Landing Page Builder
   - Completed: 2026-08-26
   - Outcome: No further budget is available for Ciaran, so additional support from him should not be assumed in current platform or migration planning.
 
@@ -150,7 +150,7 @@
 - [x] Schedule the recurring AI Enablement sessions
   - Area: AI Enablement Series
   - Completed: 2026-08-21
-  - Outcome: The recurring series was invited for every second Tuesday from 12:30–14:00, starting 2026-09-08, with Charlottenburg (07-405) as the room and the kickoff participant group invited.
+  - Outcome: The recurring series was invited for every second Tuesday from 12:30–14:00, starting on 2026-09-08, with Charlottenburg (07-405) as the room and the kickoff participant group invited.
 
 - [x] Align AI operating model and priority set with Jorin
   - Area: AI Strategy & Steering
@@ -183,7 +183,7 @@
   - Outcome: The team aligned on the small-step MVP approach, discussed the Medienspiegel as the first external source candidate and agreed that team organization and the MVP boundary need to be defined before implementation.
 
 - [x] Validate Contentful integration progress with Mukhammadjon
-  - Area: Landing Page Builder & Contentful
+  - Area: Landing Page Builder
   - Completed: 2026-08-11
   - Outcome: Mukhammadjon demonstrated the working GPT Actions flow and Dominik independently verified Contentful draft creation and update through the shared Contentful-enabled Landing Page Builder.
 
