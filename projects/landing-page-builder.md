@@ -21,13 +21,15 @@ The maintained architecture is layered:
 
 The normal Builder remains module-first. A separate `SOURCE_DUPLICATE_MODE` now exists for highly custom pages that need source fidelity rather than approximation through existing modules.
 
+Mukhammadjon has confirmed the direction for the three remaining platform-scale requirements: larger `htmlSource`, fuller lifecycle management around stable `entryId`, and a trusted global CSS/JS runtime. Architectural alignment on these points is complete; implementation and end-to-end validation remain.
+
 ## Foundation and Rendering Model
 
 The implementation remains CoreCSS/COSMA first. Static `htmlSource` reuses native typography, responsive grid, spacing utilities, icons and other verified design-system primitives wherever possible.
 
 The public LP Builder bridge is the shared CSS layer for static-HTML gaps. It is currently linked at page level and has been proven to survive sanitization and load correctly in the rendered DOM.
 
-A separate central JavaScript runtime is now the preferred direction for interactive modules. A real Counter proof established that external `<script>` tags can be stored unchanged in Contentful but are removed by `sanitizeLPBuilderHtml` before the final DOM. The browser therefore never requests the page-linked JS asset. The desired future contract is a trusted centrally loaded `lpbuilder-runtime.js` plus one root-scoped, idempotent initialization call after `htmlSource` is rendered or replaced.
+A separate central JavaScript runtime is now the confirmed direction for interactive modules. A real Counter proof established that external `<script>` tags can be stored unchanged in Contentful but are removed by `sanitizeLPBuilderHtml` before the final DOM. The browser therefore never requests the page-linked JS asset. The agreed future contract is to load `lpbuilder-bridge.css` and `lpbuilder-runtime.js` globally and call `LPBuilderRuntime.init(renderedLpRoot)` after sanitized `htmlSource` is rendered or replaced.
 
 The current frontend no longer applies the earlier large automatic section padding. The remaining direct `section + section` margin can be structurally bypassed through the explicit-spacing wrapper.
 
@@ -94,6 +96,8 @@ This workflow was validated on a reduced real Memberships exact-rebuild test:
 
 A larger ~60 KB version was rejected by Contentful with HTTP 422 `InvalidEntry / Validation error / type: Text`. Contentful did not rewrite the HTML; the write was rejected and the previous draft remained unchanged.
 
+The confirmed target is at least 256 KB, ideally 512 KB, with full write support, lossless read-back, no truncation/transformation and length/SHA verification.
+
 ## Contentful Lifecycle Audit
 
 A controlled lifecycle audit on disposable entries established the current Action coverage.
@@ -107,12 +111,15 @@ Supported:
 - update a published page as a new draft and re-publish
 - update/publish actions can target Entry ID or slug where exposed by their schemas
 
-Missing from the currently available Actions:
+Missing from the currently available Actions, but confirmed for extension:
 
 - read an existing page by `entryId`
 - rename slug / target path on an existing entry
 - unpublish
-- archive/delete
+- archive
+- delete
+
+The agreed direction is to use `entryId` as the preferred stable technical identifier while retaining slug lookup as a convenient fallback. Archive and delete should remain separate explicit operations with publication-state and version checks.
 
 A native clone operation is not considered a required backend capability because a GPT-level get/create flow can cover duplication if needed.
 
@@ -128,7 +135,7 @@ Confirmed browser behavior:
 - no network request for the JS asset occurs
 - `sanitizeLPBuilderHtml` removes the script before React renders the sanitized HTML
 
-This confirms that adding the JS URL more strongly to GPT Instructions would not solve the problem. A trusted renderer-level runtime entry point is required for custom JavaScript behavior.
+This confirms that adding the JS URL more strongly to GPT Instructions would not solve the problem. A trusted renderer-level runtime entry point is required for custom JavaScript behavior and has now been confirmed as the intended implementation direction.
 
 ## Preview and Reference Targets
 
@@ -165,24 +172,26 @@ Codex is the preferred implementation surface for local contracts, bridge CSS, l
 - Use `SOURCE_DUPLICATE_MODE` only when source fidelity is explicitly required.
 - Use `SOURCE_DUPLICATE_IMPORT_LOCKED` for already prepared Contentful-ready HTML and verify the stored payload after writing.
 - Never publish without explicit approval.
+- Support larger exact-rebuild payloads at a target of at least 256 KB, ideally 512 KB, with lossless read-back and verification.
+- Use stable `entryId` as the preferred lifecycle identifier, with slug lookup retained as fallback convenience.
 - Prefer one stable global CSS entry point and one stable global JS runtime entry point in the renderer while keeping the underlying Creative Ops public assets independently maintainable.
+- Initialize the trusted runtime after sanitized LP Builder HTML is rendered or replaced.
 - Do not allow arbitrary page-authored script execution merely to restore legacy behavior; use a trusted global runtime instead.
 
 ## Risks and Open Questions
 
-- `htmlSource` capacity is too small for some real custom pages; the requested future contract is at least 256 KB, ideally 512 KB, including complete read-back with no silent truncation/transformation.
-- Existing draft slugs/target paths cannot currently be renamed through the available GPT Action.
-- Read-by-entryId, unpublish and archive/delete are missing from the current lifecycle Action set.
-- The renderer does not execute page-linked JavaScript because script nodes are removed during sanitization; trusted central runtime loading is required.
+- The confirmed larger `htmlSource` contract still needs implementation in the Contentful model or equivalent storage approach.
+- The confirmed lifecycle extensions still need implementation and validation.
+- The confirmed global CSS/JS runtime still needs implementation and validation in the renderer.
 - The exact-rebuild Memberships test exposed a full-bleed mismatch at the outer page/container level even when the imported custom HTML itself was byte-identical; this remains a secondary issue to isolate if it becomes relevant.
 
 ## Next Steps
 
-1. Wait for Mukhammadjon's feedback on the bundled request covering larger `htmlSource`, missing lifecycle Actions, and global LP Builder CSS + JS runtime loading.
-2. Validate any implemented lifecycle/runtime changes on disposable NEXT/Preview entries and, where relevant, PRO.
-3. Once a trusted runtime entry point exists, move interactive LP Builder behavior such as Counter and Carousel into the independently maintained central runtime rather than requesting one frontend hook per module.
+1. Wait for Mukhammadjon to implement the confirmed platform changes for larger `htmlSource`, lifecycle management and global LP Builder CSS/JS runtime loading.
+2. Validate the implemented changes end to end on disposable NEXT/Preview entries and, where relevant, PRO.
+3. Once the trusted runtime entry point exists, move interactive LP Builder behavior such as Counter and Carousel into the independently maintained central runtime rather than requesting one frontend hook per module.
 4. Continue validating the normal module-building experience separately from the Handbook-specific migration composition and exact-rebuild path.
 
 ## Last Confirmed
 
-2026-09-06: the Contentful Builder is operational for real migration work, explicit spacing and exact locked imports are validated, the common page lifecycle has been audited, and the JavaScript limitation has been proven at browser/DOM level. Dominik sent Mukhammadjon one bundled platform request covering the remaining scaling requirements rather than raising them piecemeal.
+2026-09-07: Mukhammadjon confirmed all three bundled platform requirements and the proposed implementation direction: at least 256 KB, ideally 512 KB, for `htmlSource` with lossless read-back and length/SHA verification; lifecycle support centered on stable `entryId` including slug/path changes, unpublish, archive and delete; and globally loaded `lpbuilder-bridge.css` plus trusted `lpbuilder-runtime.js` initialized after rendering. The remaining work is implementation and end-to-end validation.
