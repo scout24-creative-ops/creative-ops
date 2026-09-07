@@ -53,13 +53,13 @@
 
 ## Waiting
 
-- [ ] Align remaining LP Builder platform gaps with Mukhammadjon
+- [ ] Validate remaining LP Builder platform changes from Mukhammadjon
   - Area: Landing Page Builder
-  - Status: Waiting for Mukhammadjon feedback / implementation
-  - Waiting for: Review of the bundled platform request sent on 2026-09-06.
-  - Dominik's next step: Reassess once Mukhammadjon responds; validate the implemented changes on NEXT/Preview and PRO where relevant.
-  - Context: The request bundles three proven scaling needs: (1) larger `htmlSource` capacity of at least 256 KB, ideally 512 KB, with full read-back integrity; (2) missing lifecycle support for read-by-entryId, slug/target-path rename, unpublish and archive/delete; and (3) centrally loaded LP Builder CSS + trusted JS runtime. The JS requirement is confirmed by a browser proof: `<script>` is stored in Contentful but removed by `sanitizeLPBuilderHtml` before the final DOM, while the CSS `<link>` remains and loads successfully.
-  - Source: Lifecycle audit, exact-rebuild size test, runtime/sanitizer proof and Slack handoff to Mukhammadjon on 2026-09-06
+  - Status: Waiting for implementation
+  - Waiting for: Mukhammadjon to implement the confirmed platform changes.
+  - Dominik's next step: Validate the implemented changes end to end on disposable NEXT/Preview entries and, where relevant, PRO.
+  - Context: Mukhammadjon confirmed the requested direction for all three scaling needs: (1) larger `htmlSource` capacity of at least 256 KB, ideally 512 KB, with lossless read-back and length/SHA verification; (2) lifecycle support centered on stable `entryId`, including slug/target-path changes, unpublish, archive and delete; and (3) globally loaded `lpbuilder-bridge.css` plus trusted `lpbuilder-runtime.js` with initialization after render. Architectural alignment is complete; implementation and validation remain.
+  - Source: Mukhammadjon confirmed the bundled LP Builder platform request on 2026-09-07
 
 - [ ] Clarify B2B contact form plan for Contentful
   - Area: Contentful Migration
