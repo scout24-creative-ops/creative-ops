@@ -2,13 +2,6 @@
 
 ## Open
 
-- [ ] Create reusable templates for the AI Enablement Series
-  - Area: AI Enablement Series
-  - Status: Partially complete
-  - Next step: Create the reusable Series presentation template and a lightweight contributor template. Reusable Slack post patterns for Agenda/Reminder, Topic Call and Update/Follow-up are now defined; the approved Agenda format is bilingual German/English.
-  - Context: These formats should reduce recurring preparation effort without turning the Series into a centrally prepared presentation process. The first recurring session established a practical Wiki-based session page and a reusable bilingual Slack agenda pattern.
-  - Source: Dominik finalized the first recurring session communication format on 2026-09-07
-
 - [ ] Complete Anwenderhandbuch migration handoff and QA
   - Area: Contentful Migration
   - Status: Open, page migration complete; moved into QA/handoff
@@ -96,6 +89,11 @@
   - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
 
 ## Completed
+
+- [x] Simplify the reusable AI Enablement preparation model
+  - Area: AI Enablement Series
+  - Completed: 2026-09-07
+  - Outcome: Dominik decided not to create recurring Series presentation decks or a contributor presentation template because the preparation overhead is too high. Future sessions use the Scout Wiki session page as the agenda and documentation surface, while Dominik facilitates verbally and contributors decide themselves how they present or demo. Reusable Slack patterns remain in place.
 
 - [x] Prepare the AI Enablement session on 2026-09-08
   - Area: AI Enablement Series
