@@ -34,6 +34,8 @@ Canonical target structure:
 
 Existing drafts created before canonical mapping can still retain legacy preview paths because the current Contentful Action cannot rename an existing slug/target path.
 
+The next migration scope is now being prepared beyond the Handbook: the Gold membership page at `/anbieten/gewerbliche-anbieter/inserieren/Mitgliedschaften/gold.html` links to a broad set of B2B product detail pages. These product pages should be inventoried through a Codex crawl first, then reviewed and adjusted before migration rather than copied blindly. The crawl should establish the real target set, redirects, duplicates, source category/tile relationship, content/assets and obvious exceptions before page production starts.
+
 The real migration work has reinforced the intended operating model: the GPT can create and later update large groups of pages quickly, while highly custom legacy pages are handled through a separate exact-rebuild path and still require human guidance/QA where source structure is ambiguous or unusually bespoke. This is treated as a pragmatic hybrid migration model rather than a blocker to scale.
 
 The migration strategy remains:
@@ -154,7 +156,7 @@ For persistent asset storage, Dominik defines the migration requirements and URL
 
 ## Key Dependencies and Open Issues
 
-- Mukhammadjon's feedback/implementation is pending for Landing Page Builder capabilities needed at migration scale: larger `htmlSource`, read-by-entryId, slug rename, unpublish, archive/delete and trusted global CSS/JS loading.
+- Mukhammadjon's implementation is pending for Landing Page Builder capabilities needed at migration scale: larger `htmlSource`, read-by-entryId, slug rename, unpublish, archive/delete and trusted global CSS/JS loading.
 - Persistent S3/CDN delivery is still needed before final asset `target_url` promotion.
 - 14 REVIEW/BLOCKED dynamic gallery asset references remain unresolved; seven occur on each of the two gallery source variants.
 - ALT review remains required for many informative images before publish readiness.
@@ -162,18 +164,20 @@ For persistent asset storage, Dominik defines the migration requirements and URL
 - Some existing Handbook drafts retain legacy slugs until the rename capability exists.
 - The B2B contact form is becoming a key dependency for broader directory migration; implementation/timing and Salesforce integration details are still being clarified with Beatrice/Core/B2B.
 - Future Contentful routing and SEO/LLM visibility requirements still need coordination with SEO.
+- The linked B2B product-detail-page scope still needs a verified crawl/inventory before migration decisions and page adaptation can begin.
 
 ## Next Steps
 
-1. Hand off visual/content QA for the 44 detail drafts and the hub, including ALT review, media associations and hub category/card review.
-2. Wait for Mukhammadjon's feedback/implementation on the migration-relevant Landing Page Builder requirements and validate changes on disposable entries.
-3. Clarify the B2B contact-form implementation plan and, if useful, connect Ulrike with the relevant developer for Salesforce/business requirements.
-4. Continue the S3/CDN storage pilot with Peter / platform owners and later promote `target_url` values after verified upload.
-5. Resolve or explicitly accept the 14 remaining REVIEW/BLOCKED gallery asset references before final publish readiness.
-6. When useful for final handoff or asset URL migration, export/read the 45 current Contentful drafts into a verified inventory rather than rebuilding them.
-7. Review `/lp` source pages for additional FAQ/help/how-to content that should potentially be integrated into the Anwenderhandbuch scope.
-8. Once the key Builder components are available, continue with additional B2B directories rather than waiting for a fully automated universal migration framework.
+1. Crawl and inventory all B2B product detail pages linked from the Gold membership page, including redirects, duplicates, source category/tile, content/assets and non-migration exceptions; use that inventory as the basis for product-page review and migration planning.
+2. Hand off visual/content QA for the 44 detail drafts and the hub, including ALT review, media associations and hub category/card review.
+3. Wait for Mukhammadjon's implementation of the migration-relevant Landing Page Builder requirements and validate changes on disposable entries.
+4. Clarify the B2B contact-form implementation plan and, if useful, connect Ulrike with the relevant developer for Salesforce/business requirements.
+5. Continue the S3/CDN storage pilot with Peter / platform owners and later promote `target_url` values after verified upload.
+6. Resolve or explicitly accept the 14 remaining REVIEW/BLOCKED gallery asset references before final publish readiness.
+7. When useful for final handoff or asset URL migration, export/read the 45 current Contentful drafts into a verified inventory rather than rebuilding them.
+8. Review `/lp` source pages for additional FAQ/help/how-to content that should potentially be integrated into the Anwenderhandbuch scope.
+9. Once the key Builder components are available, continue with additional B2B directories rather than waiting for a fully automated universal migration framework.
 
 ## Last Confirmed
 
-2026-09-07: Dominik confirmed the simplified two-project model: `Landing Page Builder` for the Builder product and `Contentful Migration` for the AEM-to-Contentful migration programme. The former `Marketing Content Platform` project label is retired. The broader Marketing Asset Library direction has already received positive initial feedback from Matthias Brandstätter and Paul Befort but remains exploratory. All 45 Canonical/Unique Anwenderhandbuch target pages remain migrated as unpublished drafts; remaining migration work is concentrated on QA/handoff and the dependencies listed above.
+2026-09-07: The Anwenderhandbuch remains migrated as 45 unpublished target drafts. The next migration scope to prepare is the set of B2B product detail pages linked from the Gold membership page; the immediate next step is a Codex crawl/inventory before content/design adjustments and migration. Mukhammadjon has confirmed the remaining LP Builder platform direction, while implementation and validation are still pending.
