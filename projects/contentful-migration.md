@@ -4,7 +4,9 @@
 
 Migrate existing Marketing landing pages from AEM into the new Contentful-based setup through an AI-supported, repeatable workflow rather than rebuilding pages manually one by one.
 
-This project is distinct from `Marketing Content Platform`: the platform project provides the Landing Page Builder, Contentful integration and future asset infrastructure; this project covers the actual migration of existing pages.
+`Contentful Migration` covers the actual AEM-to-Contentful migration programme: migration scope, page preparation and execution, QA/handoff, asset migration, routing-related migration work and migration-specific dependencies. The [Landing Page Builder](landing-page-builder.md) is the central tool used to execute this work and is maintained as its own closely related project because it also has an ongoing product/authoring life beyond the migration.
+
+There is no separate active `Marketing Content Platform` project. Migration-specific infrastructure such as persistent asset delivery remains part of `Contentful Migration` unless a broader Marketing Asset Library / SSOT initiative is explicitly established later as its own project.
 
 ScoutWiki project pages:
 
@@ -42,6 +44,14 @@ The migration strategy remains:
 4. Promote only repeated issues into shared rules.
 5. Use exact-rebuild preparation for custom pages that should stay close to the source.
 6. Hand visual/content QA to the relevant colleagues instead of requiring Dominik to polish every page personally.
+
+## Relationship to Landing Page Builder
+
+The Landing Page Builder and Contentful Migration are separate but tightly coupled:
+
+- `Landing Page Builder` owns the Builder product and its capabilities: Contentful integration, Actions, module contracts, runtime, lifecycle support, exact-rebuild modes and authoring behavior.
+- `Contentful Migration` owns which AEM pages move, how the migration is executed, what QA/handoff is required and which migration dependencies must be solved.
+- Real migration needs are a primary source of requirements for the Landing Page Builder, but Builder development remains reusable beyond this one migration programme.
 
 ## Handbook Composition and Spacing
 
@@ -92,7 +102,7 @@ Current verified asset state:
 
 A local `asset-usage-registry.json` also exists for later Contentful usage mapping. Exact Contentful usage by Entry ID/module position is not derivable from the migration packages alone and requires a draft export/read when that later URL-rewrite step is executed.
 
-Persistent AEM-independent delivery remains a separate platform dependency: a real S3/CDN target is still needed before `target_url` promotion.
+Persistent AEM-independent delivery remains a migration dependency: a real S3/CDN target is still needed before `target_url` promotion. Dominik defines the migration contract while Peter / relevant platform contacts should drive the actual storage pilot and ongoing infrastructure ownership.
 
 ## Canonical Mapping and Draft Inventory
 
@@ -128,20 +138,20 @@ For future exact-rebuild pages, the requested platform contract is at least 256 
 
 The project now has broader visibility because the first real migration results are tangible.
 
-- Mukhammadjon received one bundled technical request covering larger `htmlSource`, missing lifecycle Actions and a global LP Builder CSS/JS runtime contract.
+- Mukhammadjon received one bundled technical request covering larger `htmlSource`, missing lifecycle Actions and a global LP Builder CSS/JS runtime contract. These are Landing Page Builder capabilities required by migration scale.
 - Beatrice received a migration progress update and was asked for the current B2B contact-form implementation plan/timing; Dominik offered Ulrike as B2B support for Salesforce/business requirements.
 - Daniel received a progress update that the Contentful-adapted LP Builder is already migrating real B2B pages successfully, can update many pages together efficiently, and is progressing at or ahead of the expected pace. The hybrid nature of custom-page migration was framed as a practical operating model rather than a failure of the approach.
 - SEO routing/URL strategy remains a parallel coordination topic for future Contentful delivery.
 
 ## Dominik's Role
 
-Dominik owns migration planning, orchestration, migration rules and the migration-focused Landing Page Builder. He defines reusable migration contracts and integration requirements, while visual/content QA and infrastructure ownership should remain with the relevant specialists.
+Dominik owns migration planning, orchestration, migration rules and the migration-focused use of the Landing Page Builder. He defines reusable migration contracts and migration-driven Builder requirements, while visual/content QA and infrastructure ownership should remain with the relevant specialists.
 
 For persistent asset storage, Dominik defines the migration requirements and URL/key contract while Peter / relevant platform contacts drive the actual S3/CDN pilot and ongoing storage ownership.
 
 ## Key Dependencies and Open Issues
 
-- Mukhammadjon's feedback/implementation is pending for larger `htmlSource`, read-by-entryId, slug rename, unpublish, archive/delete and trusted global CSS/JS loading.
+- Mukhammadjon's feedback/implementation is pending for Landing Page Builder capabilities needed at migration scale: larger `htmlSource`, read-by-entryId, slug rename, unpublish, archive/delete and trusted global CSS/JS loading.
 - Persistent S3/CDN delivery is still needed before final asset `target_url` promotion.
 - 14 REVIEW/BLOCKED dynamic gallery asset references remain unresolved; seven occur on each of the two gallery source variants.
 - ALT review remains required for many informative images before publish readiness.
@@ -153,14 +163,14 @@ For persistent asset storage, Dominik defines the migration requirements and URL
 ## Next Steps
 
 1. Hand off visual/content QA for the 44 detail drafts and the hub, including ALT review, media associations and hub category/card review.
-2. Wait for Mukhammadjon's feedback/implementation on the bundled platform request and validate changes on disposable entries.
+2. Wait for Mukhammadjon's feedback/implementation on the migration-relevant Landing Page Builder requirements and validate changes on disposable entries.
 3. Clarify the B2B contact-form implementation plan and, if useful, connect Ulrike with the relevant developer for Salesforce/business requirements.
 4. Continue the S3/CDN storage pilot with Peter / platform owners and later promote `target_url` values after verified upload.
 5. Resolve or explicitly accept the 14 remaining REVIEW/BLOCKED gallery asset references before final publish readiness.
 6. When useful for final handoff or asset URL migration, export/read the 45 current Contentful drafts into a verified inventory rather than rebuilding them.
 7. Review `/lp` source pages for additional FAQ/help/how-to content that should potentially be integrated into the Anwenderhandbuch scope.
-8. Once the key platform components are available, continue with additional B2B directories rather than waiting for a fully automated universal migration framework.
+8. Once the key Builder components are available, continue with additional B2B directories rather than waiting for a fully automated universal migration framework.
 
 ## Last Confirmed
 
-2026-09-06: all 45 Canonical/Unique Anwenderhandbuch target pages have been migrated as unpublished drafts. The Contentful-adapted LP Builder is proving fast for both creation and grouped page changes, and the exact-rebuild path covers highly custom legacy pages with human QA where needed. The remaining work is concentrated on QA/handoff plus a small set of platform dependencies already handed to Mukhammadjon, the B2B contact form, SEO routing and final asset delivery.
+2026-09-07: Dominik confirmed the simplified two-project model: `Landing Page Builder` for the Builder product and `Contentful Migration` for the AEM-to-Contentful migration programme. The former `Marketing Content Platform` project label is retired. All 45 Canonical/Unique Anwenderhandbuch target pages remain migrated as unpublished drafts; remaining migration work is concentrated on QA/handoff and the dependencies listed above.
