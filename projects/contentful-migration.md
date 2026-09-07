@@ -104,6 +104,8 @@ A local `asset-usage-registry.json` also exists for later Contentful usage mappi
 
 Persistent AEM-independent delivery remains a migration dependency: a real S3/CDN target is still needed before `target_url` promotion. Dominik defines the migration contract while Peter / relevant platform contacts should drive the actual storage pilot and ongoing infrastructure ownership.
 
+The broader Marketing Asset Library remains an exploratory longer-term opportunity rather than a confirmed platform project. Dominik has already discussed the idea with Matthias Brandstätter and Paul Befort, and both reacted positively to the direction. The concept should still be validated against existing Scout24 capabilities before creating a new platform or ownership model.
+
 ## Canonical Mapping and Draft Inventory
 
 The canonical map contains:
@@ -141,6 +143,7 @@ The project now has broader visibility because the first real migration results 
 - Mukhammadjon received one bundled technical request covering larger `htmlSource`, missing lifecycle Actions and a global LP Builder CSS/JS runtime contract. These are Landing Page Builder capabilities required by migration scale.
 - Beatrice received a migration progress update and was asked for the current B2B contact-form implementation plan/timing; Dominik offered Ulrike as B2B support for Salesforce/business requirements.
 - Daniel received a progress update that the Contentful-adapted LP Builder is already migrating real B2B pages successfully, can update many pages together efficiently, and is progressing at or ahead of the expected pace. The hybrid nature of custom-page migration was framed as a practical operating model rather than a failure of the approach.
+- Matthias Brandstätter and Paul Befort have already heard the broader Marketing Asset Library idea and both responded positively. This is support for further exploration, not yet an architecture or delivery decision.
 - SEO routing/URL strategy remains a parallel coordination topic for future Contentful delivery.
 
 ## Dominik's Role
@@ -173,4 +176,4 @@ For persistent asset storage, Dominik defines the migration requirements and URL
 
 ## Last Confirmed
 
-2026-09-07: Dominik confirmed the simplified two-project model: `Landing Page Builder` for the Builder product and `Contentful Migration` for the AEM-to-Contentful migration programme. The former `Marketing Content Platform` project label is retired. All 45 Canonical/Unique Anwenderhandbuch target pages remain migrated as unpublished drafts; remaining migration work is concentrated on QA/handoff and the dependencies listed above.
+2026-09-07: Dominik confirmed the simplified two-project model: `Landing Page Builder` for the Builder product and `Contentful Migration` for the AEM-to-Contentful migration programme. The former `Marketing Content Platform` project label is retired. The broader Marketing Asset Library direction has already received positive initial feedback from Matthias Brandstätter and Paul Befort but remains exploratory. All 45 Canonical/Unique Anwenderhandbuch target pages remain migrated as unpublished drafts; remaining migration work is concentrated on QA/handoff and the dependencies listed above.
