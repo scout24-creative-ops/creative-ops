@@ -46,6 +46,21 @@ Use these patterns for Topic Calls, agendas, reminders, session updates and foll
 - **Session update:** State what is happening, why it is useful and what participants should do next.
 - **Follow-up:** Thank participants briefly when appropriate, capture the few useful outcomes or shared resources and make the next action explicit.
 
+### Approved Agenda / Reminder pattern
+
+For recurring AI Enablement Agenda / Reminder posts, use the confirmed 2026-09-07 pattern as the default starting point.
+
+- Output both German and English every time unless Dominik explicitly asks for one language only.
+- Put German first and English directly below it; do not add separate `DE` / `EN` labels.
+- Use one short heading: `🎓 AI Enablement | Morgen, [TIME]` / `🎓 AI Enablement | Tomorrow, [TIME]`.
+- Start with a friendly greeting and `@hier` / `@here`, followed by one short sentence that the next AI Enablement session is happening and what participants can expect.
+- Use exactly three compact bullets when all three pillars are present:
+  - `📚 Learn:` topic + one-line explanation.
+  - `🔍 Show & Share:` contributor names with short topic labels in parentheses, separated by `·`.
+  - `💬 Explore:` the discussion topic as an open question or exploration when no decision has been made.
+- Close simply with `Bis morgen! 🙂` / `See you tomorrow! 🙂`.
+- Keep the English version structurally equivalent to the German version rather than rewriting it into a different style.
+
 ### Scout Wiki pages
 
 Use the `Creative Operations` Scout Wiki space as the shared home for the Series.
@@ -53,7 +68,7 @@ Use the `Creative Operations` Scout Wiki space as the shared home for the Series
 - **Hub page:** Keep it deliberately reduced: one short purpose statement, one compact callout naming the next session, then the dynamic list of session subpages. Do not add programme explanations, large grids or extra status sections.
 - **Session detail page:** Use the existing 08.09.2026 page as the literal source template and duplicate it in the Wiki for future sessions so its manual layout is preserved. Start with the page title only, then use three columns for `01 · Learn`, `02 · Show & Share` and `03 · Explore`.
 - In the Wiki editor, add a manual divider at the top of each column and use a large heading plus only the minimum session content below it. Do not add explanatory hero text, duplicate agenda sections or extra callouts.
-- Below the slide-like agenda, retain only three compact areas: `Live-Notizen & wichtigste Erkenntnisse`, `Aufzeichnung & Ressourcen` and `Entscheidungen & Follow-ups`.
+- Below the slide-like agenda, retain only three compact collapsible areas: `Live-Notizen & wichtigste Erkenntnisse`, `Aufzeichnung & Ressourcen` and `Entscheidungen & Follow-ups`.
 
 Add approved examples here as the recurring formats become established.
 
