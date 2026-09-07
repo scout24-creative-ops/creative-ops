@@ -16,6 +16,8 @@ The completed AI Team-Check is the discovery and evidence phase; the recurring A
 - Actual project implementation and delivery happen outside the Series with the relevant owners and delivery capacity.
 - Not every session needs all three pillars and not every colleague is expected to build an agent.
 - Optional smaller follow-up sessions can be used for topics relevant only to a subset of participants.
+- Recurring preparation should stay deliberately minimal: no centrally prepared slide deck, only the Scout Wiki session page as agenda/working surface plus verbal facilitation.
+- Contributors decide themselves whether and how they want to show their topic; Dominik does not prepare presentation material for them.
 
 ### Learn
 
@@ -31,7 +33,7 @@ Purpose: make existing AI solutions, workflows, experiments and learnings visibl
 
 Simple framing: `Teilen, was bereits da ist und anderen helfen kann.`
 
-Contributions can be finished solutions, work in progress, experiments, failures or practical learnings.
+Contributions can be finished solutions, work in progress, experiments, failures or practical learnings. Contributors choose their own format; a live demo, a few spoken points, screenshots or a presentation are all optional rather than standardized.
 
 ### Explore
 
@@ -80,8 +82,9 @@ Use the private `Creative Operations` Scout Wiki space as the shared Series work
 - Session detail pages: use the 08.09.2026 page as the source template for future sessions.
 - Session page layout: three columns for `01 · Learn`, `02 · Show & Share`, `03 · Explore`.
 - Below the agenda, keep three collapsible areas only: `Live-Notizen & wichtigste Erkenntnisse`, `Aufzeichnung & Ressourcen`, `Entscheidungen & Follow-ups`.
-- The participant-facing session page is used at the start of the meeting as the agenda and afterwards as the shared recap/archive for notes, recording and resources.
-- Dominik also keeps a separate internal moderator/demo-flow page with the ordered live-demo steps and ready-to-use prompts.
+- The participant-facing session page is the only standard visual Dominik prepares for each recurring session: use it to show the agenda at the start and as the shared recap/archive afterwards.
+- Dominik facilitates the session verbally instead of preparing a separate presentation deck.
+- An internal moderator/demo-flow page may be used when a specific live demo needs ordered steps or ready-to-use prompts, but this is optional session support rather than a recurring presentation requirement.
 
 The repository remains Dominik's durable project/task context; Scout Wiki is the participant-facing Series workspace; Slack is the communication surface.
 
@@ -104,14 +107,12 @@ Topic Calls should be used only when additional topics are actually needed.
 
 ## Reusable Formats
 
-The reusable Slack patterns for Agenda/Reminder, Topic Call and Update/Follow-up are defined and the Agenda pattern is calibrated from the first recurring session.
+Keep only lightweight reusable formats that reduce recurring effort:
 
-Still open:
+- Scout Wiki session page structure for the agenda and post-session documentation;
+- reusable Slack patterns for Agenda/Reminder, Topic Call and Update/Follow-up.
 
-- reusable Series presentation template;
-- lightweight contributor template.
-
-These formats should reduce recurring preparation effort without turning the Series into a centrally prepared presentation process.
+Do not create a recurring Series presentation template or contributor presentation template. Contributors own their own presentation/demo choices, and Dominik should not take on slide preparation for the Series.
 
 ## Dominik's Role
 
@@ -122,7 +123,8 @@ These formats should reduce recurring preparation effort without turning the Ser
 - Help assess which AI opportunities deserve further investigation.
 - Support selected initiatives with structure, scope, MVP thinking and strategic steering where appropriate.
 - Take end-to-end AI Lead ownership for selected high-impact initiatives when explicitly prioritized, while keeping delivery capacity distinct from broad enablement.
-- Keep the format lightweight and avoid unnecessary coordination overhead.
+- Keep recurring session preparation intentionally small so the Series does not consume disproportionate time.
+- Do not centrally prepare presentation decks or presentation material for contributor slots.
 
 ## Decisions
 
@@ -132,23 +134,26 @@ These formats should reduce recurring preparation effort without turning the Ser
 - Separate enablement from project delivery.
 - Keep actual implementation outside the large recurring Series sessions.
 - Use Scout Wiki as the shared session workspace and Slack for participant communication.
-- Keep recurring preparation lightweight and reusable.
+- Use the Scout Wiki session page as the standard agenda surface instead of preparing recurring presentation decks.
+- Let contributors decide their own format and level of preparation; Dominik does not prepare their materials.
+- Keep recurring preparation deliberately lightweight because the Series should not become a significant time burden for Dominik.
 - Explore topics should not imply a solution is already chosen.
 - Jorin supported the revised enablement direction on 2026-08-20.
 
 ## Risks and Open Questions
 
 - How consistently teams and colleagues will contribute over time.
-- How to keep contributions lightweight enough that the Series does not create presentation overhead.
+- Whether the deliberately lightweight format provides enough structure while avoiding preparation overhead.
 - Which Explore topics justify separate follow-up and delivery capacity.
 - Whether a shared Marketing & Communications knowledge source is useful enough to justify ongoing ownership and maintenance.
 
 ## Next Steps
 
-1. Run the first recurring session on 2026-09-08 and capture notes, recording/resources and follow-ups in the session Wiki page.
-2. Use the session outcome to decide whether the central-knowledge-source topic should be stopped, observed or investigated further.
-3. Create the remaining reusable Series presentation and contributor templates.
+1. Run the first recurring session on 2026-09-08 using the Scout Wiki session page as the agenda and verbal facilitation for the rest.
+2. Capture notes, recording/resources and follow-ups in the session Wiki page.
+3. Use the session outcome to decide whether the central-knowledge-source topic should be stopped, observed or investigated further.
+4. Continue using the lightweight Wiki + Slack preparation model for future sessions and only add extra preparation when a specific topic genuinely requires it.
 
 ## Last Confirmed
 
-Updated on 2026-09-07 with the final preparation for the 2026-09-08 recurring session, Scout Wiki live-demo flow, three Show & Share contributions, open Knowledge Explore topic, participant-facing Wiki structure and bilingual Slack agenda pattern.
+Updated on 2026-09-07: Dominik decided against recurring AI Enablement presentation decks because the preparation effort is too high. The standard format is now a Scout Wiki agenda/session page plus verbal facilitation; contributors decide themselves how they present or demonstrate their topics.
