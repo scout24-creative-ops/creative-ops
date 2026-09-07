@@ -4,17 +4,10 @@
 
 - [ ] Create reusable templates for the AI Enablement Series
   - Area: AI Enablement Series
-  - Status: Open
-  - Next step: Create the reusable Series presentation template, a lightweight contributor template and reusable Slack post templates for Agenda, Topic Call and Update posts.
-  - Context: These formats should reduce recurring preparation effort without turning the Series into a centrally prepared presentation process.
-  - Source: Dominik consolidated the recurring AI Enablement preparation model on 2026-08-23
-
-- [ ] Prepare the next AI Enablement session on 2026-09-08
-  - Area: AI Enablement Series
-  - Status: Open
-  - Next step: Prepare the remaining session content and presentation; Marie-Lord Lumumba is confirmed for the Brand Agent Show & Share contribution.
-  - Context: Marie will present the Brand Agent, reusable Skill approach and her research on when to use an Agent versus a Skill or another setup. Dominik and Marie will align her contribution on 2026-09-04. The calendar event itself is not tracked as a separate dashboard task.
-  - Source: Marie confirmed her contribution with Dominik on 2026-08-24
+  - Status: Partially complete
+  - Next step: Create the reusable Series presentation template and a lightweight contributor template. Reusable Slack post patterns for Agenda/Reminder, Topic Call and Update/Follow-up are now defined; the approved Agenda format is bilingual German/English.
+  - Context: These formats should reduce recurring preparation effort without turning the Series into a centrally prepared presentation process. The first recurring session established a practical Wiki-based session page and a reusable bilingual Slack agenda pattern.
+  - Source: Dominik finalized the first recurring session communication format on 2026-09-07
 
 - [ ] Complete Anwenderhandbuch migration handoff and QA
   - Area: Contentful Migration
@@ -104,6 +97,11 @@
 
 ## Completed
 
+- [x] Prepare the AI Enablement session on 2026-09-08
+  - Area: AI Enablement Series
+  - Completed: 2026-09-07
+  - Outcome: The first recurring 90-minute session is prepared around all three pillars: Learn uses Scout Wiki with a live ChatGPT knowledge-flow demo; Show & Share includes Marie-Lord Lumumba, Peter and Sophie; Explore discusses whether a central knowledge source is needed and what ownership and maintenance would require. The moderator flow, participant-facing Wiki page and bilingual Slack agenda are ready.
+
 - [x] Validate the CoreCSS/COSMA HTML contract
   - Area: Landing Page Builder
   - Completed: 2026-09-04
@@ -170,7 +168,7 @@
   - Outcome: The kickoff concept and final presentation were completed around the Learn, Show & Share and Explore model. The previous shared-project-slide requirement was dropped because the Series no longer assumes that every participant maintains an individual agent or workflow project.
 
 - [x] Deliver the Plus FOMO email design for implementation
-  - Area: E-Mail Automation – Plus FOMO
+  - Area: E-Mail Automation – Seeker | Plus FOMO
   - Completed: 2026-08-12
   - Outcome: Dominik delivered the expected design work. The email will be built directly in Iterable; Mitch's AWS/GitHub module process will not be used for this implementation.
 
