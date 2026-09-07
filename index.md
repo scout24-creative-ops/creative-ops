@@ -34,7 +34,6 @@ The two pillars are Dominik's personal working and steering model. Projects can 
 ### AI Creative Operations
 
 - [Landing Page Builder](projects/landing-page-builder.md)
-- [Marketing Content Platform](projects/contentful-marketing-mvp.md)
 - [Contentful Migration](projects/contentful-migration.md)
 - [E-Mail Builder](projects/email-builder.md)
 - [HeyImmo automated HomeOwner mail](projects/heyimmo-homeowner-mail.md)
@@ -48,6 +47,7 @@ The two pillars are Dominik's personal working and steering model. Projects can 
 ## Historical Project Context
 
 - [AI Team-Check / Marketing AI Survey](projects/marketing-ai-survey.md) — completed discovery phase now integrated into AI Enablement.
+- [Marketing Content Platform](projects/contentful-marketing-mvp.md) — retired project alias; relevant context is maintained under Landing Page Builder and Contentful Migration.
 
 ## Weekly Documentation
 
