@@ -23,6 +23,10 @@ The normal Builder remains module-first. A separate `SOURCE_DUPLICATE_MODE` now 
 
 Mukhammadjon has confirmed the direction for the three remaining platform-scale requirements: larger `htmlSource`, fuller lifecycle management around stable `entryId`, and a trusted global CSS/JS runtime. Architectural alignment on these points is complete; implementation and end-to-end validation remain.
 
+The current active product-development focus is moving further toward migration readiness through reusable modules. Dominik should prepare stable module contracts and Builder behavior so colleagues can execute the operational migration without requiring him to rebuild or migrate every page manually.
+
+The first confirmed module candidate in this phase is a complex B2B product-comparison table used across multiple AEM pages. The existing AEM implementation should be treated as the canonical structural reference rather than asking the GPT to recreate the table from scratch. The intended contract keeps the table architecture, responsive model, alignment and interaction patterns controlled while allowing editorial changes to product columns, rows, labels, tooltips, links, cell states and CTAs.
+
 ## Foundation and Rendering Model
 
 The implementation remains CoreCSS/COSMA first. Static `htmlSource` reuses native typography, responsive grid, spacing utilities, icons and other verified design-system primitives wherever possible.
@@ -150,6 +154,8 @@ Dominik owns product direction, strategy, prioritization and quality for the Lan
 
 Codex is the preferred implementation surface for local contracts, bridge CSS, libraries, runtime tests, exact-rebuild preparation and technical source analysis. The GPT composes normal validated modules and performs controlled Contentful writes.
 
+For the next migration phase, Dominik's focus should stay on Builder readiness and reusable module design rather than repeated operational crawling or page-by-page migration. The goal is to encode stable patterns once so colleagues can maintain and migrate pages through controlled content edits instead of recreating complex structures.
+
 ## Key Stakeholders and Users
 
 - B2B Marketing
@@ -177,21 +183,26 @@ Codex is the preferred implementation surface for local contracts, bridge CSS, l
 - Prefer one stable global CSS entry point and one stable global JS runtime entry point in the renderer while keeping the underlying Creative Ops public assets independently maintainable.
 - Initialize the trusted runtime after sanitized LP Builder HTML is rendered or replaced.
 - Do not allow arbitrary page-authored script execution merely to restore legacy behavior; use a trusted global runtime instead.
+- For complex recurring legacy components whose structure should remain stable, use the proven AEM HTML as a canonical implementation reference and convert it into a reusable Builder contract instead of asking the GPT to regenerate the structure freely.
+- Separate controlled module architecture from editable content. For the B2B product-comparison-table candidate, editorial changes should be possible for product columns, rows, labels, tooltips, links, cell states and CTAs without reconstructing the table.
 
 ## Risks and Open Questions
 
 - The confirmed larger `htmlSource` contract still needs implementation in the Contentful model or equivalent storage approach.
 - The confirmed lifecycle extensions still need implementation and validation.
 - The confirmed global CSS/JS runtime still needs implementation and validation in the renderer.
+- Interactive legacy modules such as the B2B product-comparison table may depend on the future trusted runtime for behavior such as accordions/tooltips; static contract and runtime-dependent behavior should remain cleanly separated.
 - The exact-rebuild Memberships test exposed a full-bleed mismatch at the outer page/container level even when the imported custom HTML itself was byte-identical; this remains a secondary issue to isolate if it becomes relevant.
 
 ## Next Steps
 
-1. Wait for Mukhammadjon to implement the confirmed platform changes for larger `htmlSource`, lifecycle management and global LP Builder CSS/JS runtime loading.
-2. Validate the implemented changes end to end on disposable NEXT/Preview entries and, where relevant, PRO.
-3. Once the trusted runtime entry point exists, move interactive LP Builder behavior such as Counter and Carousel into the independently maintained central runtime rather than requesting one frontend hook per module.
-4. Continue validating the normal module-building experience separately from the Handbook-specific migration composition and exact-rebuild path.
+1. Continue the migration-readiness module phase, starting with the reusable B2B product-comparison-table contract based on the existing AEM implementation.
+2. Validate that the comparison-table module preserves its stable structure and responsive behavior while allowing controlled edits to rows, columns, tooltips, links, cell states and CTAs; do not treat the Codex implementation as confirmed until its result is reviewed.
+3. Continue identifying additional recurring B2B page structures that deserve reusable module contracts rather than page-specific rebuilds.
+4. Wait for Mukhammadjon to implement the confirmed platform changes for larger `htmlSource`, lifecycle management and global LP Builder CSS/JS runtime loading.
+5. Validate the implemented platform changes end to end on disposable NEXT/Preview entries and, where relevant, PRO.
+6. Once the trusted runtime entry point exists, move interactive LP Builder behavior such as Counter, Carousel and other validated interactive module behavior into the independently maintained central runtime rather than requesting one frontend hook per module.
 
 ## Last Confirmed
 
-2026-09-07: Mukhammadjon confirmed all three bundled platform requirements and the proposed implementation direction: at least 256 KB, ideally 512 KB, for `htmlSource` with lossless read-back and length/SHA verification; lifecycle support centered on stable `entryId` including slug/path changes, unpublish, archive and delete; and globally loaded `lpbuilder-bridge.css` plus trusted `lpbuilder-runtime.js` initialized after rendering. The remaining work is implementation and end-to-end validation.
+2026-09-08: Dominik shifted the next active LP Builder work toward reusable module readiness for the broader B2B migration, with the complex product-comparison table as the first confirmed candidate. The existing AEM HTML should be the canonical structural reference, while the GPT should edit controlled content fields without rebuilding the component architecture. Mukhammadjon's three confirmed platform changes remain pending implementation and end-to-end validation.
