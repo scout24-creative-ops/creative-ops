@@ -34,9 +34,25 @@ Canonical target structure:
 
 Existing drafts created before canonical mapping can still retain legacy preview paths because the current Contentful Action cannot rename an existing slug/target path.
 
-The next migration scope is now being prepared beyond the Handbook: the Gold membership page at `/anbieten/gewerbliche-anbieter/inserieren/Mitgliedschaften/gold.html` links to a broad set of B2B product detail pages. These product pages should be inventoried through a Codex crawl first, then reviewed and adjusted before migration rather than copied blindly. The crawl should establish the real target set, redirects, duplicates, source category/tile relationship, content/assets and obvious exceptions before page production starts.
+The next migration scope beyond the Handbook is the B2B product-detail cluster linked from the Gold membership page at `/anbieten/gewerbliche-anbieter/inserieren/Mitgliedschaften/gold.html`.
+
+A first Codex crawl of that scope is complete:
+
+- 38 product tiles
+- 36 unique target pages
+- 1 redirect
+- 2 duplicate targets
+- 1 broken target: Objektdatenbank, HTTP 404
+- 1,723 asset references
+- 300 downloaded local original files
+- 0 asset download errors
+- per target page: metadata, content, structured content, source HTML, links and assets
+
+The crawl is a useful migration source package, but not yet a fully rendered-browser verification. The local Chrome CLI did not provide rendered DOM or full-page screenshots; all 36 pages are marked `RENDERED_DOM_UNAVAILABLE` and `FULLPAGE_SCREENSHOT_UNAVAILABLE`. Content that appears only after interaction, consent, login or asynchronous JavaScript therefore remains unverified and should be treated as a known gap rather than silently assumed complete.
 
 The real migration work has reinforced the intended operating model: the GPT can create and later update large groups of pages quickly, while highly custom legacy pages are handled through a separate exact-rebuild path and still require human guidance/QA where source structure is ambiguous or unusually bespoke. This is treated as a pragmatic hybrid migration model rather than a blocker to scale.
+
+For the next phase, Dominik should focus on making the LP Builder migration-ready rather than spending substantial time on repeated crawling or manual page migration. Operational migration work should move to Ulrike, with Mitch supporting her, while Dominik prepares reusable modules, contracts, migration rules and quality guardrails.
 
 The migration strategy remains:
 
@@ -46,6 +62,7 @@ The migration strategy remains:
 4. Promote only repeated issues into shared rules.
 5. Use exact-rebuild preparation for custom pages that should stay close to the source.
 6. Hand visual/content QA to the relevant colleagues instead of requiring Dominik to polish every page personally.
+7. Prefer reusable Builder capabilities over repeated manual migration work by Dominik.
 
 ## Relationship to Landing Page Builder
 
@@ -54,6 +71,7 @@ The Landing Page Builder and Contentful Migration are separate but tightly coupl
 - `Landing Page Builder` owns the Builder product and its capabilities: Contentful integration, Actions, module contracts, runtime, lifecycle support, exact-rebuild modes and authoring behavior.
 - `Contentful Migration` owns which AEM pages move, how the migration is executed, what QA/handoff is required and which migration dependencies must be solved.
 - Real migration needs are a primary source of requirements for the Landing Page Builder, but Builder development remains reusable beyond this one migration programme.
+- Dominik's highest-leverage contribution to the next migration phase is preparing reusable Builder capabilities; the operational migration itself should be delegated where possible.
 
 ## Handbook Composition and Spacing
 
@@ -142,15 +160,18 @@ For future exact-rebuild pages, the requested platform contract is at least 256 
 
 The project now has broader visibility because the first real migration results are tangible.
 
-- Mukhammadjon received one bundled technical request covering larger `htmlSource`, missing lifecycle Actions and a global LP Builder CSS/JS runtime contract. These are Landing Page Builder capabilities required by migration scale.
+- Mukhammadjon confirmed the requested direction for larger `htmlSource`, fuller lifecycle Actions and a global LP Builder CSS/JS runtime contract; implementation and end-to-end validation remain pending.
 - Beatrice received a migration progress update and was asked for the current B2B contact-form implementation plan/timing; Dominik offered Ulrike as B2B support for Salesforce/business requirements.
 - Daniel received a progress update that the Contentful-adapted LP Builder is already migrating real B2B pages successfully, can update many pages together efficiently, and is progressing at or ahead of the expected pace. The hybrid nature of custom-page migration was framed as a practical operating model rather than a failure of the approach.
+- Ulrike should take over more of the operational page migration work in the next phase, with Mitch supporting her; Dominik focuses on Builder readiness and reusable migration capabilities.
 - Matthias Brandstätter and Paul Befort have already heard the broader Marketing Asset Library idea and both responded positively. This is support for further exploration, not yet an architecture or delivery decision.
 - SEO routing/URL strategy remains a parallel coordination topic for future Contentful delivery.
 
 ## Dominik's Role
 
-Dominik owns migration planning, orchestration, migration rules and the migration-focused use of the Landing Page Builder. He defines reusable migration contracts and migration-driven Builder requirements, while visual/content QA and infrastructure ownership should remain with the relevant specialists.
+Dominik owns migration planning, orchestration, migration rules and the migration-focused use and preparation of the Landing Page Builder. He defines reusable migration contracts, migration-driven Builder requirements and quality guardrails.
+
+For the next migration phase, Dominik should avoid becoming the default operator for repeated crawling and page-by-page migration. Operational migration should move to Ulrike with Mitch supporting her, while Dominik focuses on reusable Builder modules and the system-level preparation that allows others to execute the migration reliably.
 
 For persistent asset storage, Dominik defines the migration requirements and URL/key contract while Peter / relevant platform contacts drive the actual S3/CDN pilot and ongoing storage ownership.
 
@@ -164,20 +185,21 @@ For persistent asset storage, Dominik defines the migration requirements and URL
 - Some existing Handbook drafts retain legacy slugs until the rename capability exists.
 - The B2B contact form is becoming a key dependency for broader directory migration; implementation/timing and Salesforce integration details are still being clarified with Beatrice/Core/B2B.
 - Future Contentful routing and SEO/LLM visibility requirements still need coordination with SEO.
-- The linked B2B product-detail-page scope still needs a verified crawl/inventory before migration decisions and page adaptation can begin.
+- The Gold product-detail crawl does not contain verified rendered DOM or full-page screenshots, so dynamic/interactive content may still require targeted verification when it becomes relevant to an actual page migration.
 
 ## Next Steps
 
-1. Crawl and inventory all B2B product detail pages linked from the Gold membership page, including redirects, duplicates, source category/tile, content/assets and non-migration exceptions; use that inventory as the basis for product-page review and migration planning.
-2. Hand off visual/content QA for the 44 detail drafts and the hub, including ALT review, media associations and hub category/card review.
-3. Wait for Mukhammadjon's implementation of the migration-relevant Landing Page Builder requirements and validate changes on disposable entries.
-4. Clarify the B2B contact-form implementation plan and, if useful, connect Ulrike with the relevant developer for Salesforce/business requirements.
-5. Continue the S3/CDN storage pilot with Peter / platform owners and later promote `target_url` values after verified upload.
-6. Resolve or explicitly accept the 14 remaining REVIEW/BLOCKED gallery asset references before final publish readiness.
-7. When useful for final handoff or asset URL migration, export/read the 45 current Contentful drafts into a verified inventory rather than rebuilding them.
-8. Review `/lp` source pages for additional FAQ/help/how-to content that should potentially be integrated into the Anwenderhandbuch scope.
-9. Once the key Builder components are available, continue with additional B2B directories rather than waiting for a fully automated universal migration framework.
+1. Use the completed Gold-membership crawl as the working source inventory for the 36 unique product-detail targets; revisit rendered-DOM gaps only where they materially block a page migration.
+2. Prepare the reusable LP Builder modules and contracts needed by the next B2B page scopes instead of solving repeated page structures manually.
+3. Let Ulrike take over more of the operational page migration, with Mitch supporting her, while Dominik provides Builder readiness, migration rules and quality guardrails.
+4. Hand off visual/content QA for the 44 Handbook detail drafts and the hub, including ALT review, media associations and hub category/card review.
+5. Wait for Mukhammadjon's implementation of the migration-relevant Landing Page Builder requirements and validate changes on disposable entries.
+6. Clarify the B2B contact-form implementation plan and, if useful, connect Ulrike with the relevant developer for Salesforce/business requirements.
+7. Continue the S3/CDN storage pilot with Peter / platform owners and later promote `target_url` values after verified upload.
+8. Resolve or explicitly accept the 14 remaining REVIEW/BLOCKED gallery asset references before final publish readiness.
+9. When useful for final handoff or asset URL migration, export/read the 45 current Contentful drafts into a verified inventory rather than rebuilding them.
+10. Review `/lp` source pages for additional FAQ/help/how-to content that should potentially be integrated into the Anwenderhandbuch scope.
 
 ## Last Confirmed
 
-2026-09-07: The Anwenderhandbuch remains migrated as 45 unpublished target drafts. The next migration scope to prepare is the set of B2B product detail pages linked from the Gold membership page; the immediate next step is a Codex crawl/inventory before content/design adjustments and migration. Mukhammadjon has confirmed the remaining LP Builder platform direction, while implementation and validation are still pending.
+2026-09-08: The Gold-membership product-detail crawl is complete enough to serve as the current source inventory for 36 unique target pages, with the explicit limitation that rendered DOM and full-page screenshots are unavailable. Dominik confirmed that his focus for the next phase should be LP Builder preparation and reusable migration capabilities rather than repeated crawling/manual migration; Ulrike should take on more operational migration work with Mitch supporting her. The Anwenderhandbuch remains migrated as 45 unpublished target drafts, and Mukhammadjon's remaining LP Builder platform implementation is still pending.
