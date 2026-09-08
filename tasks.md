@@ -30,6 +30,13 @@
   - Context: All 207 SAFE/MIGRATE references in the GPT-ready migration packages have stable `ast-sha256-*` IDs with matching hashes and current `render_url` values. The migration can continue without final CDN delivery, but durable AEM-independent delivery still requires the S3/CDN target. The 14 remaining REVIEW/BLOCKED dynamic gallery references are a separate source-resolution issue, not a storage-identity gap.
   - Source: Asset audits and Handbook migration status confirmed through 2026-09-06
 
+- [ ] Prepare reusable LP Builder modules for B2B migration
+  - Area: Landing Page Builder
+  - Status: Open, active module-readiness work
+  - Next step: Review the Codex implementation of the first `product-comparison-table` candidate based on the existing AEM HTML, then validate that the stable structure/responsive behavior remains controlled while rows, columns, labels, tooltips, links, cell states and CTAs can be edited safely.
+  - Context: Dominik's focus for the next migration phase is Builder readiness rather than repeated crawling or page-by-page migration. The complex B2B comparison table is used on multiple AEM pages and should become a reusable module contract instead of being regenerated from scratch. Additional recurring B2B structures should be added module by module as they are confirmed.
+  - Source: Dominik confirmed the module-readiness direction and first comparison-table candidate on 2026-09-08
+
 - [ ] Set up B2B automation discovery with Juliane
   - Area: E-Mail Automation Professional
   - Status: Open, deliberately deprioritized for the coming weeks
@@ -89,6 +96,11 @@
   - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
 
 ## Completed
+
+- [x] Validate the Codex crawl for Gold product-detail pages
+  - Area: Contentful Migration
+  - Completed: 2026-09-08
+  - Outcome: The crawl identified 38 product tiles and 36 unique targets, including one redirect, two duplicate targets and one HTTP-404 Objektdatenbank target. It produced per-page source/content/link/asset packages with 1,723 asset references, 300 downloaded originals and zero download errors. Rendered browser DOM and full-page screenshots remain unavailable for all 36 targets, so dynamic/interactive content is not fully verified. The crawl is sufficient as the current working source inventory; Dominik's focus should now move to LP Builder readiness while operational migration shifts to Ulrike with Mitch supporting her.
 
 - [x] Simplify the reusable AI Enablement preparation model
   - Area: AI Enablement Series
