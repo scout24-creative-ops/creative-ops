@@ -30,6 +30,13 @@
   - Context: All 207 SAFE/MIGRATE references in the GPT-ready migration packages have stable `ast-sha256-*` IDs with matching hashes and current `render_url` values. The migration can continue without final CDN delivery, but durable AEM-independent delivery still requires the S3/CDN target. The 14 remaining REVIEW/BLOCKED dynamic gallery references are a separate source-resolution issue, not a storage-identity gap.
   - Source: Asset audits and Handbook migration status confirmed through 2026-09-06
 
+- [ ] Align Marketing Asset Library direction with John Ford
+  - Area: Contentful Migration
+  - Status: Open, alignment prepared for 2026-09-10
+  - Next step: Use the prepared Scout Wiki page in the John Ford meeting to clarify what asset storage, media delivery, CDN/image-transformation capabilities and technical ownership already exist at Scout24, and whether the small AEM-to-Contentful asset pilot can build on existing infrastructure.
+  - Context: The broader Marketing Asset Library idea aims to reduce duplicated tool-specific asset libraries and centralize reuse/quality rules across systems such as AEM, Contentful, Iterable, Salesforce and Beefree. Matthias Brandstätter and Paul Befort reacted positively to further exploration, but no architecture or platform decision has been made.
+  - Source: John Ford alignment preparation confirmed on 2026-09-07
+
 - [ ] Prepare reusable LP Builder modules for B2B migration
   - Area: Landing Page Builder
   - Status: Open, active module-readiness work
