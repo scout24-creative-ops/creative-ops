@@ -23,9 +23,11 @@ The normal Builder remains module-first. A separate `SOURCE_DUPLICATE_MODE` now 
 
 Mukhammadjon has confirmed the direction for the three remaining platform-scale requirements: larger `htmlSource`, fuller lifecycle management around stable `entryId`, and a trusted global CSS/JS runtime. Architectural alignment on these points is complete; implementation and end-to-end validation remain.
 
-The current active product-development focus is moving further toward migration readiness through reusable modules. Dominik should prepare stable module contracts and Builder behavior so colleagues can execute the operational migration without requiring him to rebuild or migrate every page manually.
+The current active product-development focus is migration readiness through reusable modules. Dominik should prepare stable module contracts and Builder behavior so colleagues can execute the operational migration without requiring him to rebuild or migrate every page manually.
 
-The first confirmed module candidate in this phase is a complex B2B product-comparison table used across multiple AEM pages. The existing AEM implementation should be treated as the canonical structural reference rather than asking the GPT to recreate the table from scratch. The intended contract keeps the table architecture, responsive model, alignment and interaction patterns controlled while allowing editorial changes to product columns, rows, labels, tooltips, links, cell states and CTAs.
+The first module in this phase is the complex B2B `product-comparison-table`, used across multiple AEM pages. The local active contract and supporting implementation are now prepared. It preserves the table matrix and namespaced class architecture while allowing editorial changes to plans, groups, features, tooltips, CTAs and cell content. The Contentful version uses semantic table markup, verified COSMA icons, CoreCSS/bridge tokens and native `details/summary`; no legacy `feat-*` classes, inline CSS or page-authored scripts are required.
+
+The remaining validation focus for this module is a real Contentful Preview: sticky feature column, mobile horizontal scrolling and nested native `details` behavior are still `OPEN / VERIFY`. The future central runtime is not required for the base module and should only add confirmed interaction enhancements later if needed.
 
 ## Foundation and Rendering Model
 
@@ -184,25 +186,26 @@ For the next migration phase, Dominik's focus should stay on Builder readiness a
 - Initialize the trusted runtime after sanitized LP Builder HTML is rendered or replaced.
 - Do not allow arbitrary page-authored script execution merely to restore legacy behavior; use a trusted global runtime instead.
 - For complex recurring legacy components whose structure should remain stable, use the proven AEM HTML as a canonical implementation reference and convert it into a reusable Builder contract instead of asking the GPT to regenerate the structure freely.
-- Separate controlled module architecture from editable content. For the B2B product-comparison-table candidate, editorial changes should be possible for product columns, rows, labels, tooltips, links, cell states and CTAs without reconstructing the table.
+- For `product-comparison-table`, keep the table matrix and `lpb-product-comparison__*` class structure fixed. Each feature row must contain exactly one cell per plan. Editable content includes plans, groups, features, tooltips, CTAs and cell content/states.
+- Base `product-comparison-table` behavior must not depend on the future central runtime; runtime additions are reserved for separately validated interaction improvements.
 
 ## Risks and Open Questions
 
 - The confirmed larger `htmlSource` contract still needs implementation in the Contentful model or equivalent storage approach.
 - The confirmed lifecycle extensions still need implementation and validation.
 - The confirmed global CSS/JS runtime still needs implementation and validation in the renderer.
-- Interactive legacy modules such as the B2B product-comparison table may depend on the future trusted runtime for behavior such as accordions/tooltips; static contract and runtime-dependent behavior should remain cleanly separated.
+- `product-comparison-table` still needs real Contentful Preview validation for sticky feature-column behavior, mobile horizontal scrolling and nested native `details/summary` behavior.
 - The exact-rebuild Memberships test exposed a full-bleed mismatch at the outer page/container level even when the imported custom HTML itself was byte-identical; this remains a secondary issue to isolate if it becomes relevant.
 
 ## Next Steps
 
-1. Continue the migration-readiness module phase, starting with the reusable B2B product-comparison-table contract based on the existing AEM implementation.
-2. Validate that the comparison-table module preserves its stable structure and responsive behavior while allowing controlled edits to rows, columns, tooltips, links, cell states and CTAs; do not treat the Codex implementation as confirmed until its result is reviewed.
-3. Continue identifying additional recurring B2B page structures that deserve reusable module contracts rather than page-specific rebuilds.
+1. Validate the prepared `product-comparison-table` in a real Contentful Preview, focusing on sticky feature column, mobile horizontal scrolling and nested native `details/summary` behavior.
+2. Confirm that editorial changes to plans, groups, features, tooltips, CTAs and cell states remain safe without altering the table matrix or namespaced class structure.
+3. If the Preview passes, treat the module as the first validated reusable B2B migration contract and continue identifying additional recurring B2B page structures.
 4. Wait for Mukhammadjon to implement the confirmed platform changes for larger `htmlSource`, lifecycle management and global LP Builder CSS/JS runtime loading.
 5. Validate the implemented platform changes end to end on disposable NEXT/Preview entries and, where relevant, PRO.
 6. Once the trusted runtime entry point exists, move interactive LP Builder behavior such as Counter, Carousel and other validated interactive module behavior into the independently maintained central runtime rather than requesting one frontend hook per module.
 
 ## Last Confirmed
 
-2026-09-08: Dominik shifted the next active LP Builder work toward reusable module readiness for the broader B2B migration, with the complex product-comparison table as the first confirmed candidate. The existing AEM HTML should be the canonical structural reference, while the GPT should edit controlled content fields without rebuilding the component architecture. Mukhammadjon's three confirmed platform changes remain pending implementation and end-to-end validation.
+2026-09-08: The local active `product-comparison-table` contract and supporting implementation are prepared. Its base Contentful architecture is intentionally runtime-independent, with semantic table markup, namespaced classes, native `details/summary` and controlled editorial flexibility. Real Contentful Preview validation remains open for sticky feature-column behavior, mobile horizontal scrolling and nested native details. Mukhammadjon's three confirmed platform changes remain pending implementation and end-to-end validation.
