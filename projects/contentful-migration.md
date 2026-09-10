@@ -6,6 +6,15 @@ Migrate existing Marketing landing pages from AEM into the new Contentful-based 
 
 `Contentful Migration` covers migration scope, page preparation and execution, QA/handoff, asset migration, routing-related migration work and migration-specific dependencies. The [Landing Page Builder](landing-page-builder.md) is the central tool used to execute this work and is maintained separately because it also has an ongoing product/authoring life beyond the migration.
 
+## Migration Source References
+
+Keep these source links available because they are recurring reference points for migration scope and URL decisions:
+
+- Alessandra's migration/domain overview: https://linear.app/scout24-se/document/domain-overview-is24-f097933f2f3d
+- B2B `/anbieten` migration workbook: https://gs24.sharepoint.com/:x:/r/sites/CMSMigrationProject/Files/CMS%20Migration%20-%20URLs%20liste/Excel%20List%20for%20Migration/Immoscout24%20DE%20+%20AT/immobilienscout24.de_anbieten_CMS%20Migration_20250318.xlsx?d=w34b27b93faaf4ed1b4d9da2ff1e9c294&csf=1&web=1&e=i7ExTx
+
+The B2B workbook is the relevant direct source for the current `/anbieten` migration scope; the overview is the entry point to the broader set of migration lists.
+
 ## Current Status
 
 The B2B Anwenderhandbuch remains the first end-to-end migration pilot and the page-migration phase is materially complete:
