@@ -8,40 +8,80 @@ Enable Marketing teams to create landing pages faster and more independently thr
 
 The production/AEM Builder remains operational, while `LP Builder – Contentful` is the maintained Contentful-enabled Builder for migration and future product development.
 
-The Contentful flow works end to end: OAuth, draft creation, preview, update, explicit publish and production URL have been validated. The active static module catalogue contains 25 module contracts, including the two Handbook-specific modules `handbook-category-card` and `handbook-step-media`.
+The basic Contentful flow is validated end to end: OAuth, draft creation, preview, update, explicit publish and production URL. The maintained architecture remains CoreCSS/COSMA-first with GPT Instructions, foundation/runtime rules, module contracts, component examples, composition rules and a central Bridge stylesheet.
 
-The maintained architecture is layered:
+The current product-development focus is migration readiness through reusable modules and controlled source-driven rebuilds. Dominik should prepare stable Builder capabilities so colleagues can migrate and later maintain pages without recreating complex structures manually.
 
-1. GPT Instructions define global behavior and mode selection.
-2. Foundation / Runtime files define technical guardrails.
-3. `module-contracts.md` defines valid module structures and variants.
-4. `component-library.html` provides implementation examples.
-5. Composition files define page-type defaults such as the B2B Handbook.
-6. Explicit user requests may alter composition defaults while contracts remain binding.
+The first complex reusable B2B module, `product-comparison-table`, has now progressed through full AEM-reference fidelity work. The maintained implementation preserves the fixed table matrix and `lpb-product-comparison__*` class architecture while allowing editorial changes to plans, groups, features, tooltips, CTAs and cell states. The latest version includes the intended Silber / Gold / Bronze order, source-derived plan bars and emblems, all 36 feature info icons/tooltips, current LP Builder pill CTAs, static repeated plan headers, corrected divider placement, compact table spacing and full-row highlight treatment. Native `details/summary` remains the runtime-independent base interaction model.
 
-The normal Builder remains module-first. A separate `SOURCE_DUPLICATE_MODE` now exists for highly custom pages that need source fidelity rather than approximation through existing modules.
+The centrally published Bridge now contains the validated Product Comparison styles and the additional page-scoped rules needed by the current Gewerbliche-Anbieter rebuild.
 
-Mukhammadjon has confirmed the direction for the three remaining platform-scale requirements: larger `htmlSource`, fuller lifecycle management around stable `entryId`, and a trusted global CSS/JS runtime. Architectural alignment on these points is complete; implementation and end-to-end validation remain.
+## htmlSource Scale and Read-back
 
-The current active product-development focus is migration readiness through reusable modules. Dominik should prepare stable module contracts and Builder behavior so colleagues can execute the operational migration without requiring him to rebuild or migrate every page manually.
+The previous larger-payload blocker has materially improved.
 
-The first module in this phase is the complex B2B `product-comparison-table`, used across multiple AEM pages. The local active contract and supporting implementation are now prepared. It preserves the table matrix and namespaced class architecture while allowing editorial changes to plans, groups, features, tooltips, CTAs and cell content. The Contentful version uses semantic table markup, verified COSMA icons, CoreCSS/bridge tokens and native `details/summary`; no legacy `feat-*` classes, inline CSS or page-authored scripts are required.
+A real Product Comparison payload of 50,718 bytes now succeeds through both `createLpBuilderDraft` and `updateLpBuilderDraft`. Both write actions reported the full byte length and the same SHA-256 as the input, with no evidence of truncation or transformation.
 
-The remaining validation focus for this module is a real Contentful Preview: sticky feature column, mobile horizontal scrolling and nested native `details` behavior are still `OPEN / VERIFY`. The future central runtime is not required for the base module and should only add confirmed interaction enhancements later if needed.
+The remaining limitation is `getLpBuilderPage`: the same ~50 KB entry currently returns `ResponseTooLargeError` when the full page is read back. This does not block present migration writes or visual Preview checks, but it is important for the intended future edit-by-URL workflow. Colleagues should eventually be able to provide a page URL, let the Builder read the current `htmlSource`, make a targeted change and write the updated page back. Large read-back therefore remains a platform requirement rather than only an integrity-check convenience.
+
+The target contract remains at least 256 KB, ideally 512 KB, with complete write support, lossless read-back and length/SHA verification.
 
 ## Foundation and Rendering Model
 
-The implementation remains CoreCSS/COSMA first. Static `htmlSource` reuses native typography, responsive grid, spacing utilities, icons and other verified design-system primitives wherever possible.
+Static `htmlSource` should reuse native CoreCSS/COSMA typography, responsive grid, spacing utilities, icons and other verified design-system primitives wherever possible.
 
-The public LP Builder bridge is the shared CSS layer for static-HTML gaps. It is currently linked at page level and has been proven to survive sanitization and load correctly in the rendered DOM.
+The public LP Builder Bridge is the shared CSS layer for static-HTML gaps. Page-level `<link>` loading has been proven to survive sanitization and load correctly in the rendered DOM. Bridge updates use the controlled Public publishing workflow and must preserve existing module styles.
 
-A separate central JavaScript runtime is now the confirmed direction for interactive modules. A real Counter proof established that external `<script>` tags can be stored unchanged in Contentful but are removed by `sanitizeLPBuilderHtml` before the final DOM. The browser therefore never requests the page-linked JS asset. The agreed future contract is to load `lpbuilder-bridge.css` and `lpbuilder-runtime.js` globally and call `LPBuilderRuntime.init(renderedLpRoot)` after sanitized `htmlSource` is rendered or replaced.
+A separate trusted central JavaScript runtime remains the confirmed direction for interactive modules. External `<script>` tags can be stored in Contentful but are removed by `sanitizeLPBuilderHtml` before the final DOM, so arbitrary page-authored scripts are not a viable runtime model. The intended renderer contract is to load `lpbuilder-runtime.js` globally and call `LPBuilderRuntime.init(renderedLpRoot)` after sanitized HTML is rendered or replaced.
 
-The current frontend no longer applies the earlier large automatic section padding. The remaining direct `section + section` margin can be structurally bypassed through the explicit-spacing wrapper.
+The current frontend no longer applies the earlier large automatic section padding. Explicit spacing remains the page-composition mechanism.
+
+## Source Duplicate / Controlled Rebuild
+
+The standard Builder remains module-first, but highly custom legacy pages can use a source-driven rebuild path when existing modules cannot reproduce the source faithfully.
+
+For source-driven rebuilds, priority is:
+
+Source fidelity -> source structure/CSS -> page-specific HTML/CSS -> existing modules only when they are a true fit.
+
+Prepared Contentful-ready HTML should be treated as the technical truth during locked import rather than recomposed by the GPT.
+
+The intended migration model is hybrid:
+
+- recurring structures become reusable LP Builder modules/contracts;
+- bespoke or rarely edited pages can be rebuilt exactly enough through controlled page-specific HTML;
+- repeated issues should be promoted into shared rules only when they genuinely recur.
+
+## Reusable Product Comparison Contract
+
+The Product Comparison module is the first major reusable B2B candidate.
+
+Binding rules:
+
+- keep the table matrix and `lpb-product-comparison__*` class structure fixed;
+- every feature row contains exactly one plan cell per plan;
+- editable content includes plans, groups, features, tooltips, CTA labels/links and cell content/states;
+- use semantic table markup and native details-based accordion behavior;
+- base functionality must not depend on the future central runtime;
+- the maintained AEM source is the visual/behavioral reference, while deliberate Contentful accessibility/responsive improvements may remain when documented.
+
+The latest maintained ~50 KB import is now writable after the platform size fix. A final real Preview check of the latest synchronized HTML remains before treating this module-readiness step as complete.
+
+## Current Page-Rebuild Pattern
+
+The Gewerbliche-Anbieter directory/start page is the next real migration example and also a useful test of the controlled rebuild approach.
+
+The page was rebuilt from a live crawl and screenshots without copying the old AEM architecture. It includes the hero/interest selector, 12 illustrated links, facts, new-business CTA and teaser cards; the legacy contact form is excluded and will be handled separately.
+
+The first implementation exposed an important asset pattern: 12 inline SVG illustrations made the page ~2.47 MB even though the non-SVG HTML was only ~14 KB. The base illustrations were converted to standalone external SVGs on Scout24's static server. Six final hover-overlay SVG assets reproduce the original teal highlight behavior, including masked variants for cards 01, 02 and 12. This reduced the maintained HTML to 19,760 bytes while keeping the original illustrations and responsive layout. The final hover Bridge rules are published; the remaining step is a final Contentful draft sync/Preview check of the latest HTML.
+
+## Asset Handling for Current Migration Work
+
+For now, migrated pages may continue using existing AEM/static asset URLs directly in HTML. A central asset-ID resolver or new Contentful asset model is deliberately deferred while platform work is still in progress.
+
+This is a pragmatic temporary choice, not the long-term asset strategy. Because current manual migration builds are grouped together, URLs can be updated later in a controlled batch when the final asset/storage approach is confirmed.
 
 ## Explicit Spacing Contract
-
-A general page-composition spacing contract is implemented and tested.
 
 Normal explicit-spacing pages use:
 
@@ -49,114 +89,24 @@ Normal explicit-spacing pages use:
 
 General rules:
 
-- no default opening spacer
-- Hero / Full-width Hero starts directly and is followed by `spacer-xl`
-- `spacer-xl` between independent modules
-- `spacer-3xl` once before the footer
-- `spacer-4xl` only when explicitly requested
-- no consecutive spacers
-- no generic module-root margin/padding combinations for page rhythm
-- internal module spacing remains allowed
+- no default opening spacer;
+- Hero / Full-width Hero starts directly and is followed by `spacer-xl`;
+- `spacer-xl` between independent modules;
+- `spacer-3xl` once before the footer;
+- `spacer-4xl` only when explicitly requested;
+- no consecutive spacers;
+- no generic module-root margin/padding combinations for page rhythm;
+- internal module spacing remains allowed.
 
-The spacer scale is aligned with COSMA/Foundation through `xxl`, with LP Builder extensions for larger transitions:
-
-- xs: 2 / 4 px Palm vs Lap/Desktop
-- s: 4 / 8
-- m: 8 / 16
-- l: 16 / 24
-- xl: 24 / 32
-- xxl: 32 / 40
-- 3xl: 48 / 64
-- 4xl: 50 / 80
-
-The public bridge was updated and the Firmendaten preview confirmed that `spacer-xl` and `spacer-3xl` render with the expected values instead of collapsing to 0px.
-
-The B2B Handbook has its own stricter composition override: `spacer-xl` before and after the page intro and `spacer-xl -> divider -> spacer-xl` at every section boundary.
-
-## Source Duplicate Mode
-
-A second workflow exists for pages that are too custom to reproduce faithfully through the standard module library.
-
-### `SOURCE_DUPLICATE_MODE`
-
-For source-driven rebuilds, priority becomes:
-
-Source fidelity -> source structure/CSS -> page-specific HTML/CSS -> existing modules only for a true 1:1 match.
-
-A visually similar ACTIVE module is not sufficient. Custom page-scoped HTML/CSS is allowed when needed.
-
-### `SOURCE_DUPLICATE_IMPORT_LOCKED`
-
-When Codex has already produced a Contentful-ready `htmlSource.html`, the GPT must treat that input file as the technical truth and may not recomcompose, rename classes, alter copy, replace assets or apply normal composition defaults.
-
-The import contract includes a post-write integrity check using input/stored length and SHA-256. A mismatch must return `IMPORT_INTEGRITY_FAILED` rather than claiming success.
-
-This workflow was validated on a reduced real Memberships exact-rebuild test:
-
-- 20,609 characters / 20,623 bytes
-- write succeeded through `updateLpBuilderDraft`
-- stored length matched input
-- stored SHA-256 matched input exactly
-- 3/3 selected source sections were preserved
-- page remained unpublished
-
-A larger ~60 KB version was rejected by Contentful with HTTP 422 `InvalidEntry / Validation error / type: Text`. Contentful did not rewrite the HTML; the write was rejected and the previous draft remained unchanged.
-
-The confirmed target is at least 256 KB, ideally 512 KB, with full write support, lossless read-back, no truncation/transformation and length/SHA verification.
-
-## Contentful Lifecycle Audit
-
-A controlled lifecycle audit on disposable entries established the current Action coverage.
-
-Supported:
-
-- read by slug/path
-- create draft
-- update title and `htmlSource`
-- explicit publish
-- update a published page as a new draft and re-publish
-- update/publish actions can target Entry ID or slug where exposed by their schemas
-
-Missing from the currently available Actions, but confirmed for extension:
-
-- read an existing page by `entryId`
-- rename slug / target path on an existing entry
-- unpublish
-- archive
-- delete
-
-The agreed direction is to use `entryId` as the preferred stable technical identifier while retaining slug lookup as a convenient fallback. Archive and delete should remain separate explicit operations with publication-state and version checks.
-
-A native clone operation is not considered a required backend capability because a GPT-level get/create flow can cover duplication if needed.
-
-## Runtime Proof
-
-The AEM-era model of page-level CSS + JS links was tested directly in Contentful.
-
-Confirmed browser behavior:
-
-- the external CSS `<link>` is present in the final DOM and loads successfully
-- the external JS `<script>` is present in stored Contentful `htmlSource`
-- the script node is absent from the final rendered DOM
-- no network request for the JS asset occurs
-- `sanitizeLPBuilderHtml` removes the script before React renders the sanitized HTML
-
-This confirms that adding the JS URL more strongly to GPT Instructions would not solve the problem. A trusted renderer-level runtime entry point is required for custom JavaScript behavior and has now been confirmed as the intended implementation direction.
-
-## Preview and Reference Targets
-
-- Disposable Contentful test surface: `/dev-lp-builder-contentful-v01-test`
-- Canonical Contentful Design Library: `/lp-builder-contentful-design-library`
-
-The test surface is disposable and should be used for isolated runtime, import and composition experiments. The Design Library is the reviewed durable reference.
+The B2B Handbook keeps its own stricter composition override.
 
 ## Dominik's Role
 
 Dominik owns product direction, strategy, prioritization and quality for the Landing Page Builder. He owns the migration-focused Contentful GPT and decides which reusable rules, modules, composition patterns and special modes enter the maintained package.
 
-Codex is the preferred implementation surface for local contracts, bridge CSS, libraries, runtime tests, exact-rebuild preparation and technical source analysis. The GPT composes normal validated modules and performs controlled Contentful writes.
+Codex is the preferred implementation surface for local contracts, Bridge CSS, libraries, runtime tests, source analysis and controlled rebuild preparation. The GPT is the Contentful interaction surface for page creation/update and later colleague-facing authoring.
 
-For the next migration phase, Dominik's focus should stay on Builder readiness and reusable module design rather than repeated operational crawling or page-by-page migration. The goal is to encode stable patterns once so colleagues can maintain and migrate pages through controlled content edits instead of recreating complex structures.
+For the migration phase, Dominik's focus should stay on Builder readiness, reusable module design and quality guardrails rather than becoming the default operator for repeated page migration.
 
 ## Key Stakeholders and Users
 
@@ -172,40 +122,39 @@ For the next migration phase, Dominik's focus should stay on Builder readiness a
 ## Confirmed Direction and Decisions
 
 - Keep the production/AEM Builder operational while `LP Builder – Contentful` evolves separately.
-- Use CoreCSS/COSMA first and keep one central bridge for verified static-HTML gaps.
+- Use CoreCSS/COSMA first and keep one central Bridge for verified static-HTML gaps.
 - Module contracts remain the technical SSOT for standard page building.
 - Composition files define defaults rather than rigid templates.
 - Explicit spacing controls page rhythm; module-root margins do not.
-- Keep Handbook-specific spacing separate from the general default.
-- Use `SOURCE_DUPLICATE_MODE` only when source fidelity is explicitly required.
-- Use `SOURCE_DUPLICATE_IMPORT_LOCKED` for already prepared Contentful-ready HTML and verify the stored payload after writing.
+- Use controlled source-driven rebuilds for bespoke legacy pages rather than forcing every page into generic modules.
+- Treat prepared Contentful-ready HTML as locked input when exact import is required.
 - Never publish without explicit approval.
-- Support larger exact-rebuild payloads at a target of at least 256 KB, ideally 512 KB, with lossless read-back and verification.
+- Support large `htmlSource` writes and reads at migration scale, with lossless verification.
 - Use stable `entryId` as the preferred lifecycle identifier, with slug lookup retained as fallback convenience.
-- Prefer one stable global CSS entry point and one stable global JS runtime entry point in the renderer while keeping the underlying Creative Ops public assets independently maintainable.
-- Initialize the trusted runtime after sanitized LP Builder HTML is rendered or replaced.
-- Do not allow arbitrary page-authored script execution merely to restore legacy behavior; use a trusted global runtime instead.
-- For complex recurring legacy components whose structure should remain stable, use the proven AEM HTML as a canonical implementation reference and convert it into a reusable Builder contract instead of asking the GPT to regenerate the structure freely.
-- For `product-comparison-table`, keep the table matrix and `lpb-product-comparison__*` class structure fixed. Each feature row must contain exactly one cell per plan. Editable content includes plans, groups, features, tooltips, CTAs and cell content/states.
-- Base `product-comparison-table` behavior must not depend on the future central runtime; runtime additions are reserved for separately validated interaction improvements.
+- Prefer one stable global CSS entry point and one stable trusted JS runtime entry point.
+- Do not allow arbitrary page-authored script execution merely to restore legacy behavior.
+- For recurring complex legacy components, use the proven AEM HTML as the canonical implementation reference and convert it into a reusable Builder contract.
+- Keep the Product Comparison table matrix and namespaced class structure fixed while allowing controlled editorial content changes.
+- Keep temporary AEM/static asset URLs for current migration work; revisit centralized asset resolution later rather than blocking page progress now.
 
 ## Risks and Open Questions
 
-- The confirmed larger `htmlSource` contract still needs implementation in the Contentful model or equivalent storage approach.
-- The confirmed lifecycle extensions still need implementation and validation.
-- The confirmed global CSS/JS runtime still needs implementation and validation in the renderer.
-- `product-comparison-table` still needs real Contentful Preview validation for sticky feature-column behavior, mobile horizontal scrolling and nested native `details/summary` behavior.
-- The exact-rebuild Memberships test exposed a full-bleed mismatch at the outer page/container level even when the imported custom HTML itself was byte-identical; this remains a secondary issue to isolate if it becomes relevant.
+- Large write support is now validated at ~50 KB, but full `getLpBuilderPage` read-back still fails at that size with `ResponseTooLargeError`.
+- Lifecycle extensions around read-by-entryId, slug rename, unpublish, archive and delete still require full implementation/validation unless separately confirmed.
+- The global trusted CSS/JS runtime contract still requires final renderer implementation/validation unless separately confirmed.
+- Product Comparison still needs a final real Preview check using the latest maintained HTML after the large-write fix.
+- The Gewerbliche-Anbieter page needs a final Contentful sync/Preview check after the final external hover-asset URLs and Bridge publication.
+- The contact form remains a separate migration/platform dependency and is intentionally excluded from the current page rebuild.
 
 ## Next Steps
 
-1. Validate the prepared `product-comparison-table` in a real Contentful Preview, focusing on sticky feature column, mobile horizontal scrolling and nested native `details/summary` behavior.
-2. Confirm that editorial changes to plans, groups, features, tooltips, CTAs and cell states remain safe without altering the table matrix or namespaced class structure.
-3. If the Preview passes, treat the module as the first validated reusable B2B migration contract and continue identifying additional recurring B2B page structures.
-4. Wait for Mukhammadjon to implement the confirmed platform changes for larger `htmlSource`, lifecycle management and global LP Builder CSS/JS runtime loading.
-5. Validate the implemented platform changes end to end on disposable NEXT/Preview entries and, where relevant, PRO.
-6. Once the trusted runtime entry point exists, move interactive LP Builder behavior such as Counter, Carousel and other validated interactive module behavior into the independently maintained central runtime rather than requesting one frontend hook per module.
+1. Synchronize and visually validate the latest Product Comparison HTML in a real Contentful Preview; close the first complex reusable B2B module if it passes.
+2. Synchronize the final ~19.8 KB Gewerbliche-Anbieter start-page HTML and verify all 12 external illustration/hover states in Preview.
+3. Continue identifying genuinely recurring B2B structures and promote them into reusable contracts only when reuse is confirmed.
+4. Retest large `getLpBuilderPage` read-back when Mukhammadjon provides the follow-up fix.
+5. Validate the remaining lifecycle and trusted-runtime platform changes as they become available.
+6. Revisit centralized asset resolution/storage after the immediate migration flow is stable.
 
 ## Last Confirmed
 
-2026-09-08: The local active `product-comparison-table` contract and supporting implementation are prepared. Its base Contentful architecture is intentionally runtime-independent, with semantic table markup, namespaced classes, native `details/summary` and controlled editorial flexibility. Real Contentful Preview validation remains open for sticky feature-column behavior, mobile horizontal scrolling and nested native details. Mukhammadjon's three confirmed platform changes remain pending implementation and end-to-end validation.
+2026-09-10: Large Product Comparison create/update writes now succeed at 50,718 bytes with matching input SHA-256, while full read-back still hits `ResponseTooLargeError`. The Product Comparison fidelity implementation and central Bridge are substantially complete pending one final Preview check. The Gewerbliche-Anbieter start-page rebuild is prepared at 19,760 bytes using external base/hover SVG assets and published Bridge rules; its final Contentful sync/Preview verification remains open.
