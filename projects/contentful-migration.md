@@ -4,208 +4,170 @@
 
 Migrate existing Marketing landing pages from AEM into the new Contentful-based setup through an AI-supported, repeatable workflow rather than rebuilding pages manually one by one.
 
-`Contentful Migration` covers the actual AEM-to-Contentful migration programme: migration scope, page preparation and execution, QA/handoff, asset migration, routing-related migration work and migration-specific dependencies. The [Landing Page Builder](landing-page-builder.md) is the central tool used to execute this work and is maintained as its own closely related project because it also has an ongoing product/authoring life beyond the migration.
-
-There is no separate active `Marketing Content Platform` project. Migration-specific infrastructure such as persistent asset delivery remains part of `Contentful Migration` unless a broader Marketing Asset Library / SSOT initiative is explicitly established later as its own project.
-
-ScoutWiki project pages:
-
-- Project overview: https://wiki.scout24.com/spaces/creative-operations/pages/56160/contentful-migration-b2b
-- Pod Working Model: https://wiki.scout24.com/spaces/creative-operations/pages/56156/contentful-migration-b2b-pod-working-model
-- Pilot Execution Plan: https://wiki.scout24.com/spaces/creative-operations/pages/56161/contentful-migration-b2b-pilot-execution-plan
-- Marketing Asset Library / John Ford alignment draft: https://wiki.scout24.com/spaces/creative-operations/pages/56572/marketing-asset-library-john-ford-alignment
+`Contentful Migration` covers migration scope, page preparation and execution, QA/handoff, asset migration, routing-related migration work and migration-specific dependencies. The [Landing Page Builder](landing-page-builder.md) is the central tool used to execute this work and is maintained separately because it also has an ongoing product/authoring life beyond the migration.
 
 ## Current Status
 
-The B2B Anwenderhandbuch is the first end-to-end migration pilot and the page-migration phase is materially complete.
-
-Canonical scope:
+The B2B Anwenderhandbuch remains the first end-to-end migration pilot and the page-migration phase is materially complete:
 
 - 45 real target pages
 - 44 detail pages + 1 hub
-- 12 legacy duplicate source packages excluded from the target set
-- 006 is the canonical Anwenderhandbuch hub; 007 is its legacy duplicate
-- all 45 Canonical/Unique targets have been migrated as unpublished drafts through the GPT workflow
+- 12 legacy duplicate source packages excluded
+- all 45 Canonical/Unique targets migrated as unpublished drafts
 - visual/content QA and selected optimization remain before publish readiness
 
-Canonical target structure:
+The next migration work is being used to strengthen the reusable LP Builder and the controlled rebuild path rather than simply increasing page count.
+
+The Gold membership product-detail crawl is complete enough to serve as the current working source inventory for 36 unique targets, with the known limitation that rendered DOM and full-page screenshots were unavailable for those targets.
+
+The large B2B Product Comparison has become the first complex reusable Builder contract. Its maintained Contentful-ready HTML is now writable at ~50 KB after Mukhammadjon's larger-htmlSource fix. The module still needs one final current Preview check before the reusable-module step is treated as complete.
+
+The Gewerbliche-Anbieter directory/start page is the next real controlled-rebuild example. Its live source was captured with section order, links, interactions and relevant assets. A new LP Builder version has been prepared without the legacy contact form and with the original illustrated-card hover behavior preserved through external assets. The final maintained HTML is 19,760 bytes and needs one final Contentful sync/Preview check after the final hover asset/Bridge update.
+
+## Migration Operating Model
+
+The migration strategy is intentionally hybrid:
+
+1. Build best-effort unpublished drafts for standard/reusable structures.
+2. Compare previews against source pages.
+3. Correct page-specific issues where needed.
+4. Promote only repeated issues into shared rules or reusable modules.
+5. Use controlled source-driven rebuilds for custom pages that should stay visually close to the source.
+6. Hand visual/content QA to the relevant colleagues rather than requiring Dominik to polish every page personally.
+7. Prefer reusable Builder capabilities over repeated manual migration work by Dominik.
+
+Operational migration work should increasingly move to Ulrike, with Mitch supporting her, while Dominik concentrates on Builder readiness, migration rules and quality guardrails.
+
+## Manual Migration Workspace Convention
+
+The local manual migration workspace was simplified around a practical two-part model:
+
+- `migration/old/<logical-page-name>/` for crawls, screenshots and legacy/source assets;
+- `migration/new/<logical-page-name>/` for the maintained rebuilt LP Builder HTML and page-specific new assets.
+
+Logical page names are used instead of URL-based folder hierarchies because the historic AEM landscape contains aliases, duplicate paths and product-specific URL variants for the same logical content.
+
+Older automated/batch migration pipeline material is kept separately from this active manual-page workspace so daily work is not mixed with historical pipeline state.
+
+## Current Gewerbliche-Anbieter Start Page
+
+The source capture for `https://www.immobilienscout24.de/anbieten/gewerbliche-anbieter.html` records:
+
+1. Hero and interest selector.
+2. Five `Unsere Produktwelten für` illustrated links.
+3. Seven `Kontaktanfragen für Ihr Neukundengeschäft` illustrated links.
+4. `Neugierig geworden?` CTA.
+5. Facts / numbers section.
+6. New-business CTA.
+7. Three `Das könnte Sie auch interessieren` teaser cards.
+8. Excluded contact section beginning at `#kontakt`.
+
+The crawl also preserved the existing link inconsistencies between some dropdown options and corresponding cards rather than silently normalizing them.
+
+The rebuilt page deliberately uses current LP Builder pill buttons, a clean accessible selector, static facts/responsive layout instead of the old jQuery slider architecture, and no legacy contact form.
+
+The original illustrated-card hover treatment was recovered from the AEM inline SVGs: a teal `path#highlight` layer sits behind the foreground illustration and appears on hover/focus with a 0.2s transition. The final external solution uses 12 base SVG illustrations plus six shared/masked hover overlay assets. Cards 01, 02 and 12 use masking so white foreground details and emblem colors remain intact.
+
+## Asset Handling for Current Work
+
+For immediate migration progress, existing AEM/static asset URLs are used directly in page HTML. A central asset-ID resolver or Contentful asset model is not being introduced yet.
+
+This is a deliberate temporary decision. Dominik wants to avoid adding another platform task while Mukhammadjon is already handling LP Builder scaling work. Current manual pages are grouped together so these URLs can be updated later in a controlled batch once the final asset strategy is agreed.
+
+For the Gewerbliche-Anbieter page, externalizing the 12 base illustrations was necessary for htmlSource size: the initial build was ~2.47 MB, of which ~2.46 MB was inline SVG geometry. Moving the illustrations to Scout24 static URLs reduced the maintained HTML to ~19 KB. Six final hover SVG assets are also hosted externally; the associated Bridge rules are published centrally.
+
+## htmlSource Scale and Verification
+
+The previously failing larger-write path has improved materially.
+
+A controlled small-payload test confirmed ~6 KB HTML worked while the then-current ~50.7 KB Product Comparison payload failed. This aligned with the previously known Contentful text-size issue and helped reproduce the real migration problem.
+
+After Mukhammadjon's Contentful-side change, the exact 50,718-byte Product Comparison file succeeds through both create and update. Both write actions report the full byte length and the same SHA-256 as the input, with no evidence of truncation or transformation.
+
+The remaining limitation is the read path: `getLpBuilderPage` still returns `ResponseTooLargeError` for the ~50 KB entry. This is not critical for current migration writes because Preview can be visually checked, but it is a future authoring dependency. After migration, colleagues should be able to provide a page URL to the LP Builder, have it read the current full `htmlSource`, make a targeted change and write it back. Large read-back must therefore be fixed before that colleague-editing workflow can be considered robust.
+
+## Relationship to Landing Page Builder
+
+The Landing Page Builder and Contentful Migration remain separate but tightly coupled:
+
+- `Landing Page Builder` owns Builder product capabilities: Contentful integration, Actions, module contracts, runtime, lifecycle support, exact/controlled rebuild modes and authoring behavior.
+- `Contentful Migration` owns which AEM pages move, how migration is executed, what QA/handoff is required and which migration dependencies must be solved.
+- Real migration needs are a primary source of requirements for the Builder.
+- Dominik's highest-leverage contribution is preparing reusable Builder capabilities rather than becoming the permanent page-migration operator.
+
+## Handbook Status
+
+Canonical Handbook target structure remains:
 
 - Hub: `/anbieter/gewerbliche-anbieter/anwender-handbuch.html`
 - Details: `/anbieter/gewerbliche-anbieter/anwender-handbuch/<canonical_slug>.html`
 
-Existing drafts created before canonical mapping can still retain legacy preview paths because the current Contentful Action cannot rename an existing slug/target path.
+Some existing drafts can still retain legacy preview paths until lifecycle/slug-rename support is fully available.
 
-The next migration scope beyond the Handbook is the B2B product-detail cluster linked from the Gold membership page at `/anbieten/gewerbliche-anbieter/inserieren/Mitgliedschaften/gold.html`.
-
-A first Codex crawl of that scope is complete:
-
-- 38 product tiles
-- 36 unique target pages
-- 1 redirect
-- 2 duplicate targets
-- 1 broken target: Objektdatenbank, HTTP 404
-- 1,723 asset references
-- 300 downloaded local original files
-- 0 asset download errors
-- per target page: metadata, content, structured content, source HTML, links and assets
-
-The crawl is a useful migration source package, but not yet a fully rendered-browser verification. The local Chrome CLI did not provide rendered DOM or full-page screenshots; all 36 pages are marked `RENDERED_DOM_UNAVAILABLE` and `FULLPAGE_SCREENSHOT_UNAVAILABLE`. Content that appears only after interaction, consent, login or asynchronous JavaScript therefore remains unverified and should be treated as a known gap rather than silently assumed complete.
-
-The real migration work has reinforced the intended operating model: the GPT can create and later update large groups of pages quickly, while highly custom legacy pages are handled through a separate exact-rebuild path and still require human guidance/QA where source structure is ambiguous or unusually bespoke. This is treated as a pragmatic hybrid migration model rather than a blocker to scale.
-
-For the next phase, Dominik should focus on making the LP Builder migration-ready rather than spending substantial time on repeated crawling or manual page migration. Operational migration work should move to Ulrike, with Mitch supporting her, while Dominik prepares reusable modules, contracts, migration rules and quality guardrails.
-
-The migration strategy remains:
-
-1. Build best-effort unpublished drafts.
-2. Compare previews against source pages.
-3. Correct page-specific issues where needed.
-4. Promote only repeated issues into shared rules.
-5. Use exact-rebuild preparation for custom pages that should stay close to the source.
-6. Hand visual/content QA to the relevant colleagues instead of requiring Dominik to polish every page personally.
-7. Prefer reusable Builder capabilities over repeated manual migration work by Dominik.
-
-## Relationship to Landing Page Builder
-
-The Landing Page Builder and Contentful Migration are separate but tightly coupled:
-
-- `Landing Page Builder` owns the Builder product and its capabilities: Contentful integration, Actions, module contracts, runtime, lifecycle support, exact-rebuild modes and authoring behavior.
-- `Contentful Migration` owns which AEM pages move, how the migration is executed, what QA/handoff is required and which migration dependencies must be solved.
-- Real migration needs are a primary source of requirements for the Landing Page Builder, but Builder development remains reusable beyond this one migration programme.
-- Dominik's highest-leverage contribution to the next migration phase is preparing reusable Builder capabilities; the operational migration itself should be delegated where possible.
-
-## Handbook Composition and Spacing
-
-The Handbook-specific composition is explicit and visually validated.
-
-Detail pages use `lpb-explicit-spacing` with:
-
-- `spacer-xl` before the H1/intro block
-- `spacer-xl` after the H1/intro block
-- `spacer-xl` between independent modules
-- `spacer-xl` before and after each horizontal section divider
-- `spacer-3xl` once at page end before the footer
-- no generic module-root margin/padding combinations for page rhythm
-
-The updated public LP Builder bridge contains all spacer primitives. The Firmendaten test confirmed the runtime values and removed the earlier 0px-spacer issue.
-
-Other binding Handbook layout rules remain:
-
-- source content/order and known media associations are preserved
-- split teasers are top-aligned
-- related text that shares one screenshot/media remains grouped with that media
-- numbered steps use the circular-number treatment
-- divider lines mark section boundaries, not individual numbered steps
-- ambiguous but safe cases become QA warnings rather than generic blockers
-- drafts remain unpublished until explicit approval
+Handbook QA still includes ALT review, media associations, hub category/card review, selected visual optimization and resolution/acceptance of 14 dynamic gallery references.
 
 ## Asset Migration Status
 
-The asset pipeline is prepared far enough for continued migration and later storage promotion.
+The Handbook asset identity pipeline remains prepared:
 
-Stable identity contract:
-
-- asset ID: `ast-sha256-<full-file-sha256>`
+- stable asset ID: `ast-sha256-<full-file-sha256>`
 - content hash: full SHA-256
-- deterministic target-key model based on the hash
-- `render_url` is used for current draft rendering where validated
-- `target_url` remains empty until a real S3/CDN target exists
+- deterministic target-key model
+- `render_url` for current validated draft rendering
+- `target_url` remains empty until a real persistent storage/CDN target exists
 
-Current verified asset state:
+Current verified state:
 
-- 207 SAFE/MIGRATE asset references have valid stable asset IDs
+- 207 SAFE/MIGRATE references have stable IDs
 - 0 missing stable IDs among SAFE/MIGRATE references
 - 0 manifest/hash inconsistencies
-- all 56 asset-bearing GPT-ready packages contain the stable `migration_asset_resolution.asset_id`; one additional package contains no assets
-- the GPT therefore sees the stable asset ID directly in `migration/ready/`
-- asset identity, hash, render URL, source reference and package/page can be reconstructed from the migration-ready data
-- 14 REVIEW/BLOCKED references remain intentionally without a stable migrated asset ID; they are unresolved dynamic gallery references rather than data errors
+- 14 REVIEW/BLOCKED dynamic gallery references remain unresolved
 
-A local `asset-usage-registry.json` also exists for later Contentful usage mapping. Exact Contentful usage by Entry ID/module position is not derivable from the migration packages alone and requires a draft export/read when that later URL-rewrite step is executed.
+Persistent AEM-independent delivery remains a separate migration dependency. Peter / relevant platform contacts should drive the actual storage pilot and ongoing infrastructure ownership while Dominik defines migration requirements and the URL/key contract.
 
-Persistent AEM-independent delivery remains a migration dependency: a real S3/CDN target is still needed before `target_url` promotion. Dominik defines the migration contract while Peter / relevant platform contacts should drive the actual storage pilot and ongoing infrastructure ownership.
-
-The broader Marketing Asset Library remains an exploratory longer-term opportunity rather than a confirmed platform project. The problem framing is broader than Contentful migration: Marketing currently works across multiple tool-specific asset libraries such as AEM, Contentful, Iterable, Salesforce and Beefree, which creates duplicate uploads and inconsistent format/compression handling. The desired direction is a shared asset source with stable URLs and, if supported by existing infrastructure, centralized delivery/transformation behavior. The Contentful migration is a useful near-term pilot, not the sole justification for the broader idea.
-
-Dominik has already discussed the broader direction with Matthias Brandstätter and Paul Befort, and both reacted positively. A dedicated alignment with John Ford is prepared for 2026-09-10 to understand existing Scout24 storage/media-delivery capabilities, technical ownership and whether a small migration-storage pilot can build on existing infrastructure before any new platform is proposed.
-
-## Canonical Mapping and Draft Inventory
-
-The canonical map contains:
-
-- 12 CANONICAL source pages
-- 33 UNIQUE source pages
-- 12 LEGACY_DUPLICATE source packages
-- 45 final target pages
-
-The GPT migration runs reported all 45 target drafts created, but the local migration repository does not yet contain a complete verified read/export of every current Contentful draft. A future draft inventory can capture Entry ID, current slug, `htmlSource`, actual asset usage and publish state in one machine-readable snapshot.
-
-This inventory is useful for handoff and later asset URL rewrites, but it is not a reason to rebuild already migrated pages.
-
-## Source-Duplicate / Exact-Rebuild Workflow
-
-A second migration path is validated for highly custom legacy pages that should remain visually close to the source instead of being approximated with the normal module library.
-
-Workflow:
-
-1. Codex crawls and analyzes the source.
-2. Codex creates a high-fidelity rebuild.
-3. Codex performs a Contentful-ready cleanup while preserving the visual structure.
-4. GPT imports the prepared `htmlSource` through `SOURCE_DUPLICATE_IMPORT_LOCKED` without recomposition.
-5. GPT verifies input vs stored HTML by length and SHA-256.
-6. Visual QA is performed in the Contentful preview.
-
-The reduced Mitgliedschaften test proved the locked import works: a 20.6 KB custom rebuild was written and read back byte-identically with matching SHA-256. A larger ~60 KB real-page rebuild is rejected by the current Contentful Text-field validation with HTTP 422 rather than being transformed by Contentful.
-
-For future exact-rebuild pages, the requested platform contract is at least 256 KB, ideally 512 KB, with complete write and read-back and no silent truncation/transformation.
+The broader Marketing Asset Library remains exploratory rather than a confirmed platform project. The prepared John Ford alignment is intended to discover what storage, media-delivery, CDN/image-transformation capabilities and technical ownership already exist at Scout24 before proposing anything new.
 
 ## Stakeholder Alignment
 
-The project now has broader visibility because the first real migration results are tangible.
-
-- Mukhammadjon confirmed the requested direction for larger `htmlSource`, fuller lifecycle Actions and a global LP Builder CSS/JS runtime contract; implementation and end-to-end validation remain pending.
-- Beatrice received a migration progress update and was asked for the current B2B contact-form implementation plan/timing; Dominik offered Ulrike as B2B support for Salesforce/business requirements.
-- Daniel received a progress update that the Contentful-adapted LP Builder is already migrating real B2B pages successfully, can update many pages together efficiently, and is progressing at or ahead of the expected pace. The hybrid nature of custom-page migration was framed as a practical operating model rather than a failure of the approach.
-- Ulrike should take over more of the operational page migration work in the next phase, with Mitch supporting her; Dominik focuses on Builder readiness and reusable migration capabilities.
-- Matthias Brandstätter and Paul Befort have already heard the broader Marketing Asset Library idea and both responded positively. This is support for further exploration, not yet an architecture or delivery decision.
-- John Ford alignment is scheduled/prepared to discover what storage, media-delivery, CDN or image-transformation capabilities already exist at Scout24 and who the relevant technical owners are before the broader Asset Library direction is treated as a platform decision.
+- Mukhammadjon is implementing/validating the LP Builder platform changes needed at migration scale. Large writes are now validated at ~50 KB; large read-back remains open.
+- Beatrice has been asked for the current B2B contact-form implementation plan/timing; the form is intentionally excluded from the current Gewerbliche-Anbieter rebuild.
+- Ulrike should take over more operational page migration, with Mitch supporting her, while Dominik provides Builder readiness and migration guardrails.
+- John Ford alignment is prepared to clarify existing asset/storage/media-delivery capabilities and technical ownership.
 - SEO routing/URL strategy remains a parallel coordination topic for future Contentful delivery.
 
 ## Dominik's Role
 
-Dominik owns migration planning, orchestration, migration rules and the migration-focused use and preparation of the Landing Page Builder. He defines reusable migration contracts, migration-driven Builder requirements and quality guardrails.
+Dominik owns migration planning, orchestration, migration rules and migration-focused preparation of the Landing Page Builder. He defines reusable migration contracts, migration-driven Builder requirements and quality guardrails.
 
-For the next migration phase, Dominik should avoid becoming the default operator for repeated crawling and page-by-page migration. Operational migration should move to Ulrike with Mitch supporting her, while Dominik focuses on reusable Builder modules and the system-level preparation that allows others to execute the migration reliably.
-
-For persistent asset storage, Dominik defines the migration requirements and URL/key contract while Peter / relevant platform contacts drive the actual S3/CDN pilot and ongoing storage ownership.
+For the next phase, Dominik should avoid becoming the default operator for repeated crawling and page-by-page migration. Operational work should be delegated where possible while he improves the reusable system.
 
 ## Key Dependencies and Open Issues
 
-- Mukhammadjon's implementation is pending for Landing Page Builder capabilities needed at migration scale: larger `htmlSource`, read-by-entryId, slug rename, unpublish, archive/delete and trusted global CSS/JS loading.
-- Persistent S3/CDN delivery is still needed before final asset `target_url` promotion.
-- 14 REVIEW/BLOCKED dynamic gallery asset references remain unresolved; seven occur on each of the two gallery source variants.
-- ALT review remains required for many informative images before publish readiness.
-- The hub still has visual/content QA, including category placement for page 054 where the category was not unambiguous.
-- Some existing Handbook drafts retain legacy slugs until the rename capability exists.
-- The B2B contact form is becoming a key dependency for broader directory migration; implementation/timing and Salesforce integration details are still being clarified with Beatrice/Core/B2B.
-- Future Contentful routing and SEO/LLM visibility requirements still need coordination with SEO.
-- The Gold product-detail crawl does not contain verified rendered DOM or full-page screenshots, so dynamic/interactive content may still require targeted verification when it becomes relevant to an actual page migration.
-- The broader Marketing Asset Library direction still needs discovery against existing Scout24 infrastructure and technical ownership before it can become a confirmed platform initiative.
+- Large write support is now validated for the ~50 KB real Product Comparison case, but large full read-back still fails through `getLpBuilderPage`.
+- Remaining lifecycle/global-runtime LP Builder platform changes still need implementation/validation unless separately confirmed.
+- Product Comparison needs a final synchronized Contentful Preview check.
+- Gewerbliche-Anbieter start page needs a final Contentful sync/Preview check after final hover assets/Bridge publication.
+- The B2B contact form remains a key dependency for broader directory migration and is intentionally handled separately from the current page rebuild.
+- Persistent storage/CDN delivery is still needed before final Handbook asset `target_url` promotion.
+- 14 REVIEW/BLOCKED dynamic gallery references remain unresolved.
+- ALT review remains required for many informative Handbook images.
+- Some Handbook drafts retain legacy slugs until rename capability is available.
+- Future routing and SEO/LLM visibility requirements still need coordination with SEO.
+- The Gold product-detail crawl lacks verified rendered DOM/full-page screenshots for dynamic content.
 
 ## Next Steps
 
-1. Use the completed Gold-membership crawl as the working source inventory for the 36 unique product-detail targets; revisit rendered-DOM gaps only where they materially block a page migration.
-2. Prepare the reusable LP Builder modules and contracts needed by the next B2B page scopes instead of solving repeated page structures manually.
-3. Let Ulrike take over more of the operational page migration, with Mitch supporting her, while Dominik provides Builder readiness, migration rules and quality guardrails.
-4. Use the prepared John Ford alignment on 2026-09-10 to understand existing Scout24 asset/storage/media-delivery capabilities, likely technical ownership and whether the small migration-storage pilot can use existing infrastructure.
-5. Hand off visual/content QA for the 44 Handbook detail drafts and the hub, including ALT review, media associations and hub category/card review.
-6. Wait for Mukhammadjon's implementation of the migration-relevant Landing Page Builder requirements and validate changes on disposable entries.
-7. Clarify the B2B contact-form implementation plan and, if useful, connect Ulrike with the relevant developer for Salesforce/business requirements.
-8. Continue the S3/CDN storage pilot with Peter / platform owners and later promote `target_url` values after verified upload.
-9. Resolve or explicitly accept the 14 remaining REVIEW/BLOCKED gallery asset references before final publish readiness.
-10. When useful for final handoff or asset URL migration, export/read the 45 current Contentful drafts into a verified inventory rather than rebuilding them.
-11. Review `/lp` source pages for additional FAQ/help/how-to content that should potentially be integrated into the Anwenderhandbuch scope.
+1. Finish the Contentful Preview validation of the latest Product Comparison HTML after the large-write fix.
+2. Sync and visually validate the final ~19.8 KB Gewerbliche-Anbieter start-page HTML, including all 12 external illustration/hover states.
+3. Hand off visual/content QA for the 44 Handbook detail drafts and hub.
+4. Review `/lp` source pages for additional FAQ/help/how-to content that may belong in the Handbook.
+5. Let Ulrike take over more operational migration work, with Mitch supporting her.
+6. Retest large `getLpBuilderPage` read-back after Mukhammadjon's follow-up.
+7. Clarify the B2B contact-form implementation plan and Salesforce/business requirements.
+8. Continue the storage/CDN discovery and later promote `target_url` values after verified upload.
+9. Resolve or explicitly accept the 14 remaining dynamic gallery references before publish readiness.
+10. Revisit centralized asset mapping/resolution after the immediate migration flow is stable.
 
 ## Last Confirmed
 
-2026-09-08: The Gold-membership product-detail crawl is complete enough to serve as the current source inventory for 36 unique target pages, with the explicit limitation that rendered DOM and full-page screenshots are unavailable. Dominik confirmed that his focus for the next phase should be LP Builder preparation and reusable migration capabilities rather than repeated crawling/manual migration; Ulrike should take on more operational migration work with Mitch supporting her. The broader Marketing Asset Library remains exploratory, with a John Ford alignment prepared for 2026-09-10 to discover existing Scout24 capabilities and ownership. The Anwenderhandbuch remains migrated as 45 unpublished target drafts, and Mukhammadjon's remaining LP Builder platform implementation is still pending.
+2026-09-10: The real 50,718-byte Product Comparison payload now writes successfully through create and update with matching input SHA-256; full `getLpBuilderPage` read-back still fails with `ResponseTooLargeError`. The Gewerbliche-Anbieter start-page source has been captured and rebuilt to a lightweight 19,760-byte HTML using external base/hover SVG assets and published Bridge rules; its final Contentful sync/Preview verification remains open. Manual migration work now follows a simple logical-page `old` / `new` workspace model, and direct AEM/static asset URLs are temporarily retained until a broader asset-resolution strategy is revisited.
