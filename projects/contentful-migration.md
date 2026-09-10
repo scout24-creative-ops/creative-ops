@@ -33,6 +33,8 @@ The Gold membership product-detail crawl is complete enough to serve as the curr
 
 The current B2B migration scope should be selected strategically rather than imported wholesale from the complete AEM workbook. Ulrike supports Dominik over the coming weeks/months by identifying which pages are most important, which can be removed, which can be rebuilt 1:1, which should be combined, and which need content updates because they are outdated or otherwise unsuitable for direct migration.
 
+Mitch is not part of Contentful Migration and should not be suggested for migration tasks. He is relevant in E-Mail Automation contexts, but not as a migration owner, supporter or fallback resource.
+
 The large B2B Product Comparison has become the first complex reusable Builder contract. Its maintained Contentful-ready HTML is now writable at ~50 KB after Mukhammadjon's larger-htmlSource fix. The module still needs one final current Preview check before the reusable-module step is treated as complete.
 
 The Gewerbliche-Anbieter directory/start page is the next real controlled-rebuild example. Its live source was captured with section order, links, interactions and relevant assets. A new LP Builder version has been prepared without the legacy contact form and with the original illustrated-card hover behavior preserved through external assets. The final maintained HTML is 19,760 bytes and needs one final Contentful sync/Preview check after the final hover asset/Bridge update.
@@ -50,7 +52,7 @@ The migration strategy is intentionally hybrid:
 7. Prefer reusable Builder capabilities over repeated manual migration work by Dominik.
 8. Maintain the Scout Wiki working list as the agreed strategic migration scope, while keeping Alessandra's Excel workbook as the full AEM inventory reference.
 
-Operational migration work should increasingly move to Ulrike, with Mitch supporting her, while Dominik concentrates on Builder readiness, migration rules and quality guardrails.
+Operational migration work should increasingly move to Ulrike, while Dominik concentrates on Builder readiness, migration rules and quality guardrails.
 
 ## Manual Migration Workspace Convention
 
@@ -145,7 +147,8 @@ The broader Marketing Asset Library remains exploratory rather than a confirmed 
 
 - Mukhammadjon is implementing/validating the LP Builder platform changes needed at migration scale. Large writes are now validated at ~50 KB; large read-back remains open.
 - Beatrice has been asked for the current B2B contact-form implementation plan/timing; the form is intentionally excluded from the current Gewerbliche-Anbieter rebuild.
-- Ulrike should take over strategic URL assessment and more operational page migration, with Mitch supporting her, while Dominik provides Builder readiness and migration guardrails.
+- Ulrike should take over strategic URL assessment and more operational page migration, while Dominik provides Builder readiness and migration guardrails.
+- Mitch is not part of Contentful Migration; keep him out of migration ownership, support and task suggestions. His relevant context is E-Mail Automation.
 - John Ford alignment is prepared to clarify existing asset/storage/media-delivery capabilities and technical ownership.
 - SEO routing/URL strategy remains a parallel coordination topic for future Contentful delivery.
 
@@ -177,7 +180,7 @@ For the next phase, Dominik should avoid becoming the default operator for repea
 3. Hand off visual/content QA for the 44 Handbook detail drafts and hub.
 4. Use the Scout Wiki URL working list with Ulrike to classify prioritized B2B LPs as migrate, remove, rebuild 1:1, combine or update content before migration.
 5. Review `/lp` source pages for additional FAQ/help/how-to content that may belong in the Handbook.
-6. Let Ulrike take over more operational migration work, with Mitch supporting her.
+6. Let Ulrike take over more operational migration work.
 7. Retest large `getLpBuilderPage` read-back after Mukhammadjon's follow-up.
 8. Clarify the B2B contact-form implementation plan and Salesforce/business requirements.
 9. Continue the storage/CDN discovery and later promote `target_url` values after verified upload.
@@ -186,4 +189,4 @@ For the next phase, Dominik should avoid becoming the default operator for repea
 
 ## Last Confirmed
 
-2026-09-10: The Scout Wiki Contentful Migration directory was reduced to a lean parent page, and a child page was created as the B2B migration URL working list. Alessandra's Excel workbook remains the full AEM B2B source inventory, while the Wiki list is the narrower agreed working scope for URLs Ulrike has selected and still needs to assess strategically. Earlier the same day, the real 50,718-byte Product Comparison payload wrote successfully through create and update with matching input SHA-256; full `getLpBuilderPage` read-back still failed with `ResponseTooLargeError`. The Gewerbliche-Anbieter start-page source had been captured and rebuilt to a lightweight 19,760-byte HTML using external base/hover SVG assets and published Bridge rules; its final Contentful sync/Preview verification remained open. Manual migration work follows a simple logical-page `old` / `new` workspace model, and direct AEM/static asset URLs are temporarily retained until a broader asset-resolution strategy is revisited.
+2026-09-10: Dominik clarified that Mitch is not part of Contentful Migration and should not be suggested for migration work; Mitch is relevant in E-Mail Automation contexts instead. The Scout Wiki Contentful Migration directory was reduced to a lean parent page, and a child page was created as the B2B migration URL working list. Alessandra's Excel workbook remains the full AEM B2B source inventory, while the Wiki list is the narrower agreed working scope for URLs Ulrike has selected and still needs to assess strategically. Earlier the same day, the real 50,718-byte Product Comparison payload wrote successfully through create and update with matching input SHA-256; full `getLpBuilderPage` read-back still failed with `ResponseTooLargeError`. The Gewerbliche-Anbieter start-page source had been captured and rebuilt to a lightweight 19,760-byte HTML using external base/hover SVG assets and published Bridge rules; its final Contentful sync/Preview verification remained open. Manual migration work follows a simple logical-page `old` / `new` workspace model, and direct AEM/static asset URLs are temporarily retained until a broader asset-resolution strategy is revisited.
