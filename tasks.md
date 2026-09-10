@@ -39,10 +39,17 @@
 
 - [ ] Prepare reusable LP Builder modules for B2B migration
   - Area: Landing Page Builder
-  - Status: Open, active module-readiness work
-  - Next step: Review the Codex implementation of the first `product-comparison-table` candidate based on the existing AEM HTML, then validate that the stable structure/responsive behavior remains controlled while rows, columns, labels, tooltips, links, cell states and CTAs can be edited safely.
-  - Context: Dominik's focus for the next migration phase is Builder readiness rather than repeated crawling or page-by-page migration. The complex B2B comparison table is used on multiple AEM pages and should become a reusable module contract instead of being regenerated from scratch. Additional recurring B2B structures should be added module by module as they are confirmed.
-  - Source: Dominik confirmed the module-readiness direction and first comparison-table candidate on 2026-09-08
+  - Status: Open, first complex module substantially validated; continue migration-readiness work
+  - Next step: Finish the real Contentful Preview check of the current `product-comparison-table` import after the large-htmlSource fix, then treat the table as the first reusable B2B migration contract if the final visual/interaction check passes. Continue promoting only genuinely recurring structures into reusable Builder patterns.
+  - Context: The Product Comparison implementation has progressed through full AEM-reference fidelity work: Silber/Gold/Bronze ordering, source-derived plan bars/emblems, 36 feature info icons/tooltips, pill CTAs, static repeated plan headers, compact table spacing, corrected dividers and full-row highlights are reflected in the maintained HTML and centrally published Bridge. The 50.7 KB real import can now be created and updated successfully after Mukhammadjon's size fix; a final Preview check remains before closing this module-readiness step.
+  - Source: Product Comparison implementation and large-payload validation confirmed through 2026-09-09
+
+- [ ] Finish Gewerbliche-Anbieter start page migration preview
+  - Area: Contentful Migration
+  - Status: Open, rebuild prepared; final Contentful sync/visual check pending
+  - Next step: Update the existing unpublished test draft with the final ~19.8 KB `gewerbliche-anbieter-startseite.html` and verify the final external SVG base illustrations, original-style teal hover overlays, responsive layout, links and CTA behavior in Contentful Preview.
+  - Context: The live directory/start page was crawled and rebuilt without the legacy contact form. Twelve large inline SVG illustrations were externalized to Scout24 static URLs, reducing the page HTML from ~2.47 MB to 19,760 bytes. Six final hover-overlay SVG assets and the required Bridge rules are public; the `#kontakt` CTA remains intentionally unresolved because the contact form is out of scope and will be handled separately.
+  - Source: Gewerbliche-Anbieter source capture, rebuild and external-asset validation confirmed on 2026-09-09
 
 - [ ] Set up B2B automation discovery with Juliane
   - Area: E-Mail Automation Professional
@@ -69,11 +76,11 @@
 
 - [ ] Validate remaining LP Builder platform changes from Mukhammadjon
   - Area: Landing Page Builder
-  - Status: Waiting for implementation
-  - Waiting for: Mukhammadjon to implement the confirmed platform changes.
-  - Dominik's next step: Validate the implemented changes end to end on disposable NEXT/Preview entries and, where relevant, PRO.
-  - Context: Mukhammadjon confirmed the requested direction for all three scaling needs: (1) larger `htmlSource` capacity of at least 256 KB, ideally 512 KB, with lossless read-back and length/SHA verification; (2) lifecycle support centered on stable `entryId`, including slug/target-path changes, unpublish, archive and delete; and (3) globally loaded `lpbuilder-bridge.css` plus trusted `lpbuilder-runtime.js` with initialization after render. Architectural alignment is complete; implementation and validation remain.
-  - Source: Mukhammadjon confirmed the bundled LP Builder platform request on 2026-09-07
+  - Status: Waiting, larger htmlSource write support validated; read-back and other platform changes remain
+  - Waiting for: Mukhammadjon to complete/fix the remaining large read-back path and finish the still-pending lifecycle/global-runtime changes.
+  - Dominik's next step: Retest `getLpBuilderPage` with a ~50 KB+ entry when Mukhammadjon reports the read-back fix, then validate the remaining lifecycle and global runtime changes end to end on disposable Preview entries and, where relevant, PRO.
+  - Context: The previously failing real Product Comparison payload now succeeds through both create and update at 50,718 bytes with matching input SHA-256 and no evidence of truncation/transformation. `getLpBuilderPage` still fails with `ResponseTooLargeError`, which is not blocking current writes but is required for the future edit-by-URL workflow where colleagues need the Builder to read an existing page before changing it. The larger-capacity target remains at least 256 KB, ideally 512 KB. Lifecycle support around stable `entryId` and global `lpbuilder-bridge.css` / `lpbuilder-runtime.js` loading remain part of the confirmed platform scope.
+  - Source: Large-payload create/update test and follow-up to Mukhammadjon on 2026-09-09
 
 - [ ] Clarify B2B contact form plan for Contentful
   - Area: Contentful Migration
