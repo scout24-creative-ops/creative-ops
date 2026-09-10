@@ -114,7 +114,7 @@
 - [x] Validate the Codex crawl for Gold product-detail pages
   - Area: Contentful Migration
   - Completed: 2026-09-08
-  - Outcome: The crawl identified 38 product tiles and 36 unique targets, including one redirect, two duplicate targets and one HTTP-404 Objektdatenbank target. It produced per-page source/content/link/asset packages with 1,723 asset references, 300 downloaded originals and zero download errors. Rendered browser DOM and full-page screenshots remain unavailable for all 36 targets, so dynamic/interactive content is not fully verified. The crawl is sufficient as the current working source inventory; Dominik's focus should now move to LP Builder readiness while operational migration shifts to Ulrike with Mitch supporting her.
+  - Outcome: The crawl identified 38 product tiles and 36 unique targets, including one redirect, two duplicate targets and one HTTP-404 Objektdatenbank target. It produced per-page source/content/link/asset packages with 1,723 asset references, 300 downloaded originals and zero download errors. Rendered browser DOM and full-page screenshots remain unavailable for all 36 targets, so dynamic/interactive content is not fully verified. The crawl is sufficient as the current working source inventory; Dominik's focus should now move to LP Builder readiness while operational migration shifts to Ulrike. Mitch is not part of Contentful Migration and should not be suggested for migration work; he is relevant in E-Mail Automation contexts instead.
 
 - [x] Simplify the reusable AI Enablement preparation model
   - Area: AI Enablement Series
