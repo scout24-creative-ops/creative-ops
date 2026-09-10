@@ -12,8 +12,10 @@ Keep these source links available because they are recurring reference points fo
 
 - Alessandra's migration/domain overview: https://linear.app/scout24-se/document/domain-overview-is24-f097933f2f3d
 - B2B `/anbieten` migration workbook: https://gs24.sharepoint.com/:x:/r/sites/CMSMigrationProject/Files/CMS%20Migration%20-%20URLs%20liste/Excel%20List%20for%20Migration/Immoscout24%20DE%20+%20AT/immobilienscout24.de_anbieten_CMS%20Migration_20250318.xlsx?d=w34b27b93faaf4ed1b4d9da2ff1e9c294&csf=1&web=1&e=i7ExTx
+- Scout Wiki project directory: https://wiki.scout24.com/spaces/creative-operations/pages/56634/contentful-migration
+- Scout Wiki B2B migration URL working list: https://wiki.scout24.com/spaces/creative-operations/pages/56636/b2b-migration-url-arbeitsliste
 
-The B2B workbook is the relevant direct source for the current `/anbieten` migration scope; the overview is the entry point to the broader set of migration lists.
+The B2B workbook is the relevant direct source for the current `/anbieten` migration scope; the overview is the entry point to the broader set of migration lists. The Wiki URL working list is intentionally narrower than the workbook: it should contain only URLs that Ulrike has selected, evaluated or prioritized for the strategic migration.
 
 ## Current Status
 
@@ -28,6 +30,8 @@ The B2B Anwenderhandbuch remains the first end-to-end migration pilot and the pa
 The next migration work is being used to strengthen the reusable LP Builder and the controlled rebuild path rather than simply increasing page count.
 
 The Gold membership product-detail crawl is complete enough to serve as the current working source inventory for 36 unique targets, with the known limitation that rendered DOM and full-page screenshots were unavailable for those targets.
+
+The current B2B migration scope should be selected strategically rather than imported wholesale from the complete AEM workbook. Ulrike supports Dominik over the coming weeks/months by identifying which pages are most important, which can be removed, which can be rebuilt 1:1, which should be combined, and which need content updates because they are outdated or otherwise unsuitable for direct migration.
 
 The large B2B Product Comparison has become the first complex reusable Builder contract. Its maintained Contentful-ready HTML is now writable at ~50 KB after Mukhammadjon's larger-htmlSource fix. The module still needs one final current Preview check before the reusable-module step is treated as complete.
 
@@ -44,6 +48,7 @@ The migration strategy is intentionally hybrid:
 5. Use controlled source-driven rebuilds for custom pages that should stay visually close to the source.
 6. Hand visual/content QA to the relevant colleagues rather than requiring Dominik to polish every page personally.
 7. Prefer reusable Builder capabilities over repeated manual migration work by Dominik.
+8. Maintain the Scout Wiki working list as the agreed strategic migration scope, while keeping Alessandra's Excel workbook as the full AEM inventory reference.
 
 Operational migration work should increasingly move to Ulrike, with Mitch supporting her, while Dominik concentrates on Builder readiness, migration rules and quality guardrails.
 
@@ -140,7 +145,7 @@ The broader Marketing Asset Library remains exploratory rather than a confirmed 
 
 - Mukhammadjon is implementing/validating the LP Builder platform changes needed at migration scale. Large writes are now validated at ~50 KB; large read-back remains open.
 - Beatrice has been asked for the current B2B contact-form implementation plan/timing; the form is intentionally excluded from the current Gewerbliche-Anbieter rebuild.
-- Ulrike should take over more operational page migration, with Mitch supporting her, while Dominik provides Builder readiness and migration guardrails.
+- Ulrike should take over strategic URL assessment and more operational page migration, with Mitch supporting her, while Dominik provides Builder readiness and migration guardrails.
 - John Ford alignment is prepared to clarify existing asset/storage/media-delivery capabilities and technical ownership.
 - SEO routing/URL strategy remains a parallel coordination topic for future Contentful delivery.
 
@@ -163,20 +168,22 @@ For the next phase, Dominik should avoid becoming the default operator for repea
 - Some Handbook drafts retain legacy slugs until rename capability is available.
 - Future routing and SEO/LLM visibility requirements still need coordination with SEO.
 - The Gold product-detail crawl lacks verified rendered DOM/full-page screenshots for dynamic content.
+- The newly created Wiki working list needs ongoing URL-level evaluation before it can be treated as the final Contentful scope.
 
 ## Next Steps
 
 1. Finish the Contentful Preview validation of the latest Product Comparison HTML after the large-write fix.
 2. Sync and visually validate the final ~19.8 KB Gewerbliche-Anbieter start-page HTML, including all 12 external illustration/hover states.
 3. Hand off visual/content QA for the 44 Handbook detail drafts and hub.
-4. Review `/lp` source pages for additional FAQ/help/how-to content that may belong in the Handbook.
-5. Let Ulrike take over more operational migration work, with Mitch supporting her.
-6. Retest large `getLpBuilderPage` read-back after Mukhammadjon's follow-up.
-7. Clarify the B2B contact-form implementation plan and Salesforce/business requirements.
-8. Continue the storage/CDN discovery and later promote `target_url` values after verified upload.
-9. Resolve or explicitly accept the 14 remaining dynamic gallery references before publish readiness.
-10. Revisit centralized asset mapping/resolution after the immediate migration flow is stable.
+4. Use the Scout Wiki URL working list with Ulrike to classify prioritized B2B LPs as migrate, remove, rebuild 1:1, combine or update content before migration.
+5. Review `/lp` source pages for additional FAQ/help/how-to content that may belong in the Handbook.
+6. Let Ulrike take over more operational migration work, with Mitch supporting her.
+7. Retest large `getLpBuilderPage` read-back after Mukhammadjon's follow-up.
+8. Clarify the B2B contact-form implementation plan and Salesforce/business requirements.
+9. Continue the storage/CDN discovery and later promote `target_url` values after verified upload.
+10. Resolve or explicitly accept the 14 remaining dynamic gallery references before publish readiness.
+11. Revisit centralized asset mapping/resolution after the immediate migration flow is stable.
 
 ## Last Confirmed
 
-2026-09-10: The real 50,718-byte Product Comparison payload now writes successfully through create and update with matching input SHA-256; full `getLpBuilderPage` read-back still fails with `ResponseTooLargeError`. The Gewerbliche-Anbieter start-page source has been captured and rebuilt to a lightweight 19,760-byte HTML using external base/hover SVG assets and published Bridge rules; its final Contentful sync/Preview verification remains open. Manual migration work now follows a simple logical-page `old` / `new` workspace model, and direct AEM/static asset URLs are temporarily retained until a broader asset-resolution strategy is revisited.
+2026-09-10: The Scout Wiki Contentful Migration directory was reduced to a lean parent page, and a child page was created as the B2B migration URL working list. Alessandra's Excel workbook remains the full AEM B2B source inventory, while the Wiki list is the narrower agreed working scope for URLs Ulrike has selected and still needs to assess strategically. Earlier the same day, the real 50,718-byte Product Comparison payload wrote successfully through create and update with matching input SHA-256; full `getLpBuilderPage` read-back still failed with `ResponseTooLargeError`. The Gewerbliche-Anbieter start-page source had been captured and rebuilt to a lightweight 19,760-byte HTML using external base/hover SVG assets and published Bridge rules; its final Contentful sync/Preview verification remained open. Manual migration work follows a simple logical-page `old` / `new` workspace model, and direct AEM/static asset URLs are temporarily retained until a broader asset-resolution strategy is revisited.
