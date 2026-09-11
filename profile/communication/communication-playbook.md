@@ -17,6 +17,28 @@ Show a small number of concrete, understandable outcomes from the week. Prioriti
 - Do not include a topic mainly because it was discussed, or because it established that no action is currently appropriate, unless that clarification materially affects the team.
 - Use the canonical project name and emoji. Write in English, with one compact bullet per workstream.
 
+### Manager-facing Friday Slack summary calibration
+
+Dominik posts the Friday `Summary of the week` in a Slack channel for his manager. This version must sit at management altitude rather than implementation altitude.
+
+Use this pattern by default:
+
+- Start with `Dominik` on its own line and `This week’s progress` below it.
+- Use one bullet per project or workstream only. Never repeat the same project in multiple bullets.
+- Keep each bullet focused on what Dominik moved forward, aligned, created, validated or opened up.
+- Mention collaborators or teams when they show progress or alignment, for example `with Ulrike Sperlich` or `with the Core Team`.
+- Translate technical work into business or collaboration progress. Avoid implementation metrics, file sizes, exact payload sizes, error codes, crawl counts, asset counts, class names, paths, tooling internals and similar details unless Dominik explicitly asks for a technical version.
+- Exclude topics where nothing materially new happened during the week.
+- Prefer wording such as `continued building out`, `started the first concrete work`, `aligned the main open topic`, `created new draft concepts`, or `opened a potential use case`.
+
+Approved Week 37 direction:
+
+- 🎓 **AI Enablement Series** – Launched the first recurring AI Enablement session format with a clear structure for learning, peer sharing and open discussion. The setup is intentionally lightweight, so the format can continue regularly without creating too much preparation overhead.
+- 🤖 **Landing Page Builder** – Continued building out the LP Builder as a practical tool for real Contentful work. Several additional modules were added, and the Builder’s Contentful integration was further developed together with the Core Team developer to support a more scalable migration workflow.
+- 🔗 **Contentful Migration** – Started the first concrete migration work together with Ulrike Sperlich. The focus was on structuring how to work together, clarifying priorities and aligning the most important topic — forms — in a kickoff with the Core Team.
+- ✉️ **E-Mail Automation – Seeker | Plus FOMO** – Created new draft concepts for a FOMO email that guides users into the Bewerbungsassistent. This moves the automation work from general setup further toward concrete user-facing communication.
+- 🤝 **Fotocasa** – Presented the LP Builder to Fotocasa and opened a potential use case for them. They are interested in exploring it because they currently rely on an external agency for landing pages, which makes the process slower and more expensive.
+
 ### Calibration example — Week 35, 2026
 
 **Less effective**
