@@ -74,13 +74,13 @@
 
 ## Waiting
 
-- [ ] Validate remaining LP Builder platform changes from Mukhammadjon
+- [ ] Resolve remaining LP Builder renderer and auth gaps
   - Area: Landing Page Builder
-  - Status: Waiting, larger htmlSource write support validated; read-back and other platform changes remain
-  - Waiting for: Mukhammadjon to complete/fix the remaining large read-back path and finish the still-pending lifecycle/global-runtime changes.
-  - Dominik's next step: Retest `getLpBuilderPage` with a ~50 KB+ entry when Mukhammadjon reports the read-back fix, then validate the remaining lifecycle and global runtime changes end to end on disposable Preview entries and, where relevant, PRO.
-  - Context: The previously failing real Product Comparison payload now succeeds through both create and update at 50,718 bytes with matching input SHA-256 and no evidence of truncation/transformation. `getLpBuilderPage` still fails with `ResponseTooLargeError`, which is not blocking current writes but is required for the future edit-by-URL workflow where colleagues need the Builder to read an existing page before changing it. The larger-capacity target remains at least 256 KB, ideally 512 KB. Lifecycle support around stable `entryId` and global `lpbuilder-bridge.css` / `lpbuilder-runtime.js` loading remain part of the confirmed platform scope.
-  - Source: Large-payload create/update test and follow-up to Mukhammadjon on 2026-09-09
+  - Status: Waiting, lifecycle and shared runtime largely validated; central Bridge loading, intermittent Action auth and large read-back remain
+  - Waiting for: Mukhammadjon/Core Frontend to restore the intended central `lpbuilder-bridge.css` loading and to continue investigating the intermittent ChatGPT OAuth/session failure. Large `getLpBuilderPage` read-back at ~50 KB also still needs an explicit retest/fix.
+  - Dominik's next step: Once the renderer loads the Bridge centrally, rerun the same host smoke test without a page-level CSS workaround. Retest large `getLpBuilderPage` read-back when the platform path is ready and verify that the intermittent auth issue is stable enough for colleague migration use.
+  - Context: The full nine-action lifecycle has been proven on disposable entries, the global Runtime JS is loaded and Carousel/Accordion/Sticky behavior passes after the latest shared Runtime/Bridge fixes. A controlled test showed that adding the current Bridge link directly to the page immediately restores correct styling, confirming that the remaining visual problem is the missing central stylesheet load rather than broken module HTML. Mukhammadjon also reproduced the intermittent Authorization-header failure and confirmed that its error format does not originate from the Contentful Lambda auth check.
+  - Source: LP Builder runtime/renderer smoke tests and Mukhammadjon follow-up confirmed through 2026-09-15
 
 - [ ] Clarify B2B contact form plan for Contentful
   - Area: Contentful Migration
