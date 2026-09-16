@@ -22,6 +22,18 @@ Prefer:
 
 Only use larger or module-rich test pages when Dominik explicitly asks for module coverage or when the technical issue being tested requires those modules.
 
+## Stable test URLs
+
+To avoid creating unnecessary test pages, reuse a small fixed set of test slugs whenever possible:
+
+- `/lpb-contentful-test-1` — primary/default test page
+- `/lpb-contentful-test-2` — secondary test page when parallel or comparison testing is needed
+- `/lpb-contentful-test-3` — tertiary test page for additional isolated tests
+
+Prefer `/lpb-contentful-test-1` by default unless a separate test page is needed.
+
+The old test page `/dev-lp-builder-contentful-v01-test` is being retired and should be deleted before the new stable test slugs are used.
+
 ## Reference: minimal READ smoke test
 
 Use this pattern for a pure READ/authentication test:
@@ -29,7 +41,7 @@ Use this pattern for a pure READ/authentication test:
 ```text
 Führe ausschließlich einen READ-Test auf dieser bestehenden LP-Builder-Seite aus:
 
-/dev-lp-builder-contentful-v01-test
+/lpb-contentful-test-1
 
 Nichts verändern.
 
