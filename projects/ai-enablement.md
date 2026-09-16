@@ -45,34 +45,32 @@ A deeper Explore discussion can result in `Stop`, `Beobachten` or `Weiter unters
 
 ## Current Status
 
-The kickoff and operating model are complete. The first recurring 90-minute session on 2026-09-08 is prepared.
+The kickoff and operating model are complete. The first recurring 90-minute session ran on 2026-09-08. The lightweight Wiki + verbal facilitation model worked as intended, while the planned Explore block was not reached in depth because Learn and Show & Share used most of the session time.
 
-### Session 08.09.2026
+### Session 08.09.2026 — Outcome
 
 **Learn — Scout Wiki**
 
-- Explain what Scout Wiki is and briefly show the web interface.
-- Show how to install/connect the Scout Wiki plugin in ChatGPT.
-- Demonstrate that ChatGPT can read and write Wiki content.
-- Use the fictional product `ScoutConnect Pro` to create a structured product knowledge page in Scout Wiki.
-- Open a fresh ChatGPT conversation and reuse the stored Wiki knowledge to create an email teaser, demonstrating that the knowledge is reusable beyond the original chat.
-- Direct Scout Wiki access from the Contentful LP Builder is optional and not required for the demo; Mukhammadjon was asked to check read-only access only if it is quick to add.
+- Dominik demonstrated Scout Wiki as a reusable knowledge source connected to ChatGPT.
+- The live flow covered connecting the plugin, creating a structured page for the fictional product `ScoutConnect Pro`, storing it in Scout Wiki and reusing the stored information in a fresh ChatGPT conversation to create an email teaser.
+- The practical takeaway was the potential value of a shared, maintained knowledge source that can be reused across chats and content formats instead of keeping important context only inside individual conversations or one-off artifacts.
 
 **Show & Share**
 
-- Marie-Lord Lumumba — Brand Agent – Tone of Voice, implementation approach, reusable Skill and practical framing for Agent vs. Skill.
-- Peter — Creative Hub and Plus Studio.
-- Sophie — practical experience with AI presentation tools: what she tested, the results she got and what she actually needs from such a solution.
+- Marie-Lord Lumumba presented several Brand AI use cases and the underlying decision logic for when an Agent is useful. Key points included the need for a clearly defined outcome, reliable source knowledge, good and bad examples, and explicit ownership for ongoing maintenance.
+- Marie showed the Brand Agent – Tone of Voice and explained that the first broad approach became too complex and unreliable. The improved approach was to start with a smaller scope, test and iterate. The Tone-of-Voice logic is also available as a reusable Skill and is intended to be tested with colleagues before wider release; possible later reuse in the Landing Page Builder was discussed.
+- Marie also showed a Brand Intelligence Agent for recurring competitor monitoring and a strategic Brand Architecture Agent for assessing how closely acquired brands should align with ImmoScout24. Future Brand ideas include making Brand Study results easier to query through AI.
+- Peter presented the Creative Hub / Plus Studio direction and the idea of combining professional guidelines, structured inputs and reusable creative workflows so assets can be generated and adapted more systematically across channels.
+- The discussion around Peter's contribution reinforced the broader problem of fragmented asset libraries across tools and the value of a future shared asset source, but no platform decision was made in the session.
+- Sophie shared practical tests with AI presentation tools. Her main learning was that even with a strong prompt and substantial context, the generated slide structure and information placement were often too random or generic for the intended strategic communication. Iteration improved individual outputs but did not yet remove the need for human information architecture and slide craft.
+- The discussion also touched on the importance of company templates, PowerPoint compatibility and whether future tooling should work inside the existing presentation environment rather than require a separate workflow.
 
-**Explore — Knowledge in Scout Wiki / central knowledge source**
+**Explore — Central knowledge source / Single Source of Truth**
 
-The discussion is intentionally open. The goal is not to assume Scout Wiki is the answer, but to explore:
-
-- Do we need a central knowledge source?
-- What information would be valuable enough to keep centrally?
-- What would maintenance, ownership and keeping information current require?
-
-This connects to earlier team-lead feedback, including the PR need for a reliable source of company-related information.
+- The planned Explore discussion was not completed in depth because the earlier agenda blocks took most of the available time.
+- At the end of the session, Dominik proposed continuing the central-knowledge-source / Single-Source-of-Truth topic in the next AI Enablement session instead of forcing a rushed discussion.
+- The topic remains deliberately open: the need, scope, ownership and suitable technical solution are not decided.
+- A possible next step for the next session is to discuss whether there is enough concrete value to define a small pilot or MVP rather than starting with a broad central-knowledge initiative.
 
 ## Content and Communication Workspace
 
@@ -138,6 +136,7 @@ Do not create a recurring Series presentation template or contributor presentati
 - Let contributors decide their own format and level of preparation; Dominik does not prepare their materials.
 - Keep recurring preparation deliberately lightweight because the Series should not become a significant time burden for Dominik.
 - Explore topics should not imply a solution is already chosen.
+- The first recurring session confirmed that agenda blocks may need stronger timeboxing if an Explore discussion is important; Explore should be moved forward or explicitly protected rather than treated as guaranteed end-of-session time.
 - Jorin supported the revised enablement direction on 2026-08-20.
 
 ## Risks and Open Questions
@@ -146,14 +145,15 @@ Do not create a recurring Series presentation template or contributor presentati
 - Whether the deliberately lightweight format provides enough structure while avoiding preparation overhead.
 - Which Explore topics justify separate follow-up and delivery capacity.
 - Whether a shared Marketing & Communications knowledge source is useful enough to justify ongoing ownership and maintenance.
+- How much time should be reserved for Show & Share versus protected Explore discussion in future 90-minute sessions.
 
 ## Next Steps
 
-1. Run the first recurring session on 2026-09-08 using the Scout Wiki session page as the agenda and verbal facilitation for the rest.
-2. Capture notes, recording/resources and follow-ups in the session Wiki page.
-3. Use the session outcome to decide whether the central-knowledge-source topic should be stopped, observed or investigated further.
-4. Continue using the lightweight Wiki + Slack preparation model for future sessions and only add extra preparation when a specific topic genuinely requires it.
+1. Prepare the 2026-09-22 session using the same lightweight Scout Wiki + verbal facilitation model.
+2. Decide whether the central-knowledge-source / Single-Source-of-Truth topic should be continued as the main Explore topic and, if so, protect enough agenda time for a real discussion.
+3. If the group sees a concrete need, use the discussion to narrow the topic toward a small pilot or MVP rather than a broad solution decision.
+4. Continue collecting reusable learnings from colleague contributions without turning the Series into project delivery or a status meeting.
 
 ## Last Confirmed
 
-Updated on 2026-09-07: Dominik decided against recurring AI Enablement presentation decks because the preparation effort is too high. The standard format is now a Scout Wiki agenda/session page plus verbal facilitation; contributors decide themselves how they present or demonstrate their topics.
+Updated on 2026-09-16 from the 2026-09-08 session transcript. The first recurring session validated the lightweight facilitation model, produced practical cross-team learnings, and left the central-knowledge-source / Single-Source-of-Truth Explore topic intentionally open for a later session.
