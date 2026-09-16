@@ -32,7 +32,7 @@ To avoid creating unnecessary test pages, reuse a small fixed set of test slugs 
 
 Prefer `/lpb-contentful-test-1` by default unless a separate test page is needed.
 
-The old test page `/dev-lp-builder-contentful-v01-test` is being retired and should be deleted before the new stable test slugs are used.
+The old test page `/dev-lp-builder-contentful-v01-test` was successfully deleted on 2026-09-16 via `deleteLpBuilderPage` (Entry ID `6mxTmdvBqgwoBuXGzdLvop`). It is retired and should no longer be used.
 
 ## Reference: minimal READ smoke test
 
