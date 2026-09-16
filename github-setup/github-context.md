@@ -1,6 +1,6 @@
 # GitHub and Workspace Context
 
-_Last reviewed: 2026-07-30_
+_Last reviewed: 2026-09-16_
 
 ## Workspace
 
@@ -105,6 +105,52 @@ _Last reviewed: 2026-07-30_
 - Before publishing, confirm that the content is suitable for unrestricted public access and contains no confidential information, customer data, credentials or internal-only context.
 - Codex asks for explicit approval before commit and push.
 
+## Prompt Handoff Convention
+
+Whenever Dominik asks for a prompt intended for Codex or another execution tool, show a compact recommendation block immediately before the prompt. Do this by default without waiting for a separate request.
+
+Use this shape:
+
+```text
+Für: <Tool / target>
+Dateien hochladen: <keine | file(s)>
+Modell: <recommended model>
+Reasoning: <recommended intensity>
+```
+
+- Name the actual target tool when known, for example `Codex (VS Code)` or a specific Custom GPT.
+- State whether Dominik should upload any file(s); use `keine` when the target already has the necessary repository/workspace context.
+- Choose model and reasoning intensity based on the task. Do not default to maximum reasoning when a bounded task can be done reliably with less effort.
+- Keep the recommendation block outside and directly above the prompt code block.
+- If a specific file is useful, name it explicitly rather than saying only `ja`.
+
+### Current VS Code Codex options shown on 2026-09-16
+
+Models currently visible in Dominik's VS Code Codex UI:
+
+- Standard
+- GPT-6 Astra
+- GPT-5.6 Sol
+- GPT-5.6 Terra
+- GPT-5.6 Luna
+- GPT-5.5
+
+Reasoning levels explicitly shown for GPT-5.6 Sol:
+
+- Mittel
+- Hoch
+- Sehr hoch
+- Ultra
+
+Until there is clearer task-specific evidence for the other models, `GPT-5.6 Sol` is the safe default recommendation for substantial coding, repository investigation and implementation work. Adjust reasoning approximately as follows:
+
+- `Mittel`: small, bounded edits or straightforward generation where the relevant files and desired change are already clear.
+- `Hoch`: normal repository investigation, multi-file fixes, debugging, implementation with tests, or work where the correct source of truth must first be found.
+- `Sehr hoch`: ambiguous root-cause analysis, architecture-sensitive changes, broad refactors or tasks with several interacting systems and meaningful regression risk.
+- `Ultra`: reserve for genuinely difficult, high-ambiguity, high-consequence technical work where exhaustive cross-checking is worth the extra cost/time; do not use as a routine default.
+
+Treat the available model list as time-sensitive UI state. If Dominik later shows changed options, update this section rather than assuming the old list is still current.
+
 ## Sources of Truth
 
 - Use this repository for personal, organizational, weekly and cross-project context.
@@ -154,4 +200,4 @@ Mitch's `is24-email-modules` repository may be inspected for context, but Domini
 
 ## Update Guidance
 
-Update this file when confirmed workspace, organization, repository-role, source-of-truth or protection-rule information changes. Keep facts dated where practical and do not record unverified access claims.
+Update this file when confirmed workspace, organization, repository-role, source-of-truth, protection-rule or prompt-handoff information changes. Keep facts dated where practical and do not record unverified access claims.
