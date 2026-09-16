@@ -8,7 +8,7 @@ The completed AI Team-Check is the discovery and evidence phase; the recurring A
 
 ## Operating Model
 
-- Bi-weekly Tuesdays, 12:30–14:00, starting 2026-09-08.
+- Bi-weekly Tuesdays. The first recurring session on 2026-09-08 ran for 90 minutes; from 2026-09-22 onward the regular session length is shortened to 1 hour after feedback from Team Leads and the observation that attention dropped noticeably after roughly one hour.
 - Room: Charlottenburg (07-405).
 - Dominik leads, curates and facilitates.
 - Three recurring pillars: `Learn`, `Show & Share`, `Explore`.
@@ -45,7 +45,7 @@ A deeper Explore discussion can result in `Stop`, `Beobachten` or `Weiter unters
 
 ## Current Status
 
-The kickoff and operating model are complete. The first recurring 90-minute session ran on 2026-09-08. The lightweight Wiki + verbal facilitation model worked as intended, while the planned Explore block was not reached in depth because Learn and Show & Share used most of the session time.
+The kickoff and operating model are complete. The first recurring session ran on 2026-09-08. The lightweight Wiki + verbal facilitation model worked as intended, while the planned Explore block was not reached in depth because Learn and Show & Share used most of the session time. Following feedback from Team Leads and the observed drop in attention after around one hour, Dominik shortened the recurring format to 60 minutes starting with the 2026-09-22 session.
 
 ### Session 08.09.2026 — Outcome
 
@@ -136,7 +136,8 @@ Do not create a recurring Series presentation template or contributor presentati
 - Let contributors decide their own format and level of preparation; Dominik does not prepare their materials.
 - Keep recurring preparation deliberately lightweight because the Series should not become a significant time burden for Dominik.
 - Explore topics should not imply a solution is already chosen.
-- The first recurring session confirmed that agenda blocks may need stronger timeboxing if an Explore discussion is important; Explore should be moved forward or explicitly protected rather than treated as guaranteed end-of-session time.
+- Shorten the recurring session from 90 minutes to 60 minutes starting on 2026-09-22. The first session showed that 90 minutes was too long for many participants, and Team Lead feedback supported a shorter format.
+- Important Explore topics therefore need deliberate timeboxing or prioritization inside the one-hour format rather than relying on leftover time at the end.
 - Jorin supported the revised enablement direction on 2026-08-20.
 
 ## Risks and Open Questions
@@ -145,15 +146,16 @@ Do not create a recurring Series presentation template or contributor presentati
 - Whether the deliberately lightweight format provides enough structure while avoiding preparation overhead.
 - Which Explore topics justify separate follow-up and delivery capacity.
 - Whether a shared Marketing & Communications knowledge source is useful enough to justify ongoing ownership and maintenance.
-- How much time should be reserved for Show & Share versus protected Explore discussion in future 90-minute sessions.
+- How to balance Learn, Show & Share and Explore within the shorter 60-minute format without making the session feel rushed.
 
 ## Next Steps
 
-1. Prepare the 2026-09-22 session using the same lightweight Scout Wiki + verbal facilitation model.
-2. Decide whether the central-knowledge-source / Single-Source-of-Truth topic should be continued as the main Explore topic and, if so, protect enough agenda time for a real discussion.
-3. If the group sees a concrete need, use the discussion to narrow the topic toward a small pilot or MVP rather than a broad solution decision.
-4. Continue collecting reusable learnings from colleague contributions without turning the Series into project delivery or a status meeting.
+1. Prepare the 2026-09-22 session as the first 60-minute edition using the same lightweight Scout Wiki + verbal facilitation model.
+2. Build the agenda around fewer, more clearly timeboxed blocks rather than trying to fill all three pillars by default.
+3. Decide whether the central-knowledge-source / Single-Source-of-Truth topic should be continued as the main Explore topic and, if so, protect enough agenda time for a real discussion.
+4. If the group sees a concrete need, use the discussion to narrow the topic toward a small pilot or MVP rather than a broad solution decision.
+5. Continue collecting reusable learnings from colleague contributions without turning the Series into project delivery or a status meeting.
 
 ## Last Confirmed
 
-Updated on 2026-09-16 from the 2026-09-08 session transcript. The first recurring session validated the lightweight facilitation model, produced practical cross-team learnings, and left the central-knowledge-source / Single-Source-of-Truth Explore topic intentionally open for a later session.
+Updated on 2026-09-16 from the 2026-09-08 session transcript and Dominik's post-session communication. The recurring AI Enablement format is shortened from 90 to 60 minutes starting on 2026-09-22 because the first session showed declining attention after roughly one hour and Team Lead feedback supported the shorter format.
