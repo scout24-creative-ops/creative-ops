@@ -34,6 +34,7 @@ The two pillars are Dominik's personal working and steering model. Projects can 
 ### AI Creative Operations
 
 - [Landing Page Builder](projects/landing-page-builder.md)
+  - [GPT regression suite](projects/landing-page-builder-regression-suite.md)
 - [Contentful Migration](projects/contentful-migration.md)
 - [E-Mail Builder](projects/email-builder.md)
 - [HeyImmo automated HomeOwner mail](projects/heyimmo-homeowner-mail.md)
