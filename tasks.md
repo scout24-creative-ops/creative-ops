@@ -23,20 +23,6 @@
   - Context: The existing Excel landscape is fragmented and not always fully current, but those files remain the authoritative business/SEO decision source. The visual sitemap should expose inconsistencies by combining Excel decisions with live crawl status instead of creating a competing master dataset. A later V2 may read SharePoint/Excel automatically via Microsoft Graph. If multiple workbook sources are added, use a small source manifest mapping directories/page groups to the authoritative workbook.
   - Source: Sitemap source-model discussion on 2026-08-30
 
-- [ ] Pilot persistent image storage for AEM migration
-  - Area: Contentful Migration
-  - Status: Open, migration-side identity contract validated; waiting on real storage target
-  - Next step: Let Peter drive the actual storage/S3 pilot with Allan / the relevant platform contacts; align the prepared SHA-based upload/URL contract, then confirm the concrete storage target, ownership, authentication, delivery URL and platform header/security requirements before any real `target_url` promotion.
-  - Context: All 207 SAFE/MIGRATE references in the GPT-ready migration packages have stable `ast-sha256-*` IDs with matching hashes and current `render_url` values. The migration can continue without final CDN delivery, but durable AEM-independent delivery still requires the S3/CDN target. The 14 remaining REVIEW/BLOCKED dynamic gallery references are a separate source-resolution issue, not a storage-identity gap.
-  - Source: Asset audits and Handbook migration status confirmed through 2026-09-06
-
-- [ ] Align Marketing Asset Library direction with John Ford
-  - Area: Contentful Migration
-  - Status: Open, alignment prepared for 2026-09-10
-  - Next step: Use the prepared Scout Wiki page in the John Ford meeting to clarify what asset storage, media delivery, CDN/image-transformation capabilities and technical ownership already exist at Scout24, and whether the small AEM-to-Contentful asset pilot can build on existing infrastructure.
-  - Context: The broader Marketing Asset Library idea aims to reduce duplicated tool-specific asset libraries and centralize reuse/quality rules across systems such as AEM, Contentful, Iterable, Salesforce and Beefree. Matthias Brandstätter and Paul Befort reacted positively to further exploration, but no architecture or platform decision has been made.
-  - Source: John Ford alignment preparation confirmed on 2026-09-07
-
 - [ ] Prepare reusable LP Builder modules for B2B migration
   - Area: Landing Page Builder
   - Status: Open, first complex module substantially validated; continue migration-readiness work
@@ -82,6 +68,14 @@
   - Context: The central Bridge CSS now loads correctly again, and the 2026-09-17 three-prompt GPT regression suite passed CREATE, complex full-HTML EDIT and the full lifecycle without Action/auth errors. The previous Bridge and intermittent-auth blockers are therefore no longer active in the current baseline. The earlier ~50 KB `ResponseTooLargeError` was not covered by this smaller regression entry and remains a separate explicit check.
   - Source: Current GPT regression baseline and Mukhammadjon fixes confirmed on 2026-09-17
 
+- [ ] Pilot persistent image storage for AEM migration
+  - Area: Contentful Migration
+  - Status: Waiting for John Ford to confirm the existing CMS AWS account and required permissions
+  - Waiting for: Whether the `is24-cms` AWS account can host the pilot S3 bucket and John's image-scaler configuration, plus the access/permission setup he needs.
+  - Dominik's next step: After John confirms the setup, coordinate a minimal bucket/scaler pilot and test one original AEM asset end to end: AEM source -> S3 -> scaler/delivery URL -> LP Builder/Contentful.
+  - Context: John recommended using original upstream AEM files rather than crawler-downloaded renditions, because rendered AEM pages may expose already resized/optimized images. The preferred migration path preserves the AEM `/content`-style structure in S3 where practical and maps crawler references back to originals. Bea identified `is24-cms` (HoT Daniel Herold) as an existing account candidate; a separate new Marketing AWS account is paused for the MVP.
+  - Source: John Ford alignment and Bea AWS-account follow-up confirmed on 2026-09-17
+
 - [ ] Clarify B2B contact form plan for Contentful
   - Area: Contentful Migration
   - Status: Waiting for Beatrice feedback
@@ -110,6 +104,11 @@
   - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
 
 ## Completed
+
+- [x] Align Marketing Asset Library direction with John Ford
+  - Area: Contentful Migration
+  - Completed: 2026-09-17
+  - Outcome: John confirmed that the existing Scout image-scaler approach is a strong fit for the migration pilot and a possible future cross-Marketing Asset Library. He recommended exporting original AEM assets to S3 while preserving source-path structure where practical, mapping crawled page references back to those originals, and then using scaler-generated production delivery URLs. Advanced cropping remains outside the MVP. Bea subsequently identified the existing `is24-cms` AWS account as a possible pilot home; John has been asked to confirm suitability and permissions.
 
 - [x] Validate the Codex crawl for Gold product-detail pages
   - Area: Contentful Migration
