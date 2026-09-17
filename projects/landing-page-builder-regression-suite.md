@@ -17,14 +17,14 @@ Knowledge:
 - `component-library.html`
 - `building-policy.md`
 - `contentful-integration.md`
-- `source-duplicate-mode.md`
+- `migration-mode.md`
 - `cosma-icons-static.md`
 
 Action schema:
 
 - Use the current Mukhammadjon-provided OpenAPI schema as read-only SSOT. Do not modify it as part of GPT package changes.
 
-The current package intentionally uses `component-library.html` as the user-capability SSOT and `building-policy.md` for composition/editing policy. Pending module-specific policies do not block module availability; canonical Component Library markup plus global policy applies until those policies are defined.
+The current package intentionally uses `component-library.html` as the user-capability SSOT and `building-policy.md` for composition/editing policy. `migration-mode.md` contains the migration-only behavior for `LOCKED_IMPORT` and `CRAWL_REBUILD`. Pending module-specific policies do not block module availability; canonical Component Library markup plus global policy applies until those policies are defined.
 
 ## Test 1 — Blueprint CREATE
 
@@ -306,9 +306,16 @@ Coverage of the suite:
 - archive / unarchive
 - delete
 
+This core suite does not by itself prove the migration-specific behavior. After migration-policy changes, also run dedicated acceptance cases for:
+
+- `LOCKED_IMPORT`
+- single-page `CRAWL_REBUILD`
+- `CRAWL_REBUILD` with a migration placeholder / gap
+- multi-page `CRAWL_REBUILD`
+
 ## Confirmed baseline run — 2026-09-17
 
-The current GPT configuration passed the complete three-prompt suite without retry.
+The Custom GPT configuration that existed before the `migration-mode.md` refactor passed the complete three-prompt suite without retry.
 
 - CREATE: passed
 - Combined EDIT stress test: passed in one update mutation
@@ -319,3 +326,5 @@ Test entry: `1S9LyMMUcZa6iaV7SLpGI7`
 Initial slug: `/lpb-regression-test-1`  
 Edited slug: `/lpb-regression-test-1-edited`  
 Final state: deleted after successful lifecycle test
+
+The local package was changed later on 2026-09-17 to replace `source-duplicate-mode.md` with `migration-mode.md`. Local package/runtime tests pass 50/50, but the three-prompt Custom GPT suite and migration-specific acceptance cases must be rerun after the updated package is applied before a new green live baseline is recorded.
