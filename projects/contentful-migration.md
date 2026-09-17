@@ -34,6 +34,8 @@ A new reusable **Migration Crawler** workstream was defined on 2026-09-17. The g
 
 The LP Builder's local GPT package now also has a unified Migration Mode with exactly two execution cases: `LOCKED_IMPORT` for exact supplied Contentful-ready HTML and `CRAWL_REBUILD` for one or more pages built from crawler evidence. The local implementation passes 50/50 package/runtime tests; live Custom GPT acceptance is still required after the changed package is uploaded.
 
+The S3/asset-delivery direction was materially clarified with John Ford on 2026-09-17. For the migration pilot, the preferred source is the original AEM asset rather than a crawler-downloaded rendition, because the rendered page may expose an already resized or optimized image. The intended technical path is original AEM asset -> S3 -> Scout image-scaler/delivery URL -> LP Builder/Contentful. Bea identified the existing `is24-cms` AWS account as a possible home for the pilot; John has been asked whether that account can be used and which permissions/setup he needs.
+
 ## Migration Crawler Direction
 
 The crawler should be independent enough from the current LP Builder version that source evidence does not become stale whenever Builder modules or composition rules change. Codex uses the crawler to capture the source; the current LP Builder then interprets that structured output when rebuilding a page.
@@ -54,25 +56,50 @@ The historical crawl audit showed that useful building blocks already exist acro
 
 ## Asset Preparation and S3 Direction
 
-Asset preparation is part of the crawler scope, while the actual S3 upload remains a later controlled phase once the storage setup is confirmed.
+Asset evidence remains part of the crawler scope, but the crawler should not assume that the image rendition visible on the rendered AEM page is the canonical source file. AEM may already have resized or optimized that rendition. Where possible, migration should resolve the page reference back to the original upstream AEM asset.
 
-For every relevant image, SVG or other asset, the crawler should:
+For every relevant image, SVG or other asset, the migration package should:
 
-- capture/download the file
-- retain the original AEM URL
+- retain the original AEM URL/path referenced by the page
+- capture enough rendition/source evidence to identify the asset reliably
+- map the reference back to the original AEM source asset when available
 - assign a stable technical asset ID
 - store a content hash for unique identification and deduplication
 - retain an existing ALT text when available
 - automatically generate a suitable ALT text from image and page context when it is missing; only ambiguous cases should be flagged for manual review
 - record the information in a shared asset manifest
 
-The intended mapping is:
+John's preferred migration setup is to export the original AEM assets into S3 while preserving the existing directory structure as far as practical, ideally from `/content` downward. That makes it easier to correlate old AEM paths found by the crawler with their original files in S3.
 
-`AEM URL -> Asset ID -> later S3 URL`
+The intended mapping remains:
 
-The asset ID is a migration identity, not the final delivery mechanism. Once S3 is available, the same manifest can be extended with the permanent delivery URL. Final migrated Contentful HTML should use the new persistent S3/delivery URL rather than the old AEM URL. The stable ID remains useful in the migration manifest for deduplication, traceability and URL assignment, but does not need to be the final image source in HTML.
+`AEM URL/path -> Asset ID -> original AEM file -> S3 object -> delivery/scaler URL`
 
-Existing already-migrated/manual drafts can still contain temporary AEM/static URLs until they are rewritten. This is legacy transition state, not the intended final migration contract.
+The stable asset ID is a migration identity, not the final delivery mechanism. Final Contentful HTML should use the persistent delivery/scaler URL rather than the old AEM URL. Existing migrated/manual drafts may temporarily contain AEM/static URLs until they are rewritten; this remains a transition state, not the final migration contract.
+
+John's existing image-scaler service can transform an S3-backed image into production-ready delivery variants, including size, quality and format controls. More advanced crop/viewport handling is technically possible but is deliberately outside the first MVP. The first success criterion is simpler: place an original asset in S3, obtain a stable production delivery URL through the scaler, and use that URL successfully in the LP Builder.
+
+## Marketing Asset Library Direction
+
+The S3 pilot is intentionally useful beyond the immediate Contentful migration. The longer-term direction is a Marketing Asset Library that acts as a central asset source for multiple Marketing tools rather than creating separate asset libraries per tool.
+
+Potential consumers include:
+
+- Contentful / Landing Page Builder
+- Beefree
+- Iterable
+- ChatGPT agents and other AI-supported workflows
+- additional Marketing tools where reusable image delivery is useful
+
+The long-term goal is centralized storage/reuse plus consistent delivery and image-quality handling. Account ownership, cost ownership, permissions, governance and the final cross-tool operating model are not yet decided and should not block the migration MVP.
+
+For the pilot, a new `marketing-assets` AWS account is not being requested yet. Bea confirmed that CMS already has an AWS account that may be usable:
+
+- Alias: `is24-cms`
+- AWS account ID: `902327926271`
+- Head of Tech: Daniel Herold
+
+John Ford has been asked whether this account works for the S3 bucket and image-scaler configuration, and what access/permissions would be required. Until that is confirmed, no new AWS-account request or Cost Centre decision is needed.
 
 ## Migration Execution Model
 
@@ -130,8 +157,9 @@ The working-student crawler is intended to move repeatable source capture and as
 ## Stakeholders and Dependencies
 
 - Mukhammadjon / Core Frontend: LP Builder platform and Contentful Action/renderer behavior
-- Beatrice: coordination around workstudent support and Contentful platform topics
-- Relevant platform/storage contacts: S3/CDN target, ownership, authentication and delivery URL
+- Beatrice: Contentful/platform coordination and the link to the existing CMS AWS account
+- John Ford / Platform Engineering: S3/scaler technical direction, permissions/setup support and image-delivery integration
+- Daniel Herold: Head of Tech for the existing `is24-cms` AWS account
 - B2B Marketing / Ulrike: strategic URL assessment and operational migration support
 - SEO: routing and URL strategy
 
@@ -139,8 +167,9 @@ Mitch is not part of Contentful Migration and should not be suggested for migrat
 
 ## Risks and Open Questions
 
-- Persistent S3/CDN storage and delivery details are not yet finalized.
-- The actual S3 upload phase should remain separate from the default crawl until storage/authentication rules are confirmed.
+- John has not yet confirmed whether the existing `is24-cms` AWS account is suitable for the migration S3 pilot or which permissions are required.
+- The long-term AWS/account ownership and cost model for a cross-Marketing Asset Library is intentionally open; the migration MVP should not wait for that decision.
+- The actual S3 upload phase should remain separate from the default crawl until the account, bucket and authentication rules are confirmed.
 - The new GPT Migration Mode passes local tests but still needs real Custom GPT acceptance, including Crawl Rebuild and placeholder cases.
 - 14 REVIEW/BLOCKED dynamic gallery references remain unresolved in the Handbook migration.
 - Existing migrated drafts with AEM/static URLs still need later controlled URL rewriting before final AEM-independent delivery.
@@ -150,14 +179,15 @@ Mitch is not part of Contentful Migration and should not be suggested for migrat
 
 ## Next Steps
 
-1. Apply and acceptance-test the updated GPT Migration Mode in the live Custom GPT, including Locked Import, normal Crawl Rebuild, placeholder and multi-page cases.
-2. Hand the bilingual Scout Wiki `Migration Crawler – Briefing` to the working student and use it to scope the crawler MVP.
-3. Reuse the strongest existing crawl components where practical and build one repeatable Codex-run crawler workflow.
-4. Validate the crawler on a small real AEM area before scaling to larger URL sets.
-5. Incorporate the confirmed S3/storage setup into the asset manifest and add a separate upload/mapping phase when ready.
-6. Continue Handbook QA/handoff and resolve or explicitly accept remaining gallery references before publish readiness.
-7. Continue strategic B2B URL selection and `/lp` review rather than migrating the full inventory blindly.
+1. Wait for John's confirmation that `is24-cms` can host the S3 pilot and clarify required access/permissions.
+2. If confirmed, create a minimal pilot bucket and let John configure the image scaler for it.
+3. Run one end-to-end asset test: original AEM asset -> S3 -> scaler/delivery URL -> LP Builder/Contentful.
+4. After the pilot works, plan the original-AEM export/mapping approach at migration scale while preserving source-path correlation.
+5. Apply and acceptance-test the updated GPT Migration Mode in the live Custom GPT, including Locked Import, normal Crawl Rebuild, placeholder and multi-page cases.
+6. Hand the bilingual Scout Wiki `Migration Crawler – Briefing` to the working student and use it to scope the crawler MVP.
+7. Reuse the strongest existing crawl components where practical and validate the crawler on a small real AEM area before scaling.
+8. Continue Handbook QA/handoff and strategic B2B URL selection.
 
 ## Last Confirmed
 
-2026-09-17: The LP Builder's local GPT package now contains a unified `migration-mode.md` replacing `source-duplicate-mode.md`. The two cases are `LOCKED_IMPORT` for exact supplied HTML and `CRAWL_REBUILD` for one or more crawler-driven page rebuilds. Unsupported source areas use a migration-only `callout--base` placeholder with stable migration markers, and every page reports a clear migration status/gaps. The OpenAPI SSOT is unchanged and local package/runtime tests pass 50/50. Live Custom GPT acceptance remains the next validation step. The reusable Migration Crawler direction and bilingual working-student briefing remain the planned source-intake layer, with assets prepared through the AEM URL -> Asset ID -> later S3 URL mapping.
+2026-09-17: John Ford confirmed that the existing Scout image-scaler approach is a strong technical fit for the migration and a possible future Marketing Asset Library. The recommended asset path is to preserve original AEM files in S3 rather than relying on potentially optimized crawl renditions, then map source references to stable S3/scaler delivery URLs. The MVP should stay small and defer advanced cropping and long-term cross-Marketing ownership. Bea identified the existing `is24-cms` AWS account (HoT Daniel Herold) as a possible pilot account; John has been asked to confirm whether it can be used and what permissions are required. The Migration Crawler and unified GPT Migration Mode remain the migration intake/execution layers.
