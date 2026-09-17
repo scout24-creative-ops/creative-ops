@@ -68,13 +68,13 @@
   - Context: The central Bridge CSS now loads correctly again, and the 2026-09-17 three-prompt GPT regression suite passed CREATE, complex full-HTML EDIT and the full lifecycle without Action/auth errors. The previous Bridge and intermittent-auth blockers are therefore no longer active in the current baseline. The earlier ~50 KB `ResponseTooLargeError` was not covered by this smaller regression entry and remains a separate explicit check.
   - Source: Current GPT regression baseline and Mukhammadjon fixes confirmed on 2026-09-17
 
-- [ ] Pilot persistent image storage for AEM migration
-  - Area: Contentful Migration
-  - Status: Waiting for John Ford to confirm the existing CMS AWS account and required permissions
-  - Waiting for: Whether the `is24-cms` AWS account can host the pilot S3 bucket and John's image-scaler configuration, plus the access/permission setup he needs.
-  - Dominik's next step: After John confirms the setup, coordinate a minimal bucket/scaler pilot and test one original AEM asset end to end: AEM source -> S3 -> scaler/delivery URL -> LP Builder/Contentful.
-  - Context: John recommended using original upstream AEM files rather than crawler-downloaded renditions, because rendered AEM pages may expose already resized/optimized images. The preferred migration path preserves the AEM `/content`-style structure in S3 where practical and maps crawler references back to originals. Bea identified `is24-cms` (HoT Daniel Herold) as an existing account candidate; a separate new Marketing AWS account is paused for the MVP.
-  - Source: John Ford alignment and Bea AWS-account follow-up confirmed on 2026-09-17
+- [ ] Set up Marketing Asset Library S3 pilot
+  - Area: Marketing Asset Library
+  - Status: Waiting for John Ford's next technical setup instruction
+  - Waiting for: John's preferred GitHub / CloudFormation / deployment path after confirming that the existing `is24-cms` AWS account is sufficient for the pilot.
+  - Dominik's next step: No implementation action until John responds. Then follow his setup, create the minimal S3 bucket together with the required scaler permissions and test one original AEM asset end to end: AEM source -> S3 -> scaler/delivery URL -> LP Builder/Contentful.
+  - Context: John confirmed that `is24-cms` is enough for the pilot and recommends creating the bucket through CloudFormation rather than manually in the AWS web interface. He asked whether Dominik has GitHub; Dominik confirmed GitHub access and existing LP Builder-related use. A separate new Marketing AWS account is paused for the MVP, and no repository should be created pre-emptively before John specifies the preferred setup.
+  - Source: John Ford follow-up and Dominik reply confirmed on 2026-09-17
 
 - [ ] Clarify B2B contact form plan for Contentful
   - Area: Contentful Migration
@@ -106,9 +106,9 @@
 ## Completed
 
 - [x] Align Marketing Asset Library direction with John Ford
-  - Area: Contentful Migration
+  - Area: Marketing Asset Library
   - Completed: 2026-09-17
-  - Outcome: John confirmed that the existing Scout image-scaler approach is a strong fit for the migration pilot and a possible future cross-Marketing Asset Library. He recommended exporting original AEM assets to S3 while preserving source-path structure where practical, mapping crawled page references back to those originals, and then using scaler-generated production delivery URLs. Advanced cropping remains outside the MVP. Bea subsequently identified the existing `is24-cms` AWS account as a possible pilot home; John has been asked to confirm suitability and permissions.
+  - Outcome: John confirmed that the existing Scout image-scaler approach is a strong fit for the migration pilot and a possible future cross-Marketing Asset Library. He recommended exporting original AEM assets to S3 while preserving source-path structure where practical, mapping crawled page references back to those originals, and then using scaler-generated production delivery URLs. Advanced cropping remains outside the MVP. Bea identified the existing `is24-cms` AWS account as the pilot home, and John subsequently confirmed that the account is sufficient.
 
 - [x] Validate the Codex crawl for Gold product-detail pages
   - Area: Contentful Migration
