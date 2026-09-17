@@ -74,13 +74,13 @@
 
 ## Waiting
 
-- [ ] Resolve remaining LP Builder renderer and auth gaps
+- [ ] Retest large LP Builder read-back at migration scale
   - Area: Landing Page Builder
-  - Status: Waiting, lifecycle and shared runtime largely validated; central Bridge loading, intermittent Action auth and large read-back remain
-  - Waiting for: Mukhammadjon/Core Frontend to restore the intended central `lpbuilder-bridge.css` loading and to continue investigating the intermittent ChatGPT OAuth/session failure. Large `getLpBuilderPage` read-back at ~50 KB also still needs an explicit retest/fix.
-  - Dominik's next step: Once the renderer loads the Bridge centrally, rerun the same host smoke test without a page-level CSS workaround. Retest large `getLpBuilderPage` read-back when the platform path is ready and verify that the intermittent auth issue is stable enough for colleague migration use.
-  - Context: The full nine-action lifecycle has been proven on disposable entries, the global Runtime JS is loaded and Carousel/Accordion/Sticky behavior passes after the latest shared Runtime/Bridge fixes. A controlled test showed that adding the current Bridge link directly to the page immediately restores correct styling, confirming that the remaining visual problem is the missing central stylesheet load rather than broken module HTML. Mukhammadjon also reproduced the intermittent Authorization-header failure and confirmed that its error format does not originate from the Contentful Lambda auth check.
-  - Source: LP Builder runtime/renderer smoke tests and Mukhammadjon follow-up confirmed through 2026-09-15
+  - Status: Waiting, central Bridge loading and the current Action flow are stable; large read-back remains the isolated scale check
+  - Waiting for: A suitable platform test/fix path for `getLpBuilderPage` at roughly 50 KB.
+  - Dominik's next step: Retest full `getLpBuilderPage` read-back with a migration-scale page when the platform path is ready and verify lossless full HTML retrieval.
+  - Context: The central Bridge CSS now loads correctly again, and the 2026-09-17 three-prompt GPT regression suite passed CREATE, complex full-HTML EDIT and the full lifecycle without Action/auth errors. The previous Bridge and intermittent-auth blockers are therefore no longer active in the current baseline. The earlier ~50 KB `ResponseTooLargeError` was not covered by this smaller regression entry and remains a separate explicit check.
+  - Source: Current GPT regression baseline and Mukhammadjon fixes confirmed on 2026-09-17
 
 - [ ] Clarify B2B contact form plan for Contentful
   - Area: Contentful Migration
