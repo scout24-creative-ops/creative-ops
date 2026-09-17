@@ -8,9 +8,11 @@ Enable Marketing teams to create landing pages faster and more independently thr
 
 The production/AEM Builder remains operational, while `LP Builder – Contentful` is the maintained Contentful-enabled Builder for migration and future product development.
 
-The current Custom GPT baseline is clean and fully regression-tested as of 2026-09-17. A reusable three-prompt acceptance suite now validates Blueprint creation, complex single-update editing and the full publish/unpublish/archive/unarchive/delete lifecycle. The current run passed without retry and without Action, JSON, serialization, auth or validation errors.
+The Custom GPT baseline passed the reusable three-prompt acceptance suite on 2026-09-17 before the latest migration-policy refactor. That run validated Blueprint creation, complex single-update editing and the full publish/unpublish/archive/unarchive/delete lifecycle without retry or Action, JSON, serialization, auth or validation errors.
 
-The previously blocking renderer issue is resolved: the shared Bridge CSS now loads centrally again. The Action flow is also stable in the current tested setup after the updated OpenAI schema configuration. Large read-back at roughly 50 KB remains a separate capability that should still be retested explicitly; the successful regression page itself was smaller.
+The local GPT package has since been extended with the new migration model. `migration-mode.md` replaces `source-duplicate-mode.md` and defines exactly two migration cases: `LOCKED_IMPORT` for exact Contentful-ready HTML import and `CRAWL_REBUILD` for rebuilding one or more source pages from crawler/migration evidence. The local package/runtime contract tests pass 50/50. The updated package still needs to be applied to the actual Custom GPT and the acceptance suite rerun before this changed configuration is treated as the new green GPT baseline.
+
+The previously blocking renderer issue is resolved: the shared Bridge CSS loads centrally again. The Action flow was stable in the last real GPT acceptance run after the updated OpenAI schema configuration. Large read-back at roughly 50 KB remains a separate capability that should still be retested explicitly.
 
 The reusable regression suite is maintained in [landing-page-builder-regression-suite.md](landing-page-builder-regression-suite.md).
 
@@ -25,19 +27,19 @@ Knowledge:
 - `component-library.html`
 - `building-policy.md`
 - `contentful-integration.md`
-- `source-duplicate-mode.md`
+- `migration-mode.md`
 - `cosma-icons-static.md`
 
 Action schema:
 
 - Mukhammadjon's current OpenAPI schema remains the read-only SSOT and should not be modified as part of GPT package work.
 
-The package deliberately separates user capabilities from build policy:
+The package deliberately separates user capabilities, build policy and migration behavior:
 
 - `component-library.html` is the canonical user-capability source.
 - `building-policy.md` defines how pages are composed, edited and spaced.
 - `contentful-integration.md` defines the current Action/read/write terminology and integration behavior.
-- `source-duplicate-mode.md` remains the narrow exception for controlled source duplication/rebuild.
+- `migration-mode.md` owns migration-specific behavior for exact locked import and crawler-driven rebuilds.
 - COSMA icon guidance remains static and host-aligned.
 
 ## Component Library
@@ -109,15 +111,23 @@ Current terminology:
 
 Large writes around 50 KB were previously validated losslessly. Large full read-back at the same scale remains the main outstanding scale check.
 
-## Source Duplicate / Controlled Rebuild
+## Migration Mode
 
-The standard Builder remains module-first, but bespoke legacy pages can use the controlled source-driven path when existing modules cannot reproduce the source faithfully.
+Migration has exactly two GPT-side cases.
 
-For those cases:
+### LOCKED_IMPORT
 
-`source fidelity -> source structure/CSS -> page-specific HTML/CSS -> existing modules only where they are a true fit`
+Use when the user provides complete Contentful-ready HTML that must be transferred without recomposition or redesign. The former Source Duplicate / Locked Import rules remain preserved here, including strict draft-only behavior and exact supplied HTML as the authoritative input.
 
-Prepared Contentful-ready HTML should be treated as locked technical input during exact import rather than recomposed by the GPT.
+### CRAWL_REBUILD
+
+Use when the user provides crawler/migration files for one or more source URLs. The GPT interprets each page independently, preserves source copy, CTA labels, links and content meaning, and chooses the best available current LP Builder modules using the Component Library and Building Policy.
+
+If a source area cannot be represented safely, the GPT does not silently drop it or fail the entire page. It uses the canonical migration placeholder based on the existing `callout--base` structure with stable `data-lpb-migration-*` markers and a reason code. Supported gap categories include missing forms, module gaps, unsupported interactions, missing assets and unclear content. The placeholder is migration-only behavior and does not become a new normal Component Library capability.
+
+Multiple pages can be processed in one request without a separate Batch Mode. Similar pages may reuse a validated composition pattern, but content, links, assets, slug checks and validation remain page-specific.
+
+Migration result statuses are `DRAFT_READY`, `REVIEW_REQUIRED`, `PARTIAL` and `BLOCKED`. Migration remains draft-only unless publishing is separately and explicitly requested.
 
 ## Migration Asset Direction
 
@@ -138,31 +148,33 @@ Dominik should remain focused on reusable Builder capability and quality guardra
 - Keep AEM and Contentful as separate technical concepts; AEM is a source/reference, not the Contentful runtime path.
 - Use `component-library.html` as the productive capability SSOT.
 - Use `building-policy.md` as the canonical composition/editing/spacing policy.
+- Use one `migration-mode.md` for all migration-specific GPT behavior; do not keep a competing standalone Source Duplicate file.
+- Keep exactly two migration cases: `LOCKED_IMPORT` and `CRAWL_REBUILD`.
+- Use the existing `callout--base` as the basis for visible migration placeholders rather than creating a new normal module or runtime dependency.
 - Do not reintroduce ACTIVE/whitelist module states.
 - Keep Mukhammadjon's Action schema unchanged as the read-only SSOT.
 - Keep one central Bridge CSS and one trusted Runtime JS entry point owned by the renderer.
 - Do not put Bridge/Runtime assets into stored GPT page HTML.
-- Use controlled source-driven rebuilds for bespoke legacy pages instead of forcing every page into generic modules.
 - Never publish without explicit approval.
 - Use stable `entryId` as the preferred lifecycle identifier with slug lookup as fallback.
 - Treat the three-prompt regression suite as the baseline acceptance check after meaningful GPT package changes.
-- Freeze the current package unless a concrete new requirement or regression justifies another change.
 
 ## Risks and Open Questions
 
+- The migration-mode refactor passes local tests but still needs real Custom GPT acceptance after the changed package is uploaded.
+- Crawl Rebuild and its migration-placeholder behavior need dedicated real-page tests in addition to the generic three-prompt regression suite.
 - Large `getLpBuilderPage` read-back at migration-scale payload size still needs explicit retesting.
-- Complex migration-specific modules still need their own real-page Preview validation where not already completed.
-- The B2B contact form remains a separate platform/migration dependency.
+- The B2B contact form remains a separate platform/migration dependency; pages can now represent this gap explicitly through the migration placeholder until the real capability exists.
 - Future asset delivery depends on the final S3/storage setup, although the migration identity model is already clear.
 
 ## Next Steps
 
-1. Keep the current GPT baseline stable and rerun the documented regression suite after meaningful package changes.
-2. Retest large `getLpBuilderPage` read-back at roughly the same scale as the validated ~50 KB write case.
-3. Continue promoting only genuinely recurring migration structures into reusable Builder capabilities.
+1. Apply the updated GPT package with `migration-mode.md` to the actual Custom GPT and rerun the documented three-prompt regression suite.
+2. Add/execute migration-specific acceptance cases for `LOCKED_IMPORT`, a normal single-page `CRAWL_REBUILD`, a Crawl Rebuild with at least one migration placeholder, and a multi-page Crawl Rebuild.
+3. Retest large `getLpBuilderPage` read-back at roughly the same scale as the validated ~50 KB write case.
 4. Use the emerging Migration Crawler as the standardized source-intake layer for future AEM migration work once its MVP is available.
 5. Keep final asset delivery AEM-independent by resolving migrated assets to the new persistent storage URL before publish readiness.
 
 ## Last Confirmed
 
-2026-09-17: The rebuilt Custom GPT package passed the complete three-prompt regression suite without retry. CREATE, complex combined EDIT and the full lifecycle all succeeded; canonical Component Library retrieval, spacing invariants, exactly one `lpb-explicit-spacing` root and renderer-owned Bridge/Runtime exclusion all passed. The shared Bridge CSS is centrally loaded again and the Action flow was stable during the acceptance run. The current package is considered a green baseline and should remain frozen unless a concrete need emerges.
+2026-09-17: The local GPT package implemented the new unified Migration Mode. `migration-mode.md` replaces `source-duplicate-mode.md` and defines exactly `LOCKED_IMPORT` and `CRAWL_REBUILD`. Crawl Rebuild supports one or more source pages, uses Component Library + Building Policy, reports per-page migration status/gaps and uses an existing `callout--base` structure with `data-lpb-migration-*` markers for unsupported source areas. No new runtime, Bridge rule, user-facing module or Action was introduced; the OpenAPI SSOT is unchanged and both schema copies still have the same SHA-256. Local package/runtime validation passed 50/50. The changed package has not yet been revalidated in the live Custom GPT, so the prior green GPT acceptance run remains the last real GPT baseline until the suite is rerun.
