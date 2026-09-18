@@ -58,6 +58,13 @@
   - Context: The former recurring meetings appear to have been cancelled when paused for vacation; the previous rhythm is uncertain.
   - Source: Dominik confirmed the task on 2026-07-22
 
+- [ ] Fix CRAWL_REBUILD temporary asset handling
+  - Area: Landing Page Builder
+  - Status: Open, confirmed migration-policy correction
+  - Next step: Update the technical `migration-mode.md` so representable modules may use usable AEM/source asset URLs temporarily when final S3/scaler URLs are not ready, report those assets as pending migration, and reserve placeholders for genuinely missing assets or unsupported structures. Then rerun the migration-specific acceptance cases, using the Sichtbarkeit page as the main regression reference.
+  - Context: The 2026-09-18 Sichtbarkeit rebuild replaced representable image/text sections with `ASSET_MISSING` callouts, which removes too much migration value. Temporary AEM URLs are acceptable in Drafts provided they are tracked for later automated bulk rewrite through the asset manifest/mapping; the contact form remains a valid `FORM_MISSING` placeholder.
+  - Source: CRAWL_REBUILD test and migration asset decision confirmed on 2026-09-18
+
 ## Waiting
 
 - [ ] Coordinate Migration Crawler implementation handoff
