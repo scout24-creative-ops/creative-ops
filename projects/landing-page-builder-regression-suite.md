@@ -310,8 +310,11 @@ This core suite does not by itself prove the migration-specific behavior. After 
 
 - `LOCKED_IMPORT`
 - single-page `CRAWL_REBUILD`
-- `CRAWL_REBUILD` with a migration placeholder / gap
+- `CRAWL_REBUILD` with a representable image/text section whose final delivery URL is not ready: build the real module with a usable temporary AEM/source URL and report the asset as pending migration rather than replacing the section with an asset placeholder
+- `CRAWL_REBUILD` with a genuine migration placeholder / gap such as `FORM_MISSING`, `MODULE_GAP` or a truly unavailable asset
 - multi-page `CRAWL_REBUILD`
+
+The 2026-09-18 `sichtbarkeit-verbessern.html` test is the regression reference for this distinction: the contact form placeholder was appropriate, while the image/text sections should not have been replaced solely because their final persistent asset URLs were not yet available.
 
 ## Confirmed baseline run — 2026-09-17
 
