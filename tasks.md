@@ -60,6 +60,14 @@
 
 ## Waiting
 
+- [ ] Coordinate Migration Crawler implementation handoff
+  - Area: Contentful Migration
+  - Status: Waiting for Beatrice's follow-up next week
+  - Waiting for: Bea to confirm whether Jonas has useful handover material from his initial review and whether Maciej can take over after his current task, assuming no urgent AEM work intervenes.
+  - Dominik's next step: Reassess the implementation path when Bea follows up; do not start a parallel crawler build in the meantime.
+  - Context: Stefan created Linear ticket `LCMS-7518` for the focused asset-discovery/download component and estimates roughly one to two days of implementation. The broader LP Builder requirements remain in Dominik's Migration Crawler briefing. Temporary AEM/static asset URLs can be used in migration drafts as a transition state until persistent asset delivery is ready.
+  - Source: Slack alignment with Stefan and Beatrice on 2026-09-18
+
 - [ ] Retest large LP Builder read-back at migration scale
   - Area: Landing Page Builder
   - Status: Waiting, central Bridge loading and the current Action flow are stable; large read-back remains the isolated scale check
@@ -70,11 +78,11 @@
 
 - [ ] Set up Marketing Asset Library S3 pilot
   - Area: Marketing Asset Library
-  - Status: Waiting for John Ford's infrastructure guidance; AEM extraction approach confirmed but original-source resolution still needs clarification
-  - Waiting for: John's preferred GitHub / CloudFormation / deployment path for the confirmed `is24-cms` pilot, plus clarification of how Stefan's proposed crawler maps page-delivered image references back to the original AEM/DAM source files.
-  - Dominik's next step: Clarify the original-source mapping with Stefan, then follow John's infrastructure setup and test one original asset end to end: AEM original -> S3 -> scaler/delivery URL -> LP Builder/Contentful.
-  - Context: Stefan confirmed a crawler-based bulk extraction is feasible: page URL list in, download `img src` targets and configurable file links, use AEM asset paths as unique keys, then deduplicate/filter later. The remaining concern is that page URLs may expose optimized renditions rather than John's required upstream originals. A separate new Marketing AWS account remains paused for the MVP.
-  - Source: John Ford alignment and Stefan response confirmed on 2026-09-18
+  - Status: Waiting for John Ford's infrastructure guidance; asset-crawler path is technically clarified
+  - Waiting for: John's preferred GitHub / CloudFormation / deployment path for the confirmed `is24-cms` pilot.
+  - Dominik's next step: Follow John's infrastructure setup when he responds and test one original asset end to end: AEM original -> S3 -> scaler/delivery URL -> LP Builder/Contentful.
+  - Context: Stefan created `LCMS-7518` for AEM asset discovery/download and confirmed that DAM rendition URLs can be resolved to originals; most relevant images are page-stored and have no renditions. The crawler implementation itself is coordinated separately with Bea/Maciej. A separate new Marketing AWS account remains paused for the MVP.
+  - Source: John Ford alignment plus Stefan/Bea follow-up confirmed on 2026-09-18
 
 - [ ] Clarify B2B contact form plan for Contentful
   - Area: Contentful Migration
