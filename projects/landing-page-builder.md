@@ -16,6 +16,15 @@ The previously blocking renderer issue is resolved: the shared Bridge CSS loads 
 
 The reusable regression suite is maintained in [landing-page-builder-regression-suite.md](landing-page-builder-regression-suite.md).
 
+## Remaining Migration-Readiness Capabilities
+
+The current migration-focused backlog includes three explicit Builder capabilities / policy areas:
+
+- **Free headline and body text placement:** users need a supported way to place standalone headlines and body-copy blocks where needed. This must be defined as a Builder rule and represented visually in the Component Library so the GPT and human reviewers share the same contract.
+- **SEO / anchor-navigation module:** the previously investigated pattern uses a sticky sidebar for anchor navigation. The module still needs to be built, but whether it is required immediately for the current migration wave is not yet confirmed; Ulrike should clarify this from the URL/page scope.
+- **Pending module-specific policies:** several modules still need explicit policy decisions in the Building Policy. These decisions should be completed as part of migration readiness rather than relying permanently on the generic fallback policy.
+
+
 ## Current GPT Package
 
 Instructions:
@@ -55,7 +64,7 @@ Important rules:
 - There is no ACTIVE/whitelist/allowlist state in the current architecture.
 - A complete valid module block in the Component Library is usable unless another explicit rule says otherwise.
 
-Nine module-specific policies in the Building Policy are intentionally still marked `pending`. Pending does not block those modules; canonical Component Library markup plus the global Building Policy applies until a dedicated policy exists.
+Nine module-specific policies in the Building Policy are intentionally still marked `pending`. Pending does not block those modules; canonical Component Library markup plus the global Building Policy applies until a dedicated policy exists. The remaining policy decisions are still part of Dominik's active Builder-readiness work and should be resolved deliberately rather than left indefinitely pending.
 
 ## Blueprint
 
