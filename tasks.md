@@ -70,11 +70,11 @@
 
 - [ ] Set up Marketing Asset Library S3 pilot
   - Area: Marketing Asset Library
-  - Status: Waiting for John Ford's next technical setup instruction
-  - Waiting for: John's preferred GitHub / CloudFormation / deployment path after confirming that the existing `is24-cms` AWS account is sufficient for the pilot.
-  - Dominik's next step: No implementation action until John responds. Then follow his setup, create the minimal S3 bucket together with the required scaler permissions and test one original AEM asset end to end: AEM source -> S3 -> scaler/delivery URL -> LP Builder/Contentful.
-  - Context: John confirmed that `is24-cms` is enough for the pilot and recommends creating the bucket through CloudFormation rather than manually in the AWS web interface. He asked whether Dominik has GitHub; Dominik confirmed GitHub access and existing LP Builder-related use. A separate new Marketing AWS account is paused for the MVP, and no repository should be created pre-emptively before John specifies the preferred setup.
-  - Source: John Ford follow-up and Dominik reply confirmed on 2026-09-17
+  - Status: Waiting for John Ford's infrastructure guidance and Stefan's AEM-export response
+  - Waiting for: John's preferred GitHub / CloudFormation / deployment path for the confirmed `is24-cms` pilot, plus Stefan's response on exporting the relevant original B2B AEM assets with their `/content/...` structure and available metadata preserved.
+  - Dominik's next step: No implementation action until the pending replies arrive. Then follow John's infrastructure setup, use the original AEM asset export as the canonical migration source, create the minimal S3/scaler pilot and test one asset end to end: AEM original -> S3 -> scaler/delivery URL -> LP Builder/Contentful.
+  - Context: John recommends original upstream AEM files rather than crawler-visible renditions because page delivery may already resize or optimize images. A URL/metadata inventory can support matching but does not replace the actual files. Dominik contacted Stefan on 2026-09-18 about the B2B AEM export. A separate new Marketing AWS account remains paused for the MVP.
+  - Source: John Ford alignment and Dominik follow-up to Stefan confirmed through 2026-09-18
 
 - [ ] Clarify B2B contact form plan for Contentful
   - Area: Contentful Migration
