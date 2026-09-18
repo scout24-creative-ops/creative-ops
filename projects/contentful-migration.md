@@ -77,7 +77,7 @@ The intended mapping remains:
 
 `AEM URL/path -> Asset ID -> original AEM file -> S3 object -> delivery/scaler URL`
 
-The stable asset ID is a migration identity, not the final delivery mechanism. Final Contentful HTML should use the persistent delivery/scaler URL rather than the old AEM URL. Existing migrated/manual drafts may temporarily contain AEM/static URLs until they are rewritten; this remains a transition state, not the final migration contract.
+The stable asset ID is a migration identity, not the final delivery mechanism. Final Contentful HTML should use the persistent delivery/scaler URL rather than the old AEM URL. Migration drafts may deliberately use a usable AEM/source URL while the persistent target does not yet exist. These temporary references should be tracked automatically through the shared asset manifest/mapping and later rewritten in bulk once S3/scaler URLs are available; page-by-page manual replacement is not the intended operating model.
 
 The first migration-relevant success criterion for the Marketing Asset Library is simple: place an original asset in S3, obtain a stable production delivery URL through the Scout image scaler, and use that URL successfully in the LP Builder. The broader cross-Marketing storage, infrastructure and governance model belongs to the separate Marketing Asset Library project.
 
@@ -87,7 +87,7 @@ The user-facing GPT migration workflow is intentionally simple:
 
 1. If complete Contentful-ready HTML is supplied, use `LOCKED_IMPORT` and transfer it without recomposition.
 2. If crawler/migration files are supplied, use `CRAWL_REBUILD`; the GPT interprets each source page, chooses the best current LP Builder modules, preserves exact source copy/links/CTA labels where possible and creates a Draft.
-3. If an individual source area cannot be represented safely, do not silently drop it and do not necessarily block the whole page. Insert the migration-only placeholder and report the gap explicitly.
+3. If an individual source area is structurally representable, build the appropriate LP Builder module even when its final persistent asset URL is not ready. A usable AEM/source asset URL may be used temporarily in the Draft and reported as pending migration. Use the migration-only placeholder only when the asset is truly unavailable or the source area cannot be represented safely.
 4. Multiple URLs may be handled in one request. Similar pages may reuse a validated composition pattern, but each page keeps its own content, links, assets, slug check and result status.
 5. Report every page as `DRAFT_READY`, `REVIEW_REQUIRED`, `PARTIAL` or `BLOCKED`, with Preview and open gaps. Never treat Draft readiness as publish approval.
 
