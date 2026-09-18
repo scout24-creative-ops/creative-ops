@@ -54,7 +54,7 @@ The output should be structured rather than a single HTML dump so it can be reus
 
 The historical crawl audit showed that useful building blocks already exist across earlier migration scripts and experiments, including HTTP discovery, source packages, browser captures, screenshots, asset download/hash logic and stable block concepts. However, there is no evidence of one complete standardized crawl of the full B2B directory. The existing 369-URL candidate list is scope input, not proof of a completed crawl. The new work should therefore consolidate and generalize useful existing pieces rather than start from zero or treat historical outputs as one finished pipeline.
 
-Stefan confirmed on 2026-09-18 that a bulk B2B asset crawler is feasible. His proposed asset-capture path starts from a list of AEM page URLs, downloads all `img src` targets and optionally linked files from `a href` for configured document extensions, and uses the AEM asset path as the unique identifier/key. This is useful input for the reusable crawler direction, but it still needs an original-source resolution step because page-delivered image URLs may point to optimized renditions rather than the upstream DAM file John wants preserved.
+Stefan confirmed on 2026-09-18 that a bulk B2B asset crawler is feasible and created Linear ticket `LCMS-7518`. Its asset-capture path starts from a list of AEM page URLs, downloads all `img src` targets and optionally linked files from `a href` for configured document extensions, deduplicates them and preserves the AEM-discovered path. Stefan estimates roughly one to two days of implementation once capacity is available. He also clarified that most images are stored with the page and have no DAM renditions; for DAM-backed images, the crawler can derive the original URL from a rendition URL and the ticket was updated accordingly.
 
 ## Asset Preparation and Marketing Asset Library Dependency
 
@@ -154,6 +154,7 @@ Mitch is not part of Contentful Migration and should not be suggested for migrat
 - The B2B contact form remains a key dependency for broader directory migration, although missing-form pages can now be represented as partial migrations rather than silently failing.
 - Some legacy source areas still need scope/canonical decisions before migration.
 - The Migration Crawler must be proven on a real AEM subset before it can be treated as the standard intake path.
+- Implementation ownership is pending Bea's next-week coordination: Jonas has already reviewed the briefing at least initially but is on vacation next week; if no urgent AEM work intervenes, Maciej can take over after his current task. No parallel crawler implementation should be started while this handoff is pending.
 
 ## Next Steps
 
@@ -161,10 +162,11 @@ Mitch is not part of Contentful Migration and should not be suggested for migrat
 2. Once the minimal S3/scaler pilot is available, run one end-to-end migration asset test: original AEM asset -> S3 -> scaler/delivery URL -> LP Builder/Contentful.
 3. After the pilot works, plan the original-AEM export/mapping approach at migration scale while preserving source-path correlation.
 4. Apply and acceptance-test the updated GPT Migration Mode in the live Custom GPT, including Locked Import, normal Crawl Rebuild, placeholder and multi-page cases.
-5. Hand the bilingual Scout Wiki `Migration Crawler – Briefing` to the working student and use it to scope the crawler MVP.
-6. Reuse the strongest existing crawl components where practical and validate the crawler on a small real AEM area before scaling.
-7. Continue Handbook QA/handoff and strategic B2B URL selection.
+5. Wait for Beatrice's next-week follow-up on Jonas's possible handover and whether Maciej will take over the implementation after his current task; do not start a parallel crawler build meanwhile.
+6. Use `LCMS-7518` as the scoped asset-discovery/download component and the existing `Migration Crawler – Briefing` as the broader LP Builder migration requirement set.
+7. Reuse the strongest existing crawl components where practical and validate the combined crawler workflow on a small real AEM area before scaling.
+8. Continue Handbook QA/handoff and strategic B2B URL selection.
 
 ## Last Confirmed
 
-2026-09-17: The migration asset contract remains original AEM asset -> S3 -> Scout image-scaler/delivery URL -> LP Builder/Contentful. John confirmed that the existing `is24-cms` AWS account is sufficient for the pilot and recommends CloudFormation rather than manual AWS-console setup. Dominik confirmed GitHub access and is waiting for John's preferred implementation path. The persistent asset-storage capability is now tracked as the separate Marketing Asset Library project, while Contentful Migration retains the source/mapping requirements and dependency.
+2026-09-18: The reusable Migration Crawler direction is now linked to active platform work. Stefan created `LCMS-7518` for asset discovery/download and confirmed that DAM renditions can be resolved to originals. Bea had already asked Jonas to review Dominik's broader Migration Crawler briefing; Jonas is on vacation next week, and Bea will check for handover material. If no urgent AEM work intervenes, Maciej can take over after his current task. Dominik will wait for Bea's next-week follow-up and will not start a parallel crawler implementation. Temporary AEM/static asset URLs may remain in migration drafts as a transition state until the persistent S3/scaler path is ready.
