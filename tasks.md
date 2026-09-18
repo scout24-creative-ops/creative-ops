@@ -2,40 +2,12 @@
 
 ## Open
 
-- [ ] Complete Anwenderhandbuch migration handoff and QA
-  - Area: Contentful Migration
-  - Status: Open, page migration complete; moved into QA/handoff
-  - Next step: Hand off visual/content QA for the 44 detail drafts and hub, including ALT review, media associations, hub category/card review and selected visual optimization. Keep the 14 unresolved gallery asset references and canonical-slug cleanup as explicit dependencies rather than rebuilding migrated pages.
-  - Context: All 45 Canonical/Unique targets (44 detail pages + 1 hub) have been migrated as unpublished drafts. Twelve legacy duplicate source packages are excluded from the target set. Stable asset IDs are present in all 207 SAFE/MIGRATE references across all 56 asset-bearing GPT-ready packages; 14 REVIEW/BLOCKED dynamic gallery references remain. A complete Contentful draft inventory can be generated later for handoff/asset URL rewrites if needed.
-  - Source: Handbook migration, spacing and asset audits confirmed through 2026-09-06
-
-- [ ] Review `/lp` pages for additional Handbook content
-  - Area: Contentful Migration
-  - Status: Open, scope check before final Handbook closure
-  - Next step: Audit `/lp` pages for FAQ, help, how-to and product-support content that should become a new Handbook page or be integrated into an existing one; classify duplicates and marketing-only pages separately before migrating anything.
-  - Context: The core 45-page Handbook target set is migrated, but older `/lp` content may contain relevant FAQ/support material that was not part of the original `/tipps` crawl.
-  - Source: Dominik requested the additional `/lp` scope review on 2026-09-05
-
-- [ ] Prepare Sitemap V2 from the existing SEO Excel source
-  - Area: Contentful Migration
-  - Status: Open, supporting pilot task
-  - Next step: Keep `Anbieten Pages.xlsx` as the fachlich SSOT, refactor the visual HTML sitemap so its data can be regenerated from the workbook, and continue overlaying Screaming Frog/live-status information. Start with a manual/lightweight sync; do not build write-back or a new sitemap app for the pilot.
-  - Context: The existing Excel landscape is fragmented and not always fully current, but those files remain the authoritative business/SEO decision source. The visual sitemap should expose inconsistencies by combining Excel decisions with live crawl status instead of creating a competing master dataset. A later V2 may read SharePoint/Excel automatically via Microsoft Graph. If multiple workbook sources are added, use a small source manifest mapping directories/page groups to the authoritative workbook.
-  - Source: Sitemap source-model discussion on 2026-08-30
-
-- [ ] Prepare reusable LP Builder modules for B2B migration
+- [ ] Complete LP Builder migration-readiness capabilities
   - Area: Landing Page Builder
-  - Status: Open, first complex module substantially validated; continue migration-readiness work
-  - Next step: Finish the real Contentful Preview check of the current `product-comparison-table` import after the large-htmlSource fix, then treat the table as the first reusable B2B migration contract if the final visual/interaction check passes. Continue promoting only genuinely recurring structures into reusable Builder patterns.
-  - Context: The Product Comparison implementation has progressed through full AEM-reference fidelity work: Silber/Gold/Bronze ordering, source-derived plan bars/emblems, 36 feature info icons/tooltips, pill CTAs, static repeated plan headers, compact table spacing, corrected dividers and full-row highlights are reflected in the maintained HTML and centrally published Bridge. The 50.7 KB real import can now be created and updated successfully after Mukhammadjon's size fix; a final Preview check remains before closing this module-readiness step.
-  - Source: Product Comparison implementation and large-payload validation confirmed through 2026-09-09
-
-- [ ] Finish Gewerbliche-Anbieter start page migration preview
-  - Area: Contentful Migration
-  - Status: Open, rebuild prepared; final Contentful sync/visual check pending
-  - Next step: Update the existing unpublished test draft with the final ~19.8 KB `gewerbliche-anbieter-startseite.html` and verify the final external SVG base illustrations, original-style teal hover overlays, responsive layout, links and CTA behavior in Contentful Preview.
-  - Context: The live directory/start page was crawled and rebuilt without the legacy contact form. Twelve large inline SVG illustrations were externalized to Scout24 static URLs, reducing the page HTML from ~2.47 MB to 19,760 bytes. Six final hover-overlay SVG assets and the required Bridge rules are public; the `#kontakt` CTA remains intentionally unresolved because the contact form is out of scope and will be handled separately.
-  - Source: Gewerbliche-Anbieter source capture, rebuild and external-asset validation confirmed on 2026-09-09
+  - Status: Open
+  - Next step: Add supported free-placement headline and body-text building blocks/rules and mirror them visually in the Component Library; resolve the remaining pending module-specific Building Policy decisions; continue validating reusable migration modules only where they are genuinely needed.
+  - Context: The Builder is already usable for migration, but these remaining authoring/policy gaps should be closed so migration pages do not require ad-hoc HTML or ambiguous module behavior.
+  - Source: Migration backlog cleanup confirmed on 2026-09-18
 
 - [ ] Set up B2B automation discovery with Juliane
   - Area: E-Mail Automation Professional
@@ -66,6 +38,15 @@
   - Source: CRAWL_REBUILD test and migration asset decision confirmed on 2026-09-18
 
 ## Waiting
+
+- [ ] Clarify timing for SEO anchor-navigation module
+  - Area: Landing Page Builder
+  - Status: Waiting for Ulrike's migration-scope clarification
+  - Waiting for: Ulrike to confirm whether the sticky-sidebar anchor-navigation pattern is required in the current migration scope.
+  - Dominik's next step: If it is needed for the current migration wave, prioritize building the already investigated SEO module; otherwise keep it in the Builder backlog for later.
+  - Context: The module concept has already been investigated and uses a sticky sidebar for anchor navigation. The open question is timing/priority, not whether the capability is conceptually useful.
+  - Source: Migration backlog cleanup confirmed on 2026-09-18
+
 
 - [ ] Coordinate Migration Crawler implementation handoff
   - Area: Contentful Migration
