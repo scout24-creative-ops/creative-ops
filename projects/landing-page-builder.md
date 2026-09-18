@@ -131,9 +131,19 @@ Migration result statuses are `DRAFT_READY`, `REVIEW_REQUIRED`, `PARTIAL` and `B
 
 ## Migration Asset Direction
 
-Existing already-built migration drafts can still contain temporary AEM/static asset URLs. That is transitional state, not the final target.
+Existing and new migration drafts may temporarily use usable AEM/source asset URLs while the persistent S3/scaler path is not yet available. That is an explicit migration fallback, not the final delivery target.
 
-For the reusable migration path, asset identity and migration should be handled before final delivery: source AEM URL -> stable asset ID/hash -> persistent S3/delivery URL. Final Contentful HTML should use the new persistent URL. Asset IDs remain useful in the migration manifest for traceability and deduplication, not as a replacement for a real delivery URL in final HTML.
+The 2026-09-18 `CRAWL_REBUILD` test with `/anbieten/gewerbliche-anbieter/lp/sichtbarkeit-verbessern.html` exposed that the current migration policy is too strict: representable image/text sections were replaced by `ASSET_MISSING` placeholders merely because no final delivery URL existed. The desired behavior is now:
+
+- if the source structure can be represented by an existing LP Builder module, build the real module;
+- if a final persistent delivery URL exists, use it;
+- if no final delivery URL exists but a usable AEM/source URL exists, use that URL temporarily in the Draft and mark/report the asset as pending migration;
+- use a visible migration placeholder only when the asset is truly unavailable or the source structure/capability cannot be represented safely;
+- genuine unsupported forms continue to use the migration placeholder, e.g. `FORM_MISSING`.
+
+The durable mapping remains source AEM URL/path -> stable asset identity/hash -> later S3/scaler delivery URL. The asset manifest should be generated/maintained by the crawler or migration tooling rather than manually by page authors. Once persistent delivery URLs exist, a controlled bulk rewrite should update known temporary asset URLs across migrated Contentful drafts/pages and verify that no old AEM asset URLs remain.
+
+This direction is confirmed in Profile but is not yet assumed to be implemented in the technical LP Builder package. `migration-mode.md` and migration acceptance tests still need to be updated and validated before this becomes the live GPT baseline.
 
 ## Dominik's Role
 
