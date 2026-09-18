@@ -107,7 +107,7 @@ The migration strategy remains hybrid:
 8. Hand visual/content QA to the relevant colleagues rather than requiring Dominik to polish every page personally.
 9. Keep final asset delivery AEM-independent before publish readiness.
 
-Operational migration work should increasingly be delegated while Dominik concentrates on Builder readiness, migration rules and quality guardrails.
+Operational migration work is now split explicitly: Ulrike owns URL-scope preparation and maintenance of the Scout Wiki migration list, including deciding which URLs should or should not be migrated and identifying gaps in the remaining scope. That Wiki list is the operational intake for subsequent LP Builder migration work. Dominik concentrates on Builder readiness, migration rules, reusable capabilities and quality guardrails rather than maintaining a parallel URL inventory or sitemap.
 
 ## Current Asset Migration State
 
@@ -139,7 +139,7 @@ The working-student crawler is intended to move repeatable source capture and as
 - Mukhammadjon / Core Frontend: LP Builder platform and Contentful Action/renderer behavior
 - Beatrice: Contentful/platform coordination and the link to the existing CMS AWS account
 - John Ford / Platform Engineering: Marketing Asset Library technical partner for S3/scaler setup and image-delivery integration
-- B2B Marketing / Ulrike: strategic URL assessment and operational migration support
+- B2B Marketing / Ulrike: owner of URL-scope assessment for the migration; maintains the Scout Wiki list of migrate / do-not-migrate decisions and remaining URL gaps that drives LP Builder migration intake
 - SEO: routing and URL strategy
 
 Mitch is not part of Contentful Migration and should not be suggested for migration work.
@@ -152,7 +152,7 @@ Mitch is not part of Contentful Migration and should not be suggested for migrat
 - 14 REVIEW/BLOCKED dynamic gallery references remain unresolved in the Handbook migration.
 - Existing migrated drafts with AEM/static URLs still need later controlled URL rewriting before final AEM-independent delivery.
 - The B2B contact form remains a key dependency for broader directory migration, although missing-form pages can now be represented as partial migrations rather than silently failing.
-- Some legacy source areas still need scope/canonical decisions before migration.
+- Some legacy source areas still need scope/canonical decisions before migration; these decisions now belong in Ulrike's maintained Wiki URL list rather than a parallel Dominik-owned audit.
 - The Migration Crawler must be proven on a real AEM subset before it can be treated as the standard intake path.
 - Implementation ownership is pending Bea's next-week coordination: Jonas has already reviewed the briefing at least initially but is on vacation next week; if no urgent AEM work intervenes, Maciej can take over after his current task. No parallel crawler implementation should be started while this handoff is pending.
 
@@ -165,7 +165,7 @@ Mitch is not part of Contentful Migration and should not be suggested for migrat
 5. Wait for Beatrice's next-week follow-up on Jonas's possible handover and whether Maciej will take over the implementation after his current task; do not start a parallel crawler build meanwhile.
 6. Use `LCMS-7518` as the scoped asset-discovery/download component and the existing `Migration Crawler – Briefing` as the broader LP Builder migration requirement set.
 7. Reuse the strongest existing crawl components where practical and validate the combined crawler workflow on a small real AEM area before scaling.
-8. Continue Handbook QA/handoff and strategic B2B URL selection.
+8. Use Ulrike's maintained Scout Wiki URL list as the source for which pages enter the next LP Builder migration wave; do not maintain a separate Dominik-owned URL/sitemap workstream.
 
 ## Last Confirmed
 
