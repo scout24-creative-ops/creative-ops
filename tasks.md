@@ -70,11 +70,11 @@
 
 - [ ] Set up Marketing Asset Library S3 pilot
   - Area: Marketing Asset Library
-  - Status: Waiting for John Ford's infrastructure guidance and Stefan's AEM-export response
-  - Waiting for: John's preferred GitHub / CloudFormation / deployment path for the confirmed `is24-cms` pilot, plus Stefan's response on exporting the relevant original B2B AEM assets with their `/content/...` structure and available metadata preserved.
-  - Dominik's next step: No implementation action until the pending replies arrive. Then follow John's infrastructure setup, use the original AEM asset export as the canonical migration source, create the minimal S3/scaler pilot and test one asset end to end: AEM original -> S3 -> scaler/delivery URL -> LP Builder/Contentful.
-  - Context: John recommends original upstream AEM files rather than crawler-visible renditions because page delivery may already resize or optimize images. A URL/metadata inventory can support matching but does not replace the actual files. Dominik contacted Stefan on 2026-09-18 about the B2B AEM export. A separate new Marketing AWS account remains paused for the MVP.
-  - Source: John Ford alignment and Dominik follow-up to Stefan confirmed through 2026-09-18
+  - Status: Waiting for John Ford's infrastructure guidance; AEM extraction approach confirmed but original-source resolution still needs clarification
+  - Waiting for: John's preferred GitHub / CloudFormation / deployment path for the confirmed `is24-cms` pilot, plus clarification of how Stefan's proposed crawler maps page-delivered image references back to the original AEM/DAM source files.
+  - Dominik's next step: Clarify the original-source mapping with Stefan, then follow John's infrastructure setup and test one original asset end to end: AEM original -> S3 -> scaler/delivery URL -> LP Builder/Contentful.
+  - Context: Stefan confirmed a crawler-based bulk extraction is feasible: page URL list in, download `img src` targets and configurable file links, use AEM asset paths as unique keys, then deduplicate/filter later. The remaining concern is that page URLs may expose optimized renditions rather than John's required upstream originals. A separate new Marketing AWS account remains paused for the MVP.
+  - Source: John Ford alignment and Stefan response confirmed on 2026-09-18
 
 - [ ] Clarify B2B contact form plan for Contentful
   - Area: Contentful Migration
