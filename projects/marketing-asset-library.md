@@ -27,7 +27,7 @@ John subsequently confirmed that this existing account is sufficient for the pil
 
 Dominik confirmed that he has GitHub and already uses it for LP Builder-related files. No repository or CloudFormation setup should be created pre-emptively; the work is intentionally paused until John provides the next technical setup instruction or points to the preferred repository/deployment path.
 
-For the migration-scale asset source, John's recommendation is to use the original upstream AEM files rather than relying on crawler-visible renditions, because AEM may already have resized or optimized the page-delivered image. The relevant assets should therefore be downloaded/exported from AEM with their existing `/content/...` path/folder structure preserved where possible, so crawled page references can later be matched back to the canonical source files before S3 upload. A URL/metadata list is useful for mapping but is not sufficient by itself; the original image files are required. Dominik contacted Stefan on 2026-09-18 to clarify whether the relevant B2B/AEM assets can be exported in this form, ideally with paths and available metadata such as ALT text. Response pending.
+For the migration-scale asset source, John's recommendation is to use the original upstream AEM files rather than relying on crawler-visible renditions, because AEM may already have resized or optimized the page-delivered image. The relevant assets should therefore be downloaded/exported from AEM with their existing `/content/...` path/folder structure preserved where possible, so crawled page references can later be matched back to the canonical source files before S3 upload. A URL/metadata list is useful for mapping but is not sufficient by itself; the original image files are required. Stefan confirmed on 2026-09-18 that bulk extraction is feasible and had already briefly discussed the topic with Bea. His proposed implementation is a crawler that takes a list of AEM page URLs, downloads all image targets referenced via `img src` and optionally linked files from `a href` for a configurable set of file extensions, and uses the AEM asset path as the unique filename/key. He expects duplicates and non-content assets such as icons to be included initially, with cleanup/deduplication handled after collection. One technical point remains open: this page-level crawler must not stop at transformed page renditions if John's requirement is to preserve the original upstream AEM files; it therefore needs a reliable way to resolve or map captured references back to the canonical DAM source asset.
 
 A separate new `marketing-assets` AWS account is therefore not being requested for the MVP.
 
@@ -70,7 +70,7 @@ John / Platform Engineering is the technical partner for the S3, permissions and
 - Beatrice: Contentful/platform coordination and access to the existing CMS AWS-account context
 - Daniel Herold: Head of Tech for the existing `is24-cms` AWS account
 - CMS team: existing account context and potentially the relevant infrastructure/deployment path
-- Stefan: contacted to clarify export/access to original AEM assets for the B2B migration scope, including preservation of `/content/...` paths and available metadata
+- Stefan: confirmed a crawler-based bulk extraction approach for the B2B migration; proposed page-URL input, `img src` plus configurable linked-file downloads, and AEM asset paths as unique keys. Original-DAM resolution still needs clarification.
 - Contentful Migration / Landing Page Builder: first concrete consumer and MVP validation path
 
 ## Decisions
@@ -93,14 +93,15 @@ John / Platform Engineering is the technical partner for the S3, permissions and
 - What access or role will Dominik need to upload assets and operate the pilot?
 - What permissions does John's scaler need on the bucket?
 - What bucket name and folder conventions should be used for the pilot and later Marketing-wide use?
-- Can Stefan/the AEM side provide a B2B-relevant export of the original image files while preserving `/content/...` paths and, where available, metadata such as ALT text?
+- How should Stefan's proposed page crawler resolve rendered/rendition URLs back to the original upstream AEM/DAM file so John's canonical-source requirement is met?
+- Which linked file extensions beyond images should be included in the first migration capture, and which non-content assets should be filtered or deduplicated later?
 - How should the full AEM original-asset export and source mapping be automated at migration scale?
 - What should long-term account ownership, cost ownership and governance be once the capability expands beyond the migration MVP?
 
 ## Next Steps
 
 1. Wait for John's response after Dominik confirmed GitHub access.
-2. Wait for Stefan's response on whether the relevant B2B original AEM assets can be exported with their `/content/...` structure and available metadata preserved.
+2. Clarify with Stefan how the proposed crawler will resolve page-delivered renditions to the original AEM/DAM source files and preserve their AEM paths; align the first file-extension scope for linked assets.
 3. Follow John's preferred repository / CloudFormation / deployment setup rather than creating a parallel infrastructure path independently.
 4. Create the minimal S3 bucket together with the permissions required for the image scaler.
 5. Let John configure the scaler for the bucket.
@@ -109,4 +110,4 @@ John / Platform Engineering is the technical partner for the S3, permissions and
 
 ## Last Confirmed
 
-2026-09-18: The asset-source requirement was clarified from the John Ford alignment: original upstream AEM image files should be exported/downloaded and their `/content/...` structure preserved where possible, because crawler-visible renditions may already be transformed. A URL/metadata inventory alone is not sufficient for the S3 migration. Dominik contacted Stefan to clarify the B2B AEM export path and will continue once Stefan responds. The S3/CloudFormation setup remains paused pending John's next technical instruction.
+2026-09-18: Stefan confirmed that bulk B2B asset extraction is feasible and proposed a crawler driven by an AEM page-URL list, downloading `img src` targets and configurable linked-file targets while using the AEM asset path as the unique key. Duplicates and non-content assets can be cleaned up after collection. The remaining technical clarification is whether and how the crawler resolves page-rendered renditions back to John's required original upstream AEM/DAM files. The S3/CloudFormation setup remains paused pending John's next technical instruction.
