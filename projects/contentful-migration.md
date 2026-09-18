@@ -54,6 +54,8 @@ The output should be structured rather than a single HTML dump so it can be reus
 
 The historical crawl audit showed that useful building blocks already exist across earlier migration scripts and experiments, including HTTP discovery, source packages, browser captures, screenshots, asset download/hash logic and stable block concepts. However, there is no evidence of one complete standardized crawl of the full B2B directory. The existing 369-URL candidate list is scope input, not proof of a completed crawl. The new work should therefore consolidate and generalize useful existing pieces rather than start from zero or treat historical outputs as one finished pipeline.
 
+Stefan confirmed on 2026-09-18 that a bulk B2B asset crawler is feasible. His proposed asset-capture path starts from a list of AEM page URLs, downloads all `img src` targets and optionally linked files from `a href` for configured document extensions, and uses the AEM asset path as the unique identifier/key. This is useful input for the reusable crawler direction, but it still needs an original-source resolution step because page-delivered image URLs may point to optimized renditions rather than the upstream DAM file John wants preserved.
+
 ## Asset Preparation and Marketing Asset Library Dependency
 
 Asset evidence remains part of the crawler scope, but the crawler should not assume that the image rendition visible on the rendered AEM page is the canonical source file. AEM may already have resized or optimized that rendition. Where possible, migration should resolve the page reference back to the original upstream AEM asset.
