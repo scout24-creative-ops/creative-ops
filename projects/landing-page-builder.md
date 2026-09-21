@@ -8,7 +8,7 @@ Enable Marketing teams to create landing pages faster and more independently thr
 
 The production/AEM Builder remains operational, while `LP Builder – Contentful` is the maintained Contentful-enabled Builder for migration and future product development.
 
-The Custom GPT baseline passed the reusable three-prompt acceptance suite on 2026-09-17 before the latest migration-policy refactor. That run validated Blueprint creation, complex single-update editing and the full publish/unpublish/archive/unarchive/delete lifecycle without retry or Action, JSON, serialization, auth or validation errors.
+The Custom GPT baseline passed the reusable three-prompt acceptance suite on 2026-09-17 before the latest migration-policy refactor. That run validated Blueprint creation, complex single-update editing and the full publish/unpublish/archive/unarchive/delete lifecycle without retry or Action, JSON, serialization, auth or validation errors. On 2026-09-21, after re-entering the GPT Action client ID and secret, a separate one-prompt end-to-end smoke test also passed CREATE, draft verification, publish, unpublish, archive, unarchive, republish, reunpublish and delete without technical error, confirming that Action authentication and the core lifecycle path are working again.
 
 The local GPT package has since been extended with the new migration model. `migration-mode.md` replaces `source-duplicate-mode.md` and defines exactly two migration cases: `LOCKED_IMPORT` for exact Contentful-ready HTML import and `CRAWL_REBUILD` for rebuilding one or more source pages from crawler/migration evidence. The local package/runtime contract tests pass 50/50. The updated package still needs to be applied to the actual Custom GPT and the acceptance suite rerun before this changed configuration is treated as the new green GPT baseline.
 
@@ -195,5 +195,7 @@ Dominik should remain focused on reusable Builder capability and quality guardra
 5. Keep final asset delivery AEM-independent by resolving migrated assets to the new persistent storage URL before publish readiness.
 
 ## Last Confirmed
+
+2026-09-21: After re-entering the GPT Action client ID and secret, a fresh one-prompt end-to-end smoke test passed CREATE, draft verification and the complete lifecycle through final deletion without technical error. This confirms that Action authentication and the core lifecycle path are currently functional again. This smoke test did not replace the full three-prompt regression suite because it did not include the combined EDIT stress test.
 
 2026-09-17: The local GPT package implemented the new unified Migration Mode. `migration-mode.md` replaces `source-duplicate-mode.md` and defines exactly `LOCKED_IMPORT` and `CRAWL_REBUILD`. Crawl Rebuild supports one or more source pages, uses Component Library + Building Policy, reports per-page migration status/gaps and uses an existing `callout--base` structure with `data-lpb-migration-*` markers for unsupported source areas. No new runtime, Bridge rule, user-facing module or Action was introduced; the OpenAPI SSOT is unchanged and both schema copies still have the same SHA-256. Local package/runtime validation passed 50/50. The changed package has not yet been revalidated in the live Custom GPT, so the prior green GPT acceptance run remains the last real GPT baseline until the suite is rerun.
