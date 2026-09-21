@@ -151,11 +151,11 @@ Do not create a recurring Series presentation template or contributor presentati
 ## Next Steps
 
 1. Prepare the 2026-09-22 session as the first 60-minute edition using the same lightweight Scout Wiki + verbal facilitation model.
-2. Build the agenda around fewer, more clearly timeboxed blocks rather than trying to fill all three pillars by default.
-3. Decide whether the central-knowledge-source / Single-Source-of-Truth topic should be continued as the main Explore topic and, if so, protect enough agenda time for a real discussion.
+2. Build the agenda around the current likely blocks: Learn on ChatGPT Skills; Show & Share with Mike Henschel (~10 min) and Alex Penkin (~10 min); Explore on the open Single-Source-of-Truth question if enough time remains.
+3. For Explore, use the new HeyImmo example as practical input: HeyImmo maintains its own knowledge base; product information is maintained by Eva Zieten with PM input, while company information is sourced from scraped CMS pages. Clarify whether this is a true canonical SSOT or a downstream consolidated knowledge layer.
 4. If the group sees a concrete need, use the discussion to narrow the topic toward a small pilot or MVP rather than a broad solution decision.
 5. Continue collecting reusable learnings from colleague contributions without turning the Series into project delivery or a status meeting.
 
 ## Last Confirmed
 
-Updated on 2026-09-16 from the 2026-09-08 session transcript and Dominik's post-session communication. The recurring AI Enablement format is shortened from 90 to 60 minutes starting on 2026-09-22 because the first session showed declining attention after roughly one hour and Team Lead feedback supported the shorter format.
+Updated on 2026-09-21. The 2026-09-22 session remains the first 60-minute edition. Ulrike is out sick; Mike Henschel will take over her Show & Share slot (~10 min), and Alex Penkin is likely to add another ~10-minute contribution on his experience building an Agent for chat generation. The SSOT Explore topic now has a concrete HeyImmo example to discuss.
