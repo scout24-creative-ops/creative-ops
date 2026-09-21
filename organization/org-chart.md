@@ -1,6 +1,6 @@
 # Relevanter Organisationskontext – vollständig
 
-Stand: 24.08.2026
+Stand: 21.09.2026
 
 Diese Datei ist die maßgebliche Version für Dominiks relevante Organisations- und Zusammenarbeitsstruktur.
 
@@ -95,17 +95,86 @@ Relevantes vollständiges Team:
 - Aufzeichnungen bisheriger Sessions liegen in ScoutAcademy; bislang gibt es nur wenige Sessions und damit keinen umfassenden Überblick über verfügbare Unternehmens-Agents.
 - Andrea arbeitete nach eigener Aussage zuvor im HR-Bereich und wechselte ungefähr Anfang 2025 in den AI-Operations-/AI-Enablement-Kontext.
 
-## Builders Platform und Engineering
+## Product / Builders Platform — aktueller relevanter Kontext
+
+_Stand aus Organigramm-Screenshots vom 21.09.2026. Matthias hat parallel eine bevorstehende Reorganisation angekündigt; die folgende Struktur ist deshalb als aktueller Ausgangspunkt zu verstehen, nicht als bestätigte zukünftige Zielstruktur._
+
+### Führungslinie
+
+- Ralf Weitz — Chief Executive Officer
+- Stephen Molloy — Chief Product Officer
 - Matthias Brandstetter — Director Builders Platform
-- Beatrice Riedel — Engineering Manager
 
-## UX
-- Paul Befort — Teamlead User Experience Design
+Weitere Direct Reports unter Stephen Molloy im aktuellen Organigramm:
+- Christoph Barniske — VP Product Management
+- Daniel Hendel — VP Product Management
+- Daniel Herold — Director of Engineering
+- Nicholas Parkin — Director of Product
+- Nicolas Cheron — VP Product Management
 
-## SEO
+### Direkte Organisation unter Matthias Brandstetter
+
+- Anna Befort — Teamlead Product Management
+- Dania Reimer — Lead Search Retention & Reach
 - Nataliya Medvedeva — Head of SEO
+- Paul Befort — Teamlead User Experience Design
+- Surabhi Shinde — Engineering Manager
+- Theresa Teeuwen — Teamlead Product Management
+- Akriti Stachelek — Head of Tech Search and Mo… (Titel im Screenshot gekürzt)
+- Sevilay Autio — Senior User Experience Desig… (Titel im Screenshot gekürzt; im Screenshot als abwesend markiert)
+
+### Team unter Anna Befort
+
+- Anna Dahm — Junior Product Manager
+- Francesca Caria — Product Manager
+- Inggita Arundina — Senior Product Manager
+
+### SEO unter Nataliya Medvedeva
+
 - Alessandra Olianti — Senior SEO Manager
+- Christine Sudbrink — Senior SEO Manager
+- Jasmin Beer — Senior SEO Manager
 - Lara Weber — SEO Manager
+- Levy Riemer — Working Student
+- Philipp Nguyen — Working Student
+- Viktoria Riffel — Senior SEO Manager
+- Zusätzlich ist im Organigramm eine offene / placeholderartige Position `P-5140 Mandatory inter...` sichtbar.
+
+### UX unter Paul Befort
+
+- Anmol Chowdhary — Senior User Experience Desig… (Titel im Screenshot gekürzt)
+- Christopher Stüberitz — Senior User Experience Desig… (Titel im Screenshot gekürzt)
+- Christoph Hemprich — Senior User Experience Rese… (Titel im Screenshot gekürzt)
+- Sarayu Narasimhan — Senior User Experience Desig… (Titel im Screenshot gekürzt)
+
+### Product Management unter Theresa Teeuwen
+
+- Cameron Borrett — Senior Product Manager
+- Harriet Blake — Product Manager
+
+### Engineering unter Surabhi Shinde
+
+- Jithu Mohandas — Engineering Manager
+- Meghna Singh — Senior Software Engineer
+- Paul Kujawa — Engineering Manager
+- Abelardo Marquez Gonz… — Senior Software Engineer (Name im Screenshot gekürzt)
+- Eric Ihrke — Senior Software Developer
+- Eric Schumann — Senior Software Engineer
+- Francesco Noya — Senior Software Engineer
+- Iuliia Khazieva — Software Engineer
+- Jan Gaedicke — Tech Lead
+- Nishant Srivastava — Tech Lead
+- Pooja Malhotra — Software Engineer
+- Sebastian Stiehl — Tech Lead
+
+### Geplanter / vorgeschlagener Reorg-Kontext für Dominik
+
+- Matthias hat am 21.09.2026 angekündigt, Dominik im Zuge einer bevorstehenden Reorganisation in seine Organisation holen zu wollen.
+- Die konkrete zukünftige Struktur ist noch nicht bestätigt.
+- Matthias erwartet aktuell, dass Dominik nicht direkt an ihn berichtet, sondern an Nataliya Medvedeva.
+- Dominik soll dabei als Fachlead arbeiten und nicht disziplinarisch Teil von Nataliyas Team werden.
+- Für Editorial Lighthouse erwartet Matthias, dass Dominik das Projekt führt und dabei Unterstützung aus Matthias' Organisation erhält.
+- Bis zur formalen Bestätigung bleibt dies ein vorgeschlagener Zielzustand; die heutige Organigramm-Struktur dient vor allem als Orientierung für die voraussichtlich relevanten Personen und Teams.
 
 ## Pflegehinweis
 Nur bestätigte, aktuell relevante Personen und Teams aufnehmen. Änderungen mit Datum ergänzen.
