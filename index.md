@@ -30,6 +30,7 @@ The two pillars are Dominik's personal working and steering model. Projects can 
 - [PR Intelligence Hub](projects/pr-intelligence-hub.md)
 - [Content Marketing Agent](projects/content-marketing-agent.md)
 - [Coupa AI Support](projects/coupa-ai-support.md)
+- [Editorial Lighthouse](projects/editorial-lighthouse.md)
 
 ### AI Creative Operations
 
