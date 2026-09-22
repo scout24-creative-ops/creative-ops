@@ -5,7 +5,7 @@
 - [ ] Complete LP Builder migration-readiness capabilities
   - Area: Landing Page Builder
   - Status: Open
-  - Next step: Define the user-facing LP Builder capability catalogue by adding selected Design Library elements to the Module Library (starting with buttons plus standalone headline/body-text capabilities), while keeping technical primitives such as spacing in the Building Policy; then resolve the remaining pending module-specific Building Policy decisions.
+  - Next step: Add the confirmed user-facing Design Library elements to the Module Library: Rounded Buttons, Mobile Full Width Button, Chevron Link, Colors & Surfaces (Accent Colors, Neutrals, Text), Lists, and representative 24 px / 48 px Icons with Frontify/name guidance. Then define how standalone headline/body-text capabilities should be represented, while keeping technical primitives such as spacing in the Building Policy.
   - Context: The Builder is already usable for migration, but these remaining authoring/policy gaps should be closed so migration pages do not require ad-hoc HTML or ambiguous module behavior.
   - Source: Migration backlog cleanup confirmed on 2026-09-18
 
