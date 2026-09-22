@@ -170,6 +170,7 @@ Dominik should remain focused on reusable Builder capability and quality guardra
 
 - Treat the LP Builder Module Library as the user-facing capability catalogue: include full modules plus selected reusable elements that users can intentionally place or configure; exclude technical layout primitives such as spacing.
 - The current Contentful Module Library page is a stored `lpBuilder` HTML snapshot in `htmlSourcePayload`, not a dynamic sync from the repository. Important distinction: `gpt-package/component-library.html` is the machine-facing capability library used by the LP Builder/GPT, not the visual user-facing Module Library page. The visual user-facing library is a separate HTML artifact/page and must not be edited by changing the GPT package capability source unless that is intentionally required.
+- The 95.786-byte visual Module Library snapshot cannot currently be transferred safely through the GPT Action in byte-exact `LOCKED_IMPORT` mode because the Action only accepts a full string and provides no file/attachment transport. The GPT correctly refused to reserialize/approximate the payload. A deterministic file-to-Contentful transport path is required for this artifact.
 
 - Keep AEM and Contentful as separate technical concepts; AEM is a source/reference, not the Contentful runtime path.
 - Use `component-library.html` as the productive capability SSOT.
