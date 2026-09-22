@@ -5,7 +5,7 @@
 - [ ] Complete LP Builder migration-readiness capabilities
   - Area: Landing Page Builder
   - Status: Open
-  - Next step: Add supported free-placement headline and body-text building blocks/rules and mirror them visually in the Component Library; resolve the remaining pending module-specific Building Policy decisions; continue validating reusable migration modules only where they are genuinely needed.
+  - Next step: Define the user-facing LP Builder capability catalogue by adding selected Design Library elements to the Module Library (starting with buttons plus standalone headline/body-text capabilities), while keeping technical primitives such as spacing in the Building Policy; then resolve the remaining pending module-specific Building Policy decisions.
   - Context: The Builder is already usable for migration, but these remaining authoring/policy gaps should be closed so migration pages do not require ad-hoc HTML or ambiguous module behavior.
   - Source: Migration backlog cleanup confirmed on 2026-09-18
 
