@@ -8,11 +8,11 @@ Enable Marketing teams to create landing pages faster and more independently thr
 
 The production/AEM Builder remains operational, while `LP Builder – Contentful` is the maintained Contentful-enabled Builder for migration and future product development.
 
-The Custom GPT baseline passed the reusable three-prompt acceptance suite on 2026-09-17 before the latest migration-policy refactor. That run validated Blueprint creation, complex single-update editing and the full publish/unpublish/archive/unarchive/delete lifecycle without retry or Action, JSON, serialization, auth or validation errors. On 2026-09-21, after re-entering the GPT Action client ID and secret, a separate one-prompt end-to-end smoke test also passed CREATE, draft verification, publish, unpublish, archive, unarchive, republish, reunpublish and delete without technical error, confirming that Action authentication and the core lifecycle path are working again.
+The current Custom GPT configuration passed the reusable three-part regression suite again on 2026-09-22 after the latest HTML-replace, Action-contract and schema-alignment changes. Blueprint CREATE, complex single-update editing and the full publish/unpublish/archive/unarchive/delete lifecycle all passed. The lifecycle test required one test-prompt correction: the Action-returned Production URL is authoritative and must not be treated as failed merely because a separate browser/tool cannot access the Pro host.
 
-The local GPT package has since been extended with the new migration model. `migration-mode.md` replaces `source-duplicate-mode.md` and defines exactly two migration cases: `LOCKED_IMPORT` for exact Contentful-ready HTML import and `CRAWL_REBUILD` for rebuilding one or more source pages from crawler/migration evidence. The local package/runtime contract tests pass 50/50. The updated package still needs to be applied to the actual Custom GPT and the acceptance suite rerun before this changed configuration is treated as the new green GPT baseline.
+The GPT package has since been extended with the new migration model. `migration-mode.md` replaces `source-duplicate-mode.md` and defines exactly two migration cases: `LOCKED_IMPORT` for exact Contentful-ready HTML import and `CRAWL_REBUILD` for rebuilding one or more source pages from crawler/migration evidence. The package has also been aligned to the current live OpenAPI schema and the direct Full HTML Replace flow. The current configuration now has a fresh green live regression baseline from 2026-09-22.
 
-The previously blocking renderer issue is resolved: the shared Bridge CSS loads centrally again. The Action flow was stable in the last real GPT acceptance run after the updated OpenAI schema configuration. Large read-back at roughly 50 KB remains a separate capability that should still be retested explicitly.
+The previously blocking renderer issue is resolved: the shared Bridge CSS loads centrally again. The Action flow is stable in the latest real GPT acceptance run. Large page read-back remains size-limited in practice, but direct Full HTML Replace by explicit `entryId` is now the supported path when a full pre-read is not possible.
 
 The reusable regression suite is maintained in [landing-page-builder-regression-suite.md](landing-page-builder-regression-suite.md).
 
@@ -196,13 +196,14 @@ Dominik should remain focused on reusable Builder capability and quality guardra
 
 ## Next Steps
 
-1. Apply the updated GPT package with `migration-mode.md` to the actual Custom GPT and rerun the documented three-prompt regression suite.
-2. Add/execute migration-specific acceptance cases for `LOCKED_IMPORT`, a normal single-page `CRAWL_REBUILD`, a Crawl Rebuild with at least one migration placeholder, and a multi-page Crawl Rebuild.
+1. Add/execute migration-specific acceptance cases for `LOCKED_IMPORT`, a normal single-page `CRAWL_REBUILD`, a Crawl Rebuild with at least one migration placeholder, and a multi-page Crawl Rebuild.
 3. Retest large `getLpBuilderPage` read-back at roughly the same scale as the validated ~50 KB write case.
 4. Use the emerging Migration Crawler as the standardized source-intake layer for future AEM migration work once its MVP is available.
 5. Keep final asset delivery AEM-independent by resolving migrated assets to the new persistent storage URL before publish readiness.
 
 ## Last Confirmed
+
+2026-09-22: The current Custom GPT passed the full three-part regression suite after the latest HTML-replace and Action/schema changes. Blueprint CREATE, combined EDIT and the complete lifecycle through final deletion all passed. The only interruption was a test-prompt issue where the GPT tried to open the returned Pro URL with an inaccessible browser/tool; the suite was corrected so the Action-returned Production URL is sufficient lifecycle evidence.
 
 2026-09-21: After re-entering the GPT Action client ID and secret, a fresh one-prompt end-to-end smoke test passed CREATE, draft verification and the complete lifecycle through final deletion without technical error. A separate combined EDIT regression test then also passed in one update mutation, covering text and CTA changes, module insertion/replacement/reordering, slug and Main Title changes, spacing recalculation, explicit-spacing integrity, and Bridge/Runtime exclusion. This confirms that Action authentication, the core lifecycle path, and the complex full-page update path are currently functional again.
 
