@@ -164,6 +164,8 @@ Dominik should remain focused on reusable Builder capability and quality guardra
 
 ## Confirmed Direction and Decisions
 
+- Initial user-facing element scope for the Module Library: Rounded Buttons, Mobile Full Width Button, Chevron Link, Colors & Surfaces (Accent Colors, Neutrals, Text), Lists, and Icons. Icons only need representative 24 px and 48 px examples plus a note that the actual icon is selected in Frontify and passed to the LP Builder by icon name. Text/headline elements belong in the library as well, but their exact presentation/variant model is still open.
+
 - Treat the LP Builder Module Library as the user-facing capability catalogue: include full modules plus selected reusable elements that users can intentionally place or configure; exclude technical layout primitives such as spacing.
 
 - Keep AEM and Contentful as separate technical concepts; AEM is a source/reference, not the Contentful runtime path.
