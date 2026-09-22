@@ -332,3 +332,17 @@ Edited slug: `/lpb-regression-test-1-edited`
 Final state: deleted after successful lifecycle test
 
 The local package was changed later on 2026-09-17 to replace `source-duplicate-mode.md` with `migration-mode.md`. Local package/runtime tests pass 50/50, but the three-prompt Custom GPT suite and migration-specific acceptance cases must be rerun after the updated package is applied before a new green live baseline is recorded.
+## Confirmed baseline run — 2026-09-22
+
+The current Custom GPT configuration passed the full three-part regression suite after the latest HTML replace, Action-contract and schema-alignment changes.
+
+- Blueprint CREATE: passed
+- Combined EDIT stress test: passed in one update mutation
+- Lifecycle: publish, unpublish, archive, unarchive, republish, reunpublish and delete all passed
+- The first lifecycle attempt stopped only because the GPT tried to open the returned Pro URL with a tool that could not access that host; after correcting the test so the Action-returned Production URL is authoritative, the remaining lifecycle steps completed successfully
+- No Action, auth, validation, serialization or lifecycle mutation error occurred
+
+Test entry: `5bVjhwjIgVog5xzf2zz5uC`  
+Initial slug: `/lpb-regression-test-20260922-2`  
+Edited slug: `/lpb-regression-test-20260922-2-edited`  
+Final state: deleted after successful lifecycle test
