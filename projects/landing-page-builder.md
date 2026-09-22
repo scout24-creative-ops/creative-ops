@@ -43,7 +43,7 @@ Action schema:
 
 - Mukhammadjon's current OpenAPI schema remains the read-only SSOT and should not be modified as part of GPT package work.
 
-The package deliberately separates user capabilities, build policy and migration behavior:
+The package deliberately separates standard Builder composition, full HTML replacement and migration behavior:
 
 - `component-library.html` is the canonical user-capability source.
 - `building-policy.md` defines how pages are composed, edited and spaced.
@@ -170,7 +170,7 @@ Dominik should remain focused on reusable Builder capability and quality guardra
 
 - Treat the LP Builder Module Library as the user-facing capability catalogue: include full modules plus selected reusable elements that users can intentionally place or configure; exclude technical layout primitives such as spacing.
 - The current Contentful Module Library page is a stored `lpBuilder` HTML snapshot in `htmlSourcePayload`, not a dynamic sync from the repository. Important distinction: `gpt-package/component-library.html` is the machine-facing capability library used by the LP Builder/GPT, not the visual user-facing Module Library page. The visual user-facing library is a separate HTML artifact/page and must not be edited by changing the GPT package capability source unless that is intentionally required.
-- The earlier assumption that the 95.786-byte visual Module Library required a separate deterministic file-transfer mechanism was too strong. Codex analysis showed the size is not the blocker; the current GPT policy blocks the normal Library snapshot update because standard updates are now forced through Building Policy validation. Earlier rules allowed complete HTML replacement more broadly. The smallest likely fix is a narrowly scoped normal Library snapshot update path for the known Module/Design Library pages, bypassing standard landing-page composition validation while retaining draft-only and safety checks.
+- Codex confirmed that the lost capability was generic complete-HTML replacement, not a Library-specific exception. The package now defines an explicit `FULL_HTML_REPLACEMENT` path for complete user-supplied HTML on a concrete Contentful entry. This path bypasses normal Builder composition validation, preserves allowed page-specific CSS, keeps read-before-update and draft-only safety, and does not auto-publish. Standard Builder updates still require Component Library + Building Policy; `LOCKED_IMPORT` remains the stricter byte-exact Exact-Rebuild path. Local validation passes 52/52 tests.
 
 - Keep AEM and Contentful as separate technical concepts; AEM is a source/reference, not the Contentful runtime path.
 - Use `component-library.html` as the productive capability SSOT.
