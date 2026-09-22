@@ -239,7 +239,8 @@ Bei irgendeinem Fehler: STOP. Kein Retry.
 1. PUBLISH
    - Page veröffentlichen.
    - Prüfen, dass Status `published` ist.
-   - Production-/Pro-URL prüfen und zurückgeben.
+   - Production-/Pro-URL aus dem Action-Ergebnis zurückgeben.
+   - Nicht versuchen, die URL mit einem separaten Web-/Browser-Tool zu öffnen. Wenn die URL dort nicht zugänglich ist, ist das kein Lifecycle-Fehler.
 
 2. UNPUBLISH
    - Page wieder deaktivieren/unpublishen.
