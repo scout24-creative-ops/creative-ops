@@ -20,7 +20,7 @@ The reusable regression suite is maintained in [landing-page-builder-regression-
 
 The current migration-focused backlog includes three explicit Builder capabilities / policy areas:
 
-- **Free headline and body text placement:** users need a supported way to place standalone headlines and body-copy blocks where needed. This must be defined as a Builder rule and represented visually in the Component Library so the GPT and human reviewers share the same contract.
+- **User-facing capability library:** the LP Builder Module Library should represent everything future users may intentionally use in pages, not only full Page Modules. This includes selected reusable Design Library elements such as buttons and standalone headline/body-text capabilities. Technical primitives and implementation-only rules such as spacing remain outside the user-facing library and continue to be governed by the Building Policy / design system.
 - **SEO / anchor-navigation module:** the previously investigated pattern uses a sticky sidebar for anchor navigation. The module still needs to be built, but whether it is required immediately for the current migration wave is not yet confirmed; Ulrike should clarify this from the URL/page scope.
 - **Pending module-specific policies:** several modules still need explicit policy decisions in the Building Policy. These decisions should be completed as part of migration readiness rather than relying permanently on the generic fallback policy.
 
@@ -163,6 +163,8 @@ Codex is the preferred implementation surface for local contracts, libraries, ru
 Dominik should remain focused on reusable Builder capability and quality guardrails rather than becoming the default page-migration operator.
 
 ## Confirmed Direction and Decisions
+
+- Treat the LP Builder Module Library as the user-facing capability catalogue: include full modules plus selected reusable elements that users can intentionally place or configure; exclude technical layout primitives such as spacing.
 
 - Keep AEM and Contentful as separate technical concepts; AEM is a source/reference, not the Contentful runtime path.
 - Use `component-library.html` as the productive capability SSOT.
