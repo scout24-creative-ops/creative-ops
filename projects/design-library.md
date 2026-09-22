@@ -37,6 +37,8 @@ He retains product and workflow responsibility. Any further implementation suppo
 
 ## Decisions
 
+- Use the LP Builder Module Library as the user-facing catalogue of available Builder capabilities: publish full modules plus selected reusable elements from the Design Library (for example buttons and text/headline elements), while keeping technical-only primitives such as spacing out of the user-facing catalogue.
+
 - Prefer reuse of existing modules and patterns before creating new ones.
 - Keep shared builder knowledge and assets centrally discoverable.
 - Treat `scout24-creative-ops/design-system` as the active source.
