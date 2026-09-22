@@ -37,6 +37,8 @@ He retains product and workflow responsibility. Any further implementation suppo
 
 ## Decisions
 
+- First Design Library elements to surface in the LP Builder Module Library: Rounded Buttons, Mobile Full Width Button, Chevron Link, Colors & Surfaces (Accent Colors, Neutrals, Text), Lists, and Icons. For Icons, show representative 24 px and 48 px examples and direct users to Frontify for choosing the icon name. Text/headline capabilities are also in scope, but their exact library structure remains to be defined.
+
 - Use the LP Builder Module Library as the user-facing catalogue of available Builder capabilities: publish full modules plus selected reusable elements from the Design Library (for example buttons and text/headline elements), while keeping technical-only primitives such as spacing out of the user-facing catalogue.
 
 - Prefer reuse of existing modules and patterns before creating new ones.
