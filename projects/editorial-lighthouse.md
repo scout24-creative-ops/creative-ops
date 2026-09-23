@@ -10,6 +10,7 @@ The initiative is based on the `Scaling Editorial at IS24` concept shared by Nat
 
 - The initiative has moved from a provisional support request into an active project.
 - On 2026-09-21 Matthias Brandstetter confirmed that Dominik is expected to lead the Editorial Lighthouse project and receive support from colleagues in Matthias's organization.
+- On 2026-09-23 Dominik confirmed that Matthias also asked him to move into Matthias's organization and that Dominik accepted. Matthias indicated that Dominik would retain his Fachlead role and report to Nataliya Medvedeva rather than directly to Matthias. The formal effective date and organizational implementation are not yet confirmed.
 - The detailed project scope, first delivery milestone, staffing model and implementation sequence are still to be clarified.
 - The source deck describes two broad operating models for the pilot: a more human-led AI-powered editorial team and a more agentic production model with a smaller internal ownership layer plus external editorial quality control.
 - The agentic model is the most directly relevant starting point for Dominik's AI/Creative Operations role, but no final operating-model decision is documented yet.
@@ -89,4 +90,4 @@ The deck also proposes an AI-supported production chain consisting of:
 
 ## Last Confirmed
 
-Project classification and Dominik's project-lead role confirmed on 2026-09-21.
+Project-lead role and organizational direction confirmed on 2026-09-23; formal effective date of the org move remains open.
