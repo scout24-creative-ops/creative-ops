@@ -8,6 +8,7 @@ The initiative is based on the `Scaling Editorial at IS24` concept shared by Nat
 
 ## Current Status
 
+- At Scout24, a "Lighthouse" is a high-priority cross-team initiative that starts with a company cycle; multiple Lighthouses can run in parallel. Editorial Lighthouse is therefore the priority-project classification, not the name of the editorial operating model itself.
 - The initiative has moved from a provisional support request into an active project.
 - On 2026-09-21 Matthias Brandstetter confirmed that Dominik is expected to lead the Editorial Lighthouse project and receive support from colleagues in Matthias's organization.
 - On 2026-09-23 Dominik confirmed that Matthias also asked him to move into Matthias's organization and that Dominik accepted. Matthias indicated that Dominik would retain his Fachlead role and report to Nataliya Medvedeva rather than directly to Matthias. The formal effective date and organizational implementation are not yet confirmed.
