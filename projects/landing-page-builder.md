@@ -12,7 +12,7 @@ The current Custom GPT configuration passed the reusable three-part regression s
 
 The GPT package has since been extended with the new migration model. `migration-mode.md` replaces `source-duplicate-mode.md` and defines exactly two migration cases: `LOCKED_IMPORT` for exact Contentful-ready HTML import and `CRAWL_REBUILD` for rebuilding one or more source pages from crawler/migration evidence. The package has also been aligned to the current live OpenAPI schema and the direct Full HTML Replace flow. The current configuration now has a fresh green live regression baseline from 2026-09-22.
 
-The previously blocking renderer issue is resolved: the shared Bridge CSS loads centrally again. The Action flow is stable in the latest real GPT acceptance run. Large page read-back remains size-limited in practice, but direct Full HTML Replace by explicit `entryId` is now the supported path when a full pre-read is not possible.
+The previously blocking renderer issue is resolved: the shared Bridge CSS loads centrally again. The Action flow is stable in the latest real GPT acceptance run. Large HTML transfer/read-back is currently inconsistent rather than governed by a clear hard threshold: a fresh 74,431-byte HTML Import was stored and read back losslessly, while two consecutive ~120 KB Full HTML Replace attempts stored only ~15.8 KB / ~15.7 KB despite successful write responses; earlier ~118–123 KB writes had succeeded. Direct Full HTML Replace by explicit `entryId` remains the supported path, but the transport should be treated as unreliable at larger payloads until the Action/GPT path is investigated server-side.
 
 The reusable regression suite is maintained in [landing-page-builder-regression-suite.md](landing-page-builder-regression-suite.md).
 
