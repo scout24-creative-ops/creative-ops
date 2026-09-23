@@ -2,6 +2,13 @@
 
 ## Open
 
+- [ ] Lead Editorial Lighthouse project setup
+  - Area: Editorial Lighthouse
+  - Status: Open, newly confirmed project ownership
+  - Next step: Use the first alignment sessions to clarify the Lighthouse mission, first measurable outcome, scope, contributors and delivery model, then define the smallest end-to-end prototype.
+  - Context: Matthias asked Dominik to lead the project and has now also offered a move into his organization, which Dominik accepted. The planned reporting line is to Nataliya while Dominik retains his Fachlead role; formal effective date is not yet confirmed.
+  - Source: Matthias alignment confirmed on 2026-09-23
+
 - [ ] Complete LP Builder migration-readiness capabilities
   - Area: Landing Page Builder
   - Status: Open
