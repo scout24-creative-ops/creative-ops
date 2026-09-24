@@ -4,17 +4,17 @@
 
 - [ ] Lead Editorial Lighthouse project setup
   - Area: Editorial Lighthouse
-  - Status: Open, overall ownership confirmed
-  - Next step: Align the first measurable outcome and MVP with Viktoria and Nataliya, then define the first end-to-end workflow, implementation work packages and required contributors.
-  - Context: Dominik owns Editorial Lighthouse overall, including the setup, AI workflow/agent system and coordination of implementation. Viktoria owns the SEO/editorial side, including content logic and quality. Dominik should lead the system rather than personally build every Agent.
-  - Source: Ownership split confirmed with Viktoria on 2026-09-24 after her alignment with Nataliya
+  - Status: Open, execution setup and pre-vacation handoff now time-critical
+  - Next step: Before 2026-10-02, absorb Viktoria's News/SEO context, finalize the target AI-factory view plus reduced MVP, define priority topics/formats and an initial 4–6 week editorial calendar/publishing cadence, and prepare 2–3 management-ready slides. Align with Bea on Monday and prepare the larger mission kickoff for Wednesday.
+  - Context: Dominik owns News strategy, editorial calendar, experimentation, topic discovery/use of IS24 data and the AI content factory/human-review workflow. Viktoria owns SEO quality/discoverability and supports News; Bea owns engineering delivery. The first C3 milestone is proving the end-to-end machine works, not maximizing raw article count.
+  - Source: Nataliya/Viktoria/Dominik kickoff on 2026-09-24
 
 - [ ] Support Viktoria on the broader Contentful Migration
   - Area: Contentful Migration
-  - Status: Open, support role confirmed
-  - Next step: Align with Viktoria on how the existing LP Builder and Marketing migration work feed into the broader migration plan, then agree the next technical steps and handoffs.
-  - Context: Viktoria leads the broader Contentful Migration, which includes areas beyond Dominik's previous Marketing scope. Dominik supports through the LP Builder and reusable migration capabilities; he does not own the overall migration.
-  - Source: Ownership split confirmed with Viktoria on 2026-09-24
+  - Status: Open, support role confirmed; knowledge transfer and delivery model clarified
+  - Next step: Give Viktoria a detailed handover of the current Marketing migration, LP Builder and AI-supported migration approach before vacation; then align with Bea on how engineering delivery and reusable tooling support the broader migration.
+  - Context: Viktoria owns migration project management, timeline, stakeholder coordination and escalation. Bea owns engineering delivery and steers engineers. Dominik provides AI-powered migration support/tooling and should work through Bea rather than becoming the operational engineering coordinator or manual migration owner.
+  - Source: Nataliya/Viktoria/Dominik kickoff on 2026-09-24
 
 - [ ] Finish the Contentful LP Builder Design Library
   - Area: Design Library and Builder Library
