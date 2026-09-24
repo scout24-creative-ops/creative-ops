@@ -2,9 +2,9 @@
 
 ## Purpose
 
-Migrate existing Marketing landing pages from AEM into the new Contentful setup through an AI-supported, repeatable workflow rather than rebuilding pages manually one by one.
+Support the broader migration from AEM into the new Contentful setup through repeatable workflows and reusable tooling. The overall migration extends beyond the Marketing pages Dominik has worked on so far and includes additional areas outside his previous responsibility.
 
-`Contentful Migration` covers migration scope, page/source preparation, execution, QA/handoff, migration-specific asset preparation and dependencies. Persistent Marketing asset storage and delivery are maintained separately in the [Marketing Asset Library](marketing-asset-library.md). The [Landing Page Builder](landing-page-builder.md) is the main authoring/execution tool and remains a separate maintained project.
+Within this repository, `Contentful Migration` tracks Dominik's contribution to that broader initiative: the Marketing migration foundation, Landing Page Builder support, reusable migration rules/tooling, and technical next-step alignment with the migration lead. Persistent Marketing asset storage and delivery are maintained separately in the [Marketing Asset Library](marketing-asset-library.md). The [Landing Page Builder](landing-page-builder.md) remains a separate maintained project and a key support capability for migration work.
 
 ## Migration Source References
 
@@ -17,6 +17,9 @@ Migrate existing Marketing landing pages from AEM into the new Contentful setup 
 The B2B workbook remains the broad source inventory. The Wiki working list is intentionally narrower and contains the strategically selected migration scope.
 
 ## Current Status
+
+- As of 2026-09-24, Viktoria Riffel leads the broader Contentful Migration. Dominik supports her rather than owning the overall migration. His main contribution is the Landing Page Builder, migration tooling/rules and alignment of the next technical steps.
+- The broader migration scope includes additional areas beyond the Marketing scope Dominik has handled so far. Existing Marketing migration work remains relevant and should continue as a supported workstream rather than being stopped because of Dominik's organizational move.
 
 The B2B Anwenderhandbuch remains the first end-to-end migration pilot and the page-migration phase is materially complete:
 
@@ -130,11 +133,15 @@ This model should inform the reusable crawler, but the new crawler should not be
 
 ## Dominik's Role
 
-Dominik owns migration planning, orchestration, migration rules and migration-focused preparation of the Landing Page Builder. His highest-leverage role is to define reusable migration contracts, requirements and quality guardrails rather than operate repeated crawls or page-by-page migration himself.
+Dominik does not own the overall Contentful Migration. Viktoria Riffel leads the broader migration, including areas beyond Marketing.
+
+Dominik supports the migration through the Landing Page Builder and the reusable migration capabilities he has already developed. His focus is to keep the Marketing migration foundation moving, define reusable technical contracts/rules where needed, support migration tooling and align the next technical steps with Viktoria and relevant engineering contributors rather than coordinate the full migration portfolio himself.
 
 The working-student crawler is intended to move repeatable source capture and asset preparation into a reusable system that others can run with Codex.
 
 ## Stakeholders and Dependencies
+
+- Viktoria Riffel — overall Contentful Migration lead; Dominik supports through LP Builder and technical/migration capabilities
 
 - Mukhammadjon / Core Frontend: LP Builder platform and Contentful Action/renderer behavior
 - Beatrice: Contentful/platform coordination and the link to the existing CMS AWS account
@@ -169,4 +176,4 @@ Mitch is not part of Contentful Migration and should not be suggested for migrat
 
 ## Last Confirmed
 
-2026-09-18: The reusable Migration Crawler direction is now linked to active platform work. Stefan created `LCMS-7518` for asset discovery/download and confirmed that DAM renditions can be resolved to originals. Bea had already asked Jonas to review Dominik's broader Migration Crawler briefing; Jonas is on vacation next week, and Bea will check for handover material. If no urgent AEM work intervenes, Maciej can take over after his current task. Dominik will wait for Bea's next-week follow-up and will not start a parallel crawler implementation. Temporary AEM/static asset URLs may remain in migration drafts as a transition state until the persistent S3/scaler path is ready.
+2026-09-24: Viktoria Riffel is confirmed as lead for the broader Contentful Migration; Dominik supports through the Landing Page Builder and reusable migration capabilities. The migration extends beyond Dominik's previous Marketing scope. Prior technical state remains: the reusable Migration Crawler direction is linked to active platform work. Stefan created `LCMS-7518` for asset discovery/download and confirmed that DAM renditions can be resolved to originals. Bea had already asked Jonas to review Dominik's broader Migration Crawler briefing; Jonas is on vacation next week, and Bea will check for handover material. If no urgent AEM work intervenes, Maciej can take over after his current task. Dominik will wait for Bea's next-week follow-up and will not start a parallel crawler implementation. Temporary AEM/static asset URLs may remain in migration drafts as a transition state until the persistent S3/scaler path is ready.
