@@ -5,7 +5,7 @@
 - [ ] Lead Editorial Lighthouse project setup
   - Area: Editorial Lighthouse
   - Status: Open, execution setup and pre-vacation handoff now time-critical
-  - Next step: Before 2026-10-02, absorb Viktoria's News/SEO context, finalize the target AI-factory view plus reduced MVP, define priority topics/formats and an initial 4–6 week editorial calendar/publishing cadence, and prepare 2–3 management-ready slides. Align with Bea on Monday and prepare the larger mission kickoff for Wednesday.
+  - Next step: Before 2026-10-02, absorb Viktoria's News/SEO context; map the first topic fields to available data sources, relevant metrics/signals and example story patterns; finalize the target AI-factory view plus reduced Radar → Brain MVP; then define priority topics/formats and an initial 4–6 week editorial calendar/publishing cadence and prepare 2–3 management-ready slides. Align with Bea on Monday and prepare the larger mission kickoff for Wednesday.
   - Context: Dominik owns News strategy, editorial calendar, experimentation, topic discovery/use of IS24 data and the AI content factory/human-review workflow. Viktoria owns SEO quality/discoverability and supports News; Bea owns engineering delivery. The first C3 milestone is proving the end-to-end machine works, not maximizing raw article count.
   - Source: Nataliya/Viktoria/Dominik kickoff on 2026-09-24
 
