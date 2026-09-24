@@ -9,12 +9,12 @@
   - Context: Matthias asked Dominik to lead the project and has now also offered a move into his organization, which Dominik accepted. The planned reporting line is to Nataliya while Dominik retains his Fachlead role; formal effective date is not yet confirmed.
   - Source: Matthias alignment confirmed on 2026-09-23
 
-- [ ] Complete LP Builder migration-readiness capabilities
-  - Area: Landing Page Builder
+- [ ] Finish the Contentful LP Builder Design Library
+  - Area: Design Library and Builder Library
   - Status: Open
-  - Next step: First add the unambiguous user-facing Design Library elements to the Module Library: Rounded Buttons, Mobile Full Width Button, Chevron Link, Colors & Surfaces (Accent Colors, Neutrals, Text), Lists, and representative 24 px / 48 px Icons with Frontify/name guidance. In parallel, define the typography contract: all supported headline styles by name, both body-text sizes, headline removal/size changes, free standalone headline/body placement, and list usage wherever body text is allowed.
-  - Context: The Builder is already usable for migration, but these remaining authoring/policy gaps should be closed so migration pages do not require ad-hoc HTML or ambiguous module behavior.
-  - Source: Migration backlog cleanup confirmed on 2026-09-18
+  - Next step: Populate the remaining LP Builder categories: Action Tiles, Team Professional, Accordion, Benefits, Service Tiles, Tables and Sticky Footer; then continue live visual QA for spacing/layout consistency.
+  - Context: The separate GitHub-hosted Contentful Design Library is live and protected from the unchanged AEM library. Heros, Teaser, Process, Text & Lists, Buttons & Links, Video, Counter, Callouts and Colors are already populated, and the typography system has been fixed centrally.
+  - Source: Live Contentful Design Library iteration confirmed on 2026-09-23
 
 - [ ] Set up B2B automation discovery with Juliane
   - Area: E-Mail Automation Professional
@@ -63,13 +63,13 @@
   - Context: Stefan created Linear ticket `LCMS-7518` for the focused asset-discovery/download component and estimates roughly one to two days of implementation. The broader LP Builder requirements remain in Dominik's Migration Crawler briefing. Temporary AEM/static asset URLs can be used in migration drafts as a transition state until persistent asset delivery is ready.
   - Source: Slack alignment with Stefan and Beatrice on 2026-09-18
 
-- [ ] Retest large LP Builder read-back at migration scale
+- [ ] Resolve unreliable large LP Builder HTML transfer
   - Area: Landing Page Builder
-  - Status: Waiting, central Bridge loading and the current Action flow are stable; large read-back remains the isolated scale check
-  - Waiting for: A suitable platform test/fix path for `getLpBuilderPage` at roughly 50 KB.
-  - Dominik's next step: Retest full `getLpBuilderPage` read-back with a migration-scale page when the platform path is ready and verify lossless full HTML retrieval.
-  - Context: The central Bridge CSS now loads correctly again, and the 2026-09-17 three-prompt GPT regression suite passed CREATE, complex full-HTML EDIT and the full lifecycle without Action/auth errors. The previous Bridge and intermittent-auth blockers are therefore no longer active in the current baseline. The earlier ~50 KB `ResponseTooLargeError` was not covered by this smaller regression entry and remains a separate explicit check.
-  - Source: Current GPT regression baseline and Mukhammadjon fixes confirmed on 2026-09-17
+  - Status: Waiting for Mukhammadjon / FCT-1938 investigation
+  - Waiting for: Investigation of intermittent truncation on larger Full HTML Replace payloads.
+  - Dominik's next step: Continue using smaller/split library payloads; retest a ~120 KB Full HTML Replace only after FCT-1938 has a fix or clear explanation.
+  - Context: Two ~120 KB replacements stored only ~15.8 KB / ~15.7 KB despite successful write responses, while a fresh 74,431-byte import and earlier ~90 KB and ~118–123 KB cases succeeded. This is not behaving like a stable hard size threshold.
+  - Source: FCT-1938 created and assigned to Mukhammadjon on 2026-09-23
 
 - [ ] Set up Marketing Asset Library S3 pilot
   - Area: Marketing Asset Library
