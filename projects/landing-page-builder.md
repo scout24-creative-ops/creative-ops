@@ -12,7 +12,7 @@ The current Custom GPT configuration passed the reusable three-part regression s
 
 The GPT package has since been extended with the new migration model. `migration-mode.md` replaces `source-duplicate-mode.md` and defines exactly two migration cases: `LOCKED_IMPORT` for exact Contentful-ready HTML import and `CRAWL_REBUILD` for rebuilding one or more source pages from crawler/migration evidence. The package has also been aligned to the current live OpenAPI schema and the direct Full HTML Replace flow. The current configuration now has a fresh green live regression baseline from 2026-09-22.
 
-The previously blocking renderer issue is resolved: the shared Bridge CSS loads centrally again. The Action flow is stable in the latest real GPT acceptance run. Large HTML transfer/read-back is currently inconsistent rather than governed by a clear hard threshold: a fresh 74,431-byte HTML Import was stored and read back losslessly, while two consecutive ~120 KB Full HTML Replace attempts stored only ~15.8 KB / ~15.7 KB despite successful write responses; earlier ~118–123 KB writes had succeeded. Direct Full HTML Replace by explicit `entryId` remains the supported path, but the transport should be treated as unreliable at larger payloads until the Action/GPT path is investigated server-side.
+The previously blocking renderer issue is resolved: the shared Bridge CSS loads centrally again. The Action flow is stable in the latest real GPT acceptance run. Large HTML transfer/read-back is currently inconsistent rather than governed by a clear hard threshold: a fresh 74,431-byte HTML Import was stored and read back losslessly, while two consecutive ~120 KB Full HTML Replace attempts stored only ~15.8 KB / ~15.7 KB despite successful write responses; earlier ~118–123 KB writes had succeeded. The issue is now tracked in Linear as `FCT-1938 – LP Builder: Large HTML replace can be silently truncated`, assigned to Mukhammadjon Kayumov. The current workaround is to keep visual-library payloads smaller and split them where needed.
 
 The reusable regression suite is maintained in [landing-page-builder-regression-suite.md](landing-page-builder-regression-suite.md).
 
@@ -20,7 +20,7 @@ The reusable regression suite is maintained in [landing-page-builder-regression-
 
 The current migration-focused backlog includes three explicit Builder capabilities / policy areas:
 
-- **User-facing capability library:** the LP Builder Module Library should represent everything future users may intentionally use in pages, not only full Page Modules. This includes selected reusable Design Library elements such as buttons and standalone headline/body-text capabilities. Technical primitives and implementation-only rules such as spacing remain outside the user-facing library and continue to be governed by the Building Policy / design system.
+- **User-facing capability library:** the public visual catalogue has moved to a separate GitHub-hosted Contentful Design Library rather than a single large Contentful page. It keeps LP Builder modules and user-facing reusable elements browsable without overloading one Contentful HTML payload. Technical primitives such as spacing remain outside the LP Builder module catalogue and are documented under Design Tokens.
 - **SEO / anchor-navigation module:** the previously investigated pattern uses a sticky sidebar for anchor navigation. The module still needs to be built, but whether it is required immediately for the current migration wave is not yet confirmed; Ulrike should clarify this from the URL/page scope.
 - **Pending module-specific policies:** several modules still need explicit policy decisions in the Building Policy. These decisions should be completed as part of migration readiness rather than relying permanently on the generic fallback policy.
 
@@ -196,8 +196,9 @@ Dominik should remain focused on reusable Builder capability and quality guardra
 
 ## Next Steps
 
-1. Add/execute migration-specific acceptance cases for `LOCKED_IMPORT`, a normal single-page `CRAWL_REBUILD`, a Crawl Rebuild with at least one migration placeholder, and a multi-page Crawl Rebuild.
-3. Retest large `getLpBuilderPage` read-back at roughly the same scale as the validated ~50 KB write case.
+1. Continue the public Contentful Design Library iteratively: finish the remaining LP Builder categories, then do visual QA for spacing/layout consistency.
+2. Add/execute migration-specific acceptance cases for `LOCKED_IMPORT`, a normal single-page `CRAWL_REBUILD`, a Crawl Rebuild with at least one migration placeholder, and a multi-page Crawl Rebuild.
+3. Wait for investigation of `FCT-1938` before relying again on ~120 KB Full HTML Replace payloads.
 4. Use the emerging Migration Crawler as the standardized source-intake layer for future AEM migration work once its MVP is available.
 5. Keep final asset delivery AEM-independent by resolving migrated assets to the new persistent storage URL before publish readiness.
 
