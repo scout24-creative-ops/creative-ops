@@ -118,7 +118,7 @@ Current terminology:
 - `htmlSourcePayload` = current internal Contentful storage detail
 - old Long Text `htmlSource` = legacy terminology
 
-Large writes around 50 KB were previously validated losslessly. Large full read-back at the same scale remains the main outstanding scale check.
+Write/read behavior is not governed by a single known threshold: 74,431-byte and ~90 KB test payloads were written and read back losslessly, while two ~120 KB replacements were silently truncated to ~15 KB; earlier ~118–123 KB writes had also succeeded. `FCT-1938` tracks the intermittent large-payload failure. Until it is resolved, smaller/split payloads are the working mitigation.
 
 ## Migration Mode
 
@@ -170,7 +170,7 @@ Dominik should remain focused on reusable Builder capability and quality guardra
 
 - Treat the LP Builder Module Library as the user-facing capability catalogue: include full modules plus selected reusable elements that users can intentionally place or configure; exclude technical layout primitives such as spacing.
 - The current Contentful Module Library page is a stored `lpBuilder` HTML snapshot in `htmlSourcePayload`, not a dynamic sync from the repository. Important distinction: `gpt-package/component-library.html` is the machine-facing capability library used by the LP Builder/GPT, not the visual user-facing Module Library page. The visual user-facing library is a separate HTML artifact/page and must not be edited by changing the GPT package capability source unless that is intentionally required.
-- Codex confirmed that the lost capability was generic complete-HTML replacement, not a Library-specific exception. The package now defines an explicit `FULL_HTML_REPLACEMENT` path for complete user-supplied HTML on a concrete Contentful entry. This path bypasses normal Builder composition validation, preserves allowed page-specific CSS, keeps read-before-update and draft-only safety, and does not auto-publish. Standard Builder updates still require Component Library + Building Policy; `LOCKED_IMPORT` remains the stricter byte-exact Exact-Rebuild path. Local validation passes 52/52 tests.
+- Codex confirmed that the lost capability was generic complete-HTML replacement, not a Library-specific exception. The package now supports direct full HTML replacement for complete user-supplied HTML on a concrete Contentful entry. With an explicit `entryId`, that ID is authoritative and a full pre-read is not required; normal Builder composition validation is bypassed, allowed page-specific CSS is preserved, the write stays draft-only, and no auto-publish occurs. Standard Builder updates still require Component Library + Building Policy; `LOCKED_IMPORT` remains the stricter exact-import migration case.
 
 - Keep AEM and Contentful as separate technical concepts; AEM is a source/reference, not the Contentful runtime path.
 - Use `component-library.html` as the productive capability SSOT.
@@ -188,9 +188,9 @@ Dominik should remain focused on reusable Builder capability and quality guardra
 
 ## Risks and Open Questions
 
-- The migration-mode refactor passes local tests but still needs real Custom GPT acceptance after the changed package is uploaded.
+- Migration-specific `LOCKED_IMPORT` / `CRAWL_REBUILD` behavior still needs dedicated real-page Custom GPT acceptance beyond the green generic regression suite.
 - Crawl Rebuild and its migration-placeholder behavior need dedicated real-page tests in addition to the generic three-prompt regression suite.
-- Large `getLpBuilderPage` read-back at migration-scale payload size still needs explicit retesting.
+- Large-payload reliability remains open under `FCT-1938`; retest ~120 KB replace/read-back after the platform investigation.
 - The B2B contact form remains a separate platform/migration dependency; pages can now represent this gap explicitly through the migration placeholder until the real capability exists.
 - Future asset delivery depends on the final S3/storage setup, although the migration identity model is already clear.
 
