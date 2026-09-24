@@ -14,7 +14,7 @@ Load the matching playbook section rather than applying all format rules to ever
 
 ## Colleague shorthand
 
-In Dominik's internal working chats and planning, use these one-letter shorthands for the following colleagues unless full names are needed for external-facing material:
+Dominik may use these one-letter shorthands in his own messages:
 
 - V = Viktoria Riffel
 - A = Alessandra Olianti
@@ -23,4 +23,4 @@ In Dominik's internal working chats and planning, use these one-letter shorthand
 - B = Beatrice Riedel
 - N = Nataliya Medvedeva
 
-Use the full names in formal documentation, external-facing communication, or whenever ambiguity would result.
+When replying to Dominik, use first names only for these colleagues: Viktoria, Alessandra, Matthias, Daniel, Beatrice and Nataliya. Keep full names for formal documentation or external-facing material when useful.
