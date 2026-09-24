@@ -13,9 +13,10 @@ The initiative is based on the `Scaling Editorial at IS24` concept shared by Nat
 - On 2026-09-21 Matthias Brandstetter confirmed that Dominik is expected to lead the Editorial Lighthouse project and receive support from colleagues in Matthias's organization.
 - On 2026-09-23 Dominik confirmed that Matthias also asked him to move into Matthias's organization and that Dominik accepted. Matthias indicated that Dominik would retain his Fachlead role and report to Nataliya Medvedeva rather than directly to Matthias. The formal effective date and organizational implementation are not yet confirmed.
 - On 2026-09-24, after Viktoria Riffel's follow-up alignment with Nataliya Medvedeva, the ownership split was clarified: Dominik owns Editorial Lighthouse overall. Viktoria owns the SEO/editorial side, including content logic and quality; Dominik owns the overall setup, end-to-end workflow, agent/system design, build-out and coordination of implementation support.
-- The detailed first delivery milestone, staffing model and implementation sequence still need to be clarified.
-- The source deck describes two broad operating models for the pilot: a more human-led AI-powered editorial team and a more agentic production model with a smaller internal ownership layer plus external editorial quality control.
-- The agentic model is the most directly relevant starting point for Dominik's AI/Creative Operations role, but no final operating-model decision is documented yet.
+- The project is a 12-month News/editorial pilot; C3 is the launch and proof phase rather than the full lifetime of the initiative.
+- The operating model is now explicitly agentic: Dominik owns the News strategy and AI-enabled production machine, Viktoria owns SEO quality/discoverability, external journalists provide human editorial review/authorship, and Bea owns engineering delivery for Contentful.
+- The first 4–6 week milestone is to prove a working end-to-end system and first publish→measure loop, not to optimize for raw article count immediately.
+- Management reporting will use the existing Builder Daily Call / VP round as the Lighthouse checkpoint format, expected roughly bi-weekly for about 40 minutes. The purpose is reporting plus enablement/blocker removal rather than re-approval of the Lighthouse. Nataliya may cover the first round if Dominik is already on vacation.
 
 ## Dominik's Role
 
@@ -23,13 +24,16 @@ Dominik is the confirmed overall owner / project lead for Editorial Lighthouse.
 
 His ownership centers on making the complete system work rather than personally implementing every Agent. Viktoria owns the SEO/editorial decision layer; Dominik owns the end-to-end setup, workflow, agent/system design, implementation structure and coordination of contributors. This includes:
 
-- structure the end-to-end editorial workflow;
+- own News strategy, editorial calendar, topic/format experimentation and publishing cadence;
+- own topic discovery, use of IS24 data/inventory and competitive intelligence for story development;
+- structure the end-to-end editorial workflow and AI content factory;
 - break the process into clear human and agent responsibilities;
 - define inputs, outputs, handoffs and quality guardrails for the agent chain;
 - establish human review and approval gates;
-- shape and validate a first orchestrated prototype;
-- coordinate the relevant functional and technical contributors;
-- identify where production-grade engineering support is required for scheduling, state, APIs, retries, observability or operational reliability.
+- shape and validate the first orchestrated MVP, then scale what earns evidence;
+- monitor Discover/distribution learning and use performance evidence for scale/stop decisions;
+- coordinate the relevant functional contributors while leaving engineering delivery with Bea;
+- identify where production-grade engineering support is required for orchestration and system integration.
 
 This follows Dominik's established operating model: solution leadership and quality ownership should be separated from permanent implementation and production ownership where suitable delivery capacity exists.
 
@@ -43,7 +47,7 @@ This follows Dominik's established operating model: solution leadership and qual
 - Editorial / journalist capacity — required for professional judgement, fact-checking, editing and authorship where the pilot uses AI-generated drafts
 - Engineering / platform contributors — to be involved where the prototype requires production-grade orchestration or system integration
 
-Contributor staffing and implementation ownership beyond Dominik's overall project ownership and Viktoria's SEO/editorial ownership still need to be confirmed.
+Current contributor model: Dominik leads News/editorial growth and AI orchestration; Viktoria co-leads News from the SEO side and owns SEO quality/discoverability; Bea owns engineering delivery for Contentful; two external freelancers/journalists are planned for human editorial review/authorship; a working student can support manual publishing/operational work. Exact capacity and final staffing still need confirmation.
 
 ## Source Concept
 
@@ -71,26 +75,28 @@ The deck also proposes an AI-supported production chain consisting of:
 - 2026-09-18: Initial support request remained provisional because scope, desired outcome and Dominik's role were not yet confirmed.
 - 2026-09-21: Matthias confirmed that Dominik should lead Editorial Lighthouse and receive support from colleagues in Matthias's organization.
 - 2026-09-21: Dominik confirmed that Editorial Lighthouse should now be treated as a distinct active project in his maintained work context.
-- No final decision is yet documented on whether the pilot follows the human-led AI-powered model, the more agentic model, or a staged combination.
+- 2026-09-24: Nataliya clarified the operating model: News is the C3 Lighthouse and a 12-month pilot; Dominik is accountable for News strategy, editorial calendar, experimentation and AI orchestration, while Viktoria owns the SEO quality/discoverability side.
+- 2026-09-24: The first 4–6 week objective is a working end-to-end machine and first publish→measure loop. Article-volume targets are directional vision inputs rather than proven near-term capacity.
+- 2026-09-24: Lighthouse management updates are expected through the existing Builder Daily Call / VP round, roughly bi-weekly; Nataliya can support or cover the first round, but Dominik and Viktoria are expected to increasingly present their own work.
 
 ## Risks and Open Questions
 
-- What exactly is the Lighthouse's first measurable delivery outcome: workflow prototype, live publishing pilot, traffic experiment, or production system?
-- Which parts of the source deck are approved project scope versus exploratory options?
-- Which operating model should be tested first?
-- Who owns editorial judgement, legal/compliance review, fact-checking and final publishing?
+- Which priority topics/formats and publishing cadence should be used for the first 4–6 week calendar?
+- Which limited sources and IS24 data areas should the first Trend Finder / Story Creator MVP use before broader scaling?
+- How much of review and publishing should remain manual in the MVP, and when should automated Quality Gate / Contentful rendering be introduced?
 - Which existing IS24 data sources and APIs are available to the agent workflow and under what access constraints?
-- What production and engineering capacity is available from Matthias's organization?
-- Which metrics and milestones define success for the first phase?
-- How should the Lighthouse relate to existing SEO, Content, Social Media and other editorial production processes?
+- How quickly can the external-journalist setup and manual publishing support be established?
+- What article cadence is a credible target once the core Story Creator hypothesis has been validated?
+- Which metrics beyond Search/Discover traffic should define early success and management reporting?
 
 ## Next Steps
 
-- Clarify the first Lighthouse scope, expected output and success criteria with Nataliya and Matthias.
-- Translate the chosen editorial workflow into explicit human/agent stages, inputs, outputs, sources, quality checks and ownership.
-- Select the smallest end-to-end prototype that can test the core hypothesis before committing to production-grade infrastructure.
-- Identify required contributors from SEO, editorial/journalistic expertise, data and engineering once the first prototype boundary is clear.
+- Complete mutual knowledge transfer with Viktoria: migration/LP Builder from Dominik; News/SEO/Idealista/editorial context from Viktoria.
+- Finalize the target AI-factory view and a deliberately reduced MVP: controlled sources/topics, limited Scout Data, Story Creator as the core hypothesis, Writer/Image generation, human review and initially manual LP Builder publishing.
+- Define priority topics/formats and an initial 4–6 week editorial calendar/publishing cadence; prepare 2–3 management-ready slides before Dominik's vacation on 2026-10-02.
+- Align with Bea on Monday, then prepare the larger mission/engineering kickoff for Wednesday.
+- Prepare the first Builder Daily Call / VP update; Nataliya can cover the first round if it lands during Dominik's vacation.
 
 ## Last Confirmed
 
-Overall Lighthouse ownership and the Dominik/Viktoria responsibility split confirmed on 2026-09-24; formal effective date of the org move remains open.
+Operating model, first 4–6 week objective, pre-vacation deliverables and management-reporting setup confirmed in the Nataliya/Viktoria/Dominik kickoff on 2026-09-24; formal effective date of the org move remains open.
