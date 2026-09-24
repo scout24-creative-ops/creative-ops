@@ -8,9 +8,11 @@ Provide a central source of truth for reusable builder modules, design tokens, p
 
 The active Design Library source lives in `scout24-creative-ops/design-system`. The separate `s24-creative-ops/design-library` repository is the live publish mirror and is not the source of truth.
 
-The Design Library is prepared as a self-contained static artifact. It contains its required email preview stylesheet locally and no longer depends on Email Builder or LP Builder runtime paths when published.
+The original AEM Design Library and the new Contentful Design Library are now explicitly separated. The AEM library remains unchanged at its existing publish path. The Contentful library lives in its own source folder and publish path, with output guards preventing accidental writes into the AEM library.
 
-The previous task to follow up on Ciaran's review of the LP Builder and Design Library PRs is no longer relevant as an active task. The current question is instead whether Ciaran has enough remaining working hours through the end of 2026 to support further LP Builder development in the Contentful context.
+The Contentful Design Library is live at `https://s24-creative-ops.github.io/design-library/design-system/contentful-design-library/index.html`. Its top navigation contains only `LP Builder` and `Design Tokens`. The LP Builder area uses the agreed 16-category navigation. Heros, Teaser, Process, Text & Lists, Buttons & Links, Video, Counter, Callouts and Colors are already populated. Design Tokens currently include Colors, Typography, Spacing, Border Radius, Borders and Image Ratios.
+
+A typography audit fixed the main preview inconsistency centrally: CoreCSS typography contexts are now available inside Shadow DOM previews, the canonical Make It Better fonts are loaded, and outer library text uses the shared base-font definition. No module-specific typography overrides were needed.
 
 ## Dominik's Role
 
@@ -37,9 +39,12 @@ He retains product and workflow responsibility. Any further implementation suppo
 
 ## Decisions
 
-- First Design Library elements to surface in the LP Builder Module Library: Rounded Buttons, Mobile Full Width Button, Chevron Link, Colors & Surfaces (Accent Colors, Neutrals, Text), Lists, and Icons. For Icons, show representative 24 px and 48 px examples and direct users to Frontify for choosing the icon name. Text/headline capabilities are also in scope, but their exact library structure remains to be defined.
-
-- Use the LP Builder Module Library as the user-facing catalogue of available Builder capabilities: publish full modules plus selected reusable elements from the Design Library (for example buttons and text/headline elements), while keeping technical-only primitives such as spacing out of the user-facing catalogue.
+- Keep the existing AEM Design Library and the new Contentful Design Library as separate products and separate publish paths. The AEM library is never overwritten by Contentful-library work.
+- Use the GitHub-hosted Contentful Design Library as the user-facing catalogue for LP Builder modules and reusable elements instead of relying on one oversized Contentful page.
+- Top-level navigation for the Contentful library is `LP Builder` and `Design Tokens` only.
+- LP Builder categories are fixed as: Heros, Teaser, Process, Text & Lists, Buttons & Links, Video, Counter, Callouts, Colors, Action Tiles, Team Professional, Accordion, Benefits, Service Tiles, Tables, Sticky Footer.
+- `Teaser` groups teaser, card and carousel variants; `Process` replaces the old Steps grouping.
+- Design Tokens is the home for technical design-system primitives such as Typography, Spacing, Borders/Radius and Image Ratios.
 
 - Prefer reuse of existing modules and patterns before creating new ones.
 - Keep shared builder knowledge and assets centrally discoverable.
@@ -50,15 +55,16 @@ He retains product and workflow responsibility. Any further implementation suppo
 
 ## Risks and Open Questions
 
-- How many working hours Ciaran still has available through the end of 2026.
-- Whether that capacity is sufficient and appropriate for further LP Builder development in the Contentful context.
+- Remaining LP Builder categories still need to be populated: Action Tiles, Team Professional, Accordion, Benefits, Service Tiles, Tables and Sticky Footer.
+- The canonical table capability still needs a product decision before the `Tables` category can be considered final.
 - Ownership for long-term maintenance and adding new modules is not fully documented.
 
 ## Next Steps
 
-1. Wait for Ciaran to confirm his remaining working hours through the end of 2026.
-2. Assess whether he can support further LP Builder development in the Contentful context.
+1. Populate the remaining LP Builder categories in the Contentful Design Library.
+2. Continue visual QA after each live publish, especially spacing, content width and preview consistency.
+3. Keep the AEM library protected and unchanged while Contentful-library iterations continue.
 
 ## Last Confirmed
 
-Ciaran capacity-based support decision confirmed as the current next step on 2026-08-23.
+2026-09-23: The separate Contentful Design Library was published successfully with protected AEM separation. A subsequent typography audit fixed Shadow-DOM/CoreCSS font inheritance centrally and was published successfully.
