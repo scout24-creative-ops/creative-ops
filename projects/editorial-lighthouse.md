@@ -12,15 +12,16 @@ The initiative is based on the `Scaling Editorial at IS24` concept shared by Nat
 - The initiative has moved from a provisional support request into an active project.
 - On 2026-09-21 Matthias Brandstetter confirmed that Dominik is expected to lead the Editorial Lighthouse project and receive support from colleagues in Matthias's organization.
 - On 2026-09-23 Dominik confirmed that Matthias also asked him to move into Matthias's organization and that Dominik accepted. Matthias indicated that Dominik would retain his Fachlead role and report to Nataliya Medvedeva rather than directly to Matthias. The formal effective date and organizational implementation are not yet confirmed.
-- The detailed project scope, first delivery milestone, staffing model and implementation sequence are still to be clarified.
+- On 2026-09-24, after Viktoria Riffel's follow-up alignment with Nataliya Medvedeva, the ownership split was clarified: Dominik owns Editorial Lighthouse overall. Viktoria owns the SEO/editorial side, including content logic and quality; Dominik owns the overall setup, end-to-end workflow, agent/system design, build-out and coordination of implementation support.
+- The detailed first delivery milestone, staffing model and implementation sequence still need to be clarified.
 - The source deck describes two broad operating models for the pilot: a more human-led AI-powered editorial team and a more agentic production model with a smaller internal ownership layer plus external editorial quality control.
 - The agentic model is the most directly relevant starting point for Dominik's AI/Creative Operations role, but no final operating-model decision is documented yet.
 
 ## Dominik's Role
 
-Dominik is the confirmed project lead for Editorial Lighthouse.
+Dominik is the confirmed overall owner / project lead for Editorial Lighthouse.
 
-His useful ownership is expected to center on the editorial workflow and AI solution design rather than personally owning every infrastructure or editorial production task. This includes:
+His ownership centers on making the complete system work rather than personally implementing every Agent. Viktoria owns the SEO/editorial decision layer; Dominik owns the end-to-end setup, workflow, agent/system design, implementation structure and coordination of contributors. This includes:
 
 - structure the end-to-end editorial workflow;
 - break the process into clear human and agent responsibilities;
@@ -37,11 +38,12 @@ This follows Dominik's established operating model: solution leadership and qual
 - Dominik Böhme — project lead / AI solution and workflow leadership
 - Matthias Brandstetter — sponsor / organizational support
 - Nataliya Medvedeva — key stakeholder from SEO; shared the initial `Scaling Editorial at IS24` concept
+- Viktoria Riffel — owns the SEO/editorial side of Lighthouse, including content logic, editorial rules and quality
 - SEO team — expected contributor for technical SEO, distribution, metadata, internal linking, Search/Discover requirements and publishing expertise
 - Editorial / journalist capacity — required for professional judgement, fact-checking, editing and authorship where the pilot uses AI-generated drafts
 - Engineering / platform contributors — to be involved where the prototype requires production-grade orchestration or system integration
 
-Exact contributors and ownership boundaries beyond Dominik's project-lead role are still to be confirmed.
+Contributor staffing and implementation ownership beyond Dominik's overall project ownership and Viktoria's SEO/editorial ownership still need to be confirmed.
 
 ## Source Concept
 
@@ -91,4 +93,4 @@ The deck also proposes an AI-supported production chain consisting of:
 
 ## Last Confirmed
 
-Project-lead role and organizational direction confirmed on 2026-09-23; formal effective date of the org move remains open.
+Overall Lighthouse ownership and the Dominik/Viktoria responsibility split confirmed on 2026-09-24; formal effective date of the org move remains open.
