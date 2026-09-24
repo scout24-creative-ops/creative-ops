@@ -204,6 +204,8 @@ Dominik should remain focused on reusable Builder capability and quality guardra
 
 ## Last Confirmed
 
+2026-09-23: The intermittent large HTML transfer issue is tracked as `FCT-1938` and assigned to Mukhammadjon. Two ~120 KB replaces truncated silently while smaller split-library payloads were lossless. The public visual LP Builder catalogue has meanwhile moved to the separate GitHub-hosted Contentful Design Library, keeping large visual-library browsing independent from a single Contentful HTML payload.
+
 2026-09-22: The current Custom GPT passed the full three-part regression suite after the latest HTML-replace and Action/schema changes. Blueprint CREATE, combined EDIT and the complete lifecycle through final deletion all passed. The only interruption was a test-prompt issue where the GPT tried to open the returned Pro URL with an inaccessible browser/tool; the suite was corrected so the Action-returned Production URL is sufficient lifecycle evidence.
 
 2026-09-21: After re-entering the GPT Action client ID and secret, a fresh one-prompt end-to-end smoke test passed CREATE, draft verification and the complete lifecycle through final deletion without technical error. A separate combined EDIT regression test then also passed in one update mutation, covering text and CTA changes, module insertion/replacement/reordering, slug and Main Title changes, spacing recalculation, explicit-spacing integrity, and Bridge/Runtime exclusion. This confirms that Action authentication, the core lifecycle path, and the complex full-page update path are currently functional again.
