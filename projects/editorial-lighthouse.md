@@ -16,6 +16,7 @@ The initiative is based on the `Scaling Editorial at IS24` concept shared by Nat
 - The project is a 12-month News/editorial pilot; C3 is the launch and proof phase rather than the full lifetime of the initiative.
 - The operating model is now explicitly agentic: Dominik owns the News strategy and AI-enabled production machine, Viktoria owns SEO quality/discoverability, external journalists provide human editorial review/authorship, and Bea owns engineering delivery for Contentful.
 - The first 4–6 week milestone is to prove a working end-to-end system and first publish→measure loop, not to optimize for raw article count immediately.
+- Current working architecture clarifies the first two AI stages: the Trend Finder acts as a **Radar** that detects predefined signals across a shared source pool; the Story Creator remains the **Brain**, acting as **Analyst + Editor** to investigate a signal, enrich it with additional data, generate multiple angles, select the strongest story candidates and only then create a Story Package.
 - Management reporting will use the existing Builder Daily Call / VP round as the Lighthouse checkpoint format, expected roughly bi-weekly for about 40 minutes. The purpose is reporting plus enablement/blocker removal rather than re-approval of the Lighthouse. Nataliya may cover the first round if Dominik is already on vacation.
 
 ## Dominik's Role
@@ -79,10 +80,25 @@ The deck also proposes an AI-supported production chain consisting of:
 - 2026-09-24: The first 4–6 week objective is a working end-to-end machine and first publish→measure loop. Article-volume targets are directional vision inputs rather than proven near-term capacity.
 - 2026-09-24: Lighthouse management updates are expected through the existing Builder Daily Call / VP round, roughly bi-weekly; Nataliya can support or cover the first round, but Dominik and Viktoria are expected to increasingly present their own work.
 
+## Working Architecture — Radar → Brain
+
+Current working hypothesis, aligned with Nataliya's Trend Finder → Story Generator model but more explicit about internal logic:
+
+- **Shared source pool:** Trend Finder and Story Creator can access the same overall pool of internal and external sources, but they use different subsets depending on the case. Candidate source types include News/regulatory sources, Google Trends/Search, competitors, IS24 listings/inventory, pricing/market data, Sprengnetter, demand/search behaviour, geo/location data and other approved Data Lake or producer-owned sources.
+- **Access layer vs. source:** ScoutData should not automatically be treated as one business-data source. Internal Slack evidence indicates that ScoutData is an agent/access layer that uses Collate for discovery and Starburst for actual Data Lake queries. For some transactional use cases, the authoritative source may still be the original data producer rather than the Data Lake.
+- **Trend Finder = Radar / Signal Playbook:** monitors selected sources and detects explicit signal types, e.g. unusual demand change, price anomaly, exceptional listing performance, regulatory/news event, Google/Search trend or competitor signal. Signal rules are source-specific and can be expanded over time.
+- **Story Creator = Brain / Analyst + Editor:** receives a signal, then uses an **Analysis Playbook** to decide which additional data to inspect and whether enough evidence exists for a story. It then uses an **Editorial/Story Playbook** to generate several possible angles, compare them and select the strongest candidates.
+- **Gatekeeper logic:** a signal does not automatically trigger article production. The Story Creator can reject weak signals. A Story Package should only be created when the evidence supports a useful, sufficiently differentiated and low-speculation angle.
+- **Selection criteria tested in chat:** data strength, information value and speculation risk are useful first criteria for comparing story angles.
+- **Example — demand signal:** Radar sees unusually high demand for 1-room apartments in Munich. The Analyst checks supply, prices, historical development, peer cities and relevant geo/market context. The Editor can then form an angle such as rising demand meeting falling supply, if supported by the data.
+- **Example — external event:** Radar detects a relevant rental-law change from trusted external/regulatory sources. The Analyst checks who is affected, what changes, timing and available Scout context/data; the Editor forms the most useful explanatory angle instead of merely repeating the external news.
+
+The durable shorthand for the first stages is: **Radar finds what is unusual; Brain understands what it means and decides whether there is a story.**
+
 ## Risks and Open Questions
 
 - Which priority topics/formats and publishing cadence should be used for the first 4–6 week calendar?
-- Which limited sources and IS24 data areas should the first Trend Finder / Story Creator MVP use before broader scaling?
+- Which 2–3 topic fields, 3–5 sources, 2–3 signal types and corresponding analysis playbooks should define the first Trend Finder / Story Creator MVP before broader scaling?
 - How much of review and publishing should remain manual in the MVP, and when should automated Quality Gate / Contentful rendering be introduced?
 - Which existing IS24 data sources and APIs are available to the agent workflow and under what access constraints?
 - How quickly can the external-journalist setup and manual publishing support be established?
@@ -91,8 +107,8 @@ The deck also proposes an AI-supported production chain consisting of:
 
 ## Next Steps
 
-- Complete mutual knowledge transfer with Viktoria: migration/LP Builder from Dominik; News/SEO/Idealista/editorial context from Viktoria.
-- Finalize the target AI-factory view and a deliberately reduced MVP: controlled sources/topics, limited Scout Data, Story Creator as the core hypothesis, Writer/Image generation, human review and initially manual LP Builder publishing.
+- Complete mutual knowledge transfer with Viktoria: migration/LP Builder from Dominik; News/SEO/Idealista/editorial context from Viktoria. Use the News handover to build an initial mapping of **topic field → relevant data sources → useful metrics/signals → example story patterns**.
+- Finalize the target AI-factory view and a deliberately reduced MVP: a shared but bounded source pool, Trend Finder/Radar with explicit Signal Playbooks, Story Creator/Brain with Analysis + Editorial Playbooks, Writer/Image generation, human review and initially manual LP Builder publishing.
 - Define priority topics/formats and an initial 4–6 week editorial calendar/publishing cadence; prepare 2–3 management-ready slides before Dominik's vacation on 2026-10-02.
 - Align with Bea on Monday, then prepare the larger mission/engineering kickoff for Wednesday.
 - Prepare the first Builder Daily Call / VP update; Nataliya can cover the first round if it lands during Dominik's vacation.
