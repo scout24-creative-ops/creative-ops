@@ -4,10 +4,17 @@
 
 - [ ] Lead Editorial Lighthouse project setup
   - Area: Editorial Lighthouse
-  - Status: Open, newly confirmed project ownership
-  - Next step: Use the first alignment sessions to clarify the Lighthouse mission, first measurable outcome, scope, contributors and delivery model, then define the smallest end-to-end prototype.
-  - Context: Matthias asked Dominik to lead the project and has now also offered a move into his organization, which Dominik accepted. The planned reporting line is to Nataliya while Dominik retains his Fachlead role; formal effective date is not yet confirmed.
-  - Source: Matthias alignment confirmed on 2026-09-23
+  - Status: Open, overall ownership confirmed
+  - Next step: Align the first measurable outcome and MVP with Viktoria and Nataliya, then define the first end-to-end workflow, implementation work packages and required contributors.
+  - Context: Dominik owns Editorial Lighthouse overall, including the setup, AI workflow/agent system and coordination of implementation. Viktoria owns the SEO/editorial side, including content logic and quality. Dominik should lead the system rather than personally build every Agent.
+  - Source: Ownership split confirmed with Viktoria on 2026-09-24 after her alignment with Nataliya
+
+- [ ] Support Viktoria on the broader Contentful Migration
+  - Area: Contentful Migration
+  - Status: Open, support role confirmed
+  - Next step: Align with Viktoria on how the existing LP Builder and Marketing migration work feed into the broader migration plan, then agree the next technical steps and handoffs.
+  - Context: Viktoria leads the broader Contentful Migration, which includes areas beyond Dominik's previous Marketing scope. Dominik supports through the LP Builder and reusable migration capabilities; he does not own the overall migration.
+  - Source: Ownership split confirmed with Viktoria on 2026-09-24
 
 - [ ] Finish the Contentful LP Builder Design Library
   - Area: Design Library and Builder Library
