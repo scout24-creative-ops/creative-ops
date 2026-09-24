@@ -18,13 +18,12 @@ A typography audit fixed the main preview inconsistency centrally: CoreCSS typog
 
 Dominik initiated the library approach, connected it to the builders and AI Agent overview, supported adoption, and coordinated the move toward a central GitHub-based publication path.
 
-He retains product and workflow responsibility. Any further implementation support from Ciaran should be decided based on Ciaran's remaining capacity and the priorities around LP Builder & Contentful.
+He retains product and workflow responsibility. Current implementation should not assume additional Ciaran capacity unless new budget or support is explicitly confirmed.
 
 ## Key Stakeholders
 
 - Creative Studio
 - Marketing teams using the builders
-- Ciaran for possible further LP Builder / Contentful support
 - Peter and Allan for GitHub and publishing support
 - UX for module approval and standards
 
@@ -50,8 +49,7 @@ He retains product and workflow responsibility. Any further implementation suppo
 - Keep shared builder knowledge and assets centrally discoverable.
 - Treat `scout24-creative-ops/design-system` as the active source.
 - Treat `s24-creative-ops/design-library` as a publish mirror only.
-- Do not keep the old PR-review follow-up as an active task.
-- Decide on further Ciaran support based on his remaining 2026 capacity and current LP Builder & Contentful priorities.
+- Do not keep the old PR-review/Ciaran-capacity follow-up as active work; no additional budget is currently available.
 
 ## Risks and Open Questions
 
