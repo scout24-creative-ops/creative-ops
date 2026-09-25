@@ -87,7 +87,9 @@ The deck also proposes an AI-supported production chain consisting of:
 
 Current working hypothesis, aligned with Nataliya's Trend Finder → Story Generator model but more explicit about internal logic. The target flow is:
 
-**Sources + Signal Rules → Trend Finder / Radar → Signal Package → Story Creator / Brain → Story Package → Production → Production Package → Human Review → Publish → Performance & Learning Agent → Learning Package → feedback to Trend Finder + Story Creator**
+**Sources + Signal Rules → Trend Finder / Radar → Signal Package → Story Creator / Brain → Story Package → Asset Creator → Production Package → Human Review → Publish → Learning Agent → Learning Package → feedback to Trend Finder + Story Creator**
+
+Presentation terminology is now aligned to Nataliya's six-step framing: **1 Discover** (Trend Finder), **2 Generate** (Story Creator), **3 Draft** (Asset Creator), **4 Human Edit** (Human Review), **5 Publish** (Contentful / News Pages), **6 Learn** (Learning Agent). The Story Creator is intentionally the largest Agent card because it is the central analysis and editorial-decision layer; packages are visually compact handoff objects.
 
 Key logic:
 
@@ -98,14 +100,25 @@ Key logic:
 - **Gatekeeper logic:** a signal does not automatically trigger article production. The Story Creator can reject weak signals. A Story Package should only be created when the evidence supports a useful, sufficiently differentiated and low-speculation angle.
 - **Selection criteria tested in chat:** data strength, information value and speculation risk are useful first criteria for comparing story angles.
 - **Story Package:** production-ready editorial brief containing the selected angle, headline direction, subline, core message, evidence/facts, sources, chart/visual idea, writer brief and image brief.
-- **Production:** Writer + Image Creator turn the Story Package into a **Production Package**. The package represents the prepared article and visual production output handed to Human Review.
-- **Human Review:** humans retain responsibility for editorial judgement, factuality, trust and final publication. In the target diagram, Step 8 should visually contain the **Production Package inside the Human + SEO Review stage** (review shell around/behind the package), rather than showing Production Package and Human Review as two separate side-by-side stages. A failed review should eventually route back to the relevant producer depending on the problem: language/style → Writer, image issue → Image Creator, factual/evidence/angle issue → Story Creator. This revision routing is intentionally not yet drawn into the target diagram.
-- **Performance & Learning Agent:** one agent measures and interprets Search, Discover, CTR, impressions, traffic, engagement and conversion, then creates a **Learning Package**. Learnings feed back into Trend Finder priorities/signal rules and Story Creator angles, playbooks and selection criteria.
+- **Asset Creator / Production:** the Asset Creator contains **Writer + Image Creator** and turns the Story Package into a **Production Package**. The Story Creator decides what is being told; the Asset Creator produces how that already-defined story is implemented in text and visuals.
+- **Human Review:** humans retain responsibility for editorial judgement, factuality, trust, SEO/publishing requirements and final approval. In the presentation diagram, **4 Human Edit** is a lightweight icon/label positioned directly above the Production Package; the Production Package remains on the main horizontal flow and the review is visually attached to it rather than shown as a separate horizontal process node. The Human Review + Production Package group should sit centered between Asset Creator and Contentful / News Pages. A failed review should eventually route back to the relevant producer depending on the problem: language/style → Writer, image issue → Image Creator, factual/evidence/angle issue → Story Creator. This revision routing is intentionally not yet drawn into the target diagram.
+- **Learning Agent:** one agent measures and interprets Search, Discover, CTR, impressions, traffic, engagement and conversion, then creates a **Learning Package**. Learnings feed back into Trend Finder priorities/signal rules and Story Creator angles, playbooks and selection criteria. For presentation clarity, the diagram may show **two visible Learning Package instances**, one beneath Trend Finder and one beneath Story Creator, connected to the same feedback backbone; these are two visual consumers of the same output type, not two logically different Learning Packages.
 - **Diagram semantics:** agent-to-package creation is shown as a neutral line without arrowhead; package-to-next-step is a directed arrow; source access is neutral dashed; learning feedback is dashed and directed.
 - **Example — demand signal:** Radar sees unusually high demand for 1-room apartments in Munich. The Analyst checks supply, prices, historical development, peer cities and relevant geo/market context. The Editor can then form an angle such as rising demand meeting falling supply, if supported by the data.
 - **Example — external event:** Radar detects a relevant rental-law change from trusted external/regulatory sources. The Analyst checks who is affected, what changes, timing and available Scout context/data; the Editor forms the most useful explanatory angle instead of merely repeating the external news.
 
 The durable shorthand for the first stages is: **Radar finds what is unusual; Brain understands what it means and decides whether there is a story.**
+
+## Diagram Content / Hover Standard
+
+The current diagram is intentionally becoming an explanatory learning model first; management-level compression can happen later.
+
+- **Default cards stay concise:** step label, title, one short explanatory sentence and only the few visible sub-elements needed to understand the architecture.
+- **Hover structure:** start directly with the title, followed immediately by a short explanatory paragraph. Avoid eyebrows/kickers and avoid extra section headings unless they materially improve comprehension. Useful sections are Was passiert hier?, Enthält, Input, Output, Wichtig, Beispiel and Nächster Schritt.
+- **Complex agents can have two levels:** the main Agent hover explains the overall role; internal sub-cards can carry deeper logic. Story Creator therefore keeps separate hovers for Analyse / Validate, Generate Story Angles and Evaluate & Select; Asset Creator keeps separate Writer and Image Creator detail.
+- **One continuous illustrative example:** use the same non-factual learning scenario across the full flow: *In einer Stadt steigen die Angebotsmieten deutlich stärker als in vergleichbaren Städten.* The example should show how one observation becomes a signal, is validated, becomes a story angle and briefing, is produced/reviewed/published, and finally creates learnings.
+- **Core distinction:** Signal Package = structured observation / what is unusual; Story Package = production-ready editorial decision / which story is being told and on what evidence.
+- **Current content status:** Shared Sources / Data Pool, Trend Finder and Signal Package have been reviewed and approved in this explanatory style. Story Creator, its three phases, Story Package and Asset Creator were also conceptually reviewed in chat. A Codex content pass is applying the same system through Production Package, Human Review, Contentful / News Pages, Learning Agent and Learning Package. Dominik will review the complete diagram end-to-end afterwards before the architecture is considered content-final.
 
 ## Risks and Open Questions
 
@@ -122,7 +135,8 @@ The durable shorthand for the first stages is: **Radar finds what is unusual; Br
 Before Dominik's last working day on 2026-10-02, the work should be narrowed to three deliverables:
 
 1. **Target Architecture final**
-   - Finish the end-to-end target diagram: Sources → Trend Finder → Signal Package → Story Creator → Story Package → Production → Production Package → Human Review → Publish → Performance & Learning → Learning Package / feedback.
+   - Finish the end-to-end target diagram: Sources → Trend Finder → Signal Package → Story Creator → Story Package → Asset Creator → Production Package / Human Review → Contentful / News Pages → Learning Agent → Learning Package / feedback.
+   - Complete the current content audit of every default card and hover so Dominik can use the diagram to understand and explain every important process step before compressing it for management.
    - Make agent boundaries, packages, human responsibility, orchestration and future learning loop understandable.
    - This is the full target scope, not a promise that every component is implemented immediately.
 
@@ -143,7 +157,8 @@ These three deliverables together should provide the 2–3 management-ready slid
 
 ## Next Steps
 
-- Continue now with Deliverable 1: finalize the Target Architecture diagram.
+- Continue now with Deliverable 1: finish the explanatory default/hover content pass across the full Target Architecture, review it end-to-end and then freeze the architecture.
+- Do **not** move to MVP scoping until this content pass is complete and the target process is understood clearly.
 - Then derive Deliverable 2: map the full target process to the deliberately reduced MVP.
 - Only after those are stable, create Deliverable 3 from the existing Product Intelligence editorial material rather than starting from a blank content strategy.
 - Align with Bea on Monday and use that feedback for the larger mission/engineering kickoff on Wednesday.
