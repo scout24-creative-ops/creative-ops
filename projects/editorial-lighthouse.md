@@ -18,6 +18,9 @@ The initiative is based on the `Scaling Editorial at IS24` concept shared by Nat
 - The first 4–6 week milestone is to prove a working end-to-end system and first publish→measure loop, not to optimize for raw article count immediately.
 - Current working architecture clarifies the first two AI stages: the Trend Finder acts as a **Radar** that detects predefined signals across a shared source pool; the Story Creator remains the **Brain**, acting as **Analyst + Editor** to investigate a signal, enrich it with additional data, generate multiple angles, select the strongest story candidates and only then create a Story Package.
 - Management reporting will use the existing Builder Daily Call / VP round as the Lighthouse checkpoint format, expected roughly bi-weekly for about 40 minutes. The purpose is reporting plus enablement/blocker removal rather than re-approval of the Lighthouse. Nataliya may cover the first round if Dominik is already on vacation.
+- The Scout24 Product Intelligence Wiki is now the primary durable fachliche source for Editorial Lighthouse. The existing Nataliya/Viktoria material should be treated as the default baseline for categories, formats, editorial strategy, cadence hypotheses, review/SEO rules and supporting research rather than being recreated from scratch. Dominik should challenge or change it only where it is materially unsuitable or technically unrealistic.
+- Primary Wiki entry point / area: https://wiki.scout24.com/pages/8f2cd9f5-6fce-4e80-870f-09a262c14ec5 . Central Lighthouse page: https://wiki.scout24.com/spaces/product-intelligence/pages/56481/scaling-editorial-at-scout24-lighthouse . Relevant supporting pages include Editorial, Launch categories & article slate, Content Plan and Google Discover.
+- The existing Wiki already contains a proposed editorial portfolio and operating assumptions, including launch categories, article examples, cadence hypotheses, E-E-A-T/review guidance and Discover requirements. These are inputs to the AI-system design, not work Dominik needs to independently recreate.
 
 ## Dominik's Role
 
@@ -80,9 +83,13 @@ The deck also proposes an AI-supported production chain consisting of:
 - 2026-09-24: The first 4–6 week objective is a working end-to-end machine and first publish→measure loop. Article-volume targets are directional vision inputs rather than proven near-term capacity.
 - 2026-09-24: Lighthouse management updates are expected through the existing Builder Daily Call / VP round, roughly bi-weekly; Nataliya can support or cover the first round, but Dominik and Viktoria are expected to increasingly present their own work.
 
-## Working Architecture — Radar → Brain
+## Working Architecture — Radar → Brain → Production → Learn
 
-Current working hypothesis, aligned with Nataliya's Trend Finder → Story Generator model but more explicit about internal logic:
+Current working hypothesis, aligned with Nataliya's Trend Finder → Story Generator model but more explicit about internal logic. The target flow is:
+
+**Sources + Signal Rules → Trend Finder / Radar → Signal Package → Story Creator / Brain → Story Package → Production → Production Package → Human Review → Publish → Performance & Learning Agent → Learning Package → feedback to Trend Finder + Story Creator**
+
+Key logic:
 
 - **Shared source pool:** Trend Finder and Story Creator can access the same overall pool of internal and external sources, but they use different subsets depending on the case. Candidate source types include News/regulatory sources, Google Trends/Search, competitors, IS24 listings/inventory, pricing/market data, Sprengnetter, demand/search behaviour, geo/location data and other approved Data Lake or producer-owned sources.
 - **Access layer vs. source:** ScoutData should not automatically be treated as one business-data source. Internal Slack evidence indicates that ScoutData is an agent/access layer that uses Collate for discovery and Starburst for actual Data Lake queries. For some transactional use cases, the authoritative source may still be the original data producer rather than the Data Lake.
@@ -90,6 +97,11 @@ Current working hypothesis, aligned with Nataliya's Trend Finder → Story Gener
 - **Story Creator = Brain / Analyst + Editor:** receives a signal, then uses an **Analysis Playbook** to decide which additional data to inspect and whether enough evidence exists for a story. It then uses an **Editorial/Story Playbook** to generate several possible angles, compare them and select the strongest candidates.
 - **Gatekeeper logic:** a signal does not automatically trigger article production. The Story Creator can reject weak signals. A Story Package should only be created when the evidence supports a useful, sufficiently differentiated and low-speculation angle.
 - **Selection criteria tested in chat:** data strength, information value and speculation risk are useful first criteria for comparing story angles.
+- **Story Package:** production-ready editorial brief containing the selected angle, headline direction, subline, core message, evidence/facts, sources, chart/visual idea, writer brief and image brief.
+- **Production:** Writer + Image Creator turn the Story Package into a **Production Package**. The package represents the prepared article and visual production output handed to Human Review.
+- **Human Review:** humans retain responsibility for editorial judgement, factuality, trust and final publication. A failed review should eventually route back to the relevant producer depending on the problem: language/style → Writer, image issue → Image Creator, factual/evidence/angle issue → Story Creator. This revision routing is intentionally not yet drawn into the target diagram.
+- **Performance & Learning Agent:** one agent measures and interprets Search, Discover, CTR, impressions, traffic, engagement and conversion, then creates a **Learning Package**. Learnings feed back into Trend Finder priorities/signal rules and Story Creator angles, playbooks and selection criteria.
+- **Diagram semantics:** agent-to-package creation is shown as a neutral line without arrowhead; package-to-next-step is a directed arrow; source access is neutral dashed; learning feedback is dashed and directed.
 - **Example — demand signal:** Radar sees unusually high demand for 1-room apartments in Munich. The Analyst checks supply, prices, historical development, peer cities and relevant geo/market context. The Editor can then form an angle such as rising demand meeting falling supply, if supported by the data.
 - **Example — external event:** Radar detects a relevant rental-law change from trusted external/regulatory sources. The Analyst checks who is affected, what changes, timing and available Scout context/data; the Editor forms the most useful explanatory angle instead of merely repeating the external news.
 
@@ -97,22 +109,46 @@ The durable shorthand for the first stages is: **Radar finds what is unusual; Br
 
 ## Risks and Open Questions
 
-- Which priority topics/formats and publishing cadence should be used for the first 4–6 week calendar?
-- Which 2–3 topic fields, 3–5 sources, 2–3 signal types and corresponding analysis playbooks should define the first Trend Finder / Story Creator MVP before broader scaling?
+- Which existing Product Intelligence categories/formats should be translated first into operational Trend Finder topic fields and signal playbooks?
+- Which one or few topic fields, bounded sources, signal types and corresponding analysis playbooks should define the first Trend Finder / Story Creator MVP before broader scaling?
 - How much of review and publishing should remain manual in the MVP, and when should automated Quality Gate / Contentful rendering be introduced?
 - Which existing IS24 data sources and APIs are available to the agent workflow and under what access constraints?
 - How quickly can the external-journalist setup and manual publishing support be established?
 - What article cadence is a credible target once the core Story Creator hypothesis has been validated?
 - Which metrics beyond Search/Discover traffic should define early success and management reporting?
 
+## Pre-vacation Deliverables — complete in this order
+
+Before Dominik's last working day on 2026-10-02, the work should be narrowed to three deliverables:
+
+1. **Target Architecture final**
+   - Finish the end-to-end target diagram: Sources → Trend Finder → Signal Package → Story Creator → Story Package → Production → Production Package → Human Review → Publish → Performance & Learning → Learning Package / feedback.
+   - Make agent boundaries, packages, human responsibility, orchestration and future learning loop understandable.
+   - This is the full target scope, not a promise that every component is implemented immediately.
+
+2. **MVP Scope on one page**
+   - Show which parts of the target process will be implemented/tested first, which are simplified, manually operated or fed with prepared data, and which are postponed.
+   - Start from a very small, controlled editorial case; current likely direction is an operational topic under the existing **Immobilien & Markt** portfolio, with market-price data as a strong candidate rather than inventing a new editorial strategy.
+   - Make confidence, major unknowns and the amount of manual work explicit.
+   - Nataliya specifically expects visibility into which agents exist, how they interact, whether orchestration is realistic and where manual work remains.
+
+3. **Editorial Operating View**
+   - Use the existing Product Intelligence Wiki as the baseline for categories, formats, article examples, cadence hypotheses, SEO/Discover rules and human-review model.
+   - Show **what we intend to write about, how often / on which days or windows, and who does what** across AI, freelancers/human review, SEO and publishing.
+   - Distinguish recurring/plannable formats from reactive/timely coverage.
+   - Treat article counts and publishing cadence as directional hypotheses for the pilot, not proven near-term production capacity.
+   - Reuse Nataliya/Viktoria's strategy instead of rebuilding it; flag only material mismatches or implementation concerns.
+
+These three deliverables together should provide the 2–3 management-ready slides Nataliya asked for and support the team/VP communication while Dominik is on vacation.
+
 ## Next Steps
 
-- Complete mutual knowledge transfer with Viktoria: migration/LP Builder from Dominik; News/SEO/Idealista/editorial context from Viktoria. Use the News handover to build an initial mapping of **topic field → relevant data sources → useful metrics/signals → example story patterns**.
-- Finalize the target AI-factory view and a deliberately reduced MVP: a shared but bounded source pool, Trend Finder/Radar with explicit Signal Playbooks, Story Creator/Brain with Analysis + Editorial Playbooks, Writer/Image generation, human review and initially manual LP Builder publishing.
-- Define priority topics/formats and an initial 4–6 week editorial calendar/publishing cadence; prepare 2–3 management-ready slides before Dominik's vacation on 2026-10-02.
-- Align with Bea on Monday, then prepare the larger mission/engineering kickoff for Wednesday.
+- Continue now with Deliverable 1: finalize the Target Architecture diagram.
+- Then derive Deliverable 2: map the full target process to the deliberately reduced MVP.
+- Only after those are stable, create Deliverable 3 from the existing Product Intelligence editorial material rather than starting from a blank content strategy.
+- Align with Bea on Monday and use that feedback for the larger mission/engineering kickoff on Wednesday.
 - Prepare the first Builder Daily Call / VP update; Nataliya can cover the first round if it lands during Dominik's vacation.
 
 ## Last Confirmed
 
-Operating model, first 4–6 week objective, pre-vacation deliverables and management-reporting setup confirmed in the Nataliya/Viktoria/Dominik kickoff on 2026-09-24; formal effective date of the org move remains open.
+Operating model, first 4–6 week objective and management-reporting setup confirmed in the Nataliya/Viktoria/Dominik kickoff on 2026-09-24. On 2026-09-25, Viktoria's knowledge transfer and review of the Product Intelligence Wiki clarified that the existing Wiki material is the default editorial baseline and that the pre-vacation work should be executed in three ordered deliverables: Target Architecture, MVP Scope, then Editorial Operating View. Formal effective date of the org move remains open.
