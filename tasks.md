@@ -7,7 +7,7 @@
   - Status: Open, Target Architecture / Target Scope and MVP Scope are at a strong working level; current focus is concrete Trend Finder signal definition before final management packaging.
   - Next step: Build the MVP Signal Definition Matrix for the two agreed signal types, **Price Change** and **Demand–Supply Change**. For each, define primary data source, 1–2 Signal Rules, a separate provisional MVP Threshold / Trigger, Playbook checks and expected Signal Package output; calibrate thresholds against historical data rather than fixing arbitrary percentages. Then continue the remaining Editorial Operating View / 2–3 management-ready slide preparation before 2026-10-02.
   - Context: The MVP follows a small-test-then-scale approach and should use already accessible internal data wherever possible. ScoutData confirmed direct Starburst access without new pipelines/approvals for the current primary sources: `d_listings_without_pii` + `d_regions` for price, approved `activeListings` for supply and `currentSavedSearchStock` for regional demand. Dominik owns News strategy, topic discovery/use of IS24 data and the AI content factory/human-review workflow; the Product Intelligence Wiki remains the editorial baseline. The first C3 milestone is proving the end-to-end machine works, not maximizing raw article count.
-  - Source: Nataliya/Viktoria/Dominik kickoff on 2026-09-24; Viktoria knowledge transfer and Product Intelligence review on 2026-09-25
+  - Source: Nataliya/Viktoria/Dominik kickoff on 2026-09-24; Product Intelligence review on 2026-09-25; Dominik/ScoutData MVP data validation and signal-scope decision on 2026-09-28
 
 - [ ] Support Viktoria on the broader Contentful Migration
   - Area: Contentful Migration
