@@ -17,6 +17,8 @@ The initiative is based on the `Scaling Editorial at IS24` concept shared by Nat
 - The operating model is now explicitly agentic: Dominik owns the News strategy and AI-enabled production machine, Viktoria owns SEO quality/discoverability, external journalists provide human editorial review/authorship, and Bea owns engineering delivery for Contentful.
 - The first 4–6 week milestone is to prove a working end-to-end system and first publish→measure loop, not to optimize for raw article count immediately.
 - Current working architecture clarifies the first two AI stages: the Trend Finder acts as a **Radar** that detects predefined signals across a shared source pool; the Story Creator remains the **Brain**, acting as **Analyst + Editor** to investigate a signal, enrich it with additional data, generate multiple angles, select the strongest story candidates and only then create a Story Package.
+- As of 2026-09-28, Dominik considers both the Target Architecture / Target Scope and the reduced MVP Scope to be at a strong working level. The immediate refinement is no longer broad scoping but making the MVP Trend Finder operational through a small Signal Definition Matrix.
+- A ScoutData access check confirmed that the MVP can start from already accessible internal data through Starburst without first building new pipelines or seeking additional data access: price signals can use `delta.bi_data_is24_etl.d_listings_without_pii` joined to `d_regions`; supply can use the approved `activeListings` metric; regional demand can use `currentSavedSearchStock`. ScoutData remains the access/agent layer rather than the underlying business-data source.
 - Management reporting will use the existing Builder Daily Call / VP round as the Lighthouse checkpoint format, expected roughly bi-weekly for about 40 minutes. The purpose is reporting plus enablement/blocker removal rather than re-approval of the Lighthouse. Nataliya may cover the first round if Dominik is already on vacation.
 - The Scout24 Product Intelligence Wiki is now the primary durable fachliche source for Editorial Lighthouse. The existing Nataliya/Viktoria material should be treated as the default baseline for categories, formats, editorial strategy, cadence hypotheses, review/SEO rules and supporting research rather than being recreated from scratch. Dominik should challenge or change it only where it is materially unsuitable or technically unrealistic.
 - Primary Wiki entry point / area: https://wiki.scout24.com/pages/8f2cd9f5-6fce-4e80-870f-09a262c14ec5 . Central Lighthouse page: https://wiki.scout24.com/spaces/product-intelligence/pages/56481/scaling-editorial-at-scout24-lighthouse . Relevant supporting pages include Editorial, Launch categories & article slate, Content Plan and Google Discover.
@@ -82,6 +84,9 @@ The deck also proposes an AI-supported production chain consisting of:
 - 2026-09-24: Nataliya clarified the operating model: News is the C3 Lighthouse and a 12-month pilot; Dominik is accountable for News strategy, editorial calendar, experimentation and AI orchestration, while Viktoria owns the SEO quality/discoverability side.
 - 2026-09-24: The first 4–6 week objective is a working end-to-end machine and first publish→measure loop. Article-volume targets are directional vision inputs rather than proven near-term capacity.
 - 2026-09-24: Lighthouse management updates are expected through the existing Builder Daily Call / VP round, roughly bi-weekly; Nataliya can support or cover the first round, but Dominik and Viktoria are expected to increasingly present their own work.
+- 2026-09-28: Keep the first Trend Finder MVP deliberately small with **two signal types** rather than broadening the taxonomy: **Price Change** and **Demand–Supply Change**. Coverage should come from a few concrete Signal Rules within those types, not from adding many new types.
+- 2026-09-28: Use a **data-first MVP**: prefer signals that can be derived from already accessible internal sources, prove the end-to-end workflow on a small scope, and expand sources, regions, segments and signal types only after the first loop works.
+- 2026-09-28: Separate the semantic **Signal Rule** from its technical **MVP Threshold / Trigger**. Rules describe what is considered interesting; numeric thresholds remain provisional until calibrated against historical data so the Trend Finder does not produce either too many or too few hits.
 
 ## Working Architecture — Radar → Brain → Production → Learn
 
@@ -95,7 +100,7 @@ Key logic:
 
 - **Shared source pool:** Trend Finder and Story Creator can access the same overall pool of internal and external sources, but they use different subsets depending on the case. Candidate source types include News/regulatory sources, Google Trends/Search, competitors, IS24 listings/inventory, pricing/market data, Sprengnetter, demand/search behaviour, geo/location data and other approved Data Lake or producer-owned sources.
 - **Access layer vs. source:** ScoutData should not automatically be treated as one business-data source. Internal Slack evidence indicates that ScoutData is an agent/access layer that uses Collate for discovery and Starburst for actual Data Lake queries. For some transactional use cases, the authoritative source may still be the original data producer rather than the Data Lake.
-- **Trend Finder = Radar / Signal Playbook:** monitors selected sources and detects explicit signal types, e.g. unusual demand change, price anomaly, exceptional listing performance, regulatory/news event, Google/Search trend or competitor signal. Signal rules are source-specific and can be expanded over time.
+- **Trend Finder = Radar / Signal Playbook:** monitors selected sources and detects explicit signal types. For the first MVP, scope this to **Price Change** and **Demand–Supply Change** only. Within those types, use a few concrete rules such as strong price change, regional price outlier, demand up while supply falls, or a growing demand/supply imbalance. Signal rules describe the pattern being sought; a separate MVP threshold/trigger makes each rule technically measurable and can be calibrated with historical data.
 - **Story Creator = Brain / Analyst + Editor:** receives a signal, then uses an **Analysis Playbook** to decide which additional data to inspect and whether enough evidence exists for a story. It then uses an **Editorial/Story Playbook** to generate several possible angles, compare them and select the strongest candidates.
 - **Gatekeeper logic:** a signal does not automatically trigger article production. The Story Creator can reject weak signals. A Story Package should only be created when the evidence supports a useful, sufficiently differentiated and low-speculation angle.
 - **Selection criteria tested in chat:** data strength, information value and speculation risk are useful first criteria for comparing story angles.
@@ -123,14 +128,16 @@ The current diagram is intentionally becoming an explanatory learning model firs
 ## Risks and Open Questions
 
 - Which existing Product Intelligence categories/formats should be translated first into operational Trend Finder topic fields and signal playbooks?
-- Which one or few topic fields, bounded sources, signal types and corresponding analysis playbooks should define the first Trend Finder / Story Creator MVP before broader scaling?
+- How should the first Price Change and Demand–Supply Signal Rules be calibrated so they surface enough useful cases without creating noise?
+- Which comparison periods, peer-region logic and minimum data-quality checks belong in the first Signal Playbooks?
 - How much of review and publishing should remain manual in the MVP, and when should automated Quality Gate / Contentful rendering be introduced?
-- Which existing IS24 data sources and APIs are available to the agent workflow and under what access constraints?
 - How quickly can the external-journalist setup and manual publishing support be established?
 - What article cadence is a credible target once the core Story Creator hypothesis has been validated?
 - Which metrics beyond Search/Discover traffic should define early success and management reporting?
 
 ## Pre-vacation Deliverables — complete in this order
+
+As of 2026-09-28, the Target Architecture / Target Scope and the reduced MVP Scope are both at a strong working level. The remaining refinement should stay bounded and support the same three deliverables rather than reopen broad scoping.
 
 Before Dominik's last working day on 2026-10-02, the work should be narrowed to three deliverables:
 
@@ -157,13 +164,13 @@ These three deliverables together should provide the 2–3 management-ready slid
 
 ## Next Steps
 
-- Continue now with Deliverable 1: finish the explanatory default/hover content pass across the full Target Architecture, review it end-to-end and then freeze the architecture.
-- Do **not** move to MVP scoping until this content pass is complete and the target process is understood clearly.
-- Then derive Deliverable 2: map the full target process to the deliberately reduced MVP.
-- Only after those are stable, create Deliverable 3 from the existing Product Intelligence editorial material rather than starting from a blank content strategy.
-- Align with Bea on Monday and use that feedback for the larger mission/engineering kickoff on Wednesday.
-- Prepare the first Builder Daily Call / VP update; Nataliya can cover the first round if it lands during Dominik's vacation.
+- Build the first **MVP Signal Definition Matrix** for the Trend Finder. Keep it to the two agreed signal types: **Price Change** and **Demand–Supply Change**.
+- For each signal type, define the primary internal data source, a small number of Signal Rules, a separate provisional MVP Threshold / Trigger, the Signal/Analysis Playbook checks and the expected Signal Package output.
+- Current primary sources: Price Change → `d_listings_without_pii` + `d_regions`; Supply → approved `activeListings`; regional Demand → `currentSavedSearchStock`. Treat `listings_lifecycle`, Valuation tooling, general `searches`, waiting-list and engagement metrics as optional enrichment/later expansion unless the first rules need them.
+- Calibrate provisional numeric thresholds against historical data before treating them as fixed rules; the goal is a small but useful signal volume, not an arbitrary percentage chosen up front.
+- After the signal matrix is stable, continue the remaining Editorial Operating View / management-ready slide preparation without reopening the already strong Target and MVP scopes.
+- Align with Bea and use that feedback for the larger mission/engineering kickoff; prepare the first Builder Daily Call / VP update as needed.
 
 ## Last Confirmed
 
-Operating model, first 4–6 week objective and management-reporting setup confirmed in the Nataliya/Viktoria/Dominik kickoff on 2026-09-24. On 2026-09-25, Viktoria's knowledge transfer and review of the Product Intelligence Wiki clarified that the existing Wiki material is the default editorial baseline and that the pre-vacation work should be executed in three ordered deliverables: Target Architecture, MVP Scope, then Editorial Operating View. Formal effective date of the org move remains open.
+Operating model, first 4–6 week objective and management-reporting setup confirmed in the Nataliya/Viktoria/Dominik kickoff on 2026-09-24. On 2026-09-25, the Product Intelligence review clarified the existing Wiki material as the default editorial baseline and the three ordered pre-vacation deliverables. On 2026-09-28, Dominik confirmed that Target Architecture / Target Scope and MVP Scope are already at a strong working level; ScoutData validation supports a small data-first Trend Finder MVP using immediately accessible internal sources, with the next work focused on the two-signal Signal Definition Matrix. Formal effective date of the org move remains open.
