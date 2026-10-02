@@ -2,12 +2,12 @@
 
 ## Open
 
-- [ ] Lead Editorial Lighthouse project setup
-  - Area: Editorial Lighthouse
-  - Status: Open, Target Architecture / Target Scope and MVP Scope are at a strong working level; current focus is concrete Trend Finder signal definition before final management packaging.
-  - Next step: Build the MVP Signal Definition Matrix for the two agreed signal types, **Price Change** and **Demand–Supply Change**. For each, define primary data source, 1–2 Signal Rules, a separate provisional MVP Threshold / Trigger, Playbook checks and expected Signal Package output; calibrate thresholds against historical data rather than fixing arbitrary percentages. Then continue the remaining Editorial Operating View / 2–3 management-ready slide preparation before 2026-10-02.
-  - Context: The MVP follows a small-test-then-scale approach and should use already accessible internal data wherever possible. ScoutData confirmed direct Starburst access without new pipelines/approvals for the current primary sources: `d_listings_without_pii` + `d_regions` for price, approved `activeListings` for supply and `currentSavedSearchStock` for regional demand. Dominik owns News strategy, topic discovery/use of IS24 data and the AI content factory/human-review workflow; the Product Intelligence Wiki remains the editorial baseline. The first C3 milestone is proving the end-to-end machine works, not maximizing raw article count.
-  - Source: Nataliya/Viktoria/Dominik kickoff on 2026-09-24; Product Intelligence review on 2026-09-25; Dominik/ScoutData MVP data validation and signal-scope decision on 2026-09-28
+- [ ] Lead Scaling Editorial C3 implementation
+  - Area: Scaling Editorial
+  - Status: Open; pre-vacation foundation is complete. Target and MVP architecture, the four core working documents, Project Hub and the first Trend Finder → Story Creator → Writer proof are in place and published. Current agent capability remains intentionally narrow and mainly covers price changes.
+  - Next step: After returning on 2026-10-19, continue Agent Quality & Rules with additional real test cases, then define Human Review, set up the reusable LP Builder + Contentful publishing path, connect stable package handoffs through the existing Agent Factory and run multiple end-to-end publish tests.
+  - Context: The first C3 milestone is a reliable signal → story → content → review → publish loop, not maximum article volume. Human Review and Publishing are separate workstreams; automation should remain simple and linear until interfaces are stable. The Product Intelligence Project Hub and four published documents are the current handoff/reference set.
+  - Source: Nataliya/Viktoria/Dominik kickoff 2026-09-24; Product Intelligence/ScoutData validation 2026-09-25 to 2026-09-28; Dominik preparation and Nataliya approach sync 2026-10-01; pre-vacation finalization 2026-10-02
 
 - [ ] Support Viktoria on the broader Contentful Migration
   - Area: Contentful Migration
