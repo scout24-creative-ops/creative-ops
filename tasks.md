@@ -70,14 +70,6 @@
   - Context: Stefan created Linear ticket `LCMS-7518` for the focused asset-discovery/download component and estimates roughly one to two days of implementation. The broader LP Builder requirements remain in Dominik's Migration Crawler briefing. Temporary AEM/static asset URLs can be used in migration drafts as a transition state until persistent asset delivery is ready.
   - Source: Slack alignment with Stefan and Beatrice on 2026-09-18
 
-- [ ] Resolve unreliable large LP Builder HTML transfer
-  - Area: Landing Page Builder
-  - Status: Waiting for Mukhammadjon / FCT-1938 investigation
-  - Waiting for: Investigation of intermittent truncation on larger Full HTML Replace payloads.
-  - Dominik's next step: Continue using smaller/split library payloads; retest a ~120 KB Full HTML Replace only after FCT-1938 has a fix or clear explanation.
-  - Context: Two ~120 KB replacements stored only ~15.8 KB / ~15.7 KB despite successful write responses, while a fresh 74,431-byte import and earlier ~90 KB and ~118–123 KB cases succeeded. This is not behaving like a stable hard size threshold.
-  - Source: FCT-1938 created and assigned to Mukhammadjon on 2026-09-23
-
 - [ ] Set up Marketing Asset Library S3 pilot
   - Area: Marketing Asset Library
   - Status: Waiting for John Ford's infrastructure guidance; asset-crawler path is technically clarified
@@ -114,6 +106,12 @@
   - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
 
 ## Completed
+
+- [x] Resolve unreliable large LP Builder HTML transfer
+  - Area: Landing Page Builder
+  - Completed: 2026-10-02
+  - Outcome: Developer-side fixes resolved the intermittent large HTML transfer issue, so the Contentful-enabled LP Builder can now upload larger full-page HTML payloads reliably as well as smaller library/module payloads.
+
 
 - [x] Align Marketing Asset Library direction with John Ford
   - Area: Marketing Asset Library
