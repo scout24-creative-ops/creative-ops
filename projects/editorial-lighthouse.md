@@ -1,176 +1,225 @@
-# Editorial Lighthouse
+# Scaling Editorial
 
 ## Purpose
 
-Build and validate a scalable, AI-supported editorial growth engine for ImmoScout24 that can increase consumer-oriented editorial output, learn which formats and topics create measurable traffic and engagement, and establish a repeatable operating model for further scaling.
+Build and validate a scalable, AI-supported editorial growth engine for ImmoScout24 that can turn detectable signals into useful, publishable consumer stories, learn from performance and establish a repeatable operating model for further scaling.
 
-The initiative is based on the `Scaling Editorial at IS24` concept shared by Nataliya Medvedeva. The deck proposes a 12-month editorial growth pilot that builds on existing IS24 assets, data and authority while improving how content is packaged, connected and distributed.
+The project is the C3 News / editorial Lighthouse and part of a 12-month pilot. "Lighthouse" describes the Scout24 priority-project classification; the working project and artifact name is now **Scaling Editorial**.
 
 ## Current Status
 
-- At Scout24, a "Lighthouse" is a high-priority cross-team initiative that starts with a company cycle; multiple Lighthouses can run in parallel. Editorial Lighthouse is therefore the priority-project classification, not the name of the editorial operating model itself.
-- The initiative has moved from a provisional support request into an active project.
-- On 2026-09-21 Matthias Brandstetter confirmed that Dominik is expected to lead the Editorial Lighthouse project and receive support from colleagues in Matthias's organization.
-- On 2026-09-23 Dominik confirmed that Matthias also asked him to move into Matthias's organization and that Dominik accepted. Matthias indicated that Dominik would retain his Fachlead role and report to Nataliya Medvedeva rather than directly to Matthias. The formal effective date and organizational implementation are not yet confirmed.
-- On 2026-09-24, after Viktoria Riffel's follow-up alignment with Nataliya Medvedeva, the ownership split was clarified: Dominik owns Editorial Lighthouse overall. Viktoria owns the SEO/editorial side, including content logic and quality; Dominik owns the overall setup, end-to-end workflow, agent/system design, build-out and coordination of implementation support.
-- The project is a 12-month News/editorial pilot; C3 is the launch and proof phase rather than the full lifetime of the initiative.
-- The operating model is now explicitly agentic: Dominik owns the News strategy and AI-enabled production machine, Viktoria owns SEO quality/discoverability, external journalists provide human editorial review/authorship, and Bea owns engineering delivery for Contentful.
-- The first 4–6 week milestone is to prove a working end-to-end system and first publish→measure loop, not to optimize for raw article count immediately.
-- Current working architecture clarifies the first two AI stages: the Trend Finder acts as a **Radar** that detects predefined signals across a shared source pool; the Story Creator remains the **Brain**, acting as **Analyst + Editor** to investigate a signal, enrich it with additional data, generate multiple angles, select the strongest story candidates and only then create a Story Package.
-- As of 2026-09-28, Dominik considers both the Target Architecture / Target Scope and the reduced MVP Scope to be at a strong working level. The immediate refinement is no longer broad scoping but making the MVP Trend Finder operational through a small Signal Definition Matrix.
-- A ScoutData access check confirmed that the MVP can start from already accessible internal data through Starburst without first building new pipelines or seeking additional data access: price signals can use `delta.bi_data_is24_etl.d_listings_without_pii` joined to `d_regions`; supply can use the approved `activeListings` metric; regional demand can use `currentSavedSearchStock`. ScoutData remains the access/agent layer rather than the underlying business-data source.
-- Management reporting will use the existing Builder Daily Call / VP round as the Lighthouse checkpoint format, expected roughly bi-weekly for about 40 minutes. The purpose is reporting plus enablement/blocker removal rather than re-approval of the Lighthouse. Nataliya may cover the first round if Dominik is already on vacation.
-- The Scout24 Product Intelligence Wiki is now the primary durable fachliche source for Editorial Lighthouse. The existing Nataliya/Viktoria material should be treated as the default baseline for categories, formats, editorial strategy, cadence hypotheses, review/SEO rules and supporting research rather than being recreated from scratch. Dominik should challenge or change it only where it is materially unsuitable or technically unrealistic.
-- Primary Wiki entry point / area: https://wiki.scout24.com/pages/8f2cd9f5-6fce-4e80-870f-09a262c14ec5 . Central Lighthouse page: https://wiki.scout24.com/spaces/product-intelligence/pages/56481/scaling-editorial-at-scout24-lighthouse . Relevant supporting pages include Editorial, Launch categories & article slate, Content Plan and Google Discover.
-- The existing Wiki already contains a proposed editorial portfolio and operating assumptions, including launch categories, article examples, cadence hypotheses, E-E-A-T/review guidance and Discover requirements. These are inputs to the AI-system design, not work Dominik needs to independently recreate.
+- Dominik is the confirmed overall project lead and owns the end-to-end system, workflow, agent design, build-out and coordination.
+- Viktoria owns the SEO/editorial decision layer, including content logic and quality; Bea owns Contentful engineering delivery; external freelancers/journalists are planned for human editorial review/authorship.
+- The first milestone remains a working end-to-end system and first publish → measure loop rather than maximizing article volume.
+- The pre-vacation foundation was completed by 2026-10-02: Target Scope, reduced MVP Scope, architecture, Trend Matrix, high-level Working Plan, Content Plan, Project Hub and a first multi-agent proof are all in place.
+- Trend Finder, Story Creator and Writer have been set up and tested together. The currently implemented/testable agent scope is intentionally narrow and focuses mainly on **Price Change**. Broader Trend Fields, including Demand–Supply, remain part of the planned expansion rather than something to assume is already implemented end to end.
+- The current handoff model is package-based: Trend Finder creates a Signal Package, Story Creator creates a Story Package, and the next agent consumes that structured package. Tests should stay inside the implemented scope and pass the generated package forward rather than replacing it with unrelated free-form input.
+- A clean Trend Finder run checked all 16 German states for 1–28 September 2026 vs. the same 2025 period. Example signals included Sachsen-Anhalt at +5.8% (2,184 → 2,064 €/m²; n=9,790/9,486) and Brandenburg at +5.6% (3,511 → 3,323 €/m²; n=21,275/20,905); the configured quality checks passed.
+- The Story Creator / Writer chain was also tested with a synthetic Potsdam ownership-apartment case. The selected story direction was that additional space was becoming more expensive faster; the Writer output was directionally strong, with only fine-tuning around repetition/overclaiming still needed.
+- On 2026-10-01 Dominik reported that the approach-sync meeting with Nataliya went very well. He gave her an overview of the setup and preparation work; Nataliya subsequently asked him to send the agent links. No further detailed decisions from that meeting were captured in chat.
+- Dominik is on vacation from 2026-10-05 through 2026-10-16 and returns on 2026-10-19. The Project Hub and published working documents are the main handoff/reference during that period.
 
 ## Dominik's Role
 
-Dominik is the confirmed overall owner / project lead for Editorial Lighthouse.
+Dominik owns the complete system rather than every implementation detail. His responsibility includes:
 
-His ownership centers on making the complete system work rather than personally implementing every Agent. Viktoria owns the SEO/editorial decision layer; Dominik owns the end-to-end setup, workflow, agent/system design, implementation structure and coordination of contributors. This includes:
-
-- own News strategy, editorial calendar, topic/format experimentation and publishing cadence;
-- own topic discovery, use of IS24 data/inventory and competitive intelligence for story development;
-- structure the end-to-end editorial workflow and AI content factory;
-- break the process into clear human and agent responsibilities;
-- define inputs, outputs, handoffs and quality guardrails for the agent chain;
-- establish human review and approval gates;
-- shape and validate the first orchestrated MVP, then scale what earns evidence;
-- monitor Discover/distribution learning and use performance evidence for scale/stop decisions;
-- coordinate the relevant functional contributors while leaving engineering delivery with Bea;
-- identify where production-grade engineering support is required for orchestration and system integration.
-
-This follows Dominik's established operating model: solution leadership and quality ownership should be separated from permanent implementation and production ownership where suitable delivery capacity exists.
+- shape the Scaling Editorial strategy and operating model;
+- define Target and MVP scope;
+- structure the end-to-end AI + human workflow;
+- define agent responsibilities, inputs, outputs, package contracts and quality guardrails;
+- own topic discovery and use of IS24 data for the News/editorial system;
+- establish Human Review and publishing handoffs;
+- coordinate contributors while leaving engineering delivery with Bea;
+- validate the MVP through real end-to-end stories;
+- use performance evidence to improve and later scale the system.
 
 ## Key Stakeholders
 
-- Dominik Böhme — project lead / AI solution and workflow leadership
+- Dominik Böhme — overall project lead / AI system and workflow leadership
+- Nataliya Medvedeva — key stakeholder / Head of SEO; shared the initial Scaling Editorial concept and receives project updates
+- Viktoria Riffel — SEO/editorial decision layer, content logic and quality
+- Bea — Contentful engineering delivery
 - Matthias Brandstetter — sponsor / organizational support
-- Nataliya Medvedeva — key stakeholder from SEO; shared the initial `Scaling Editorial at IS24` concept
-- Viktoria Riffel — owns the SEO/editorial side of Lighthouse, including content logic, editorial rules and quality
-- SEO team — expected contributor for technical SEO, distribution, metadata, internal linking, Search/Discover requirements and publishing expertise
-- Editorial / journalist capacity — required for professional judgement, fact-checking, editing and authorship where the pilot uses AI-generated drafts
-- Engineering / platform contributors — to be involved where the prototype requires production-grade orchestration or system integration
+- External freelancers/journalists — planned human editorial review and accountable authorship
+- Working student / operational support — possible manual publishing support where needed
+- SEO / Product Intelligence contributors — Search, Discover, metadata, internal linking, editorial and publishing expertise
 
-Current contributor model: Dominik leads News/editorial growth and AI orchestration; Viktoria co-leads News from the SEO side and owns SEO quality/discoverability; Bea owns engineering delivery for Contentful; two external freelancers/journalists are planned for human editorial review/authorship; a working student can support manual publishing/operational work. Exact capacity and final staffing still need confirmation.
+## Target Architecture
 
-## Source Concept
+The maintained target flow is:
 
-The `Scaling Editorial at IS24` deck frames the opportunity around the gap between IS24 and larger editorial ecosystems such as Idealista.
+**Sources + Signal Rules → Trend Finder → Signal Package → Story Creator → Story Package → Content Creator → Production Package → Human Review → Contentful / News Pages → Learning Agent → Learning Package → feedback**
 
-The proposed 12-month growth pilot includes:
+### Trend Finder
 
-- use existing IS24 assets such as WohnBarometer, Orte, Wissen, Preisatlas, financing tools and listings as source material;
-- package proprietary data, evergreen expertise and marketplace signals into timely consumer-oriented stories;
-- create a connected editorial ecosystem including a dedicated `/news/` hub, topic collections, recurring series, internal linking and freshness signals;
-- test multiple content plays such as market journalism, pricing and supply/demand stories, local content, remarkable properties, lifestyle/architecture and selected high-curiosity formats;
-- continuously test and optimize topics, formats, headlines, imagery, publishing cadence and distribution.
+The Trend Finder uses **Focus → Monitor → Detect**:
 
-The deck also proposes an AI-supported production chain consisting of:
+- **Focus** — which editorial areas / Trend Fields should be observed;
+- **Monitor** — which sources, dimensions, comparison periods and cadence are scanned;
+- **Detect** — which signal logic turns an unusual observation into a Signal Package.
 
-1. **Trend Finder Agent** — topic discovery, trend and competitor analysis;
-2. **Story Generator Agent** — combines listings, pricing, geo and proprietary IS24 data into story angles, charts and insights;
-3. **Research / Writer Agent** — research plus complete article drafts, titles, metadata and schema;
-4. **Image Creator Agent** — imagery, social assets, infographics and supporting visuals;
-5. **Human editorial quality layer** — professional review, fact-checking, editing and accountable authorship;
-6. **SEO / publishing layer** — link and CTA review, publishing, distribution optimization and continued agent improvement.
+The MVP Focus is deliberately small and constrained by reliable data availability. The Target Focus can later become broader and more editorially driven.
+
+Current data / quality principles for price-change work include:
+
+- internal Starburst access;
+- bi_data_is24_etl.d_listings_without_pii and d_regions as the primary current price-data basis;
+- medians rather than means;
+- minimum sample size around n ≥ 200;
+- fraud/phishing filtering;
+- explicit quality notes;
+- YoY as the default price comparison;
+- Germany-wide scan of the configured Search Space;
+- exploration/ranking rather than an arbitrary fixed threshold during early calibration;
+- no causal or story interpretation inside Trend Finder;
+- maximum of five Signal Packages per run.
+
+Supply/demand sources validated for later expansion include approved activeListings and currentSavedSearchStock.
+
+### Signal Package
+
+A Signal Package is the structured observation: **what is unusual?** It should contain enough data, comparison and quality context for the Story Creator to investigate without already deciding the story.
+
+### Story Creator
+
+The Story Creator is the editorial decision layer / "Brain":
+
+**Validate → Human Relevance → Shape → Select**
+
+It validates the evidence, asks whether the signal matters to people, develops multiple angles, checks those angles against evidence and selects the strongest viable story. A signal is not automatically an article.
+
+The Story Creator should produce a Story Package only when the evidence supports a useful, differentiated and low-speculation story.
+
+### Story Package
+
+The Story Package is the production-ready editorial decision: **which story are we telling and on what evidence?**
+
+It contains the selected angle, Core Story Claim, Story Promise, headline direction, evidence/sources and a prioritized Writer Briefing.
+
+### Content Creator
+
+The Content Creator turns the Story Package into production assets. The current target view contains:
+
+- Writer
+- Image Creator
+- Chart Creator
+
+The Story Creator decides what the story is; the Content Creator produces how that already-decided story is expressed.
+
+### Human Review
+
+Human Review remains a mandatory separate workstream and final responsibility layer. The MVP needs to define:
+
+- what must be reviewed;
+- which claims, sources and data require checks;
+- Approve / Change / Reject outcomes;
+- who reviews what;
+- when expert/legal/compliance review is required;
+- how review feedback feeds agent improvement.
+
+No publication should happen without human editorial/factual review.
+
+### Publishing
+
+Publishing is a separate workstream from Human Review. The intended path is:
+
+**Final Production Package → LP Builder → Contentful Page → Publish**
+
+The MVP should reuse Viktoria's existing editorial / LP design, implement it once through the existing LP Builder in Contentful, define reusable template fields/metadata and map the Production Package into that template.
+
+### Workflow Automation
+
+The expected orchestration is intentionally simple and predominantly linear:
+
+**Agent → Package → Agent → Package → Agent**
+
+The existing Agent Factory / AI Team setup should be reused where possible. Complex multi-agent orchestration is not the goal of the first MVP. Automation should be connected only after package contracts and agent interfaces are stable.
+
+### Learning
+
+The later Learning Agent measures and interprets performance such as Search, Discover, CTR, impressions, traffic, engagement and conversion, then creates a Learning Package that can update Trend Finder priorities/rules and Story Creator selection logic.
+
+## Editorial Planning
+
+The Product Intelligence Wiki remains the fachliche baseline for editorial strategy, formats and content planning.
+
+Initial editorial tracks include:
+
+1. Market journalism
+2. Local and property stories
+3. Evergreen expertise
+4. Recurring curiosity formats
+5. Service-led explainers
+
+The current Target Content Plan is a **working hypothesis**, not a commitment. It uses a capacity assumption of up to 50 reviewed articles per week and a proposed distribution across the week, with the strongest publishing emphasis Monday–Wednesday and initial windows around 10:30–11:30 and 18:30–19:30. Timely news should publish when verified rather than wait for a scheduled slot.
+
+The MVP does **not** yet commit to a fixed weekly/daily cadence. It first needs to prove realistic production, review and publishing capacity.
+
+## C3 Working Plan
+
+The current high-level plan deliberately overlaps workstreams rather than treating them as linear phases:
+
+- **Agent Quality & Rules** — main post-vacation workstream; refine instructions, evidence rules, Human Relevance/story quality, package contracts, claims and edge cases.
+- **Human Review** — define review responsibilities, checks and feedback.
+- **Publishing Setup · LP Builder + Contentful** — reusable editorial template, required fields/metadata, Production Package mapping and final handoff.
+- **Workflow Automation** — short integration step after interfaces stabilize, using the existing Agent Factory where practical.
+- **End-to-End Test Stories** — run the full chain through Human Review and publishing.
+- **Iterate & Stabilise** — improve the MVP from real runs through the end of C3.
+- **Cleaning Month · January 2027** — consolidate learnings, clean technical/editorial debt, consolidate instructions/templates/docs and decide the next source/topic/automation scope.
+
+## Working Documents and Handoff
+
+Central Project Hub:
+
+- https://wiki.scout24.com/spaces/product-intelligence/pages/57178/project-hub
+
+Published working documents:
+
+- **Editorial Flow** — https://scout24-creative-ops.github.io/public/Scaling%20Editorial/scaling-editorial-lighthouse/
+- **Trend Matrix** — https://scout24-creative-ops.github.io/public/Scaling%20Editorial/trend-finder-matrix/
+- **Working Plan** — https://scout24-creative-ops.github.io/public/Scaling%20Editorial/working-plan/
+- **Content Plan** — https://scout24-creative-ops.github.io/public/Scaling%20Editorial/content-plan/
+
+The four documents were visually standardized before publication: shared content width, header system, update label, language controls and Target/MVP controls where applicable. The Flow remains the interactive architecture/documentation surface; Trend Matrix operationalizes Trend Finder Focus/Monitor/Detect; Working Plan holds the C3 timeline; Content Plan holds the Target planning hypothesis and reduced MVP view.
 
 ## Decisions
 
-- 2026-09-18: Initial support request remained provisional because scope, desired outcome and Dominik's role were not yet confirmed.
-- 2026-09-21: Matthias confirmed that Dominik should lead Editorial Lighthouse and receive support from colleagues in Matthias's organization.
-- 2026-09-21: Dominik confirmed that Editorial Lighthouse should now be treated as a distinct active project in his maintained work context.
-- 2026-09-24: Nataliya clarified the operating model: News is the C3 Lighthouse and a 12-month pilot; Dominik is accountable for News strategy, editorial calendar, experimentation and AI orchestration, while Viktoria owns the SEO quality/discoverability side.
-- 2026-09-24: The first 4–6 week objective is a working end-to-end machine and first publish→measure loop. Article-volume targets are directional vision inputs rather than proven near-term capacity.
-- 2026-09-24: Lighthouse management updates are expected through the existing Builder Daily Call / VP round, roughly bi-weekly; Nataliya can support or cover the first round, but Dominik and Viktoria are expected to increasingly present their own work.
-- 2026-09-28: Keep the first Trend Finder MVP deliberately small with **two signal types** rather than broadening the taxonomy: **Price Change** and **Demand–Supply Change**. Coverage should come from a few concrete Signal Rules within those types, not from adding many new types.
-- 2026-09-28: Use a **data-first MVP**: prefer signals that can be derived from already accessible internal sources, prove the end-to-end workflow on a small scope, and expand sources, regions, segments and signal types only after the first loop works.
-- 2026-09-28: Separate the semantic **Signal Rule** from its technical **MVP Threshold / Trigger**. Rules describe what is considered interesting; numeric thresholds remain provisional until calibrated against historical data so the Trend Finder does not produce either too many or too few hits.
-
-## Working Architecture — Radar → Brain → Production → Learn
-
-Current working hypothesis, aligned with Nataliya's Trend Finder → Story Generator model but more explicit about internal logic. The target flow is:
-
-**Sources + Signal Rules → Trend Finder / Radar → Signal Package → Story Creator / Brain → Story Package → Asset Creator → Production Package → Human Review → Publish → Learning Agent → Learning Package → feedback to Trend Finder + Story Creator**
-
-Presentation terminology is now aligned to Nataliya's six-step framing: **1 Discover** (Trend Finder), **2 Generate** (Story Creator), **3 Draft** (Asset Creator), **4 Human Edit** (Human Review), **5 Publish** (Contentful / News Pages), **6 Learn** (Learning Agent). The Story Creator is intentionally the largest Agent card because it is the central analysis and editorial-decision layer; packages are visually compact handoff objects.
-
-Key logic:
-
-- **Shared source pool:** Trend Finder and Story Creator can access the same overall pool of internal and external sources, but they use different subsets depending on the case. Candidate source types include News/regulatory sources, Google Trends/Search, competitors, IS24 listings/inventory, pricing/market data, Sprengnetter, demand/search behaviour, geo/location data and other approved Data Lake or producer-owned sources.
-- **Access layer vs. source:** ScoutData should not automatically be treated as one business-data source. Internal Slack evidence indicates that ScoutData is an agent/access layer that uses Collate for discovery and Starburst for actual Data Lake queries. For some transactional use cases, the authoritative source may still be the original data producer rather than the Data Lake.
-- **Trend Finder = Radar / Signal Playbook:** monitors selected sources and detects explicit signal types. For the first MVP, scope this to **Price Change** and **Demand–Supply Change** only. Within those types, use a few concrete rules such as strong price change, regional price outlier, demand up while supply falls, or a growing demand/supply imbalance. Signal rules describe the pattern being sought; a separate MVP threshold/trigger makes each rule technically measurable and can be calibrated with historical data.
-- **Story Creator = Brain / Analyst + Editor:** receives a signal, then uses an **Analysis Playbook** to decide which additional data to inspect and whether enough evidence exists for a story. It then uses an **Editorial/Story Playbook** to generate several possible angles, compare them and select the strongest candidates.
-- **Gatekeeper logic:** a signal does not automatically trigger article production. The Story Creator can reject weak signals. A Story Package should only be created when the evidence supports a useful, sufficiently differentiated and low-speculation angle.
-- **Selection criteria tested in chat:** data strength, information value and speculation risk are useful first criteria for comparing story angles.
-- **Story Package:** production-ready editorial brief containing the selected angle, headline direction, subline, core message, evidence/facts, sources, chart/visual idea, writer brief and image brief.
-- **Asset Creator / Production:** the Asset Creator contains **Writer + Image Creator** and turns the Story Package into a **Production Package**. The Story Creator decides what is being told; the Asset Creator produces how that already-defined story is implemented in text and visuals.
-- **Human Review:** humans retain responsibility for editorial judgement, factuality, trust, SEO/publishing requirements and final approval. In the presentation diagram, **4 Human Edit** is a lightweight icon/label positioned directly above the Production Package; the Production Package remains on the main horizontal flow and the review is visually attached to it rather than shown as a separate horizontal process node. The Human Review + Production Package group should sit centered between Asset Creator and Contentful / News Pages. A failed review should eventually route back to the relevant producer depending on the problem: language/style → Writer, image issue → Image Creator, factual/evidence/angle issue → Story Creator. This revision routing is intentionally not yet drawn into the target diagram.
-- **Learning Agent:** one agent measures and interprets Search, Discover, CTR, impressions, traffic, engagement and conversion, then creates a **Learning Package**. Learnings feed back into Trend Finder priorities/signal rules and Story Creator angles, playbooks and selection criteria. For presentation clarity, the diagram may show **two visible Learning Package instances**, one beneath Trend Finder and one beneath Story Creator, connected to the same feedback backbone; these are two visual consumers of the same output type, not two logically different Learning Packages.
-- **Diagram semantics:** agent-to-package creation is shown as a neutral line without arrowhead; package-to-next-step is a directed arrow; source access is neutral dashed; learning feedback is dashed and directed.
-- **Example — demand signal:** Radar sees unusually high demand for 1-room apartments in Munich. The Analyst checks supply, prices, historical development, peer cities and relevant geo/market context. The Editor can then form an angle such as rising demand meeting falling supply, if supported by the data.
-- **Example — external event:** Radar detects a relevant rental-law change from trusted external/regulatory sources. The Analyst checks who is affected, what changes, timing and available Scout context/data; the Editor forms the most useful explanatory angle instead of merely repeating the external news.
-
-The durable shorthand for the first stages is: **Radar finds what is unusual; Brain understands what it means and decides whether there is a story.**
-
-## Diagram Content / Hover Standard
-
-The current diagram is intentionally becoming an explanatory learning model first; management-level compression can happen later.
-
-- **Default cards stay concise:** step label, title, one short explanatory sentence and only the few visible sub-elements needed to understand the architecture.
-- **Hover structure:** start directly with the title, followed immediately by a short explanatory paragraph. Avoid eyebrows/kickers and avoid extra section headings unless they materially improve comprehension. Useful sections are Was passiert hier?, Enthält, Input, Output, Wichtig, Beispiel and Nächster Schritt.
-- **Complex agents can have two levels:** the main Agent hover explains the overall role; internal sub-cards can carry deeper logic. Story Creator therefore keeps separate hovers for Analyse / Validate, Generate Story Angles and Evaluate & Select; Asset Creator keeps separate Writer and Image Creator detail.
-- **One continuous illustrative example:** use the same non-factual learning scenario across the full flow: *In einer Stadt steigen die Angebotsmieten deutlich stärker als in vergleichbaren Städten.* The example should show how one observation becomes a signal, is validated, becomes a story angle and briefing, is produced/reviewed/published, and finally creates learnings.
-- **Core distinction:** Signal Package = structured observation / what is unusual; Story Package = production-ready editorial decision / which story is being told and on what evidence.
-- **Current content status:** Shared Sources / Data Pool, Trend Finder and Signal Package have been reviewed and approved in this explanatory style. Story Creator, its three phases, Story Package and Asset Creator were also conceptually reviewed in chat. A Codex content pass is applying the same system through Production Package, Human Review, Contentful / News Pages, Learning Agent and Learning Package. Dominik will review the complete diagram end-to-end afterwards before the architecture is considered content-final.
+- 2026-09-21 — Dominik became the confirmed overall lead for the Lighthouse initiative.
+- 2026-09-24 — Ownership split clarified: Dominik owns the end-to-end system and AI workflow; Viktoria owns SEO/editorial decision logic and quality; Bea owns Contentful engineering delivery.
+- 2026-09-24 — First milestone defined as a working end-to-end machine and publish → measure loop, not raw article volume.
+- 2026-09-28 — MVP should be data-first, starting from already accessible internal data and expanding only after the first loop works.
+- 2026-09-28 — Semantic Signal Rules and technical Thresholds/Triggers should be separated.
+- 2026-10-01 — The project/artifact naming was simplified to **Scaling Editorial**; "Lighthouse" remains useful as the Scout24 priority classification, not as the repeated document title.
+- 2026-10-01 — Target and MVP both use Focus → Monitor → Detect; MVP is smaller and data-constrained, while Target can later drive expansion into new sources and Trend Fields.
+- 2026-10-01 — Human Review and Publishing are separate workstreams.
+- 2026-10-01 — Workflow Automation should remain simple and linear for the MVP and follow stable package/interface definitions.
+- 2026-10-01 — Current agents should be treated as an early MVP, primarily covering price changes; package-based handoffs are part of the intended test flow.
+- 2026-10-02 — The four core documents and Project Hub are complete and published as the pre-vacation handoff/reference set.
 
 ## Risks and Open Questions
 
-- Which existing Product Intelligence categories/formats should be translated first into operational Trend Finder topic fields and signal playbooks?
-- How should the first Price Change and Demand–Supply Signal Rules be calibrated so they surface enough useful cases without creating noise?
-- Which comparison periods, peer-region logic and minimum data-quality checks belong in the first Signal Playbooks?
-- How much of review and publishing should remain manual in the MVP, and when should automated Quality Gate / Contentful rendering be introduced?
-- How quickly can the external-journalist setup and manual publishing support be established?
-- What article cadence is a credible target once the core Story Creator hypothesis has been validated?
-- Which metrics beyond Search/Discover traffic should define early success and management reporting?
-
-## Pre-vacation Deliverables — complete in this order
-
-As of 2026-09-28, the Target Architecture / Target Scope and the reduced MVP Scope are both at a strong working level. The remaining refinement should stay bounded and support the same three deliverables rather than reopen broad scoping.
-
-Before Dominik's last working day on 2026-10-02, the work should be narrowed to three deliverables:
-
-1. **Target Architecture final**
-   - Finish the end-to-end target diagram: Sources → Trend Finder → Signal Package → Story Creator → Story Package → Asset Creator → Production Package / Human Review → Contentful / News Pages → Learning Agent → Learning Package / feedback.
-   - Complete the current content audit of every default card and hover so Dominik can use the diagram to understand and explain every important process step before compressing it for management.
-   - Make agent boundaries, packages, human responsibility, orchestration and future learning loop understandable.
-   - This is the full target scope, not a promise that every component is implemented immediately.
-
-2. **MVP Scope on one page**
-   - Show which parts of the target process will be implemented/tested first, which are simplified, manually operated or fed with prepared data, and which are postponed.
-   - Start from a very small, controlled editorial case; current likely direction is an operational topic under the existing **Immobilien & Markt** portfolio, with market-price data as a strong candidate rather than inventing a new editorial strategy.
-   - Make confidence, major unknowns and the amount of manual work explicit.
-   - Nataliya specifically expects visibility into which agents exist, how they interact, whether orchestration is realistic and where manual work remains.
-
-3. **Editorial Operating View**
-   - Use the existing Product Intelligence Wiki as the baseline for categories, formats, article examples, cadence hypotheses, SEO/Discover rules and human-review model.
-   - Show **what we intend to write about, how often / on which days or windows, and who does what** across AI, freelancers/human review, SEO and publishing.
-   - Distinguish recurring/plannable formats from reactive/timely coverage.
-   - Treat article counts and publishing cadence as directional hypotheses for the pilot, not proven near-term production capacity.
-   - Reuse Nataliya/Viktoria's strategy instead of rebuilding it; flag only material mismatches or implementation concerns.
-
-These three deliverables together should provide the 2–3 management-ready slides Nataliya asked for and support the team/VP communication while Dominik is on vacation.
+- Current agent capability is much narrower than the Target Matrix; additional Trend Fields and source types still need implementation and validation.
+- Price-change rules are working as a first proof, but broader signal types and thresholds still need evidence-based calibration.
+- Story/Writer quality needs more real test cases to harden evidence handling, claims and edge cases.
+- Human Review responsibilities and scalable review capacity still need to be defined.
+- LP Builder + Contentful publishing integration for this editorial flow still needs end-to-end implementation/testing.
+- Workflow Automation is intentionally not yet the focus; it should follow stable interfaces.
+- External journalist capacity and operating model still need confirmation.
+- The Learning Agent / feedback loop is Target scope and has not yet been proven in the MVP.
+- Target article volume and cadence remain hypotheses until real production/review capacity is observed.
 
 ## Next Steps
 
-- Build the first **MVP Signal Definition Matrix** for the Trend Finder. Keep it to the two agreed signal types: **Price Change** and **Demand–Supply Change**.
-- For each signal type, define the primary internal data source, a small number of Signal Rules, a separate provisional MVP Threshold / Trigger, the Signal/Analysis Playbook checks and the expected Signal Package output.
-- Current primary sources: Price Change → `d_listings_without_pii` + `d_regions`; Supply → approved `activeListings`; regional Demand → `currentSavedSearchStock`. Treat `listings_lifecycle`, Valuation tooling, general `searches`, waiting-list and engagement metrics as optional enrichment/later expansion unless the first rules need them.
-- Calibrate provisional numeric thresholds against historical data before treating them as fixed rules; the goal is a small but useful signal volume, not an arbitrary percentage chosen up front.
-- After the signal matrix is stable, continue the remaining Editorial Operating View / management-ready slide preparation without reopening the already strong Target and MVP scopes.
-- Align with Bea and use that feedback for the larger mission/engineering kickoff; prepare the first Builder Daily Call / VP update as needed.
+After Dominik returns on 2026-10-19:
+
+1. Continue **Agent Quality & Rules** with additional Trend Finder, Story Creator and Writer test cases.
+2. Define the **Human Review** process and quality checks.
+3. Set up the reusable **LP Builder + Contentful** publishing path.
+4. Connect stable agent/package handoffs through the existing **Agent Factory**.
+5. Run and publish multiple real **end-to-end test stories**.
+6. Iterate and stabilize the MVP from those runs.
+7. Use the January Cleaning Month to consolidate learnings and decide the next sources, Trend Fields, topics, automation and learning scope.
 
 ## Last Confirmed
 
-Operating model, first 4–6 week objective and management-reporting setup confirmed in the Nataliya/Viktoria/Dominik kickoff on 2026-09-24. On 2026-09-25, the Product Intelligence review clarified the existing Wiki material as the default editorial baseline and the three ordered pre-vacation deliverables. On 2026-09-28, Dominik confirmed that Target Architecture / Target Scope and MVP Scope are already at a strong working level; ScoutData validation supports a small data-first Trend Finder MVP using immediately accessible internal sources, with the next work focused on the two-signal Signal Definition Matrix. Formal effective date of the org move remains open.
+2026-10-02. The pre-vacation project setup, four core working documents and first agent-chain proof are complete. The 2026-10-01 approach-sync with Nataliya was reported as successful; she asked for the agent links. Dominik is away 2026-10-05 through 2026-10-16 and returns 2026-10-19.
