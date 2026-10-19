@@ -195,3 +195,6 @@ Dominiks Beitrag zu Automationsprojekten soll möglichst über den einzelnen Use
 ## Last Confirmed
 
 Arbeitsprinzip zur klareren Trennung von eigener Verantwortung und Fachteam-Ownership von Dominik bestätigt am 2026-08-27. Jorins Bestätigung des weiterentwickelten AI-Operating-Models und des aktuellen strategischen Projektfokus: 2026-08-20.
+## Reorganization context (2026-10-19; effective 2026-11-01)
+
+Dominik has been told that he will move into the new Marketing Content Factory and Jorin will no longer be his manager. Contrary to an earlier assumption, he will not move into Nataliya's team; he will continue to lead Scaling Editorial for the coming months while the project remains organizationally with Nataliya / Matthias. Exact reporting line and new remit are still pending confirmation. Dominik has heard that the AI Enablement Series initiated by Jorin should stop and the calendar series should be deleted; this has not been directly confirmed or executed. Dominik explicitly does not want broad AI Enablement ownership to continue as a central part of his future role. Do not treat the existing two-pillar working model as a confirmed post-November mandate.
