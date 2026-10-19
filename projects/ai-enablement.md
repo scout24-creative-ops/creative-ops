@@ -159,3 +159,6 @@ Do not create a recurring Series presentation template or contributor presentati
 ## Last Confirmed
 
 Updated on 2026-09-21. The 2026-09-22 session remains the first 60-minute edition. Ulrike is out sick; Mike Henschel will take over her Show & Share slot (~10 min), and Alex Penkin is likely to add another ~10-minute contribution on his experience building an Agent for chat generation. The SSOT Explore topic now has a concrete HeyImmo example and a clearer framing: first map recurring Marketing knowledge needs, then check what the existing `immogpt-knowledge` layer already covers before considering any additional knowledge source.
+## October 2026 reorganization update
+
+On 2026-10-19 Dominik reported that his reporting line will change away from Jorin on 2026-11-01. He has heard that the recurring AI Enablement Series should end and its calendar series should be deleted. This is pending direct confirmation; no calendar action has been performed. Dominik does not wish to continue broad AI Enablement ownership in his future role. The original mandate came from Jorin. Reassess whether the format ends or receives a new owner before cancellation.
