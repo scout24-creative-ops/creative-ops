@@ -10,7 +10,7 @@ Scaling Editorial was initially established as the C3 News / editorial Lighthous
 
 - **2026-10-20 strategic update:** Scaling Editorial is no longer classified as a C3 Lighthouse topic, according to Nataliya's report of a VP decision. The project remains active, and Nataliya confirmed that its existing program and roadmap will continue. The Marketing transition is ongoing; no changes to owner, budget, staffing, or timeline were specified.
 - Dominik is the confirmed overall project lead and owns the end-to-end system, workflow, agent design, build-out and coordination.
-- Viktoria owns the SEO/editorial decision layer, including content logic and quality; Bea owns Contentful engineering delivery; external freelancers/journalists are planned for human editorial review/authorship.
+- Viktoria owns the SEO/editorial decision layer, including content logic and quality; Bea owns Contentful engineering delivery. Several freelance writers have reportedly been selected and a colleague received approval to engage them from 2026-11-01; contracts and exact capacity remain unconfirmed. The intended rollout is human-written articles from Story Packages first, then possible AI Writer drafts in author-specific styles with freelancer review.
 - The first milestone remains a working end-to-end system and first publish → measure loop rather than maximizing article volume.
 - The pre-vacation foundation was completed by 2026-10-02: Target Scope, reduced MVP Scope, architecture, Trend Matrix, high-level Working Plan, Content Plan, Project Hub and a first multi-agent proof are all in place.
 - Trend Finder, Story Creator and Writer have been set up and tested together. The currently implemented/testable agent scope is intentionally narrow and focuses mainly on **Price Change**. Broader Trend Fields, including Demand–Supply, remain part of the planned expansion rather than something to assume is already implemented end to end.
@@ -209,7 +209,7 @@ The four documents were visually standardized before publication: shared content
 - Human Review responsibilities and scalable review capacity still need to be defined.
 - LP Builder + Contentful publishing integration for this editorial flow still needs end-to-end implementation/testing.
 - Workflow Automation is intentionally not yet the focus; it should follow stable interfaces.
-- External journalist capacity and operating model still need confirmation.
+- Freelance writer engagement has approval to start from 2026-11-01, according to Dominik, but final number, contracting, writer onboarding, review responsibilities and capacity are not yet confirmed. If writers' work is to inform future AI Writer styles, agree appropriate permissions, genuine reference samples and editorial accountability; separate author-voice review from factual/editorial review.
 - The Learning Agent / feedback loop is Target scope and has not yet been proven in the MVP.
 - Target article volume and cadence remain hypotheses until real production/review capacity is observed.
 
