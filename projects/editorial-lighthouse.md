@@ -16,7 +16,7 @@ The project is the C3 News / editorial Lighthouse and part of a 12-month pilot. 
 - The current handoff model is package-based: Trend Finder creates a Signal Package, Story Creator creates a Story Package, and the next agent consumes that structured package. Tests should stay inside the implemented scope and pass the generated package forward rather than replacing it with unrelated free-form input.
 - A clean Trend Finder run checked all 16 German states for 1–28 September 2026 vs. the same 2025 period. Example signals included Sachsen-Anhalt at +5.8% (2,184 → 2,064 €/m²; n=9,790/9,486) and Brandenburg at +5.6% (3,511 → 3,323 €/m²; n=21,275/20,905); the configured quality checks passed.
 - The Story Creator / Writer chain was also tested with a synthetic Potsdam ownership-apartment case. The selected story direction was that additional space was becoming more expensive faster; the Writer output was directionally strong, with only fine-tuning around repetition/overclaiming still needed.
-- On 2026-10-20 Dominik shared the Story Creator V2 instruction export from a separate ChatGPT Agent Builder draft. Unlike an earlier unchanged export, the new instructions incorporate three explicit editorial outcomes, separate evaluation of multiple Signal Packages, flexible story-angle quantity, journalistic insight as a criterion and clearer evidence provenance. The export confirms a changed draft text, not yet a tested production/published configuration.
+- On 2026-10-20 Dominik shared and tested a separate Story Creator V2 configuration in ChatGPT Agent Builder. The revised instructions implement three editorial outcomes, separate handling of multiple Signal Packages, flexible story angles, journalistic insight criteria and provenance distinctions. On the same five signals as V1, V2 recommended two separate stories (Garmisch-Partenkirchen; Aurich + Nordfriesland) and further research for Rhein-Erft-Kreis and Böblingen instead of V1's single cross-regional explainer. V2 reported additional Starburst follow-up checks, but the underlying queries/results were not provided for independent verification. No Writer V2 handoff or publishing loop was completed in this test.
 - On 2026-10-01 Dominik reported that the approach-sync meeting with Nataliya went very well. He gave her an overview of the setup and preparation work; Nataliya subsequently asked him to send the agent links. No further detailed decisions from that meeting were captured in chat.
 - Dominik is on vacation from 2026-10-05 through 2026-10-16 and returns on 2026-10-19. The Project Hub and published working documents are the main handoff/reference during that period.
 
@@ -201,7 +201,7 @@ The four documents were visually standardized before publication: shared content
 
 - Current agent capability is much narrower than the Target Matrix; additional Trend Fields and source types still need implementation and validation.
 - Price-change rules are working as a first proof, but broader signal types and thresholds still need evidence-based calibration.
-- Story/Writer quality needs more real test cases to harden evidence handling, claims and edge cases.
+- Story Creator V2's first comparison with V1 suggests better editorial selection, but only one test set has been compared. Its reported follow-up Starburst queries and finer regional sample sizes still require tool-log/SQL validation; some municipality values may rest on small samples. Story/Writer quality needs more varied real test cases to harden evidence handling, claims and edge cases.
 - Human Review responsibilities and scalable review capacity still need to be defined.
 - LP Builder + Contentful publishing integration for this editorial flow still needs end-to-end implementation/testing.
 - Workflow Automation is intentionally not yet the focus; it should follow stable interfaces.
@@ -223,4 +223,4 @@ After Dominik returns on 2026-10-19:
 
 ## Last Confirmed
 
-2026-10-20. A revised Story Creator V2 instruction export is available and shows the intended broader editorial decision principles in a separate builder draft; behavior and live publishing status have not yet been re-tested. The Trend Finder, Story Creator and Writer chain has produced another article draft, but Human Review and publishing remain unconfirmed. 
+2026-10-20. Story Creator V2 has been exercised with the original five-signal input and selected two stories plus two research decisions, unlike V1's single explainer. The claimed supplemental Starburst analyses are not independently verified from the shared output. Human Review and publishing remain unconfirmed. 
