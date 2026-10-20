@@ -4,10 +4,11 @@
 
 Build and validate a scalable, AI-supported editorial growth engine for ImmoScout24 that can turn detectable signals into useful, publishable consumer stories, learn from performance and establish a repeatable operating model for further scaling.
 
-The project is the C3 News / editorial Lighthouse and part of a 12-month pilot. "Lighthouse" describes the Scout24 priority-project classification; the working project and artifact name is now **Scaling Editorial**.
+Scaling Editorial was initially established as the C3 News / editorial Lighthouse within a planned 12-month pilot. On 2026-10-20 Nataliya reported a VP decision to remove Editorial from the C3 Lighthouse topic portfolio and focus the Lighthouse on other initiatives. Nataliya explicitly confirmed that the Scaling Editorial program and roadmap continue as planned. The current project name remains **Scaling Editorial**; C3/Lighthouse is now historical context, not the current classification.
 
 ## Current Status
 
+- **2026-10-20 strategic update:** Scaling Editorial is no longer classified as a C3 Lighthouse topic, according to Nataliya's report of a VP decision. The project remains active, and Nataliya confirmed that its existing program and roadmap will continue. The Marketing transition is ongoing; no changes to owner, budget, staffing, or timeline were specified.
 - Dominik is the confirmed overall project lead and owns the end-to-end system, workflow, agent design, build-out and coordination.
 - Viktoria owns the SEO/editorial decision layer, including content logic and quality; Bea owns Contentful engineering delivery; external freelancers/journalists are planned for human editorial review/authorship.
 - The first milestone remains a working end-to-end system and first publish → measure loop rather than maximizing article volume.
@@ -156,7 +157,7 @@ The current Target Content Plan is a **working hypothesis**, not a commitment. I
 
 The MVP does **not** yet commit to a fixed weekly/daily cadence. It first needs to prove realistic production, review and publishing capacity.
 
-## C3 Working Plan
+## Working Plan (originally C3)
 
 The current high-level plan deliberately overlaps workstreams rather than treating them as linear phases:
 
@@ -165,7 +166,7 @@ The current high-level plan deliberately overlaps workstreams rather than treati
 - **Publishing Setup · LP Builder + Contentful** — reusable editorial template, required fields/metadata, Production Package mapping and final handoff.
 - **Workflow Automation** — short integration step after interfaces stabilize, using the existing Agent Factory where practical.
 - **End-to-End Test Stories** — run the full chain through Human Review and publishing.
-- **Iterate & Stabilise** — improve the MVP from real runs through the end of C3.
+- **Iterate & Stabilise** — improve the MVP from real runs.
 - **Cleaning Month · January 2027** — consolidate learnings, clean technical/editorial debt, consolidate instructions/templates/docs and decide the next source/topic/automation scope.
 
 ## Working Documents and Handoff
@@ -181,7 +182,7 @@ Published working documents:
 - **Working Plan** — https://scout24-creative-ops.github.io/public/Scaling%20Editorial/working-plan/
 - **Content Plan** — https://scout24-creative-ops.github.io/public/Scaling%20Editorial/content-plan/
 
-The four documents were visually standardized before publication: shared content width, header system, update label, language controls and Target/MVP controls where applicable. The Flow remains the interactive architecture/documentation surface; Trend Matrix operationalizes Trend Finder Focus/Monitor/Detect; Working Plan holds the C3 timeline; Content Plan holds the Target planning hypothesis and reduced MVP view.
+The four documents were visually standardized before publication: shared content width, header system, update label, language controls and Target/MVP controls where applicable. The Flow remains the interactive architecture/documentation surface; Trend Matrix operationalizes Trend Finder Focus/Monitor/Detect; Working Plan contains the original C3-era timeline and may need its framing reviewed; Content Plan holds the Target planning hypothesis and reduced MVP view.
 
 ## Decisions
 
@@ -197,8 +198,11 @@ The four documents were visually standardized before publication: shared content
 - 2026-10-01 — Current agents should be treated as an early MVP, primarily covering price changes; package-based handoffs are part of the intended test flow.
 - 2026-10-02 — The four core documents and Project Hub are complete and published as the pre-vacation handoff/reference set.
 
+- 2026-10-20 — Nataliya reported the VPs' decision to remove Editorial from the C3 Lighthouse topic portfolio, while explicitly confirming continuation of the Scaling Editorial program and roadmap as planned. No resourcing or schedule change was announced.
+
 ## Risks and Open Questions
 
+- With removal from the C3 Lighthouse portfolio, executive visibility and governance may change. Nataliya confirmed unchanged continuation of the program and roadmap, but resource, budget and escalation implications were not addressed; do not assume a cut or an unchanged governance model without confirmation.
 - Current agent capability is much narrower than the Target Matrix; additional Trend Fields and source types still need implementation and validation.
 - Price-change rules are working as a first proof, but broader signal types and thresholds still need evidence-based calibration.
 - Story Creator V2's first comparison with V1 suggests better editorial selection, but only one test set has been compared. Independent read-only Starburst checks reproduced the principal data directions and subgroup findings; publication-specific use still needs consistent median methodology (approximate vs exact values differ by up to ~2.5 pp), clear sample-size thresholds for submarkets and future repeat tests. Original agent SQL/tool logs have not been independently inspected. Story/Writer quality needs more varied real test cases.
@@ -223,4 +227,4 @@ After Dominik returns on 2026-10-19:
 
 ## Last Confirmed
 
-2026-10-20. Story Creator V2 selected two stories plus two research decisions from the original five-signal input, unlike V1's single explainer. Independent Starburst checks reproduced the signal counts, means, directions and substantive local patterns; exact-median calculations reveal material differences from some approximate headline percentages, and small local samples need caution. Human Review and publishing remain unconfirmed. 
+2026-10-20. Nataliya reported Editorial's removal from the C3 Lighthouse portfolio and confirmed Scaling Editorial continues with the same program and roadmap. This is a classification/spotlight change, not a confirmed cancellation or rescope. Also on 2026-10-20, Story Creator V2 selected two stories plus two research decisions from the original five-signal input, unlike V1's single explainer. Independent Starburst checks reproduced the signal counts, means, directions and substantive local patterns; exact-median calculations reveal material differences from some approximate headline percentages, and small local samples need caution. Human Review and publishing remain unconfirmed. 
