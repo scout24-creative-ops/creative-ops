@@ -2,12 +2,12 @@
 
 ## Open
 
-- [ ] Lead Scaling Editorial C3 implementation
+- [ ] Lead Scaling Editorial implementation
   - Area: Scaling Editorial
-  - Status: Open; pre-vacation foundation is complete. Target and MVP architecture, the four core working documents, Project Hub and the first Trend Finder → Story Creator → Writer proof are in place and published. Current agent capability remains intentionally narrow and mainly covers price changes.
+  - Status: Open; removed from the C3 Lighthouse portfolio by VP decision as reported by Nataliya on 2026-10-20, but Scaling Editorial program and roadmap continue as planned. Pre-vacation foundation is complete. Target and MVP architecture, the four core working documents, Project Hub and the first Trend Finder → Story Creator → Writer proof are in place and published. Current agent capability remains intentionally narrow and mainly covers price changes.
   - Next step: After returning on 2026-10-19, continue Agent Quality & Rules with additional real test cases, then define Human Review, set up the reusable LP Builder + Contentful publishing path, connect stable package handoffs through the existing Agent Factory and run multiple end-to-end publish tests.
-  - Context: The first C3 milestone is a reliable signal → story → content → review → publish loop, not maximum article volume. Human Review and Publishing are separate workstreams; automation should remain simple and linear until interfaces are stable. The Product Intelligence Project Hub and four published documents are the current handoff/reference set.
-  - Source: Nataliya/Viktoria/Dominik kickoff 2026-09-24; Product Intelligence/ScoutData validation 2026-09-25 to 2026-09-28; Dominik preparation and Nataliya approach sync 2026-10-01; pre-vacation finalization 2026-10-02
+  - Context: The first MVP milestone is a reliable signal → story → content → review → publish loop, not maximum article volume. Human Review and Publishing are separate workstreams; automation should remain simple and linear until interfaces are stable. The Product Intelligence Project Hub and four published documents are the current handoff/reference set.
+  - Source: Nataliya's message about VP C3 Lighthouse decision 2026-10-20; Nataliya/Viktoria/Dominik kickoff 2026-09-24; Product Intelligence/ScoutData validation 2026-09-25 to 2026-09-28; Dominik preparation and Nataliya approach sync 2026-10-01; pre-vacation finalization 2026-10-02
 
 - [ ] Support Viktoria on the broader Contentful Migration
   - Area: Contentful Migration
