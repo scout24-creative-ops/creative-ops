@@ -217,15 +217,13 @@ The four documents were visually standardized before publication: shared content
 
 ## Next Steps
 
-After Dominik returns on 2026-10-19:
-
-1. Continue **Agent Quality & Rules** with additional Trend Finder, Story Creator and Writer test cases.
-2. Define the **Human Review** process and quality checks.
-3. Set up the reusable **LP Builder + Contentful** publishing path.
-4. Connect stable agent/package handoffs through the existing **Agent Factory**.
-5. Run and publish multiple real **end-to-end test stories**.
-6. Iterate and stabilize the MVP from those runs.
-7. Use the January Cleaning Month to consolidate learnings and decide the next sources, Trend Fields, topics, automation and learning scope.
+1. Draft **new Trend Finder 2.0 Settings Instructions** and the complete **Signal Package Standard V2** according to the [approved editorial search framework](editorial-search-framework.md); preserve the legacy agent as comparison baseline.
+2. Configure and comparatively test the two Trend Finders on the same general prompt for audience relevance, signal diversity, statistical quality and Starburst efficiency.
+3. Refine and test Story Creator's **active discovery of compelling, evidentially defensible angles** rather than mere validation of numbers. Keep Writer settings unchanged until appropriate style references and downstream tests exist.
+4. Define the **Human Review** process and quality checks.
+5. Set up the reusable **LP Builder + Contentful** publishing path and then integrate stable package handoffs through existing Agent Factory infrastructure.
+6. Run and publish multiple real **end-to-end test stories**, then iterate from quality and performance feedback.
+7. Use the January 2027 Cleaning Month to consolidate learnings and decide further sources, Trend Fields, topics and automation.
 
 ## Last Confirmed
 
