@@ -60,7 +60,7 @@ Do not fabricate journalistic angles in order to justify a weak signal. Allow St
 ## Specific implementation decision, 2026-10-21
 
 - Create a **new, separate agent: Trend Finder 2.0**. Preserve the original Trend Finder intact for controlled comparison and regression protection.
-- The user wants **complete Instructions drafted directly by ChatGPT**, rather than ask the new agent to compose its own Settings instructions. Agent configuration lives in **Settings → Instructions**; the user will paste the final text there when ready.
+- **Updated decision, 2026-10-22 (supersedes 2026-10-21 drafting approach):** Dominik prefers creating the new agent in **ChatGPT Agent Builder** and letting that Builder **draft/structure its own Settings Instructions**, based on a comprehensive construction brief with all confirmed framework requirements and legacy technical safeguards. ChatGPT supplies the brief and independently reviews the Builder-produced full Instructions and companion reference standard. Agent configuration remains in Settings; a regular agent chat is not assumed to edit it.
 - Create an accompanying **Signal Package Standard 2.0** as a separate reference/knowledge document. Original standard and technical constraints carry over; change only what the new search framework requires in the editorial boundary/output contract.
 - A first attempt to draft complete Instructions was **interrupted**; it was not completed or installed. The new agent was **not confirmed created**. No instructions/reference files have yet been finalized.
 - Before the final install, ensure the new agent has the relevant internal read-only data capabilities. No assumptions that permissions or resources are already connected.
@@ -187,13 +187,9 @@ Keine Interpretation, keine Story-Idee und keine Handlungsempfehlung.
 - SC role change conceptual only: after receiving a signal, actively explore several plausible editorial directions when useful, identify and research the most compelling defensible angle, choose or reject; do not simply validate that a percentage held for several months.
 - Performance of actual article topics/CTR is not yet known; use potential reach as qualitative hypothesis, eventually close feedback loop with actual readership/search/discover data.
 
-## Next approved action
+## Next approved action (updated 2026-10-22)
 
-**Draft, in German, two FULL ready-to-copy deliverables:**
-1. **New Trend Finder 2.0 Settings → Instructions** (not a prompt asking the agent to write its own Instructions).
-2. **signal-package-standard-v2.md** as a complete standalone knowledge/reference file.
-
-Ensure the two texts do not contradict each other, cover all seven agreed framework decisions and all relevant old safety/data/SQL/format requirements. Stay in MVP Price Change. User has already approved proceeding; only review before actually changing agent settings. Do not modify old agent or other agents/repositories.
+Prepare a **self-contained build brief / prompt for ChatGPT Agent Builder**, instructing it to create a NEW Trend Finder 2.0 and **author/structure its own complete Settings Instructions** plus a compatible full **signal-package-standard-v2.md** reference. The brief must transmit all seven approved framework decisions and the old technical/data/Starburst/quality requirements; current MVP stays Price Change only. Then review the Builder's exported Instructions and standard against this source document, fix omissions/contradictions and compare new vs legacy Trend Finder. The original Trend Finder must not be edited. Do not interpret the earlier direct-drafting decision as current.
 
 A useful controlled test afterwards: run legacy and V2 Trend Finders with the same general prompt, compare diversity of signals, broad reader relevance, technical quality, Starburst efficiency and downstream Story Creator potential. No test or new agent setup has yet been reported as completed.
 
@@ -205,3 +201,4 @@ A useful controlled test afterwards: run legacy and V2 Trend Finders with the sa
 - The user already answered all design questions; don't ask for repeated confirmation.
 - Do not prematurely edit other agent settings. Don't promise asynchronous/background delivery.
 - User cares about speed and has interrupted very lengthy responses; deliver finished output efficiently.
+- **Latest preference (2026-10-22): Builder-authored instructions based on a comprehensive brief**, reviewed afterwards. This overrides earlier plan for ChatGPT to write the final instructions directly.
