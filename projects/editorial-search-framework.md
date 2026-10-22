@@ -1,6 +1,6 @@
 # Scaling Editorial — Editorial Search Framework / Trend Finder 2.0
 
-_Status: Editorial framework approved in conversation on 2026-10-21; new agent and final instructions/reference document NOT yet created or deployed._
+_Status (2026-10-22): Framework approved. Builder reports a new Trend Finder 2.0 DRAFT with installed Instructions, Signal Package Standard 2.0 Knowledge and Starburst MCP; no productive run, publication or independent audit confirmed._
 
 This is a **supporting design/reference document for the existing Scaling Editorial project**, not a separate project. The existing Trend Finder remains unchanged as a comparison baseline. The user explicitly decided to build **a NEW Trend Finder 2.0** rather than modify the old agent, to reduce regression risk.
 
@@ -187,9 +187,17 @@ Keine Interpretation, keine Story-Idee und keine Handlungsempfehlung.
 - SC role change conceptual only: after receiving a signal, actively explore several plausible editorial directions when useful, identify and research the most compelling defensible angle, choose or reject; do not simply validate that a percentage held for several months.
 - Performance of actual article topics/CTR is not yet known; use potential reach as qualitative hypothesis, eventually close feedback loop with actual readership/search/discover data.
 
+## Agent Builder outcome reported on 2026-10-22
+
+- Dominik shared the Agent Builder's completion report: a separate draft named **Trend Finder 2.0** was reportedly created, with independently Builder-authored Settings Instructions, a separate **Signal Package Standard 2.0** Knowledge file and three starter prompts. Original agents remain unchanged. No productive Trend Run; not reported as published.
+- Starburst MCP was reportedly connected with Dominik's explicit approval. The app also exposes a **write-capable create/replace View operation**, and no tool-level read-only-only subset was offered. Builder says **every action requires confirmation** and Instructions prohibit writes. **This is not a technical read-only guarantee**; avoid approving any write action; stronger controls would require read-only DB permissions/app restrictions.
+- Dominik pasted the **complete Signal Package Standard 2.0** into chat, and it is available in that conversation, but the **complete installed Agent Instructions have not appeared yet** in the chat. Do not claim both documents independently audited.
+- Initial review of Knowledge standard: preserves Price Change MVP, median and n>=200/period/segment, identical filters, disclosure of proxies, technical closing balance, up to five signals and added qualitative reader-potential/opportunity fields. Final consistency audit requires full Instructions. Pay attention to price-bucket comparability/composition effects and supported regional grouping claims.
+- Next action: obtain full Settings Instructions from Builder and compare both documents to the approved framework; audit read-only behavior/connector gating before safe run and controlled TF1/TF2 comparison.
+
 ## Next approved action (updated 2026-10-22)
 
-Prepare a **self-contained build brief / prompt for ChatGPT Agent Builder**, instructing it to create a NEW Trend Finder 2.0 and **author/structure its own complete Settings Instructions** plus a compatible full **signal-package-standard-v2.md** reference. The brief must transmit all seven approved framework decisions and the old technical/data/Starburst/quality requirements; current MVP stays Price Change only. Then review the Builder's exported Instructions and standard against this source document, fix omissions/contradictions and compare new vs legacy Trend Finder. The original Trend Finder must not be edited. Do not interpret the earlier direct-drafting decision as current.
+**Builder task reported complete as a draft (not independently verified).** Obtain the full Builder-generated Agent Settings Instructions, audit them against the seven-point framework and the pasted full Signal Package Standard 2.0, check tool permissions/confirmation gating, then conduct safe read-only testing and compare with legacy Trend Finder. Keep original unchanged.
 
 A useful controlled test afterwards: run legacy and V2 Trend Finders with the same general prompt, compare diversity of signals, broad reader relevance, technical quality, Starburst efficiency and downstream Story Creator potential. No test or new agent setup has yet been reported as completed.
 
