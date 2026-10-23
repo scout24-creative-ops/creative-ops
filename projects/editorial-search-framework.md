@@ -1,6 +1,6 @@
 # Scaling Editorial — Editorial Search Framework / Trend Finder 2.0
 
-_Status (2026-10-22): Framework approved; Builder reports a separate Trend Finder 2.0 DRAFT with Instructions, Standard 2.0 Knowledge and Starburst MCP. Dominik supplied the complete text of both documents and their CONTENT passed an initial cross-check against the seven framework components and core technical guardrails. No productive run, live publication, actual connector permissions or Builder-installed configuration independently verified._
+_Historical design/reference state (2026-10-21 to 2026-10-22): This document captures the approved seven-part editorial exploration framework and initial Builder plan. **It is not a current agent-deployment status report.** By 2026-10-23, a separate Trend Finder 2.0 had been tested in multiple real discovery runs using Signal Package Standard **3.0** and Data Source Catalog 1.0. The original Trend Finder remains preserved, but mandatory comparison runs with it were not pursued. Current operational state, risks and next steps are maintained in [Scaling Editorial](editorial-lighthouse.md). Starburst read-only permissions are still not a hard technical guarantee._
 
 This is a **supporting design/reference document for the existing Scaling Editorial project**, not a separate project. The existing Trend Finder remains unchanged as a comparison baseline. The user explicitly decided to build **a NEW Trend Finder 2.0** rather than modify the old agent, to reduce regression risk.
 
@@ -57,7 +57,7 @@ Keep the proven package structure and technical contents (what, where, compare, 
 **No finished story, no definitive headline, no causal conjectures, no explanation of causes, no action advice.**
 Do not fabricate journalistic angles in order to justify a weak signal. Allow Story Creator to reject an otherwise strong signal.
 
-## Specific implementation decision, 2026-10-21
+## Initial implementation decisions, 2026-10-21/22 (historical; superseded where noted)
 
 - Create a **new, separate agent: Trend Finder 2.0**. Preserve the original Trend Finder intact for controlled comparison and regression protection.
 - **Updated decision, 2026-10-22 (supersedes 2026-10-21 drafting approach):** Dominik prefers creating the new agent in **ChatGPT Agent Builder** and letting that Builder **draft/structure its own Settings Instructions**, based on a comprehensive construction brief with all confirmed framework requirements and legacy technical safeguards. ChatGPT supplies the brief and independently reviews the Builder-produced full Instructions and companion reference standard. Agent configuration remains in Settings; a regular agent chat is not assumed to edit it.
