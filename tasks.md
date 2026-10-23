@@ -2,17 +2,17 @@
 
 ## Open
 
-- [ ] Lead Scaling Editorial implementation
+- [ ] Improve Scaling Editorial editorial selection and complete the publication loop
   - Area: Scaling Editorial
-  - Status: Open; Scaling Editorial program/roadmap continue despite removal from C3 Lighthouse topics. A real-price end-to-end test exposed weak editorial interest. The reach-first Editorial Search Framework was approved; a separate **Trend Finder 2.0 draft has been reported configured** with Builder-authored Instructions and Knowledge file. The supplied full text of both passed preliminary framework-consistency review; runtime behavior and tool permissions remain unverified.
-  - Next step: Conduct first controlled read-only Trend Finder 2.0 run, then compare it to legacy Trend Finder using the same generic price-trend prompt. The Builder reports all requested comparability/methodology hardening and Knowledge reference checks complete; the Starburst View write action remains technically available under mandatory confirmation and prohibited by Instructions. Never approve writes. Assess actual Signal Packages, data quality and reader potential before moving to Story Creator improvements, Human Review and publishing.
-  - Context: The first MVP milestone is a reliable signal → story → content → review → publish loop, not maximum article volume. Human Review and Publishing are separate workstreams; automation should remain simple and linear until interfaces are stable. The Product Intelligence Project Hub and four published documents are the current handoff/reference set.
-  - Source: Nataliya's message about VP C3 Lighthouse decision 2026-10-20; Nataliya/Viktoria/Dominik kickoff 2026-09-24; Product Intelligence/ScoutData validation 2026-09-25 to 2026-09-28; Dominik preparation and Nataliya approach sync 2026-10-01; pre-vacation finalization 2026-10-02
+  - Status: Open; the separate Trend Finder 2.0, Story Creator 2.0 and Writer have completed multiple real data-signal tests and produced the first full internal article draft. The technical/package handoff works, but later editorial review showed that a compelling headline may promise an answer the underlying research does not provide. No article has been approved or published through this new pipeline.
+  - Next step: Add a targeted Story Creator check matching reader promise to the answer supported by evidence, then test neutrally with other signals. Follow with risk-based research-effort rules and additional Writer tests; define Human Review, freelancer approvals and Contentful publishing once quality is sufficiently consistent. Avoid mandatory comparisons with the preserved legacy Trend Finder.
+  - Context: Signal Package Standard 3.0 is current. Trend Finder discovers opportunities; Story Creator with direct Starburst and web develops/rejects stories; Writer produces chat drafts without new research. Central claims require verification, but not every auxiliary statistic needs exhaustive reconciliation. Starburst read-only behavior is an instruction/approval rule, not a hard permission lock. The goal is reader-relevant, defensible stories and ultimately a measured publish loop, not maximum article volume.
+  - Source: Dominik's confirmed Scaling Editorial tests and editorial assessment, 2026-10-22 to 2026-10-23; ongoing program with Nataliya following 2026-10-20 C3 reclassification
 
 - [ ] Support Viktoria on the broader Contentful Migration
   - Area: Contentful Migration
-  - Status: Open, support role confirmed; knowledge transfer and delivery model clarified
-  - Next step: Give Viktoria a detailed handover of the current Marketing migration, LP Builder and AI-supported migration approach before vacation; then align with Bea on how engineering delivery and reusable tooling support the broader migration.
+  - Status: Open, support role confirmed; Viktoria manages the migration, Bea engineering delivery, and Nataliya oversees the SEO initiatives.
+  - Next step: Verify whether the pre-vacation handover was completed (not reconfirmed in this chat); align with Viktoria and Bea on current AI-supported migration/tooling needs rather than assuming the September handover action remains pending.
   - Context: Viktoria owns migration project management, timeline, stakeholder coordination and escalation. Bea owns engineering delivery and steers engineers. Dominik provides AI-powered migration support/tooling and should work through Bea rather than becoming the operational engineering coordinator or manual migration owner.
   - Source: Nataliya/Viktoria/Dominik kickoff on 2026-09-24
 
