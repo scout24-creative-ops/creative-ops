@@ -18,7 +18,8 @@ The B2B workbook remains the broad source inventory. The Wiki working list is in
 
 ## Current Status
 
-- As of 2026-09-24, Viktoria Riffel owns broader Contentful Migration project management: overall progress, timeline, stakeholder coordination and escalation. Dominik supports rather than owning the overall migration.
+- As of 2026-09-24, Viktoria Riffel owns broader Contentful Migration project management: overall progress, timeline, stakeholder coordination and escalation.
+- As confirmed by Dominik on 2026-10-22, the migration initiative also sits under Nataliya Medvedeva (Head of SEO) at the program/oversight level; this does not replace Viktoria's project management or Bea's engineering delivery responsibilities. Dominik supports rather than owning the overall migration.
 - Beatrice Riedel owns engineering delivery for the migration: capacity, architecture, dependencies and execution. Viktoria and Dominik should work through Bea for engineering coordination rather than steering individual engineers themselves.
 - Dominik's role is AI-powered migration support/tooling, including the Landing Page Builder, migration rules and reusable capabilities. The intention is to enable owning teams to migrate their own areas rather than making Viktoria or Dominik manually move and chase every page.
 - News and Wissen must be scalable on Contentful, but migration should not block the News Lighthouse. If broader migration takes longer, News should still be able to launch through a workable Contentful setup.
