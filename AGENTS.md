@@ -14,14 +14,17 @@ Technical project repositories remain the source of truth for code, configuratio
 4. Do not read every project file by default.
 5. Read the current weekly documentation whenever new work information is being recorded or a weekly recap is requested.
 
+## Profile Update Frequency — user-confirmed 2026-10-28
+
+Dominik explicitly prefers **low-frequency Profile documentation**. Update the Creative Ops repository **only when he asks for it** (e.g. a Profile update, documentation, handover/closing sync) **or when a genuinely major, confirmed project milestone occurs** (e.g. a phase accepted, productive release, or a material scope/ownership decision). For ordinary Codex status reports, intermediate staging/commit/test results, repeated progress updates, or exploratory chat, **respond in chat without opening or writing the Profile repository**. This is an intentional exception to older blanket auto-documentation language below. When a qualifying update occurs, consolidate all confirmed progress since the last checkpoint in one compact, verified update; do not create a new repository write for each intermediate step.
+
 ## Continuous Profile Maintenance
 
 Treat the repository as the durable work context and the current chat as the active working surface.
 
 - When Dominik clearly works in a Profile/Repo context, including phrases such as `Skill Profile`, `Profile`, `mein Repo`, `meinem Repo`, `ins Repo`, `im Repo` or `Repository`, read the relevant repository context automatically.
-- Proactively detect confirmed work-relevant changes to project status, decisions, tasks, dependencies, ownership, milestones, risks or durable working rules.
-- Do not wait for Dominik to remember to ask for a repository update after every relevant exchange.
-- When the information is clearly confirmed and its destination is unambiguous, update the relevant repository files directly as normal maintenance without requiring a second `Go`.
+- Detect confirmed durable changes, but write to this repository only at the explicit-request / major-milestone threshold defined above.
+- Consolidate routine intermediate progress in chat; when a qualifying write occurs, update unambiguous context without a second `Go`.
 - Do not persist brainstorming, discarded options, tentative ideas or unconfirmed interpretations.
 - Ask one concise clarification question when meaning, owner, timing, permanence, project classification or operational effect is materially unclear.
 - Continue to require explicit confirmation for destructive cleanup, permission or access changes, protected areas, external publishing, or changes outside `scout24-creative-ops/creative-ops`.
@@ -49,7 +52,7 @@ One new piece of information may require updates to more than one file, but adap
 
 ## Primary Documentation Rule
 
-Every new work-relevant update Dominik provides in normal operation must first be recorded in the current weekly file under `documentation/YYYY-Www.md`.
+When a repository update meets the explicit-request or major-milestone rule, record the confirmed work-relevant changes since the previous checkpoint first in the current weekly file under `documentation/YYYY-Www.md`. Individual interim messages do not each trigger a repository update.
 
 The weekly documentation may include meetings and workshops, progress and completed work, discussions and open questions, delays, follow-ups, decisions, risks, blockers, and other context that may help create the end-of-week recap.
 
@@ -114,7 +117,7 @@ Also update:
 
 ## Updating Context
 
-When Dominik provides confirmed new work information in a Profile/Repo-framed conversation:
+When Dominik explicitly requests a Profile update or a genuinely major confirmed project milestone has been reached:
 
 1. Identify whether this is normal operation or migration/cleanup.
 2. For normal operation, read or create the matching current weekly file and record the factual update under `Updates since last summary` when applicable.
