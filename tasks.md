@@ -2,12 +2,12 @@
 
 ## Open
 
-- [ ] Integrate Scaling Editorial article template and validate Contentful Draft
+- [ ] Improve Scaling Editorial article design and introduce reusable news navigation
   - Area: Scaling Editorial
-  - Status: Open (2026-10-28). Codex reports local article module and template complete (59/59 tests green). CSS-only commit `be57c05ce506e75a657108016127f9fe035b27d2` is now on `origin/main`; Codex verified GitHub Pages Bridge CSS HTTP 200 including mobile article styles. Unrelated CSS comment and 91 JS lines remain local, unstaged. The existing LP Builder GPT now passes an action-free capability smoke-test: it answers `scaling-editorial-article` and claims to know `building-policy.md`. Exact Knowledge sync is not independently inspected; **no Contentful Draft or host preview yet**.
-  - Next step: **After explicit authorization**, ask the updated LP Builder GPT for the first **unpublished** Contentful test Draft using only neutral sample copy (500–650 words, H2/H3, placeholder HTTPS sources and a verified 16:9 image URL). Check slug availability and record Entry-ID + Preview; visually inspect real renderer on desktop/mobile (host shell unchanged, article CSS applied). Correct only observed defects. After that, trial real Writer content and manually hosted image URL. No publish.
-  - Context: Existing Contentful shell supplies header, main navigation and footer. Human Review, publication and Agent Factory remain future steps; no publish without human approval.
-  - Source: Dominik's Codex CSS deployment report 2026-10-28; projects/editorial-lighthouse.md.
+  - Status: Open (2026-10-28). First **unpublished Contentful Draft successfully created and visually inspected** using the new named article template: Entry-ID `r39oYn5yqULJrXuJTgeVk`, slug `/scaling-editorial-article-template-test-1`, version 1. Existing IS24 header/main nav and bridge CSS render; functional result accepted, visual alignment not yet. CSS-only deployment commit `be57c05` remains live; further design changes not yet implemented.
+  - Next step: Have Codex compare current vs target screenshots and `IS24 News Standalone.html`: remove excess internal centering so rubric/headline/subline/16:9 title image/body/H2/H3/sources share **one left alignment edge within the host content container**; retain narrow readable body width, wider image and mobile gutters. Investigate the correct shared integration for an **additional** dark news category navigation (Home, Immobilienmarkt, Finanzen, Wohnrecht, active underline) directly below the global IS24 main nav across home/category/article pages. Prefer reusable host integration or own page module, not duplicate site chrome. Test locally, then separately approve CSS release/GPT Knowledge updates and **update the same existing Draft**, not create another test page.
+  - Context: Do not alter production global header/nav/footer; no publish. News homepage/category cards follow after article/layout/nav validation; real Writer output and manually hosted title images only later. Freelancer Human Review and agent orchestration still future.
+  - Source: Dominik's first real Contentful Draft data and two current/desired design screenshots, 2026-10-28.
 - [ ] Support Viktoria on the broader Contentful Migration
   - Area: Contentful Migration
   - Status: Open, support role confirmed; Viktoria manages the migration, Bea engineering delivery, and Nataliya oversees the SEO initiatives.
