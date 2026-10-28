@@ -2,12 +2,12 @@
 
 ## Open
 
-- [ ] Integrate Scaling Editorial template v2 in LP Builder GPT and validate existing Contentful Draft
+- [ ] Build Scaling Editorial rubric portal MVP with placeholders
   - Area: Scaling Editorial
-  - Status: Open (2026-10-28). First unpublished Draft already created: Entry-ID `r39oYn5yqULJrXuJTgeVk`, slug `/scaling-editorial-article-template-test-1` (v1 still unchanged). Codex developed v2 with shared left content edge, 720px reading width, 960px image, separate reusable `scaling-editorial-news-nav` before article. Contract/runtime tests 59/59 and local desktop/mobile QA green. **Bridge CSS v2 has been pushed and deployed**: `12aa411feb6eaa00dbb777e918d14fea631330ab` on `origin/main`, GitHub Pages workflow completed/success (independently checked) and selectors verified in repository CSS. Unrelated CSS comment and JS edits remained unstaged/unpublished. **GPT Knowledge and Contentful Draft still unchanged.**
-  - Next step: In existing `LP Builder – Contentful GPT`, replace only the local v2 `gpt-package/component-library.html` and `gpt-package/building-policy.md` Knowledge files, without duplicate old uploads. Keep `main-instructions.md` unchanged and `templates/` files local. Save and run action-free smoke test confirming named Article Template consists of `scaling-editorial-news-nav` then `scaling-editorial-article`, active category exactly once and destinations without verified URLs remain non-clickable. After separate consent, update **the same** Contentful Draft (never publish or create another test page), inspect full-bleed nav, CoreCSS icon, alignment, Mobile and Sources in real Host Preview.
-  - Context: News Home/category URLs do not yet exist; navigation items intentionally `span` placeholders. Later add home/category pages and links, real Writer content with static image URLs, freelancer review and explicit publication gate.
-  - Source: 2026-10-28 Codex push/deployment report; GitHub-verified workflow `40733197560` and commit `12aa411`, plus first Draft/visual QA.
+  - Status: Open (2026-10-28). Dominik chose an **Idealista-style rubric-first MVP**: no separate News homepage at present; rubric navigation leads to category pages with vertically stacked article teasers on the left and a sticky 'Weitere Artikel' list on the right. Article detail pages use the same sidebar. Placeholder previews should become an internally navigable draft portal, then be replaced by vetted real content. The existing 2-module article V2 is visually accepted in Contentful Draft v2 (Entry `r39oYn5yqULJrXuJTgeVk`) and final host-grid CSS commit `487ea4b` is live on GitHub Pages. No Contentful publish.
+  - Next step: **Await and review the Codex result** for the already-submitted rubric-portal implementation/planning prompt. Reconcile actual category taxonomy against relevant Scout Wiki pages, settle reusable modules/sidebar/mobile layout and verified Draft URLs; keep nav targets as non-clickable spans until the destinations exist. Explicitly approve any new Contentful Draft creation or updates; never publish placeholders. Finish separate versioning/review of locally untracked `tests/test_gpt_package_contracts.cjs` when the main repo is safe; keep unrelated nested CSS comment/runtime JS edits untouched.
+  - Context: Existing UI labels include Immobilienmarkt, Finanzen and Wohnrecht; definitive Wiki-derived rubric list/URLs not confirmed. 'Meistgelesen' is a visual inspiration, not a real ranking without analytics; use 'Weitere Artikel' for placeholders.
+  - Source: Dominik's 2026-10-28 visual acceptance, new category portal decision, Codex handoff; CSS run 40738676105, Contentful Draft v2.
 - [ ] Support Viktoria on the broader Contentful Migration
   - Area: Contentful Migration
   - Status: Open, support role confirmed; Viktoria manages the migration, Bea engineering delivery, and Nataliya oversees the SEO initiatives.
@@ -105,6 +105,11 @@
   - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
 
 ## Completed
+
+- [x] Integrate Scaling Editorial Article Template v2 into LP Builder GPT and validate existing Contentful Draft
+  - Area: Scaling Editorial
+  - Completed: 2026-10-28
+  - Outcome: Action-free GPT check confirmed `scaling-editorial-news-nav` followed by `scaling-editorial-article` with active-category, URL/placeholder and badge rules. Existing Contentful entry `r39oYn5yqULJrXuJTgeVk` updated to **Draft v2**, not published. Isolated CSS commits `12aa411` and `487ea4b` deployed successfully, final common left host-content axis visually accepted by Dominik. Local suite passed 59/59; separate untracked main-repository contract test still needs version control review.
 
 - [x] Resolve unreliable large LP Builder HTML transfer
   - Area: Landing Page Builder
