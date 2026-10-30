@@ -2,12 +2,27 @@
 
 ## Open
 
-- [ ] Build Scaling Editorial rubric portal MVP with placeholders
+- [ ] Prepare the manual Scaling Editorial pilot
   - Area: Scaling Editorial
-  - Status: Open (2026-10-28). Dominik chose an **Idealista-style rubric-first MVP**: no separate News homepage at present; rubric navigation leads to category pages with vertically stacked article teasers on the left and a sticky 'Weitere Artikel' list on the right. Article detail pages use the same sidebar. Placeholder previews should become an internally navigable draft portal, then be replaced by vetted real content. The existing 2-module article V2 is visually accepted in Contentful Draft v2 (Entry `r39oYn5yqULJrXuJTgeVk`) and final host-grid CSS commit `487ea4b` is live on GitHub Pages. No Contentful publish.
-  - Next step: **Await and review the Codex result** for the already-submitted rubric-portal implementation/planning prompt. Reconcile actual category taxonomy against relevant Scout Wiki pages, settle reusable modules/sidebar/mobile layout and verified Draft URLs; keep nav targets as non-clickable spans until the destinations exist. Explicitly approve any new Contentful Draft creation or updates; never publish placeholders. Finish separate versioning/review of locally untracked `tests/test_gpt_package_contracts.cjs` when the main repo is safe; keep unrelated nested CSS comment/runtime JS edits untouched.
-  - Context: Existing UI labels include Immobilienmarkt, Finanzen and Wohnrecht; definitive Wiki-derived rubric list/URLs not confirmed. 'Meistgelesen' is a visual inspiration, not a real ranking without analytics; use 'Weitere Artikel' for placeholders.
-  - Source: Dominik's 2026-10-28 visual acceptance, new category portal decision, Codex handoff; CSS run 40738676105, Contentful Draft v2.
+  - Status: Open; stabilization is the next focus (2026-10-30), no further implementation expansion required today.
+  - Next step: Agree named review/approval/publication owners and the freelancer comparison brief using the same complete Story Package; validate the current rubric lookup on the next genuine article.
+  - Context: The rubric portal and real draft integration are working. Use the original Writer's starter prompt. Remove headline alternatives manually before LP Builder; no special Builder extension is wanted now. Detailed backlog: https://wiki.scout24.com/spaces/product-intelligence/pages/68805/open-tasks . Keep charts, conversion modules, tags and further image/headline optimization as later improvements rather than immediate commitments.
+  - Source: Dominik's closing update, 2026-10-30.
+
+- [ ] Prepare and send the editorial Data Team questions
+  - Area: Scaling Editorial
+  - Status: Open (2026-10-30).
+  - Next step: Consolidate the blocking Starburst semantics, source differences, data-quality and permission questions from the Data Source Catalog, identify the recipient and send the focused brief; no message has been sent.
+  - Context: https://wiki.scout24.com/spaces/product-intelligence/pages/68724/data-source-catalog . Incorporate answers before expanding repeatable internal-data story production.
+  - Source: Dominik's explicit clarification, 2026-10-30.
+
+- [ ] Clarify permanent storage for editorial portal images
+  - Area: Scaling Editorial
+  - Status: Open (2026-10-30).
+  - Next step: Agree storage, ownership, upload access and stable delivery URLs; AWS S3 is an option to clarify, not an already provisioned solution.
+  - Context: Current article images are manually uploaded to the static server. Coordinate with the existing asset-platform direction without assuming its pilot already covers editorial.
+  - Source: Dominik's explicit task, 2026-10-30.
+
 - [ ] Support Viktoria on the broader Contentful Migration
   - Area: Contentful Migration
   - Status: Open, support role confirmed; Viktoria manages the migration, Bea engineering delivery, and Nataliya oversees the SEO initiatives.
@@ -105,6 +120,11 @@
   - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
 
 ## Completed
+
+- [x] Build and demonstrate the Scaling Editorial rubric portal
+  - Area: Scaling Editorial
+  - Completed: 2026-10-30 (confirmed working by 29 October).
+  - Outcome: Seven-rubric draft portal with article/sidebar navigation implemented and visually accepted; the complete signal-to-portal journey demonstrated successfully to colleagues. Real article drafts incorporated, with two integrations reported for 29 October. Not a public launch or final editorial clearance; follow-up moved to manual-pilot preparation.
 
 - [x] Integrate Scaling Editorial Article Template v2 into LP Builder GPT and validate existing Contentful Draft
   - Area: Scaling Editorial
