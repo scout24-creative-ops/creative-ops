@@ -6,6 +6,8 @@ Provide a central, curated overview of AI agents and, over time, practical proje
 
 ## Current Status
 
+This is the authoritative Creative Hub briefing. The earlier parallel [Hub/Agent Library file](ai-hub-agent-library.md) is retained only as a history pointer. Detailed implementation status has not been freshly confirmed.
+
 The Creative Hub is live and currently focuses mainly on Creative Studio agents with cross-Marketing relevance.
 
 Eve and Peter continue the broader Hub work. Dominik's contribution is now deliberately limited: future new input from him should come only from relevant agents, solutions and learnings that naturally surface through the recurring AI Enablement Series. He does not plan a separate ongoing company-wide agent-discovery, research or curation workstream for the Hub because that would create too much additional workload.
@@ -64,14 +66,19 @@ The broader Hub roadmap, communication setup and implementation remain with Eve 
 - `Lunch & Learn - Meet my Agent` and ScoutAcademy currently provide only partial coverage.
 - The Hub still depends on selective discovery and contribution from people who encounter useful agents in practice.
 
-## Next Steps
+## Current Working Boundary
 
-- Tell Eve and Peter that future new input from Dominik for the Creative Hub will come only from relevant AI Enablement outputs.
-- When relevant agents, solutions or learnings surface through AI Enablement, let Eve and Peter decide whether to use them for Hub updates.
+Dominik's contribution remains lightweight; no separate curation/discovery workstream is active. The earlier dependence on recurring Enablement input is a historical arrangement whose future basis needs confirmation with the role transition. On 30 October Dominik confirmed no current follow-up appointments. Do not revive the old brainstorming/follow-up plan as a scheduled action.
+
+## Historical Concept and Results
+
+July work included a published homepage wireframe, agent-curation approach and shared whiteboard with Eve and Peter. A small expansion into agents, knowledge and reusable libraries was explored. Later August decisions reduced Dominik's ongoing contribution; the July responsibility list does not override that limitation.
+
+Earlier distinctive concept/role details are preserved in the [historical Hub description](../documentation/reference-archive/2026-10-30/creative-hub-earlier-description.md). See also the dated July/August weekly records.
 
 ## Last Confirmed
 
-2026-08-23.
+Last substantive Hub-role confirmation: 23 August 2026. Follow-up scheduling clarification: 30 October 2026; no new implementation claim.
 
 ## Related Context
 

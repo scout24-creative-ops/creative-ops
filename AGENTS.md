@@ -56,7 +56,7 @@ When a repository update meets the explicit-request or major-milestone rule, rec
 
 The weekly documentation may include meetings and workshops, progress and completed work, discussions and open questions, delays, follow-ups, decisions, risks, blockers, and other context that may help create the end-of-week recap.
 
-The weekly file is source material and the chronological archive, not a polished management summary. A later skill creates the short summary for Jorin in the chat. That short summary is not stored here.
+The weekly file is source material and the chronological archive, not a polished management summary. A later skill creates the short management summary in the chat. That short summary is not stored here.
 
 ## Summary Checkpoints
 
@@ -151,6 +151,18 @@ Use these soft thresholds as review signals, not deletion rules:
 - More than roughly 25 active tasks: inspect for duplicates, unclear ownership, obsolete work, and project context stored as tasks.
 - More than 3–4 completed weeks retained in `tasks.md`: propose archiving older completed items.
 - Project not confirmed for 4–6 weeks: flag its current status as potentially stale before relying on it.
+
+## Retrospective Recall — confirmed 2026-10-30
+
+Preserve meaningful history when shortening working documents. Future questions about a month must remain answerable: main workstreams, concrete progress/results, unsuccessful approaches, blockers and material effort. Keep dated evidence in weekly documentation or an explicitly linked historical reference; current project files remain concise.
+
+- Consolidate duplicate records only after retaining their unique meaningful facts. Leave stable pointers rather than competing active descriptions.
+- Keep original event dates. A cleanup is not new project progress and is not assigned to the current week.
+- Do not invent time estimates, hours or achievement claims. Entry count and file length do not measure effort.
+- An older planned meeting is not a currently scheduled appointment. Dominik confirmed no current follow-up appointments on 30 October.
+- tasks.md is intentionally retained in full for now, including completed history; do not archive or prune it as part of this cleanup.
+- The LP Builder large-HTML issue remains open at Dominik's explicit request despite the earlier reported fix; do not close it based solely on historical notes.
+- From 1 November Dominik belongs to Content Factory and no longer reports to Jorin. His planned substantial role with Allan and Peter is known; the new reporting line and detailed remit are not.
 
 ## Project File Rules
 

@@ -12,7 +12,7 @@ The exact project scope, ownership model and current implementation status are n
 - Yvonne appears to be the primary person driving the project.
 - A kick-off had already taken place, but Andreas had not yet received a current status update.
 - The broader concept risks becoming too large if it tries to cover all content-marketing needs at once.
-- Dominik confirmed the next step to define the first concrete use case together with Yvonne.
+- The initial discovery proposal was followed by an arranged August meeting; no documented outcome or fresh implementation status is available.
 
 ## Provisional Scope
 
@@ -43,9 +43,9 @@ Dominik supports the initiative strategically and methodologically by:
 - Dominik Böhme — strategic and methodological support
 - AI Solutions, Data or Automation stakeholders — only if the confirmed MVP requires technical support
 
-## Next Step
+## Current Follow-up Boundary
 
-Define the first use case together with Yvonne.
+The contact task was completed and a presentation meeting was arranged in August, but its outcome was not documented. On 30 October Dominik confirmed no current follow-up appointments. Do not treat that old meeting or the initial July discovery proposal as a scheduled next step; actual project status still needs confirmation when relevant.
 
 ## Open Questions
 

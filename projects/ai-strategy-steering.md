@@ -39,7 +39,7 @@ Jorin aligned with the following direction on 2026-08-20 for selected complex or
 
 The model separates broad AI Enablement from reliable solution delivery. It should not assume that functional teams can build and maintain complex AI solutions alongside their normal responsibilities, and it should not make Dominik the permanent technical builder for every initiative.
 
-## Current Priority Set
+## Priority Set Agreed in August — Historical
 
 Jorin supported Dominik's proposed priority set on 2026-08-20:
 
@@ -63,12 +63,14 @@ For selected high-impact initiatives, his role can extend from strategy and prio
 - Jorin agreed with the overall direction and explicitly supported Dominik's proposed next priorities.
 - The PR Intelligence Hub pause reinforced the need to distinguish enablement from delivery capacity rather than assume that functional teams will carry technical implementation alongside daily work.
 
-## Next Steps
+## Current Steering Context
 
-- Execute the confirmed priority set and keep the number of deep-focus initiatives deliberately limited.
-- Use the AI Enablement Series and ongoing team signals to identify further high-impact opportunities.
-- For each selected complex initiative, clarify AI Lead ownership, functional-team contribution and available delivery capacity before expecting reliable implementation.
+From 1 November Dominik joins Content Factory and no longer reports to Jorin. A substantial role with Allan and Peter is anticipated, but detailed mandate and reporting line are not yet known. Do not apply the August priority list as a confirmed new mandate or reactivate broad Enablement ownership.
+
+For confirmed current actions use [tasks.md](../tasks.md). Scaling Editorial's next focus is a controlled manual pilot; optional expansion is deliberately deferred. No current follow-up appointments are confirmed.
+
+For each future selected initiative, clarify functional ownership and delivery capacity before treating it as an implementation commitment.
 
 ## Last Confirmed
 
-Jorin alignment on operating model and current priority set: 2026-08-20.
+30 October 2026: transition and limited current focus confirmed. The Jorin operating-model/priority agreement remains dated 20 August.

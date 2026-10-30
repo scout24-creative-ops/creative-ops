@@ -1,30 +1,21 @@
 # Creative Ops
 
-This repository is Dominik Böhme's versioned working documentation for Creative Operations. It stores weekly work documentation and durable context about projects, role, organization, and GitHub setup.
+Dominik Böhme's maintained work context: current project briefings, tasks, role and organizational context, plus a dated history of meaningful work and results.
 
-Dominik can provide new work information in natural language. The agent or chat decides which files need to be read and updated.
+Start with [index.md](index.md). Follow [AGENTS.md](AGENTS.md) for operating rules.
 
-## Repository Areas
+## Information model
 
-```text
-profile/          Role, responsibilities, strategy, and working focus
-organization/     Teams, stakeholders, reporting lines, and organizational context
-github-setup/     GitHub, workspace, repositories, and technical working boundaries
-projects/         Durable context for active projects
-documentation/    Complete week-by-week work documentation
-```
+- `tasks.md`: confirmed Open, Waiting, Suggestions and Completed work.
+- `projects/`: compact current briefings; not parallel chronological logs.
+- `documentation/YYYY-Www.md`: dated evidence for retrospective questions, weekly summaries and earlier decisions.
+- `profile/`, `organization/`, `github-setup/`: role, collaboration and operating boundaries.
+- `documentation/reference-archive/`: explicitly historical supporting material reached through links, not active instructions.
 
-## How New Information Is Stored
+## Updates and historical recall
 
-1. Every work-relevant update is added to the current weekly file in `documentation/`.
-2. The update is checked for durable relevance.
-3. Durable project information is additionally added to the matching file in `projects/`.
-4. Lasting role, organization, or GitHub information is additionally added to the corresponding area.
+Write only after an explicit Profile/documentation request or a genuinely major confirmed milestone; consolidate changes since the last checkpoint. Routine intermediate reports stay in chat.
 
-The weekly documentation is the input for a later skill that creates a short management summary in the chat. That short summary is not stored in this repository.
+Retain important work, outcomes, unsuccessful attempts, blockers and material effort in dated documentation, so later questions such as “What happened in August?” remain answerable. Do not invent hours or interpret missing updates as inactivity. Compact current briefings by linking to history rather than erasing useful evidence.
 
-## Important Boundary
-
-This repository is the source of truth for personal, organizational, and cross-project context. Technical project repositories remain the source of truth for code, configuration, deployments, and implementation details.
-
-Detailed agent rules are defined in [AGENTS.md](AGENTS.md). Start navigation in [index.md](index.md).
+Technical project repositories remain authoritative for code, deployments and configuration. This repository does not automatically update a Custom GPT or any external system.

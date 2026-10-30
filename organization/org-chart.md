@@ -1,10 +1,14 @@
 # Relevanter Organisationskontext – vollständig
 
-Stand: 21.09.2026
+Organisations-Snapshot: 21.09.2026; Dominiks Übergang aktualisiert: 30.10.2026
 
-Diese Datei ist die maßgebliche Version für Dominiks relevante Organisations- und Zusammenarbeitsstruktur.
+Die Teamlisten bilden den zuletzt dokumentierten Snapshot ab, nicht eine vollständig neu bestätigte Organisation. Neuere datierte Hinweise haben Vorrang.
 
-## Führungslinie
+## Dominiks Übergang ab 1. November 2026
+
+Dominik gehört ab 1. November organisatorisch zur Content Factory; Jorin Verges ist dann nicht mehr sein Vorgesetzter. Eine tragende Rolle gemeinsam mit Allan Fitzpatrick und Peter ist angekündigt. Konkrete Zuständigkeiten und die neue Berichtslinie sind noch offen. Die frühere Annahme eines Wechsels in Nataliyas Team gilt nicht; die Verantwortung für Scaling Editorial im Kontext von Nataliya / Matthias bleibt bestehen. Aktuell sind keine Folgetermine bestätigt.
+
+## Führungslinie – Snapshot vor dem Wechsel
 - Ralf Weitz — Chief Executive Officer
 - Gesa Crockford — Chief Commercial Officer
 - Jorin Verges — VP Marketing & Communications; direkter Vorgesetzter von Dominik
@@ -167,14 +171,9 @@ Weitere Direct Reports unter Stephen Molloy im aktuellen Organigramm:
 - Pooja Malhotra — Software Engineer
 - Sebastian Stiehl — Tech Lead
 
-### Geplanter / vorgeschlagener Reorg-Kontext für Dominik
+### Historischer Reorg-Vorschlag vom 21. September
 
-- Matthias hat am 21.09.2026 angekündigt, Dominik im Zuge einer bevorstehenden Reorganisation in seine Organisation holen zu wollen.
-- Die konkrete zukünftige Struktur ist noch nicht bestätigt.
-- Matthias erwartet aktuell, dass Dominik nicht direkt an ihn berichtet, sondern an Nataliya Medvedeva.
-- Dominik soll dabei als Fachlead arbeiten und nicht disziplinarisch Teil von Nataliyas Team werden.
-- Für Editorial Lighthouse erwartet Matthias, dass Dominik das Projekt führt und dabei Unterstützung aus Matthias' Organisation erhält.
-- Bis zur formalen Bestätigung bleibt dies ein vorgeschlagener Zielzustand; die heutige Organigramm-Struktur dient vor allem als Orientierung für die voraussichtlich relevanten Personen und Teams.
+Matthias hatte einen Wechsel in seine Organisation mit möglicher Berichtslinie an Nataliya vorgeschlagen. Dieser Vorschlag ist durch den oben dokumentierten Content-Factory-Übergang überholt; keine aktuelle Berichtslinie daraus ableiten. Die damaligen Personen-/Teamlisten bleiben als Orientierung erhalten.
 
 ## Pflegehinweis
 Nur bestätigte, aktuell relevante Personen und Teams aufnehmen. Änderungen mit Datum ergänzen.

@@ -70,7 +70,7 @@ John / Platform Engineering is the technical partner for the S3, permissions and
 - Beatrice: Contentful/platform coordination and access to the existing CMS AWS-account context
 - Daniel Herold: Head of Tech for the existing `is24-cms` AWS account
 - CMS team: existing account context and potentially the relevant infrastructure/deployment path
-- Stefan: confirmed a crawler-based bulk extraction approach for the B2B migration; proposed page-URL input, `img src` plus configurable linked-file downloads, and AEM asset paths as unique keys. Original-DAM resolution still needs clarification.
+- Stefan: confirmed a crawler-based bulk extraction approach for the B2B migration; proposed page-URL input, `img src` plus configurable linked-file downloads, and AEM asset paths as unique keys. Original-DAM resolution was subsequently confirmed and included in LCMS-7518; current implementation acceptance remains separate.
 - Contentful Migration / Landing Page Builder: first concrete consumer and MVP validation path
 
 ## Decisions
@@ -100,7 +100,7 @@ John / Platform Engineering is the technical partner for the S3, permissions and
 ## Next Steps
 
 1. Wait for John's response after Dominik confirmed GitHub access.
-2. Wait for Beatrice's next-week follow-up on whether Maciej will take over the crawler work after his current task and whether Jonas has anything useful to hand over from his initial review.
+2. The September crawler handoff remains an old unconfirmed dependency; no current Beatrice follow-up appointment is scheduled. Reconfirm implementation state when this work is prioritized.
 3. Do not start a parallel asset-crawler implementation while this handoff is pending.
 4. Follow John's preferred repository / CloudFormation / deployment setup rather than creating a parallel infrastructure path independently.
 5. Create the minimal S3 bucket together with the permissions required for the image scaler.
@@ -111,3 +111,6 @@ John / Platform Engineering is the technical partner for the S3, permissions and
 ## Last Confirmed
 
 2026-09-18: Stefan created Linear ticket `LCMS-7518` for the asset-extraction crawler and confirmed that DAM rendition URLs can be resolved to originals; most relevant AEM images are page-stored and have no renditions. Bea had already asked Jonas to review the broader Migration Crawler briefing, but Jonas is on vacation next week. If no urgent AEM work intervenes, Maciej can take over after his current task. Dominik will wait for Bea's follow-up next week rather than starting a parallel crawler implementation. The separate S3/CloudFormation setup still waits on John's preferred implementation path.
+
+
+Scheduling clarification, 30 October 2026: no current follow-up appointments. Existing waiting tasks remain unchanged; do not interpret historical “next week” wording above as a present calendar commitment.

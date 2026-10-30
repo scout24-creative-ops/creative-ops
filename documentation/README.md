@@ -6,7 +6,7 @@ This folder contains the complete work documentation for each calendar week. Use
 
 Every work-relevant update Dominik provides is recorded in the current weekly file. The documentation may include meetings, progress, discussions, open questions, delays, follow-ups, decisions, and other context that could matter for the end-of-week recap.
 
-The weekly file is not a polished management summary. It is the source material from which a later skill creates a short summary for Jorin in the chat. That short summary is not stored in the repository.
+The weekly file is not a polished management summary. It is source material for summaries in chat. Its existence must not imply an event occurred when only a plan or proposal was documented. That short summary is not stored in the repository.
 
 ## Summary tracking
 
@@ -64,3 +64,13 @@ _Period: YYYY-MM-DD to YYYY-MM-DD_
 ```
 
 Keep entries factual and understandable. Preserve useful details, but do not invent conclusions or promote temporary events into durable project truth.
+## Historical lookup and preservation
+
+- For “What happened in August?” read the relevant dated entries across intersecting calendar weeks, not only the current project briefs. For 2026 August this includes boundary weeks 31 and 36.
+- Preserve main initiatives, completed/validated outcomes, important difficulties, unsuccessful approaches and material effort. Summarize repeated micro-steps without losing those facts.
+- Report effort qualitatively when documented; do not invent hours or treat entry count/file size as measured time spent.
+- Current briefings may be shortened, but unique historical evidence must remain in weekly records or a linked reference archive.
+- Superseded statements in a dated record are historical evidence, not active instructions. Resolve present status from newer confirmed context and tasks.
+- Missing or unapproved summary checkpoints stay unknown; do not invent past summary approval.
+- `2026-W31.md` is the canonical Week 31 record. `2026/week-31.md` is a stable history pointer after reconciliation of unique notes.
+- [Reference archive](reference-archive/README.md) holds detailed earlier project snapshots; it does not create new active projects or tasks.

@@ -8,7 +8,7 @@ Explore whether AI can reduce recurring administrative work around Coupa-related
 
 The topic emerged from the Event Team perspective during the AI Team-Check, but it is a separate initiative rather than part of that project.
 
-Dominik has already contacted Jana Homfeldt to identify the responsible Coupa contact and understand whether central AI support, automation or related work already exists. A follow-up with Franziska Stober is planned to review her Outlook-based PO-status agent and identify reusable learnings.
+Dominik has already contacted Jana Homfeldt to identify the responsible Coupa contact and understand whether central AI support, automation or related work already exists. Reviewing Franziska Stober's Outlook-based PO-status agent was discussed historically, but is not an active task or current appointment.
 
 ## Dominik's Role
 
@@ -26,9 +26,10 @@ The fachliche and operational ownership of Coupa remains with the responsible bu
 
 - Wait for Jana's response about the responsible Coupa contact and existing support.
 - Review central solutions or plans before defining new work.
-- Speak with Franziska about her Outlook-based PO-status agent.
 - Assess reusable patterns and decide whether a small MVP or another form of support is useful.
 
 ## Last Confirmed
 
 The initiative was treated as an active separate AI Enablement project by Dominik on 2026-07-31.
+
+30 October 2026 clarification: no current follow-up appointments. The central-support clarification remains the existing Waiting item; no new discovery assignment is created.
