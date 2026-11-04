@@ -11,7 +11,7 @@ Build a repeatable, AI-supported editorial workflow for ImmoScout24: discover re
 - **Signal register reset and maintained.** Five selected developments retain SIG-20261103-01 through -05 and now have final headlines, Contentful identities, production links, technical-pilot status and Dominik's visual confirmation. Older register rows were removed at his request. A subsequent TF run visibly used the register to exclude already-covered developments without new facts.
 - **Writer image delivery improved and tested.** One selected final PNG, 1920 × 1080 px, named to the article convention, plus one text download link. Native generation previews are not proof of export dimensions and application cards can still differ. A newer real-subject/symbolic-image rule is saved in the image capability, reported incorporated in Writer instructions and successfully tested by Dominik.
 - **Data meeting prepared for 4 November.** A bounded Starburst read-only audit on 3 November produced concrete standard-data findings. The internal catalog now groups seven analysis areas and separates Agent usage guidance from Data Team questions. ⚠️ is reserved for unresolved questions in the Data Team column.
-- **Freelancer meeting imminent on 4 November.** Three earlier comparison packages still exist. A live check found the parent and all three package pages in Draft status, with no direct child links in the parent's body. Freelancer access and the meeting outcome are unconfirmed.
+- **First freelancer onboarding held on 4 November.** Dominik explained the complete process to both freelance writers, showed examples and introduced their first tasks. They are waiting for the written assignments, which Dominik plans to send on 4 November, plus a request for five articles each previously written for other clients. Assignment dispatch, receipt, return dates and sample delivery are not yet confirmed. The three older Wiki briefs exist; a live check found them and the parent in Draft status without direct child links in the parent's body.
 
 ## Workflow and Responsibilities
 
@@ -28,7 +28,7 @@ Signal → Story → Article Packages are self-contained rendered Markdown in ch
 
 Dominik Böhme owns system design, agent/package quality, end-to-end validation and operating coordination. Viktoria Riffel supports SEO/editorial work; Beatrice Riedel owns Contentful engineering delivery; Nataliya Medvedeva is the Head-of-SEO stakeholder; Matthias Brandstetter provides sponsorship/support.
 
-Kristian Kehlert is listed as the project's Data / Data PR contact. His exact remit, technical counterpart and ongoing support commitment remain to be clarified; a meeting was planned for 4 November, with no result yet documented. Two freelancers are involved in the upcoming comparison briefing; their identities, deadlines and final assignment agreement are not recorded here.
+Kristian Kehlert is listed as the project's Data / Data PR contact. His exact remit, technical counterpart and ongoing support commitment remain to be clarified; a meeting was planned for 4 November, with no result yet documented. The first onboarding with both freelance writers took place on 4 November. Their names and delivery deadlines are not recorded here; the written briefs and request for five prior articles each are still to be sent by Dominik.
 
 **Implementation workflow:** Codex edits local LP Builder Instructions/Knowledge files; Dominik replaces the files in the Custom GPT. A local edit does not update the GPT automatically. Existing GPT Actions handle Contentful writes. Do not directly edit the LP Builder package in this chat or start a parallel implementation.
 
@@ -56,7 +56,7 @@ Priorities for Kristian: correct rent fields/definitions; valid active-listing p
 
 ## Freelancer Comparison and Immediate Continuation
 
-The immediate experiment is comparison writing and style references, not a requirement to learn the full agent chain. Both freelancers should receive the same three complete fixed-version Story Packages and write in their own style without generative text production; also request two or three representative prior articles. Suggested body length is 500–650 words unless the package differs. Further factual research is outside the comparison brief; flag gaps and changes rather than silently altering the shared evidence. Two examples for style development and a third held out for evaluation were discussed; operational details remain to be agreed. This is prompting/style guidance, not automatic model training or a promise of AI-detection avoidance.
+Dominik explained the full agent process in the first onboarding on 4 November; the immediate assignment remains comparison writing and style references rather than independent operation of the entire chain. Both writers should receive the same three complete fixed-version Story Packages and write in their own style without generative text production. The latest confirmed request is five articles per person previously written for other clients, superseding the earlier two-to-three-sample briefing. Suggested body length is 500–650 words unless the package differs. Further factual research is outside the comparison brief; flag gaps and changes rather than silently altering the shared evidence. Two examples for style development and a third held out for evaluation were discussed; operational details remain to be agreed. This is prompting/style guidance, not automatic model training or a promise of AI-detection avoidance.
 
 Verified on 4 November:
 - [Authors Story-Packages](https://wiki.scout24.com/spaces/product-intelligence/pages/68912/authors-story-packages) — briefing exists, but no explicit child links in its body; status Draft.
@@ -64,7 +64,7 @@ Verified on 4 November:
 - [Kaufpreisentwicklung](https://wiki.scout24.com/spaces/product-intelligence/pages/68915/kaufpreisentwicklung) — package exists; Draft.
 - [Baugenehmigungen](https://wiki.scout24.com/spaces/product-intelligence/pages/68916/baugenehmigungen) — package exists; Draft.
 
-The parent already excludes unverified individual Wohngeld calculations (about EUR 49 / 582 and derived cuts), requires attribution of the purchase-to-rent interpretation, and makes the building-permits research appendix optional. Earlier child-page correction attempts failed; the parent holds these binding briefing caveats. These three older freelancer packages are not automatically identical to the later five regenerated Writer packages or the currently published portal articles. Access for external freelancers has not been tested. No publishing, permission change or parent-link repair was performed during the closing Profile sync.
+The parent already excludes unverified individual Wohngeld calculations (about EUR 49 / 582 and derived cuts), requires attribution of the purchase-to-rent interpretation, and makes the building-permits research appendix optional. Earlier child-page correction attempts failed; the parent holds these binding briefing caveats. These three older freelancer packages are not automatically identical to the later five regenerated Writer packages or the currently published portal articles. External Wiki access has not been tested. A 13-page Word/PDF handout now provides the three source-based writing briefs and a short shared instruction independently of Wiki navigation, with unapproved Wohngeld calculations excluded and the purchase-to-rent interpretation qualified. The instruction has been updated to five prior articles each. Files are prepared; Dominik's actual dispatch is still pending. No Wiki publishing, permission change or parent-link repair was performed.
 
 ## Fotocasa Exchange
 
@@ -84,7 +84,7 @@ Useful collaboration topics: evaluation of extraction from internal data, early 
 
 ## Open Decisions and Next Focus
 
-1. Resolve freelancer-package navigation/access and record today's actual assignment outcome, participants and deadlines.
+1. Send the prepared writing assignments to both freelance writers on 4 November and request five prior articles each; then confirm receipt and agree delivery deadlines. Record the returned texts/samples and evaluate them against the same package baseline. Wiki navigation/access remains unresolved if that channel is used.
 2. Hold/record the Kristian discussion; agree source definitions, contacts and the smallest reusable standard-data workflow.
 3. Define regular human facts/currentness review, authorship, publication and correction ownership. Technical fictitious-author pilot clearance does not settle these.
 4. Keep permanent image delivery, headline quality, charts, conversion modules, visible/stored tags, Agent Factory orchestration and performance feedback visible as later work, without making them pilot prerequisites.

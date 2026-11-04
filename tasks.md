@@ -2,12 +2,19 @@
 
 ## Open
 
-- [ ] Prepare the manual Scaling Editorial pilot
+- [ ] Send the freelancer writing assignments and sample request
   - Area: Scaling Editorial
-  - Status: Open; technical portal cutover and initial visual acceptance completed (2026-11-03); regular editorial operation not yet agreed.
-  - Next step: Use the 4 November freelancer meeting to agree the comparison assignment, fixed package versions, participants/deadlines and later review/approval/publication ownership. First resolve package navigation and external-freelancer access.
-  - Context: The three older freelancer packages exist in Draft status (Wohngeldreform, Kaufpreisentwicklung, Baugenehmigungen), while the parent body lacks direct child links. Parent briefing/caveats: https://wiki.scout24.com/spaces/product-intelligence/pages/68912/authors-story-packages . These are distinct from the five newly published pilot articles. Meeting outcome is not recorded.
-  - Source: Dominik's 2026-11-04 meeting preparation and live Wiki reads; details in projects/editorial-lighthouse.md and documentation/2026-W45.md.
+  - Status: Open; first onboarding meeting completed on 2026-11-04. Both freelance writers are waiting for the written assignments.
+  - Next step: Dominik sends the three prepared writing briefs on 2026-11-04 and asks each writer for five articles previously written for other clients. Confirm receipt and agree return dates; dispatch and deadlines are not yet confirmed.
+  - Context: The 13-page Word/PDF handout contains the joint instruction and Wohngeldreform, Kaufpreisentwicklung and Baugenehmigungen packages. Both writers get the same comparison basis. Five prior articles each supersedes the earlier two-to-three-sample instruction. Full process/examples and first tasks were explained in the meeting.
+  - Source: Dominik's meeting update, 2026-11-04; projects/editorial-lighthouse.md and documentation/2026-W45.md.
+
+- [ ] Agree regular editorial review and publishing ownership
+  - Area: Scaling Editorial
+  - Status: Open; technical pilot publication is completed, regular operating responsibilities remain unresolved.
+  - Next step: Agree named facts/currentness review, editorial approval, real authorship, publication and correction owners before broader operation.
+  - Context: Fictitious-author technical-pilot clearance is not normal editorial clearance; use the freelancer comparison to assess quality, review effort and practical needs.
+  - Source: Confirmed manual-pilot scope and open operating questions, 2026-11-04.
 
 - [ ] Clarify standard editorial data with Kristian
   - Area: Scaling Editorial
@@ -127,6 +134,11 @@
   - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
 
 ## Completed
+
+- [x] Hold the first freelancer onboarding meeting
+  - Area: Scaling Editorial
+  - Completed: 2026-11-04
+  - Outcome: Dominik explained the entire process to both freelance writers, showed examples and introduced their first assignments. Written briefs and the request for five prior articles each are to be sent separately; they have not yet been confirmed sent.
 
 - [x] Complete the five-article technical portal cutover
   - Area: Scaling Editorial
