@@ -2,102 +2,94 @@
 
 ## Purpose
 
-Build a repeatable, AI-supported editorial workflow for ImmoScout24: discover relevant developments, develop evidence-backed stories, produce useful consumer articles and publish only after accountable human review.
-
-Scaling Editorial continues under the existing program and roadmap. Nataliya confirmed on 20 October that removal from the C3 Lighthouse portfolio did not cancel the program. “Lighthouse” is historical framing, not the current project name.
+Build a repeatable, AI-supported editorial workflow for ImmoScout24: discover relevant developments, develop evidence-backed stories, produce useful consumer articles and publish after accountable human review. The program continues outside the former C3 Lighthouse framing; no traffic or scaled-production success is established.
 
 ## Current Status
 
-- **Manual end-to-end MVP demonstrated and qualitatively accepted.** Trend Finder → Story Creator → Article Writer → LP Builder → Contentful Draft works with manual package transfers. Dominik successfully demonstrated the building-permits journey to colleagues and reports two additional portal article integrations on 29 October. No public publication, full human-review operation, traffic result or unattended automation is confirmed.
-- **Rubric portal implemented.** Seven linked category drafts, large teaser lists and article pages with “Weitere Artikel” sidebar are available. Dominik accepted the browser appearance. Categories: Immobilienmarkt; Mieten; Kaufen & Verkaufen; Finanzen; Recht & Politik; Wohnen & Architektur; Lifestyle. No separate News homepage in the current MVP.
-- **Agent names and interfaces settled.** Names are exactly Trend Finder, Story Creator and Article Writer. Self-contained Signal Package → Story Package → Article Package, rendered in chat between separators. Wiki and source references use complete visible URLs.
-- **Selective Wiki access tested.** TF uses taxonomy/register and public web research. SC uses taxonomy/formats and internal sources when appropriate. AW uses the Story Package without Wiki/web/Starburst factual research.
-- **Working Writer entry point:** original Article Writer plus explicit starter prompt, including when the Story Package arrives as an attachment. Unprompted attachment-only production was inconsistent, including in a new Writer; its cause is unproven. Do not replace the working original or declare the generic auto-trigger fixed.
-- **Images and headlines remain improvement areas.** Image-skill motif selection updated and formally validated on 30 October; three user tests were somewhat better and acceptable for now, not a final quality acceptance. Writer shows one chosen headline plus two alternatives. Humans remove alternatives before LP Builder transfer; no Builder extension is currently wanted.
-- **Scope control:** Dominik considers progress ahead of expectations and explicitly wants to stop expanding implementation on 30 October. Stabilize the manual pilot before optional enhancements. The backlog is not a list of immediate delivery promises.
+- **Technical Contentful pilot completed on 3 November.** Five new articles and three updated category overviews were published through LP Builder GPT Actions and read back, according to the supplied LP Builder report. Three old articles were unpublished, not deleted. Dominik subsequently checked the portal and confirmed that its appearance was good. This is a labeled technical pilot, not full editorial clearance or a regular public newsroom launch.
+- **Seven-category portal:** Immobilienmarkt; Mieten; Kaufen & Verkaufen; Finanzen; Recht & Politik; Wohnen & Architektur; Lifestyle. No separate News homepage. The cutover changed Immobilienmarkt (Generationenwechsel, Baugenehmigungen), Recht & Politik (Wohngeldreform, Energiewende) and Finanzen (Heizenergiepreise); four other categories were untouched.
+- **Signal register reset and maintained.** Five selected developments retain SIG-20261103-01 through -05 and now have final headlines, Contentful identities, production links, technical-pilot status and Dominik's visual confirmation. Older register rows were removed at his request. A subsequent TF run visibly used the register to exclude already-covered developments without new facts.
+- **Writer image delivery improved and tested.** One selected final PNG, 1920 × 1080 px, named to the article convention, plus one text download link. Native generation previews are not proof of export dimensions and application cards can still differ. A newer real-subject/symbolic-image rule is saved in the image capability, reported incorporated in Writer instructions and successfully tested by Dominik.
+- **Data meeting prepared for 4 November.** A bounded Starburst read-only audit on 3 November produced concrete standard-data findings. The internal catalog now groups seven analysis areas and separates Agent usage guidance from Data Team questions. ⚠️ is reserved for unresolved questions in the Data Team column.
+- **Freelancer meeting imminent on 4 November.** Three earlier comparison packages still exist. A live check found the parent and all three package pages in Draft status, with no direct child links in the parent's body. Freelancer access and the meeting outcome are unconfirmed.
 
-## Dominik's Role and Stakeholders
+## Workflow and Responsibilities
 
-Dominik Böhme owns the overall system, package contracts, agent quality, end-to-end validation and operating-model coordination. Viktoria Riffel contributes SEO/editorial logic and quality; Beatrice Riedel owns Contentful engineering delivery; Nataliya Medvedeva is the Head-of-SEO stakeholder; Matthias Brandstetter provides sponsorship/support. Freelancers are intended for comparison writing and later editorial operation, but concrete review/publication responsibilities remain to be assigned.
+1. **Trend Finder:** public web research; reads taxonomy and the signal register. It excludes the same concrete development without substantial new evidence. A new period, decision or material finding can justify an update linked to the earlier ID. Topics are not permanently “used up.” Current TF is not an internal SQL agent.
+2. **Story Creator:** tests the reader question, angle and evidence; adds appropriate research, limitations and source material. Current SC practice uses internal data when it materially answers the story question. The broader Wiki project brief still says every page should be enriched with internal IS24 data; reconciling this with stories where those data cannot answer the reader question remains an internal scope question.
+3. **Article Writer:** works from the supplied Story Package, without independent Wiki/web/Starburst factual research. Produces selected headline, review alternatives, intro, article, sources and image metadata. Standard body roughly 500–650 words, maximum 700 unless requested. Use the working original Writer with its starter prompt when needed; generic attachment-only triggering is not conclusively resolved.
+4. **Human review:** intended regular-production requirements include factual/currentness checks, editorial sign-off and accountable authorship. Named operational owners and review capacity still need agreement.
+5. **LP Builder Custom GPT:** receives a cleaned Article Package and a real hosted image URL. Draft creation, category integration and publication are separate actions. Standalone article previews do not establish teaser integration. Publishing requires the authorized target scope.
+6. **Registry maintenance:** currently manual through Dominik and this project chat. No automatic Wiki writeback by TF, SC, Writer or LP Builder. Creating IDs, registering a package and documenting a publication are distinct from automated orchestration.
 
-Do not imply a separate human assistant or assign agents as staff. Do not change ownership of unrelated migration work.
+Signal → Story → Article Packages are self-contained rendered Markdown in chat. Humans remove headline alternatives before production handoff; no special Builder feature is requested for this. Prompts for another tool/chat must be complete in one code block. Quality and manageable review effort take priority over adding process machinery.
 
-## Current Workflow and Package Contracts
+## People and Working Boundaries
 
-1. **Trend Finder:** discovers diverse timely housing/property developments from public web sources; reads taxonomy and register, checks concrete duplicates/substantive updates and outputs Signal Packages. It does not analyze internal Starburst data in its current role.
-2. **Signal Package:** topic and provisional rubric/tags → observed signal → reader relevance → reader questions → potential added value → limits/open questions → sources/evidence. Unnumbered package name; priority commentary outside the copyable package.
-3. **Story Creator:** researches the actual reader question, tests the angle and evidence, chooses a viable story or rejects it. It provides “Story auf einen Blick”, a self-contained Story Package for AW and separate research rationale. It owns Core Story Claim/Story Promise, not the final headline.
-4. **Story Package:** editorial metadata, reader question and evidenced answer, audience/knowledge, angle/format, core and supporting facts, structure suggestions, sources with full URLs, limits/do-not-claim and required checks. Unverified calculations must not carry the story promise. Internal working references are distinct from public article sources.
-5. **Article Writer:** writes from that package, generates its own headline and one labeled symbolic image using scout24-editorial-imagery. Standard article body about 500–650 words, max 700 unless otherwise requested; no new facts, external research or unsupported recalculation. Necessary human publication checks do not automatically prevent a draft.
-6. **Article Package:** short bullets for draft order, rubric/tags, placement, slug proposal, author/role/date and manual image URL; then chosen headline, optional headline alternatives, intro, complete article, public sources, image metadata and real open checks. Selected headline is the sole production title; alternatives are manually removed before transfer for now. Headlines and images still require editorial judgment.
-7. **LP Builder Custom GPT:** receives a cleaned Article Package with a real image URL, creates an unpublished Contentful draft and inserts its large teaser first on the matching existing category overview. Same intro for article/large teaser; preserve existing content and identity. Publication is a separate human decision.
+Dominik Böhme owns system design, agent/package quality, end-to-end validation and operating coordination. Viktoria Riffel supports SEO/editorial work; Beatrice Riedel owns Contentful engineering delivery; Nataliya Medvedeva is the Head-of-SEO stakeholder; Matthias Brandstetter provides sponsorship/support.
 
-The normal package format is rendered Markdown chat text with horizontal separators and useful headings, not writing blocks, code blocks, Canvas or files. TF/SC source evidence goes at the end of the copyable package. Writing blocks were tested and superseded.
+Kristian Kehlert is listed as the project's Data / Data PR contact. His exact remit, technical counterpart and ongoing support commitment remain to be clarified; a meeting was planned for 4 November, with no result yet documented. Two freelancers are involved in the upcoming comparison briefing; their identities, deadlines and final assignment agreement are not recorded here.
 
-## Wiki Working References
+**Implementation workflow:** Codex edits local LP Builder Instructions/Knowledge files; Dominik replaces the files in the Custom GPT. A local edit does not update the GPT automatically. Existing GPT Actions handle Contentful writes. Do not directly edit the LP Builder package in this chat or start a parallel implementation.
 
-- [Editorial Workspace](https://wiki.scout24.com/spaces/product-intelligence/pages/68723/editorial-workspace) — compact navigation hub, formerly Agent Knowledge.
-- [Editorial Taxonomy & Topics](https://wiki.scout24.com/spaces/product-intelligence/pages/68785/editorial-taxonomy-topics) — seven rubrics, shared tags and topic guidance; orientation, not an exhaustive search list.
-- [Story Formats](https://wiki.scout24.com/spaces/product-intelligence/pages/68725/story-formats) — eight flexible formats and optional data-story angles.
-- [Data Source Catalog](https://wiki.scout24.com/spaces/product-intelligence/pages/68724/data-source-catalog) — 13 internal sources, methods, validation limits and Data Team questions.
-- [Signalregister & Suchsteuerung](https://wiki.scout24.com/spaces/product-intelligence/pages/68732/signalregister-suchsteuerung) — signal history and editorial feedback; manual updates, no automatic writeback.
-- [Open Tasks](https://wiki.scout24.com/spaces/product-intelligence/pages/68805/open-tasks) — operational detail/backlog. Central Profile tasks hold compact active outcomes and reference this list.
+## Article and Image Contracts
 
-The older internal-data-only directory was deleted by Dominik after consolidation. Old master/technical matrix links in historical weekly files are no longer current agent dependencies. The last confirmed register content had five entries dated 28 October; implemented article backfill remains open.
+- Canonical article order: visible technical-pilot notice when required → headline → author module → title-image figure/caption → intro → body. Topic tags, where already supported, follow the body; category context remains under its existing contract.
+- Article intro and large rubric-teaser intro must match. Preserve selected headline, body, sources, image/caption, identity, slug and valid links during layout updates.
+- All five current pilot articles reportedly show date 03.11.2026 and calculated reading time 3 minutes. Reading time must be calculated from the final body; dates must not be invented or automatically refreshed. This pilot's stored date is not a general default.
+- Fictitious profiles are restricted to the exact five pilot entries: test-autor-1 = Maria Müller; test-autor-2 = Elisabeth König; both “Expertin für Immobilien,” internal status test-placeholder, registered avatars and unlinked names. Exactly one visible notice before the article header: “Technischer Pilot – fiktives Autorenprofil.” This exception does not clear other test entries or real publication authorship.
+- Article assets: final PNG 1920 × 1080; separately requested avatars 240 × 240. Filename: `scaling-editorial-[article-slug]-titelbild-v01.png`; increment only for a known replacement. Writer must identify and technically export the real selected file, not merely state dimensions or change its extension. Preserve the scene during resizing; no unnecessary variants.
+- For an article about a specific real property/person/place/event, automatically select a thematically relevant generic motif that cannot be mistaken for documentary evidence. Do not fabricate project exteriors, interiors, residents or technical installations. No original-photo request or extra motif approval is normally required.
+- Align final alt text and caption to the actual chosen image. Specific-case captions visibly include an adapted clarification such as “KI-generiertes Symbolbild – keine Aufnahme des beschriebenen Gebäudes.” Metadata-only labeling is insufficient; a misleading motif must first be changed. The Ingolstadt pilot-house test passed according to Dominik.
+- **LP Builder image rule:** use complete safe URLs from the package/author register. Mandatory remote download, decoding, pixel/availability checks, ZIPs or proof checksums were removed from the actual Building Policy after repeated environment DNS failures. Network failures are not a publish blocker. Missing/unsafe/incomplete URLs or unresolved placeholders remain issues. This does not remove Writer's own technical export requirements.
+- Images are still uploaded manually to the static server; permanent storage/ownership/upload access remains open. Tags are in package metadata but current Actions offer no appropriate storage field.
 
-## Portal and LP Builder Boundaries
+## Internal Data and Data Team Coordination
 
-- Existing IS24 Contentful shell supplies header/footer/layout; reusable Builder modules supply news navigation, rubric feeds, article and sidebar. Small sidebar teasers use image/headline; no unsupported “most read” ranking.
-- Article author/date elements exist, but actual author attribution, date semantics and removal of remaining demo content are open before public launch. Intro shortening is proposed, not already deployed.
-- Codex maintains local GPT Instructions/Knowledge files; Dominik manually replaces them in the Custom GPT. A repository change does not update the GPT. Codex has no authorized Contentful session here; CMS writes use the existing GPT Actions.
-- Article Package intake and rubric lookup are locally implemented/tested. Recht & Politik intentionally retains category slug `dev-scaling-editorial-wohnrecht-mvp`, entry `22O849wA6VAVgxOYVT9zvB`. Article slug proposal/headline is independent of category slug and tags. No collision authorizes overwriting.
-- Housing-benefit draft/first-teaser integration succeeded after a supplementary category-target prompt. The central seven-rubric lookup was implemented afterward; GPT uptake and a subsequent no-extra-prompt run still need explicit confirmation.
-- Bridge CSS for portal metadata/layout and captions is delivered according to Codex reports; latest reported suite 62/62. Unrelated runtime JavaScript/Checkmark edits were excluded. Technical repositories retain exact implementation/release evidence; the earlier untracked-test-file follow-up has not been expressly closed.
-- Tags remain in handoff metadata but are not visible/stored: current Actions expose no suitable tag field. LP Builder reports “not stored”; no invented metadata mapping.
-- Images currently use manual static-server upload. Permanent storage/delivery, potentially AWS S3, remains to be agreed. No bucket has been provisioned.
-- Headline-alternative handling in LP Builder is not requested now; manually remove review alternatives. Complete removal of the Writer alternative feature remains an option, not a decision.
+The current [Data Source Catalog](https://wiki.scout24.com/spaces/product-intelligence/pages/68724/data-source-catalog) is an internal-data working reference, not proof that all 13 sources are usable. Seven areas: purchase prices/supply; rents/supply; geography; history/duration; search/interest; competitors; financing. Each table now contains source/method, tested status, Agent usage guidance and a separate Data Team questions column. Only the latter marks open rows with ⚠️; “—” does not imply broad publication clearance. Source IDs S01–S13 and the page URL remain stable. External sources have only a placeholder; create their own catalog when reusable sources are actually documented.
 
-## Internal Data: Reuse and Limits
+The 3 November audit confirmed access, current partition 02.11.2026 and a nonmultiplying S01/S02/S03 join for the tested active apartment-buy/rent population. It also confirmed rental €/m² sentinel values, active/draft overlaps, missing positive prices/areas, historical draft-field changes and city/county distinctions. Exact filters and counts are in the catalog and [Week 45](../documentation/2026-W45.md). These are diagnostics before cleaning, not market statistics or source-owner validation.
 
-The current TF is web-only. SC can use approved internal data when it materially strengthens a story. Reintroducing the former TF SQL workflow would be a future scope change.
+Priorities for Kristian: correct rent fields/definitions; valid active-listing population/filters; comparable historical treatment; existing approved data views/queries; technical contacts and external reuse rules. Do not expect every catalog question to be answered in one meeting.
 
-Use the Data Source Catalog as the working source for technical definitions, tested joins, publication limits and questions. Prior technical checks are historical snapshots, not a current market dataset or broad release clearance:
-- S01/S02 listing snapshots joined on listing ID and snapshot day, then S03 region ID; recheck cardinality, active population, quality flags, filters and sample sizes per analysis.
-- Asking prices are not transaction prices; listed inventory is not the full market; portal/search/contact activity is not observed transactions or total demand.
-- Rental cold/warm semantics and sentinel values need clarification. Historical draft flags, snapshot/version logic and population shifts limit time-series reuse.
-- Geography may mix cities/counties; regional rankings require valid comparable areas. Unknown condition/equipment/construction-year fields and PROJECTED shares can bias groups.
-- Earlier condition coverage checks found roughly 56% of apartment-buy and 47% of house-buy listings informative on 25 October; these figures describe that pilot population only.
-- Land/site data requires Germany filtering; construction/buildability, dedup/grouping identifiers and publication-duration semantics remain unresolved.
-- Search/tracking and finance-contact data can be sensitive; S08 permissions and S09–S11/S13 uses require explicit clearance. Clickouts are not rates, loan approvals or completions.
-- Starburst research remains SELECT/metadata only. Historical connector write-capable actions were not technically removed; do not authorize View creation as part of editorial research.
+**Proposed future process, not yet agreed or implemented:** agent reuses documented methods → reports a precise new data gap with source/fields/filters/period/evidence → Dominik checks duplicates and batches Wiki questions → Data Team answers → confirmed method/usage guidance is updated and answered ⚠️ removed. Automatic gap reporting or writeback is not configured. A small set of jointly checked standard queries is a proposal, not an existing benchmark. Search/tracking permissions remain unresolved; do not explore sensitive raw data without clearance. SELECT/metadata only; no view creation.
 
-Next data action is to prepare and send focused, prioritized Data Team questions from the catalog, then incorporate answers. Repeatable data-story recipes should follow semantic/permission clarification rather than imply all catalog sources are already usable.
+## Freelancer Comparison and Immediate Continuation
 
-## Pilot, Planning and Later Expansion
+The immediate experiment is comparison writing and style references, not a requirement to learn the full agent chain. Both freelancers should receive the same three complete fixed-version Story Packages and write in their own style without generative text production; also request two or three representative prior articles. Suggested body length is 500–650 words unless the package differs. Further factual research is outside the comparison brief; flag gaps and changes rather than silently altering the shared evidence. Two examples for style development and a third held out for evaluation were discussed; operational details remain to be agreed. This is prompting/style guidance, not automatic model training or a promise of AI-detection avoidance.
 
-- Immediate purpose: a controlled manual freelancer/editorial pilot, clear responsibility, comparable evidence-backed briefs and a real publication/review path.
-- Freelancer/AI comparison uses the same full Story Package and a shared research boundary. Style adaptation is a separate test; agents do not automatically learn permanently from manual use.
-- Track quality, corrections, review/production effort and technical friction before scaling. Assign owners for currentness checks, corrections and actual publication.
-- Content Plan target of 50 articles/week and publishing windows remain working hypotheses, not MVP commitments. Flexible mix of timely signals, internal data stories and service; no forced topic quotas or filler.
-- Later options: chart images from exact data/design templates; contextual conversion modules linking relevant exposes/products/services; tag support; greater internal data coverage; orchestration through Agent Factory; performance feedback. These are not pilot-entry requirements unless subsequently agreed.
-- No traffic/CTR/Search/Discover results are confirmed. Any learning system would need documented evidence and an explicit update process.
+Verified on 4 November:
+- [Authors Story-Packages](https://wiki.scout24.com/spaces/product-intelligence/pages/68912/authors-story-packages) — briefing exists, but no explicit child links in its body; status Draft.
+- [Wohngeldreform](https://wiki.scout24.com/spaces/product-intelligence/pages/68914/wohngeldreform) — package exists; Draft.
+- [Kaufpreisentwicklung](https://wiki.scout24.com/spaces/product-intelligence/pages/68915/kaufpreisentwicklung) — package exists; Draft.
+- [Baugenehmigungen](https://wiki.scout24.com/spaces/product-intelligence/pages/68916/baugenehmigungen) — package exists; Draft.
 
-## Working Documents
+The parent already excludes unverified individual Wohngeld calculations (about EUR 49 / 582 and derived cuts), requires attribution of the purchase-to-rent interpretation, and makes the building-permits research appendix optional. Earlier child-page correction attempts failed; the parent holds these binding briefing caveats. These three older freelancer packages are not automatically identical to the later five regenerated Writer packages or the currently published portal articles. Access for external freelancers has not been tested. No publishing, permission change or parent-link repair was performed during the closing Profile sync.
 
-- [Project Hub](https://wiki.scout24.com/spaces/product-intelligence/pages/57178/project-hub)
-- [Editorial Flow](https://scout24-creative-ops.github.io/public/Scaling%20Editorial/scaling-editorial-lighthouse/)
-- [Trend Matrix](https://scout24-creative-ops.github.io/public/Scaling%20Editorial/trend-finder-matrix/)
-- [Working Plan](https://scout24-creative-ops.github.io/public/Scaling%20Editorial/working-plan/)
-- [Content Plan](https://scout24-creative-ops.github.io/public/Scaling%20Editorial/content-plan/)
+## Fotocasa Exchange
 
-Published planning artifacts contain older internal-data/C3-era assumptions and are not proof of current configuration. Current Wiki and agent contracts above take precedence; do not infer that the artifacts were republished this week.
+Meeting transcript supplied on 3 November: Fotocasa had recently published roughly ten initial AI articles, uses human review and initially combines story/content generation in one agent. It plans phased scaling, topic discovery and more automation, with performance results still pending. Approximate volumes/AI-share targets in the transcript conflict; do not treat them as one agreed forecast.
 
-## Next Focus
+Useful collaboration topics: evaluation of extraction from internal data, early article-performance results, content-to-listings journeys and shared patterns with brand/language-specific editorial instructions. Monthly exchange was discussed, not a confirmed scheduled series. No joint delivery commitments, shared platform decision or measured success is established. “Watermark/humanizer” discussion was not technically substantiated.
 
-1. Stabilize and prepare the manual pilot: human review/approval ownership, freelancer comparison brief and one bounded validation of current portal handoffs. No further implementation expansion is required today.
-2. Prepare Data Team clarification and resolve permanent image delivery; record implemented articles/feedback manually.
-3. Keep headline/image refinements, charts, conversion modules, tag support and automation visible but explicitly deferred until pilot needs justify them.
+## References
+
+- [Editorial Workspace](https://wiki.scout24.com/spaces/product-intelligence/pages/68723/editorial-workspace)
+- [Taxonomy](https://wiki.scout24.com/spaces/product-intelligence/pages/68785/editorial-taxonomy-topics) · [Story Formats](https://wiki.scout24.com/spaces/product-intelligence/pages/68725/story-formats)
+- [Signal register](https://wiki.scout24.com/spaces/product-intelligence/pages/68732/signalregister-suchsteuerung) · [Author register](https://wiki.scout24.com/spaces/product-intelligence/pages/68902/autorenregister-scaling-editorial)
+- [Wiki Open Tasks](https://wiki.scout24.com/spaces/product-intelligence/pages/68805/open-tasks) is still dated 30 October and includes superseded open items. Do not revive completed cutover/registry/image tasks from it; central current tasks and this briefing take precedence.
+- [Week 45 evidence, identities and handover](../documentation/2026-W45.md) · [LP Builder](landing-page-builder.md)
+- [Project Hub](https://wiki.scout24.com/spaces/product-intelligence/pages/57178/project-hub) · [Editorial Flow](https://scout24-creative-ops.github.io/public/Scaling%20Editorial/scaling-editorial-lighthouse/) · [Trend Matrix](https://scout24-creative-ops.github.io/public/Scaling%20Editorial/trend-finder-matrix/) · [Working Plan](https://scout24-creative-ops.github.io/public/Scaling%20Editorial/working-plan/) · [Content Plan](https://scout24-creative-ops.github.io/public/Scaling%20Editorial/content-plan/)
+- Older published planning artifacts may retain internal-data/C3 assumptions; they are not proof of current configuration or a newly republished roadmap.
+
+## Open Decisions and Next Focus
+
+1. Resolve freelancer-package navigation/access and record today's actual assignment outcome, participants and deadlines.
+2. Hold/record the Kristian discussion; agree source definitions, contacts and the smallest reusable standard-data workflow.
+3. Define regular human facts/currentness review, authorship, publication and correction ownership. Technical fictitious-author pilot clearance does not settle these.
+4. Keep permanent image delivery, headline quality, charts, conversion modules, visible/stored tags, Agent Factory orchestration and performance feedback visible as later work, without making them pilot prerequisites.
+5. No traffic, CTR, Search/Discover outcome, actual learning agent or unattended scale has been confirmed. The existing landing-page large-HTML issue remains open until explicitly reconfirmed; this successful pilot does not close it automatically.
 
 ## Last Confirmed
 
-30 October 2026, consolidated from Dominik's reports, supplied Codex/LP Builder outputs, Wiki reads/updates and the saved image-skill revision. Portal and article draft integration are confirmed; public launch, settled editorial approval operation and automated scale are not.
+4 November 2026. Current Wiki reads, the 3 November Starburst audit, user-supplied LP Builder/Codex reports and Dominik's visual/test acceptance; no repository-independent CMS audit or external-freelancer access test performed in this closing sync.

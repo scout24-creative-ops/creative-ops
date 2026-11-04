@@ -4,17 +4,17 @@
 
 - [ ] Prepare the manual Scaling Editorial pilot
   - Area: Scaling Editorial
-  - Status: Open; stabilization is the next focus (2026-10-30), no further implementation expansion required today.
-  - Next step: Agree named review/approval/publication owners and the freelancer comparison brief using the same complete Story Package; validate the current rubric lookup on the next genuine article.
-  - Context: The rubric portal and real draft integration are working. Use the original Writer's starter prompt. Remove headline alternatives manually before LP Builder; no special Builder extension is wanted now. Detailed backlog: https://wiki.scout24.com/spaces/product-intelligence/pages/68805/open-tasks . Keep charts, conversion modules, tags and further image/headline optimization as later improvements rather than immediate commitments.
-  - Source: Dominik's closing update, 2026-10-30.
+  - Status: Open; technical portal cutover and initial visual acceptance completed (2026-11-03); regular editorial operation not yet agreed.
+  - Next step: Use the 4 November freelancer meeting to agree the comparison assignment, fixed package versions, participants/deadlines and later review/approval/publication ownership. First resolve package navigation and external-freelancer access.
+  - Context: The three older freelancer packages exist in Draft status (Wohngeldreform, Kaufpreisentwicklung, Baugenehmigungen), while the parent body lacks direct child links. Parent briefing/caveats: https://wiki.scout24.com/spaces/product-intelligence/pages/68912/authors-story-packages . These are distinct from the five newly published pilot articles. Meeting outcome is not recorded.
+  - Source: Dominik's 2026-11-04 meeting preparation and live Wiki reads; details in projects/editorial-lighthouse.md and documentation/2026-W45.md.
 
-- [ ] Prepare and send the editorial Data Team questions
+- [ ] Clarify standard editorial data with Kristian
   - Area: Scaling Editorial
-  - Status: Open (2026-10-30).
-  - Next step: Consolidate the blocking Starburst semantics, source differences, data-quality and permission questions from the Data Source Catalog, identify the recipient and send the focused brief; no message has been sent.
-  - Context: https://wiki.scout24.com/spaces/product-intelligence/pages/68724/data-source-catalog . Incorporate answers before expanding repeatable internal-data story production.
-  - Source: Dominik's explicit clarification, 2026-10-30.
+  - Status: Open; standard-data audit and Wiki question preparation completed; meeting planned for 2026-11-04, outcome not recorded.
+  - Next step: Clarify Kristian Kehlert's remit and technical contacts, then prioritize rent definitions, valid active-listing filters and comparable history. Ask for existing validated views/queries and agree the question-handling route.
+  - Context: https://wiki.scout24.com/spaces/product-intelligence/pages/68724/data-source-catalog . Open Data Team questions alone carry ⚠️; Agent usage rules are separate. Proposed agent-to-Data-Team feedback process is not yet agreed/implemented. Incorporate actual answers before broadening use.
+  - Source: Dominik's 2026-11-03/04 data investigation and meeting preparation.
 
 - [ ] Clarify permanent storage for editorial portal images
   - Area: Scaling Editorial
@@ -57,6 +57,13 @@
   - Next step: Agree whether future check-ins should be separate or joint and confirm a useful cadence before creating new recurring calendar series.
   - Context: The former recurring meetings appear to have been cancelled when paused for vacation; the previous rhythm is uncertain.
   - Source: Dominik confirmed the task on 2026-07-22
+
+- [ ] Reconfirm large LP Builder HTML transfer
+  - Area: Landing Page Builder
+  - Status: Open by Dominik's explicit 2026-10-30 instruction; later successful pilot read-backs do not automatically close the general issue.
+  - Next step: Obtain a bounded current acceptance result before explicitly closing the item.
+  - Context: Preserve the historical 2 October developer-fix completion record below; this task tracks the subsequently requested reconfirmation.
+  - Source: AGENTS.md and projects/landing-page-builder.md; reconfirmation remains outstanding at 2026-11-04.
 
 - [ ] Fix CRAWL_REBUILD temporary asset handling
   - Area: Landing Page Builder
@@ -120,6 +127,21 @@
   - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
 
 ## Completed
+
+- [x] Complete the five-article technical portal cutover
+  - Area: Scaling Editorial
+  - Completed: 2026-11-03
+  - Outcome: LP Builder reported five article publishes and three rubric-overview publishes, then three old-article unpublishes, with full read-backs. Dominik accepted the visible portal result; registry now contains the five stable signal IDs, final headlines and production links. Technical fictitious-author pilot only; factual/editorial clearance remains open.
+
+- [x] Prepare the standard-data audit and Data Team question catalog
+  - Area: Scaling Editorial
+  - Completed: 2026-11-04
+  - Outcome: Read-only 3 November Starburst checks documented concrete price/rent, active/draft, geographic and historical issues. The Wiki now has seven analysis areas and separate Agent guidance / ⚠️ Data Team question columns. Meeting and answer incorporation remain in the open task above.
+
+- [x] Stabilize title-image export and specific-case labeling
+  - Area: Scaling Editorial
+  - Completed: 2026-11-04 (confirmed by this checkpoint)
+  - Outcome: Named final 1920 × 1080 PNG and one download output established. Specific real-subject stories now receive a suitable generic motif and visible non-documentary caption; Writer confirmed instruction integration and Dominik reported the Ingolstadt test successful.
 
 - [x] Build and demonstrate the Scaling Editorial rubric portal
   - Area: Scaling Editorial
