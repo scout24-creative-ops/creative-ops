@@ -13,6 +13,7 @@ Technical project repositories remain the source of truth for code, configuratio
 3. Load only those files.
 4. Do not read every project file by default.
 5. Read the current weekly documentation whenever new work information is being recorded or a weekly recap is requested.
+6. For Dominik's development, Content Factory, Ali or the new role/portfolio direction, read [the role profile](profile/dominik-role.md) and [Content Factory & Rollenentwicklung](profile/content-factory.md), then the latest relevant weekly updates. Read organization context when people or reporting lines matter. Use the newest confirmed agreement; keep Dominik's expectations and agent interpretations labeled separately. The former [AI Strategy & Steering](projects/ai-strategy-steering.md) is historical context.
 
 ## Profile Update Frequency — user-confirmed 2026-10-28
 
@@ -43,6 +44,7 @@ Whenever Dominik asks to create, implement, visualize, or prompt the creation of
 ## Context Routing
 
 - Role, long-term responsibilities, working focus, or strategic mandate: [profile/dominik-role.md](profile/dominik-role.md)
+- Content Factory build-up, collaboration with Ali/Peter/Allan, role development and cross-project direction since November: [profile/content-factory.md](profile/content-factory.md). Consolidate confirmed current agreements there; keep dated conversation evidence in weekly documentation and project specifics in project briefings.
 - Teams, stakeholders, reporting lines, or organizational changes: [organization/org-chart.md](organization/org-chart.md)
 - GitHub, repositories, workspace, access, or technical working rules: [github-setup/github-context.md](github-setup/github-context.md)
 - Project goals, status, decisions, support commitments, risks, stakeholders, or durable next steps: the matching file in `projects/`
