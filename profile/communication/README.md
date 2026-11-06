@@ -8,6 +8,7 @@ Load only the file relevant to the current task. Do not apply one format's rules
 
 - [Communication Playbook](communication-playbook.md) — Central guidance and approved examples for weekly summaries, AI Enablement Series communication and general internal updates.
 - [Presentations for Jorin](jorin-presentations.md) — Use only for presentations prepared specifically for Jorin.
+- [Collaboration and communication with Ali](ali-collaboration.md) — Read for Ali-specific updates, meeting preparation and expectation alignment. Early guidance is provisional; distinguish direct agreements, observed feedback and indirect reports.
 
 Load the matching playbook section rather than applying all format rules to every request.
 
