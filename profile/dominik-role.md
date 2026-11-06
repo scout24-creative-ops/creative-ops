@@ -4,9 +4,13 @@
 
 Dominik arbeitet als **Creative Operations & Digital Transformation Lead** im Marketing.
 
-**Bestätigt am 30. Oktober 2026:** Ab 1. November gehört Dominik organisatorisch zur **Content Factory**; Jorin Verges ist dann nicht mehr sein Vorgesetzter. Dominik soll gemeinsam mit **Allan Fitzpatrick und Peter** eine tragende Rolle übernehmen. Genaue neue Zuständigkeiten, Berichtslinie und Kapazitätsaufteilung sind noch nicht bekannt. Daraus keine zusätzliche operative Verantwortung oder Lieferzusage ableiten.
+**Stand 6. November 2026:** Seit 1. November gehört Dominik zur **Content Factory** und berichtet direkt an **Ali Izhar Ahmed**. Jorin Verges ist nicht mehr sein Vorgesetzter. Die Funktionsbezeichnung bleibt laut HR-Profil **Creative Operations & Digital Transformation Lead**. Eine neue fachliche Ausrichtung ist möglich, aber noch nicht vereinbart.
 
-Dominik führt Scaling Editorial weiter; das Projekt bleibt im Kontext von Nataliya / Matthias. Er wechselt nicht in Nataliyas Team. Für den Übergang sind aktuell keine Folgetermine bestätigt.
+Dominik soll mit **Allan Fitzpatrick und Peter Sijtsma** eine wichtige Rolle beim Aufbau übernehmen. Peter ist seit November wie Allan im Team von **Florian Kube**. Zusammenarbeit bedeutet hier keine gemeinsame Berichtslinie. Für die Content Factory wird laut Dominiks bestätigter Mitteilung eine Leitung (Head of oder vergleichbar) gesucht; Titel, Besetzung und spätere Berichtslinie sind offen.
+
+Der erste Content-Factory-Kickoff mit Ali ist für **KW 46, 9.–15. November 2026**, angekündigt; genauer Tag und Uhrzeit sind nicht genannt. Konkretes Mandat, Arbeitsteilung, Prioritäten, Kapazitäten und erwartete Ergebnisse bleiben bis zur Klärung offen.
+
+Dominik führt Scaling Editorial weiter; das Projekt bleibt im Kontext von Nataliya / Matthias. Er wechselt nicht in Nataliyas Team. Für bestehende Projekte gelten die zuletzt bestätigten Zuständigkeiten; aus dem Orga-Wechsel folgt noch keine neue Lieferzusage.
 
 ## Fachlicher Schwerpunkt
 
@@ -17,7 +21,7 @@ AI-gestützte Prozesse, Systeme und Workflows für Kreation und Content-Produkti
 - Verbindungen zwischen Content, Design, CMS und Ausspielung;
 - weniger manuelle Übergaben und tragfähige Übergabe an andere.
 
-Breites AI Enablement war Teil des früheren Mandats für Jorins Unit. Dominik möchte diese Verantwortung nicht als zentralen Bestandteil seiner künftigen Rolle fortführen. Das frühere Zwei-Säulen-Modell ist ein historisches Arbeitsmodell, keine bestätigte Content-Factory-Struktur.
+Die **AI Enablement Series ist von Dominik abgesagt** (bestätigt am 6. November; genaues Absagedatum nicht genannt). Breites AI Enablement war Teil des früheren Mandats für Jorins Unit. Dominik möchte diese Verantwortung nicht als zentralen Bestandteil seiner künftigen Rolle fortführen. Das frühere Zwei-Säulen-Modell ist ein historisches Arbeitsmodell, keine bestätigte Content-Factory-Struktur.
 
 ## Arbeitsprinzip und Verantwortungsgrenzen
 
@@ -46,4 +50,4 @@ Frühere Details: [Rollenprofil vor dem Cleanup](../documentation/reference-arch
 
 ## Last Confirmed
 
-30. Oktober 2026: Content-Factory-Zugehörigkeit ab 1. November und angekündigte tragende Rolle mit Allan und Peter bestätigt; genaue Rolle/Berichtslinie offen. Keine aktuellen Folgetermine bestätigt.
+6. November 2026: Nutzerangaben, bereitgestelltes HR-Profil, Orga-Screenshots und Hub-Artikel. Ali als direkter Vorgesetzter bestätigt; fachliches Mandat und künftige Factory-Leitung offen.
