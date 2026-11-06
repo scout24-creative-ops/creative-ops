@@ -2,26 +2,7 @@
 
 ## Open
 
-- [ ] Send the freelancer writing assignments and sample request
-  - Area: Scaling Editorial
-  - Status: Open; first onboarding meeting completed on 2026-11-04. Both freelance writers are waiting for the written assignments.
-  - Next step: Dominik sends the three prepared writing briefs on 2026-11-04 and asks each writer for five articles previously written for other clients. Confirm receipt and agree return dates; dispatch and deadlines are not yet confirmed.
-  - Context: The 13-page Word/PDF handout contains the joint instruction and Wohngeldreform, Kaufpreisentwicklung and Baugenehmigungen packages. Both writers get the same comparison basis. Five prior articles each supersedes the earlier two-to-three-sample instruction. Full process/examples and first tasks were explained in the meeting.
-  - Source: Dominik's meeting update, 2026-11-04; projects/editorial-lighthouse.md and documentation/2026-W45.md.
 
-- [ ] Agree regular editorial review and publishing ownership
-  - Area: Scaling Editorial
-  - Status: Open; technical pilot publication is completed, regular operating responsibilities remain unresolved.
-  - Next step: Agree named facts/currentness review, editorial approval, real authorship, publication and correction owners before broader operation.
-  - Context: Fictitious-author technical-pilot clearance is not normal editorial clearance; use the freelancer comparison to assess quality, review effort and practical needs.
-  - Source: Confirmed manual-pilot scope and open operating questions, 2026-11-04.
-
-- [ ] Clarify standard editorial data with Kristian
-  - Area: Scaling Editorial
-  - Status: Open; standard-data audit and Wiki question preparation completed; meeting planned for 2026-11-04, outcome not recorded.
-  - Next step: Clarify Kristian Kehlert's remit and technical contacts, then prioritize rent definitions, valid active-listing filters and comparable history. Ask for existing validated views/queries and agree the question-handling route.
-  - Context: https://wiki.scout24.com/spaces/product-intelligence/pages/68724/data-source-catalog . Open Data Team questions alone carry ⚠️; Agent usage rules are separate. Proposed agent-to-Data-Team feedback process is not yet agreed/implemented. Incorporate actual answers before broadening use.
-  - Source: Dominik's 2026-11-03/04 data investigation and meeting preparation.
 
 - [ ] Clarify permanent storage for editorial portal images
   - Area: Scaling Editorial
@@ -81,6 +62,20 @@
 
 ## Waiting
 
+- [ ] Await Kristian's internal-source usage guide
+  - Area: Scaling Editorial
+  - Status: Waiting; meeting completed on 2026-11-04.
+  - Waiting for: Kristian's promised initial information and guide / blueprint for agent use of internal sources; no delivery date confirmed.
+  - Dominik's next step: Use the guide as the MVP basis when received and incorporate confirmed answers. Data-agent integration is a medium-term option; the current flow cannot integrate it.
+  - Source: Confirmed 4 November meeting outcome in documentation/2026-W45.md.
+
+- [ ] Revisit regular editorial ownership when decided
+  - Area: Scaling Editorial
+  - Status: Waiting / deferred by Dominik on 2026-11-04; he does not own this decision.
+  - Waiting for: Responsible stakeholders to determine facts/currentness review, editorial approval, real authorship, publication and correction ownership.
+  - Dominik's next step: Incorporate the actual decision when supplied; technical-pilot clearance does not settle regular operating responsibilities.
+  - Source: documentation/2026-W45.md, confirmed 4 November priority update.
+
 - [ ] Clarify timing for SEO anchor-navigation module
   - Area: Landing Page Builder
   - Status: Waiting for Ulrike's migration-scope clarification
@@ -123,6 +118,11 @@
 
 ## Suggestions
 
+- [ ] Prepare role and scope questions for Ali's Factory kickoff
+  - Area: Content Factory
+  - Status: Suggestion, not a confirmed preparation assignment.
+  - Reason: First kickoff is announced for KW 46 (9–15 November), exact date/time unspecified. Clarify Factory scope, Dominik/Peter/Allan responsibilities, leadership transition, priorities and available delivery capacity.
+
 - [ ] Remove the checked legacy `Shared` folder
   - Area: AI-supported work organization system
   - Status: Suggestion
@@ -131,9 +131,25 @@
 - [ ] Turn the Agent Process Guide into a reusable standard after practical use
   - Area: AI Enablement Series
   - Status: Suggestion
-  - Reason: Improve the guide from real project experience before adopting it as a reusable standard.
+  - Reason: Historical optional idea; the Series is cancelled. Consider only if a separately confirmed future context needs it.
 
 ## Completed
+
+- [x] Send the freelancer writing assignments and sample request
+  - Area: Scaling Editorial
+  - Completed: 2026-11-04
+  - Outcome: Dominik confirmed dispatch of the prepared briefs and request for five prior articles each. Receipt, return dates and sample delivery remain unconfirmed; do not reopen dispatch.
+  - Source: documentation/2026-W45.md, 4 November meeting outcome and priority update.
+
+- [x] Hold the standard-data discussion with Kristian
+  - Area: Scaling Editorial
+  - Completed: 2026-11-04
+  - Outcome: Guide / blueprint selected as the MVP starting point. Await Kristian's material; a specialized internal-data agent is only a medium-term integration option.
+
+- [x] Cancel the AI Enablement Series
+  - Area: AI Enablement Series
+  - Status: Cancelled; confirmed 2026-11-06, exact cancellation date not supplied.
+  - Outcome: Dominik has cancelled the Series; historical results and materials remain available, with no continuation or replacement commitment.
 
 - [x] Hold the first freelancer onboarding meeting
   - Area: Scaling Editorial
