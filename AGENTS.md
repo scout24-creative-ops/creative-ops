@@ -162,7 +162,7 @@ Preserve meaningful history when shortening working documents. Future questions 
 - An older planned meeting is not a currently scheduled appointment. Dominik confirmed no current follow-up appointments on 30 October.
 - tasks.md is intentionally retained in full for now, including completed history; do not archive or prune it as part of this cleanup.
 - The LP Builder large-HTML issue remains open at Dominik's explicit request despite the earlier reported fix; do not close it based solely on historical notes.
-- From 1 November Dominik belongs to Content Factory and no longer reports to Jorin. His planned substantial role with Allan and Peter is known; the new reporting line and detailed remit are not.
+- Current role/reporting and reorganization context: read [Dominik's role](profile/dominik-role.md) and [organization](organization/org-chart.md). Updated 6 November: Ali is the direct manager; AI Enablement Series is cancelled; Content Factory remit remains open. Use those maintained files for kickoff, collaboration and leadership-search details.
 
 ## Project File Rules
 
