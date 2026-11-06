@@ -10,12 +10,14 @@ Dieses Briefing hält den jeweils gültigen Stand, bestätigte Vereinbarungen, e
 
 - [Rollenprofil](dominik-role.md): kompakter Überblick über aktuelle Rolle, Fokus und Verantwortungsgrenzen.
 - [Organisation](../organization/org-chart.md): Teams, Berichtslinien, Schnittstellen und Quellenunterschiede.
+- [Zusammenarbeit mit Ali](communication/ali-collaboration.md): direkte Erwartungsabstimmung, Kommunikationshinweise und Bewertung im Übergang; bisherige indirekte Hinweise ausdrücklich vorläufig.
 - [Aufgaben](../tasks.md): bestätigte persönliche Open-/Waiting-Arbeit und gekennzeichnete Vorschläge.
 - Projektbriefings bleiben die Quelle für einzelne Vorhaben. Dieses Kapitel enthält keine zweite Aufgabenliste.
 
 ## Bestätigter Ausgangspunkt
 
 - Seit 1. November gehört Dominik zur Content Factory und berichtet direkt an **Ali Izhar Ahmed**. Seine Funktionsbezeichnung bleibt **Creative Operations & Digital Transformation Lead**.
+- Nach Dominiks Angaben ist Ali zunächst auch sein Ansprechpartner für die Bewertung. Sollte vorher eine Factory-Leitung beginnen, könnte sich die Zuständigkeit ändern; Ziele, Bewertungskriterien und eine mögliche Übergabe sind noch nicht geklärt.
 - Jorin Verges ist nicht mehr sein Vorgesetzter. Die frühere Rollen-/Steuerungsphase ist [historisch dokumentiert](../projects/ai-strategy-steering.md).
 - Dominik soll gemeinsam mit **Peter Sijtsma und Allan Fitzpatrick** eine wichtige Rolle beim Aufbau übernehmen. Beide sind organisatorisch in Florian Kubes Team; die operative Arbeitsteilung mit Dominik ist noch offen.
 - Laut Dominik wird eine **Factory-Leitung (Head of oder vergleichbar)** gesucht. Titel, Besetzung und mögliche spätere Berichtslinie sind offen. Die separate formale CMO-Suche aus dem Hub-Artikel ist davon zu unterscheiden.
