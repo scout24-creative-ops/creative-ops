@@ -9,7 +9,7 @@ _Stand: 6. November 2026; Reorganisation seit 1. November. Quellen: Dominiks Ang
 - Eine wichtige Aufbaurolle gemeinsam mit **Peter Sijtsma und Allan Fitzpatrick** ist angekündigt. Aufgabenverteilung, Kapazitäten und Entscheidungsrechte sind offen.
 - Peter ist seit November im Team von **Florian Kube**; Allan ist dort ebenfalls ausgewiesen. Zusammenarbeit mit Dominik bedeutet keine gemeinsame Berichtslinie.
 - Laut Dominik wird eine **Content-Factory-Leitung (Head of oder vergleichbar)** gesucht. Besetzung, genauer Titel und künftige Berichtslinie sind offen.
-- Erster Kickoff mit Ali: **KW 46, 9.–15. November**; genauer Termin nicht genannt.
+- Erster Kickoff mit Ali: **11. November 2026, 09:00–10:30 Uhr (Europe/Berlin)**; Termin und Teilnehmer-Einordnung im [Factory-Briefing](../profile/content-factory.md).
 - Scaling Editorial bleibt nach zuletzt bestätigtem Projektkontext bei Nataliya / Matthias angebunden. Dominik wechselt nicht in Nataliyas Team; neue Projektzuständigkeiten sind durch die Orga-Bilder allein nicht bestätigt.
 
 ## Marketing-Zielbild aus dem Hub-Artikel
