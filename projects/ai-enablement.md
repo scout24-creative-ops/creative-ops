@@ -6,10 +6,9 @@ Lightweight shared learning and use-case discussion for Marketing & Communicatio
 
 ## Current Status and Mandate
 
-The kickoff and first recurring session were delivered. The last detailed planning snapshot is September; do not present the 22 September agenda as an upcoming event.
+**Cancelled by Dominik**, confirmed on 6 November 2026; exact cancellation date not supplied. No continuation, replacement format, handover or renewed preparation is committed. The earlier uncertainty about whether the Series would end is resolved.
 
-On 19 October Dominik reported that the Series may end with the reorganization; this was not a confirmed cancellation and no calendar action was taken. On 30 October he confirmed the move to Content Factory from 1 November and no current follow-up appointments. Broad AI Enablement is not his desired future core responsibility. Continuation, ending or handover of this format needs confirmation; do not resume recurring preparation automatically.
-
+The kickoff and first recurring session were delivered. The session model and results below remain historical reference; the 22 September agenda is not an upcoming event.
 ## Established Format — Reference, Not a Current Schedule
 
 - Three optional blocks: **Learn**, **Show & Share**, **Explore**.
@@ -29,11 +28,11 @@ On 19 October Dominik reported that the Series may end with the reorganization; 
 
 ## Ownership and Limits
 
-The original mandate came from Jorin. The project connects existing expertise rather than making Dominik the ongoing technical owner of all team ideas. Delivery requires separate ownership and capacity. No new schedule or post-reorganization mandate is confirmed.
+The original mandate came from Jorin. Dominik now reports to Ali in Content Factory. The cancelled Series creates no continuing facilitation or technical-delivery obligation; any new enablement format would need its own confirmed mandate.
 
 ## Next Focus
 
-Clarify whether the Series ends, changes ownership or continues with a new mandate only when the topic becomes relevant. Existing dated follow-up plans are history, not current appointments.
+No active next step for this Series. Preserve results and reusable materials as reference.
 
 ## History
 
@@ -43,4 +42,4 @@ Clarify whether the Series ends, changes ownership or continues with a new manda
 
 ## Last Confirmed
 
-30 October 2026: no current follow-up appointments; Content-Factory transition confirmed. Session-specific evidence remains the dated August/September records.
+6 November 2026: Dominik explicitly confirmed cancellation. Session-specific evidence remains the dated August/September records.
