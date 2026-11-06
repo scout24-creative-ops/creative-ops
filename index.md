@@ -11,9 +11,11 @@ Read this file first, then [AGENTS.md](AGENTS.md). Load only the context needed 
 - [Relevant organization](organization/org-chart.md)
 - [GitHub and workspace setup](github-setup/github-context.md)
 - [Communication standards](profile/communication/README.md)
-- [AI Strategy & Steering](projects/ai-strategy-steering.md)
+- [Content Factory & Rollenentwicklung](profile/content-factory.md) — neues Kapitel seit November; zentrale Grundlage für Gespräche zu Dominiks Entwicklung, Ali und Factory-Aufbau.
 
 ## Current Working Focus
+
+Bestehende Projekte laufen zunächst wie bisher weiter (bestätigt am 6. November). Neue Schwerpunkte oder Aufgaben entstehen aus späteren bestätigten Vereinbarungen.
 
 - [Scaling Editorial](projects/editorial-lighthouse.md)
 - [Landing Page Builder](projects/landing-page-builder.md)
@@ -44,6 +46,8 @@ The following sections are a context directory, not additional active assignment
 - [Newsletter Automation](projects/newsletter-automation.md) — no automation selected after discovery.
 
 ## Historical and Supporting References
+
+- [AI Strategy & Steering — frühere Phase mit Jorin](projects/ai-strategy-steering.md) — abgelöst; damalige Vereinbarungen und Prioritäten archiviert.
 
 - [AI Enablement Series](projects/ai-enablement.md) — cancelled by Dominik; confirmed 6 November. Delivered sessions/materials retained as reference.
 
