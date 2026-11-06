@@ -6,13 +6,13 @@ Dominik arbeitet als **Creative Operations & Digital Transformation Lead** im Ma
 
 **Stand 6. November 2026:** Seit 1. November gehört Dominik zur **Content Factory** und berichtet direkt an **Ali Izhar Ahmed**. Jorin Verges ist nicht mehr sein Vorgesetzter. Die Funktionsbezeichnung bleibt laut HR-Profil **Creative Operations & Digital Transformation Lead**. Eine neue fachliche Ausrichtung ist möglich, aber noch nicht vereinbart.
 
-Dominik soll mit **Allan Fitzpatrick und Peter Sijtsma** eine wichtige Rolle beim Aufbau übernehmen. Peter ist seit November wie Allan im Team von **Florian Kube**. Zusammenarbeit bedeutet hier keine gemeinsame Berichtslinie. Für die Content Factory wird laut Dominiks bestätigter Mitteilung eine Leitung (Head of oder vergleichbar) gesucht; Titel, Besetzung und spätere Berichtslinie sind offen.
-
-Der erste Content-Factory-Kickoff mit Ali ist für **KW 46, 9.–15. November 2026**, angekündigt; genauer Tag und Uhrzeit sind nicht genannt. Konkretes Mandat, Arbeitsteilung, Prioritäten, Kapazitäten und erwartete Ergebnisse bleiben bis zur Klärung offen.
+Für Aufbauauftrag, Zusammenarbeit mit Ali, Peter und Allan, Leitungssuche und Rollenentwicklung gilt das zentrale Briefing [Content Factory & Rollenentwicklung](content-factory.md). Dort sind der Kickoff am **11. November, 09:00–10:30 Uhr**, bestätigte Vereinbarungen und offene Entscheidungen dokumentiert.
 
 Dominik führt Scaling Editorial weiter; das Projekt bleibt im Kontext von Nataliya / Matthias. Er wechselt nicht in Nataliyas Team. Für bestehende Projekte gelten die zuletzt bestätigten Zuständigkeiten; aus dem Orga-Wechsel folgt noch keine neue Lieferzusage.
 
 ## Fachlicher Schwerpunkt
+
+Dominik erwartet für die neue Phase als primären Schwerpunkt **Automatisierung und AI-Umsetzung von Produktion**. Das ist seine eigene klare Erwartung, noch kein mit Ali abgestimmtes Mandat.
 
 AI-gestützte Prozesse, Systeme und Workflows für Kreation und Content-Produktion:
 - wiederverwendbare Builder, Agents, Templates und Produktionsbausteine;
@@ -35,6 +35,8 @@ Für ausgewählte komplexe Lösungen bleibt das bewährte Prinzip hilfreich:
 Die konkrete Zuordnung muss je Vorhaben bestätigt werden. Benötigten Input und Schnittstellen benennen, statt fremde operative Aufgaben stillschweigend zu übernehmen. Auf sinnvolle Übergaben hinweisen; aus pragmatischer Hilfe keine dauerhafte Ownership machen.
 
 ## Aktueller Arbeitsfokus
+
+**Bestätigt am 6. November:** Die bestehenden Projekte laufen zunächst wie bisher weiter. Fokus und Aufgaben können sich mit dem neuen Mandat ändern; eine pauschale Neuzuordnung oder Einstellung ist nicht beschlossen.
 
 - Scaling Editorial: funktionierenden manuellen MVP in einen klar verantworteten Pilotbetrieb überführen; nach bestätigter guter Entwicklung Erweiterungsdrang begrenzen.
 - Landing Page Builder / Contentful: wiederverwendbare Produktion und den aktuellen Portalweg absichern; technischer Quellenstand liegt im jeweiligen Projekt.
