@@ -121,7 +121,7 @@
 - [ ] Prepare role and scope questions for Ali's Factory kickoff
   - Area: Content Factory
   - Status: Suggestion, not a confirmed preparation assignment.
-  - Reason: First kickoff is announced for KW 46 (9–15 November), exact date/time unspecified. Clarify Factory scope, Dominik/Peter/Allan responsibilities, leadership transition, priorities and available delivery capacity.
+  - Reason: Kickoff is confirmed for 11 November, 09:00–10:30 (Europe/Berlin). Clarify Factory scope, Dominik/Peter/Allan responsibilities, leadership transition, priorities and available delivery capacity.
 
 - [ ] Remove the checked legacy `Shared` folder
   - Area: AI-supported work organization system
