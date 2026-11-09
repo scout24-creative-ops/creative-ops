@@ -1,6 +1,6 @@
 # Content Factory & Rollenentwicklung
 
-_Kapitelbeginn: 1. November 2026. Letzter bestätigter Stand: 6. November 2026. Analyse und Gesprächsleitfaden ergänzt am selben Tag._
+_Kapitelbeginn: 1. November 2026. Letzter bestätigter Stand: 9. November 2026. Strategische Analyse und allgemeiner Gesprächsleitfaden: 6. November._
 
 ## Zweck und Pflege
 
@@ -51,7 +51,7 @@ Aus der bisherigen Arbeit weiterhin nützliche Orientierung, keine automatisch v
 **Mittwoch, 11. November 2026, 09:00–10:30 Uhr (Europe/Berlin).**
 Organisator: Ali Izhar Ahmed. Ort: Charlottenburg (07-405), zusätzlich Zoom. Dominik hat angenommen.
 
-Die Einladung kündigt eine erste Einführung und den Beginn gemeinsamer Arbeit an: Die Content Factory soll zusammen gestaltet werden. Eine detaillierte Agenda oder Entscheidungen sind nicht enthalten.
+Die ursprüngliche Einladung kündigt eine Einführung und gemeinsame Gestaltung an. Bens Nachricht vom 9. November konkretisiert Vorbereitung und Workshop-Ergebnis (siehe unten). Welche Anwendungsfälle ausgewählt werden und wie Rollen/Verantwortlichkeiten verteilt werden, ist noch offen.
 
 Sichtbare Eingeladene im Screenshot:
 
@@ -62,6 +62,25 @@ Sichtbare Eingeladene im Screenshot:
 | Erforderlich; mit Vorbehalt zugesagt | Anna Dahm |
 
 Ali ist als Organisator ausgewiesen. Der Raum ist zusätzlich als Ressource gelistet. „20 angenommen“ ist deshalb keine verlässliche Zahl bestätigter menschlicher Teilnehmender. Die Liste bildet nur die sichtbare Einladung ab, kein Factory-Organigramm.
+
+### Vorbereitung und Workshop-Auftrag — Bens Nachricht vom 9. November
+
+Dominik erhielt heute die unten zusammengefasste Nachricht von Ben, den er als Assistenten der VPs beschreibt. Quelle ist der von Dominik eingefügte Nachrichtentext; keine zusätzliche Mail-/Slack-Abfrage und keine Identitätsauflösung des Vornamens.
+
+**Bestätigter Auftrag an jedes Team:** Einen kurzen Überblick über Content-Bedarf und heutige Produktion vorbereiten. Ein aktuelles konkretes Beispiel mitbringen; **eine Folie pro Team genügt**. Je nach Anwendbarkeit abdecken:
+
+- Benötigte Inhalte, Zielgruppen, Kanäle und ungefähres Volumen.
+- Briefing und Beteiligte von Beauftragung über Umsetzung bis Lieferung und Freigabe.
+- Verwendete Tools, Templates, vorhandene Fähigkeiten und Wiederverwendbares.
+- Wesentliche Engpässe und ungefähre Prozessdauer.
+- Wie die Wirkung des Contents gemessen wird.
+- Einen Anwendungsfall mit größtem Factory-Potenzial: Was existiert bereits und was müsste sich ändern?
+
+**Angekündigtes Workshop-Ergebnis:** Gemeinsame Bedarfe erkennen, auf Vorhandenem aufbauen und **drei Anwendungsfälle** auswählen, die anschließend mit einer kleineren Arbeitsgruppe weiterbearbeitet werden.
+
+**Grenzen:** Noch keine Anwendungsfälle ausgewählt, keine Arbeitsgruppe besetzt und keine Umsetzung zugesagt. Die Nachricht richtet sich an Teams; daraus ergibt sich nicht eindeutig, ob Dominik eine eigene Folie liefern, zu einem Teambeispiel beitragen oder gemeinsam mit Peter/Allan vorbereiten soll. Kein persönlicher Folienauftrag wird automatisch in Open-Aufgaben umgewandelt.
+
+**Einordnung — Arbeitshypothese:** Der Kickoff verbindet eine Bestandsaufnahme heutiger Produktionsabläufe mit einer konkreten Auswahl für die Weiterarbeit. Dominiks vorhandene Produktions-/AI-Lösungen könnten als wiederverwendbare Fähigkeiten relevant sein. Für seine Vorbereitung erscheint ein nachvollziehbarer Ablauf mit sichtbarem Ergebnis, Engpass und nächster Verbesserung passend. Eine vollständige persönliche Portfolio-Präsentation ist nicht verlangt. Welches Beispiel und welche Vertretung sinnvoll sind, bleibt abzustimmen.
 
 ### Einordnung der Runde — Arbeitshypothese
 
@@ -139,4 +158,5 @@ Ein sinnvolles angestrebtes Gesprächsergebnis wäre ein verständlicher Aufbaua
 - Dominiks Angaben am 6. November: neues Kapitel, Projekte laufen vorerst weiter, erwarteter Produktions-/AI-Schwerpunkt, Aufbaurolle und Leitungssuche.
 - Bereitgestellte HR-/Orga-Screenshots und Hub-Artikel: organisatorischer Ausgangspunkt und übergeordnetes Zielbild.
 - Screenshot „Content Factory Kick-off“: Termin, Einladungstext und sichtbare Teilnehmerliste.
+- Von Dominik am 9. November eingefügter Nachrichtentext von Ben: Vorbereitung je Team und angekündigte Auswahl von drei Anwendungsfällen.
 - Keine zusätzlichen Kalender-, Slack-, HR- oder Hub-Abfragen. Kickoff-Ergebnisse sind noch nicht bekannt.
