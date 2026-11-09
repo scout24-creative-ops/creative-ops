@@ -2,6 +2,14 @@
 
 ## Open
 
+- [ ] Align the standalone SE Publisher and clean up skills
+  - Area: Scaling Editorial
+  - Status: Open; agreed 2026-11-09 after the internal portal handover.
+  - Next step: Reconcile personal editorial-publisher references with the current three-entry UX portal and real authors; remove obsolete coordinator/archive dependencies for the manually steered MVP, then test draft creation and teaser integration through the dedicated Agent.
+  - Context: Read access works, but bundled references/checksums are stale. Retain writer, profile and handover; inspect bindings before further deletion and confirm Writer uses the restored imagery skill. Direct MCP successes do not close Agent acceptance. Observe intermittent Agent stalls; cause remains unknown.
+  - Source: documentation/2026-W46.md and Dominik's confirmed setup/cleanup decisions.
+
+
 
 
 - [ ] Clarify permanent storage for editorial portal images
@@ -134,6 +142,13 @@
   - Reason: Historical optional idea; the Series is cancelled. Consider only if a separately confirmed future context needs it.
 
 ## Completed
+
+- [x] Finalize the internal editorial portal and share it with Viktoria
+  - Area: Scaling Editorial
+  - Completed: 2026-11-09.
+  - Outcome: Dominik accepted the three-entry UX portal and confirmed sending Viktoria the link. Kerkeling and The Weeknd are unpublished Lifestyle drafts and News teasers, with full packages/CMS state in both Wiki cases, the register and overview. No public launch or editorial clearance inferred. Publisher/skill alignment remains a separate Open task.
+  - Source: documentation/2026-W46.md.
+
 
 - [x] Send the freelancer writing assignments and sample request
   - Area: Scaling Editorial
