@@ -2,6 +2,13 @@
 
 ## Open
 
+- [ ] Build the internal-data article pool from available price series
+  - Area: Scaling Editorial
+  - Status: Open; confirmed direction recovered from the previous-chat excerpt on 2026-11-10 (original conversation date not supplied).
+  - Next step: Recover/reproduce the reported 69-city, four-series quarterly purchase-price pool for 2021–2025; inspect house/apartment price levels and changes, then propose useful article templates from actual findings.
+  - Context: Record exact source/fields, city mapping and coverage. Keep availability separate from metric meaning and publication limits; ask Kristian only about concrete gaps. Broad catalog completion is not a prerequisite.
+  - Source: projects/editorial-lighthouse.md and documentation/scaling-editorial-data-pool-continuation-2026-11-10.md.
+
 - [ ] Align the standalone SE Publisher and clean up skills
   - Area: Scaling Editorial
   - Status: Open; agreed 2026-11-09 after the internal portal handover.
@@ -70,12 +77,13 @@
 
 ## Waiting
 
-- [ ] Await Kristian's internal-source usage guide
+- [ ] Incorporate Kristian's remaining internal-source guidance
   - Area: Scaling Editorial
-  - Status: Waiting; meeting completed on 2026-11-04.
-  - Waiting for: Kristian's promised initial information and guide / blueprint for agent use of internal sources; no delivery date confirmed.
-  - Dominik's next step: Use the guide as the MVP basis when received and incorporate confirmed answers. Data-agent integration is a medium-term option; the current flow cannot integrate it.
-  - Source: Confirmed 4 November meeting outcome in documentation/2026-W45.md.
+  - Status: Waiting for the previously promised guidance / remaining source-method clarification; a distinct guide's delivery is not evidenced in the supplied continuation.
+  - Waiting for: Kristian's 4 November source-usage guide or concrete answers on unresolved definitions and permitted uses; no delivery date confirmed.
+  - Dominik's next step: Continue the available-data article pool independently, incorporate documented answers and approach Kristian only for specific remaining gaps. Do not resend a broad catalog questionnaire.
+  - Context: Existing catalog clarifications and reported data access do not establish all metric meanings or external reuse clearance. Data-agent integration remains a medium-term option.
+  - Source: documentation/2026-W45.md and documentation/scaling-editorial-data-pool-continuation-2026-11-10.md.
 
 - [ ] Revisit regular editorial ownership when decided
   - Area: Scaling Editorial
