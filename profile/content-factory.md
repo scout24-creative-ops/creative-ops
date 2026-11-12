@@ -1,6 +1,6 @@
 # Content Factory & Rollenentwicklung
 
-_Kapitelbeginn: 1. November 2026. Letzter bestätigter Stand: 9. November 2026. Strategische Analyse und allgemeiner Gesprächsleitfaden: 6. November._
+_Kapitelbeginn: 1. November 2026. Letzter bestätigter Stand: Kickoff vom 11. November 2026, ausgewertet am 12. November. Strategische Analyse und allgemeiner Gesprächsleitfaden: 6. November._
 
 ## Zweck und Pflege
 
@@ -26,9 +26,14 @@ Dieses Briefing hält den jeweils gültigen Stand, bestätigte Vereinbarungen, e
 
 ## Richtung der Factory
 
-Der bereitgestellte Hub-Artikel beschreibt die Verbindung von Creative Studio, Content und Video Content mit KI-gestützter Produktion für Private und Professional Marketing. Weitere Ziele sind zielgruppenrelevante Ansprache, Discovery über Suche/Social/LLMs sowie Personalisierung und Optimierung.
+Der Kickoff vom 11. November konkretisiert das Hub-Zielbild: eine gemeinsame Plattform für Content-Bedarf perspektivisch im gesamten Unternehmen, beginnend mit ImmoScout24. Wiederverwendung für weitere Marken einschließlich Fotocasa ist ein erklärtes Ziel.
 
-Das ist ein übergeordnetes Zielbild. Konkrete Leistungen, Abläufe, Priorisierung, Ressourcen, Qualitätsmaßstäbe und Erfolgskriterien sind noch nicht vereinbart.
+- Vorhandene Agents, Builder, Templates und Fachkenntnis sollen in modularen Abläufen verbunden werden.
+- Briefing, Produktion, Prüfung/Freigabe, Ausspielung und Ergebnisrückfluss gehören zum Zielbild; menschliche Kreation und fachliches Urteil bleiben vorgesehen.
+- Agent Factory, Linear und ein Slack-Eingang wurden als technische Ansatzpunkte diskutiert. Architektur, produktiver Gesamtprozess und Betriebsverantwortung sind noch nicht abschließend festgelegt.
+- Zunächst sollen drei Anwendungsfälle umgesetzt werden. Deren Auswahl und die Besetzung der kleineren Arbeitsgruppe stehen nach dem Kickoff noch aus.
+
+Konkrete Kapazitäten, Verantwortlichkeiten, Freigaberegeln und Erfolgskriterien sind je Anwendungsfall weiter zu vereinbaren. Detaillierte Ergebnisse und Quellen: [Woche 46](../documentation/2026-W46.md#2026-11-11--content-factory-kickoff-held-evidence-reviewed-on-12-november).
 
 ## Dominiks eigene Ausrichtung — Erwartung, noch kein abgestimmtes Mandat
 
@@ -46,47 +51,31 @@ Aus der bisherigen Arbeit weiterhin nützliche Orientierung, keine automatisch v
 - Bestehende Lösungen und Erfahrungen nutzen, statt für den Orga-Wechsel parallele Projekte aufzusetzen.
 - Neue Prioritäten mit den laufenden Verpflichtungen abgleichen. Verbindliche Änderungen im jeweiligen Projekt und in tasks.md pflegen.
 
-## Erster Kickoff — bestätigte Einladung
+## Kickoff am 11. November — Ergebnisse und offene Entscheidungen
 
-**Mittwoch, 11. November 2026, 09:00–10:30 Uhr (Europe/Berlin).**
-Organisator: Ali Izhar Ahmed. Ort: Charlottenburg (07-405), zusätzlich Zoom. Dominik hat angenommen.
+**Termin:** 11. November 2026, 09:00–10:30 Uhr, Europe/Berlin. Organisator: Ali Izhar Ahmed. Der zuletzt bereitgestellte Einladungsscreenshot nennt Tempelhof (07-425) und Zoom. Frühere Vorbereitung und detaillierte Gesprächsergebnisse stehen in [Woche 46](../documentation/2026-W46.md).
 
-Die ursprüngliche Einladung kündigt eine Einführung und gemeinsame Gestaltung an. Bens Nachricht vom 9. November konkretisiert Vorbereitung und Workshop-Ergebnis (siehe unten). Welche Anwendungsfälle ausgewählt werden und wie Rollen/Verantwortlichkeiten verteilt werden, ist noch offen.
+### Auswahl und Weiterarbeit
 
-Sichtbare Eingeladene im Screenshot:
+Die ursprünglich für den Workshop angekündigte Auswahl wurde vertagt. Teams sollen ihre Folien bzw. Unterlagen an Ben schicken; Ali will die Anwendungsfälle mit dem AI-/Tech-Team nach Nutzen auswählen und danach eine kleinere Arbeitsgruppe mit den betreffenden Teamleads bilden. Eine Nachricht wurde für die Folgewoche in Aussicht gestellt. Drei Pilotfälle oder Dominiks Mitgliedschaft und Aufgaben in dieser Gruppe sind noch nicht beschlossen.
 
-| Status in der Einladung | Personen |
-| --- | --- |
-| Erforderlich | Eve Vogelein, Nataliya Medvedeva, Torben Otto, Benjamin Albus, Peter Sijtsma, Dominik Böhme, Allan Fitzpatrick, Sharia Rahim, Elisabeth Nietz, Christoph Pape, Juliane Bischoff, Lennart Dannenberg, Paul Nielsen |
-| Optional | Magdalena Karadzhova, Marie-Luis Fischbach, Joshua Fett, Alexander Sedeke, Xavier Aragones, Jacob Canadas |
-| Erforderlich; mit Vorbehalt zugesagt | Anna Dahm |
+### Wiederverwendung und fachliche Verantwortung
 
-Ali ist als Organisator ausgewiesen. Der Raum ist zusätzlich als Ressource gelistet. „20 angenommen“ ist deshalb keine verlässliche Zahl bestätigter menschlicher Teilnehmender. Die Liste bildet nur die sichtbare Einladung ab, kein Factory-Organigramm.
+Die technische Präsentation beschreibt eine gemeinsame Steuerung, die passende vorhandene oder neue Fähigkeiten kombiniert. Peter wurde ausdrücklich für die Demo eingeführt; diese belegt noch keinen funktionierenden produktiven Gesamtprozess. Fachwissen der Teams soll einfließen. Die endgültige Aufteilung zwischen fachlicher Agent-Verantwortung, technischer Orchestrierung, Weiterentwicklung und Betrieb bleibt zu klären.
 
-### Vorbereitung und Workshop-Auftrag — Bens Nachricht vom 9. November
+Viele Teams benannten Freigaben, unvollständige Briefings, Korrekturen, Pflege und fehlenden Performance-Rückfluss als Engpässe. Eine Factory-Lösung muss diese Übergaben berücksichtigen; ein zusätzlich erzeugtes Asset allein löst sie nicht.
 
-Dominik erhielt heute die unten zusammengefasste Nachricht von Ben, den er als Assistenten der VPs beschreibt. Quelle ist der von Dominik eingefügte Nachrichtentext; keine zusätzliche Mail-/Slack-Abfrage und keine Identitätsauflösung des Vornamens.
+### Scaling Editorial als Kandidat
 
-**Bestätigter Auftrag an jedes Team:** Einen kurzen Überblick über Content-Bedarf und heutige Produktion vorbereiten. Ein aktuelles konkretes Beispiel mitbringen; **eine Folie pro Team genügt**. Je nach Anwendbarkeit abdecken:
+SEO stellte Scaling Editorial mit Dominiks vorhandenen Agents als möglichen Factory-Anwendungsfall vor. Die im Vortrag genannten Zielgrößen von rund 200 Artikeln und einer Million organischer Klicks pro Monat sind Ambitionen eines 12-monatigen Piloten, keine erreichten Ergebnisse oder bestätigte Lieferzusage.
 
-- Benötigte Inhalte, Zielgruppen, Kanäle und ungefähres Volumen.
-- Briefing und Beteiligte von Beauftragung über Umsetzung bis Lieferung und Freigabe.
-- Verwendete Tools, Templates, vorhandene Fähigkeiten und Wiederverwendbares.
-- Wesentliche Engpässe und ungefähre Prozessdauer.
-- Wie die Wirkung des Contents gemessen wird.
-- Einen Anwendungsfall mit größtem Factory-Potenzial: Was existiert bereits und was müsste sich ändern?
+PR verlangte Abstimmung von Daten und Botschaften; Brand-Beteiligung wurde zusätzlich gewünscht. Im Gespräch wurde zugesichert, die betroffenen Bereiche vor dem Livegang einzubeziehen. Zuständige Personen, konkrete Prüfschritte und Freigaben sind daraus noch nicht vollständig bestimmt. Projektstatus und Veröffentlichungsvoraussetzungen stehen im [SE-Briefing](../projects/editorial-lighthouse.md).
 
-**Angekündigtes Workshop-Ergebnis:** Gemeinsame Bedarfe erkennen, auf Vorhandenem aufbauen und **drei Anwendungsfälle** auswählen, die anschließend mit einer kleineren Arbeitsgruppe weiterbearbeitet werden.
+### Bedeutung für Dominik
 
-**Grenzen:** Noch keine Anwendungsfälle ausgewählt, keine Arbeitsgruppe besetzt und keine Umsetzung zugesagt. Die Nachricht richtet sich an Teams; daraus ergibt sich nicht eindeutig, ob Dominik eine eigene Folie liefern, zu einem Teambeispiel beitragen oder gemeinsam mit Peter/Allan vorbereiten soll. Kein persönlicher Folienauftrag wird automatisch in Open-Aufgaben umgewandelt.
+Seine vorhandenen Produktionslösungen wurden ausdrücklich als wiederverwendbare Grundlage angesprochen. Das konkretisiert die fachliche Relevanz seiner Arbeit, ersetzt aber keine Vereinbarung über sein persönliches Mandat, Prioritäten, Kapazitäten, Entscheidungsrechte oder dauerhafte technische Verantwortung. Bestehende Berichtslinien und Rollen gelten weiter.
 
-**Einordnung — Arbeitshypothese:** Der Kickoff verbindet eine Bestandsaufnahme heutiger Produktionsabläufe mit einer konkreten Auswahl für die Weiterarbeit. Dominiks vorhandene Produktions-/AI-Lösungen könnten als wiederverwendbare Fähigkeiten relevant sein. Für seine Vorbereitung erscheint ein nachvollziehbarer Ablauf mit sichtbarem Ergebnis, Engpass und nächster Verbesserung passend. Eine vollständige persönliche Portfolio-Präsentation ist nicht verlangt. Welches Beispiel und welche Vertretung sinnvoll sind, bleibt abzustimmen.
-
-### Einordnung der Runde — Arbeitshypothese
-
-Die Mischung aus Kreation/Brand, SEO/Kanälen, Professional Marketing/Kommunikation und AI/Automatisierung spricht für eine bereichsübergreifende Aufbau- und Abstimmungsrunde. Dass Dominik, Peter und Allan erforderlich eingeladen sind, passt zur angekündigten Aufbaurolle.
-
-Die Runde könnte spätere Produzenten, interne Auftraggeber und technische Partner verbinden. Einladungsstatus belegt weder Teamzugehörigkeit noch Entscheidungsrechte. Für weitere Namen ohne bestätigte aktuelle Funktion wird keine Zuständigkeit erfunden.
+Die Einladungsrunde verbindet unter anderem SEO, Brand, Social, Creative Studio, Content, LOFT, Produktmarketing und AI Solutions. Der Screenshot ist keine Anwesenheitsliste oder neue Teamstruktur; das Transkript erlaubt keine durchgängige sichere Sprecherzuordnung.
 
 ## Strategische Einordnung des Hub-Artikels — Analyse vom 6. November
 
@@ -159,4 +148,5 @@ Ein sinnvolles angestrebtes Gesprächsergebnis wäre ein verständlicher Aufbaua
 - Bereitgestellte HR-/Orga-Screenshots und Hub-Artikel: organisatorischer Ausgangspunkt und übergeordnetes Zielbild.
 - Screenshot „Content Factory Kick-off“: Termin, Einladungstext und sichtbare Teilnehmerliste.
 - Von Dominik am 9. November eingefügter Nachrichtentext von Ben: Vorbereitung je Team und angekündigte Auswahl von drei Anwendungsfällen.
-- Keine zusätzlichen Kalender-, Slack-, HR- oder Hub-Abfragen. Kickoff-Ergebnisse sind noch nicht bekannt.
+- Am 12. November bereitgestelltes Transkript und Einladungsscreenshot zum Kickoff vom 11. November: Ergebnisse im Abschnitt oben, detaillierter datierter Nachweis in Woche 46. Kein vollständiges Sprecherprotokoll; Transkriptionsfehler und undeutliche Namen begrenzen die Zuordnung.
+- Keine zusätzlichen Kalender-, Slack-, HR- oder Hub-Abfragen. Die Ergebnisse konkretisieren das Zielbild; persönliche Mandate, Pilot-Auswahl und technische Betriebszusagen bleiben offen.
