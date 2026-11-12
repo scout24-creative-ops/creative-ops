@@ -87,10 +87,10 @@
 
 - [ ] Revisit regular editorial ownership when decided
   - Area: Scaling Editorial
-  - Status: Waiting / deferred by Dominik on 2026-11-04; he does not own this decision.
-  - Waiting for: Responsible stakeholders to determine facts/currentness review, editorial approval, real authorship, publication and correction ownership.
-  - Dominik's next step: Incorporate the actual decision when supplied; technical-pilot clearance does not settle regular operating responsibilities.
-  - Source: documentation/2026-W45.md, confirmed 4 November priority update.
+  - Status: Waiting on stakeholder decisions; originally deferred by Dominik on 2026-11-04. He does not own these sign-off decisions.
+  - Waiting for: Named responsibilities for factual/currentness review, editorial approval, real authorship, publication and corrections. At the 11 November Factory kickoff, PR/Brand alignment before go-live was promised, following VP quality review; actual completion and detailed approval steps remain unconfirmed.
+  - Dominik's next step: Incorporate the agreed process when supplied; technical-pilot clearance does not establish editorial or PR/Brand approval.
+  - Source: documentation/2026-W45.md and documentation/2026-W46.md (11 November kickoff, reviewed 12 November).
 
 - [ ] Clarify timing for SEO anchor-navigation module
   - Area: Landing Page Builder
@@ -134,10 +134,10 @@
 
 ## Suggestions
 
-- [ ] Prepare role and scope questions for Ali's Factory kickoff
+- [ ] Clarify role and scope after Factory pilot selection
   - Area: Content Factory
-  - Status: Suggestion, not a confirmed preparation assignment.
-  - Reason: Kickoff is confirmed for 11 November, 09:00–10:30 (Europe/Berlin). Ben's 9 November team briefing requests one recent production example and says one slide per team is sufficient; three use cases will be selected for a smaller working group. Dominik's own slide/contribution and team coordination are not yet assigned. Keep role split, priorities and delivery capacity among the proposed questions; see profile/content-factory.md.
+  - Status: Suggestion, not a confirmed personal assignment.
+  - Reason: The 11 November kickoff did not select the three pilots or working group. Ali and the AI/tech team will assess the team material and announce the next step. When that decision is available, clarify Dominik's contribution, priorities, capacity, decision rights and the split between specialist agents, orchestration and ongoing operation; see profile/content-factory.md.
 
 - [ ] Remove the checked legacy `Shared` folder
   - Area: AI-supported work organization system
