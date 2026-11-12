@@ -6,6 +6,7 @@ Build a repeatable, AI-supported editorial workflow for ImmoScout24: discover re
 
 ## Current Status
 
+- **Content Factory candidate, presented on 11 November:** SEO proposed integrating the existing SE agents into the shared production platform. No first-pilot selection, integration delivery or public release was agreed. PR raised messaging/data consistency and Brand participation was requested; alignment with affected teams before go-live was promised. VP quality acceptance and stakeholder sign-offs remain unconfirmed. The stated 12-month-pilot ambitions of roughly 200 articles and one million organic clicks per month are targets, not achieved results. [Factory context](../profile/content-factory.md) and [meeting record](../documentation/2026-W46.md) hold the wider program details.
 - **Internal handover completed on 9 November:** Dominik accepts the portal for internal alignment, has sent Viktoria the link and considers the current layout work finished. This is not VP acceptance, a public launch or editorial sign-off.
 - **Three main entries:** News, Immobilienmarkt and Lifestyle, following Viktoria's feedback. Recht & Politik and Wohnen & Architektur join the Immobilienmarkt umbrella, alongside the previously grouped Mieten, Kaufen & Verkaufen and Finanzen content. Existing article IDs, URLs and legacy overview entries are retained; navigation removal is not page deletion.
 - **New Lifestyle content:** Kerkeling and The Weeknd are unpublished drafts assigned by Dominik to Julia Fraese, with displayed/planned date 09.11.2026. The Weeknd is the Lifestyle lead; Kerkeling is first under Im Trend. Both are also small News / Im Trend teasers. Generationenwechsel is removed from regular portal links, not deleted.
@@ -98,10 +99,12 @@ Useful collaboration topics: evaluation of extraction from internal data, early 
 2. Portal handover to Viktoria is complete; feedback and VP acceptance are not reported. Further layout expansion is not a prerequisite for this handover.
 3. Freelancer briefs/sample requests were dispatched; receipt, writing return dates and sample delivery remain unconfirmed. Compare returned work against the shared baseline when available.
 4. Recover/reproduce the reported 69-city price-data pool for 2021–2025, inspect house/apartment price levels and changes, and propose useful article templates from actual findings. Keep semantic limits visible; escalate only concrete unresolved gaps to Kristian. Document accepted formats and reusable methods incrementally.
-5. Regular factual/currentness review, editorial approval, publication and correction ownership remain deferred stakeholder decisions. Real author display and successful drafts do not resolve them.
+5. Regular factual/currentness review, editorial approval, publication and correction ownership remain stakeholder decisions. At the 11 November Factory kickoff, PR/Brand alignment before go-live was promised, following VP quality review; named approval steps and completion remain unconfirmed. Real author display and successful drafts do not resolve these responsibilities. This is not an automatic new personal sign-off task for Dominik.
 6. Permanent image delivery, charts/conversion functions, visible/stored tags, automatic News selection, orchestration and performance feedback remain later work without new delivery commitments. No traffic/CTR/Discover outcome or unattended scale is confirmed. The separate LP Builder large-HTML reconfirmation remains open.
 
 ## Last Confirmed
+
+12 November 2026: incorporated the supplied transcript and invitation screenshot for the 11 November Content Factory kickoff. This update records SE's candidate status, stated ambitions and pre-launch alignment dependency; it does not independently reconfirm the older technical/project status below or establish Factory selection, publication approval or a stable production run.
 
 10 November 2026: imported Dominik's supplied previous-chat excerpt and his confirmed data-first article-pool direction. Original event dates are unknown; prior assistant data/Wiki claims are explicitly reported, not independently reverified. No live Wiki, database or Agent operations during this migration.
 
