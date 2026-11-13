@@ -2,22 +2,26 @@
 
 ## Open
 
-- [ ] Build the internal-data article pool from available price series
+- [ ] Produce the first reader-led internal-data article pilot
   - Area: Scaling Editorial
-  - Status: Open; confirmed direction recovered from the previous-chat excerpt on 2026-11-10 (original conversation date not supplied).
-  - Next step: Recover/reproduce the reported 69-city, four-series quarterly purchase-price pool for 2021–2025; inspect house/apartment price levels and changes, then propose useful article templates from actual findings.
-  - Context: Record exact source/fields, city mapping and coverage. Keep availability separate from metric meaning and publication limits; ask Kristian only about concrete gaps. Broad catalog completion is not a prerequisite.
-  - Source: projects/editorial-lighthouse.md and documentation/scaling-editorial-data-pool-continuation-2026-11-10.md.
+  - Status: Open; current checkpoint 2026-11-13.
+  - Next step: Use reusable article patterns and bounded available price data to complete two to three useful articles; verify each case's coverage/meaning and preserve open supply/demand evidence gaps.
+  - Context: Freelancers now develop patterns; test them against the catalog and permitted views. The earlier 69-city pool is unreproduced history, not a prerequisite or national-ranking proof. Ask Kristian only about concrete source gaps.
+  - Source: projects/editorial-lighthouse.md and documentation/2026-W46.md.
 
-- [ ] Align the standalone SE Publisher and clean up skills
+- [ ] Complete Editorial Publisher integration with the Magazine
   - Area: Scaling Editorial
-  - Status: Open; agreed 2026-11-09 after the internal portal handover.
-  - Next step: Reconcile personal editorial-publisher references with the current three-entry UX portal and real authors; remove obsolete coordinator/archive dependencies for the manually steered MVP, then test draft creation and teaser integration through the dedicated Agent.
-  - Context: Read access works, but bundled references/checksums are stale. Retain writer, profile and handover; inspect bindings before further deletion and confirm Writer uses the restored imagery skill. Direct MCP successes do not close Agent acceptance. Observe intermittent Agent stalls; cause remains unknown.
-  - Source: documentation/2026-W46.md and Dominik's confirmed setup/cleanup decisions.
+  - Status: Partially complete, 2026-11-13: Instructions/personal skill aligned and actually loaded; Magazine reads and existing-entry saves pass.
+  - Next step: Establish the documented Magazine-Create route, then test one new draft; verify Magazine rubric/article targets and migration/link scope before using them.
+  - Context: Current Create schema lacks site selection; Magazine category targets remain unresolved. Finish our checks before approaching M, as Dominik requested; no new question has been sent. Preserve old www entries and do not invent a fallback.
+  - Source: projects/editorial-lighthouse.md and documentation/2026-W46.md.
 
-
-
+- [ ] Scope shared Magazine templates and dynamic teasers with M
+  - Area: Scaling Editorial
+  - Status: Preferred direction confirmed 2026-11-13; discussion deliberately deferred, not an implementation commitment.
+  - Next step: When Dominik chooses to approach M, agree scope and effort for central article data, shared frontend templates and referenced teasers; automatic rubric selection follows later.
+  - Context: Current HTML duplicates article/teaser data. M's capacity, delivery ownership and dates remain open; no architecture request has been sent.
+  - Source: projects/editorial-lighthouse.md, Magazine Delivery and Preferred Target Architecture.
 
 - [ ] Clarify permanent storage for editorial portal images
   - Area: Scaling Editorial
@@ -77,12 +81,19 @@
 
 ## Waiting
 
+- [ ] Resume freelancer pilot after patterns and access
+  - Area: Scaling Editorial
+  - Status: Waiting; article-pattern assignment given after the 12 November meeting.
+  - Waiting for: Inga/Julia's pattern proposals and confirmation of Wiki/ChatGPT access; no delivery date confirmed. A Word export covers the missing Wiki access for now.
+  - Dominik's next step: Review proposals for data feasibility and enable the intended manual Agent-use/feedback phase once access is ready; do not assume that independent operation has started.
+  - Source: projects/editorial-lighthouse.md and documentation/2026-W46.md.
+
 - [ ] Incorporate Kristian's remaining internal-source guidance
   - Area: Scaling Editorial
-  - Status: Waiting for the previously promised guidance / remaining source-method clarification; a distinct guide's delivery is not evidenced in the supplied continuation.
+  - Status: Waiting for remaining source-method clarification; a distinct promised guide's delivery is not confirmed at the 2026-11-13 checkpoint.
   - Waiting for: Kristian's 4 November source-usage guide or concrete answers on unresolved definitions and permitted uses; no delivery date confirmed.
   - Dominik's next step: Continue the available-data article pool independently, incorporate documented answers and approach Kristian only for specific remaining gaps. Do not resend a broad catalog questionnaire.
-  - Context: Existing catalog clarifications and reported data access do not establish all metric meanings or external reuse clearance. Data-agent integration remains a medium-term option.
+  - Context: Catalog content and bounded price trials are available, but do not establish complete coverage or publication clearance. Offer/contact queries have expired. A distinct guide and data-agent integration remain separate, unconfirmed dependencies.
   - Source: documentation/2026-W45.md and documentation/scaling-editorial-data-pool-continuation-2026-11-10.md.
 
 - [ ] Revisit regular editorial ownership when decided
@@ -151,17 +162,23 @@
 
 ## Completed
 
+- [x] Restore and align the standalone Editorial Publisher
+  - Area: Scaling Editorial
+  - Completed: 2026-11-13.
+  - Outcome: Current UX/execution references and image/author/SEO handling reconciled; site-specific Magazine configuration saved and actually loaded by the Agent. Existing Magazine homepage reads and unchanged-content saves/read-backs passed. New Magazine creation and category migration remain the separate Open integration task.
+  - Source: documentation/2026-W46.md.
+
 - [x] Finalize the internal editorial portal and share it with Viktoria
   - Area: Scaling Editorial
   - Completed: 2026-11-09.
-  - Outcome: Dominik accepted the three-entry UX portal and confirmed sending Viktoria the link. Kerkeling and The Weeknd are unpublished Lifestyle drafts and News teasers, with full packages/CMS state in both Wiki cases, the register and overview. No public launch or editorial clearance inferred. Publisher/skill alignment remains a separate Open task.
+  - Outcome: Dominik accepted the three-entry UX portal and confirmed sending Viktoria the link. Kerkeling and The Weeknd are unpublished Lifestyle drafts and News teasers, with full packages/CMS state in both Wiki cases, the register and overview. No public launch or editorial clearance inferred. Skill alignment subsequently completed on 13 November; new Magazine integration remains a separate Open task.
   - Source: documentation/2026-W46.md.
 
 
 - [x] Send the freelancer writing assignments and sample request
   - Area: Scaling Editorial
   - Completed: 2026-11-04
-  - Outcome: Dominik confirmed dispatch of the prepared briefs and request for five prior articles each. Receipt, return dates and sample delivery remain unconfirmed; do not reopen dispatch.
+  - Outcome: Dominik confirmed dispatch of the prepared briefs and request for five prior articles each. Comparison-writing returns were subsequently reported; the complete five-prior-article sets remain unconfirmed. Do not reopen dispatch.
   - Source: documentation/2026-W45.md, 4 November meeting outcome and priority update.
 
 - [x] Hold the standard-data discussion with Kristian
